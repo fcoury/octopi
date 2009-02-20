@@ -1,7 +1,8 @@
-Learn.GitHub.com
+Develop.GitHub.com
 ================
 
-This is the code and data behind [learn.github.com](http://learn.github.com). 
+This is the code and data behind 
+[develop.github.com](http://develop.github.com). 
 The page content lives in the pages/ directory and is compiled into the HTML 
 output in p/. Normally, generated files like these wouldn't be checked into
 source control, but it's required for the
@@ -27,7 +28,7 @@ Once you've done that, just run rake to compile the site:
 Contributing
 -----------------------------
 
-To contribute to the learn.github site, you can fork the repository,
+To contribute to the develop.github site, you can fork the repository,
 push your changes into it and send a pull request to 'schacon'.  
 
 If you want to run the site on GitHub pages for testing you can push your
@@ -39,6 +40,6 @@ the remote repository.
 That command will push your master branch to the 'gh-pages' branch of
 your fork.  Then Pages will serve the site for you under :
 
-http://schacon.github.com/learn.github.com
+http://schacon.github.com/develop.github.com
 
 (Replace 'schacon' with your username)
