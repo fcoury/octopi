@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Develop.GitHub - </title>
+	<script type="text/javascript" src="../js/jquery-1.2.6.pack.js"></script>
+	<script type="text/javascript" src="../js/thickbox-compressed.js"></script>
+	<script type="text/javascript" src="../js/jquery.corner.js"></script>
+	
+	<link rel="stylesheet" href="../css/screen.css" type="text/css" media="screen, projection">
+  <link rel="stylesheet" href="../css/print.css" type="text/css" media="print">
+  <!--[if IE]>
+    <link rel="stylesheet" href="../css/ie.css" type="text/css" media="screen, projection">
+  <![endif]-->
+  
+	<link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8"/>
+  <link rel="stylesheet" href="../css/thickbox.css" type="text/css" media="screen"/>
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="span-21" id="header">
+      <div class="span-10">
+        <a href="/"><img src="../images/develop-github.png" alt="github learn logo" /></a>
+      </div>
+
+      <div class="span-11 last">
+        <div id="links">
+          <a href="http://github.com">home</a>
+          <a href="http://github.com/login">login</a>
+          <a href="http://github.com/signup">signup!</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="span-21 last content">
+      <h2 id='users_api'>Users API</h2>
+
+<p>API for accessing and modifying user information.</p>
+
+<p>All the URLs here are prefixed with &#8216;/api/v2/:format&#8217;.</p>
+
+<h3 id='searching_for_users'>Searching for Users</h3>
+
+<p>The route for user searching is:</p>
+
+<pre><code>  /user/search/:search</code></pre>
+
+<p>For instance, you would search for users with &#8216;chacon&#8217; in thier name like this:</p>
+
+<pre><code>$ curl -i http://github.com/api/v2/xml/users/search/chacon</code></pre>
+
+<h3 id='getting_user_information'>Getting User Information</h3>
+
+<p>You can then get extended information on users by thier username. The url format is:</p>
+
+<pre><code>  /user/:username [GET]</code></pre>
+
+<p>so the following command</p>
+
+<pre><code>$ curl -i http://github.com/api/v2/yaml/user/defunkt</code></pre>
+
+<p>will return the something like this:</p>
+
+<pre><code>user: 
+  id: 23
+  login: defunkt
+  name: Kristopher Walken Wanstrath
+  company: LA
+  location: SF
+  email: me@email.com
+  blog: http://myblog.com
+  following_count: 13
+  followers_count: 63
+  public_gist_count: 0
+  public_repo_count: 2</code></pre>
+
+<p>If you authenticated as that user, you will also get this information:</p>
+
+<pre><code>  total_private_repo_count: 1
+  collaborators: 3
+  disk_usage: 50384
+  owned_private_repo_count: 1
+  private_gist_count: 0
+  plan: 
+    name: mega
+    collaborators: 60
+    space: 20971520
+    private_repos: 125</code></pre>
+
+<h3 id='authenticated_user_management'>Authenticated User Management</h3>
+
+<p>If you are authenticating, you can update your users information in a few different ways.</p>
+
+<pre><code>  /user/:username [POST]
+      :values[key] = value</code></pre>
+
+<p>Where the key values are of :</p>
+
+<pre><code>name
+email
+blog
+company
+location</code></pre>
+
+<h3 id='following_network'>Following Network</h3>
+
+<p>If you want to look at the following network on GitHub, you can request the users that a specific user is following with:</p>
+
+<pre><code>/user/:user/followers</code></pre>
+
+<p>or the users following a specific user with:</p>
+
+<pre><code>/user/:user/following</code></pre>
+
+<p>For example, if you want to see which users are following &#8216;defunkt&#8217;, you can run this:</p>
+
+<pre><code>$ curl -i http://github.com/api/v2/yaml/user/defunkt/followers</code></pre>
+
+<p>If you are authenticated as a user, you can also follow or unfollow users with:</p>
+
+<pre><code>/user/follow/:user [POST]
+
+/user/unfollow/:user [POST]</code></pre>
+
+<h4 id='public_key_management'>Public Key Management</h4>
+
+<pre><code>  /user/public_keys
+
+  /user/public_key/add [POST]
+      :name
+      :key
+
+  /user/public_key/remove [POST]
+      :id</code></pre>
+
+<h4 id='email_address_management'>Email Address Management</h4>
+
+<pre><code>  /user/emails [GET]
+
+  /user/email/add/:email [POST]
+
+  /user/email/remove/:email [POST]</code></pre><br/><br/><hr/><div class="span-21 last">&nbsp;</div><hr/>
+    </div>
+
+    <div id="footer" class="span-21">
+      <div class="info span-12">
+        <div class="links">
+          <a href="http://github.com/blog/148-github-shirts-now-available">T-Shirts</a> |
+          <a href="http://github.com/blog">Blog</a> |
+          <a href="http://support.github.com/">Support</a> |
+          <a href="http://github.com/training">Git Training</a> |
+          <a href="http://github.com/contact">Contact</a> |
+          <a href="http://groups.google.com/group/github/">Google Group</a> |
+          <a href="http://github.wordpress.com">Status</a>
+        </div>
+        <div class="company">
+          GitHub is <a href="http://logicalawesome.com/">Logical Awesome</a> &copy;2009 | <a href="http://github.com/site/terms">Terms of Service</a> | <a href="http://github.com/site/privacy">Privacy Policy</a>
+        </div>
+      </div>
+      <div class="fork span-7">
+        This website is <a href="http://github.com/learn/learn.github.com">open source</a>.  
+        Please help us by forking the project and adding to it.
+      </div>
+    </div>
+
+  </div>
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  var pageTracker = _gat._getTracker("UA-3769691-2");
+  pageTracker._initData();
+  pageTracker._trackPageview();
+  </script>
+
+</body>
+</html>
