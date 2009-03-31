@@ -10,13 +10,13 @@ The route for user searching is:
 
 	  /user/search/:search
 
-For instance, you would search for users with 'chacon' in thier name like this:
+For instance, you would search for users with 'chacon' in their name like this:
 
 	$ curl -i http://github.com/api/v2/xml/user/search/chacon
 
 ### Getting User Information ###
 
-You can then get extended information on users by thier username.  The url format is:
+You can then get extended information on users by their username.  The url format is:
 
 	  /user/:username [GET]
 
