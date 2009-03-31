@@ -12,7 +12,7 @@ The route for user searching is:
 
 For instance, you would search for users with 'chacon' in thier name like this:
 
-	$ curl -i http://github.com/api/v2/xml/users/search/chacon
+	$ curl -i http://github.com/api/v2/xml/user/search/chacon
 
 ### Getting User Information ###
 
@@ -88,22 +88,22 @@ If you are authenticated as a user, you can also follow or unfollow users with:
 
 	/user/unfollow/:user [POST]
 
+
 #### Public Key Management ####
 
-	  /user/public_keys
+	  /user/keys
 
-	  /user/public_key/add [POST]
+	  /user/key/add [POST]
 	      :name
 	      :key
 
-	  /user/public_key/remove [POST]
+	  /user/key/remove [POST]
 	      :id
 
 #### Email Address Management ####
 
 	  /user/emails [GET]
 
-	  /user/email/add/:email [POST]
+	  /user/email/add [POST]
 
-	  /user/email/remove/:email [POST]
-
+	  /user/email/remove [POST]
