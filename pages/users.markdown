@@ -18,11 +18,11 @@ For instance, you would search for users with 'chacon' in their name like this:
 
 You can then get extended information on users by their username.  The url format is:
 
-	  /user/:username [GET]
+	  /user/show/:username [GET]
 
 so the following command
 
-	$ curl -i http://github.com/api/v2/yaml/user/defunkt
+	$ curl -i http://github.com/api/v2/yaml/user/show/defunkt
 
 will return the something like this:
 

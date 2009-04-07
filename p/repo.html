@@ -37,7 +37,64 @@
     </div>
     
     <div class="span-21 last content">
-      <br/><br/><hr/><div class="span-21 last">&nbsp;</div><hr/>
+      <h2 id='repositories_api'>Repositories API</h2>
+
+<p>Creating a Repository</p>
+
+<pre><code>repos/create</code></pre>
+
+<p>Searching a Repository</p>
+
+<pre><code>repos/search/:q</code></pre>
+
+<p>Watching Repositories</p>
+
+<pre><code>repos/unwatch/:user/:repo
+repos/watch/:user/:repo</code></pre>
+
+<p>Forking Repositories</p>
+
+<pre><code>repos/fork/:user/:repo</code></pre>
+
+<p>Deleting your Repository</p>
+
+<pre><code>repos/delete/:repo</code></pre>
+
+<p>Repository Values</p>
+
+<pre><code>repos/set/:setvalue/:repo</code></pre>
+
+<p>Deploy Keys</p>
+
+<pre><code>repos/key/:repo/remove
+repos/key/:repo/add
+repos/keys/:repo</code></pre>
+
+<p>Collaborators</p>
+
+<pre><code>repos/collaborators/:repo/add/:user
+repos/collaborators/:repo/remove/:user
+repos/show/:user/:repo/collaborators</code></pre>
+
+<p>Network</p>
+
+<pre><code>repos/show/:user/:repo/network</code></pre>
+
+<p>Repository Commit Tags</p>
+
+<pre><code>repos/show/:user/:repo/tags</code></pre>
+
+<p>Repository Branches</p>
+
+<pre><code>repos/show/:user/:repo/branches</code></pre>
+
+<p>Show Repo Info</p>
+
+<pre><code>repos/show/:user/:repo</code></pre>
+
+<p>List All Repositories</p>
+
+<pre><code>repos/show/:user</code></pre><br/><br/><hr/><div class="span-21 last">&nbsp;</div><hr/>
     </div>
 
     <div id="footer" class="span-21">

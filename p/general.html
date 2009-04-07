@@ -37,7 +37,57 @@
     </div>
     
     <div class="span-21 last content">
-      <br/><br/><hr/><div class="span-21 last">&nbsp;</div><hr/>
+      <h2 id='general_api_information'>General API Information</h2>
+
+<h3 id='schema'>Schema</h3>
+
+<p>All API access is over HTTP and starts with</p>
+
+<pre><code>http://github.com/api/v2/:format</code></pre>
+
+<p>where <code>:format</code> is one of &#8216;yaml&#8217;, &#8216;json&#8217; or &#8216;xml&#8217;, specifying what the response data should be formatted in. For all of the rest of this documentation, we will be leaving off that part, since it is the same for every API call.</p>
+
+<h3 id='authentication'>Authentication</h3>
+
+<p>How to authenticate as a user, simply pass <code>login</code> and <code>token</code> to any URL. Several of the calls will return extra data if you are authenticated as a user that owns the repository or has access to it as a collaborator. For example, a call to get information on one of your private repositories would be:</p>
+
+<pre><code>$ curl -F &#39;login=schacon&#39; -F &#39;token=6ef8395fecf207165f1a82178ae1b984&#39;
+  http://github.com/api/v2/json/user/show/schacon | jsonpretty
+{
+  &quot;user&quot;: {
+    &quot;company&quot;: &quot;Logical Awesome&quot;,
+    &quot;name&quot;: &quot;Scott Chacon&quot;,
+    &quot;following_count&quot;: 11,
+    &quot;blog&quot;: &quot;http:\/\/jointheconversation.org&quot;,
+    &quot;public_repo_count&quot;: 52,
+    &quot;public_gist_count&quot;: 45,
+    &quot;disk_usage&quot;: 294392,
+    &quot;collaborators&quot;: 3,
+    &quot;plan&quot;: {
+      &quot;name&quot;: &quot;small&quot;,
+      &quot;collaborators&quot;: 5,
+      &quot;space&quot;: 1228800,
+      &quot;private_repos&quot;: 10
+    },
+    &quot;id&quot;: 70,
+    &quot;owned_private_repo_count&quot;: 10,
+    &quot;total_private_repo_count&quot;: 14,
+    &quot;private_gist_count&quot;: 11,
+    &quot;login&quot;: &quot;schacon&quot;,
+    &quot;followers_count&quot;: 182,
+    &quot;created_at&quot;: &quot;2008\/01\/27 09:19:28 -0800&quot;,
+    &quot;email&quot;: &quot;schacon@gmail.com&quot;,
+    &quot;location&quot;: &quot;Redwood City, CA&quot;
+  }
+}</code></pre>
+
+<h3 id='secure_access'>Secure Access</h3>
+
+<p>You can access any API call over HTTPS, though public data can also be accessed over HTTP.</p>
+
+<h3 id='limitations'>Limitations</h3>
+
+<p>Currently we are limiting API calls to 60 per minute. This may change in the future, or possibly per user at some point, but if you try to access the API more than 60 times in a minute, it will start giving you &#8220;access denied&#8221; errors.</p><br/><br/><hr/><div class="span-21 last">&nbsp;</div><hr/>
     </div>
 
     <div id="footer" class="span-21">
