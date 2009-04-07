@@ -37,7 +37,126 @@
     </div>
     
     <div class="span-21 last content">
-      <h2 id='check_if_one_sha_will_apply_cleanly_if_cherrypicked_onto_another'>Check if one SHA will apply cleanly if cherry-picked onto another</h2><br/><br/><hr/><div class="span-21 last">&nbsp;</div><hr/>
+      <h2 id='commits_api'>Commits API</h2>
+
+<h3 id='listing_commits_on_a_branch'>Listing Commits on a Branch</h3>
+
+<pre><code>commits/list/:user_id/:repository/:branch</code></pre>
+
+<p>An example of getting a listing of commits for a branch, we will get the latest commits on the &#8216;master&#8217; branch of the Grit project.</p>
+
+<pre><code>$ curl http://github.com/api/v2/yaml/commits/list/mojombo/grit/master
+--- 
+commits: 
+- message: Regenerated gemspec for version 1.1.1
+  parents: 
+  - id: 5071bf9fbfb81778c456d62e111440fdc776f76c
+  url: http://github.com/mojombo/grit/commit/4ac4acab7fd9c7fd4c0e0f4ff5794b0347baecde
+  author: 
+    name: Tom Preston-Werner
+    email: tom@mojombo.com
+  id: 4ac4acab7fd9c7fd4c0e0f4ff5794b0347baecde
+  committed_date: &quot;2009-03-31T09:54:51-07:00&quot;
+  authored_date: &quot;2009-03-31T09:54:51-07:00&quot;
+  tree: 94490563ebaf733cbb3de4ad659eb58178c2e574
+  committer: 
+    name: Tom Preston-Werner
+    email: tom@mojombo.com
+- message: Version bump to 1.1.1
+  parents: 
+  - id: 05372bffe2b60b0d1802f338551856221e0a89d2
+  url: http://github.com/mojombo/grit/commit/5071bf9fbfb81778c456d62e111440fdc776f76c
+  author: 
+    name: Tom Preston-Werner
+    email: tom@mojombo.com
+  id: 5071bf9fbfb81778c456d62e111440fdc776f76c
+  committed_date: &quot;2009-03-31T09:54:40-07:00&quot;
+  authored_date: &quot;2009-03-31T09:54:40-07:00&quot;
+  tree: e5b860cb18c5c334e480993ca4549d13e0f8b1a8
+  committer: 
+    name: Tom Preston-Werner
+    email: tom@mojombo.com</code></pre>
+
+<h3 id='listing_commits_for_a_file'>Listing Commits for a File</h3>
+
+<pre><code>commits/list/:user_id/:repository/:branch/*path</code></pre>
+
+<p>An example of using this to get all the commits that modified the gemspec file for the Grit project would be:</p>
+
+<pre><code>$ curl http://github.com/api/v2/yaml/commits/list/mojombo/grit/master/grit.gemspec
+--- 
+commits: 
+- message: Regenerated gemspec for version 1.1.1
+  parents: 
+  - id: 5071bf9fbfb81778c456d62e111440fdc776f76c
+  url: http://github.com/mojombo/grit/commit/4ac4acab7fd9c7fd4c0e0f4ff5794b0347baecde
+  author: 
+    name: Tom Preston-Werner
+    email: tom@mojombo.com
+  id: 4ac4acab7fd9c7fd4c0e0f4ff5794b0347baecde
+  committed_date: &quot;2009-03-31T09:54:51-07:00&quot;
+  authored_date: &quot;2009-03-31T09:54:51-07:00&quot;
+  tree: 94490563ebaf733cbb3de4ad659eb58178c2e574
+  committer: 
+    name: Tom Preston-Werner
+    email: tom@mojombo.com
+- message: Regenerated gemspec for version 1.1.0
+  parents: 
+  - id: 5bace1138462c9e40807ee542016fb4213eb49f8
+  url: http://github.com/mojombo/grit/commit/ac8700fe97702bc13806a5bfea7a0e28f97b5f6b
+  author: 
+    name: Tom Preston-Werner
+    email: tom@mojombo.com
+  id: ac8700fe97702bc13806a5bfea7a0e28f97b5f6b
+  committed_date: &quot;2009-03-29T21:07:22-07:00&quot;
+  authored_date: &quot;2009-03-29T21:07:22-07:00&quot;
+  tree: 57504834bb2a0cfda808223b42460fb8f806515f
+  committer: 
+    name: Tom Preston-Werner
+    email: tom@mojombo.com</code></pre>
+
+<h3 id='showing_a_specific_commit'>Showing a Specific Commit</h3>
+
+<pre><code>commits/show/:user_id/:repository/:sha</code></pre>
+
+<p>An example of using this to get a the changes introduced on a specific commit in the Grit project would be</p>
+
+<pre><code>$ curl http://github.com/api/v2/json/commits/show/mojombo/grit/5071bf9fbfb81778c456d62e111440fdc776f76c | jsonpretty 
+{
+  &quot;commit&quot;: {
+    &quot;message&quot;: &quot;Version bump to 1.1.1&quot;,
+    &quot;added&quot;: [
+
+    ],
+    &quot;removed&quot;: [
+
+    ],
+    &quot;parents&quot;: [
+      {
+        &quot;id&quot;: &quot;05372bffe2b60b0d1802f338551856221e0a89d2&quot;
+      }
+    ],
+    &quot;modified&quot;: [
+      {
+        &quot;diff&quot;: &quot;@@ -1,4 +1,4 @@\n --- \n :major: 1\n :minor: 1\n-:patch: 0\n+:patch: 1&quot;,
+        &quot;filename&quot;: &quot;VERSION.yml&quot;
+      }
+    ],
+    &quot;author&quot;: {
+      &quot;name&quot;: &quot;Tom Preston-Werner&quot;,
+      &quot;email&quot;: &quot;tom@mojombo.com&quot;
+    },
+    &quot;url&quot;: &quot;http:\/\/github.com\/mojombo\/grit\/commit\/5071bf9fbfb81778c456d62e111440fdc776f76c&quot;,
+    &quot;id&quot;: &quot;5071bf9fbfb81778c456d62e111440fdc776f76c&quot;,
+    &quot;committed_date&quot;: &quot;2009-03-31T09:54:40-07:00&quot;,
+    &quot;authored_date&quot;: &quot;2009-03-31T09:54:40-07:00&quot;,
+    &quot;tree&quot;: &quot;e5b860cb18c5c334e480993ca4549d13e0f8b1a8&quot;,
+    &quot;committer&quot;: {
+      &quot;name&quot;: &quot;Tom Preston-Werner&quot;,
+      &quot;email&quot;: &quot;tom@mojombo.com&quot;
+    }
+  }
+}</code></pre><br/><br/><hr/><div class="span-21 last">&nbsp;</div><hr/>
     </div>
 
     <div id="footer" class="span-21">
