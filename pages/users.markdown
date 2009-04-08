@@ -2,8 +2,6 @@
 
 API for accessing and modifying user information.
 
-All the URLs here are prefixed with '/api/v2/:format'.
-
 ### Searching for Users ###
 
 The route for user searching is:

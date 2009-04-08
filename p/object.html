@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Develop.GitHub - </title>
+	<script type="text/javascript" src="../js/jquery-1.2.6.pack.js"></script>
+	<script type="text/javascript" src="../js/thickbox-compressed.js"></script>
+	<script type="text/javascript" src="../js/jquery.corner.js"></script>
+	
+	<link rel="stylesheet" href="../css/screen.css" type="text/css" media="screen, projection">
+  <link rel="stylesheet" href="../css/print.css" type="text/css" media="print">
+  <!--[if IE]>
+    <link rel="stylesheet" href="../css/ie.css" type="text/css" media="screen, projection">
+  <![endif]-->
+  
+	<link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8"/>
+  <link rel="stylesheet" href="../css/thickbox.css" type="text/css" media="screen"/>
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="span-21" id="header">
+      <div class="span-10">
+        <a href="/"><img src="../images/develop-github.png" alt="github learn logo" /></a>
+      </div>
+
+      <div class="span-11 last">
+        <div id="links">
+          <a href="http://github.com">home</a>
+          <a href="http://github.com/login">login</a>
+          <a href="http://github.com/signup">signup!</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="span-21 last content">
+      <h2 id='git_object_api'>Git Object API</h2>
+
+<h3 id='trees'>Trees</h3>
+
+<p>Can get the contents of a tree by tree sha</p>
+
+<pre><code>tree/show/:user/:repo/:tree_sha</code></pre>
+
+<p>To get a listing of the root tree for the facebox project from our commit listing, we can call this:</p>
+
+<pre><code>$ curl http://github.com/api/v2/yaml/tree/show/defunkt/facebox/f7a5de2e224ec94182a3c2c081f4e7f4df70da4
+--- 
+tree: 
+- name: .gitignore
+  sha: e43b0f988953ae3a84b00331d0ccf5f7d51cb3cf
+  mode: &quot;100644&quot;
+  type: blob
+- name: README.txt
+  sha: d4fc2d5e810d9b4bc1ce67702603080e3086a4ed
+  mode: &quot;100644&quot;
+  type: blob
+- name: b.png
+  sha: f184e6269b343014f58694093b55558dd5dde193
+  mode: &quot;100644&quot;
+  type: blob
+- name: bl.png
+  sha: f6271859d51654b6fb2719df5fe192c8398ecefc
+  mode: &quot;100644&quot;
+  type: blob</code></pre>
+
+<h3 id='blobs'>Blobs</h3>
+
+<p>Can get the data about a blob by tree sha and path</p>
+
+<pre><code>blob/show/:user/:repo/:tree_sha/:path</code></pre>
+
+<p>For example, to get the README.txt metadata from a specific tree in Facebox:</p>
+
+<pre><code>$ curl http://localhost:3000/api/v2/yaml/blob/show/defunkt/facebox/f7a5de2e224ec94182a3c2c081f4e7f4d/README.txt
+--- 
+blob: 
+  name: README.txt
+  size: 178
+  sha: d4fc2d5e810d9b4bc1ce67702603080e3086a4ed
+  mode: &quot;100644&quot;
+  mime_type: text/plain
+  data: |
+    Please visit http://famspam.com/facebox/ or open index.html in your favorite browser.
+
+    Need help?  Join our Google Groups mailing list:
+      http://groups.google.com/group/facebox/</code></pre>
+
+<h3 id='raw_git_data'>Raw Git Data</h3>
+
+<p>You can get the contents of a blob with the blobs s via:</p>
+
+<pre><code>blob/show/:user/:repo/:sha</code></pre>
+
+<p>It is important to note that it doesn&#8217;t matter which type you specify (yaml, xml, json), the output will simply be the raw output.</p>
+
+<p>Here is an example of getting a README file from Facebox:</p>
+
+<pre><code>$ curl http://github.com/api/v2/yaml/blob/show/defunkt/facebox/d4fc2d5e810d9b4bc1ce67702603080e3086a4ed
+Please visit http://famspam.com/facebox/ or open index.html in your favorite browser.
+
+Need help?  Join our Google Groups mailing list:
+  http://groups.google.com/group/facebox/</code></pre>
+
+<p>You can actually get raw trees and commits this way, too. If you give it a tree SHA instead, you&#8217;ll get this:</p>
+
+<pre><code>$ curl http://github.com/api/v2/yaml/blob/show/defunkt/facebox/f7a5de2e224ec94182a3c2c081f4e7f4d
+100644 blob e43b0f988953ae3a84b00331d0ccf5f7d51cb3cf	.gitignore
+100644 blob d4fc2d5e810d9b4bc1ce67702603080e3086a4ed	README.txt
+100644 blob f184e6269b343014f58694093b55558dd5dde193	b.png
+100644 blob f6271859d51654b6fb2719df5fe192c8398ecefc	bl.png
+100644 blob 31f204fc451cd9dd5cfdadfad2d86ed0e1104882	br.png
+100755 blob 08f6f1fce2f6a02dcb15b6c66244470794587bb0	build_tar.sh
+100755 blob 87b4f8bd699386e3a6fcc2e50d7c61bfc4aabb8d	closelabel.gif
+100644 blob 97ebe3cab3eab76253f9cc5fc894b339456da86e	facebox.css
+100644 blob 2ea88c96ebb00d38d5ae6abad57c917f156802cc	facebox.js
+100644 blob dc61a86c3f342b930f0a0447cae33fee812e27d3	faceplant.css
+100644 blob 355442b51047a30479c21096e06e0906e4e9a4ee	index.html
+100644 blob ebe02bdd357c337e0e817fcbce2a034a54a13287	jquery.js
+100755 blob f864d5fd38b7466c76b5a36dc0e3e9455c0126e2	loading.gif
+100644 blob e41cfe5c654e8e05ad46f15af1c462a1360e9764	logo.png
+040000 tree 82e3a754b6a0fcb238b03c0e47d05219fbf9cf89	releases
+100644 blob 98d3e92373d1bc541e7f516e5e73b645a991ddc2	remote.html
+040000 tree bbf747873075ac28667d246491ffdefbd314fe4f	screenshots
+100644 blob e58b35b362ce5347bb5064e91a3bf8e4fed4f6ef	shadow.gif
+100644 blob 63459bb418f5f6d896a8eb925c01f45024933ed6	stairs.jpg
+100644 blob 38756c5ecc3ce53b8da9555a497bd9cc20b1b1c9	test.html
+100644 blob d99c8f6c6eaa12d7b49a20f41f08a5006f3ea8b7	tl.png
+100644 blob e99b6ec8310e859fd27519694f04e1babf2ab2c4	tr.png</code></pre>
+
+<p>Here is an example of a commit:</p>
+
+<pre><code>$ curl http://github.com/api/v2/yaml/blob/show/defunkt/facebox/4bf7a39e8c4ec54f8b4cd594a3616d69004aba69
+tree f7a5de2e224ec94182a3c2c081f4e7f35f70da4d
+parent cd13d9a61288dceb0a7aa73b55ed2fd019f4f1f7
+parent 3211367cab73233af66dac2710c94682f3f3b9b2
+author Chris Wanstrath &lt;chris@ozmm.org&gt; 1213837237 -0700
+committer Chris Wanstrath &lt;chris@ozmm.org&gt; 1213837237 -0700
+
+Merge branch &#39;master&#39; of git://github.com/webweaver/facebox into webweaver/master</code></pre><br/><br/><hr/><div class="span-21 last">&nbsp;</div><hr/>
+    </div>
+
+    <div id="footer" class="span-21">
+      <div class="info span-12">
+        <div class="links">
+          <a href="http://github.com/blog/148-github-shirts-now-available">T-Shirts</a> |
+          <a href="http://github.com/blog">Blog</a> |
+          <a href="http://support.github.com/">Support</a> |
+          <a href="http://github.com/training">Git Training</a> |
+          <a href="http://github.com/contact">Contact</a> |
+          <a href="http://groups.google.com/group/github/">Google Group</a> |
+          <a href="http://github.wordpress.com">Status</a>
+        </div>
+        <div class="company">
+          GitHub is <a href="http://logicalawesome.com/">Logical Awesome</a> &copy;2009 | <a href="http://github.com/site/terms">Terms of Service</a> | <a href="http://github.com/site/privacy">Privacy Policy</a>
+        </div>
+      </div>
+      <div class="fork span-7">
+        This website is <a href="http://github.com/develop/develop.github.com">open source</a>.
+        Please help us by forking the project and adding to it.
+      </div>
+    </div>
+
+  </div>
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  var pageTracker = _gat._getTracker("UA-3769691-2");
+  pageTracker._initData();
+  pageTracker._trackPageview();
+  </script>
+
+</body>
+</html>
