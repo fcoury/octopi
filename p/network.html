@@ -37,7 +37,114 @@
     </div>
     
     <div class="span-21 last content">
-      <br/><br/><hr/><div class="span-21 last">&nbsp;</div><hr/>
+      <h2 id='secret_network_api'>Secret Network API</h2>
+
+<p>This API is sort of an outlier. It is only available in JSON and does not follow the rest of the routing rules. It is the API used by our Network Graph and provides a lot of useful information that may be useful.</p>
+
+<h3 id='network_meta'>Network Meta</h3>
+
+<pre><code>$ curl http://github.com/schacon/simplegit/network_meta | jsonpretty
+{
+  &quot;focus&quot;: 78,
+  &quot;nethash&quot;: &quot;fa8fe264b926cdebaab36420b6501bd74402a6ff&quot;,
+  &quot;dates&quot;: [
+    &quot;2008-03-15&quot;,
+    &quot;2008-03-15&quot;,
+    &quot;2008-03-17&quot;,
+    &quot;2008-03-17&quot;,
+    ...
+    &quot;2009-02-15&quot;,
+    &quot;2009-02-15&quot;,
+    &quot;2009-03-19&quot;
+  ],
+  &quot;users&quot;: [
+    {
+      &quot;name&quot;: &quot;schacon&quot;,
+      &quot;repo&quot;: &quot;simplegit&quot;,
+      &quot;heads&quot;: [ { &quot;name&quot;: &quot;master&quot;,
+       &quot;id&quot;: &quot;96476742093b8a53947564b16a691349dad846e5&quot; } ]
+    },
+    {
+      &quot;name&quot;: &quot;tamtam&quot;,
+      &quot;repo&quot;: &quot;tam_repo&quot;,
+      &quot;heads&quot;: [ { &quot;name&quot;: &quot;master&quot;,
+ 	  &quot;id&quot;: &quot;8bf4aeae935422e7bdbb30660b4f3642728a1397&quot; } ]
+    }
+  ],
+  &quot;blocks&quot;: [
+    { &quot;name&quot;: &quot;schacon&quot;, &quot;start&quot;: 0, &quot;count&quot;: 3 },
+    { &quot;name&quot;: &quot;tamtam&quot;, &quot;start&quot;: 3,  &quot;count&quot;: 1 },
+  ]
+}</code></pre>
+
+<h3 id='network_data'>Network Data</h3>
+
+<p>To get network data, you&#8217;ll need to provide the &#8216;nethash&#8217; parameter that you get from the network_meta call so the data is always consistent. To get network data, call the network_data_chunk URI with the given nethash to get the first 100 commits by branch.</p>
+
+<pre><code>$ curl http://github.com/schacon/simplegit/network_data_chunk?nethash=fa8fe264b926cdebaab36420b6501bd74402a6ff
+{&quot;commits&quot;=&gt;
+  [{&quot;message&quot;=&gt;&quot;first commit&quot;,
+    &quot;time&quot;=&gt;0,
+    &quot;parents&quot;=&gt;[],
+    &quot;date&quot;=&gt;&quot;2008-03-15 10:31:28&quot;,
+    &quot;author&quot;=&gt;&quot;Scott Chacon&quot;,
+    &quot;id&quot;=&gt;&quot;a11bef06a3f659402fe7563abf99ad00de2209e6&quot;,
+    &quot;space&quot;=&gt;1,
+    &quot;gravatar&quot;=&gt;&quot;9375a9529679f1b42b567a640d775e7d&quot;,
+    &quot;login&quot;=&gt;&quot;schacon&quot;},
+   {&quot;message&quot;=&gt;&quot;my second commit, which is better than the first&quot;,
+    &quot;time&quot;=&gt;1,
+    &quot;parents&quot;=&gt;[[&quot;a11bef06a3f659402fe7563abf99ad00de2209e6&quot;, 0, 1]],
+    &quot;date&quot;=&gt;&quot;2008-03-15 16:40:33&quot;,
+    &quot;author&quot;=&gt;&quot;Scott Chacon&quot;,
+    &quot;id&quot;=&gt;&quot;0576fac355dd17e39fd2671b010e36299f713b4d&quot;,
+    &quot;space&quot;=&gt;1,
+    &quot;gravatar&quot;=&gt;&quot;9375a9529679f1b42b567a640d775e7d&quot;,
+    &quot;login&quot;=&gt;&quot;schacon&quot;},
+	.. (bunch more) ..</code></pre>
+
+<p>You can also give it a start and end range, based on the position of the dates in the network_meta output. This is how the network graph operates, requesting the chunks that you want to view at a time rather than all the data. If you need more than the last 100, you&#8217;ll need to request ranges of more data.</p>
+
+<pre><code>	$ curl &#39;http://github.com/schacon/simplegit/network_data_chunk?
+		nethash=fa8fe264b926cdebaab36420b6501bd74402a6ff&amp;start=1&amp;end=2&#39;
+	{
+	  &quot;commits&quot;: [
+	    {
+	      &quot;message&quot;: &quot;my second commit, which is better than the first&quot;,
+	      &quot;time&quot;: 1,
+	      &quot;parents&quot;: [
+	        [
+	          &quot;a11bef06a3f659402fe7563abf99ad00de2209e6&quot;,
+	          0,
+	          1
+	        ]
+	      ],
+	      &quot;date&quot;: &quot;2008-03-15 16:40:33&quot;,
+	      &quot;author&quot;: &quot;Scott Chacon&quot;,
+	      &quot;id&quot;: &quot;0576fac355dd17e39fd2671b010e36299f713b4d&quot;,
+	      &quot;space&quot;: 1,
+	      &quot;gravatar&quot;: &quot;9375a9529679f1b42b567a640d775e7d&quot;,
+	      &quot;login&quot;: &quot;schacon&quot;
+	    },
+	    {
+	      &quot;message&quot;: &quot;changed the verison number&quot;,
+	      &quot;time&quot;: 2,
+	      &quot;parents&quot;: [
+	        [
+	          &quot;0576fac355dd17e39fd2671b010e36299f713b4d&quot;,
+	          1,
+	          1
+	        ]
+	      ],
+	      &quot;date&quot;: &quot;2008-03-17 21:52:11&quot;,
+	      &quot;author&quot;: &quot;Scott Chacon&quot;,
+	      &quot;id&quot;: &quot;0c8a9ec46029a4e92a428cb98c9693f09f69a3ff&quot;,
+	      &quot;space&quot;: 1,
+	      &quot;gravatar&quot;: &quot;9375a9529679f1b42b567a640d775e7d&quot;,
+	      &quot;login&quot;: &quot;schacon&quot;
+	    }
+	  ]
+	}</code></pre><br/><br/><hr/><div class="span-21 last">&nbsp;</div><hr/>
     </div>
 
     <div id="footer" class="span-21">
