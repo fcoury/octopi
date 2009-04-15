@@ -70,15 +70,15 @@ Where the key values are of :
 
 If you want to look at the following network on GitHub, you can request the users that a specific user is following with:
 
-	/user/:user/followers
+	/user/show/:user/followers
 
 or the users following a specific user with:
 
-	/user/:user/following
+	/user/show/:user/following
 
 For example, if you want to see which users are following 'defunkt', you can run this:
 
-	$ curl -i http://github.com/api/v2/yaml/user/defunkt/followers
+	$ curl -i http://github.com/api/v2/yaml/user/show/defunkt/followers
 
 If you are authenticated as a user, you can also follow or unfollow users with:
 
