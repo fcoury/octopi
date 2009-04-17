@@ -15,8 +15,7 @@ For example, to see all the open issues I have on the schacon/simplegit project,
 	$ curl http://github.com/api/v2/yaml/issues/list/schacon/simplegit/open
 	--- 
 	issues: 
-	- position: 1.0
-	  number: 1
+	- number: 1
 	  votes: 0
 	  created_at: 2009-04-17 14:55:33 -07:00
 	  body: my sweet, sweet issue
@@ -24,8 +23,7 @@ For example, to see all the open issues I have on the schacon/simplegit project,
 	  updated_at: 2009-04-17 14:55:33 -07:00
 	  user: schacon
 	  state: open
-	- position: 2.0
-	  number: 2
+	- number: 2
 	  votes: 0
 	  created_at: 2009-04-17 15:16:47 -07:00
 	  body: the body of a second issue
@@ -46,7 +44,6 @@ So to get all the data for a issue #1 in our repo, we can run something like thi
 	$ curl http://github.com/api/v2/yaml/issues/show/schacon/simplegit/1
 	--- 
 	issue: 
-	  position: 1.0
 	  number: 1
 	  votes: 0
 	  created_at: 2009-04-17 14:55:33 -07:00
@@ -80,7 +77,6 @@ For example, I could open a new issue on my simplegit project like this:
 	  title: new
 	  number: 1
 	  votes: 0
-	  position: 1.0
 	  state: open
 
 To close or reopen an issue, you just need to supply the issue number
@@ -100,7 +96,6 @@ You need to be logged in via token as well.  Here is how I would close the ticke
 	  title: new
 	  number: 1
 	  votes: 0
-	  position: 1.0
 	  state: closed
 
 ### Edit Existing Issues ###
