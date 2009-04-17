@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Develop.GitHub - </title>
+	<script type="text/javascript" src="../js/jquery-1.2.6.pack.js"></script>
+	<script type="text/javascript" src="../js/thickbox-compressed.js"></script>
+	<script type="text/javascript" src="../js/jquery.corner.js"></script>
+	
+	<link rel="stylesheet" href="../css/screen.css" type="text/css" media="screen, projection">
+  <link rel="stylesheet" href="../css/print.css" type="text/css" media="print">
+  <!--[if IE]>
+    <link rel="stylesheet" href="../css/ie.css" type="text/css" media="screen, projection">
+  <![endif]-->
+  
+	<link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8"/>
+  <link rel="stylesheet" href="../css/thickbox.css" type="text/css" media="screen"/>
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="span-21" id="header">
+      <div class="span-10">
+        <a href="/"><img src="../images/develop-github.png" alt="github learn logo" /></a>
+      </div>
+
+      <div class="span-11 last">
+        <div id="links">
+          <a href="http://github.com">home</a>
+          <a href="http://github.com/login">login</a>
+          <a href="http://github.com/signup">signup!</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="span-21 last content">
+      <h2 id='issues_api'>Issues API</h2>
+
+<p>The API for GitHub Issues.</p>
+
+<h3 id='list_a_projects_issues'>List a Projects Issues</h3>
+
+<p>To see a list of issues for a project,</p>
+
+<pre><code>issues/list/:user/:repo/:state</code></pre>
+
+<p>where :state is either &#8216;open&#8217; or &#8216;closed&#8217;.</p>
+
+<p>For example, to see all the open issues I have on the schacon/simplegit project, we can run</p>
+
+<pre><code>$ curl http://dev.github.com/api/v2/yaml/issues/list/schacon/simplegit/open
+--- 
+issues: 
+- position: 1.0
+  number: 1
+  votes: 0
+  created_at: 2009-04-17 14:55:33 -07:00
+  body: my sweet, sweet issue
+  title: new issue
+  updated_at: 2009-04-17 14:55:33 -07:00
+  user: schacon
+  state: open
+- position: 2.0
+  number: 2
+  votes: 0
+  created_at: 2009-04-17 15:16:47 -07:00
+  body: the body of a second issue
+  title: another issue
+  updated_at: 2009-04-17 15:16:47 -07:00
+  user: schacon
+  state: open</code></pre>
+
+<h3 id='view_an_issue'>View an Issue</h3>
+
+<p>To get data on an individual issue by number, run</p>
+
+<pre><code>issues/show/:user/:repo/:number</code></pre>
+
+<p>So to get all the data for a issue #1 in our repo, we can run something like this:</p>
+
+<pre><code>$ curl http://github.com/api/v2/yaml/issues/show/schacon/simplegit/1
+--- 
+issue: 
+  position: 1.0
+  number: 1
+  votes: 0
+  created_at: 2009-04-17 14:55:33 -07:00
+  body: my sweet, sweet issue
+  title: new issue
+  updated_at: 2009-04-17 14:55:33 -07:00
+  user: schacon
+  state: open</code></pre>
+
+<h3 id='search_issues'>Search Issues</h3>
+
+<p>You can search through a projects issues as well with</p>
+
+<pre><code>issues/search/:user/:repo/:state/:q</code></pre>
+
+<h3 id='open_and_close_issues'>Open and Close Issues</h3>
+
+<p>To open a new issue on a project, make a POST to</p>
+
+<pre><code>issues/open/:user/:repo</code></pre>
+
+<p>Where you can provide POST variables:</p>
+
+<pre><code>title 
+body</code></pre>
+
+<p>It will return the data for the newly created ticket if it is successful.</p>
+
+<p>To close or reopen an issue, you just need to supply the issue number</p>
+
+<pre><code>issues/close/:user/:repo/:number
+
+issues/reopen/:user/:repo/:number</code></pre>
+
+<h3 id='edit_existing_issues'>Edit Existing Issues</h3>
+
+<p>For the final three calls (edit, label add and label delete) you have to be authorized a collaborator on the project.</p>
+
+<p>To edit an existing issue, you can POST to</p>
+
+<pre><code>issues/edit/:user/:repo/:number</code></pre>
+
+<p>Where you can provide POST variables:</p>
+
+<pre><code>title 
+body</code></pre>
+
+<p>This will overwrite the title or body of the issue, if you are authorized member of the project.</p>
+
+<h3 id='add_and_remove_labels'>Add and Remove Labels</h3>
+
+<p>To add a label, run</p>
+
+<pre><code>issues/label/add/:user/:repo/:label/:number</code></pre>
+
+<p>This will return a list of the labels currently on that issue, your new one included. If the label is not yet in the system, it will be created.</p>
+
+<p>To remove a label, run:</p>
+
+<pre><code>issues/label/remove/:user/:repo/:label/:number</code></pre>
+
+<p>Again, it will return a list of the labels currently on the issue.</p><br/><br/><hr/><div class="span-21 last">&nbsp;</div><hr/>
+    </div>
+
+    <div id="footer" class="span-21">
+      <div class="info span-12">
+        <div class="links">
+          <a href="http://github.com/blog/148-github-shirts-now-available">T-Shirts</a> |
+          <a href="http://github.com/blog">Blog</a> |
+          <a href="http://support.github.com/">Support</a> |
+          <a href="http://github.com/training">Git Training</a> |
+          <a href="http://github.com/contact">Contact</a> |
+          <a href="http://groups.google.com/group/github/">Google Group</a> |
+          <a href="http://github.wordpress.com">Status</a>
+        </div>
+        <div class="company">
+          GitHub is <a href="http://logicalawesome.com/">Logical Awesome</a> &copy;2009 | <a href="http://github.com/site/terms">Terms of Service</a> | <a href="http://github.com/site/privacy">Privacy Policy</a>
+        </div>
+      </div>
+      <div class="fork span-7">
+        This website is <a href="http://github.com/develop/develop.github.com">open source</a>.
+        Please help us by forking the project and adding to it.
+      </div>
+    </div>
+
+  </div>
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  var pageTracker = _gat._getTracker("UA-3769691-2");
+  pageTracker._initData();
+  pageTracker._trackPageview();
+  </script>
+
+</body>
+</html>
