@@ -51,7 +51,7 @@
 
 <p>For example, to see all the open issues I have on the schacon/simplegit project, we can run</p>
 
-<pre><code>$ curl http://dev.github.com/api/v2/yaml/issues/list/schacon/simplegit/open
+<pre><code>$ curl http://github.com/api/v2/yaml/issues/list/schacon/simplegit/open
 --- 
 issues: 
 - position: 1.0
@@ -94,15 +94,9 @@ issue:
   user: schacon
   state: open</code></pre>
 
-<h3 id='search_issues'>Search Issues</h3>
-
-<p>You can search through a projects issues as well with</p>
-
-<pre><code>issues/search/:user/:repo/:state/:q</code></pre>
-
 <h3 id='open_and_close_issues'>Open and Close Issues</h3>
 
-<p>To open a new issue on a project, make a POST to</p>
+<p>To open a new issue on a project, make a authorized POST to</p>
 
 <pre><code>issues/open/:user/:repo</code></pre>
 
@@ -111,13 +105,41 @@ issue:
 <pre><code>title 
 body</code></pre>
 
-<p>It will return the data for the newly created ticket if it is successful.</p>
+<p>It will return the data for the newly created ticket if it is successful. You need to provide your username and token so the system knows who you are and can assign you as the opener of the issue.</p>
+
+<p>For example, I could open a new issue on my simplegit project like this:</p>
+
+<pre><code>$ curl -F &#39;login=schacon&#39; -F &#39;token=XXX&#39; -F &#39;title=new&#39; -F &#39;body=my ticket&#39; \
+ 	http://github.com/api/v2/yaml/issues/open/schacon/simplegit
+--- 
+issue: 
+  user: schacon
+  body: my ticket
+  title: new
+  number: 1
+  votes: 0
+  position: 1.0
+  state: open</code></pre>
 
 <p>To close or reopen an issue, you just need to supply the issue number</p>
 
 <pre><code>issues/close/:user/:repo/:number
 
 issues/reopen/:user/:repo/:number</code></pre>
+
+<p>You need to be logged in via token as well. Here is how I would close the ticket I opened earlier:</p>
+
+<pre><code>$ curl -F &#39;login=schacon&#39; -F &#39;token=XXX&#39; \
+	http://github.com/api/v2/yaml/issues/close/schacon/simplegit/1
+--- 
+issue: 
+  user: schacon
+  body: 
+  title: new
+  number: 1
+  votes: 0
+  position: 1.0
+  state: closed</code></pre>
 
 <h3 id='edit_existing_issues'>Edit Existing Issues</h3>
 
@@ -141,6 +163,14 @@ body</code></pre>
 <pre><code>issues/label/add/:user/:repo/:label/:number</code></pre>
 
 <p>This will return a list of the labels currently on that issue, your new one included. If the label is not yet in the system, it will be created.</p>
+
+<p>Here is how I would add the label &#8216;testing&#8217; to my first ticket in my simplegit project:</p>
+
+<pre><code>$ curl -F &#39;login=schacon&#39; -F &#39;token=XXX&#39; https://github.com/api/v2/yaml/issues/label/add/schacon/simplegit/testing/1
+--- 
+labels: 
+- testing
+- test_label</code></pre>
 
 <p>To remove a label, run:</p>
 
