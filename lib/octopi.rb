@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'httparty'
+require 'pp'
 
 module Octopi
   def connect(login, token, &block)
@@ -24,23 +25,23 @@ module Octopi
     end
   
     def user(username = self.class.default_params[:login])
-      User.new(self, get("/user/show/#{username}")[:user])
+      user_data = get("/user/show/#{username}")
+
+      raise "Unexpected response for user command" unless user_data and user_data['user']
+
+      User.new(self, user_data['user'])
     end
     
     def save(resource_path, data)
       self.class.default_params.each_pair do |k,v|
         resource_path.gsub!(":#{k.to_s}", v)
       end
+      #still can't figure out on what format values are expected
       self.class.post("#{resource_path}", { :query => data })
     end
   
     private
     def get(uri)
-      # { :user => { :name => "fcoury", 
-      #              :email => "felipe.coury@gmail.com", 
-      #              :blog => "http://felipecoury.com", 
-      #              :company => "FelipeCoury.com", 
-      #              :location => "Campinas, SP, Brazil" } }
       self.class.get("/#{format}#{uri}")
     end
   end

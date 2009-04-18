@@ -5,10 +5,13 @@
 A Ruby interface to GitHub API v2 [http://developer.github.com](http://developer.github.com)<br/>
 Fork it away!
 
+
 ## Features
+
 
 * High level interface
 * Change resources a la ActiveRecord
+
 
 ## Examples
 
