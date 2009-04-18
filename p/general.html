@@ -85,6 +85,23 @@
 
 <p>You can access any API call over HTTPS, though public data can also be accessed over HTTP.</p>
 
+<h3 id='json_callbacks'>JSON callbacks</h3>
+
+<p>If you send a &#8216;callback&#8217; variable to any call, it will wrap the result JSON in that function, so you can automatically execute it.</p>
+
+<pre><code>$ curl http://github.com/api/v2/json/issues/list/schacon/simplegit/open?callback=myJsFunction
+myJsFunction({&quot;issues&quot;: [
+{&quot;user&quot;: &quot;schacon&quot;, 
+&quot;updated_at&quot;: &quot;2009/04/17 16:19:02 -0700&quot;, 
+&quot;body&quot;: &quot;something&quot;, 
+&quot;title&quot;: &quot;new&quot;, 
+&quot;number&quot;: 2, 
+&quot;votes&quot;: 0, 
+&quot;position&quot;: 1.0, 
+&quot;created_at&quot;: &quot;2009/04/17 16:18:50 -0700&quot;, 
+&quot;state&quot;: &quot;open&quot;}
+]});</code></pre>
+
 <h3 id='limitations'>Limitations</h3>
 
 <p>Currently we are limiting API calls to 60 per minute. This may change in the future, or possibly per user at some point, but if you try to access the API more than 60 times in a minute, it will start giving you &#8220;access denied&#8221; errors.</p><br/><br/><hr/><div class="span-21 last">&nbsp;</div><hr/>

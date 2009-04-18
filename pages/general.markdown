@@ -46,6 +46,23 @@ How to authenticate as a user, simply pass `login` and `token` to any URL.  Seve
 
 You can access any API call over HTTPS, though public data can also be accessed over HTTP.
 
+### JSON callbacks ###
+
+If you send a 'callback' variable to any call, it will wrap the result JSON in that function, so you can automatically execute it.
+
+	$ curl http://github.com/api/v2/json/issues/list/schacon/simplegit/open?callback=myJsFunction
+	myJsFunction({"issues": [
+	{"user": "schacon", 
+	"updated_at": "2009/04/17 16:19:02 -0700", 
+	"body": "something", 
+	"title": "new", 
+	"number": 2, 
+	"votes": 0, 
+	"position": 1.0, 
+	"created_at": "2009/04/17 16:18:50 -0700", 
+	"state": "open"}
+	]});
+
 ### Limitations ###
 
 Currently we are limiting API calls to 60 per minute.  This may change in the future, or possibly per user at some point, but if you try to access the API more than 60 times in a minute, it will start giving you "access denied" errors.
