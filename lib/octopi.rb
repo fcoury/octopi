@@ -46,17 +46,19 @@ module Octopi
     def find_all(path, result_key, query)
       get(path, { :query => query, :id => query })[result_key]
     end
-  
+    def get_raw(path, params)
+     get(path, params, 'plain')
+    end
+
     private
     def get(path, params = {}, format = "yaml")
       params.each_pair do |k,v|
         path = path.gsub(":#{k.to_s}", v)
       end
-      # puts "GET: /#{format}#{path}"
       resp = self.class.get("/#{format}#{path}")
       raise APIError, 
         "GitHub returned status #{resp.code}" unless resp.code == 200
-      if resp['error']
+      if format == 'yaml' && resp['error']
         raise APIError, resp['error'].first['error']
       end  
       resp
@@ -89,7 +91,6 @@ module Octopi
       path = "#{self.class.path_for(:resource)}/#{p}"
       @api.find(path, self.class.resource_name(:singular), v)
     end
-    
     def save
       hash = {}
       @keys.each { |k| hash[k] = send(k) }
@@ -133,7 +134,13 @@ module Octopi
       def find(s)
         result = ANONYMOUS_API.find(path_for(:resource), @resource_name[:singular], s)
         key = result.keys.first
-        Resource.for(key).new(ANONYMOUS_API, result[key])
+        if result[key].is_a? Array
+          result[key].map do |r|
+            new(ANONYMOUS_API, r)
+          end  
+        else  
+          Resource.for(key).new(ANONYMOUS_API, result[key])
+        end  
       end
       
       def find_all(s)
@@ -144,7 +151,8 @@ module Octopi
         all = []
         result = ANONYMOUS_API.find_all(path_for(path), @resource_name[:plural], s)
         result.each do |item|
-          all << new(ANONYMOUS_API, item)
+          payload = block_given? ? yield(item) : item
+          all << new(ANONYMOUS_API, payload)
         end
         all
       end
@@ -195,13 +203,13 @@ module Octopi
   class Tag < Base
     include Resource
     set_resource_name "tags", "tag"
+
     resource_path "/repos/show/:id"
+    
     def self.find(user, repo)
-      ANONYMOUS_API.find(
-        path_for(:resource), @resource_name[:plural], [user,repo,'tags'].
-        join('/'))['tags'].
-        map{|i| new(ANONYMOUS_API, {:name => i.first, :hash => i.last})}
-    end  
+      path = [user,repo,'tags'].join('/')
+      find_plural(path, :resource){|i| {:name => i.first, :hash => i.last }}
+    end
   end
 
   class Repository < Base
@@ -232,6 +240,33 @@ module Octopi
     end
   end
   
+  class FileObject < Base
+    include Resource
+    set_resource_name "tree"
+
+    resource_path "/tree/show/:id"
+
+    def self.find(user, repo, sha)
+      super [user,repo,sha].join('/') 
+    end  
+  end
+  
+  class Blob < Base
+    include Resource
+    set_resource_name "blob"
+
+    resource_path "/blob/show/:id"
+
+    def self.find(user, repo, sha, path=nil)
+      if path
+        super [user,repo,sha,path].join('/')
+      else
+        blob = ANONYMOUS_API.get_raw(path_for(:resource), 
+              {:id => [user,repo,sha].join('/')})
+        new(ANONYMOUS_API, {:text => blob})
+      end  
+    end  
+  end
   class Commit < Base
     include Resource
     find_path "/commits/list/:query"
