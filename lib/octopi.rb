@@ -44,7 +44,7 @@ module Octopi
     end
 
     def find_all(path, result_key, query)
-      get(path, { :query => query })[result_key]
+      get(path, { :query => query, :id => query })[result_key]
     end
   
     private
@@ -53,7 +53,7 @@ module Octopi
         path = path.gsub(":#{k.to_s}", v)
       end
       # puts "GET: /#{format}#{path}"
-      self.class.get("/#{format}#{path}")
+      self.class.get("/#{format}#{path}") 
     end
   end
   
@@ -130,14 +130,18 @@ module Octopi
       end
       
       def find_all(s)
+        find_plural(s, :find)
+      end
+
+      def find_plural(s,path)
         all = []
-        result = ANONYMOUS_API.find_all(path_for(:find), @resource_name[:plural], s)
+        result = ANONYMOUS_API.find_all(path_for(path), @resource_name[:plural], s)
         result.each do |item|
           all << new(ANONYMOUS_API, item)
         end
         all
       end
-    
+      
       def path_for(type)
         @path_spec[type]
       end
@@ -150,15 +154,12 @@ module Octopi
     find_path "/user/search/:query"
     resource_path "/user/show/:id"
     
-    def user_property(property, deep)
-      users = []
-      property(property, login).each_pair do |k,v|
-        return v unless deep
-        
-        v.each { |u| users << User.find(u) } 
-      end
-      
-      users
+    def repositories
+      Repository.find_by_user(login)
+    end
+    
+    def repository(name)
+      Repository.find(login, name)
     end
     
     # takes one param, deep that indicates if returns 
@@ -171,6 +172,17 @@ module Octopi
         user_property(method, true)
       end
     end
+    
+    def user_property(property, deep)
+      users = []
+      property(property, login).each_pair do |k,v|
+        return v unless deep
+        
+        v.each { |u| users << User.find(u) } 
+      end
+      
+      users
+    end
   end
   
   class Repository < Base
@@ -180,10 +192,14 @@ module Octopi
     find_path "/repos/search/:query"
     resource_path "/repos/show/:id"
 
+    def self.find_by_user(user)
+      find_plural(user, :resource)
+    end
+
     def self.find(user, name)
       super "#{user}/#{name}"
     end
-    
+
     def self.find_all(*args)
       super args.join("+")
     end
@@ -232,4 +248,5 @@ module Octopi
       parts.join('/')
     end
   end
+  class APIError < StandardError; end  
 end

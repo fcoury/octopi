@@ -21,7 +21,8 @@ users.each do |u|
 end
 
 # repository information
-repo = Repository.find("fcoury", "octopi")
+# to get all repos for user: user.repositories
+repo = user.repository("octopi") # same as: Repository.find("fcoury", "octopi")
 puts "Repository: #{repo.name} - #{repo.description} (by #{repo.owner}) - #{repo.url}"
 
 # commits of a the repository
