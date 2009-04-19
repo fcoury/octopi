@@ -41,8 +41,13 @@ Octopi is a Ruby interface to GitHub API v2 (http://developer.github.com). It's 
   #   puts github.user.name
   # end
 
+== Author
+
+Felipe Coury - http://felipecoury.com
+HasMany.info blog - http://hasmany.info
+
 == Copyright
 
-DISCLAIMER: Even tho the pronounce is octo-pie, no Octocats were harmed during the production of this lib. It's not an Octo Pie, but a contraction of the words Octocat and API.
+DISCLAIMER: The name of this library is pronounced _octo-pie_ but no Octocats were harmed during its creation. It's not really an Octo Pie, but a contraction of the words Octocat and API.
 
 Copyright (c) 2009 Felipe Coury. See LICENSE for details.
