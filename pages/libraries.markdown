@@ -30,3 +30,10 @@ The [github-party][gh-party] library is also using the v1 API.
 The [octopi][octopi] library is one of the first emerging for the GitHub API v2.
 
 [octopi]: http://github.com/fcoury/octopi/
+
+### Perl - Version 2 API ###
+
+The [Net::GitHub][net-perl-github] library for Perl encapsulates much of the functionality of the GitHub v2 API.  You can also download it from [CPAN][net-perl-cpan].
+
+[net-perl-cpan]: http://search.cpan.org/dist/Net-GitHub/
+[net-perl-github]: http://github.com/fayland/perl-net-github/tree/master
