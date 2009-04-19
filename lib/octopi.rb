@@ -53,7 +53,9 @@ module Octopi
         path = path.gsub(":#{k.to_s}", v)
       end
       # puts "GET: /#{format}#{path}"
-      self.class.get("/#{format}#{path}") 
+      resp = self.class.get("/#{format}#{path}")
+      raise APIError unless resp.code == 200
+      resp
     end
   end
   
@@ -66,6 +68,7 @@ module Octopi
       
       hash.each_pair do |k,v|
         @keys << k
+        next if k =~ /\./
         instance_variable_set("@#{k}", v)
         
         self.class.send :define_method, "#{k}=" do |v|
@@ -185,6 +188,18 @@ module Octopi
     end
   end
   
+  class Tag < Base
+    include Resource
+    set_resource_name "tags", "tag"
+    resource_path "/repos/show/:id"
+    def self.find(user, repo)
+      ANONYMOUS_API.find(
+        path_for(:resource), @resource_name[:plural], [user,repo,'tags'].
+        join('/'))['tags'].
+        map{|i| new(ANONYMOUS_API, {:name => i.first, :hash => i.last})}
+    end  
+  end
+
   class Repository < Base
     include Resource
     set_resource_name "repository", "repositories"
@@ -192,6 +207,10 @@ module Octopi
     find_path "/repos/search/:query"
     resource_path "/repos/show/:id"
 
+    def tags
+      Tag.find(self.owner, self.name)
+    end  
+    
     def self.find_by_user(user)
       find_plural(user, :resource)
     end
