@@ -53,7 +53,9 @@ module Octopi
         path = path.gsub(":#{k.to_s}", v)
       end
       # puts "GET: /#{format}#{path}"
-      self.class.get("/#{format}#{path}") #TODO: raise on error 500
+      resp = self.class.get("/#{format}#{path}") 
+      raise APIError unless resp.code == 200
+      resp
     end
   end
   
@@ -196,4 +198,5 @@ module Octopi
     find_path "/repos/search/:query"
     resource_path "/repos/show/:id"
   end
+  class APIError < StandardError; end  
 end
