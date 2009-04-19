@@ -4,10 +4,6 @@ Octopi is a Ruby interface to GitHub API v2 (http://develop.github.com). It's un
 
 == Example
 
-  require 'octopi'
-
-  include Octopi
-
   # user information
   user = User.find("fcoury")
   puts "#{user.name} is being followed by #{user.followers.join(", ")} and following #{user.following.join(", ")}"
@@ -30,6 +26,15 @@ Octopi is a Ruby interface to GitHub API v2 (http://develop.github.com). It's un
   repo = Repository.find("fcoury", "octopi")
   puts "Repository: #{repo.name} - #{repo.description} (by #{repo.owner}) - #{repo.url}"
 
+  # commits of a the repository
+  first_commit = repo.commits.first
+  puts "First commit: #{first_commit.id} - #{first_commit.message} - by #{first_commit.author['name']}"
+
+  # single commit information
+  # details is the same as: Commit.find(commit)
+  puts "Diff:"
+  first_commit.details.modified.each {|m| puts "#{m['filename']} DIFF: #{m['diff']}" }
+
   # repository search
   repos = Repository.find_all("ruby", "git")
   puts "#{repos.size} repository(ies) with 'ruby' and 'git':"
@@ -37,17 +42,17 @@ Octopi is a Ruby interface to GitHub API v2 (http://develop.github.com). It's un
     puts "  - #{r.name}"
   end
 
-  # connect "user", "<<token>>" do |github|
+  # connect "user", "<< token >>" do |github|
   #   puts github.user.name
   # end
 
 == Author
 
-Felipe Coury - http://felipecoury.com
+Felipe Coury - http://felipecoury.com<br/>
 HasMany.info blog - http://hasmany.info
 
 == Copyright
 
-DISCLAIMER: The name of this library is pronounced _octo-pie_ but no Octocats were harmed during its creation. It's not really an Octo Pie, but a contraction of the words Octocat and API.
+DISCLAIMER: The name of this library is pronounced <i>octo-pie</i> but no Octocats were harmed during its creation. It's not really an Octo Pie, but a contraction of the words Octocat and API.
 
 Copyright (c) 2009 Felipe Coury. See LICENSE for details.

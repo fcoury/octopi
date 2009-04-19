@@ -24,6 +24,15 @@ end
 repo = Repository.find("fcoury", "octopi")
 puts "Repository: #{repo.name} - #{repo.description} (by #{repo.owner}) - #{repo.url}"
 
+# commits of a the repository
+first_commit = repo.commits.first
+puts "First commit: #{first_commit.id} - #{first_commit.message} - by #{first_commit.author['name']}"
+
+# single commit information
+# details is the same as: Commit.find(commit)
+puts "Diff:"
+first_commit.details.modified.each {|m| puts "#{m['filename']} DIFF: #{m['diff']}" }
+
 # repository search
 repos = Repository.find_all("ruby", "git")
 puts "#{repos.size} repository(ies) with 'ruby' and 'git':"
