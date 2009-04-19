@@ -1,5 +1,10 @@
-require File.join(File.dirname(__FILE__), '..', 'lib', 'octopi')
+= octopi
 
+Octopi is a Ruby interface to GitHub API v2 (http://developer.github.com). It's under early but active development and already works.
+
+== Example
+
+require 'octopi'
 include Octopi
 
 # user information
@@ -31,6 +36,9 @@ repos.each do |r|
   puts "  - #{r.name}"
 end
 
-# connect "webbynode", "b759631557bb98fb8d656ba9df5f692f" do |github|
-#   puts github.user.name
-# end
+
+== Copyright
+
+DISCLAIMER: Even tho the pronounce is octo-pie, no Octocats were harmed during the production of this lib. It's not an Octo Pie, but a contraction of the words Octocat and API.
+
+Copyright (c) 2009 Felipe Coury. See LICENSE for details.
