@@ -31,6 +31,6 @@ repos.each do |r|
   puts "  - #{r.name}"
 end
 
-# connect "webbynode", "b759631557bb98fb8d656ba9df5f692f" do |github|
+# connect "user", "<< token >>" do |github|
 #   puts github.user.name
 # end
