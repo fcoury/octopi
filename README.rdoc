@@ -47,8 +47,8 @@ Octopi is a Ruby interface to GitHub API v2 (http://develop.github.com). It's un
 
 == Author
 
-Felipe Coury - http://felipecoury.com<br/>
-HasMany.info blog - http://hasmany.info
+* Felipe Coury - http://felipecoury.com
+* HasMany.info blog - http://hasmany.info
 
 == Copyright
 
