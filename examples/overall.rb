@@ -25,7 +25,7 @@ repo = Repository.find("fcoury", "octopi")
 puts "Repository: #{repo.name} - #{repo.description} (by #{repo.owner}) - #{repo.url}"
 
 # repository search
-repos = Repository.find_all("ruby+git")
+repos = Repository.find_all("ruby", "git")
 puts "#{repos.size} repository(ies) with 'ruby' and 'git':"
 repos.each do |r|
   puts "  - #{r.name}"

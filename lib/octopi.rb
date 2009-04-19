@@ -178,7 +178,11 @@ module Octopi
     set_resource_name "repository", "repositories"
     
     def self.find(user, name)
-      super("#{user}/#{name}")
+      super "#{user}/#{name}"
+    end
+    
+    def self.find_all(*args)
+      super args.join("+")
     end
 
     find_path "/repos/search/:query"

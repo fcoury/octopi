@@ -5,6 +5,7 @@ Octopi is a Ruby interface to GitHub API v2 (http://developer.github.com). It's 
 == Example
 
   require 'octopi'
+
   include Octopi
 
   # user information
@@ -30,11 +31,15 @@ Octopi is a Ruby interface to GitHub API v2 (http://developer.github.com). It's 
   puts "Repository: #{repo.name} - #{repo.description} (by #{repo.owner}) - #{repo.url}"
 
   # repository search
-  repos = Repository.find_all("ruby+git")
+  repos = Repository.find_all("ruby", "git")
   puts "#{repos.size} repository(ies) with 'ruby' and 'git':"
   repos.each do |r|
     puts "  - #{r.name}"
   end
+
+  # connect "webbynode", "b759631557bb98fb8d656ba9df5f692f" do |github|
+  #   puts github.user.name
+  # end
 
 == Copyright
 
