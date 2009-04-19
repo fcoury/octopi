@@ -54,7 +54,11 @@ module Octopi
       end
       # puts "GET: /#{format}#{path}"
       resp = self.class.get("/#{format}#{path}")
-      raise APIError unless resp.code == 200
+      raise APIError, 
+        "GitHub returned status #{resp.code}" unless resp.code == 200
+      if resp['error']
+        raise APIError, resp['error'].first['error']
+      end  
       resp
     end
   end
@@ -267,5 +271,9 @@ module Octopi
       parts.join('/')
     end
   end
-  class APIError < StandardError; end  
+  class APIError < StandardError
+   def initialize(m)
+     $stderr.puts m 
+   end
+  end 
 end
