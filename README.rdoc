@@ -1,6 +1,6 @@
 = octopi
 
-Octopi is a Ruby interface to GitHub API v2 (http://developer.github.com). It's under early but active development and already works.
+Octopi is a Ruby interface to GitHub API v2 (http://develop.github.com). It's under early but active development and already works.
 
 == Example
 
