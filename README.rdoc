@@ -4,6 +4,8 @@ Octopi is a Ruby interface to GitHub API v2 (http://develop.github.com). It's un
 
 == Example
 
+  include Octopi
+
   # user information
   user = User.find("fcoury")
   puts "#{user.name} is being followed by #{user.followers.join(", ")} and following #{user.following.join(", ")}"
@@ -23,7 +25,8 @@ Octopi is a Ruby interface to GitHub API v2 (http://develop.github.com). It's un
   end
 
   # repository information
-  repo = Repository.find("fcoury", "octopi")
+  # to get all repos for user: user.repositories
+  repo = user.repository("octopi") # same as: Repository.find("fcoury", "octopi")
   puts "Repository: #{repo.name} - #{repo.description} (by #{repo.owner}) - #{repo.url}"
 
   # commits of a the repository
@@ -41,10 +44,6 @@ Octopi is a Ruby interface to GitHub API v2 (http://develop.github.com). It's un
   repos.each do |r|
     puts "  - #{r.name}"
   end
-
-  # connect "user", "<< token >>" do |github|
-  #   puts github.user.name
-  # end
 
 == Author
 
