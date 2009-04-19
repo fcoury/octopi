@@ -132,6 +132,7 @@ module Octopi
       end
     
       def find(s)
+        s = s.join('/') if s.is_a? Array
         result = ANONYMOUS_API.find(path_for(:resource), @resource_name[:singular], s)
         key = result.keys.first
         if result[key].is_a? Array
@@ -148,6 +149,7 @@ module Octopi
       end
 
       def find_plural(s,path)
+        s = s.join('/') if s.is_a? Array
         all = []
         result = ANONYMOUS_API.find_all(path_for(path), @resource_name[:plural], s)
         result.each do |item|
@@ -207,8 +209,8 @@ module Octopi
     resource_path "/repos/show/:id"
     
     def self.find(user, repo)
-      path = [user,repo,'tags'].join('/')
-      find_plural(path, :resource){|i| {:name => i.first, :hash => i.last }}
+      find_plural([user,repo,'tags'].path, 
+                  :resource){|i| {:name => i.first, :hash => i.last }}
     end
   end
 
@@ -228,7 +230,7 @@ module Octopi
     end
 
     def self.find(user, name)
-      super "#{user}/#{name}"
+      super [user,name]
     end
 
     def self.find_all(*args)
@@ -247,7 +249,7 @@ module Octopi
     resource_path "/tree/show/:id"
 
     def self.find(user, repo, sha)
-      super [user,repo,sha].join('/') 
+      super [user,repo,sha] 
     end  
   end
   
@@ -259,7 +261,7 @@ module Octopi
 
     def self.find(user, repo, sha, path=nil)
       if path
-        super [user,repo,sha,path].join('/')
+        super [user,repo,sha,path]
       else
         blob = ANONYMOUS_API.get_raw(path_for(:resource), 
               {:id => [user,repo,sha].join('/')})
@@ -275,7 +277,7 @@ module Octopi
     attr_accessor :repository
     
     def self.find_all(user, name, branch = "master", repo = nil)
-      commits = super("#{user}/#{name}/#{branch}")
+      commits = super [user, name, branch]
       commits.each { |c| c.repository = repo } if repo
       commits
     end
@@ -286,7 +288,7 @@ module Octopi
         super "#{commit.repo_identifier}"
       else
         user, name, sha = *args
-        super "#{user}/#{name}/#{sha}"
+        super [user, name, sha]
       end
     end
     
