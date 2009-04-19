@@ -44,7 +44,7 @@ module Octopi
     end
 
     def find_all(path, result_key, query)
-      get(path, { :query => query })[result_key]
+      get(path, { :query => query, :id => query })[result_key]
     end
   
     private
@@ -53,7 +53,7 @@ module Octopi
         path = path.gsub(":#{k.to_s}", v)
       end
       # puts "GET: /#{format}#{path}"
-      self.class.get("/#{format}#{path}")
+      self.class.get("/#{format}#{path}") #TODO: raise on error 500
     end
   end
   
@@ -130,14 +130,22 @@ module Octopi
       end
       
       def find_all(s)
+        find_plural(s, :find)
+      end
+
+      def find_user(user)
+        find_plural(user, :resource)
+      end
+
+      def find_plural(s,path)
         all = []
-        result = ANONYMOUS_API.find_all(path_for(:find), @resource_name[:plural], s)
+        result = ANONYMOUS_API.find_all(path_for(path), @resource_name[:plural], s)
         result.each do |item|
           all << new(ANONYMOUS_API, item)
         end
         all
       end
-    
+      
       def path_for(type)
         @path_spec[type]
       end
@@ -177,10 +185,10 @@ module Octopi
     include Resource
     set_resource_name "repository", "repositories"
     
-    def self.find(user, name)
-      super "#{user}/#{name}"
+    def self.find(user, name=nil)
+      name ? (super "#{user}/#{name}") : self.find_user(user) 
     end
-    
+
     def self.find_all(*args)
       super args.join("+")
     end
