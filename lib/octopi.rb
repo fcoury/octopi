@@ -226,6 +226,12 @@ module Octopi
       Tag.find(self.owner, self.name)
     end  
     
+    def clone_url
+      #FIXME: Return "git@github.com:#{self.owner}/#{self.name}.git" if
+      #user's logged in and owns this repo.
+      "git://github.com/#{self.owner}/#{self.name}.git"  
+    end
+
     def self.find_by_user(user)
       user = user.login if user.is_a? User
       find_plural(user, :resource)
