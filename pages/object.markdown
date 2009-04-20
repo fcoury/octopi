@@ -36,7 +36,7 @@ Can get the data about a blob by tree sha and path
 
 For example, to get the README.txt metadata from a specific tree in Facebox:
 
-	$ curl http://localhost:3000/api/v2/yaml/blob/show/defunkt/facebox/f7a5de2e224ec94182a3c2c081f4e7f4d/README.txt
+	$ curl http://github.com/api/v2/yaml/blob/show/defunkt/facebox/f7a5de2e224ec94182a3c2c081f4e7f4d/README.txt
 	--- 
 	blob: 
 	  name: README.txt
