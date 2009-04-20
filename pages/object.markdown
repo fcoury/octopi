@@ -54,7 +54,7 @@ For example, to get the README.txt metadata from a specific tree in Facebox:
 
 ### Raw Git Data ###
 
-You can get the contents of a blob with the blobs s via:
+You can get the contents of a blob with the blob's SHA via:
 
 	blob/show/:user/:repo/:sha
 
