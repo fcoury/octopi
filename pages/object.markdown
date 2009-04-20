@@ -8,25 +8,51 @@ Can get the contents of a tree by tree SHA
 
 To get a listing of the root tree for the facebox project from our commit listing, we can call this:
 
-	$ curl http://github.com/api/v2/yaml/tree/show/defunkt/facebox/f7a5de2e224ec94182a3c2c081f4e7f4df70da4
-	--- 
-	tree: 
-	- name: .gitignore
-	  sha: e43b0f988953ae3a84b00331d0ccf5f7d51cb3cf
-	  mode: "100644"
-	  type: blob
-	- name: README.txt
-	  sha: d4fc2d5e810d9b4bc1ce67702603080e3086a4ed
-	  mode: "100644"
-	  type: blob
-	- name: b.png
-	  sha: f184e6269b343014f58694093b55558dd5dde193
-	  mode: "100644"
-	  type: blob
-	- name: bl.png
-	  sha: f6271859d51654b6fb2719df5fe192c8398ecefc
-	  mode: "100644"
-	  type: blob
+	$ curl http://github.com/api/v2/yaml/tree/show/defunkt/facebox/a47803c9ba26213ff194f042ab686a7749b17476
+  --- 
+  tree: 
+  - name: .gitignore
+    sha: e43b0f988953ae3a84b00331d0ccf5f7d51cb3cf
+    mode: "100644"
+    type: blob
+  - name: README.txt
+    sha: d4fc2d5e810d9b4bc1ce67702603080e3086a4ed
+    mode: "100644"
+    type: blob
+  - name: b.png
+    sha: f184e6269b343014f58694093b55558dd5dde193
+    mode: "100644"
+    type: blob
+  - name: bl.png
+    sha: f6271859d51654b6fb2719df5fe192c8398ecefc
+    mode: "100644"
+    type: blob
+  - name: br.png
+    sha: 31f204fc451cd9dd5cfdadfad2d86ed0e1104882
+    mode: "100644"
+    type: blob
+  - name: build_tar.sh
+    sha: 08f6f1fce2f6a02dcb15b6c66244470794587bb0
+    mode: "100755"
+    type: blob
+  - name: closelabel.gif
+    sha: 87b4f8bd699386e3a6fcc2e50d7c61bfc4aabb8d
+    mode: "100755"
+    type: blob
+  - name: facebox.css
+    sha: 08e190d5f81959d73d2bdd3e4f752271800886bf
+    mode: "100644"
+    type: blob
+  - name: facebox.js
+    sha: 43245f3b1b50a0568ece00b44d2dc67be413f2a4
+    mode: "100644"
+    type: blob
+  - name: faceplant.css
+    sha: dc61a86c3f342b930f0a0447cae33fee812e27d3
+    mode: "100644"
+    type: blob
+
+(Output truncated for display purposes).
 
 ### Blobs ###
 	
