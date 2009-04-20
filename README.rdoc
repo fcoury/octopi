@@ -19,7 +19,6 @@ The bang methods `followers!` and `following!` retrieves a full User object for 
   
 Searching for user
 
-  # search user
   users = User.find_all("silva")
   puts "#{users.size} users found for 'silva':"
   users.each do |u|
@@ -28,15 +27,12 @@ Searching for user
 
 === Repositories API
 
-  # repository information
-  # to get all repos for user: user.repositories
   repo = user.repository("octopi") # same as: Repository.find("fcoury", "octopi")
   puts "Repository: #{repo.name} - #{repo.description} (by #{repo.owner}) - #{repo.url}"
   puts "      Tags: #{repo.tags and repo.tags.map {|t| t.name}.join(", ")}"
   
 Search:
 
-  # repository search
   repos = Repository.find_all("ruby", "git")
   puts "#{repos.size} repository(ies) with 'ruby' and 'git':"
   repos.each do |r|
@@ -45,8 +41,8 @@ Search:
   
 Issues API integrated into the Repository object:
 
-issue = repo.issues.first
-puts "First open issue: #{issue.number} - #{issue.title} - Created at: #{issue.created_at}"
+  issue = repo.issues.first
+  puts "First open issue: #{issue.number} - #{issue.title} - Created at: #{issue.created_at}"
 
 Commits API information from a Repository object:
 
