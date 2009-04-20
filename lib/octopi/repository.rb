@@ -1,3 +1,4 @@
+module Octopi
   class Repository < Base
     include Resource
     set_resource_name "repository", "repositories"
@@ -36,3 +37,4 @@
       Commit.find_all(owner, name, branch, self)
     end
   end
+end

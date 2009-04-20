@@ -67,20 +67,23 @@ module Octopi
       raise FormatError, [ctype, format] unless 
         ctype.match(/^#{CONTENT_TYPE[format]};/)
       raise APIError, 
-        "GitHub returned status #{resp.code}" unless resp.code == 200
+        "GitHub returned status #{resp.code}" unless resp.code.to_i == 200
       if format == 'yaml' && resp['error']
         raise APIError, resp['error'].first['error']
       end  
       resp
     end
   end
+  
   %w{base resource user tag repository file_object blob commit}.
     each{|f| require "#{File.dirname(__FILE__)}/octopi/#{f}"} 
+    
   class FormatError < StandardError
    def initialize(f)
      $stderr.puts "Got unexpected format (got #{f.first} for #{f.last})"
    end
   end 
+  
   class APIError < StandardError
    def initialize(m)
      $stderr.puts m 

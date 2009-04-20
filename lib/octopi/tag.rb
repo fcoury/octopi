@@ -1,3 +1,4 @@
+module Octopi
   class Tag < Base
     include Resource
     set_resource_name "tag"
@@ -12,3 +13,4 @@
       }
     end
   end
+end

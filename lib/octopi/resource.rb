@@ -1,3 +1,4 @@
+module Octopi
   module Resource
     def self.included(base)
       base.extend ClassMethods
@@ -62,3 +63,4 @@
       end
     end
   end
+end

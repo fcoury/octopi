@@ -1,3 +1,4 @@
+module Octopi
   class User < Base
     include Resource
     
@@ -34,3 +35,4 @@
       users
     end
   end
+end

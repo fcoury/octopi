@@ -24,6 +24,7 @@ end
 # to get all repos for user: user.repositories
 repo = user.repository("octopi") # same as: Repository.find("fcoury", "octopi")
 puts "Repository: #{repo.name} - #{repo.description} (by #{repo.owner}) - #{repo.url}"
+puts "      Tags: #{repo.tags and repo.tags.map {|t| t.name}.join(", ")}"
 
 # commits of a the repository
 first_commit = repo.commits.first

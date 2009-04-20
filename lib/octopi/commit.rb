@@ -1,3 +1,4 @@
+module Octopi
   class Commit < Base
     include Resource
     find_path "/commits/list/:query"
@@ -6,11 +7,12 @@
     attr_accessor :repository
     
     def self.find_all(user, name, branch = "master", repo = nil)
+      repository = repo if repo.is_a? Repository
       user = user.login if user.is_a? User
       repo = repo.name  if repo.is_a? Repository
       name = repo.name  if name.is_a? Repository
       commits = super [user, name, branch]
-      commits.each { |c| c.repository = repo } if repo
+      commits.each { |c| c.repository = repository } if repository
       commits
     end
     
@@ -42,3 +44,4 @@
       parts.join('/')
     end
   end
+end

@@ -1,3 +1,4 @@
+module Octopi
   class Blob < Base
     include Resource
     set_resource_name "blob"
@@ -16,3 +17,4 @@
       end  
     end  
   end
+end
