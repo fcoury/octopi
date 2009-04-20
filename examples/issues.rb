@@ -13,3 +13,6 @@ puts "First open issue: #{issue.number} - #{issue.title} - Created at: #{issue.c
 
 issue2 = repo.issues.first
 puts "First open issue: #{issue.number} - #{issue.title} - Created at: #{issue.created_at}"
+
+issue3 = repo.issue(issue2.number)
+puts "First open issue: #{issue.number} - #{issue.title} - Created at: #{issue.created_at}"
