@@ -235,7 +235,9 @@ module Octopi
     end
 
     def self.find_all(*args)
-      super args.join("+")
+      # FIXME: This should be URI escaped, but have to check how the API
+      # handles escaped characters first.
+      super args.join(" ").gsub(/ /,'+')
     end
     
     def commits(branch = "master")
