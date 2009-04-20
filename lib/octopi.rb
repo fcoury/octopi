@@ -12,6 +12,11 @@ module Octopi
   
   class Api
     include HTTParty
+    CONTENT_TYPE = {
+      'yaml' => 'application/x-yaml',
+      'json' => 'application/json',
+      'xml'  => 'application/sml'
+    }  
     base_uri "http://github.com/api/v2"
   
     attr_accessor :format
@@ -56,6 +61,11 @@ module Octopi
         path = path.gsub(":#{k.to_s}", v)
       end
       resp = self.class.get("/#{format}#{path}")
+      # FIXME: This fails for showing raw Git data because that call returns
+      # text/html as the content type. This issue has been reported.
+      ctype = resp.headers['content-type'].first
+      raise FormatError, [ctype, format] unless 
+        ctype.match(/^#{CONTENT_TYPE[format]};/)
       raise APIError, 
         "GitHub returned status #{resp.code}" unless resp.code == 200
       if format == 'yaml' && resp['error']
@@ -66,6 +76,11 @@ module Octopi
   end
   %w{base resource user tag repository file_object blob commit}.
     each{|f| require "#{File.dirname(__FILE__)}/octopi/#{f}"} 
+  class FormatError < StandardError
+   def initialize(f)
+     $stderr.puts "Got unexpected format (got #{f.first} for #{f.last})"
+   end
+  end 
   class APIError < StandardError
    def initialize(m)
      $stderr.puts m 
