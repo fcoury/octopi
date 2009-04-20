@@ -10,3 +10,6 @@ puts repo.description
 
 issue = Issue.find_all(user.login, repo.name).first
 puts "First open issue: #{issue.number} - #{issue.title} - Created at: #{issue.created_at}"
+
+issue2 = repo.issues.first
+puts "First open issue: #{issue.number} - #{issue.title} - Created at: #{issue.created_at}"

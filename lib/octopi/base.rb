@@ -36,7 +36,8 @@ module Octopi
     def self.extract_user_repository(*args)
       opts = args.last.is_a?(Hash) ? args.pop : {}
       if opts.empty?
-        user, repo = *args
+        user, repo = *args if args.length > 1
+        repo ||= args.first
       else
         opts[:repo] = opts[:repository] if opts[:repository]
         repo = args.pop || opts[:repo]
