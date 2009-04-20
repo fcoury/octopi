@@ -95,29 +95,30 @@ Here is an example of getting a README file from Facebox:
 
 You can actually get raw trees and commits this way, too.  If you give it a tree SHA instead, you'll get this:
 
-	$ curl http://github.com/api/v2/yaml/blob/show/defunkt/facebox/f7a5de2e224ec94182a3c2c081f4e7f4d
-	100644 blob e43b0f988953ae3a84b00331d0ccf5f7d51cb3cf	.gitignore
-	100644 blob d4fc2d5e810d9b4bc1ce67702603080e3086a4ed	README.txt
-	100644 blob f184e6269b343014f58694093b55558dd5dde193	b.png
-	100644 blob f6271859d51654b6fb2719df5fe192c8398ecefc	bl.png
-	100644 blob 31f204fc451cd9dd5cfdadfad2d86ed0e1104882	br.png
-	100755 blob 08f6f1fce2f6a02dcb15b6c66244470794587bb0	build_tar.sh
-	100755 blob 87b4f8bd699386e3a6fcc2e50d7c61bfc4aabb8d	closelabel.gif
-	100644 blob 97ebe3cab3eab76253f9cc5fc894b339456da86e	facebox.css
-	100644 blob 2ea88c96ebb00d38d5ae6abad57c917f156802cc	facebox.js
-	100644 blob dc61a86c3f342b930f0a0447cae33fee812e27d3	faceplant.css
-	100644 blob 355442b51047a30479c21096e06e0906e4e9a4ee	index.html
-	100644 blob ebe02bdd357c337e0e817fcbce2a034a54a13287	jquery.js
-	100755 blob f864d5fd38b7466c76b5a36dc0e3e9455c0126e2	loading.gif
-	100644 blob e41cfe5c654e8e05ad46f15af1c462a1360e9764	logo.png
-	040000 tree 82e3a754b6a0fcb238b03c0e47d05219fbf9cf89	releases
-	100644 blob 98d3e92373d1bc541e7f516e5e73b645a991ddc2	remote.html
-	040000 tree bbf747873075ac28667d246491ffdefbd314fe4f	screenshots
-	100644 blob e58b35b362ce5347bb5064e91a3bf8e4fed4f6ef	shadow.gif
-	100644 blob 63459bb418f5f6d896a8eb925c01f45024933ed6	stairs.jpg
-	100644 blob 38756c5ecc3ce53b8da9555a497bd9cc20b1b1c9	test.html
-	100644 blob d99c8f6c6eaa12d7b49a20f41f08a5006f3ea8b7	tl.png
-	100644 blob e99b6ec8310e859fd27519694f04e1babf2ab2c4	tr.png
+	$ curl http://github.com/api/v2/yaml/blob/show/defunkt/facebox/73afb1ed4d16d084eee5696fcf25cd4b03b9201e
+	100644 blob e43b0f988953ae3a84b00331d0ccf5f7d51cb3cf  .gitignore
+	100644 blob d4fc2d5e810d9b4bc1ce67702603080e3086a4ed  README.txt
+	100644 blob f184e6269b343014f58694093b55558dd5dde193  b.png
+	100644 blob f6271859d51654b6fb2719df5fe192c8398ecefc  bl.png
+	100644 blob 31f204fc451cd9dd5cfdadfad2d86ed0e1104882  br.png
+	100755 blob 08f6f1fce2f6a02dcb15b6c66244470794587bb0  build_tar.sh
+	100755 blob 87b4f8bd699386e3a6fcc2e50d7c61bfc4aabb8d  closelabel.gif
+	100644 blob 97ebe3cab3eab76253f9cc5fc894b339456da86e  facebox.css
+	100644 blob 932664fafa412478a06b86de0fe8eefe00441289  facebox.js
+	100644 blob dc61a86c3f342b930f0a0447cae33fee812e27d3  faceplant.css
+	100644 blob a9d1c235d08ae383e4d9dedf5e2cc0236defdaa6  index.html
+	100644 blob ebe02bdd357c337e0e817fcbce2a034a54a13287  jquery.js
+	100755 blob f864d5fd38b7466c76b5a36dc0e3e9455c0126e2  loading.gif
+	100644 blob e41cfe5c654e8e05ad46f15af1c462a1360e9764  logo.png
+	040000 tree 82e3a754b6a0fcb238b03c0e47d05219fbf9cf89  releases
+	100644 blob 98d3e92373d1bc541e7f516e5e73b645a991ddc2  remote.html
+	040000 tree bbf747873075ac28667d246491ffdefbd314fe4f  screenshots
+	100644 blob e58b35b362ce5347bb5064e91a3bf8e4fed4f6ef  shadow.gif
+	100644 blob 63459bb418f5f6d896a8eb925c01f45024933ed6  stairs.jpg
+	100644 blob 0a279c66167d358e40682186864935d0f856c4c4  test.html
+	100644 blob 0249382efbdc7412a67976d19154ef07ac51437f  test_programmatic.html
+	100644 blob d99c8f6c6eaa12d7b49a20f41f08a5006f3ea8b7  tl.png
+	100644 blob e99b6ec8310e859fd27519694f04e1babf2ab2c4  tr.png
 
 Here is an example of a commit:
 
