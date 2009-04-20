@@ -227,10 +227,13 @@ module Octopi
     end  
     
     def self.find_by_user(user)
+      user = user.login if user.is_a? User
       find_plural(user, :resource)
     end
 
     def self.find(user, name)
+      user = user.login if user.is_a? User
+      name = repo.name if name.is_a? Repository
       super [user,name]
     end
 
@@ -252,6 +255,8 @@ module Octopi
     resource_path "/tree/show/:id"
 
     def self.find(user, repo, sha)
+      user = user.login if user.is_a? User
+      repo = repo.name if repo.is_a? Repository
       super [user,repo,sha] 
     end  
   end
@@ -263,6 +268,8 @@ module Octopi
     resource_path "/blob/show/:id"
 
     def self.find(user, repo, sha, path=nil)
+      user = user.login if user.is_a? User
+      repo = repo.name if repo.is_a? Repository
       if path
         super [user,repo,sha,path]
       else
@@ -280,6 +287,9 @@ module Octopi
     attr_accessor :repository
     
     def self.find_all(user, name, branch = "master", repo = nil)
+      user = user.login if user.is_a? User
+      repo = repo.name  if repo.is_a? Repository
+      name = repo.name  if name.is_a? Repository
       commits = super [user, name, branch]
       commits.each { |c| c.repository = repo } if repo
       commits
@@ -291,6 +301,8 @@ module Octopi
         super "#{commit.repo_identifier}"
       else
         user, name, sha = *args
+        user = user.login if user.is_a? User
+        name = repo.name  if name.is_a? Repository
         super [user, name, sha]
       end
     end
