@@ -18,12 +18,14 @@ module Octopi
 
     def self.find_by_user(user)
       user = user.login if user.is_a? User
+      self.validate_args(user => :user)
       find_plural(user, :resource)
     end
 
     def self.find(user, name)
       user = user.login if user.is_a? User
       name = repo.name if name.is_a? Repository
+      self.validate_args(user => :user, name => :repo)
       super [user,name]
     end
 

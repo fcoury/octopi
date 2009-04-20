@@ -8,6 +8,7 @@ module Octopi
     def self.find(user, repo, sha)
       user = user.login if user.is_a? User
       repo = repo.name if repo.is_a? Repository
+      self.validate_args(sha => :sha, user => :user, repo => :repo)
       super [user,repo,sha] 
     end  
   end

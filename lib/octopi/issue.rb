@@ -24,6 +24,7 @@ module Octopi
     def self.find_all(*args)
       repo = args.first
       user, repo_name, opts = extract_user_repository(*args)
+      self.validate_args(user => :user, repo_name => :repo)
       state = opts[:state] || "open"
       state.downcase! if state
       
@@ -43,6 +44,7 @@ module Octopi
         user, name, number = *args
         user = user.login if user.is_a? User
         name = repo.name  if name.is_a? Repository
+        self.validate_args(user => :user, name => :repo)
         super user, name, number
       end
     end

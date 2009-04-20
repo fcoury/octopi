@@ -5,11 +5,22 @@ module Octopi
     find_path "/user/search/:query"
     resource_path "/user/show/:id"
     
+    def self.find(username)
+      self.validate_args(username => :user)
+      super username
+    end
+
+    def self.find_all(username)
+      self.validate_args(username => :user)
+      super username
+    end
+
     def repositories
       Repository.find_by_user(login)
     end
     
     def repository(name)
+      self.validate_args(name => :repo)
       Repository.find(login, name)
     end
     
