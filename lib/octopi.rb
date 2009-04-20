@@ -150,13 +150,11 @@ module Octopi
 
       def find_plural(s,path)
         s = s.join('/') if s.is_a? Array
-        all = []
-        result = ANONYMOUS_API.find_all(path_for(path), @resource_name[:plural], s)
-        result.each do |item|
-          payload = block_given? ? yield(item) : item
-          all << new(ANONYMOUS_API, payload)
-        end
-        all
+        ANONYMOUS_API.find_all(path_for(path), @resource_name[:plural], s).
+          map do |item|
+            payload = block_given? ? yield(item) : item
+            new(ANONYMOUS_API, payload)
+          end
       end
       
       def path_for(type)
