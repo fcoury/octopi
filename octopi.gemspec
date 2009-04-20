@@ -2,9 +2,8 @@
 
 Gem::Specification.new do |s|
   s.name = %q{octopi}
-  s.version = "0.0.3"
+  s.version = "0.0.4"
 
-  s.add_dependency 'httparty', '>=0.4.2'
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Felipe Coury"]
   s.date = %q{2009-04-20}
