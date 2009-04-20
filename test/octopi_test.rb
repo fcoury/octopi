@@ -16,23 +16,31 @@ class OctopiTest < Test::Unit::TestCase
     assert_equal item1.send(check_method), item3.send(check_method)
   end
   
-  should "fetch the same issue using different but equivalent find_all params" do
-    user = User.find("bcalloway")
-    assert_equal user.login, "bcalloway"
+  def setup
+    @user = User.find("fcoury")
+    @repo = @user.repository("octopi")
+    @issue = @repo.issues.first
+  end
+  
+  context Issue do
+    should "return the correct issue by number" do
+      assert_equal @issue.number, Issue.find(@repo, @issue.number).number
+      assert_equal @issue.number, Issue.find(@user, @repo, @issue.number).number
+      assert_equal @issue.number, Issue.find(@repo.owner, @repo.name, @issue.number).number
+    end
 
-    repo = user.repository("myproject")
-    assert_equal repo.name, "myproject"
-
-    assert_find_all Issue, :number, repo, user
+    should "return the correct issue by using repo.issue number" do
+      assert_equal @issue.number, @repo.issue(@issue.number).number
+    end
+    
+    should "fetch the same issue using different but equivalent find_all params" do
+      assert_find_all Issue, :number, @repo, @user
+    end
   end
 
-  should "fetch the same commit using different but equivalent find_all params" do
-    user = User.find("fcoury")
-    assert_equal user.login, "fcoury"
-
-    repo = user.repository("octopi")
-    assert_equal repo.name, "octopi"
-
-    assert_find_all Commit, :id, repo, user
+  context Commit do
+    should "fetch the same commit using different but equivalent find_all params" do
+      assert_find_all Commit, :id, @repo, @user
+    end
   end
 end

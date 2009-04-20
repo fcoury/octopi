@@ -3,7 +3,7 @@ module Octopi
     include Resource
     
     find_path "/issues/list/:query"
-    resource_path "/user/show/:id"
+    resource_path "/issues/show/:id"
     
     attr_accessor :repository
     
@@ -36,15 +36,25 @@ module Octopi
   
     # TODO: Make find use hashes like find_all
     def self.find(*args)
-      if args.last.is_a?(Issue)
-        commit = args.pop
-        super "#{issue.number}"
-      else
-        user, name, number = *args
-        user = user.login if user.is_a? User
-        name = repo.name  if name.is_a? Repository
-        super user, name, number
+      if args.length < 2
+        raise "Issue.find needs user, repository and issue number"
       end
+      
+      number = args.pop.to_i if args.last.respond_to?(:to_i)
+      number = args.pop if args.last.is_a?(Integer)
+      
+      raise "Issue.find needs issue number as the last argument" unless number
+      
+      if args.length > 1
+        user, repo = *args
+      else
+        repo = args.pop
+        raise "Issue.find needs at least a Repository object and issue number" unless repo.is_a? Repository
+        user, repo = repo.owner, repo.name
+      end
+      
+      user, repo = extract_names(user, repo)
+      super user, repo, number
     end
   end
 end

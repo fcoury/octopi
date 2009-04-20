@@ -40,5 +40,9 @@ module Octopi
     def issues(state = "open")
       Issue.find_all(self, :state => state)
     end
+    
+    def issue(number)
+      Issue.find(self, number)
+    end
   end
 end
