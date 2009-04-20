@@ -51,6 +51,7 @@ module Octopi
     def find_all(path, result_key, query)
       get(path, { :query => query, :id => query })[result_key]
     end
+    
     def get_raw(path, params)
      get(path, params, 'plain')
     end
@@ -75,7 +76,7 @@ module Octopi
     end
   end
   
-  %w{base resource user tag repository file_object blob commit}.
+  %w{base resource user tag repository issue file_object blob commit}.
     each{|f| require "#{File.dirname(__FILE__)}/octopi/#{f}"} 
     
   class FormatError < StandardError

@@ -34,7 +34,11 @@ module Octopi
     end
     
     def commits(branch = "master")
-      Commit.find_all(owner, name, branch, self)
+      Commit.find_all(self, :branch => branch)
+    end
+    
+    def issues(state = "open")
+      Issue.find_all(self, :state => state)
     end
   end
 end

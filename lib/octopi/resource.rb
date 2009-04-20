@@ -20,10 +20,6 @@ module Octopi
         @resource_name[key]
       end
       
-      def declassify(s)
-        (s.split('::').last || '').downcase if s
-      end
-    
       def find_path(path)
         (@path_spec||={})[:find] = path
       end
@@ -45,11 +41,11 @@ module Octopi
         end  
       end
       
-      def find_all(s)
+      def find_all(*s)
         find_plural(s, :find)
       end
 
-      def find_plural(s,path)
+      def find_plural(s, path)
         s = s.join('/') if s.is_a? Array
         ANONYMOUS_API.find_all(path_for(path), @resource_name[:plural], s).
           map do |item|
@@ -58,6 +54,10 @@ module Octopi
           end
       end
       
+      def declassify(s)
+        (s.split('::').last || '').downcase if s
+      end
+    
       def path_for(type)
         @path_spec[type]
       end

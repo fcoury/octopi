@@ -26,6 +26,9 @@ repo = user.repository("octopi") # same as: Repository.find("fcoury", "octopi")
 puts "Repository: #{repo.name} - #{repo.description} (by #{repo.owner}) - #{repo.url}"
 puts "      Tags: #{repo.tags and repo.tags.map {|t| t.name}.join(", ")}"
 
+issue = repo.issues.first
+puts "First open issue: #{issue.number} - #{issue.title} - Created at: #{issue.created_at}"
+
 # commits of a the repository
 first_commit = repo.commits.first
 puts "First commit: #{first_commit.id} - #{first_commit.message} - by #{first_commit.author['name']}"

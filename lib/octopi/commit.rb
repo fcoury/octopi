@@ -6,16 +6,32 @@ module Octopi
     
     attr_accessor :repository
     
-    def self.find_all(user, name, branch = "master", repo = nil)
-      repository = repo if repo.is_a? Repository
-      user = user.login if user.is_a? User
-      repo = repo.name  if repo.is_a? Repository
-      name = repo.name  if name.is_a? Repository
-      commits = super [user, name, branch]
-      commits.each { |c| c.repository = repository } if repository
+    # Finds all commits for a given Repository's branch
+    #
+    # You can provide the user and repo parameters as
+    # String or as User and Repository objects. When repo
+    # is provided as a Repository object, user is superfluous.
+    # 
+    # If no branch is given, "master" is assumed.
+    #
+    # Sample usage:
+    #
+    #   find_all(repo, :branch => "develop") # repo must be an object
+    #   find_all("octopi", :user => "fcoury") # user must be provided
+    #   find_all(:user => "fcoury", :repo => "octopi") # branch defaults to master
+    #
+    def self.find_all(*args)
+      repo = args.first
+      user ||= repo.owner if repo.is_a? Repository
+      user, repo_name, opts = extract_user_repository(*args)
+      branch = opts[:branch] || "master"
+      
+      commits = super user, repo_name, branch
+      commits.each { |c| c.repository = repo } if repo.is_a? Repository
       commits
     end
     
+    # TODO: Make find use hashes like find_all
     def self.find(*args)
       if args.last.is_a?(Commit)
         commit = args.pop
@@ -40,7 +56,6 @@ module Octopi
         parts = [url_parts[3], url_parts[4], url_parts[6]]
       end
       
-      puts parts.join('/')
       parts.join('/')
     end
   end
