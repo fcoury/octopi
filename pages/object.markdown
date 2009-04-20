@@ -2,7 +2,7 @@
 
 ### Trees ###
 
-Can get the contents of a tree by tree sha
+Can get the contents of a tree by tree SHA
 
 	tree/show/:user/:repo/:tree_sha
 
@@ -30,7 +30,7 @@ To get a listing of the root tree for the facebox project from our commit listin
 
 ### Blobs ###
 	
-Can get the data about a blob by tree sha and path
+Can get the data about a blob by tree SHA and path
 
 	blob/show/:user/:repo/:tree_sha/:path
 
