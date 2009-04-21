@@ -12,7 +12,7 @@ module Octopi
         :pat => /^[a-z0-9_\.-]+$/,
         :msg => "%s is an invalid repository name"},
       :user => {
-        :pat => /^[a-z0-9_\.-]+$/,
+        :pat => /^[A-Za-z0-9_\.-]+$/,
         :msg => "%s is an invalid username"},
       :file => {
         :pat => /^[^ \/]+$/,
