@@ -40,7 +40,7 @@ module Octopi
     end
     
     def open_issue(args)
-      Issue.open(self.owner, self.name, args, @api)
+      Issue.open(self.owner, self, args, @api)
     end
     
     def commits(branch = "master")

@@ -2,7 +2,55 @@
 
 Octopi is a Ruby interface to GitHub API v2 (http://develop.github.com). It's under early but active development and already works.
 
-== Example
+== Examples
+
+== Authenticated Usage
+
+The following examples requires a valid user authenticated with GitHub using login and API token. This information can be found on our profile (the link is inside the "badge" that is displayed on the upper right corner when you're logged in).
+
+Once you found your login and token you can run authenticated commands using:
+
+  authenticated_with "mylogin", "mytoken" do |g|
+    repo = g.repository("api-labrat")
+    issue = repo.open_issue :title => "Sample issue", 
+      :body => "This issue was opened using GitHub API and Octopi"
+    puts issue.number
+  end
+  
+You can also create a YAML file with your information, with the following format:
+
+  #
+  # Octopi GitHub API configuration file
+  #
+
+  # GitHub user login and token
+  login: github-username
+  token: github-token
+
+  # Trace level
+  # Possible values:
+  #   false - no tracing, same as if the param is ommited
+  #   true  - will output each POST or GET operation to the stdout
+  #   curl  - same as true, but in addition will output the curl equivalent of each command (for debugging)
+  trace: curl
+  
+And change the way you connect to:
+
+  authenticated_with :config => "github.yml" do |g|
+    (...)
+  end
+
+This way you can benefit from better debugging when something goes wrong. If you choose curl tracing, the curl command equivalent to each command sent to GitHub will be output to the stdout, like this example:
+
+  => Trace on: curl
+  POST: /issues/open/webbynode/api-labrat params: body=This issue was opened using GitHub API and Octopi, title=Sample issue
+  ===== curl version
+  curl -F 'body=This issue was opened using GitHub API and Octopi' -F 'login=mylogin' -F 'token=mytoken' -F 'title=Sample issue' http://github.com/api/v2/issues/open/webbynode/api-labrat
+  ==================
+
+== Anonymous Usage
+
+This reflects the usage of the API to retrieve information, on a read-only mode where the user doesn't have to be authenticated.
 
 === Users API
 

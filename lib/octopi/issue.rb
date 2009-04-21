@@ -60,8 +60,40 @@ module Octopi
     end
     
     def self.open(user, repo, params, api = ANONYMOUS_API)
-      data = api.post("/issues/open/#{user}/#{repo}", params)
-      new(api, data)
+      user, repo_name = extract_names(user, repo)
+      data = api.post("/issues/open/#{user}/#{repo_name}", params)
+      issue = new(api, data['issue'])
+      issue.repository = repo if repo.is_a? Repository
+      issue
+    end
+    
+    def reopen(*args)
+      data = @api.post(command_path("reopen"))
+    end
+    
+    def close(*args)
+      data = @api.post(command_path("close"))
+    end
+    
+    def save
+      data = @api.post(command_path("edit"), { :title => self.title, :body => self.body })
+    end
+    
+    %[add remove].each do |oper|
+      define_method("#{oper}_label") do |*labels|
+        labels.each do |label|
+          @api.post("#{prefix("label/#{oper}")}/#{label}/#{number}")
+        end
+      end
+    end
+    
+    private
+    def prefix(command)
+      "/issues/#{command}/#{repository.owner}/#{repository.name}"
+    end
+    
+    def command_path(command)
+      "#{prefix(command)}/#{number}"
     end
   end
 end

@@ -15,11 +15,16 @@ module Octopi
       
       login = config["login"]
       token = config["token"]
+      trace = config["trace"]
     else
       login, token = *args
     end
     
-    yield Api.new(login, token)
+    puts "=> Trace on: #{trace}" if trace
+    
+    api = Api.new(login, token)
+    api.trace = trace if trace
+    yield api
   end
   
   class Api
@@ -31,13 +36,16 @@ module Octopi
     }  
     base_uri "http://github.com/api/v2"
   
-    attr_accessor :format, :login, :token
+    attr_accessor :format, :login, :token, :trace, :read_only
   
-    def initialize(login = nil, token = nil, format = "xml")
+    def initialize(login = nil, token = nil, format = "yaml")
       @format = format
+      @read_only = true
+      
       if login
         @login = login
         @token = token
+        @read_only = false
       end
     end
   
@@ -83,21 +91,31 @@ module Octopi
     end
     
     def post(path, params = {}, format = "yaml")
+      trace "POST", path, params
       submit(path, params, format) do |path, params, format|
-        puts "POST: /#{format}#{path} with: #{params.inspect}"
         resp = self.class.post "/#{format}#{path}", :query => params
-        pp resp
         resp
       end
     end
 
     private
     def submit(path, params = {}, format = "yaml", &block)
-      params.each_pair do |k,v|
-        path = path.gsub(":#{k.to_s}", v)
-      end
+      params.each_pair { |k,v| path = path.gsub(":#{k.to_s}", v) }
       query = login ? { :login => login, :token => token } : {}
-      resp = yield(path, query.merge(params), format)
+      query.merge!(params)
+      
+      if @trace
+        case @trace
+          when "curl"
+            query_trace = []
+            query.each_pair { |k,v| query_trace << "-F '#{k}=#{v}'" }
+            puts "===== [curl version]"
+            puts "curl #{query_trace.join(" ")} #{self.class.base_uri}#{path}"
+            puts "==================="
+        end
+      end
+      
+      resp = yield(path, query, format)
       raise APIError, 
         "GitHub returned status #{resp.code}" unless resp.code.to_i == 200
       # FIXME: This fails for showing raw Git data because that call returns
@@ -112,9 +130,16 @@ module Octopi
     end
     
     def get(path, params = {}, format = "yaml")
+      trace "GET", path, params
       submit(path, params, format) do |path, params, format|
         self.class.get "/#{format}#{path}"
       end
+    end
+    
+    def trace(oper, url, params)
+      return unless @trace
+      par_str = " params: " + params.map { |p| "#{p[0]}=#{p[1]}" }.join(", ") if params and !params.empty?
+      puts "#{oper}: #{url}#{par_str}"
     end
   end
     
