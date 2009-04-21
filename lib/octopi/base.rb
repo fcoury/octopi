@@ -1,5 +1,26 @@
+class String
+  def camel_case
+    self.gsub(/(^|_)(.)/) { $2.upcase }
+  end
+end  
 module Octopi
   class Base
+    VALID = {
+      :repo => {
+        # FIXME: API currently chokes on repository names containing periods,
+        # but presumably this will be fixed.
+        :pat => /^[a-z0-9_\.-]+$/,
+        :msg => "%s is an invalid repository name"},
+      :user => {
+        :pat => /^[a-z0-9_\.-]+$/,
+        :msg => "%s is an invalid username"},
+      :file => {
+        :pat => /^[^ \/]+$/,
+        :msg => "%s is an invalid filename"},
+      :sha => {
+        :pat => /^[a-f0-9]{40}$/,
+        :msg => "%s is an invalid SHA hash"}
+    }  
     def initialize(api, hash)
       @api = api
       @keys = []
@@ -62,5 +83,17 @@ module Octopi
         v
       end
     end
+
+    def self.validate_args(spec)
+      m = caller[0].match(/\/([a-z0-9_]+)\.rb:\d+:in `([a-z_0-9]+)'/)
+      meth = m ? "#{m[1].camel_case}.#{m[2]}" : 'method'
+      raise ArgumentError, "Invalid spec" unless 
+        spec.values.all? { |s| VALID.key? s }
+      errors = spec.reject{|arg, spec| arg.nil?}.
+                    reject{|arg, spec| arg.to_s.match(VALID[spec][:pat])}.
+                    map   {|arg, spec| "Invalid argument '%s' for %s (%s)" % 
+                      [arg, meth, VALID[spec][:msg] % arg]} 
+      raise ArgumentError, "\n" + errors.join("\n") unless errors.empty?
+    end  
   end
 end

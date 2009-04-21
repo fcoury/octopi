@@ -75,19 +75,8 @@ module Octopi
       resp
     end
   end
-  
-  %w{base resource user tag repository issue file_object blob commit}.
-    each{|f| require "#{File.dirname(__FILE__)}/octopi/#{f}"} 
     
-  class FormatError < StandardError
-   def initialize(f)
-     $stderr.puts "Got unexpected format (got #{f.first} for #{f.last})"
-   end
-  end 
-  
-  class APIError < StandardError
-   def initialize(m)
-     $stderr.puts m 
-   end
-  end 
+  %w{error base resource user tag repository issue file_object blob commit}.
+    each{|f| require "#{File.dirname(__FILE__)}/octopi/#{f}"} 
+
 end

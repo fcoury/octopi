@@ -24,6 +24,7 @@ module Octopi
       repo = args.first
       user ||= repo.owner if repo.is_a? Repository
       user, repo_name, opts = extract_user_repository(*args)
+      self.validate_args(user => :user, repo_name => :repo)
       branch = opts[:branch] || "master"
       
       commits = super user, repo_name, branch
@@ -40,6 +41,7 @@ module Octopi
         user, name, sha = *args
         user = user.login if user.is_a? User
         name = repo.name  if name.is_a? Repository
+        self.validate_args(user => :user, name => :repo, sha => :sha)
         super [user, name, sha]
       end
     end
