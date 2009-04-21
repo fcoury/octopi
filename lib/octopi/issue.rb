@@ -58,5 +58,10 @@ module Octopi
       validate_args(user => :user, repo => :repo)
       super user, repo, number
     end
+    
+    def self.open(user, repo, params, api = ANONYMOUS_API)
+      data = api.post("/issues/open/#{user}/#{repo}", params)
+      new(api, data)
+    end
   end
 end

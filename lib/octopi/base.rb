@@ -21,6 +21,9 @@ module Octopi
         :pat => /^[a-f0-9]{40}$/,
         :msg => "%s is an invalid SHA hash"}
     }  
+    
+    attr_accessor :api
+    
     def initialize(api, hash)
       @api = api
       @keys = []

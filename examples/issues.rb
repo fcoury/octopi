@@ -2,10 +2,10 @@ require File.join(File.dirname(__FILE__), '..', 'lib', 'octopi')
 
 include Octopi
 
-user = User.find("bcalloway")
+user = User.find("fcoury")
 puts user.name
 
-repo = user.repository("myproject")
+repo = user.repository("octopi")
 puts repo.description
 
 issue = Issue.find_all(user.login, repo.name).first
