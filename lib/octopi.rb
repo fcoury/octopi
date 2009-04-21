@@ -98,13 +98,13 @@ module Octopi
       end
       query = login ? { :login => login, :token => token } : {}
       resp = yield(path, query.merge(params), format)
+      raise APIError, 
+        "GitHub returned status #{resp.code}" unless resp.code.to_i == 200
       # FIXME: This fails for showing raw Git data because that call returns
       # text/html as the content type. This issue has been reported.
       ctype = resp.headers['content-type'].first
       raise FormatError, [ctype, format] unless 
         ctype.match(/^#{CONTENT_TYPE[format]};/)
-      raise APIError, 
-        "GitHub returned status #{resp.code}" unless resp.code.to_i == 200
       if format == 'yaml' && resp['error']
         raise APIError, resp['error'].first['error']
       end  
