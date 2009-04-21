@@ -2,8 +2,6 @@
 
 Octopi is a Ruby interface to GitHub API v2 (http://develop.github.com). It's under early but active development and already works.
 
-== Examples
-
 == Authenticated Usage
 
 The following examples requires a valid user authenticated with GitHub using login and API token. This information can be found on our profile (the link is inside the "badge" that is displayed on the upper right corner when you're logged in).
