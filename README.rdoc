@@ -111,6 +111,4 @@ Single commit information:
 
 == Copyright
 
-DISCLAIMER: The name of this library is pronounced <i>octo-pie</i> but no Octocats were harmed during its creation. It's not really an Octo Pie, but a contraction of the words Octocat and API.
-
 Copyright (c) 2009 Felipe Coury. See LICENSE for details.
