@@ -21,6 +21,9 @@ module Octopi
         :pat => /^[a-f0-9]{40}$/,
         :msg => "%s is an invalid SHA hash"}
     }  
+    
+    attr_accessor :api
+    
     def initialize(api, hash)
       @api = api
       @keys = []
@@ -55,11 +58,16 @@ module Octopi
     
     private
     def self.extract_user_repository(*args)
-      opts = args.last.is_a?(Hash) ? args.pop : {} 
-      opts[:repo] = opts[:repository] if opts[:repository]
-
-      repo = args.pop || opts[:repo]
-      user = opts[:user]
+      opts = args.last.is_a?(Hash) ? args.pop : {}
+      if opts.empty?
+        user, repo = *args if args.length > 1
+        repo ||= args.first
+      else
+        opts[:repo] = opts[:repository] if opts[:repository]
+        repo = args.pop || opts[:repo]
+        user = opts[:user]
+      end
+      
       user ||= repo.owner if repo.is_a? Repository
       
       if repo.is_a?(String) and !user

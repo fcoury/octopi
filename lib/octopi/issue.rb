@@ -3,7 +3,7 @@ module Octopi
     include Resource
     
     find_path "/issues/list/:query"
-    resource_path "/user/show/:id"
+    resource_path "/issues/show/:id"
     
     attr_accessor :repository
     
@@ -24,7 +24,7 @@ module Octopi
     def self.find_all(*args)
       repo = args.first
       user, repo_name, opts = extract_user_repository(*args)
-      self.validate_args(user => :user, repo_name => :repo)
+      validate_args(user => :user, repo_name => :repo)
       state = opts[:state] || "open"
       state.downcase! if state
       
@@ -37,16 +37,31 @@ module Octopi
   
     # TODO: Make find use hashes like find_all
     def self.find(*args)
-      if args.last.is_a?(Issue)
-        commit = args.pop
-        super "#{issue.number}"
-      else
-        user, name, number = *args
-        user = user.login if user.is_a? User
-        name = repo.name  if name.is_a? Repository
-        self.validate_args(user => :user, name => :repo)
-        super user, name, number
+      if args.length < 2
+        raise "Issue.find needs user, repository and issue number"
       end
+      
+      number = args.pop.to_i if args.last.respond_to?(:to_i)
+      number = args.pop if args.last.is_a?(Integer)
+      
+      raise "Issue.find needs issue number as the last argument" unless number
+      
+      if args.length > 1
+        user, repo = *args
+      else
+        repo = args.pop
+        raise "Issue.find needs at least a Repository object and issue number" unless repo.is_a? Repository
+        user, repo = repo.owner, repo.name
+      end
+      
+      user, repo = extract_names(user, repo)
+      validate_args(user => :user, repo => :repo)
+      super user, repo, number
+    end
+    
+    def self.open(user, repo, params, api = ANONYMOUS_API)
+      data = api.post("/issues/open/#{user}/#{repo}", params)
+      new(api, data)
     end
   end
 end

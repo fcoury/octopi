@@ -20,7 +20,7 @@ module Octopi
     end
     
     def repository(name)
-      self.validate_args(name => :repo)
+      self.class.validate_args(name => :repo)
       Repository.find(login, name)
     end
     

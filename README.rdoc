@@ -44,6 +44,10 @@ Issues API integrated into the Repository object:
   issue = repo.issues.first
   puts "First open issue: #{issue.number} - #{issue.title} - Created at: #{issue.created_at}"
 
+Single issue information:
+
+  issue = repo.issue(11)
+
 Commits API information from a Repository object:
 
   first_commit = repo.commits.first

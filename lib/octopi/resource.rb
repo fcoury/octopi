@@ -28,7 +28,7 @@ module Octopi
         (@path_spec||={})[:resource] = path
       end
     
-      def find(s)
+      def find(*s)
         s = s.join('/') if s.is_a? Array
         result = ANONYMOUS_API.find(path_for(:resource), @resource_name[:singular], s)
         key = result.keys.first

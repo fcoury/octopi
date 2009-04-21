@@ -1,12 +1,24 @@
 require 'rubygems'
 require 'httparty'
+require 'yaml'
 require 'pp'
 
 module Octopi
   class Api; end
   ANONYMOUS_API = Api.new
   
-  def connect(login, token, &block)
+  def authenticated_with(*args, &block)
+    opts = args.last.is_a?(Hash) ? args.last : {}
+    if opts[:config]
+      config = File.open(opts[:config]) { |yf| YAML::load(yf) }
+      raise "Missing config #{opts[:config]}" unless config
+      
+      login = config["login"]
+      token = config["token"]
+    else
+      login, token = *args
+    end
+    
     yield Api.new(login, token)
   end
   
@@ -19,11 +31,14 @@ module Octopi
     }  
     base_uri "http://github.com/api/v2"
   
-    attr_accessor :format
+    attr_accessor :format, :login, :token
   
     def initialize(login = nil, token = nil, format = "xml")
-      self.class.default_params(:login => login, :token => token) if login
       @format = format
+      if login
+        @login = login
+        @token = token
+      end
     end
   
     %w[keys emails].each do |action|
@@ -33,10 +48,21 @@ module Octopi
     end
 
     def user
-      user_data = get("/user/show/#{self.class.default_params[:login]}")
+      user_data = get("/user/show/#{login}")
       raise "Unexpected response for user command" unless user_data and user_data['user']
       User.new(self, user_data['user'])
     end
+    
+    def open_issue(user, repo, params)
+      Issue.open(user, repo, params, self)
+    end
+    
+    def repository(name)
+      repo = Repository.find(login, name)
+      repo.api = self
+      repo
+    end
+    alias_method :repo, :repository
     
     def save(resource_path, data)
       traslate resource_path, data
@@ -55,13 +81,23 @@ module Octopi
     def get_raw(path, params)
      get(path, params, 'plain')
     end
+    
+    def post(path, params = {}, format = "yaml")
+      submit(path, params, format) do |path, params, format|
+        puts "POST: /#{format}#{path} with: #{params.inspect}"
+        resp = self.class.post "/#{format}#{path}", :query => params
+        pp resp
+        resp
+      end
+    end
 
     private
-    def get(path, params = {}, format = "yaml")
+    def submit(path, params = {}, format = "yaml", &block)
       params.each_pair do |k,v|
         path = path.gsub(":#{k.to_s}", v)
       end
-      resp = self.class.get("/#{format}#{path}")
+      query = login ? { :login => login, :token => token } : {}
+      resp = yield(path, query.merge(params), format)
       # FIXME: This fails for showing raw Git data because that call returns
       # text/html as the content type. This issue has been reported.
       ctype = resp.headers['content-type'].first
@@ -73,6 +109,12 @@ module Octopi
         raise APIError, resp['error'].first['error']
       end  
       resp
+    end
+    
+    def get(path, params = {}, format = "yaml")
+      submit(path, params, format) do |path, params, format|
+        self.class.get "/#{format}#{path}"
+      end
     end
   end
     

@@ -26,7 +26,7 @@ module Octopi
       user = user.login if user.is_a? User
       name = repo.name if name.is_a? Repository
       self.validate_args(user => :user, name => :repo)
-      super [user,name]
+      super [user, name]
     end
 
     def self.find_all(*args)
@@ -35,12 +35,24 @@ module Octopi
       super args.join(" ").gsub(/ /,'+')
     end
     
+    def self.open_issue(args)
+      Issue.open(args[:user], args[:repo], args)
+    end
+    
+    def open_issue(args)
+      Issue.open(self.name, self.owner, args, @api)
+    end
+    
     def commits(branch = "master")
       Commit.find_all(self, :branch => branch)
     end
     
     def issues(state = "open")
       Issue.find_all(self, :state => state)
+    end
+    
+    def issue(number)
+      Issue.find(self, number)
     end
   end
 end
