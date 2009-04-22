@@ -19,7 +19,12 @@ module Octopi
         :msg => "%s is an invalid filename"},
       :sha => {
         :pat => /^[a-f0-9]{40}$/,
-        :msg => "%s is an invalid SHA hash"}
+        :msg => "%s is an invalid SHA hash"},
+      :state => {
+        # FIXME: Any way to access Issue::STATES from here?
+        :pat => /^(open|closed)$/, 
+        :msg => "%s is an invalid state; should be 'open' or 'closed'."  
+      }
     }  
     
     attr_accessor :api
