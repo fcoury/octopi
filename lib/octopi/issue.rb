@@ -1,7 +1,8 @@
 module Octopi
   class Issue < Base
     include Resource
-    
+    STATES = %w{open closed}
+
     find_path "/issues/list/:query"
     resource_path "/issues/show/:id"
     
