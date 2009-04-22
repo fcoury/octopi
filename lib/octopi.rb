@@ -7,6 +7,20 @@ module Octopi
   class Api; end
   ANONYMOUS_API = Api.new
   
+  def authenticated(*args, &block)
+    opts = args.last.is_a?(Hash) ? args.last : {}
+    config = read_gitconfig
+    login = config["github"]["user"]
+    token = config["github"]["token"]
+    
+    api = Api.new(login, token)
+    api.trace_level = opts[:trace]
+    
+    puts "=> Trace on: #{api.trace_level}" if api.trace_level
+
+    yield api
+  end
+  
   def authenticated_with(*args, &block)
     opts = args.last.is_a?(Hash) ? args.last : {}
     if opts[:config]
@@ -23,8 +37,25 @@ module Octopi
     puts "=> Trace on: #{trace}" if trace
     
     api = Api.new(login, token)
-    api.trace = trace if trace
+    api.trace_level = trace if trace
     yield api
+  end
+  
+  def read_gitconfig
+    config = {}
+    group = nil
+    File.foreach("#{ENV['HOME']}/.gitconfig") do |line|
+      line.strip!
+      if line[0] != ?# and line =~ /\S/
+        if line =~ /^\[(.*)\]$/
+          group = $1
+        else
+          key, value = line.split("=")
+          (config[group]||={})[key.strip] = value.strip
+        end
+      end
+    end
+    config
   end
   
   class Api
@@ -36,7 +67,7 @@ module Octopi
     }  
     base_uri "http://github.com/api/v2"
   
-    attr_accessor :format, :login, :token, :trace, :read_only
+    attr_accessor :format, :login, :token, :trace_level, :read_only
   
     def initialize(login = nil, token = nil, format = "yaml")
       @format = format
@@ -66,7 +97,7 @@ module Octopi
     end
     
     def repository(name)
-      repo = Repository.find(login, name)
+      repo = Repository.find(user, name, self)
       repo.api = self
       repo
     end
@@ -91,7 +122,7 @@ module Octopi
     end
     
     def post(path, params = {}, format = "yaml")
-      trace "POST", path, params
+      trace "POST", "/#{format}#{path}", params
       submit(path, params, format) do |path, params, format|
         resp = self.class.post "/#{format}#{path}", :query => params
         resp
@@ -100,18 +131,23 @@ module Octopi
 
     private
     def submit(path, params = {}, format = "yaml", &block)
-      params.each_pair { |k,v| path = path.gsub(":#{k.to_s}", v) }
+      params.each_pair do |k,v|
+        if path =~ /:#{k.to_s}/
+          params.delete(k)
+          path = path.gsub(":#{k.to_s}", v)
+        end
+      end
       query = login ? { :login => login, :token => token } : {}
       query.merge!(params)
       
-      if @trace
-        case @trace
+      if @trace_level
+        case @trace_level
           when "curl"
             query_trace = []
             query.each_pair { |k,v| query_trace << "-F '#{k}=#{v}'" }
             puts "===== [curl version]"
-            puts "curl #{query_trace.join(" ")} #{self.class.base_uri}#{path}"
-            puts "==================="
+            puts "curl #{query_trace.join(" ")} #{self.class.base_uri}/#{format}#{path}"
+            puts "===================="
         end
       end
       
@@ -130,14 +166,14 @@ module Octopi
     end
     
     def get(path, params = {}, format = "yaml")
-      trace "GET", path, params
+      trace "GET [#{format}]", "/#{format}#{path}", params
       submit(path, params, format) do |path, params, format|
         self.class.get "/#{format}#{path}"
       end
     end
     
     def trace(oper, url, params)
-      return unless @trace
+      return unless trace_level
       par_str = " params: " + params.map { |p| "#{p[0]}=#{p[1]}" }.join(", ") if params and !params.empty?
       puts "#{oper}: #{url}#{par_str}"
     end
