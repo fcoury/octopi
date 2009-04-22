@@ -25,12 +25,10 @@ module Octopi
     def self.find_all(*args)
       repo = args.first
       user, repo_name, opts = extract_user_repository(*args)
-      validate_args(user => :user, repo_name => :repo)
       state = opts[:state] || "open"
       state.downcase! if state
-      
-      raise "State should be either 'open' or 'closed'" unless ['open', 'closed'].include? state
-      
+      validate_args(user => :user, repo_name => :repo, state => :state)
+
       issues = super user, repo_name, state
       issues.each { |i| i.repository = repo } if repo.is_a? Repository
       issues
