@@ -79,11 +79,9 @@ def issues
   @user.repositories.each do |repo|
     puts "#{repo.name}"
     Dir.chdir(repo.name) do
-      %w{open closed}.each do | state|
-        repo.issues(state).each do |issue|
-          puts "* #{issue.title} [#{state}]"
-          issue.to_yaml_file(issue.number)
-        end
+      repo.all_issues.each do |issue|
+        puts "* #{issue.title} [#{issue.state}]"
+        issue.to_yaml_file(issue.number)
       end
     end  
   end    
