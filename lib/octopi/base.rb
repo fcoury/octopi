@@ -40,11 +40,13 @@ module Octopi
         next if k =~ /\./
         instance_variable_set("@#{k}", v)
         
-        self.class.send :define_method, "#{k}=" do |v|
+        method = (TrueClass === v || FalseClass === v) ? "#{k}?" : k
+
+        self.class.send :define_method, "#{method}=" do |v|
           instance_variable_set("@#{k}", v)
         end
 
-        self.class.send :define_method, k do
+        self.class.send :define_method, method do
           instance_variable_get("@#{k}")
         end
       end
