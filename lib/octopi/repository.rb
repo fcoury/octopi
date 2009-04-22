@@ -58,7 +58,11 @@ module Octopi
     def issues(state = "open")
       Issue.find_all(self, :state => state)
     end
-    
+   
+    def all_issues
+      Issue::STATES.map{|state| self.issues(state)}.flatten
+    end
+
     def issue(number)
       Issue.find(self, number)
     end
