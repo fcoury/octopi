@@ -109,27 +109,15 @@ Single commit information:
   puts "Diff:"
   first_commit.details.modified.each {|m| puts "#{m['filename']} DIFF: #{m['diff']}" }
 
-=== Tracing
+== Tracing
+
+=== Levels
 
 You can can use tracing to enable better debugging output when something goes wrong. There are 3 tracing levels: 
 
 * false (default) - no tracing
 * true - will output each GET and POST calls, along with URL and params
 * curl - same as true, but additionally outputs the curl command to replicate the issue
-
-Tracing can be enabled in different ways, depending on the API feature you're using:
-
-1. Anonymous (this will be improved later):
-
-  ANONYMOUS_API.trace_level = "<i>trace-level</i>"
-  
-2. Seamless authenticated
-
-  authenticated :trace => "<i>trace-level</i>" do |g|; ...; end
-  
-3. Explicitly authenticated
-
-Current version of explicit authentication requires a :config param to a YAML file to allow tracing. For enabling tracing on a YAML file refer to the config.yml example presented on the Explicit authentication section.
 
 If you choose curl tracing, the curl command equivalent to each command sent to GitHub will be output to the stdout, like this example:
 
@@ -138,6 +126,22 @@ If you choose curl tracing, the curl command equivalent to each command sent to 
   ===== curl version
   curl -F 'body=This issue was opened using GitHub API and Octopi' -F 'login=mylogin' -F 'token=mytoken' -F 'title=Sample issue' http://github.com/api/v2/issues/open/webbynode/api-labrat
   ==================
+  
+=== Enabling
+
+Tracing can be enabled in different ways, depending on the API feature you're using:
+
+<b>Anonymous (this will be improved later):</b>
+
+  ANONYMOUS_API.trace_level = "<i>trace-level</i>"
+  
+<b>Seamless authenticated</b>
+
+  authenticated :trace => "<i>trace-level</i>" do |g|; ...; end
+  
+<b>Explicitly authenticated</b>
+
+Current version of explicit authentication requires a :config param to a YAML file to allow tracing. For enabling tracing on a YAML file refer to the config.yml example presented on the Explicit authentication section.
 
 == Author
 
