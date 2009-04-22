@@ -15,11 +15,9 @@ If you have your <tt>~/.gitconfig</tt> file in place, and you have a [github] se
   
 === Explicit authentication
 
-Sometimes, you may want to use GitHub API authenticated as a third party, for this use case, you have a couple of options too.
+Sometimes, you may not want to get authentication data from <tt>~/.gitconfig</tt>. You want to use GitHub API authenticated as a third party. For this use case, you have a couple of options too.
 
-The following examples requires a valid user authenticated with login and API token. This information can be found on our account page (the link is inside the "badge" that is displayed on the upper right corner when you're logged in - the URL is https://github.com/account).
-
-Once you have the login and token you can run authenticated commands using:
+<b>1. Providing login and token inline:</b>
 
   authenticated_with "mylogin", "mytoken" do |g|
     repo = g.repository("api-labrat")
@@ -28,7 +26,9 @@ Once you have the login and token you can run authenticated commands using:
     puts issue.number
   end
   
-You can also create a YAML file with your information, with the following format:
+<b>2. Providing a YAML file with authentication information:</b>
+
+Use the following format:
 
   #
   # Octopi GitHub API configuration file
@@ -45,7 +45,7 @@ You can also create a YAML file with your information, with the following format
   #   curl  - same as true, but in addition will output the curl equivalent of each command (for debugging)
   trace: curl
   
-And change the way you connect to:
+This changes the way you connect to:
 
   authenticated_with :config => "github.yml" do |g|
     (...)
