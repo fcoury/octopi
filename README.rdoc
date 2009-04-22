@@ -133,11 +133,11 @@ Tracing can be enabled in different ways, depending on the API feature you're us
 
 <b>Anonymous (this will be improved later):</b>
 
-  ANONYMOUS_API.trace_level = "<i>trace-level</i>"
+  ANONYMOUS_API.trace_level = "trace-level"
   
 <b>Seamless authenticated</b>
 
-  authenticated :trace => "<i>trace-level</i>" do |g|; ...; end
+  authenticated :trace => "trace-level" do |g|; ...; end
   
 <b>Explicitly authenticated</b>
 
