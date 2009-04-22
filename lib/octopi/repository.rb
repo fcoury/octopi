@@ -22,11 +22,19 @@ module Octopi
       find_plural(user, :resource)
     end
 
-    def self.find(user, name)
+    def self.find(*args)
+      api = args.last.is_a?(Api) ? args.pop : ANONYMOUS_API
+      repo = args.pop
+      user = args.pop
+      
       user = user.login if user.is_a? User
-      name = repo.name if name.is_a? Repository
-      self.validate_args(user => :user, name => :repo)
-      super [user, name]
+      if repo.is_a? Repository
+        repo = repo.name 
+        user ||= repo.owner 
+      end
+      
+      self.validate_args(user => :user, repo => :repo)
+      super user, repo, api
     end
 
     def self.find_all(*args)
@@ -40,7 +48,7 @@ module Octopi
     end
     
     def open_issue(args)
-      Issue.open(self.name, self.owner, args, @api)
+      Issue.open(self.owner, self, args, @api)
     end
     
     def commits(branch = "master")
