@@ -1,0 +1,31 @@
+a { color: #008; }
+
+#welcome h1 {
+  padding: 20px; 
+  text-align: center; 
+  background: #447e40; 
+  color: #fff;
+  }
+  
+h2 { background: #ddd; text-align: center; padding: 4px; }
+
+#welcome p { font-size: 1.3em; color: #444; text-align:center;}
+
+#header { }
+#footer { background: #ddd;}
+#footer a { color: #444; }
+
+.info, .fork { padding: 10px; }
+.content { font-size: 1.2em; }
+.content h3 { background: #dfd; font-size: 1.7em; padding: 6px 2px; }
+
+pre { padding: 20px; background: #ffd; font-size: 0.9em; }
+
+#links { padding: 10px; }
+
+#header #links { text-align:right; }
+#header #links a { color: #555; font-size: 1.2em; padding: 5px; margin: 10px; }
+
+.title { background: #dfd; font-size: 1.4em; font-weight:bold; padding: 3px 3px;}
+.title a { color: #252; }
+.episode p { padding: 3px; font-size: 1.1em;}
