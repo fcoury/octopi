@@ -1,6 +1,10 @@
 = octopi
 
-Octopi is a Ruby interface to GitHub API v2 (http://develop.github.com). It's under early but active development and already works.
+Octopi is a Ruby interface to GitHub API v2 (http://develop.github.com).
+
+To install it as a Gem, just run:
+
+  $ sudo gem install fcoury-octopi --source http://gems.github.com
 
 == Authenticated Usage
 
@@ -45,7 +49,7 @@ Use the following format:
   #   curl  - same as true, but in addition will output the curl equivalent of each command (for debugging)
   trace: curl
   
-This changes the way you connect to:
+And change the way you connect to:
 
   authenticated_with :config => "github.yml" do |g|
     (...)
@@ -53,7 +57,7 @@ This changes the way you connect to:
   
 == Anonymous Usage
 
-This reflects the usage of the API to retrieve information, on a read-only mode where the user doesn't have to be authenticated.
+This reflects the usage of the API to retrieve information on a read-only fashion, where the user doesn't have to be authenticated.
 
 === Users API
 
