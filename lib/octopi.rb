@@ -153,7 +153,6 @@ module Octopi
         end
       end
       
-      resp = yield(path, query, format)
       raise APIError, 
         "GitHub returned status #{resp.code}" unless resp.code.to_i == 200
       # FIXME: This fails for showing raw Git data because that call returns
