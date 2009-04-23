@@ -77,6 +77,7 @@ module Octopi
         @login = login
         @token = token
         @read_only = false
+        self.class.default_params :login => login, :token => token
       end
     end
   
