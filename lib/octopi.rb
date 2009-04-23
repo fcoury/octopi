@@ -83,7 +83,7 @@ module Octopi
   
     %w[keys emails].each do |action|
       define_method("#{action}") do
-        post("/user/#{action}")
+        get("/user/#{action}")
       end
     end
 
