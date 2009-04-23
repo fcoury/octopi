@@ -77,12 +77,14 @@ module Octopi
         @login = login
         @token = token
         @read_only = false
+        self.class.default_params :login => login, :token => token
       end
     end
-  
-    %w[keys emails].each do |action|
+
+
+    {:keys => 'public_keys', :emails => 'emails'}.each_pair do |action, key|
       define_method("#{action}") do
-        get("/user/#{action}")
+        get("/user/#{action}")[key]
       end
     end
 
@@ -139,6 +141,7 @@ module Octopi
       end
       query = login ? { :login => login, :token => token } : {}
       query.merge!(params)
+      resp = yield(path, query.merge(params), format)
       
       if @trace_level
         case @trace_level
@@ -151,7 +154,6 @@ module Octopi
         end
       end
       
-      resp = yield(path, query, format)
       raise APIError, 
         "GitHub returned status #{resp.code}" unless resp.code.to_i == 200
       # FIXME: This fails for showing raw Git data because that call returns
