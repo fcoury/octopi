@@ -9,7 +9,7 @@ module Octopi
 
     def method_missing(method,*args)  
       self.init_worker
-      @worker.send(method,args)
+      @worker.send(method,*args)
     end
 
   end    
