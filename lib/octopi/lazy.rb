@@ -9,22 +9,21 @@ module Octopi
     end
     
     def self.method_missing(method,*args)
-      $stderr.puts "Lazy does not handle missing class methods"
-      super method, *args
+      worker_class.send(method, *args)
     end
 
     def method_missing(method,*args)  
-      if self.worker_class.respond_to? method
+      if self.class.worker_class.respond_to? method
         @args.concat args
-        self.worker_class.send(method,@args.first)
+        self.class.worker_class.send(method,@args.first)
       else 
         self.init_worker
         @worker.send(method,*args)
       end 
     end
     
-    def worker_class
-      Kernel.const_get self.class.to_s.sub(/^Octopi::Lazy/,'')
+    def self.worker_class
+      Kernel.const_get self.to_s.sub(/^Octopi::Lazy/,'')
     end  
 
   end    
