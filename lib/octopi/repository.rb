@@ -47,7 +47,8 @@ module Octopi
       super args.join(" ").gsub(/ /,'+')
     end
     
-    def self.open_issue(args)
+    def self.open_issue(*args)
+      return Issue.open(*args) unless Hash === args
       Issue.open(args[:user], args[:repo], args)
     end
     
