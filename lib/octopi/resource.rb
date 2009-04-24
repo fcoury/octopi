@@ -28,6 +28,10 @@ module Octopi
         (@path_spec||={})[:resource] = path
       end
       
+      def property(property, value, key = @resource_name[:plural])
+       ANONYMOUS_API.find(path_for(:resource)+'/'+property, nil, value)[key]
+      end
+
       def find(*args)
         api = args.last.is_a?(Api) ? args.pop : ANONYMOUS_API
         args = args.join('/') if args.is_a? Array
