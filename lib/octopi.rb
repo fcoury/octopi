@@ -181,7 +181,7 @@ module Octopi
     end
   end
     
-  %w{error base resource user tag repository issue file_object blob commit}.
+  %w{error base resource user tag repository issue file_object blob commit branch}.
     each{|f| require "#{File.dirname(__FILE__)}/octopi/#{f}"} 
 
 end

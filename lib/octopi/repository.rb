@@ -6,6 +6,10 @@ module Octopi
     find_path "/repos/search/:query"
     resource_path "/repos/show/:id"
     
+    def branches
+      Branch.find(self.owner, self.name)
+    end  
+
     def tags
       Tag.find(self.owner, self.name)
     end  
