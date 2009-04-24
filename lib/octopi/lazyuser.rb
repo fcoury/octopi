@@ -3,7 +3,7 @@ module Octopi
     
     def initialize(username)
       @username = username
-      super
+      super username
     end
 
     def init_worker  
