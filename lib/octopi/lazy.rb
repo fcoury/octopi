@@ -15,7 +15,7 @@ module Octopi
     def method_missing(method,*args)  
       if self.class.worker_class.respond_to? method
         @args.concat args
-        self.class.worker_class.send(method,@args.first)
+        self.class.worker_class.send(method,*@args.compact)
       else 
         self.init_worker
         @worker.send(method,*args)
