@@ -2,98 +2,122 @@
 
 ### Searching Repositories ###
 
-	repos/search/:q
+	Repository.find_all(query)
 
 To search for repositories that have to do with testing ruby, you could do this:
 
-	$ curl http://github.com/api/v2/yaml/repos/search/ruby+testing
-	--- 
-	repositories: 
-	- score: 0.32255203
-	  name: synthesis
-	  actions: 4653
-	  size: 2048
-	  language: Ruby
-	  followers: 27
-	  username: gmalamid
-	  type: repo
-	  id: repo-3555
-	  forks: 1
-	  fork: false
-	  description: Ruby test code analysis tool employing a "Synthesized Testing" strategy, aimed to reduce the volume of slower, coupled, complex wired tests.
-	  pushed: "2009-01-08T13:45:06Z"
-	  created: "2008-03-11T23:38:04Z"
-	- score: 0.56515217
-	  name: flexmock
-	  actions: 210
-	  size: 928
-	  language: Ruby
-	  followers: 7
-	  username: jimweirich
-	  type: repo
-	  id: repo-41100
-	  forks: 0
-	  fork: false
-	  description: Flexible mocking for Ruby testing
-	  pushed: "2009-04-01T16:23:58Z"
-	  created: "2008-08-08T18:52:54Z"
+	Repository.find_all('testing',ruby')
 
+You will get back an Array of Repository objects
+
+    [#<Octopi::Repository:0xb76a0308
+      @actions=4656,
+      @api=#<Octopi::Api:0xb76c05cc>,
+      @created="2008-03-11T23:38:04Z",
+      @description=
+       "Ruby test code analysis tool employing a \"Synthesized Testing\" strategy, aimed to reduce the volume of slower, coupled, complex wired tests.",
+      @followers=26,
+      @fork=false,
+      @forks=1,
+      @id="repo-3555",
+      @keys=
+       ["actions",
+        "name",
+        "size",
+        "followers",
+        "fork",
+        "username",
+        "language",
+        "id",
+        "type",
+        "pushed",
+        "description",
+        "forks",
+        "score",
+        "created"],
+      @language="Ruby",
+      @name="synthesis",
+      @pushed="2009-01-08T13:45:06Z",
+      @score=0.31965524,
+      @size=2048,
+      @type="repo",
+      @username="gmalamid">,
+      #...
+    ]
 
 ### Show Repo Info ###
 
-To look at more in-depth information for a repository, GET this
+To look at more in-depth information for a repository use this:
 
-	repos/show/:user/:repo
+	Repository.find(user, repository)
 
 For example, to see the information for Grit
 
-	$ curl http://github.com/api/v2/yaml/repos/show/schacon/grit
-	--- 
-	repository: 
-	  :description: Grit is a Ruby library for extracting information from a
-	 git repository in an object oriented manner - this fork tries to
-	 intergrate as much pure-ruby functionality as possible
-	  :forks: 4
-	  :name: grit
-	  :watchers: 67
-	  :private: false
-	  :url: http://github.com/schacon/grit
-	  :fork: true
-	  :owner: schacon
-	  :homepage: http://grit.rubyforge.org/
+	Repository.find('schacon', 'grit')
+
+This returns the following Repository object:
+
+    #<Octopi::Repository:0xb78b204c
+     @api=#<Octopi::Api:0xb7c85494>,
+     @description=
+      "Grit is a Ruby library for extracting information from a git repository in an object oriented manner - this fork tries to intergrate as much pure-ruby functionality as possible",
+     @fork=true,
+     @forks=4,
+     @homepage="http://grit.rubyforge.org/",
+     @keys=
+      [:homepage,
+       :fork,
+       :url,
+       :watchers,
+       :description,
+       :forks,
+       :private,
+       :owner,
+       :name],
+     @name="grit",
+     @owner="schacon",
+     @private=false,
+     @url="http://github.com/schacon/grit",
+     @watchers=68>
 
 ### List All Repositories ###
 
 You can list out all the repositories for a user with
 
-	repos/show/:user
+    Repository.find_by_user(user)
 	
-For example, to see all of schacons public repos, we can GET
+For example, to see all of <i>schacon</i>'s public repositories:
 
-	$ curl http://github.com/api/v2/yaml/repos/show/schacon
-	--- 
-	repositories: 
-	- :description: Ruby/Git is a Ruby library that can be used to 
-	create, read and manipulate Git repositories by wrapping system 
-	calls to the git binary.
-	  :forks: 30
-	  :name: ruby-git
-	  :watchers: 132
-	  :private: false
-	  :url: http://github.com/schacon/ruby-git
-	  :fork: false
-	  :owner: schacon
-	  :homepage: http://jointheconversation.org/rubygit/
-	- :description: A quick & dirty git-powered Sinatra wiki
-	  :forks: 1
-	  :name: git-wiki
-	  :watchers: 15
-	  :private: false
-	  :url: http://github.com/schacon/git-wiki
-	  :fork: true
-	  :owner: schacon
-	  :homepage: http://atonie.org/2008/02/git-wiki
+    Repository.find_by_user('schacon')
 
+This returns an Array of Repository objects:
+
+    [#<Octopi::Repository:0xb7898ffc
+      @api=#<Octopi::Api:0xb7c7d834>,
+      @description=
+       "Ruby/Git is a Ruby library that can be used to create, read and manipulate Git repositories by w
+    rapping system calls to the git binary.",
+      @fork=false,
+      @forks=31,
+      @homepage="http://jointheconversation.org/rubygit/",
+      @keys=
+       [:homepage,
+        :fork,
+        :forks,
+        :watchers,
+        :url,
+        :private,
+        :description,
+        :owner,
+        :name],
+      @name="ruby-git",
+      @owner="schacon",
+      @private=false,
+      @url="http://github.com/schacon/ruby-git",
+      @watchers=136>,
+      #...
+    ]
+  
 If you are authenticated as that user, you can see all the private repositories as well.
 
 ### Watching Repositories ###
@@ -235,19 +259,47 @@ For example, to see all the forks of the ruby-git project, we can GET
 
 ### Repository Refs ###
 
-To get a list of tags on your repo
+To get a list of tags for a Repository object call the `.tags` instance method:
 
-	repos/show/:user/:repo/tags
+	repository.tags
 
-For example
+For example, to get the tags attached to <i>fcoury</i>'s <i>octopi</i> repository:
 
-	$ curl http://github.com/api/v2/yaml/repos/show/schacon/ruby-git/tags
-	--- 
-	tags: 
-	  1.0.3: be47ad8aea4f854fc2d6773456fb28f3e9f519e7
-	  1.0.5: 6c4af60f5fc5193b956a4698b604ad96ef3c51c6
-	  1.0.5.1: ae106e2a3569e5ea874852c613ed060d8e232109
-	  v1.0.7: 1adc5b8136c2cd6c694629947e1dbc49c8bffe6a
+    Repository.find('fcoury','octopi').tags
+
+This returns an Array of Tag objects:
+
+    [#<Octopi::Tag:0xb78f5a90
+      @api=#<Octopi::Api:0xb7ccc3bc>,
+      @hash="cfe042b889211ba2f878047736fa2bfb5ad60157",
+      @keys=[:hash, :name],
+      @name="v0.0.1">,
+     #<Octopi::Tag:0xb78f5734
+      @api=#<Octopi::Api:0xb7ccc3bc>,
+      @hash="33b92f7005d7b9a0e8667a3006e57cda9d8a2ea4",
+      @keys=[:hash, :name],
+      @name="v0.0.3">,
+     #<Octopi::Tag:0xb78f53d8
+      @api=#<Octopi::Api:0xb7ccc3bc>,
+      @hash="a6b6edaa0ce7e2c49ca6156523a33fbad2b2a4e9",
+      @keys=[:hash, :name],
+      @name="v0.0.4">,
+     #<Octopi::Tag:0xb78f507c
+      @api=#<Octopi::Api:0xb7ccc3bc>,
+      @hash="db1d9c01bfb366ca25a0190a333e69e4a2c6524e",
+      @keys=[:hash, :name],
+      @name="v0.0.5">,
+     #<Octopi::Tag:0xb78f4d20
+      @api=#<Octopi::Api:0xb7ccc3bc>,
+      @hash="d157b0f71c2671557c97319acd2a20a2dcf68425",
+      @keys=[:hash, :name],
+      @name="v0.0.6">,
+     #<Octopi::Tag:0xb78f49c4
+      @api=#<Octopi::Api:0xb7ccc3bc>,
+      @hash="3344a5a2bf141089b4cdfba8f9d37e2104f123b6",
+      @keys=[:hash, :name],
+      @name="v0.0.7">]
+
 
 To get a list of remote branches
 
