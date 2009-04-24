@@ -5,15 +5,15 @@ module Octopi
 
     find_path "/repos/search/:query"
     resource_path "/repos/show/:id"
-    
-    def branches
-      Branch.find(self.owner, self.name)
-    end  
 
-    def tags
-      Tag.find(self.owner, self.name)
-    end  
+    def self.branches(owner, name)
+      Branch.find(owner,name)
+    end              
     
+    def self.tags(owner, name)
+      Tag.find(owner, name)
+    end  
+  
     def clone_url
       #FIXME: Return "git@github.com:#{self.owner}/#{self.name}.git" if
       #user's logged in and owns this repo.
@@ -51,29 +51,42 @@ module Octopi
       Issue.open(args[:user], args[:repo], args)
     end
     
-    def open_issue(args)
-      Issue.open(self.owner, self, args, @api)
+    #def open_issue(args)
+    #  Issue.open(self.owner, self, args, @api)
+    #end
+    
+    def self.commits(user, repo, branch = "master")
+      Commit.find_all(:user => user, :repo => repo, :branch => branch)
     end
     
-    def commits(branch = "master")
-      Commit.find_all(self, :branch => branch)
-    end
-    
-    def issues(state = "open")
-      Issue.find_all(self, :state => state)
+    def self.issues(user, repo, state = "open")
+      Issue.find_all(:user => user, :repo => repo, :state => state)
     end
    
-    def all_issues
-      Issue::STATES.map{|state| self.issues(state)}.flatten
+    def self.all_issues(user, repo)
+      Issue::STATES.map{|state| self.issues(user, repo, state)}.flatten
     end
 
-    def issue(number)
-      Issue.find(self, number)
+    def self.issue(user, repo, number)
+      Issue.find(user, repo, number)
     end
 
-    def collaborators
-      property('collaborators', [self.owner,self.name].join('/')).values
+    def self.collaborators(user, repo)
+      self.property('collaborators', [user, repo].join('/')).
+           map{ |c| LazyUser.new c }
     end  
 
+    # The GitHub API uses inconsistent naming for key fields in the response.
+    # repos/show uses :owner to refer to the repository's owner, while
+    # repos/search uses :username. We use this convoluted approach to define
+    # this alias so we don't step on anything else that defines methods
+    # automatically.
+    def method_missing(method,*args)
+      if self.respond_to?(:username) && method == :owner
+        return self.username
+      else
+        super method, *args
+      end
+    end  
   end
 end
