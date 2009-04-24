@@ -5,11 +5,17 @@ module Octopi
     
     def initialize(*args)
       @worker = nil
+      @args = args
     end
 
     def method_missing(method,*args)  
       self.init_worker
-      @worker.send(method,*args)
+      if @worker.class.respond_to? method
+        @args << args
+        @worker.class.send(method,*@args)
+      else 
+        @worker.send(method,*args)
+      end 
     end
 
   end    
