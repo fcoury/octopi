@@ -1,14 +1,13 @@
 module Octopi
-  class LazyUser
+  class LazyUser < Lazy
     
     def initialize(username)
       @username = username
-      @worker = nil
+      super
     end
 
-    def method_missing(method,*args)  
+    def init_worker  
       @worker ||= User.find(@username)
-      @worker.send(method,args)
     end
 
   end    
