@@ -1,7 +1,7 @@
 module Octopi
   class Lazy
     
-    %w{user}.each {|f| require File.dirname(__FILE__) + "/lazy#{f}"}   
+    %w{user repository}.each {|f| require File.dirname(__FILE__) + "/lazy#{f}"}   
     
     def initialize(*args)
       @worker = nil
