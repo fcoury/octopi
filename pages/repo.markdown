@@ -214,9 +214,10 @@ You will need to POST an 'id' variable with the key ID returned from the public 
 
 ### Collaborators ###
 
-To get a list of the collaborators on your project, GET 
+To get a list of the collaborators on a repository call the `.collaborators`
+method on a Repository object. 
 
-	repos/show/:user/:repo/collaborators
+	repository.collaborators
 
 To add or remove collaborators, POST to one of these URLs
 
@@ -301,17 +302,25 @@ This returns an Array of Tag objects:
       @name="v0.0.7">]
 
 
-To get a list of remote branches
+To get a list of remote branches call the `.branches` method on a Repository
+object.
 
-	repos/show/:user/:repo/branches
+	repository.branches
 
-For example 
+This will return an Array of Branch objects, each of which has `.name` and
+`.hash` methods, corresponding to the branch's name and SHA1 hash of its HEAD,
+respectively.
 
-	$ curl http://github.com/api/v2/yaml/repos/show/schacon/ruby-git/branches
-	--- 
-	branches: 
-	  master: ee90922f3da3f67ef19853a0759c1d09860fe3b3
-	  internals: 6a9db968e8563bc27b8f56f9d413159a2e14cf67
-	  test: 2d749e3aa69d7bfedf814f59618f964fdbc300d5
-	  integrate: 10b880b418879e662feb91ce7af98560adeaa8bb
+For example; 
+
+    Repository.find('schacon', 'ruby-git').branches.each do |branch|
+      puts "#{branch.name} is at #{branch.hash}"
+    end
+
+This prints something like:
+	
+    internals is at 6a9db968e8563bc27b8f56f9d413159a2e14cf67
+    master is at ee90922f3da3f67ef19853a0759c1d09860fe3b3
+    integrate is at 10b880b418879e662feb91ce7af98560adeaa8bb
+    test is at 2d749e3aa69d7bfedf814f59618f964fdbc300d5
 

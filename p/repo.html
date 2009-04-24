@@ -253,9 +253,9 @@ key	=&gt; public key data</code></pre>
 
 <h3 id='collaborators'>Collaborators</h3>
 
-<p>To get a list of the collaborators on your project, GET</p>
+<p>To get a list of the collaborators on a repository call the <code>.collaborators</code> method on a Repository object.</p>
 
-<pre><code>repos/show/:user/:repo/collaborators</code></pre>
+<pre><code>repository.collaborators</code></pre>
 
 <p>To add or remove collaborators, POST to one of these URLs</p>
 
@@ -339,19 +339,24 @@ network:
   @keys=[:hash, :name],
   @name=&quot;v0.0.7&quot;&gt;]</code></pre>
 
-<p>To get a list of remote branches</p>
+<p>To get a list of remote branches call the <code>.branches</code> method on a Repository object.</p>
 
-<pre><code>repos/show/:user/:repo/branches</code></pre>
+<pre><code>repository.branches</code></pre>
 
-<p>For example</p>
+<p>This will return an Array of Branch objects, each of which has <code>.name</code> and <code>.hash</code> methods, corresponding to the branch&#8217;s name and SHA1 hash of its HEAD, respectively.</p>
 
-<pre><code>$ curl http://github.com/api/v2/yaml/repos/show/schacon/ruby-git/branches
---- 
-branches: 
-  master: ee90922f3da3f67ef19853a0759c1d09860fe3b3
-  internals: 6a9db968e8563bc27b8f56f9d413159a2e14cf67
-  test: 2d749e3aa69d7bfedf814f59618f964fdbc300d5
-  integrate: 10b880b418879e662feb91ce7af98560adeaa8bb</code></pre><br/><br/><hr/><div class="span-21 last">&nbsp;</div><hr/>
+<p>For example;</p>
+
+<pre><code>Repository.find(&#39;schacon&#39;, &#39;ruby-git&#39;).branches.each do |branch|
+  puts &quot;#{branch.name} is at #{branch.hash}&quot;
+end</code></pre>
+
+<p>This prints something like:</p>
+
+<pre><code>internals is at 6a9db968e8563bc27b8f56f9d413159a2e14cf67
+master is at ee90922f3da3f67ef19853a0759c1d09860fe3b3
+integrate is at 10b880b418879e662feb91ce7af98560adeaa8bb
+test is at 2d749e3aa69d7bfedf814f59618f964fdbc300d5</code></pre><br/><br/><hr/><div class="span-21 last">&nbsp;</div><hr/>
     </div>
 
     <div id="footer" class="span-21">
