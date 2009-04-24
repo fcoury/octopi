@@ -1,9 +1,11 @@
 module Octopi
   class LazyUser < Lazy
-    
+   
+    attr_reader :username 
+    alias :login :username
+
     def initialize(arg)
-      @username = arg
-      super User === arg ? arg.name : @username
+      super @username = String === arg ? arg : arg.name
     end
 
     def init_worker
