@@ -12,12 +12,12 @@ module Octopi
 
     def self.followers(username)
       self.validate_args(username => :user)
-      self.property('followers', username)
+      self.property('followers', username).map{|u| LazyUser.new u}
     end
 
     def self.following(username)
       self.validate_args(username => :user)
-      self.property('following', username)
+      self.property('following', username).map{|u| LazyUser.new u}
     end
 
     def self.find_all(username)
