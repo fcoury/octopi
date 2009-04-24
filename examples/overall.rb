@@ -30,13 +30,13 @@ issue = repo.issues.first
 puts "First open issue: #{issue.number} - #{issue.title} - Created at: #{issue.created_at}"
 
 # commits of a the repository
-first_commit = repo.commits.first
-puts "First commit: #{first_commit.id} - #{first_commit.message} - by #{first_commit.author['name']}"
+commit = repo.commits.first
+puts "Commit: #{commit.id} - #{commit.message} - by #{commit.author['name']}"
 
 # single commit information
 # details is the same as: Commit.find(commit)
 puts "Diff:"
-first_commit.details.modified.each {|m| puts "#{m['filename']} DIFF: #{m['diff']}" }
+commit.details.modified.each {|m| puts "#{m['filename']} DIFF: #{m['diff']}" }
 
 # repository search
 repos = Repository.find_all("ruby", "git")

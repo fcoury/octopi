@@ -9,12 +9,12 @@ authenticated_with :config => "github.yml" do |g|
     :body => "This issue was opened using GitHub API and Octopi"
   puts "Successfully opened issue \##{issue.number}"
   
-  labels = issue.add_label "Working", "Todo"
-  puts "Labels: #{labels.inspect}"
+  # labels = issue.add_label "Working", "Todo"
+  # puts "Labels: #{labels.inspect}"
   
   issue.close
   puts "Successfully closed issue \##{issue.number}"
 
-  labels = issue.remove_label "Todo"
-  puts "Successfully removed label Todo. Current labels: #{labels.inspect}"
+  # labels = issue.remove_label "Todo"
+  # puts "Successfully removed label Todo. Current labels: #{labels.inspect}"
 end
