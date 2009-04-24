@@ -29,7 +29,9 @@ module Octopi
       end
       
       def property(property, value, key = @resource_name[:plural])
-       ANONYMOUS_API.find(path_for(:resource)+'/'+property, nil, value)[key]
+       r = ANONYMOUS_API.find(path_for(:resource)+'/'+property, nil, value)
+       return r[r.keys.first] if r.keys.size == 1
+       r[key]
       end
 
       def find(*args)
