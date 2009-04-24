@@ -5,7 +5,7 @@ module Octopi
 
     find_path "/repos/search/:query"
     resource_path "/repos/show/:id"
-
+    
     def tags
       Tag.find(self.owner, self.name)
     end  
@@ -66,5 +66,10 @@ module Octopi
     def issue(number)
       Issue.find(self, number)
     end
+
+    def collaborators
+      property('collaborators', [self.owner,self.name].join('/')).values
+    end  
+
   end
 end
