@@ -12,4 +12,12 @@ module Octopi
    end
   end
 
+  class RetryableAPIError < RuntimeError
+    attr_reader :code
+    def initialize(code=nil)
+      @code = code.nil? ? '???' : code
+      @message = "GitHub returned status #{@code}. Retrying request."
+      super @message
+    end  
+  end
 end

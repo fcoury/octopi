@@ -65,6 +65,9 @@ module Octopi
       'json' => 'application/json',
       'xml'  => 'application/sml'
     }  
+    RETRYABLE_STATUS = [403]
+    MAX_RETRIES = 10
+    
     base_uri "http://github.com/api/v2"
   
     attr_accessor :format, :login, :token, :trace_level, :read_only
@@ -141,7 +144,12 @@ module Octopi
       end
       query = login ? { :login => login, :token => token } : {}
       query.merge!(params)
-      resp = yield(path, query.merge(params), format)
+      
+      begin
+        resp = yield(path, query.merge(params), format)
+      rescue Net::HTTPBadResponse
+        raise RetryableAPIError
+      end
       
       if @trace_level
         case @trace_level
@@ -153,7 +161,7 @@ module Octopi
             puts "===================="
         end
       end
-      
+      raise RetryableAPIError, resp.code.to_i if RETRYABLE_STATUS.include? resp.code.to_i
       raise APIError, 
         "GitHub returned status #{resp.code}" unless resp.code.to_i == 200
       # FIXME: This fails for showing raw Git data because that call returns
@@ -168,10 +176,22 @@ module Octopi
     end
     
     def get(path, params = {}, format = "yaml")
-      trace "GET [#{format}]", "/#{format}#{path}", params
-      submit(path, params, format) do |path, params, format|
-        self.class.get "/#{format}#{path}"
-      end
+      @@retries = 0
+      begin
+        trace "GET [#{format}]", "/#{format}#{path}", params
+        submit(path, params, format) do |path, params, format|
+          self.class.get "/#{format}#{path}"
+        end
+      rescue RetryableAPIError => e
+        if @@retries < MAX_RETRIES 
+          $stderr.puts e.message
+          @@retries += 1
+          retry
+        else  
+          raise APIError, "GitHub returned status #{e.code}, despite" +
+           " repeating the request #{MAX_RETRIES} times. Giving up."
+        end  
+      end  
     end
     
     def trace(oper, url, params)
@@ -179,7 +199,6 @@ module Octopi
       par_str = " params: " + params.map { |p| "#{p[0]}=#{p[1]}" }.join(", ") if params and !params.empty?
       puts "#{oper}: #{url}#{par_str}"
     end
-  end
     
   %w{error base resource user tag repository issue file_object blob commit branch}.
     each{|f| require "#{File.dirname(__FILE__)}/octopi/#{f}"} 
