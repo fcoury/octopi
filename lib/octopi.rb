@@ -65,6 +65,7 @@ module Octopi
       'json' => 'application/json',
       'xml'  => 'application/sml'
     }  
+    RETRYABLE_STATUS = [403]
     base_uri "http://github.com/api/v2"
   
     attr_accessor :format, :login, :token, :trace_level, :read_only
@@ -141,7 +142,12 @@ module Octopi
       end
       query = login ? { :login => login, :token => token } : {}
       query.merge!(params)
-      resp = yield(path, query.merge(params), format)
+      
+      begin
+        resp = yield(path, query.merge(params), format)
+      rescue Net::HTTPBadResponse
+        raise RetryableAPIError
+      end  
       
       if @trace_level
         case @trace_level
@@ -153,7 +159,7 @@ module Octopi
             puts "===================="
         end
       end
-      
+      raise RetryableAPIError, resp.code.to_i if RETRYABLE_STATUS.include? resp.code.to_i
       raise APIError, 
         "GitHub returned status #{resp.code}" unless resp.code.to_i == 200
       # FIXME: This fails for showing raw Git data because that call returns
@@ -169,9 +175,14 @@ module Octopi
     
     def get(path, params = {}, format = "yaml")
       trace "GET [#{format}]", "/#{format}#{path}", params
+      begin
       submit(path, params, format) do |path, params, format|
         self.class.get "/#{format}#{path}"
       end
+      rescue RetryableAPIError => e
+        $stderr.puts e.message
+        retry
+      end  
     end
     
     def trace(oper, url, params)
