@@ -66,6 +66,8 @@ module Octopi
       'xml'  => 'application/sml'
     }  
     RETRYABLE_STATUS = [403]
+    MAX_RETRIES = 10
+    
     base_uri "http://github.com/api/v2"
   
     attr_accessor :format, :login, :token, :trace_level, :read_only
@@ -147,7 +149,7 @@ module Octopi
         resp = yield(path, query.merge(params), format)
       rescue Net::HTTPBadResponse
         raise RetryableAPIError
-      end  
+      end
       
       if @trace_level
         case @trace_level
@@ -174,14 +176,21 @@ module Octopi
     end
     
     def get(path, params = {}, format = "yaml")
-      trace "GET [#{format}]", "/#{format}#{path}", params
+      @@retries = 0
       begin
-      submit(path, params, format) do |path, params, format|
-        self.class.get "/#{format}#{path}"
-      end
+        trace "GET [#{format}]", "/#{format}#{path}", params
+        submit(path, params, format) do |path, params, format|
+          self.class.get "/#{format}#{path}"
+        end
       rescue RetryableAPIError => e
-        $stderr.puts e.message
-        retry
+        if @@retries < MAX_RETRIES 
+          $stderr.puts e.message
+          @@retries += 1
+          retry
+        else  
+          raise APIError, "GitHub returned status #{e.code}, despite" +
+           " repeating the request #{MAX_RETRIES} times. Giving up."
+        end  
       end  
     end
     
@@ -190,7 +199,6 @@ module Octopi
       par_str = " params: " + params.map { |p| "#{p[0]}=#{p[1]}" }.join(", ") if params and !params.empty?
       puts "#{oper}: #{url}#{par_str}"
     end
-  end
     
   %w{error base resource user tag repository issue file_object blob commit branch}.
     each{|f| require "#{File.dirname(__FILE__)}/octopi/#{f}"} 
