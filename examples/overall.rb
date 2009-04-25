@@ -27,7 +27,7 @@ puts "Repository: #{repo.name} - #{repo.description} (by #{repo.owner}) - #{repo
 puts "      Tags: #{repo.tags and repo.tags.map {|t| t.name}.join(", ")}"
 
 issue = repo.issues.first
-puts "First open issue: #{issue.number} - #{issue.title} - Created at: #{issue.created_at}"
+puts "Sample open issue: #{issue.number} - #{issue.title} - Created at: #{issue.created_at}"
 
 # commits of a the repository
 commit = repo.commits.first

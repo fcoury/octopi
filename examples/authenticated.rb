@@ -2,7 +2,7 @@ require File.join(File.dirname(__FILE__), '..', 'lib', 'octopi')
 
 include Octopi
 
-authenticated_with :config => "github.yml" do |g|
+authenticated do |g|
   repo = g.repository("api-labrat")
 
   issue = repo.open_issue :title => "Sample issue", 

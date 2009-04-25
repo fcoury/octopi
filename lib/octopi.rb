@@ -199,6 +199,7 @@ module Octopi
       par_str = " params: " + params.map { |p| "#{p[0]}=#{p[1]}" }.join(", ") if params and !params.empty?
       puts "#{oper}: #{url}#{par_str}"
     end
+  end
     
   %w{error base resource user tag repository issue file_object blob commit branch}.
     each{|f| require "#{File.dirname(__FILE__)}/octopi/#{f}"} 
