@@ -12,4 +12,10 @@ module Octopi
    end
   end
 
+  class RetryableAPIError < RuntimeError
+    def initalize(status=nil)
+      $stderr.puts "GitHub returned status #{status.nil? ? '???' : status}. Retrying request."
+    end  
+  end
+
 end
