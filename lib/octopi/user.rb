@@ -24,6 +24,26 @@ module Octopi
       Repository.find(login, name)
     end
     
+    def add_key(title, key)
+      raise APIError, 
+        "To add a key, you must be authenticated" if @api.read_only?
+
+      result = @api.post("/user/key/add", :title => title, :key => key)
+      return if !result["public_keys"]
+      key_params = result["public_keys"].select { |k| puts "#{title} #{k["title"]} #{k["title"] == title}"; k["title"] == title }
+      return if !key_params or key_params.empty?
+      Key.new(@api, key_params.first, self)
+    end
+
+    def keys
+      raise APIError, 
+        "To add a key, you must be authenticated" if @api.read_only?
+
+      result = @api.get("/user/keys")
+      return unless result and result["public_keys"]
+      result["public_keys"].inject([]) { |result, element| result << Key.new(@api, element) }
+    end
+    
     # takes one param, deep that indicates if returns 
     # only the user login or an user object
     %w[followers following].each do |method|

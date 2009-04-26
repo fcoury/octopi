@@ -84,6 +84,9 @@ module Octopi
       end
     end
 
+    def read_only?
+      read_only
+    end
 
     {:keys => 'public_keys', :emails => 'emails'}.each_pair do |action, key|
       define_method("#{action}") do
@@ -124,6 +127,25 @@ module Octopi
     
     def get_raw(path, params)
      get(path, params, 'plain')
+    end
+    
+    def get(path, params = {}, format = "yaml")
+      @@retries = 0
+      begin
+        trace "GET [#{format}]", "/#{format}#{path}", params
+        submit(path, params, format) do |path, params, format|
+          self.class.get "/#{format}#{path}"
+        end
+      rescue RetryableAPIError => e
+        if @@retries < MAX_RETRIES 
+          $stderr.puts e.message
+          @@retries += 1
+          retry
+        else  
+          raise APIError, "GitHub returned status #{e.code}, despite" +
+           " repeating the request #{MAX_RETRIES} times. Giving up."
+        end  
+      end  
     end
     
     def post(path, params = {}, format = "yaml")
@@ -175,25 +197,6 @@ module Octopi
       resp
     end
     
-    def get(path, params = {}, format = "yaml")
-      @@retries = 0
-      begin
-        trace "GET [#{format}]", "/#{format}#{path}", params
-        submit(path, params, format) do |path, params, format|
-          self.class.get "/#{format}#{path}"
-        end
-      rescue RetryableAPIError => e
-        if @@retries < MAX_RETRIES 
-          $stderr.puts e.message
-          @@retries += 1
-          retry
-        else  
-          raise APIError, "GitHub returned status #{e.code}, despite" +
-           " repeating the request #{MAX_RETRIES} times. Giving up."
-        end  
-      end  
-    end
-    
     def trace(oper, url, params)
       return unless trace_level
       par_str = " params: " + params.map { |p| "#{p[0]}=#{p[1]}" }.join(", ") if params and !params.empty?
@@ -201,7 +204,7 @@ module Octopi
     end
   end
     
-  %w{error base resource user tag repository issue file_object blob commit branch}.
+  %w{error base resource user tag repository issue file_object blob key commit branch}.
     each{|f| require "#{File.dirname(__FILE__)}/octopi/#{f}"} 
 
 end
