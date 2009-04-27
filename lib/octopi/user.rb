@@ -4,26 +4,48 @@ module Octopi
     
     find_path "/user/search/:query"
     resource_path "/user/show/:id"
-    
+
+    # Finds a single user identified by the given username
+    #
+    # Example:
+    #   
+    #   user = User.find("fcoury")
+    #   puts user.login # should return 'fcoury'
     def self.find(username)
       self.validate_args(username => :user)
       super username
     end
 
+    # Finds all users whose username matches a given string
+    # 
+    # Example:
+    #
+    #   User.find_all("oe") # Matches joe, moe and monroe
+    #
     def self.find_all(username)
       self.validate_args(username => :user)
       super username
     end
 
+    # Returns a collection of Repository objects, containing
+    # all repositories of the user.
+    #
+    # If user is the current authenticated user, some
+    # additional information will be provided for the
+    # Repositories.
     def repositories
       Repository.find_by_user(login)
     end
     
+    # Searches for user Repository identified by
+    # name
     def repository(name)
       self.class.validate_args(name => :repo)
       Repository.find(login, name)
     end
     
+    # Adds an SSH Public Key to the user. Requires
+    # authentication.
     def add_key(title, key)
       raise APIError, 
         "To add a key, you must be authenticated" if @api.read_only?
@@ -35,6 +57,8 @@ module Octopi
       Key.new(@api, key_params.first, self)
     end
 
+    # Returns a list of Key objects containing all SSH Public Keys this user
+    # currently has. Requires authentication.
     def keys
       raise APIError, 
         "To add a key, you must be authenticated" if @api.read_only?

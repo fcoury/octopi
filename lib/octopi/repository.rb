@@ -6,10 +6,22 @@ module Octopi
     find_path "/repos/search/:query"
     resource_path "/repos/show/:id"
     
+    # Returns all branches for the Repository
+    #
+    # Example:
+    #   repo = Repository.find("fcoury", "octopi")
+    #   repo.branches.each { |r| puts r.name }
+    #
     def branches
       Branch.find(self.owner, self.name)
     end  
 
+    # Returns all tags for the Repository
+    #
+    # Example:
+    #   repo = Repository.find("fcoury", "octopi")
+    #   repo.tags.each { |t| puts t.name }
+    #
     def tags
       Tag.find(self.owner, self.name)
     end  
