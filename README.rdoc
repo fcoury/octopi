@@ -4,8 +4,11 @@ Octopi is a Ruby interface to GitHub API v2 (http://develop.github.com).
 
 To install it as a Gem, just run:
 
-  $ sudo gem install fcoury-octopi --source http://gems.github.com
+  $ sudo gem install octopi
 
+Get notifications via Twitter, following @octopi_gem:
+http://twitter.com/octopi_gem
+  
 == Authenticated Usage
 
 === Seamless authentication using .gitconfig defaults
