@@ -30,7 +30,7 @@ module Octopi
 
       result = @api.post("/user/key/add", :title => title, :key => key)
       return if !result["public_keys"]
-      key_params = result["public_keys"].select { |k| puts "#{title} #{k["title"]} #{k["title"] == title}"; k["title"] == title }
+      key_params = result["public_keys"].select { |k| k["title"] == title }
       return if !key_params or key_params.empty?
       Key.new(@api, key_params.first, self)
     end

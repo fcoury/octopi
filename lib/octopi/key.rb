@@ -11,7 +11,7 @@ module Octopi
     
     def remove!
       result = @api.post "/user/key/remove", :id => id
-      keys = result["public_keys"].select { |k| puts "#{title} #{k["title"]} #{k["title"] == title}"; k["title"] == title }
+      keys = result["public_keys"].select { |k| k["title"] == title }
       keys.empty?
     end
   end
