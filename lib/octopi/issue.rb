@@ -78,7 +78,7 @@ module Octopi
       data = @api.post(command_path("edit"), { :title => self.title, :body => self.body })
     end
     
-    %[add remove].each do |oper|
+    %w(add remove).each do |oper|
       define_method("#{oper}_label") do |*labels|
         labels.each do |label|
           @api.post("#{prefix("label/#{oper}")}/#{label}/#{number}")
