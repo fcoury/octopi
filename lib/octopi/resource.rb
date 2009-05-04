@@ -20,12 +20,20 @@ module Octopi
         @resource_name[key]
       end
       
+      def create_path(path)
+        (@path_spec||={})[:create] = path
+      end
+      
       def find_path(path)
         (@path_spec||={})[:find] = path
       end
     
       def resource_path(path)
         (@path_spec||={})[:resource] = path
+      end
+  
+      def delete_path(path)
+        (@path_spec||={})[:delete] = path
       end
       
       def find(*args)

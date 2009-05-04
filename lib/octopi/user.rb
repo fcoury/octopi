@@ -44,6 +44,11 @@ module Octopi
       Repository.find(login, name)
     end
     
+    def create_repository(name, opts = {})
+      self.class.validate_args(name => :repo)
+      Repository.create(self, name, opts)
+    end
+    
     # Adds an SSH Public Key to the user. Requires
     # authentication.
     def add_key(title, key)

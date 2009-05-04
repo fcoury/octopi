@@ -3,8 +3,10 @@ module Octopi
     include Resource
     set_resource_name "repository", "repositories"
 
+    create_path "/repos/create"
     find_path "/repos/search/:query"
     resource_path "/repos/show/:id"
+    delete_path "/repos/delete/:id"
     
     # Returns all branches for the Repository
     #
@@ -27,9 +29,11 @@ module Octopi
     end  
     
     def clone_url
-      #FIXME: Return "git@github.com:#{self.owner}/#{self.name}.git" if
-      #user's logged in and owns this repo.
-      "git://github.com/#{self.owner}/#{self.name}.git"  
+      if private? || api.login == self.owner
+        "git@github.com:#{self.owner}/#{self.name}.git"  
+      else
+        "git://github.com/#{self.owner}/#{self.name}.git"  
+      end
     end
 
     def self.find_by_user(user)
@@ -86,6 +90,19 @@ module Octopi
     def collaborators
       property('collaborators', [self.owner,self.name].join('/')).values
     end  
+    
+    def self.create(owner, name, opts = {})
+      api = owner.is_a?(User) ? owner.api : ANONYMOUS_API
+      raise APIError, "To create a repository you must be authenticated." if api.read_only?
+      self.validate_args(name => :repo)
+      api.post(path_for(:create), opts.merge(:name => name))
+      self.find(owner, name, api)
+    end
+    
+    def delete
+      token = @api.post(self.class.path_for(:delete), :id => self.name)['delete_token']
+      @api.post(self.class.path_for(:delete), :id => self.name, :delete_token => token) unless token.nil?
+    end
 
   end
 end
