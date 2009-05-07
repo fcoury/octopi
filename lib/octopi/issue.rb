@@ -85,6 +85,10 @@ module Octopi
         end
       end
     end
+
+    def comment(comment)
+      @api.post(command_path("comment"), { :comment => comment })
+    end
     
     private
     def prefix(command)
