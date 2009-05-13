@@ -149,10 +149,22 @@ module Octopi
     end
     
     def post(path, params = {}, format = "yaml")
-      trace "POST", "/#{format}#{path}", params
-      submit(path, params, format) do |path, params, format|
-        resp = self.class.post "/#{format}#{path}", :query => params
-        resp
+      @@retries = 0
+      begin
+        trace "POST", "/#{format}#{path}", params
+        submit(path, params, format) do |path, params, format|
+          resp = self.class.post "/#{format}#{path}", :query => params
+          resp
+        end
+      rescue RetryableAPIError => e
+        if @@retries < MAX_RETRIES
+          $stderr.puts e.message
+          @@retries += 1
+          retry
+        else
+          raise APIError, "GitHub returned status #{e.code}, despite" +
+           " repeating the request #{MAX_RETRIES} times. Giving up."
+        end
       end
     end
 
