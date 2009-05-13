@@ -140,6 +140,7 @@ module Octopi
         if @@retries < MAX_RETRIES 
           $stderr.puts e.message
           @@retries += 1
+          sleep 6
           retry
         else  
           raise APIError, "GitHub returned status #{e.code}, despite" +
@@ -160,6 +161,7 @@ module Octopi
         if @@retries < MAX_RETRIES
           $stderr.puts e.message
           @@retries += 1
+          sleep 6
           retry
         else
           raise APIError, "GitHub returned status #{e.code}, despite" +
