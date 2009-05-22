@@ -9,7 +9,7 @@ module Octopi
       :repo => {
         # FIXME: API currently chokes on repository names containing periods,
         # but presumably this will be fixed.
-        :pat => /^[a-z0-9_\.-]+$/,
+        :pat => /^[A-Za-z0-9_\.-]+$/,
         :msg => "%s is an invalid repository name"},
       :user => {
         :pat => /^[A-Za-z0-9_\.-]+$/,
