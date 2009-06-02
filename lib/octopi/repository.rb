@@ -8,6 +8,8 @@ module Octopi
     resource_path "/repos/show/:id"
     delete_path "/repos/delete/:id"
     
+    attr_accessor :private
+    
     # Returns all branches for the Repository
     #
     # Example:
@@ -36,10 +38,10 @@ module Octopi
       end
     end
 
-    def self.find_by_user(user)
+    def self.find_by_user(user, api = ANONYMOUS_API)
       user = user.login if user.is_a? User
       self.validate_args(user => :user)
-      find_plural(user, :resource)
+      find_plural(user, :resource, api)
     end
 
     def self.find(*args)

@@ -34,7 +34,8 @@ module Octopi
     # additional information will be provided for the
     # Repositories.
     def repositories
-      Repository.find_by_user(login)
+      api = self.api || ANONYMOUS_API
+      Repository.find_by_user(login,api)
     end
     
     # Searches for user Repository identified by

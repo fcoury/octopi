@@ -27,6 +27,7 @@ module Octopi
       user, repo_name, opts = extract_user_repository(*args)
       self.validate_args(user => :user, repo_name => :repo)
       branch = opts[:branch] || "master"
+      api = ANONYMOUS_API if repo.is_a?(Repository) && !repo.private
       commits = super user, repo_name, branch, api
       commits.each { |c| c.repository = repo } if repo.is_a? Repository
       commits
