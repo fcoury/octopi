@@ -72,7 +72,8 @@ module Octopi
     end
     
     def commits(branch = "master")
-      Commit.find_all(self, :branch => branch)
+      api = self.api || ANONYMOUS_API
+      Commit.find_all(self, {:branch => branch}, api)
     end
     
     def issues(state = "open")

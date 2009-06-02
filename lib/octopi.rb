@@ -4,16 +4,13 @@ require 'yaml'
 require 'pp'
 
 module Octopi
-  class Api; end
-  ANONYMOUS_API = Api.new
-  
   def authenticated(*args, &block)
     opts = args.last.is_a?(Hash) ? args.last : {}
     config = read_gitconfig
     login = config["github"]["user"]
     token = config["github"]["token"]
     
-    api = Api.new(login, token)
+    api = AuthApi.new(login, token)
     api.trace_level = opts[:trace]
     
     puts "=> Trace on: #{api.trace_level}" if api.trace_level
@@ -36,7 +33,7 @@ module Octopi
     
     puts "=> Trace on: #{trace}" if trace
     
-    api = Api.new(login, token)
+    api = AuthApi.new(login, token)
     api.trace_level = trace if trace
     yield api
   end
@@ -59,7 +56,6 @@ module Octopi
   end
   
   class Api
-    include HTTParty
     CONTENT_TYPE = {
       'yaml' => 'application/x-yaml',
       'json' => 'application/json',
@@ -67,9 +63,7 @@ module Octopi
     }  
     RETRYABLE_STATUS = [403]
     MAX_RETRIES = 10
-    
-    base_uri "http://github.com/api/v2"
-  
+      
     attr_accessor :format, :login, :token, :trace_level, :read_only
   
     def initialize(login = nil, token = nil, format = "yaml")
@@ -110,6 +104,11 @@ module Octopi
       repo
     end
     alias_method :repo, :repository
+    
+    def commits(repo,opts={})
+      branch = opts[:branch] || "master"
+      commits = Commit.find_all(repo, branch, self)
+    end
     
     def save(resource_path, data)
       traslate resource_path, data
@@ -217,6 +216,18 @@ module Octopi
       puts "#{oper}: #{url}#{par_str}"
     end
   end
+  
+  class AuthApi < Api
+    include HTTParty
+    base_uri "https://github.com/api/v2"
+  end
+    
+  class AnonymousApi < Api
+    include HTTParty
+    base_uri "http://github.com/api/v2"
+  end
+  
+  ANONYMOUS_API = AnonymousApi.new
     
   %w{error base resource user tag repository issue file_object blob key commit branch}.
     each{|f| require "#{File.dirname(__FILE__)}/octopi/#{f}"} 

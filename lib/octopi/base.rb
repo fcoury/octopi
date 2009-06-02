@@ -67,20 +67,22 @@ module Octopi
     def self.extract_user_repository(*args)
       opts = args.last.is_a?(Hash) ? args.pop : {}
       if opts.empty?
-        user, repo = *args if args.length > 1
-        repo ||= args.first
+        if args.length > 1
+          repo, user = *args
+        else
+          repo = args.pop
+        end
       else
         opts[:repo] = opts[:repository] if opts[:repository]
         repo = args.pop || opts[:repo]
         user = opts[:user]
       end
       
-      user ||= repo.owner if repo.is_a? Repository
+      user = repo.owner if repo.is_a? Repository
       
       if repo.is_a?(String) and !user
         raise "Need user argument when repository is identified by name"
       end
-      
       ret = extract_names(user, repo)
       ret << opts
       ret

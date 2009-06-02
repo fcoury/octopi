@@ -50,7 +50,8 @@ module Octopi
       end
       
       def find_all(*s)
-        find_plural(s, :find)
+        api = s.last.is_a?(Api) ? s.pop : ANONYMOUS_API
+        find_plural(s, :find, api)
       end
 
       def find_plural(s, path, api = ANONYMOUS_API)

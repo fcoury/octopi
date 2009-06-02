@@ -7,8 +7,8 @@ class OctopiTest < Test::Unit::TestCase
   
   def assert_find_all(cls, check_method, repo, user)
     repo_method = cls.resource_name(:plural)
-    
-    item1 = cls.find_all(user.login, repo.name).first
+
+    item1 = cls.find_all(repo.name,user.login).first
     item2 = cls.find_all(repo).first
     item3 = repo.send(repo_method).first
     
