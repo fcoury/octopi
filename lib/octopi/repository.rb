@@ -17,7 +17,7 @@ module Octopi
     #   repo.branches.each { |r| puts r.name }
     #
     def branches
-      Branch.find(self.owner, self.name)
+      Branch.find(self.owner, self.name,api)
     end  
 
     # Returns all tags for the Repository

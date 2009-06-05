@@ -5,11 +5,12 @@ module Octopi
 
     resource_path "/repos/show/:id"
     
-    def self.find(user, repo)
+    def self.find(user, repo, api=ANONYMOUS_API)
       user = user.login if user.is_a? User
       repo = repo.name if repo.is_a? Repository
       self.validate_args(user => :user, repo => :repo)
-      find_plural([user,repo,'branches'], :resource){
+      api = ANONYMOUS_API if repo.is_a?(Repository) && !repo.private
+      find_plural([user,repo,'branches'], :resource, api){
         |i| {:name => i.first, :hash => i.last }
       }
     end
