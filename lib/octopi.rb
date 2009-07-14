@@ -48,6 +48,7 @@ module Octopi
           group = $1
         else
           key, value = line.split("=")
+          value ||= ''
           (config[group]||={})[key.strip] = value.strip
         end
       end
