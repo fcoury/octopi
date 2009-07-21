@@ -154,7 +154,7 @@ module Octopi
       begin
         trace "POST", "/#{format}#{path}", params
         submit(path, params, format) do |path, params, format|
-          resp = self.class.post "/#{format}#{path}", :query => params
+          resp = self.class.post "/#{format}#{path}", :body => params
           resp
         end
       rescue RetryableAPIError => e
