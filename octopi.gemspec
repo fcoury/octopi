@@ -2,11 +2,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{octopi}
-  s.version = "0.0.13"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Felipe Coury"]
-  s.date = %q{2009-07-14}
+  s.date = %q{2009-07-21}
   s.email = %q{felipe.coury@gmail.com}
   s.extra_rdoc_files = [
     "LICENSE",
@@ -40,11 +40,12 @@ Gem::Specification.new do |s|
      "test/octopi_test.rb",
      "test/test_helper.rb"
   ]
+  s.has_rdoc = true
   s.homepage = %q{http://github.com/fcoury/octopi}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubyforge_project = %q{octopi}
-  s.rubygems_version = %q{1.3.4}
+  s.rubygems_version = %q{1.3.2}
   s.summary = %q{A Ruby interface to GitHub API v2}
   s.test_files = [
     "test/octopi_test.rb",
