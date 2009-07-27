@@ -79,7 +79,8 @@ module Octopi
     end
     
     def issues(state = "open")
-      Issue.find_all(self, :state => state)
+      api = self.api || ANONYMOUS_API
+      Issue.find_all(self, { :state => state }, api)
     end
    
     def all_issues
@@ -87,7 +88,8 @@ module Octopi
     end
 
     def issue(number)
-      Issue.find(self, number)
+      api = self.api || ANONYMOUS_API
+      Issue.find(self, number, api)
     end
 
     def collaborators
