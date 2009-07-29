@@ -95,5 +95,11 @@ module Octopi
       
       users
     end
+    
+    # If a user object is passed into a method, we can use this.
+    # It'll also work if we pass in just the login.
+    def to_s
+      login
+    end
   end
 end

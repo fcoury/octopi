@@ -39,21 +39,20 @@ module Octopi
     end
 
     def self.find_by_user(user, api = ANONYMOUS_API)
-      user = user.login if user.is_a? User
       self.validate_args(user => :user)
-      find_plural(user, :resource, api)
+      find_plural(user.to_s, :resource, api)
     end
-
+    
     def self.find(*args)
       api = args.last.is_a?(Api) ? args.pop : ANONYMOUS_API
       repo = args.pop
       user = args.pop
       
-      user = user.login if user.is_a? User
       if repo.is_a? Repository
         user ||= repo.owner 
         repo = repo.name 
       end
+      user = user.to_s  
       
       self.validate_args(user => :user, repo => :repo)
       super user, repo, api
