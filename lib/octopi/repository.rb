@@ -51,8 +51,8 @@ module Octopi
       
       user = user.login if user.is_a? User
       if repo.is_a? Repository
-        repo = repo.name 
         user ||= repo.owner 
+        repo = repo.name 
       end
       
       self.validate_args(user => :user, repo => :repo)
