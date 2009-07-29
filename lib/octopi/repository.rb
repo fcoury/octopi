@@ -37,16 +37,10 @@ module Octopi
         "git://github.com/#{self.owner}/#{self.name}.git"  
       end
     end
-
-    def self.find_by_user(user, api = ANONYMOUS_API)
-      self.validate_args(user => :user)
-      find_plural(user.to_s, :resource, api)
-    end
     
-    def self.find(*args)
-      api = args.last.is_a?(Api) ? args.pop : ANONYMOUS_API
-      repo = args.pop
-      user = args.pop
+    def self.find(options={})
+      repo = options[:repo] || options[:repository]
+      user = options[:user]
       
       if repo.is_a? Repository
         user ||= repo.owner 
@@ -55,7 +49,7 @@ module Octopi
       user = user.to_s  
       
       self.validate_args(user => :user, repo => :repo)
-      super user, repo, api
+      super user, repo
     end
 
     def self.find_all(*args)
@@ -73,13 +67,11 @@ module Octopi
     end
     
     def commits(branch = "master")
-      api = self.api || ANONYMOUS_API
-      Commit.find_all(self, {:branch => branch}, api)
+      Commit.find_all(self, {:branch => branch})
     end
     
     def issues(state = "open")
-      api = self.api || ANONYMOUS_API
-      Issue.find_all(self, { :state => state }, api)
+      Issue.find_all(self, { :state => state })
     end
    
     def all_issues
@@ -87,8 +79,7 @@ module Octopi
     end
 
     def issue(number)
-      api = self.api || ANONYMOUS_API
-      Issue.find(self.owner, self, number, api)
+      Issue.find(self.owner, self, number)
     end
 
     def collaborators
@@ -106,6 +97,10 @@ module Octopi
     def delete
       token = @api.post(self.class.path_for(:delete), :id => self.name)['delete_token']
       @api.post(self.class.path_for(:delete), :id => self.name, :delete_token => token) unless token.nil?
+    end
+    
+    def to_s
+      name
     end
 
   end

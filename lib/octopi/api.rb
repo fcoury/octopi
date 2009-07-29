@@ -1,6 +1,26 @@
-puts "LOADING API"
+require 'singleton'
 module Octopi
+  # Dummy class, so AnonymousApi and AuthApi have somewhere to inherit from
   class Api
+    
+  end
+  
+  class AnonymousApi < Api
+    include HTTParty
+    base_uri "http://github.com/api/v2"
+  end
+  
+  class AuthApi < Api
+    include HTTParty
+    base_uri "https://github.com/api/v2"
+  end
+  
+  # This is the real API class
+  class Api
+    @@api = Octopi::AnonymousApi.new
+    @@authenticated = false
+    
+    include Singleton
     CONTENT_TYPE = {
       'yaml' => 'application/x-yaml',
       'json' => 'application/json',
@@ -10,8 +30,30 @@ module Octopi
     MAX_RETRIES = 10
     
     attr_accessor :format, :login, :token, :trace_level, :read_only
+    
+    # Would be nice if cattr_accessor was available, oh well.
+    
+    # We use this to check if we use the auth or anonymous api
+    def self.authenticated
+      @@authenticated
+    end
+    
+    # We set this to true when the user has auth'd.
+    def self.authenticated=(value)
+      @@authenticated = value
+    end
+    
+    # The API we're using 
+    def self.api
+      @@api
+    end
+    
+    # set the API we're using
+    def self.api=(value)
+      @@api = value
+    end
 
-    def initialize(login = nil, token = nil, format = "yaml")
+    def self.new(login = nil, token = nil, format = "yaml")
       @format = format
       @read_only = true
     
@@ -19,7 +61,7 @@ module Octopi
         @login = login
         @token = token
         @read_only = false
-        self.class.default_params :login => login, :token => token
+        default_params :login => login, :token => token
       end
     end
 

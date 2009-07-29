@@ -7,18 +7,23 @@ require 'pp'
 Dir[File.join(File.dirname(__FILE__), "octopi/*.rb")].each { |f| require f }
 
 module Octopi
+  
   def authenticated(*args, &block)
     opts = args.last.is_a?(Hash) ? args.last : {}
     config = read_gitconfig
     login = config["github"]["user"]
     token = config["github"]["token"]
+    Api.authenticated = true
+    Api.api = AuthApi.new(login, token)
+    Api.api.trace_level = opts[:trace]
     
-    api = AuthApi.new(login, token)
-    api.trace_level = opts[:trace]
-    
-    puts "=> Trace on: #{api.trace_level}" if api.trace_level
+    puts "=> Trace on: #{api.trace_level}" if Api.api.trace_level
 
-    yield api
+    yield Api.api
+    
+    # Reset authenticated so if we were to do an anonymous call it would Just Work(tm)
+    Api.authenticated = false
+    Api.api = AnonymousApi.new
   end
   
   def authenticated_with(*args, &block)
@@ -36,9 +41,9 @@ module Octopi
     
     puts "=> Trace on: #{trace}" if trace
     
-    api = AuthApi.new(login, token)
-    api.trace_level = trace if trace
-    yield api
+    Api.api = AuthApi.new(login, token)
+    Api.api.trace_level = trace if trace
+    yield Api.api
   end
   
   def read_gitconfig
@@ -58,17 +63,4 @@ module Octopi
     end
     config
   end
-  
-  class AuthApi < Api
-    include HTTParty
-    base_uri "https://github.com/api/v2"
-  end
-    
-  class AnonymousApi < Api
-    include HTTParty
-    base_uri "http://github.com/api/v2"
-  end
-  
-  ANONYMOUS_API = AnonymousApi.new
-
 end

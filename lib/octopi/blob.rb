@@ -13,9 +13,9 @@ module Octopi
       if path
         super [user,repo,sha,path]
       else
-        blob = ANONYMOUS_API.get_raw(path_for(:resource), 
+        blob = @api.get_raw(path_for(:resource), 
               {:id => [user,repo,sha].join('/')})
-        new(ANONYMOUS_API, {:text => blob})
+        new(@api, {:text => blob})
       end  
     end  
   end

@@ -13,7 +13,8 @@ class RepositoryTest < Test::Unit::TestCase
   end
 
   
-  context Issue do
+  context Repository do
+    
     should "return a repository for a user" do
       assert_not_nil @user.repository("octopi")
     end

@@ -37,29 +37,27 @@ module Octopi
       end
       
       def find(*args)
-        api = args.last.is_a?(Api) ? args.pop : ANONYMOUS_API
         args = args.join('/') if args.is_a? Array
-        result = api.find(path_for(:resource), @resource_name[:singular], args)
+        result = Api.api.find(path_for(:resource), @resource_name[:singular], args)
         key = result.keys.first
 
         if result[key].is_a? Array
-          result[key].map { |r| new(api, r) }
+          result[key].map { |r| new(@api, r) }
         else  
-          Resource.for(key).new(api, result[key])
+          Resource.for(key).new(@api, result[key])
         end  
       end
       
       def find_all(*s)
-        api = s.last.is_a?(Api) ? s.pop : ANONYMOUS_API
-        find_plural(s, :find, api)
+        find_plural(s, :find)
       end
 
-      def find_plural(s, path, api = ANONYMOUS_API)
+      def find_plural(s, path)
         s = s.join('/') if s.is_a? Array
-        api.find_all(path_for(path), @resource_name[:plural], s).
+        Api.api.find_all(path_for(path), @resource_name[:plural], s).
           map do |item|
             payload = block_given? ? yield(item) : item
-            new(api, payload)
+            new(Api.api, payload)
           end
       end
       
