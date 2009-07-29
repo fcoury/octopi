@@ -89,7 +89,7 @@ module Octopi
 
     def issue(number)
       api = self.api || ANONYMOUS_API
-      Issue.find(self, number, api)
+      Issue.find(self.owner, self, number, api)
     end
 
     def collaborators

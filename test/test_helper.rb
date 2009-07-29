@@ -24,5 +24,18 @@ def fake_everything
   end
 end
 
+def assert_find_all(cls, check_method, repo, user)
+  repo_method = cls.resource_name(:plural)
+
+  item1 = cls.find_all(repo.name,user.login).first
+  item2 = cls.find_all(repo).first
+  item3 = repo.send(repo_method).first
+  
+  assert_equal item1.send(check_method), item2.send(check_method)
+  assert_equal item1.send(check_method), item3.send(check_method)
+end
+
+
 class Test::Unit::TestCase
+  
 end

@@ -1,3 +1,4 @@
+require File.join(File.dirname(__FILE__), "resource")
 module Octopi
   class Blob < Base
     include Resource

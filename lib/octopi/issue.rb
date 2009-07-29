@@ -40,7 +40,8 @@ module Octopi
       if args.length < 2
         raise "Issue.find needs user, repository and issue number"
       end
-      api = (args.length == 3 ? args.pop : nil) || ANONYMOUS_API
+      
+      api = (args.length == 4 ? args.pop : nil) || ANONYMOUS_API
       number = args.pop.to_i if args.last.respond_to?(:to_i)
       number = args.pop if args.last.is_a?(Integer)
       
