@@ -7,7 +7,7 @@ class RepositoryTest < Test::Unit::TestCase
     fake_everything
     @user = User.find("fcoury")
     @private_repos = authenticated_with("fcoury", "8f700e0d7747826f3e56ee13651414bd") do
-      Repository.find_by_user("fcoury")
+      @user.repositories
     end
     @repository = Repository.find(@user, "octopi")
   end

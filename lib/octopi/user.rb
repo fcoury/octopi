@@ -34,7 +34,7 @@ module Octopi
     # additional information will be provided for the
     # Repositories.
     def repositories
-      rs = RepositorySet.new(Repository.find_all(gitself.login))
+      rs = RepositorySet.new(Repository.find(:user => self.login))
       rs.user = self
       rs.api = api
       rs
@@ -44,7 +44,7 @@ module Octopi
     # name
     def repository(name)
       self.class.validate_args(name => :repo)
-      Repository.find(login, name)
+      Repository.find(:user => login, :repo => name)
     end
     
     def create_repository(name, opts = {})
