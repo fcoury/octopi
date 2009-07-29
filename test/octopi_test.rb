@@ -1,9 +1,11 @@
-require 'test_helper'
+require File.join(File.dirname(__FILE__), 'test_helper')
 
 class OctopiTest < Test::Unit::TestCase
   include Octopi
   
   # TODO: Those tests are obviously brittle. Need to stub/mock it.
+  
+
   
   def assert_find_all(cls, check_method, repo, user)
     repo_method = cls.resource_name(:plural)
@@ -17,6 +19,7 @@ class OctopiTest < Test::Unit::TestCase
   end
   
   def setup
+    fake_everything
     @user = User.find("fcoury")
     @repo = @user.repository("octopi")
     @issue = @repo.issues.first

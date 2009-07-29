@@ -1,0 +1,465 @@
+--- 
+commits: 
+- message: |-
+    Fix pulling issues from private repos.
+    
+    Signed-off-by: Felipe Coury <felipe.coury@gmail.com>
+  parents: 
+  - id: 737650490a3cf3689f92644126407b21c4493d9a
+  url: http://github.com/fcoury/octopi/commit/f6609209c3ac0badd004512d318bfaa508ea10ae
+  author: 
+    name: Andrew Moreland
+    email: andy@andymo.org
+  id: f6609209c3ac0badd004512d318bfaa508ea10ae
+  committed_date: "2009-07-27T18:24:59-07:00"
+  authored_date: "2009-07-26T17:37:41-07:00"
+  tree: a59231d4e3b99d6aaf349344ad0306b1bee7622d
+  committer: 
+    name: Felipe Coury
+    email: felipe.coury@gmail.com
+- message: Regenerated gemspec for version 0.1.0
+  parents: 
+  - id: 5b71e51b19ce6cb4eda9f6045fa0305bddf3744a
+  url: http://github.com/fcoury/octopi/commit/737650490a3cf3689f92644126407b21c4493d9a
+  author: 
+    name: Felipe Coury
+    email: felipe.coury@gmail.com
+  id: 737650490a3cf3689f92644126407b21c4493d9a
+  committed_date: "2009-07-20T22:30:32-07:00"
+  authored_date: "2009-07-20T22:30:32-07:00"
+  tree: e3f177d073324c14153110a2c959014d4986b6a8
+  committer: 
+    name: Felipe Coury
+    email: felipe.coury@gmail.com
+- message: Version bump to 0.1.0
+  parents: 
+  - id: 57da65035236b8603c96866f0d5876c6cfe63e46
+  url: http://github.com/fcoury/octopi/commit/5b71e51b19ce6cb4eda9f6045fa0305bddf3744a
+  author: 
+    name: Felipe Coury
+    email: felipe.coury@gmail.com
+  id: 5b71e51b19ce6cb4eda9f6045fa0305bddf3744a
+  committed_date: "2009-07-20T22:30:21-07:00"
+  authored_date: "2009-07-20T22:30:21-07:00"
+  tree: 5f74bbf1754a12b63ed6eea613a4d7868402ebcc
+  committer: 
+    name: Felipe Coury
+    email: felipe.coury@gmail.com
+- message: Sends data in body, not as params (missed Content-Lenght)
+  parents: 
+  - id: 00fd8079dd423c2028a8a62e98a759c4e49258f9
+  url: http://github.com/fcoury/octopi/commit/57da65035236b8603c96866f0d5876c6cfe63e46
+  author: 
+    name: Felipe Coury
+    email: felipe.coury@gmail.com
+  id: 57da65035236b8603c96866f0d5876c6cfe63e46
+  committed_date: "2009-07-20T22:29:54-07:00"
+  authored_date: "2009-07-20T22:29:54-07:00"
+  tree: 67cf3f067fce0bff3c5af717754259cbb0a05d02
+  committer: 
+    name: Felipe Coury
+    email: felipe.coury@gmail.com
+- message: |-
+    updated gemspec to 0.0.13
+    
+    Signed-off-by: Felipe Coury <felipe.coury@gmail.com>
+  parents: 
+  - id: f7e92f4a5b86141493bd89b2be39a70d03aab3d0
+  url: http://github.com/fcoury/octopi/commit/00fd8079dd423c2028a8a62e98a759c4e49258f9
+  author: 
+    name: David Dollar
+    email: ddollar@gmail.com
+  id: 00fd8079dd423c2028a8a62e98a759c4e49258f9
+  committed_date: "2009-07-17T16:33:26-07:00"
+  authored_date: "2009-07-14T10:28:02-07:00"
+  tree: b4fcbdaac8baaebd625da5f9b3befca1651b307a
+  committer: 
+    name: Felipe Coury
+    email: felipe.coury@gmail.com
+- message: |-
+    Version bump to 0.0.13
+    
+    Signed-off-by: Felipe Coury <felipe.coury@gmail.com>
+  parents: 
+  - id: ed07094122888df187a377b0739e25a5b195cc1e
+  url: http://github.com/fcoury/octopi/commit/f7e92f4a5b86141493bd89b2be39a70d03aab3d0
+  author: 
+    name: David Dollar
+    email: ddollar@gmail.com
+  id: f7e92f4a5b86141493bd89b2be39a70d03aab3d0
+  committed_date: "2009-07-17T16:33:24-07:00"
+  authored_date: "2009-07-14T10:27:51-07:00"
+  tree: 6bbfee0e01f76526536a9bb40efc96e447cea2a6
+  committer: 
+    name: Felipe Coury
+    email: felipe.coury@gmail.com
+- message: |-
+    some git config options can have blank values (like pager)
+    
+    Signed-off-by: Felipe Coury <felipe.coury@gmail.com>
+  parents: 
+  - id: 7b33a45ad9e535d8ee27069899ed4de7d703a5f8
+  url: http://github.com/fcoury/octopi/commit/ed07094122888df187a377b0739e25a5b195cc1e
+  author: 
+    name: David Dollar
+    email: ddollar@gmail.com
+  id: ed07094122888df187a377b0739e25a5b195cc1e
+  committed_date: "2009-07-17T16:33:23-07:00"
+  authored_date: "2009-07-14T10:27:30-07:00"
+  tree: 7a73f9f4fb057759248af2aa8eaaf7e83275b0f4
+  committer: 
+    name: Felipe Coury
+    email: felipe.coury@gmail.com
+- message: |-
+    New gemspec
+    
+    Signed-off-by: Felipe Coury <felipe.coury@gmail.com>
+  parents: 
+  - id: c89ddf74c14c18790e54c66c9fb57bf7a21cf5f3
+  url: http://github.com/fcoury/octopi/commit/7b33a45ad9e535d8ee27069899ed4de7d703a5f8
+  author: 
+    name: philnash
+    email: philnash@gmail.com
+  id: 7b33a45ad9e535d8ee27069899ed4de7d703a5f8
+  committed_date: "2009-06-17T07:53:57-07:00"
+  authored_date: "2009-06-05T02:21:38-07:00"
+  tree: 00fac47f709dd8e18208d01d64085a7c507bb11d
+  committer: 
+    name: Felipe Coury
+    email: felipe.coury@gmail.com
+- message: |-
+    Version bump to 0.0.12
+    
+    Signed-off-by: Felipe Coury <felipe.coury@gmail.com>
+  parents: 
+  - id: 5874d02baac961235cd20dff5e97d752983cfe76
+  url: http://github.com/fcoury/octopi/commit/c89ddf74c14c18790e54c66c9fb57bf7a21cf5f3
+  author: 
+    name: philnash
+    email: philnash@gmail.com
+  id: c89ddf74c14c18790e54c66c9fb57bf7a21cf5f3
+  committed_date: "2009-06-17T07:53:55-07:00"
+  authored_date: "2009-06-05T02:21:16-07:00"
+  tree: db71befb5d4e64408c79ffc5c99d30833a32506b
+  committer: 
+    name: Felipe Coury
+    email: felipe.coury@gmail.com
+- message: |-
+    Ability to get branches from private repos.
+    
+    Signed-off-by: Felipe Coury <felipe.coury@gmail.com>
+  parents: 
+  - id: 79d9d527ceb4a87476b5c5cafd658a4d5d4b14f0
+  url: http://github.com/fcoury/octopi/commit/5874d02baac961235cd20dff5e97d752983cfe76
+  author: 
+    name: philnash
+    email: philnash@gmail.com
+  id: 5874d02baac961235cd20dff5e97d752983cfe76
+  committed_date: "2009-06-17T07:53:53-07:00"
+  authored_date: "2009-06-05T02:20:53-07:00"
+  tree: 3fc6ce27a7089746c2b7f226f59d413139f165c5
+  committer: 
+    name: Felipe Coury
+    email: felipe.coury@gmail.com
+- message: Build new gem
+  parents: 
+  - id: 40b809a0bc3d8c71633f9947dd1f1eaeee43dbb5
+  url: http://github.com/fcoury/octopi/commit/79d9d527ceb4a87476b5c5cafd658a4d5d4b14f0
+  author: 
+    name: philnash
+    email: philnash@gmail.com
+  id: 79d9d527ceb4a87476b5c5cafd658a4d5d4b14f0
+  committed_date: "2009-06-02T02:18:34-07:00"
+  authored_date: "2009-06-02T02:18:34-07:00"
+  tree: 3be85900778fe9b41c828067e75d59a41aa5cc5a
+  committer: 
+    name: philnash
+    email: philnash@gmail.com
+- message: Version bump to 0.0.11
+  parents: 
+  - id: f07ee115abeecc1a3d852efc7d3d04877af01373
+  url: http://github.com/fcoury/octopi/commit/40b809a0bc3d8c71633f9947dd1f1eaeee43dbb5
+  author: 
+    name: philnash
+    email: philnash@gmail.com
+  id: 40b809a0bc3d8c71633f9947dd1f1eaeee43dbb5
+  committed_date: "2009-06-02T02:18:10-07:00"
+  authored_date: "2009-06-02T02:18:10-07:00"
+  tree: eadeb8d34918cc5d8dd1a2ab85a54171a90d6004
+  committer: 
+    name: philnash
+    email: philnash@gmail.com
+- message: Uses http for non private commits calls and https for private commits calls.
+  parents: 
+  - id: 21678ec8571a5f4ecb847a1d93d830d09cde9b68
+  url: http://github.com/fcoury/octopi/commit/f07ee115abeecc1a3d852efc7d3d04877af01373
+  author: 
+    name: philnash
+    email: philnash@gmail.com
+  id: f07ee115abeecc1a3d852efc7d3d04877af01373
+  committed_date: "2009-06-02T02:15:31-07:00"
+  authored_date: "2009-06-02T02:15:31-07:00"
+  tree: b127b6d1194af2c2765cd85213323266d809b719
+  committer: 
+    name: philnash
+    email: philnash@gmail.com
+- message: Fixes authorised calls to use https and adds api.commits
+  parents: 
+  - id: 2bfa90160808b4d7ed281e5858164dc8029509bc
+  url: http://github.com/fcoury/octopi/commit/21678ec8571a5f4ecb847a1d93d830d09cde9b68
+  author: 
+    name: philnash
+    email: philnash@gmail.com
+  id: 21678ec8571a5f4ecb847a1d93d830d09cde9b68
+  committed_date: "2009-06-01T19:30:01-07:00"
+  authored_date: "2009-06-01T19:30:01-07:00"
+  tree: 4212505490b89f57055fee5075a04804063c02ea
+  committer: 
+    name: philnash
+    email: philnash@gmail.com
+- message: |-
+    Sleep between retries (because they are caused by github's rate limit)
+    
+    Signed-off-by: Felipe Coury <felipe.coury@gmail.com>
+  parents: 
+  - id: fb5ba554b2d147f8dd62c12ac1dfce1608c2a850
+  url: http://github.com/fcoury/octopi/commit/2bfa90160808b4d7ed281e5858164dc8029509bc
+  author: 
+    name: Nat Budin
+    email: natbudin@gmail.com
+  id: 2bfa90160808b4d7ed281e5858164dc8029509bc
+  committed_date: "2009-05-23T09:57:44-07:00"
+  authored_date: "2009-05-13T11:40:47-07:00"
+  tree: f4da08ee7e177aa86ec0438ebc00d1f192670221
+  committer: 
+    name: Felipe Coury
+    email: felipe.coury@gmail.com
+- message: |-
+    Allow retry on post as well as get
+    
+    Signed-off-by: Felipe Coury <felipe.coury@gmail.com>
+  parents: 
+  - id: 3283fa78014bf066c36e5c1dea1a5dae18fec157
+  url: http://github.com/fcoury/octopi/commit/fb5ba554b2d147f8dd62c12ac1dfce1608c2a850
+  author: 
+    name: Nat Budin
+    email: natbudin@gmail.com
+  id: fb5ba554b2d147f8dd62c12ac1dfce1608c2a850
+  committed_date: "2009-05-23T09:57:32-07:00"
+  authored_date: "2009-05-13T11:31:55-07:00"
+  tree: a097806b41c3110597b9f902e447b838fd3f3a58
+  committer: 
+    name: Felipe Coury
+    email: felipe.coury@gmail.com
+- message: |-
+    Fixed the regex for determining valid repo names
+    
+    Signed-off-by: Felipe Coury <felipe.coury@gmail.com>
+  parents: 
+  - id: 524a35d0f61ff6a2d3ba9422bc03e70f5784c679
+  url: http://github.com/fcoury/octopi/commit/3283fa78014bf066c36e5c1dea1a5dae18fec157
+  author: 
+    name: Michael Wright
+    email: mwright@24-iMac-Workstation.local
+  id: 3283fa78014bf066c36e5c1dea1a5dae18fec157
+  committed_date: "2009-05-23T09:57:21-07:00"
+  authored_date: "2009-05-22T12:15:15-07:00"
+  tree: 21818402537c7ef1d7706cb1588117f1f4b12647
+  committer: 
+    name: Felipe Coury
+    email: felipe.coury@gmail.com
+- message: Added HTTParty 0.4 as a dependency
+  parents: 
+  - id: 2f7b98cf531f6e854c4d6efb11adceaef72887ab
+  url: http://github.com/fcoury/octopi/commit/524a35d0f61ff6a2d3ba9422bc03e70f5784c679
+  author: 
+    name: Felipe Coury
+    email: felipe.coury@gmail.com
+  id: 524a35d0f61ff6a2d3ba9422bc03e70f5784c679
+  committed_date: "2009-05-09T12:48:51-07:00"
+  authored_date: "2009-05-09T12:48:51-07:00"
+  tree: a61e9442d442275df58e88c03d642bf5d4b626e0
+  committer: 
+    name: Felipe Coury
+    email: felipe.coury@gmail.com
+- message: |-
+    add ability to create and delete repository
+    
+    Signed-off-by: Felipe Coury <felipe.coury@gmail.com>
+  parents: 
+  - id: 39a2e5861a8d9685225a3b4214bf521a15e3379f
+  url: http://github.com/fcoury/octopi/commit/2f7b98cf531f6e854c4d6efb11adceaef72887ab
+  author: 
+    name: serega
+    email: martynovs@gmail.com
+  id: 2f7b98cf531f6e854c4d6efb11adceaef72887ab
+  committed_date: "2009-05-07T12:00:35-07:00"
+  authored_date: "2009-05-03T23:52:19-07:00"
+  tree: ffb3dc6a899a58998d31c9a211a4edf99db674ef
+  committer: 
+    name: Felipe Coury
+    email: felipe.coury@gmail.com
+- message: |-
+    Allow adding comments to issues
+    
+    Signed-off-by: Felipe Coury <felipe.coury@gmail.com>
+  parents: 
+  - id: 732d22de1a375f92d24c80c989be0a6d08c301b0
+  url: http://github.com/fcoury/octopi/commit/39a2e5861a8d9685225a3b4214bf521a15e3379f
+  author: 
+    name: Nat Budin
+    email: natbudin@gmail.com
+  id: 39a2e5861a8d9685225a3b4214bf521a15e3379f
+  committed_date: "2009-05-07T12:00:20-07:00"
+  authored_date: "2009-05-07T11:40:19-07:00"
+  tree: 01e1794cb553f33bc6875692734cfae2b8e4a45a
+  committer: 
+    name: Felipe Coury
+    email: felipe.coury@gmail.com
+- message: |-
+    fixed syntax error generating add_label remove_label
+    
+    Signed-off-by: Felipe Coury <felipe.coury@gmail.com>
+  parents: 
+  - id: 0a1410ea8125dae0b308303cbd840037cc88a633
+  url: http://github.com/fcoury/octopi/commit/732d22de1a375f92d24c80c989be0a6d08c301b0
+  author: 
+    name: Adam Maddox
+    email: adam.maddox@redcoded.com
+  id: 732d22de1a375f92d24c80c989be0a6d08c301b0
+  committed_date: "2009-04-28T04:59:53-07:00"
+  authored_date: "2009-04-27T10:35:49-07:00"
+  tree: 5be4f5848929e5dcf2b533e3416f1d610de1e81e
+  committer: 
+    name: Felipe Coury
+    email: felipe.coury@gmail.com
+- message: Added some more rdoc comments
+  parents: 
+  - id: 60cef225f9167da76ee21a4e10a6e6a633835c9f
+  url: http://github.com/fcoury/octopi/commit/0a1410ea8125dae0b308303cbd840037cc88a633
+  author: 
+    name: Felipe Coury
+    email: felipe.coury@gmail.com
+  id: 0a1410ea8125dae0b308303cbd840037cc88a633
+  committed_date: "2009-04-27T09:04:03-07:00"
+  authored_date: "2009-04-27T09:04:03-07:00"
+  tree: cd5370fa7dbcd816d4d45c0b3ca0a06e6b07281b
+  committer: 
+    name: Felipe Coury
+    email: felipe.coury@gmail.com
+- message: Added twitter notification account to README
+  parents: 
+  - id: eb2634e95308a32951404f70004864c64a94c78a
+  url: http://github.com/fcoury/octopi/commit/60cef225f9167da76ee21a4e10a6e6a633835c9f
+  author: 
+    name: Felipe Coury
+    email: felipe.coury@gmail.com
+  id: 60cef225f9167da76ee21a4e10a6e6a633835c9f
+  committed_date: "2009-04-27T08:40:56-07:00"
+  authored_date: "2009-04-27T08:40:56-07:00"
+  tree: e3cd682dfc2451b827c8fb474d6f8ac10c10ef54
+  committer: 
+    name: Felipe Coury
+    email: felipe.coury@gmail.com
+- message: Added support for RubyForge
+  parents: 
+  - id: 4cca98dd9cfed5e976629b08b7c8145258e2aaee
+  url: http://github.com/fcoury/octopi/commit/eb2634e95308a32951404f70004864c64a94c78a
+  author: 
+    name: Felipe Coury
+    email: felipe.coury@gmail.com
+  id: eb2634e95308a32951404f70004864c64a94c78a
+  committed_date: "2009-04-27T07:59:09-07:00"
+  authored_date: "2009-04-27T07:59:09-07:00"
+  tree: 39fe4d8b9e6b8052ba25eb2683a92a0f6cfea0ad
+  committer: 
+    name: Felipe Coury
+    email: felipe.coury@gmail.com
+- message: Regenerated gemspec for version 0.0.9
+  parents: 
+  - id: 1cf985a4197c64acb4ec042d4b605440957daf7b
+  url: http://github.com/fcoury/octopi/commit/4cca98dd9cfed5e976629b08b7c8145258e2aaee
+  author: 
+    name: Felipe Coury
+    email: felipe.coury@gmail.com
+  id: 4cca98dd9cfed5e976629b08b7c8145258e2aaee
+  committed_date: "2009-04-26T19:32:46-07:00"
+  authored_date: "2009-04-26T19:32:46-07:00"
+  tree: d0f8a8bb9333a6ab9dd396e43ad5332adbc456c8
+  committer: 
+    name: Felipe Coury
+    email: felipe.coury@gmail.com
+- message: Version bump to 0.0.9
+  parents: 
+  - id: 3722781bfead75e7c30363f158ee58f8691047cd
+  url: http://github.com/fcoury/octopi/commit/1cf985a4197c64acb4ec042d4b605440957daf7b
+  author: 
+    name: Felipe Coury
+    email: felipe.coury@gmail.com
+  id: 1cf985a4197c64acb4ec042d4b605440957daf7b
+  committed_date: "2009-04-26T19:32:38-07:00"
+  authored_date: "2009-04-26T19:32:38-07:00"
+  tree: 78664a2ad7bc262b260f16f9ccfd5464e506d879
+  committer: 
+    name: Felipe Coury
+    email: felipe.coury@gmail.com
+- message: Removed two "puts" leftovers
+  parents: 
+  - id: abcb268b938318d23b7dea710fb792fbee1c46bc
+  url: http://github.com/fcoury/octopi/commit/3722781bfead75e7c30363f158ee58f8691047cd
+  author: 
+    name: Felipe Coury
+    email: felipe.coury@gmail.com
+  id: 3722781bfead75e7c30363f158ee58f8691047cd
+  committed_date: "2009-04-26T19:32:01-07:00"
+  authored_date: "2009-04-26T19:32:01-07:00"
+  tree: 5ea67dd8b70375c4dfcd82c93075cde9edee05c6
+  committer: 
+    name: Felipe Coury
+    email: felipe.coury@gmail.com
+- message: Regenerated gemspec for version 0.0.8
+  parents: 
+  - id: b0d16c6a862a23d3ba50770ba9f29b63ab8aaeca
+  url: http://github.com/fcoury/octopi/commit/abcb268b938318d23b7dea710fb792fbee1c46bc
+  author: 
+    name: Felipe Coury
+    email: felipe.coury@gmail.com
+  id: abcb268b938318d23b7dea710fb792fbee1c46bc
+  committed_date: "2009-04-25T20:02:36-07:00"
+  authored_date: "2009-04-25T20:02:36-07:00"
+  tree: 414d3efcb4114c58d53a85d07008fc3d9a7e8b6b
+  committer: 
+    name: Felipe Coury
+    email: felipe.coury@gmail.com
+- message: Version bump to 0.0.8
+  parents: 
+  - id: 0a3417a353961c61a7f56818e566d04570c92600
+  url: http://github.com/fcoury/octopi/commit/b0d16c6a862a23d3ba50770ba9f29b63ab8aaeca
+  author: 
+    name: Felipe Coury
+    email: felipe.coury@gmail.com
+  id: b0d16c6a862a23d3ba50770ba9f29b63ab8aaeca
+  committed_date: "2009-04-25T20:02:32-07:00"
+  authored_date: "2009-04-25T20:02:32-07:00"
+  tree: a74c6be33d94801bc912c64e71fdae851eb4c82a
+  committer: 
+    name: Felipe Coury
+    email: felipe.coury@gmail.com
+- message: |-
+    Added Public Key Management API hooks.
+    
+    Added methods add_key and keys to user.
+    Added new Key resource to add and remove keys.
+  parents: 
+  - id: 845fa497497e211944b13485fa596bf46f8f182a
+  url: http://github.com/fcoury/octopi/commit/0a3417a353961c61a7f56818e566d04570c92600
+  author: 
+    name: Felipe Coury
+    email: felipe.coury@gmail.com
+  id: 0a3417a353961c61a7f56818e566d04570c92600
+  committed_date: "2009-04-25T20:02:08-07:00"
+  authored_date: "2009-04-25T20:00:31-07:00"
+  tree: a4fb1b35429d1241e6853c6c275dfb9caff12122
+  committer: 
+    name: Felipe Coury
+    email: felipe.coury@gmail.com
