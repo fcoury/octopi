@@ -1,0 +1,431 @@
+--- 
+repositories: 
+- :description: A project to isolate the possible bug with rendering for attribute for label_tag as opposed to radio_button_tag
+  :name: labelbug
+  :owner: fcoury
+  :private: false
+  :url: http://github.com/fcoury/labelbug
+  :fork: false
+  :forks: 0
+  :homepage: http://labelbug.felipecoury.com
+  :watchers: 2
+  :open_issues: 0
+- :description: A simple theme for web apps
+  :name: web-app-theme
+  :owner: fcoury
+  :private: false
+  :url: http://github.com/fcoury/web-app-theme
+  :fork: true
+  :forks: 0
+  :homepage: ""
+  :watchers: 2
+  :open_issues: 0
+- :description: Autumn ORM
+  :name: autumn
+  :owner: fcoury
+  :private: false
+  :url: http://github.com/fcoury/autumn
+  :fork: true
+  :forks: 0
+  :homepage: http://autumn-orm.org/
+  :watchers: 1
+  :open_issues: 0
+- :description: Kick it!
+  :name: baseapp
+  :owner: fcoury
+  :private: false
+  :url: http://github.com/fcoury/baseapp
+  :fork: true
+  :forks: 0
+  :homepage: http://baseapp.org
+  :watchers: 1
+  :open_issues: 0
+- :description: Git/Subversion browser and changeset viewer
+  :name: warehouse
+  :owner: fcoury
+  :private: false
+  :url: http://github.com/fcoury/warehouse
+  :fork: true
+  :forks: 0
+  :homepage: http://warehouseapp.com
+  :watchers: 1
+  :open_issues: 0
+- :description: "'cos all cool kids are doing it"
+  :name: dotfiles
+  :owner: fcoury
+  :private: false
+  :url: http://github.com/fcoury/dotfiles
+  :fork: false
+  :forks: 0
+  :homepage: http://fcoury.info
+  :watchers: 1
+  :open_issues: 0
+- :description: BDD that talks to domain experts first and code second
+  :name: cucumber
+  :owner: fcoury
+  :private: false
+  :url: http://github.com/fcoury/cucumber
+  :fork: true
+  :forks: 0
+  :homepage: http://github.com/aslakhellesoy/cucumber/wikis
+  :watchers: 2
+  :open_issues: 0
+- :description: Smarter capitalisation of titles
+  :name: titleizer
+  :owner: fcoury
+  :private: false
+  :url: http://github.com/fcoury/titleizer
+  :fork: true
+  :forks: 0
+  :homepage: ""
+  :watchers: 1
+  :open_issues: 0
+- :description: A systems integration framework, built to bring the benefits of configuration management to your entire infrastructure.
+  :name: chef
+  :owner: fcoury
+  :private: false
+  :url: http://github.com/fcoury/chef
+  :fork: true
+  :forks: 0
+  :homepage: http://wiki.opscode.com/display/chef
+  :watchers: 1
+  :open_issues: 0
+- :description: Fork of the simple auto complete rails plugin
+  :name: simple_auto_complete
+  :owner: fcoury
+  :private: false
+  :url: http://github.com/fcoury/simple_auto_complete
+  :fork: true
+  :forks: 0
+  :homepage: http://pragmatig.wordpress.com/2008/04/25/unobtrusive-autocomplete-rails-plugin/
+  :watchers: 2
+  :open_issues: 0
+- :description: "ruby based curses widgets: fields, buttons, textarea. menus, message boxes, tabbed panes, tables, listboxes ..."
+  :name: rbcurse
+  :owner: fcoury
+  :private: false
+  :url: http://github.com/fcoury/rbcurse
+  :fork: true
+  :forks: 0
+  :homepage: http://totalrecall.wordpress.com/
+  :watchers: 1
+  :open_issues: 0
+- :description: "JFileHelpers is a library that automates the tedious task of parsing and creating structured text files. It handles fixed width or delimited files with Java annotations sweetness. "
+  :name: jfilehelpers
+  :owner: fcoury
+  :private: false
+  :url: http://github.com/fcoury/jfilehelpers
+  :fork: false
+  :forks: 0
+  :homepage: http://jfilehelpers.com
+  :watchers: 2
+  :open_issues: 0
+- :description: Simple library which makes it easy to add caching to all your external API calls.
+  :name: api_cache
+  :owner: fcoury
+  :private: false
+  :url: http://github.com/fcoury/api_cache
+  :fork: true
+  :forks: 0
+  :homepage: ""
+  :watchers: 1
+  :open_issues: 0
+- :description: A tool for faking responses to web requests, originally by Blaine Cook
+  :name: fakeweb
+  :owner: fcoury
+  :private: false
+  :url: http://github.com/fcoury/fakeweb
+  :fork: true
+  :forks: 0
+  :homepage: http://groups.google.com/group/fakeweb-users
+  :watchers: 1
+  :open_issues: 0
+- :description: Isolated test for HIRB problem
+  :name: hirb-isolated
+  :owner: fcoury
+  :private: false
+  :url: http://github.com/fcoury/hirb-isolated
+  :fork: false
+  :forks: 0
+  :homepage: ""
+  :watchers: 1
+  :open_issues: 0
+- :description: A rails plugin to backup Mysql to Amazon S3
+  :name: db2s3
+  :owner: fcoury
+  :private: false
+  :url: http://github.com/fcoury/db2s3
+  :fork: true
+  :forks: 1
+  :homepage: ""
+  :watchers: 2
+  :open_issues: 0
+- :description: The ~/.vim directory that we share at work
+  :name: vimfiles
+  :owner: fcoury
+  :private: false
+  :url: http://github.com/fcoury/vimfiles
+  :fork: true
+  :forks: 0
+  :homepage: ""
+  :watchers: 1
+  :open_issues: 0
+- :description: Wanna build a stack? Give us the blueprint.
+  :name: blueprint
+  :owner: fcoury
+  :private: false
+  :url: http://github.com/fcoury/blueprint
+  :fork: false
+  :forks: 0
+  :watchers: 1
+  :open_issues: 0
+- :description: simple database import/export app
+  :name: taps
+  :owner: fcoury
+  :private: false
+  :url: http://github.com/fcoury/taps
+  :fork: true
+  :forks: 0
+  :homepage: ""
+  :watchers: 1
+  :open_issues: 0
+- :description: TextMate bundle for Cucumber
+  :name: cucumber-tmbundle
+  :owner: fcoury
+  :private: false
+  :url: http://github.com/fcoury/cucumber-tmbundle
+  :fork: true
+  :forks: 0
+  :homepage: http://www.benmabey.com
+  :watchers: 1
+  :open_issues: 0
+- :description: A base Sinatra application template with DataMapper, RSpec, and Haml. Just fork and build.
+  :name: sinatra-template
+  :owner: fcoury
+  :private: false
+  :url: http://github.com/fcoury/sinatra-template
+  :fork: true
+  :forks: 0
+  :homepage: ""
+  :watchers: 1
+  :open_issues: 0
+- :description: "Sistema para controle de cursinho pr\xC3\xA9 vestibular"
+  :name: cursoprevestibular
+  :owner: fcoury
+  :private: false
+  :url: http://github.com/fcoury/cursoprevestibular
+  :fork: false
+  :forks: 0
+  :homepage: ""
+  :watchers: 1
+  :open_issues: 0
+- :description: A Ruby interface to GitHub API v2
+  :name: octopi
+  :owner: fcoury
+  :private: false
+  :url: http://github.com/fcoury/octopi
+  :fork: false
+  :forks: 10
+  :homepage: http://hasmany.info/2009/4/18/ruby-interface-to-github-api
+  :watchers: 79
+  :open_issues: 21
+- :description: A web-based personal finance manager with a focus on non-OCD budgeting and avoiding credit card debt
+  :name: bucketwise
+  :owner: fcoury
+  :private: false
+  :url: http://github.com/fcoury/bucketwise
+  :fork: true
+  :forks: 0
+  :homepage: ""
+  :watchers: 1
+  :open_issues: 0
+- :description: Lab rat for GitHub API interaction using Octopi
+  :name: api-labrat
+  :owner: fcoury
+  :private: false
+  :url: http://github.com/fcoury/api-labrat
+  :fork: false
+  :forks: 0
+  :homepage: http://github.com/fcoury/octopi
+  :watchers: 1
+  :open_issues: 2
+- :description: Makes Amazon S3 backups redonkulous. Redonkulously easy, that is.
+  :name: backup_fu
+  :owner: fcoury
+  :private: false
+  :url: http://github.com/fcoury/backup_fu
+  :fork: true
+  :forks: 0
+  :homepage: http://shanti.railsblog.com/backup-fu-makes-amazon-s3-backups-redonkulous
+  :watchers: 1
+  :open_issues: 0
+- :description: A tool to simplify working with remote branches
+  :name: git_remote_branch
+  :owner: fcoury
+  :private: false
+  :url: http://github.com/fcoury/git_remote_branch
+  :fork: true
+  :forks: 0
+  :homepage: http://grb.rubyforge.org/
+  :watchers: 1
+  :open_issues: 0
+- :description: Isolated test for Rails Single-Table Inheritance caching problem
+  :name: rails-sti-caching
+  :owner: fcoury
+  :private: false
+  :url: http://github.com/fcoury/rails-sti-caching
+  :fork: false
+  :forks: 0
+  :homepage: ""
+  :watchers: 1
+  :open_issues: 0
+- :description: Eff finds things right from your command line. Also, it's quite extensible!
+  :name: eff-the-finder
+  :owner: fcoury
+  :private: false
+  :url: http://github.com/fcoury/eff-the-finder
+  :fork: true
+  :forks: 0
+  :homepage: ""
+  :watchers: 2
+  :open_issues: 0
+- :description: Gem Command to easily open a ruby gem with the editor of your choice.
+  :name: open_gem
+  :owner: fcoury
+  :private: false
+  :url: http://github.com/fcoury/open_gem
+  :fork: true
+  :forks: 0
+  :homepage: http://endofline.wordpress.com
+  :watchers: 1
+  :open_issues: 0
+- :description: An alternative syntax to Rails content_tag, inspired by the old Ruby CGI library
+  :name: html_tag
+  :owner: fcoury
+  :private: false
+  :url: http://github.com/fcoury/html_tag
+  :fork: true
+  :forks: 0
+  :homepage: ""
+  :watchers: 1
+  :open_issues: 0
+- :description: An experiment in creating an OAuth provider with Sinatra
+  :name: sinatra-oauth-provider
+  :owner: fcoury
+  :private: false
+  :url: http://github.com/fcoury/sinatra-oauth-provider
+  :fork: true
+  :forks: 0
+  :homepage: ""
+  :watchers: 1
+  :open_issues: 0
+- :description: A library for assisting with making an OAuth provider
+  :name: oauth_provider
+  :owner: fcoury
+  :private: false
+  :url: http://github.com/fcoury/oauth_provider
+  :fork: true
+  :forks: 0
+  :homepage: ""
+  :watchers: 1
+  :open_issues: 0
+- :description: OAuth sample consumer & provider
+  :name: oauth_sample
+  :owner: fcoury
+  :private: false
+  :url: http://github.com/fcoury/oauth_sample
+  :fork: true
+  :forks: 0
+  :homepage: ""
+  :watchers: 1
+  :open_issues: 0
+- :description: Sprinkle is a software provisioning tool you can use to build remote servers with. eg. to install a Rails or Merb stack on a brand new slice directly after its been created
+  :name: sprinkle
+  :owner: fcoury
+  :private: false
+  :url: http://github.com/fcoury/sprinkle
+  :fork: true
+  :forks: 0
+  :homepage: http://github.com/crafterm/sprinkle
+  :watchers: 1
+  :open_issues: 0
+- :description: My AppleScript collection
+  :name: scripts1
+  :owner: fcoury
+  :private: false
+  :url: http://github.com/fcoury/scripts1
+  :fork: false
+  :forks: 0
+  :homepage: ""
+  :watchers: 1
+  :open_issues: 0
+- :description: ""
+  :name: scripts
+  :owner: fcoury
+  :private: false
+  :url: http://github.com/fcoury/scripts
+  :fork: false
+  :forks: 0
+  :homepage: ""
+  :watchers: 1
+  :open_issues: 0
+- :description: learn git one commit at a time. updates weekly or when great tips are found
+  :name: gitready
+  :owner: fcoury
+  :private: false
+  :url: http://github.com/fcoury/gitready
+  :fork: true
+  :forks: 0
+  :homepage: http://gitready.com
+  :watchers: 1
+  :open_issues: 0
+- :description: Plugin for Rails to enabled easy embedding of affiliate links in to pages
+  :name: affiliate_links
+  :owner: fcoury
+  :private: false
+  :url: http://github.com/fcoury/affiliate_links
+  :fork: true
+  :forks: 0
+  :homepage: ""
+  :watchers: 1
+  :open_issues: 0
+- :description: "Ruby Reports : Making your reporting life suck less, through Ruby"
+  :name: ruport
+  :owner: fcoury
+  :private: false
+  :url: http://github.com/fcoury/ruport
+  :fork: true
+  :forks: 0
+  :homepage: http://stonecode.svnrepository.com/ruport
+  :watchers: 1
+  :open_issues: 0
+- :description: Awesome gem for modeling your domain and storing it in mongo
+  :name: mongomapper
+  :owner: fcoury
+  :private: false
+  :url: http://github.com/fcoury/mongomapper
+  :fork: true
+  :forks: 0
+  :homepage: ""
+  :watchers: 1
+  :open_issues: 0
+- :description: Various open source projects from aprilchild.com.
+  :name: aprilchild
+  :owner: fcoury
+  :private: false
+  :url: http://github.com/fcoury/aprilchild
+  :fork: true
+  :forks: 0
+  :homepage: http://www.aprilchild.com
+  :watchers: 1
+  :open_issues: 0
+- :description: A forked version of background with Time.now.utc
+  :name: bj-utc
+  :owner: fcoury
+  :private: false
+  :url: http://github.com/fcoury/bj-utc
+  :fork: true
+  :forks: 0
+  :homepage: ""
+  :watchers: 1
+  :open_issues: 0

@@ -16,7 +16,8 @@ def fake_everything
         "repos/show/fcoury/octopi" => File.join("repos", "fcoury", "octopi"),
         "issues/list/fcoury/octopi/open" => File.join("issues", "fcoury", "octopi", "open"),
         "issues/show/fcoury/octopi/28" => File.join("issues", "fcoury", "octopi", "28"),
-        "commits/list/fcoury/octopi/master" => File.join("commits", "fcoury", "octopi", "master")
+        "commits/list/fcoury/octopi/master" => File.join("commits", "fcoury", "octopi", "master"),
+        "repos/show/fcoury" => File.join("repos", "show", "fcoury")
           }
   
   fakes.each do |key, value|
