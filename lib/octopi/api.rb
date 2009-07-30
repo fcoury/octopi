@@ -98,8 +98,8 @@ module Octopi
     end
     
     
-    def find_all(path, result_key, query)
-      get(path, { :query => query, :id => query })[result_key]
+    def find_all(path, result_key, query, klass=nil)
+      get(path, { :query => query, :id => query }, klass)[result_key]
     end
   
     def get_raw(path, params)

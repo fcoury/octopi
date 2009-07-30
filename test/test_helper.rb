@@ -7,8 +7,22 @@ $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'octopi'
 
+@the_repo = ["fcoury", "octopi"]
+
 def stub_file(*path)
   File.join(File.dirname(__FILE__), "stubs", path)
+end
+
+def commits(*args)
+  File.join("commits", "fcoury", "octopi", args)
+end
+
+def issues(*args)
+  File.join("issues", "fcoury", "octopi", args)
+end
+
+def repos(*args)
+  File.join("repos", "fcoury", "octopi", args)
 end
 
 def fake_everything
@@ -25,16 +39,19 @@ def fake_everything
   fakes = {
        
         "blob/show/fcoury/octopi/#{sha}" => File.join("blob", "fcoury", "octopi", "plain", sha),
-        "commits/list/fcoury/octopi/master" => File.join("commits", "fcoury", "octopi", "master"),
-        "commits/list/fcoury/octopi/lazy" => File.join("commits", "fcoury", "octopi", "lazy"),
-        "commits/show/fcoury/octopi/#{sha}" => File.join("commits", "fcoury", "octopi", sha),
+        "commits/list/fcoury/octopi/master" => commits("master"),
+        "commits/list/fcoury/octopi/lazy" => commits("lazy"),
+        "commits/show/fcoury/octopi/#{sha}" => commits(sha),
         
-        "issues/list/fcoury/octopi/open" => File.join("issues", "fcoury", "octopi", "open"),
-        "issues/show/fcoury/octopi/28" => File.join("issues", "fcoury", "octopi", "28"),
+        "issues/list/fcoury/octopi/open" => issues("open"),
+        "issues/list/fcoury/octopi/closed" => issues("closed"),
+        "issues/open/fcoury/octopi" => issues("new"),
+      
+        "issues/show/fcoury/octopi/28" => issues("28"),
         
         "repos/show/fcoury" => File.join("repos", "show", "fcoury"),
-        "repos/show/fcoury/octopi" => File.join("repos", "fcoury", "octopi", "main"),
-        "repos/show/fcoury/octopi/branches" => File.join("repos", "fcoury", "octopi", "branches"),
+        "repos/show/fcoury/octopi" => repos("main"),
+        "repos/show/fcoury/octopi/branches" => repos("branches"),
         
         "tree/show/fcoury/octopi/#{sha}" => File.join("tree", "fcoury", "octopi", sha),
         

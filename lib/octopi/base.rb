@@ -65,7 +65,7 @@ module Octopi
       user ||= opts[:user].to_s
       branch = opts[:branch] || "master"
       self.validate_args(user => :user, repo.name => :repo)
-      [user, repo, branch, opts[:sha]]
+      [user, repo, branch, opts[:sha]].compact
     end
     
     def self.extract_user_repository(*args)

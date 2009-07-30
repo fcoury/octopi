@@ -87,7 +87,7 @@ module Octopi
     end
     
     def open_issue(args)
-      Issue.open(self.owner, self, args, @api)
+      Issue.open(self.owner, self, args)
     end
     
     def commits(branch = "master")
@@ -95,7 +95,8 @@ module Octopi
     end
     
     def issues(state = "open")
-      Issue.find_all(self, { :state => state })
+      # TODO: uh oh, duplication. This is bad.
+      IssueSet.new(Issue.find_all(:repo => self, :user => self.owner, :state => state ), :repository => self, :user => self.owner)
     end
    
     def all_issues
