@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xml:lang="en-US" xmlns="http://www.w3.org/2005/Atom">
+  <id>tag:github.com,2008:/radar/rboard/comments</id>
+  <link type="text/html" rel="alternate" href="http://github.com/"/>
+  <link type="application/atom+xml" rel="self" href="http://github.com/radar/rboard/comments.atom"/>
+  <title>Comments for rboard</title>
+  <updated>2009-03-04T01:44:36-08:00</updated>
+  <entry>
+    <id>tag:github.com,2008:CommitComment/16032</id>
+    <published>2009-03-04T01:44:36-08:00</published>
+    <updated>2009-03-04T01:44:36-08:00</updated>
+    <link type="text/html" rel="alternate" href="http://github.com/radar/rboard/commit/e2f44054ec9a66bf36941297dc70121247595342#-P0"/>
+    <title>Aeon commented on radar/rboard</title>
+    <content type="html">
+
+
+
+&lt;div class="details"&gt;
+  
+  &lt;div class="message"&gt;
+    
+      
+        
+        Comment  in &lt;a href="http://github.com/radar/rboard/commit/e2f44054ec9a66bf36941297dc70121247595342#comments"&gt;e2f4405&lt;/a&gt;:
+        &lt;blockquote title="Huh, I had no idea my email prompted that. Nice :)"&gt;&lt;p&gt;Huh, I had no idea my email prompted that. Nice :)&lt;/p&gt;&lt;/blockquote&gt;
+      
+    
+  &lt;/div&gt;
+&lt;/div&gt;
+</content>
+    <author>
+      <name>Aeon</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:CommitComment/14618</id>
+    <published>2009-02-14T04:13:18-08:00</published>
+    <updated>2009-02-14T04:13:18-08:00</updated>
+    <link type="text/html" rel="alternate" href="http://github.com/radar/rboard/commit/dfcbd2f2941bca48a8421962f3f42cdbd64c8b4a#app/views/forums/show.html.erb-P14"/>
+    <title>Sutto commented on radar/rboard</title>
+    <content type="html">
+
+
+
+&lt;div class="details"&gt;
+  
+  &lt;div class="message"&gt;
+    
+      
+        
+        Comment on &lt;a href="/radar/rboard/commit/dfcbd2f2941bca48a8421962f3f42cdbd64c8b4a#app/views/forums/show.html.erb-P14"&gt;app/views/forums/show.html.erb&lt;/a&gt; &lt;a href="/radar/rboard/commit/dfcbd2f2941bca48a8421962f3f42cdbd64c8b4a#app/views/forums/show.html.erb-P14"&gt;L35&lt;/a&gt; in &lt;a href="http://github.com/radar/rboard/commit/dfcbd2f2941bca48a8421962f3f42cdbd64c8b4a#comments"&gt;dfcbd2f&lt;/a&gt;:
+        &lt;blockquote title="should that be can?"&gt;&lt;p&gt;should that be can?&lt;/p&gt;&lt;/blockquote&gt;
+      
+    
+  &lt;/div&gt;
+&lt;/div&gt;
+</content>
+    <author>
+      <name>Sutto</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:CommitComment/10785</id>
+    <published>2008-12-31T06:13:26-08:00</published>
+    <updated>2008-12-31T06:13:26-08:00</updated>
+    <link type="text/html" rel="alternate" href="http://github.com/radar/rboard/commit/070efca483d2b3712b8e68ec2dfedbab3b9a9640#-P0"/>
+    <title>adamcooke commented on radar/rboard</title>
+    <content type="html">
+
+
+
+&lt;div class="details"&gt;
+  
+  &lt;div class="message"&gt;
+    
+      
+        
+        Comment  in &lt;a href="http://github.com/radar/rboard/commit/070efca483d2b3712b8e68ec2dfedbab3b9a9640#comments"&gt;070efca&lt;/a&gt;:
+        &lt;blockquote title="My bad ;) Sorry about that."&gt;&lt;p&gt;My bad ;) Sorry about that.&lt;/p&gt;&lt;/blockquote&gt;
+      
+    
+  &lt;/div&gt;
+&lt;/div&gt;
+</content>
+    <author>
+      <name>adamcooke</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:CommitComment/7490</id>
+    <published>2008-11-04T22:39:01-08:00</published>
+    <updated>2008-11-04T22:39:01-08:00</updated>
+    <link type="text/html" rel="alternate" href="http://github.com/radar/rboard/commit/e895023b84a5f63c6412a59b66307e38c8ae8cd3#-P0"/>
+    <title>radar commented on radar/rboard</title>
+    <content type="html">
+
+
+
+&lt;div class="details"&gt;
+  
+  &lt;div class="message"&gt;
+    
+      
+        
+        Comment  in &lt;a href="http://github.com/radar/rboard/commit/e895023b84a5f63c6412a59b66307e38c8ae8cd3#comments"&gt;e895023&lt;/a&gt;:
+        &lt;blockquote title="I only do it 'cause I care.
+
+If rboard ever gets to a release, I'll be removing the coverage folder as it is purely there for development use."&gt;&lt;p&gt;I only do it &amp;#8217;cause I care.&lt;/p&gt;
+&lt;p&gt;If rboard ever gets to a release, I&amp;#8217;ll be removing the coverage folder as it is purely there for development use.&lt;/p&gt;&lt;/blockquote&gt;
+      
+    
+  &lt;/div&gt;
+&lt;/div&gt;
+</content>
+    <author>
+      <name>radar</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:CommitComment/7254</id>
+    <published>2008-10-29T14:37:14-07:00</published>
+    <updated>2008-10-29T14:37:14-07:00</updated>
+    <link type="text/html" rel="alternate" href="http://github.com/radar/rboard/commit/e895023b84a5f63c6412a59b66307e38c8ae8cd3#-P0"/>
+    <title>jsmestad commented on radar/rboard</title>
+    <content type="html">
+
+
+
+&lt;div class="details"&gt;
+  
+  &lt;div class="message"&gt;
+    
+      
+        
+        Comment  in &lt;a href="http://github.com/radar/rboard/commit/e895023b84a5f63c6412a59b66307e38c8ae8cd3#comments"&gt;e895023&lt;/a&gt;:
+        &lt;blockquote title="Way to version control coverage files..."&gt;&lt;p&gt;Way to version control coverage files&amp;#8230;&lt;/p&gt;&lt;/blockquote&gt;
+      
+    
+  &lt;/div&gt;
+&lt;/div&gt;
+</content>
+    <author>
+      <name>jsmestad</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:CommitComment/4317</id>
+    <published>2008-08-11T15:05:51-07:00</published>
+    <updated>2008-08-11T15:05:51-07:00</updated>
+    <link type="text/html" rel="alternate" href="http://github.com/radar/rboard/commit/0104e172bc999c0e7a00f79909127d187280b7d4#-P0"/>
+    <title>radar commented on radar/rboard</title>
+    <content type="html">
+
+
+
+&lt;div class="details"&gt;
+  
+  &lt;div class="message"&gt;
+    
+      
+        
+        Comment  in &lt;a href="http://github.com/radar/rboard/commit/0104e172bc999c0e7a00f79909127d187280b7d4#comments"&gt;0104e17&lt;/a&gt;:
+        &lt;blockquote title="Thanks to Frederik Cheung for the help on rubyonrails-talk
+"&gt;&lt;p&gt;Thanks to Frederik Cheung for the help on rubyonrails-talk&lt;/p&gt;&lt;/blockquote&gt;
+      
+    
+  &lt;/div&gt;
+&lt;/div&gt;
+</content>
+    <author>
+      <name>radar</name>
+    </author>
+  </entry>
+</feed>

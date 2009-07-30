@@ -69,6 +69,7 @@ def fake_everything
   :string => File.read(stub_file(File.join("blob", "fcoury", "octopi", "plain", sha))))
   
   
+  FakeWeb.register_uri("http://github.com/fcoury/octopi/comments.atom", :string => File.read(stub_file("comments", "fcoury", "octopi", "comments.atom")))
 end
 
 

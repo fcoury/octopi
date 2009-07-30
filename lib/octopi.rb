@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'httparty'
+require 'nokogiri'
 require 'yaml'
 require 'pp'
 

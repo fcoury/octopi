@@ -18,7 +18,7 @@ module Octopi
     #   repo.branches.each { |r| puts r.name }
     #
     def branches
-      Branch.find(self.owner, self.name,api)
+      Branch.all(self.owner, self.name)
     end  
 
     # Returns all tags for the Repository
@@ -30,6 +30,30 @@ module Octopi
     def tags
       Tag.find(self.owner, self.name)
     end  
+    
+    
+    # Returns all the comments for a Repository
+    def comments
+      # We have to specify xmlns as a prefix as the document is namespaced.
+      # Be wary!
+      path = "http#{'s' if private}://github.com/#{owner}/#{name}/comments.atom"
+      xml = Nokogiri::XML(Net::HTTP.get(URI.parse(path)))
+      entries = xml.xpath("//xmlns:entry")
+      comments = []
+      for entry in entries
+        content = entry.xpath("xmlns:content").text.gsub("&lt;", "<").gsub("&gt;", ">")
+        comments << Comment.new(
+          :id => entry.xpath("xmlns:id"),
+          :published => Time.parse(entry.xpath("xmlns:published").text),
+          :updated => Time.parse(entry.xpath("xmlns:updated").text),
+          :link => entry.xpath("xmlns:link/@href"),
+          :title => entry.xpath("xmlns:title").text,
+          :content => content,
+          :author => entry.xpath("xmlns:author/xmlns:name").text
+        )
+      end
+      comments
+    end
     
     def clone_url
       if private? || api.login == self.owner
