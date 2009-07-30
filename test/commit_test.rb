@@ -10,8 +10,24 @@ class CommitTest < Test::Unit::TestCase
   end
 
   context Commit do
-    should "fetch the same commit using different but equivalent find_all params" do
-      assert_find_all Commit, :id, @repo, @user
+    context "finding all commits" do
+      should "by strings" do
+        commits = Commit.find_all(:user => "fcoury", :repository => "octopi")
+        assert_not_nil commits
+        assert_equal 30, commits.size
+      end
+      
+      should "by objects" do
+        commits = Commit.find_all(:user => @user, :repository => @repo)
+        assert_not_nil commits
+        assert_equal 30, commits.size
+      end
+      
+      should "be able to specify a branch" do
+        commits = Commit.find_all(:user => "fcoury", :repository => "octopi", :branch => "lazy")
+        assert_not_nil commits
+        assert_equal 30, commits.size
+      end
     end
   end
 end

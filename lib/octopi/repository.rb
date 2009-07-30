@@ -44,7 +44,7 @@ module Octopi
       # Lots of people call the same thing differently.
       repo = options[:repo] || options[:repository] || options[:name]
       user = options[:user].to_s
-      
+    
       return find_plural(user, :resource) if repo.nil?
       
       self.validate_args(user => :user, repo => :repo)

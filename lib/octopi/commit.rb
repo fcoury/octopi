@@ -7,34 +7,33 @@ module Octopi
     attr_accessor :repository, :message, :parents, :author, :url, :id, :committed_date, :authored_date, :tree, :committer
     
     
-    # Finds all commits for a given Repository's branch
+    #Finds all commits for the given options:
     #
-    # You can provide the user and repo parameters as
-    # String or as User and Repository objects. When repo
-    # is provided as a Repository object, user is superfluous.
+    # :repo or :repository or :name - A repository object or the name of a repository
+    # :user - A user object or the login of a user
+    # :branch - A branch object or the name of a branch. Defaults to master. 
     # 
-    # If no branch is given, "master" is assumed.
-    #
     # Sample usage:
     #
-    #   find_all(repo, :branch => "develop") # repo must be an object
-    #   find_all("octopi", :user => "fcoury") # user must be provided
     #   find_all(:user => "fcoury", :repo => "octopi") # branch defaults to master
+    #   find_all(:user => "fcoury", :repo => "octopi", :branch => "lazy") # branch is set to lazy.
     #
-    def self.find_all(*args)
-      repo = args.first
-      # TODO: The next two lines conflict. Fix.
-      user = repo.owner if repo.is_a? Repository
-      user, repo_name, opts = extract_user_repository(*args)
-      self.validate_args(user => :user, repo_name => :repo)
+    def self.find_all(opts={})
+      # TODO: Refactor this into a helper method, is used elsewhere.
+      repo = opts[:repository] || opts[:repo] || opts[:name]
+      repo = Repository.find(:user => opts[:user], :name => repo) if !repo.is_a?(Repository)
+      user = repo.owner.to_s
+      user ||= opts[:user].to_s
       branch = opts[:branch] || "master"
-      commits = super user, repo_name, branch
-      commits.each { |c| c.repository = repo } if repo.is_a? Repository
+      self.validate_args(user => :user, repo.name => :repo)
+      commits = super user, repo.name, branch
+      # TODO: Find out what this does, and why it's needed. 
+      # commits.each { |c| c.repository = repo } if repo.is_a? Repository
       commits
     end
     
-    # TODO: Make find use hashes like find_all
-    def self.find(*args)
+    # Finds a single commit based on the options given
+    def self.find(opts={})
       if args.last.is_a?(Commit)
         commit = args.pop
         super "#{commit.repo_identifier}"
