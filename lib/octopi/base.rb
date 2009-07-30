@@ -29,8 +29,8 @@ module Octopi
     
     attr_accessor :api
     
-    def initialize(api, hash)
-      @api = api
+    def initialize(hash)
+      @api = Api.api
       @keys = []
       
       raise "Missing data for #{@resource}" unless hash

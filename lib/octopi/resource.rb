@@ -37,28 +37,25 @@ module Octopi
       end
       
       def find(*args)
+        api = Api.api
         args = args.join('/') if args.is_a? Array
-        result = Api.api.find(path_for(:resource), @resource_name[:singular], args)
+        result = api.find(:path => path_for(:resource), :result_key => @resource_name[:singular], :resource_id => args)
         key = result.keys.first
 
         if result[key].is_a? Array
-          result[key].map { |r| new(@api, r) }
-        else  
-          Resource.for(key).new(@api, result[key])
-        end  
+          result[key].map { |r| new(r) }
+        else
+          Resource.for(key).new(result[key])
+        end
       end
-      
+
       def find_all(*s)
         find_plural(s, :find)
       end
-
+      
       def find_plural(s, path)
         s = s.join('/') if s.is_a? Array
-        Api.api.find_all(path_for(path), @resource_name[:plural], s).
-          map do |item|
-            payload = block_given? ? yield(item) : item
-            new(Api.api, payload)
-          end
+        Api.api.find_all(:path => path_for(path), :result_key => @resource_name[:plural], :query => s).map { |item| new(item) }
       end
       
       def declassify(s)

@@ -42,6 +42,8 @@ module Octopi
       repo = options[:repo] || options[:repository]
       user = options[:user]
       
+      return find_plural(user, :resource) if repo.nil?
+      
       if repo.is_a? Repository
         user ||= repo.owner 
         repo = repo.name 
