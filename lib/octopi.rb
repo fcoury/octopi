@@ -9,8 +9,6 @@ Dir[File.join(File.dirname(__FILE__), "octopi/*.rb")].each { |f| require f }
 
 module Octopi
   
-  class ArgumentMustBeHash < Exception; end
-  
   def authenticated(*args, &block)
     opts = args.last.is_a?(Hash) ? args.last : {}
     config = read_gitconfig

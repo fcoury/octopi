@@ -20,4 +20,13 @@ module Octopi
       super @message
     end  
   end
+  
+  class ArgumentMustBeHash < Exception; end
+  
+  
+  class NotFound < Exception
+    def initialize(klass)
+      super "The #{klass.to_s.split("::").last} you were looking for could not be found, or is private."
+    end
+  end
 end

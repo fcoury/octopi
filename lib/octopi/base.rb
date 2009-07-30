@@ -29,8 +29,14 @@ module Octopi
     def initialize(attributes={})
       # puts "#{self.class.inspect} #{attributes.keys.map { |s| s.to_sym }.inspect}"
       attributes.each do |key, value|
-        raise "no attr_accessor set for #{key} on #{self.class}" if !respond_to?(key)
+        raise "no attr_accessor set for #{key} on #{self.class}" if !respond_to?("#{key}=")
         self.send("#{key}=", value)
+      end
+    end
+    
+    def error=(error)
+      if /\w+ not found/.match(error)
+        raise NotFound, self.class
       end
     end
     

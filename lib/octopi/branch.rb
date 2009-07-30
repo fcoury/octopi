@@ -9,7 +9,7 @@ module Octopi
       user = user.to_s
       repo = repo.to_s
       self.validate_args(user => :user, repo => :repo)
-      find_plural([user,repo,'branches'], :resource, @api){
+      find_plural([user,repo,'branches'], :resource, @api) {
         |i| {:name => i.first, :hash => i.last }
       }
     end

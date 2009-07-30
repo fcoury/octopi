@@ -34,5 +34,11 @@ class RepositoryTest < Test::Unit::TestCase
     should "return more repositories if authed" do
       assert_equal 44, @private_repos.size
     end
+    
+    should "not return a repository when asked for a private one" do
+      assert_raises NotFound do
+        @user.repository(:name => "rboard")
+      end
+    end
   end
 end
