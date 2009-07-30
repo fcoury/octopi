@@ -46,10 +46,11 @@ module Octopi
           :id => entry.xpath("xmlns:id"),
           :published => Time.parse(entry.xpath("xmlns:published").text),
           :updated => Time.parse(entry.xpath("xmlns:updated").text),
-          :link => entry.xpath("xmlns:link/@href"),
+          :link => entry.xpath("xmlns:link/@href").text,
           :title => entry.xpath("xmlns:title").text,
           :content => content,
-          :author => entry.xpath("xmlns:author/xmlns:name").text
+          :author => entry.xpath("xmlns:author/xmlns:name").text,
+          :repository => self
         )
       end
       comments

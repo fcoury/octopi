@@ -53,7 +53,7 @@ class RepositoryTest < Test::Unit::TestCase
     should "be able to retrieve the comments" do
       assert_not_nil @repository.comments
       comment = @repository.comments.first
-      [:content, :author, :title, :updated, :link, :published, :id].each do |f|
+      [:content, :author, :title, :updated, :link, :published, :id, :repository, :commit].each do |f|
         assert_not_nil comment.send(f)
       end
     end
