@@ -102,7 +102,6 @@ class IssueTest < Test::Unit::TestCase
         assert comment.is_a?(IssueComment)
       end
       
-      
     end
   end
 end
