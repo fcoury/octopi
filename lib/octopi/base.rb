@@ -14,9 +14,6 @@ module Octopi
       :user => {
         :pat => /^[A-Za-z0-9_\.-]+$/,
         :msg => "%s is an invalid username"},
-      :file => {
-        :pat => /^[^ \/]+$/,
-        :msg => "%s is an invalid filename"},
       :sha => {
         :pat => /^[a-f0-9]{40}$/,
         :msg => "%s is an invalid SHA hash"},

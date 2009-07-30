@@ -1,0 +1,8 @@
+tree a59231d4e3b99d6aaf349344ad0306b1bee7622d
+parent 737650490a3cf3689f92644126407b21c4493d9a
+author Andrew Moreland <andy@andymo.org> 1248655061 +0800
+committer Felipe Coury <felipe.coury@gmail.com> 1248744299 +0800
+
+Fix pulling issues from private repos.
+
+Signed-off-by: Felipe Coury <felipe.coury@gmail.com>

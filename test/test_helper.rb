@@ -14,7 +14,7 @@ end
 def fake_everything
   # Set this to true or comment out if you want to test against real data
   # Which, in a theoretical world should Just Work (tm)
-  FakeWeb.allow_net_connect = false
+  # FakeWeb.allow_net_connect = false
   
   # Public stuff
   fakes = { 
@@ -45,7 +45,7 @@ def fake_everything
   # And the plain fakes
   sha = "f6609209c3ac0badd004512d318bfaa508ea10ae"
   FakeWeb.register_uri("http://github.com:80/api/v2/plain/blob/show/fcoury/octopi/#{sha}", 
-  :string => File.read(stub_file(File.join("blob", "fcoury", "octopi", sha))))
+  :string => File.read(stub_file(File.join("blob", "fcoury", "octopi", "plain", sha))))
 end
 
 def assert_find_all(cls, check_method, repo, user)
