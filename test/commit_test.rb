@@ -15,6 +15,7 @@ class CommitTest < Test::Unit::TestCase
         commits = Commit.find_all(:user => "fcoury", :repository => "octopi")
         assert_not_nil commits
         assert_equal 30, commits.size
+        assert_not_nil commits.first.repository
       end
       
       should "by objects" do
