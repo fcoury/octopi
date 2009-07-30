@@ -16,12 +16,14 @@ def fake_everything
   plain_api = "github.com:80/api/v2/plain"
   # Set this to true or comment out if you want to test against real data
   # Which, in a theoretical world should Just Work (tm)
+  # This is of course with the exception of the authenticated tests
   FakeWeb.allow_net_connect = false
   
   # Public stuff
   fakes = { 
         "user/show/fcoury" => File.join("users", "fcoury"),
-        "repos/show/fcoury/octopi" => File.join("repos", "fcoury", "octopi"),
+        "repos/show/fcoury/octopi" => File.join("repos", "fcoury", "octopi", "main"),
+        "repos/show/fcoury/octopi/branches" => File.join("repos", "fcoury", "octopi", "branches"),
         "issues/list/fcoury/octopi/open" => File.join("issues", "fcoury", "octopi", "open"),
         "issues/show/fcoury/octopi/28" => File.join("issues", "fcoury", "octopi", "28"),
         "commits/list/fcoury/octopi/master" => File.join("commits", "fcoury", "octopi", "master"),
@@ -40,7 +42,8 @@ def fake_everything
   secure_fakes = {
     "user/show/fcoury" => File.join("users", "fcoury-private"),
     "repos/show/fcoury" => File.join("repos", "show", "fcoury-private"),
-    "repos/show/fcoury/octopi" => File.join("repos", "fcoury", "octopi")
+    "repos/show/fcoury/octopi" => File.join("repos", "fcoury", "octopi", "main"),
+    "repos/show/fcoury/rboard" => File.join("repos", "fcoury", "rboard", "main")
   }
   
   secure_fakes.each do |key, value|

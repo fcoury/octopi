@@ -40,5 +40,11 @@ class RepositoryTest < Test::Unit::TestCase
         @user.repository(:name => "rboard")
       end
     end
+    
+    should "return a private repository when authed" do
+      authenticated_with("fcoury", "8f700e0d7747826f3e56ee13651414bd") do
+        assert_not_nil @user.repository(:name => "rboard")
+      end
+    end
   end
 end
