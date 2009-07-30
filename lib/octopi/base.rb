@@ -30,7 +30,7 @@ module Octopi
     attr_accessor :api
     
     def initialize(attributes={})
-      puts "#{self.class.inspect} #{attributes.keys.map { |s| s.to_sym }.inspect}"
+      # puts "#{self.class.inspect} #{attributes.keys.map { |s| s.to_sym }.inspect}"
       attributes.each do |key, value|
         raise "no attr_accessor set for #{key} on #{self.class}" if !respond_to?(key)
         self.send("#{key}=", value)
