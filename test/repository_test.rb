@@ -37,9 +37,11 @@ class RepositoryTest < Test::Unit::TestCase
     end
     
     should "not return a repository when asked for a private one" do
-      assert_raises NotFound do
+      exception = assert_raise NotFound do
         @user.repository(:name => "rboard")
       end
+      
+      assert_equal "The Repository you were looking for could not be found, or is private.", exception.message
     end
     
     should "return a private repository when authed" do

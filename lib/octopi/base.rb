@@ -52,6 +52,11 @@ module Octopi
     end
     
     private
+    
+    def self.gather_name(opts)
+      opts[:repository] || opts[:repo] || opts[:name]
+    end
+    
     def self.extract_user_repository(*args)
       opts = args.last.is_a?(Hash) ? args.pop : {}
       if opts.empty?

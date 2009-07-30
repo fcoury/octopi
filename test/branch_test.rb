@@ -13,7 +13,7 @@ class BranchTest < Test::Unit::TestCase
     end
     
     should "not find a branch that doesn't exist" do
-      assert_raises NotFound do
+      assert_raise NotFound do
         Branch.all("fcoury", "octopi").find("non-existant")
       end
     end

@@ -4,7 +4,7 @@ module Octopi
     find_path "/commits/list/:query"
     resource_path "/commits/show/:id"
     
-    attr_accessor :repository, :message, :parents, :author, :url, :id, :committed_date, :authored_date, :tree, :committer
+    attr_accessor :repository, :message, :parents, :author, :url, :id, :committed_date, :authored_date, :tree, :committer, :added, :removed, :modified
     
     
     # Finds all commits for the given options:
@@ -22,12 +22,7 @@ module Octopi
     #   => <Latest 30 commits for lazy branch>
     #
     def self.find_all(opts={})
-      repo = opts[:repository] || opts[:repo] || opts[:name]
-      repo = Repository.find(:user => opts[:user], :name => repo) if !repo.is_a?(Repository)
-      user = repo.owner.to_s
-      user ||= opts[:user].to_s
-      branch = opts[:branch] || "master"
-      self.validate_args(user => :user, repo.name => :repo)
+      repo, user, branch = gather_details(opts)
       commits = super user, repo.name, branch
       # Repository is not passed in from the data, set it manually.
       commits.each { |c| c.repository = repo }
@@ -50,20 +45,8 @@ module Octopi
     #   => <Commit f6609209c3ac0badd004512d318bfaa508ea10ae for branch lazy>
     #
     def self.find(opts={})
-      if args.last.is_a?(Commit)
-        commit = args.pop
-        super "#{commit.repo_identifier}"
-      else
-        user, name, sha = *args
-        user = user.login if user.is_a? User
-        name = repo.name  if name.is_a? Repository
-        self.validate_args(user => :user, name => :repo, sha => :sha)
-        super [user, name, sha]
-      end
-    end
-    
-    def details
-      self.class.find(self)
+      repo, user, branch, sha = gather_details(opts)
+      super [user, repo, sha]
     end
     
     def repo_identifier
@@ -75,6 +58,18 @@ module Octopi
       end
       
       parts.join('/')
+    end
+    
+    private
+    
+    def self.gather_details(opts)
+      repo = self.gather_name(opts)
+      repo = Repository.find(:user => opts[:user], :name => repo) if !repo.is_a?(Repository)
+      user = repo.owner.to_s
+      user ||= opts[:user].to_s
+      branch = opts[:branch] || "master"
+      self.validate_args(user => :user, repo.name => :repo)
+      [repo, user, branch, opts[:sha]]
     end
   end
 end

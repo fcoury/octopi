@@ -36,7 +36,7 @@ puts "Commit: #{commit.id} - #{commit.message} - by #{commit.author['name']}"
 # single commit information
 # details is the same as: Commit.find(commit)
 puts "Diff:"
-commit.details.modified.each {|m| puts "#{m['filename']} DIFF: #{m['diff']}" }
+commit.modified.each {|m| puts "#{m['filename']} DIFF: #{m['diff']}" }
 
 # repository search
 repos = Repository.find_all("ruby", "git")

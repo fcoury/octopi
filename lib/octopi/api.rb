@@ -93,8 +93,8 @@ module Octopi
       post("#{resource_path}", { :query => data })
     end
     
-    def find(path, result_key, resource_id)
-      get(path, { :id => resource_id }) 
+    def find(path, result_key, resource_id, klass=nil)
+      get(path, { :id => resource_id }, klass) 
     end
     
     
@@ -106,11 +106,11 @@ module Octopi
      get(path, params, 'plain')
     end
   
-    def get(path, params = {}, format = "yaml")
+    def get(path, params = {}, klass=nil, format = "yaml")
       @@retries = 0
       begin
         trace "GET [#{format}]", "/#{format}#{path}", params
-        submit(path, params, format) do |path, params, format|
+        submit(path, params, klass, format) do |path, params, format|
           self.class.get "/#{format}#{path}"
         end
       rescue RetryableAPIError => e
@@ -126,11 +126,11 @@ module Octopi
       end  
     end
   
-    def post(path, params = {}, format = "yaml")
+    def post(path, params = {}, klass=nil, format = "yaml")
       @@retries = 0
       begin
         trace "POST", "/#{format}#{path}", params
-        submit(path, params, format) do |path, params, format|
+        submit(path, params, klass, format) do |path, params, format|
           resp = self.class.post "/#{format}#{path}", :body => params
           resp
         end
@@ -148,7 +148,7 @@ module Octopi
     end
 
     private
-    def submit(path, params = {}, format = "yaml", &block)
+    def submit(path, params = {}, klass=nil, format = "yaml", &block)
       params.each_pair do |k,v|
         if path =~ /:#{k.to_s}/
           params.delete(k)
@@ -177,6 +177,7 @@ module Octopi
       
       
       raise RetryableAPIError, resp.code.to_i if RETRYABLE_STATUS.include? resp.code.to_i
+      raise NotFound, klass || self.class if resp.code.to_i == 404
       raise APIError, 
         "GitHub returned status #{resp.code}" unless resp.code.to_i == 200
       # FIXME: This fails for showing raw Git data because that call returns
