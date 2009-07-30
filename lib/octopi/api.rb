@@ -7,17 +7,19 @@ module Octopi
   
   class AnonymousApi < Api
     include HTTParty
+    include Singleton
     base_uri "http://github.com/api/v2"
   end
   
   class AuthApi < Api
     include HTTParty
+    include Singleton
     base_uri "https://github.com/api/v2"
   end
   
   # This is the real API class
   class Api
-    @@api = Octopi::AnonymousApi.new
+    @@api = Octopi::AnonymousApi.instance
     @@authenticated = false
     
     include Singleton
@@ -51,18 +53,6 @@ module Octopi
     # set the API we're using
     def self.api=(value)
       @@api = value
-    end
-
-    def self.new(login = nil, token = nil, format = "yaml")
-      @format = format
-      @read_only = true
-    
-      if login
-        @login = login
-        @token = token
-        @read_only = false
-        default_params :login => login, :token => token
-      end
     end
 
     def read_only?
@@ -103,7 +93,6 @@ module Octopi
       post("#{resource_path}", { :query => data })
     end
     
-    # TODO: It would be preferrable if this method took a set of args, rather than an options hash
     def find(path, result_key, resource_id)
       get(path, { :id => resource_id }) 
     end
@@ -174,7 +163,7 @@ module Octopi
       rescue Net::HTTPBadResponse
         raise RetryableAPIError
       end
-    
+      
       if @trace_level
         case @trace_level
           when "curl"
@@ -185,6 +174,8 @@ module Octopi
             puts "===================="
         end
       end
+      
+      
       raise RetryableAPIError, resp.code.to_i if RETRYABLE_STATUS.include? resp.code.to_i
       raise APIError, 
         "GitHub returned status #{resp.code}" unless resp.code.to_i == 200
@@ -201,11 +192,12 @@ module Octopi
       end  
       resp
     end
-  
+    
     def trace(oper, url, params)
       return unless trace_level
       par_str = " params: " + params.map { |p| "#{p[0]}=#{p[1]}" }.join(", ") if params and !params.empty?
       puts "#{oper}: #{url}#{par_str}"
     end
+    
   end
 end

@@ -9,30 +9,26 @@ class RepositoryTest < Test::Unit::TestCase
     @private_repos = authenticated_with("fcoury", "8f700e0d7747826f3e56ee13651414bd") do
       @user.repositories
     end
-    @repository = Repository.find(@user, "octopi")
+    @repository = @user.repositories.find("octopi")
   end
 
   
   context Repository do
     
     should "return a repository for a user" do
-      assert_not_nil @user.repository("octopi")
+      assert_not_nil @user.repository(:name => "octopi")
     end
     
     should "return a repository for a login" do
-      assert_not_nil Repository.find("fcoury", "octopi")
+      assert_not_nil Repository.find(:user => "fcoury", :name => "octopi")
     end
     
     should "be able to look up the repository based on the user and name" do
-      assert_not_nil Repository.find(@user, "octopi")
-    end
-    
-    should "be able to look up on a repository object" do
-      assert_not_nil Repository.find(@repository)
+      assert_not_nil Repository.find(:user => @user, :name => "octopi")
     end
     
     should "return repositories" do
-      assert_equal 43, Repository.find_by_user("fcoury").size
+      assert_equal 43, @user.repositories.size
     end
     
     should "return more repositories if authed" do

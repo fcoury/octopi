@@ -429,4 +429,13 @@ repositories:
   :homepage: ""
   :watchers: 1
   :open_issues: 0
-
+- :description: A kick ass forum system
+  :name: rboard
+  :owner: fcoury
+  :private: true
+  :url: http://github.com/fcoury/rboard
+  :fork: false
+  :forks: 0
+  :homepage: ""
+  :watchers: 1
+  :open_issues: 0

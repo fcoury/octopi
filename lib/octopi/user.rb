@@ -1,7 +1,11 @@
 module Octopi
   class User < Base
     include Resource
-    attr_accessor :company, :name, :following_count, :blog, :public_repo_count, :public_gist_count, :id, :login, :followers_count, :created_at, :email, :location
+    attr_accessor :company, :name, :following_count, :blog, :public_repo_count, :public_gist_count, :id, :login, :followers_count, :created_at, :email, :location, :disk_usage, :private_repo_count, :private_gist_count, :collaborators, :plan, :owned_private_repo_count, :total_private_repo_count
+    
+    def plan=(attributes={})
+      @plan = Plan.new(attributes)
+    end
     
     find_path "/user/search/:query"
     resource_path "/user/show/:id"
@@ -41,11 +45,11 @@ module Octopi
       rs
     end
     
-    # Searches for user Repository identified by
-    # name
-    def repository(name)
-      self.class.validate_args(name => :repo)
-      Repository.find(:user => login, :repo => name)
+    # Searches for user Repository identified by name
+    def repository(options={})
+      options = { :name => options } if options.is_a?(String)
+      self.class.validate_hash(options)
+      Repository.find({ :user => login }.merge!(options))
     end
     
     def create_repository(name, opts = {})

@@ -80,7 +80,11 @@ module Octopi
         v
       end
     end
-
+    
+    def self.validate_hash(spec)
+      raise ArgumentMustBeHash, "find takes a hash of options as a solitary argument" if !spec.is_a?(Hash)
+    end
+    
     def self.validate_args(spec)
       m = caller[0].match(/\/([a-z0-9_]+)\.rb:\d+:in `([a-z_0-9]+)'/)
       meth = m ? "#{m[1].camel_case}.#{m[2]}" : 'method'

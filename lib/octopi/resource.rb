@@ -37,9 +37,8 @@ module Octopi
       end
       
       def find(*args)
-        api = Api.api
         args = args.join('/') if args.is_a? Array
-        result = api.find(path_for(:resource), @resource_name[:singular], args)
+        result = Api.api.find(path_for(:resource), @resource_name[:singular], args)
         key = result.keys.first
 
         if result[key].is_a? Array

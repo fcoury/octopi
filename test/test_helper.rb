@@ -21,7 +21,17 @@ def fake_everything
           }
   
   fakes.each do |key, value|
-    FakeWeb.register_uri("http://github.com:80/api/v2/yaml/" + key, :string => YAML::load_file(File.join(File.dirname(__FILE__), "stubs", value)))
+    FakeWeb.register_uri("http://github.com/api/v2/yaml/" + key, :string => YAML::load_file(File.join(File.dirname(__FILE__), "stubs", value)))
+  end
+  
+  secure_fakes = {
+    "user/show/fcoury" => File.join("users", "fcoury-private"),
+    "repos/show/fcoury" => File.join("repos", "show", "fcoury-private"),
+    "repos/show/fcoury/octopi" => File.join("repos", "fcoury", "octopi")
+  }
+  
+  secure_fakes.each do |key, value|
+    FakeWeb.register_uri("https://github.com/api/v2/yaml/" + key, :string => YAML::load_file(File.join(File.dirname(__FILE__), "stubs", value)))
   end
 end
 

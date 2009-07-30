@@ -9,6 +9,8 @@ Dir[File.join(File.dirname(__FILE__), "octopi/*.rb")].each { |f| require f }
 
 module Octopi
   
+  class ArgumentMustBeHash < Exception; end
+  
   def authenticated(*args, &block)
     opts = args.last.is_a?(Hash) ? args.last : {}
     config = read_gitconfig
@@ -20,11 +22,14 @@ module Octopi
     
     puts "=> Trace on: #{api.trace_level}" if Api.api.trace_level
 
-    yield Api.api
+    result = yield Api.api
     
     # Reset authenticated so if we were to do an anonymous call it would Just Work(tm)
     Api.authenticated = false
-    Api.api = AnonymousApi.new
+    Api.api = AnonymousApi.instance
+    
+    # Return the result
+    result
   end
   
   def authenticated_with(*args, &block)
@@ -42,9 +47,19 @@ module Octopi
     
     puts "=> Trace on: #{trace}" if trace
     
-    Api.api = AuthApi.new(login, token)
+    Api.api = AuthApi.instance
+    Api.api.login = login
+    Api.api.token = token
     Api.api.trace_level = trace if trace
-    yield Api.api
+    
+    result = yield Api.api
+    
+    # Reset authenticated so if we were to do an anonymous call it would Just Work(tm)
+    Api.authenticated = false
+    Api.api = AnonymousApi.instance
+    
+    # Return the result
+    result
   end
   
   def read_gitconfig

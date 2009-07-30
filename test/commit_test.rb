@@ -6,7 +6,7 @@ class CommitTest < Test::Unit::TestCase
   def setup
     fake_everything
     @user = User.find("fcoury")
-    @repo = @user.repository("octopi")
+    @repo = @user.repository(:name => "octopi")
   end
 
   context Commit do

@@ -40,16 +40,12 @@ module Octopi
     end
     
     def self.find(options={})
-      repo = options[:repo] || options[:repository]
-      user = options[:user]
+      self.validate_hash(options)
+      # Lots of people call the same thing differently.
+      repo = options[:repo] || options[:repository] || options[:name]
+      user = options[:user].to_s
       
       return find_plural(user, :resource) if repo.nil?
-      
-      if repo.is_a? Repository
-        user ||= repo.owner 
-        repo = repo.name 
-      end
-      user = user.to_s  
       
       self.validate_args(user => :user, repo => :repo)
       super user, repo
