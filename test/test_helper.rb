@@ -22,11 +22,16 @@ def fake_everything
   # Public stuff
   fakes = { 
         "user/show/fcoury" => File.join("users", "fcoury"),
+        
         "repos/show/fcoury/octopi" => File.join("repos", "fcoury", "octopi", "main"),
         "repos/show/fcoury/octopi/branches" => File.join("repos", "fcoury", "octopi", "branches"),
+        
         "issues/list/fcoury/octopi/open" => File.join("issues", "fcoury", "octopi", "open"),
         "issues/show/fcoury/octopi/28" => File.join("issues", "fcoury", "octopi", "28"),
+        
         "commits/list/fcoury/octopi/master" => File.join("commits", "fcoury", "octopi", "master"),
+        "commits/list/fcoury/octopi/lazy" => File.join("commits", "fcoury", "octopi", "lazy"),
+        
         "repos/show/fcoury" => File.join("repos", "show", "fcoury")
           }
   

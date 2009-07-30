@@ -41,7 +41,6 @@ module Octopi
     def repositories
       rs = RepositorySet.new(Repository.find(:user => self.login))
       rs.user = self
-      rs.api = api
       rs
     end
     

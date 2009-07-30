@@ -21,9 +21,5 @@ class IssueTest < Test::Unit::TestCase
     should "return the correct issue by using repo.issue number" do
       assert_equal @issue.number, @repo.issue(@issue.number).number
     end
-    
-    should "fetch the same issue using different but equivalent find_all params" do
-      assert_find_all Issue, :number, @repo, @user
-    end
   end
 end

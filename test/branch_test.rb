@@ -14,8 +14,16 @@ class BranchTest < Test::Unit::TestCase
     
     should "not find a branch that doesn't exist" do
       assert_raises NotFound do
-        Branch.all("fcoury", "octopi").find("false")
+        Branch.all("fcoury", "octopi").find("non-existant")
       end
+    end
+    
+    should "find a branch that does exist" do
+      assert_not_nil Branch.all("fcoury", "octopi").find("lazy")
+    end
+    
+    should "have a string version" do
+      assert_equal "lazy", Branch.all("fcoury", "octopi").find("lazy").to_s
     end
   end
 end

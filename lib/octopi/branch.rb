@@ -11,6 +11,10 @@ module Octopi
       self.sha = parts.last
     end
     
+    def to_s
+      name
+    end
+    
     def self.all(user, repo)
       user = user.to_s
       repo = repo.to_s

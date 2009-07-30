@@ -17,6 +17,7 @@ class RepositoryTest < Test::Unit::TestCase
     
     should "return a repository for a user" do
       assert_not_nil @user.repository(:name => "octopi")
+      assert @user.repository(:name => "octopi").is_a?(Repository)
     end
     
     should "return a repository for a login" do
