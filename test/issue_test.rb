@@ -8,7 +8,7 @@ class IssueTest < Test::Unit::TestCase
     @user = User.find("fcoury")
     @repo = @user.repository("octopi")
     @issue = @repo.issues.first
-    @closed = @repo.issues.find(28)
+    @closed = @repo.issues.find(27)
   end
 
   
@@ -45,13 +45,13 @@ class IssueTest < Test::Unit::TestCase
       should "opening an issue" do
         issue = Issue.open(:user => @user, :repo => @repo, :params => { :title => "something's broken", :body => "something broke" })
         assert_not_nil issue
-        assert_equal "open", issue.status
+        assert_equal "open", issue.state
       end
       
       should "re-opening an issue" do
-        assert_equal "closed", @closed.status
+        assert_equal "closed", @closed.state
         @closed.reopen!
-        assert_equal "open", @closed.status
+        assert_equal "open", @closed.state
       end
     end
   end

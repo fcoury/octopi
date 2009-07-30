@@ -95,8 +95,7 @@ module Octopi
     end
     
     def issues(state = "open")
-      # TODO: uh oh, duplication. This is bad.
-      IssueSet.new(Issue.find_all(:repo => self, :user => self.owner, :state => state ), :repository => self, :user => self.owner)
+      IssueSet.new(:repository => self, :user => self.owner)
     end
    
     def all_issues

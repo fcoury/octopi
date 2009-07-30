@@ -28,7 +28,7 @@ module Octopi
       validate_args(user => :user, repo.name => :repo, state => :state)
 
       issues = super user, repo.name, state
-      issues.each { |i| i.repository = repo } if repo.is_a? Repository
+      issues.each { |i| i.repository = repo }
       issues
     end
   
@@ -37,7 +37,9 @@ module Octopi
       user, repo = gather_details(opts)
       
       validate_args(user => :user, repo => :repo)
-      super user, repo, opts[:number]
+      issue = super user, repo, opts[:number]
+      issue.repository = repo
+      issue
     end
     
     def self.open(opts={})
@@ -50,7 +52,8 @@ module Octopi
     
     # Re-opens an issue.
     def reopen!
-      data = @api.post(command_path("reopen"))
+      puts self.repository.inspect
+      data = Api.api.post(command_path("reopen"))
       self.state = 'open'
       self
     end

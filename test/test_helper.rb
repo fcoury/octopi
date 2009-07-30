@@ -46,7 +46,11 @@ def fake_everything
         "issues/list/fcoury/octopi/open" => issues("open"),
         "issues/list/fcoury/octopi/closed" => issues("closed"),
         "issues/open/fcoury/octopi" => issues("new"),
-      
+        "issues/reopen/fcoury/octopi/27" => issues("reopened"),
+    
+        # Closed issue
+        "issues/show/fcoury/octopi/27" => issues("27"),
+        # Open issue
         "issues/show/fcoury/octopi/28" => issues("28"),
         
         "repos/show/fcoury" => File.join("repos", "show", "fcoury"),
