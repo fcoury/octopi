@@ -83,6 +83,8 @@ def fake_everything
   
   # nothere is obviously an invalid sha
   FakeWeb.register_uri("http://#{yaml_api}/commits/show/fcoury/octopi/nothere", :status => ["404", "Not Found"])
+  # not-a-number is obviously not a number
+  FakeWeb.register_uri("http://#{yaml_api}/issues/show/fcoury/octopi/not-a-number", :status => ["404", "Not Found"])
   # Personal & Private stuff
   
   secure_fakes = {

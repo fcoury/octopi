@@ -39,6 +39,15 @@ class IssueTest < Test::Unit::TestCase
         assert_not_nil issue
         assert_not_nil issue.body
       end
+      
+      should "not work, if issue doesn't exist" do
+        exception = assert_raise NotFound do
+          Issue.find(:user => @user, :repo => @repo, :number => "not-a-number")
+        end
+        
+        assert_equal "The Issue you were looking for could not be found, or is private.", exception.message
+      end
+      
     end
     
     context "actions" do
