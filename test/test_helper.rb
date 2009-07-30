@@ -7,10 +7,16 @@ $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'octopi'
 
+def stub_file(file)
+  File.join(File.dirname(__FILE__), "stubs", file)
+end
 
 def fake_everything
-  # Set this to true or comment out if you want to test against real data.
+  # Set this to true or comment out if you want to test against real data
+  # Which, in a theoretical world should Just Work (tm)
   FakeWeb.allow_net_connect = false
+  
+  # Public stuff
   fakes = { 
         "user/show/fcoury" => File.join("users", "fcoury"),
         "repos/show/fcoury/octopi" => File.join("repos", "fcoury", "octopi"),
@@ -21,8 +27,10 @@ def fake_everything
           }
   
   fakes.each do |key, value|
-    FakeWeb.register_uri("http://github.com/api/v2/yaml/" + key, :string => YAML::load_file(File.join(File.dirname(__FILE__), "stubs", value)))
+    FakeWeb.register_uri("http://github.com/api/v2/yaml/" + key, :string => YAML::load_file(stub_file(value)))
   end
+  
+  # Personal & Private stuff
   
   secure_fakes = {
     "user/show/fcoury" => File.join("users", "fcoury-private"),
@@ -31,8 +39,13 @@ def fake_everything
   }
   
   secure_fakes.each do |key, value|
-    FakeWeb.register_uri("https://github.com/api/v2/yaml/" + key, :string => YAML::load_file(File.join(File.dirname(__FILE__), "stubs", value)))
+    FakeWeb.register_uri("https://github.com/api/v2/yaml/" + key, :string => YAML::load_file(stub_file(value)))
   end
+  
+  # And the plain fakes
+  sha = "f6609209c3ac0badd004512d318bfaa508ea10ae"
+  FakeWeb.register_uri("http://github.com:80/api/v2/plain/blob/show/fcoury/octopi/#{sha}", 
+  :string => File.read(stub_file(File.join("blob", "fcoury", "octopi", sha))))
 end
 
 def assert_find_all(cls, check_method, repo, user)
