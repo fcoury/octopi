@@ -1,6 +1,7 @@
 module Octopi
   class Repository < Base
     include Resource
+    attr_accessor :description, :url, :forks, :name, :homepage, :watchers, :private, :owner, :fork, :open_issues
     set_resource_name "repository", "repositories"
 
     create_path "/repos/create"

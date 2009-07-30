@@ -1,6 +1,7 @@
 module Octopi
   class User < Base
     include Resource
+    attr_accessor :company, :name, :following_count, :blog, :public_repo_count, :public_gist_count, :id, :login, :followers_count, :created_at, :email, :location
     
     find_path "/user/search/:query"
     resource_path "/user/show/:id"

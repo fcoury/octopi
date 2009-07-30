@@ -104,13 +104,13 @@ module Octopi
     end
     
     # TODO: It would be preferrable if this method took a set of args, rather than an options hash
-    def find(opts={})
-      get(opts[:path], { :id => opts[:resource_id] }) 
+    def find(path, result_key, resource_id)
+      get(path, { :id => resource_id }) 
     end
     
     
-    def find_all(opts={})
-      get(opts[:path], { :query => opts[:query], :id => opts[:query] })[opts[:result_key]]
+    def find_all(path, result_key, query)
+      get(path, { :query => query, :id => query })[result_key]
     end
   
     def get_raw(path, params)

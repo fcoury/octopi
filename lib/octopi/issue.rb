@@ -6,7 +6,7 @@ module Octopi
     find_path "/issues/list/:query"
     resource_path "/issues/show/:id"
     
-    attr_accessor :repository
+    attr_accessor :repository, :user, :updated_at, :votes, :number, :title, :body, :closed_at, :labels, :state, :created_at
     
     # Finds all issues for a given Repository
     #

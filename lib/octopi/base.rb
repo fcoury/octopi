@@ -29,26 +29,11 @@ module Octopi
     
     attr_accessor :api
     
-    def initialize(hash)
-      @api = Api.api
-      @keys = []
-      
-      raise "Missing data for #{@resource}" unless hash
-      
-      hash.each_pair do |k,v|
-        @keys << k
-        next if k =~ /\./
-        instance_variable_set("@#{k}", v)
-        
-        method = (TrueClass === v || FalseClass === v) ? "#{k}?" : k
-
-        self.class.send :define_method, "#{method}=" do |v|
-          instance_variable_set("@#{k}", v)
-        end
-
-        self.class.send :define_method, method do
-          instance_variable_get("@#{k}")
-        end
+    def initialize(attributes={})
+      puts "#{self.class.inspect} #{attributes.keys.map { |s| s.to_sym }.inspect}"
+      attributes.each do |key, value|
+        raise "no attr_accessor set for #{key} on #{self.class}" if !respond_to?(key)
+        self.send("#{key}=", value)
       end
     end
     

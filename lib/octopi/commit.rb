@@ -4,7 +4,8 @@ module Octopi
     find_path "/commits/list/:query"
     resource_path "/commits/show/:id"
     
-    attr_accessor :repository
+    attr_accessor :repository, :message, :parents, :author, :url, :id, :committed_date, :authored_date, :tree, :committer
+    
     
     # Finds all commits for a given Repository's branch
     #

@@ -4,6 +4,7 @@ require 'yaml'
 require 'pp'
 
 
+# Octopi stuff
 Dir[File.join(File.dirname(__FILE__), "octopi/*.rb")].each { |f| require f }
 
 module Octopi
