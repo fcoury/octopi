@@ -14,9 +14,6 @@ module Octopi
       :user => {
         :pat => /^[A-Za-z0-9_\.-]+$/,
         :msg => "%s is an invalid username"},
-      :file => {
-        :pat => /^[^ \/]+$/,
-        :msg => "%s is an invalid filename"},
       :sha => {
         :pat => /^[a-f0-9]{40}$/,
         :msg => "%s is an invalid SHA hash"},
@@ -29,26 +26,18 @@ module Octopi
     
     attr_accessor :api
     
-    def initialize(api, hash)
-      @api = api
-      @keys = []
-      
-      raise "Missing data for #{@resource}" unless hash
-      
-      hash.each_pair do |k,v|
-        @keys << k
-        next if k =~ /\./
-        instance_variable_set("@#{k}", v)
-        
-        method = (TrueClass === v || FalseClass === v) ? "#{k}?" : k
-
-        self.class.send :define_method, "#{method}=" do |v|
-          instance_variable_set("@#{k}", v)
-        end
-
-        self.class.send :define_method, method do
-          instance_variable_get("@#{k}")
-        end
+    def initialize(attributes={})
+      # Useful for finding out what attr_accessor needs for classes
+      # puts "#{self.class.inspect} #{attributes.keys.map { |s| s.to_sym }.inspect}"
+      attributes.each do |key, value|
+        raise "no attr_accessor set for #{key} on #{self.class}" if !respond_to?("#{key}=")
+        self.send("#{key}=", value)
+      end
+    end
+    
+    def error=(error)
+      if /\w+ not found/.match(error)
+        raise NotFound, self.class
       end
     end
     
@@ -64,6 +53,21 @@ module Octopi
     end
     
     private
+    
+    def self.gather_name(opts)
+      opts[:repository] || opts[:repo] || opts[:name]
+    end
+    
+    def self.gather_details(opts)
+      repo = self.gather_name(opts)
+      repo = Repository.find(:user => opts[:user], :name => repo) if !repo.is_a?(Repository)
+      user = repo.owner.to_s
+      user ||= opts[:user].to_s
+      branch = opts[:branch] || "master"
+      self.validate_args(user => :user, repo.name => :repo)
+      [user, repo, branch, opts[:sha]].compact
+    end
+    
     def self.extract_user_repository(*args)
       opts = args.last.is_a?(Hash) ? args.pop : {}
       if opts.empty?
@@ -95,7 +99,11 @@ module Octopi
         v
       end
     end
-
+    
+    def self.validate_hash(spec)
+      raise ArgumentMustBeHash, "find takes a hash of options as a solitary argument" if !spec.is_a?(Hash)
+    end
+    
     def self.validate_args(spec)
       m = caller[0].match(/\/([a-z0-9_]+)\.rb:\d+:in `([a-z_0-9]+)'/)
       meth = m ? "#{m[1].camel_case}.#{m[2]}" : 'method'

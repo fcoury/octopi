@@ -1,7 +1,6 @@
 module Octopi
-  class FileObject < Base
-    attr_accessor :name, :sha, :mode, :type
-    
+  class Comment < Base
+    attr_accessor :content, :author, :title, :updated, :link, :published, :id, :repository
     include Resource
     set_resource_name "tree"
 
@@ -11,6 +10,10 @@ module Octopi
       user, repo, branch, sha = gather_details(opts)
       self.validate_args(sha => :sha, user => :user, repo => :repo)
       super [user, repo, sha] 
-    end  
+    end 
+    
+    def commit
+      Commit.find(:user => repository.owner, :repo => repository, :sha => /commit\/(.*?)#/.match(link)[1])
+    end
   end
 end

@@ -4,8 +4,8 @@ module Octopi
     
     attr_reader :user
 
-    def initialize(api, data, user = nil)
-      super api, data
+    def initialize(data, user = nil)
+      super data
       @user = user
     end
     

@@ -6,7 +6,7 @@ module Octopi
     find_path "/issues/list/:query"
     resource_path "/issues/show/:id"
     
-    attr_accessor :repository
+    attr_accessor :repository, :user, :updated_at, :votes, :number, :title, :body, :closed_at, :labels, :state, :created_at
     
     # Finds all issues for a given Repository
     #
@@ -22,56 +22,43 @@ module Octopi
     #   find_all("octopi", :user => "fcoury") # user must be provided
     #   find_all(:user => "fcoury", :repo => "octopi") # state defaults to open
     #
-    def self.find_all(*args)
-      repo = args.first
-      user, repo_name, opts = extract_user_repository(*args)
-      state = opts[:state] || "open"
-      state.downcase! if state
-      validate_args(user => :user, repo_name => :repo, state => :state)
+    def self.find_all(opts={})
+      user, repo = gather_details(opts)
+      state = (opts[:state] || "open").downcase
+      validate_args(user => :user, repo.name => :repo, state => :state)
 
-      issues = super user, repo_name, state
+      issues = super user, repo.name, state
       issues.each { |i| i.repository = repo } if repo.is_a? Repository
       issues
     end
   
     # TODO: Make find use hashes like find_all
-    def self.find(*args)
-      if args.length < 2
-        raise "Issue.find needs user, repository and issue number"
-      end
+    def self.find(opts={})
+      user, repo = gather_details(opts)
       
-      number = args.pop.to_i if args.last.respond_to?(:to_i)
-      number = args.pop if args.last.is_a?(Integer)
-      
-      raise "Issue.find needs issue number as the last argument" unless number
-      
-      if args.length > 1
-        user, repo = *args
-      else
-        repo = args.pop
-        raise "Issue.find needs at least a Repository object and issue number" unless repo.is_a? Repository
-        user, repo = repo.owner, repo.name
-      end
-      
-      user, repo = extract_names(user, repo)
       validate_args(user => :user, repo => :repo)
-      super user, repo, number
+      super user, repo, opts[:number]
     end
     
-    def self.open(user, repo, params, api = ANONYMOUS_API)
-      user, repo_name = extract_names(user, repo)
-      data = api.post("/issues/open/#{user}/#{repo_name}", params)
-      issue = new(api, data['issue'])
-      issue.repository = repo if repo.is_a? Repository
+    def self.open(opts={})
+      user, repo = gather_details(opts)
+      data = Api.api.post("/issues/open/#{user}/#{repo.name}", opts[:params])
+      issue = new(data['issue'])
+      issue.repository = repo
       issue
     end
     
-    def reopen(*args)
+    # Re-opens an issue.
+    def reopen!
       data = @api.post(command_path("reopen"))
+      self.state = 'open'
+      self
     end
     
-    def close(*args)
+    def close!
       data = @api.post(command_path("close"))
+      self.state = 'closed'
+      self
     end
     
     def save

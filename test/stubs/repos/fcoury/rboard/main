@@ -1,0 +1,12 @@
+--- 
+repository: 
+  :description: A kick ass forum system
+  :name: rboard
+  :owner: fcoury
+  :private: false
+  :url: http://github.com/fcoury/rboard
+  :fork: true
+  :forks: 10
+  :homepage: http://frozenplague.net
+  :watchers: 79
+  :open_issues: 21

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xml:lang="en-US" xmlns="http://www.w3.org/2005/Atom">
+  <id>tag:github.com,2008:/fcoury/octopi/comments</id>
+  <link type="text/html" rel="alternate" href="http://github.com/"/>
+  <link type="application/atom+xml" rel="self" href="http://github.com/fcoury/octopi/comments.atom"/>
+  <title>Comments for octopi</title>
+  <updated>2009-03-04T01:44:36-08:00</updated>
+  <entry>
+    <id>tag:github.com,2008:CommitComment/16032</id>
+    <published>2009-03-04T01:44:36-08:00</published>
+    <updated>2009-03-04T01:44:36-08:00</updated>
+    <link type="text/html" rel="alternate" href="http://github.com/fcoury/octopi/commit/f6609209c3ac0badd004512d318bfaa508ea10ae#-P0"/>
+    <title>Aeon commented on fcoury/octopi</title>
+    <content type="html">
+
+
+
+&lt;div class="details"&gt;
+  
+  &lt;div class="message"&gt;
+    
+      
+        
+        Comment  in &lt;a href="http://github.com/fcoury/octopi/commit/f6609209c3ac0badd004512d318bfaa508ea10ae#comments"&gt;e2f4405&lt;/a&gt;:
+        &lt;blockquote title="Huh, I had no idea my email prompted that. Nice :)"&gt;&lt;p&gt;Huh, I had no idea my email prompted that. Nice :)&lt;/p&gt;&lt;/blockquote&gt;
+      
+    
+  &lt;/div&gt;
+&lt;/div&gt;
+</content>
+    <author>
+      <name>Aeon</name>
+    </author>
+  </entry>
+</feed>

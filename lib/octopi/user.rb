@@ -1,6 +1,11 @@
 module Octopi
   class User < Base
     include Resource
+    attr_accessor :company, :name, :following_count, :blog, :public_repo_count, :public_gist_count, :id, :login, :followers_count, :created_at, :email, :location, :disk_usage, :private_repo_count, :private_gist_count, :collaborators, :plan, :owned_private_repo_count, :total_private_repo_count
+    
+    def plan=(attributes={})
+      @plan = Plan.new(attributes)
+    end
     
     find_path "/user/search/:query"
     resource_path "/user/show/:id"
@@ -34,15 +39,16 @@ module Octopi
     # additional information will be provided for the
     # Repositories.
     def repositories
-      api = self.api || ANONYMOUS_API
-      Repository.find_by_user(login,api)
+      rs = RepositorySet.new(Repository.find(:user => self.login))
+      rs.user = self
+      rs
     end
     
-    # Searches for user Repository identified by
-    # name
-    def repository(name)
-      self.class.validate_args(name => :repo)
-      Repository.find(login, name)
+    # Searches for user Repository identified by name
+    def repository(options={})
+      options = { :name => options } if options.is_a?(String)
+      self.class.validate_hash(options)
+      Repository.find({ :user => login }.merge!(options))
     end
     
     def create_repository(name, opts = {})
@@ -94,6 +100,12 @@ module Octopi
       end
       
       users
+    end
+    
+    # If a user object is passed into a method, we can use this.
+    # It'll also work if we pass in just the login.
+    def to_s
+      login
     end
   end
 end

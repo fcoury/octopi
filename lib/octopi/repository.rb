@@ -1,6 +1,7 @@
 module Octopi
   class Repository < Base
     include Resource
+    attr_accessor :description, :url, :forks, :name, :homepage, :watchers, :private, :owner, :fork, :open_issues
     set_resource_name "repository", "repositories"
 
     create_path "/repos/create"
@@ -17,7 +18,7 @@ module Octopi
     #   repo.branches.each { |r| puts r.name }
     #
     def branches
-      Branch.find(self.owner, self.name,api)
+      Branch.all(self.owner, self.name)
     end  
 
     # Returns all tags for the Repository
@@ -30,6 +31,31 @@ module Octopi
       Tag.find(self.owner, self.name)
     end  
     
+    
+    # Returns all the comments for a Repository
+    def comments
+      # We have to specify xmlns as a prefix as the document is namespaced.
+      # Be wary!
+      path = "http#{'s' if private}://github.com/#{owner}/#{name}/comments.atom"
+      xml = Nokogiri::XML(Net::HTTP.get(URI.parse(path)))
+      entries = xml.xpath("//xmlns:entry")
+      comments = []
+      for entry in entries
+        content = entry.xpath("xmlns:content").text.gsub("&lt;", "<").gsub("&gt;", ">")
+        comments << Comment.new(
+          :id => entry.xpath("xmlns:id"),
+          :published => Time.parse(entry.xpath("xmlns:published").text),
+          :updated => Time.parse(entry.xpath("xmlns:updated").text),
+          :link => entry.xpath("xmlns:link/@href").text,
+          :title => entry.xpath("xmlns:title").text,
+          :content => content,
+          :author => entry.xpath("xmlns:author/xmlns:name").text,
+          :repository => self
+        )
+      end
+      comments
+    end
+    
     def clone_url
       if private? || api.login == self.owner
         "git@github.com:#{self.owner}/#{self.name}.git"  
@@ -37,26 +63,17 @@ module Octopi
         "git://github.com/#{self.owner}/#{self.name}.git"  
       end
     end
-
-    def self.find_by_user(user, api = ANONYMOUS_API)
-      user = user.login if user.is_a? User
-      self.validate_args(user => :user)
-      find_plural(user, :resource, api)
-    end
-
-    def self.find(*args)
-      api = args.last.is_a?(Api) ? args.pop : ANONYMOUS_API
-      repo = args.pop
-      user = args.pop
-      
-      user = user.login if user.is_a? User
-      if repo.is_a? Repository
-        repo = repo.name 
-        user ||= repo.owner 
-      end
+    
+    def self.find(options={})
+      self.validate_hash(options)
+      # Lots of people call the same thing differently.
+      repo = options[:repo] || options[:repository] || options[:name]
+      user = options[:user].to_s
+    
+      return find_plural(user, :resource) if repo.nil?
       
       self.validate_args(user => :user, repo => :repo)
-      super user, repo, api
+      super user, repo
     end
 
     def self.find_all(*args)
@@ -70,16 +87,16 @@ module Octopi
     end
     
     def open_issue(args)
-      Issue.open(self.owner, self, args, @api)
+      Issue.open(self.owner, self, args)
     end
     
     def commits(branch = "master")
-      api = self.api || ANONYMOUS_API
-      Commit.find_all(self, {:branch => branch}, api)
+      Commit.find_all(self, {:branch => branch})
     end
     
     def issues(state = "open")
-      Issue.find_all(self, :state => state)
+      # TODO: uh oh, duplication. This is bad.
+      IssueSet.new(Issue.find_all(:repo => self, :user => self.owner, :state => state ), :repository => self, :user => self.owner)
     end
    
     def all_issues
@@ -87,7 +104,7 @@ module Octopi
     end
 
     def issue(number)
-      Issue.find(self, number)
+      Issue.find(self.owner, self, number)
     end
 
     def collaborators
@@ -105,6 +122,10 @@ module Octopi
     def delete
       token = @api.post(self.class.path_for(:delete), :id => self.name)['delete_token']
       @api.post(self.class.path_for(:delete), :id => self.name, :delete_token => token) unless token.nil?
+    end
+    
+    def to_s
+      name
     end
 
   end
