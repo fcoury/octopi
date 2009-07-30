@@ -22,7 +22,7 @@ module Octopi
     #   => <Latest 30 commits for lazy branch>
     #
     def self.find_all(opts={})
-      repo, user, branch = gather_details(opts)
+      user, repo, branch = gather_details(opts)
       commits = super user, repo.name, branch
       # Repository is not passed in from the data, set it manually.
       commits.each { |c| c.repository = repo }
@@ -45,7 +45,7 @@ module Octopi
     #   => <Commit f6609209c3ac0badd004512d318bfaa508ea10ae for branch lazy>
     #
     def self.find(opts={})
-      repo, user, branch, sha = gather_details(opts)
+      user, repo, branch, sha = gather_details(opts)
       super [user, repo, sha]
     end
     
@@ -58,18 +58,6 @@ module Octopi
       end
       
       parts.join('/')
-    end
-    
-    private
-    
-    def self.gather_details(opts)
-      repo = self.gather_name(opts)
-      repo = Repository.find(:user => opts[:user], :name => repo) if !repo.is_a?(Repository)
-      user = repo.owner.to_s
-      user ||= opts[:user].to_s
-      branch = opts[:branch] || "master"
-      self.validate_args(user => :user, repo.name => :repo)
-      [repo, user, branch, opts[:sha]]
     end
   end
 end

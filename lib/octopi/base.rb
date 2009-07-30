@@ -27,6 +27,7 @@ module Octopi
     attr_accessor :api
     
     def initialize(attributes={})
+      # Useful for finding out what attr_accessor needs for classes
       # puts "#{self.class.inspect} #{attributes.keys.map { |s| s.to_sym }.inspect}"
       attributes.each do |key, value|
         raise "no attr_accessor set for #{key} on #{self.class}" if !respond_to?("#{key}=")
@@ -55,6 +56,16 @@ module Octopi
     
     def self.gather_name(opts)
       opts[:repository] || opts[:repo] || opts[:name]
+    end
+    
+    def self.gather_details(opts)
+      repo = self.gather_name(opts)
+      repo = Repository.find(:user => opts[:user], :name => repo) if !repo.is_a?(Repository)
+      user = repo.owner.to_s
+      user ||= opts[:user].to_s
+      branch = opts[:branch] || "master"
+      self.validate_args(user => :user, repo.name => :repo)
+      [user, repo, branch, opts[:sha]]
     end
     
     def self.extract_user_repository(*args)

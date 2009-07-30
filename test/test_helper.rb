@@ -36,6 +36,7 @@ def fake_everything
         "repos/show/fcoury/octopi" => File.join("repos", "fcoury", "octopi", "main"),
         "repos/show/fcoury/octopi/branches" => File.join("repos", "fcoury", "octopi", "branches"),
         
+        "tree/show/fcoury/octopi/#{sha}" => File.join("tree", "fcoury", "octopi", sha),
         
         "user/show/fcoury" => File.join("users", "fcoury")
         
