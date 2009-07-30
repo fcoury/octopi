@@ -52,32 +52,38 @@ module Octopi
     
     # Re-opens an issue.
     def reopen!
-      puts self.repository.inspect
       data = Api.api.post(command_path("reopen"))
       self.state = 'open'
       self
     end
     
     def close!
-      data = @api.post(command_path("close"))
+      data = Api.api.post(command_path("close"))
       self.state = 'closed'
       self
     end
     
     def save
-      data = @api.post(command_path("edit"), { :title => self.title, :body => self.body })
+      data = Api.api.post(command_path("edit"), { :title => title, :body => body })
+      self
     end
     
     %w(add remove).each do |oper|
       define_method("#{oper}_label") do |*labels|
         labels.each do |label|
-          @api.post("#{prefix("label/#{oper}")}/#{label}/#{number}")
+          Api.api.post("#{prefix("label/#{oper}")}/#{label}/#{number}")
+          if oper == "add"
+            self.labels << label
+          else
+            self.labels -= [label]
+          end
         end
       end
     end
 
     def comment(comment)
-      @api.post(command_path("comment"), { :comment => comment })
+      data = Api.api.post(command_path("comment"), { :comment => comment })
+      IssueComment.new(data['comment'])
     end
     
     private

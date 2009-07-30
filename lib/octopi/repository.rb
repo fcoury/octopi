@@ -1,7 +1,7 @@
 module Octopi
   class Repository < Base
     include Resource
-    attr_accessor :description, :url, :forks, :name, :homepage, :watchers, :private, :owner, :fork, :open_issues
+    attr_accessor :description, :url, :forks, :name, :homepage, :watchers, :private, :owner, :fork, :open_issues, :pledgie
     set_resource_name "repository", "repositories"
 
     create_path "/repos/create"
@@ -95,7 +95,7 @@ module Octopi
     end
     
     def issues(state = "open")
-      IssueSet.new(:repository => self, :user => self.owner)
+      IssueSet.new(Octopi::Issue.find_all(:user => owner, :repository => self))
     end
    
     def all_issues

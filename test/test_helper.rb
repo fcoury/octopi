@@ -39,14 +39,25 @@ def fake_everything
   fakes = {
        
         "blob/show/fcoury/octopi/#{sha}" => File.join("blob", "fcoury", "octopi", "plain", sha),
+        
         "commits/list/fcoury/octopi/master" => commits("master"),
         "commits/list/fcoury/octopi/lazy" => commits("lazy"),
         "commits/show/fcoury/octopi/#{sha}" => commits(sha),
         
+        "issues/close/fcoury/octopi/28" => issues("28-closed"),
+        "issues/edit/fcoury/octopi/28" => issues("28-edited"), 
         "issues/list/fcoury/octopi/open" => issues("open"),
         "issues/list/fcoury/octopi/closed" => issues("closed"),
         "issues/open/fcoury/octopi" => issues("new"),
-        "issues/reopen/fcoury/octopi/27" => issues("reopened"),
+        "issues/reopen/fcoury/octopi/27" => issues("27-reopened"),
+        
+        "issues/comment/fcoury/octopi/28" => issues("comment", "28-comment"),
+        
+        "issues/label/add/fcoury/octopi/one-point-oh/28" => issues("labels", "28-one-point-oh"),
+        "issues/label/add/fcoury/octopi/maybe-two-point-oh/28" => issues("labels", "28-maybe-two-point-oh"),
+        "issues/label/remove/fcoury/octopi/one-point-oh/28" => issues("labels", "28-remove-one-point-oh"),
+        "issues/label/remove/fcoury/octopi/maybe-two-point-oh/28" => issues("labels", "28-remove-maybe-two-point-oh"),
+    
     
         # Closed issue
         "issues/show/fcoury/octopi/27" => issues("27"),
