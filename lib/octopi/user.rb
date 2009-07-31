@@ -55,29 +55,15 @@ module Octopi
       self.class.validate_args(name => :repo)
       Repository.create(self, name, opts)
     end
-    
-    # Adds an SSH Public Key to the user. Requires
-    # authentication.
-    def add_key(title, key)
-      raise APIError, 
-        "To add a key, you must be authenticated" if @api.read_only?
-
-      result = @api.post("/user/key/add", :title => title, :key => key)
-      return if !result["public_keys"]
-      key_params = result["public_keys"].select { |k| k["title"] == title }
-      return if !key_params or key_params.empty?
-      Key.new(@api, key_params.first, self)
-    end
 
     # Returns a list of Key objects containing all SSH Public Keys this user
     # currently has. Requires authentication.
     def keys
-      raise APIError, 
-        "To add a key, you must be authenticated" if @api.read_only?
+      raise APIError, "To view keys, you must be authenticated" if Api.api.read_only?
 
-      result = @api.get("/user/keys")
+      result = Api.api.get("/user/keys")
       return unless result and result["public_keys"]
-      result["public_keys"].inject([]) { |result, element| result << Key.new(@api, element) }
+      KeySet.new(result["public_keys"].inject([]) { |result, element| result << Key.new(element) })
     end
     
     # takes one param, deep that indicates if returns 

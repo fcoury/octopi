@@ -7,8 +7,8 @@ class IssueTest < Test::Unit::TestCase
     fake_everything
     @user = User.find("fcoury")
     @repo = @user.repository("octopi")
-    @issue = @repo.issues.first
-    @closed = @repo.issues.find(28)
+    @issue = Issue.find(:user => @user, :repo => @repo, :number => 28)
+    @closed = Issue.find(:user => @user, :repo => @repo, :number => 27)
   end
 
   
@@ -39,20 +39,78 @@ class IssueTest < Test::Unit::TestCase
         assert_not_nil issue
         assert_not_nil issue.body
       end
+      
+      should "not work, if issue doesn't exist" do
+        exception = assert_raise NotFound do
+          Issue.find(:user => @user, :repo => @repo, :number => "not-a-number")
+        end
+        
+        assert_equal "The Issue you were looking for could not be found, or is private.", exception.message
+      end
+      
     end
     
     context "actions" do
       should "opening an issue" do
         issue = Issue.open(:user => @user, :repo => @repo, :params => { :title => "something's broken", :body => "something broke" })
         assert_not_nil issue
-        assert_equal "open", issue.status
+        assert_equal "open", issue.state
       end
       
       should "re-opening an issue" do
-        assert_equal "closed", @closed.status
+        assert_equal "closed", @closed.state
         @closed.reopen!
-        assert_equal "open", @closed.status
+        assert_equal "open", @closed.state
       end
+      
+      should "closing an issue" do
+        assert_equal "open", @issue.state
+        @issue.close!
+        assert_equal "closed", @issue.state
+      end
+      
+      should "editing an issue" do
+        @issue.title = 'Testing'
+        @issue.save
+        assert_equal "Testing", @issue.title
+      end
+      
+      should "adding a label" do
+        assert @issue.labels.empty?
+        @issue.add_label("one-point-oh")
+        assert !@issue.labels.empty?
+      end
+      
+      should "adding multiple labels" do
+        assert @issue.labels.empty?
+        @issue.add_label("one-point-oh", "maybe-two-point-oh")
+        assert !@issue.labels.empty?
+        assert 2, @issue.labels.size
+      end
+      
+      should "removing a label" do
+        assert @issue.labels.empty?
+        @issue.add_label("one-point-oh")
+        assert !@issue.labels.empty?
+        @issue.remove_label("one-point-oh")
+        assert @issue.labels.empty?
+      end
+      
+      should "removing multiple labels" do
+        assert @issue.labels.empty?
+        @issue.add_label("one-point-oh", "maybe-two-point-oh")
+        assert !@issue.labels.empty?
+        assert 2, @issue.labels.size
+        @issue.remove_label("one-point-oh", "maybe-two-point-oh")
+        assert 0, @issue.labels.size
+        
+      end
+      
+      should "be able to comment" do
+        comment = @issue.comment("Yes, it is broken.")
+        assert comment.is_a?(IssueComment)
+      end
+      
     end
   end
 end

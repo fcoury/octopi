@@ -21,6 +21,13 @@ class FileObjectTest < Test::Unit::TestCase
         FileObject.find(:user => @user, :repository => @repo, :sha => "f6609209c3ac0badd004512d318bfaa508ea10ae")
       end
     end
+    
+    context "invalid sha" do
+      should "not work" do
+        # sha below is "ryan"
+        FileObject.find(:user => @user, :repository => @repo, :sha => "ea3cd978650417470535f3a4725b6b5042a6ab59")
+      end
+    end
   end
   
 end

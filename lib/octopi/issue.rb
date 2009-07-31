@@ -28,7 +28,7 @@ module Octopi
       validate_args(user => :user, repo.name => :repo, state => :state)
 
       issues = super user, repo.name, state
-      issues.each { |i| i.repository = repo } if repo.is_a? Repository
+      issues.each { |i| i.repository = repo }
       issues
     end
   
@@ -37,7 +37,9 @@ module Octopi
       user, repo = gather_details(opts)
       
       validate_args(user => :user, repo => :repo)
-      super user, repo, opts[:number]
+      issue = super user, repo, opts[:number]
+      issue.repository = repo
+      issue
     end
     
     def self.open(opts={})
@@ -50,31 +52,38 @@ module Octopi
     
     # Re-opens an issue.
     def reopen!
-      data = @api.post(command_path("reopen"))
+      data = Api.api.post(command_path("reopen"))
       self.state = 'open'
       self
     end
     
     def close!
-      data = @api.post(command_path("close"))
+      data = Api.api.post(command_path("close"))
       self.state = 'closed'
       self
     end
     
     def save
-      data = @api.post(command_path("edit"), { :title => self.title, :body => self.body })
+      data = Api.api.post(command_path("edit"), { :title => title, :body => body })
+      self
     end
     
     %w(add remove).each do |oper|
       define_method("#{oper}_label") do |*labels|
         labels.each do |label|
-          @api.post("#{prefix("label/#{oper}")}/#{label}/#{number}")
+          Api.api.post("#{prefix("label/#{oper}")}/#{label}/#{number}")
+          if oper == "add"
+            self.labels << label
+          else
+            self.labels -= [label]
+          end
         end
       end
     end
 
     def comment(comment)
-      @api.post(command_path("comment"), { :comment => comment })
+      data = Api.api.post(command_path("comment"), { :comment => comment })
+      IssueComment.new(data['comment'])
     end
     
     private

@@ -2,19 +2,27 @@ require 'singleton'
 module Octopi
   # Dummy class, so AnonymousApi and AuthApi have somewhere to inherit from
   class Api
-    
+    attr_accessor :format, :login, :token, :trace_level, :read_only
   end
   
   class AnonymousApi < Api
     include HTTParty
     include Singleton
     base_uri "http://github.com/api/v2"
+    
+    def read_only?
+      true
+    end
   end
   
   class AuthApi < Api
     include HTTParty
     include Singleton
     base_uri "https://github.com/api/v2"
+    
+    def read_only?
+      false
+    end
   end
   
   # This is the real API class
@@ -30,9 +38,6 @@ module Octopi
     }  
     RETRYABLE_STATUS = [403]
     MAX_RETRIES = 10
-    
-    attr_accessor :format, :login, :token, :trace_level, :read_only
-    
     # Would be nice if cattr_accessor was available, oh well.
     
     # We use this to check if we use the auth or anonymous api
@@ -54,11 +59,7 @@ module Octopi
     def self.api=(value)
       @@api = value
     end
-
-    def read_only?
-      read_only
-    end
-
+    
     {:keys => 'public_keys', :emails => 'emails'}.each_pair do |action, key|
       define_method("#{action}") do
         get("/user/#{action}")[key]
@@ -102,8 +103,8 @@ module Octopi
       get(path, { :query => query, :id => query }, klass)[result_key]
     end
   
-    def get_raw(path, params)
-     get(path, params, 'plain')
+    def get_raw(path, params, klass=nil)
+     get(path, params, klass,  'plain')
     end
   
     def get(path, params = {}, klass=nil, format = "yaml")
