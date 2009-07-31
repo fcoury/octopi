@@ -7,6 +7,8 @@ require 'nokogiri'
 require 'yaml'
 require 'pp'
 
+# Core extension stuff
+Dir[File.join(File.dirname(__FILE__), "ext/*.rb")].each { |f| require f }
 
 # Octopi stuff
 Dir[File.join(File.dirname(__FILE__), "octopi/*.rb")].each { |f| require f }
@@ -18,19 +20,16 @@ module Octopi
   # The authenticated methods are all very similar.
   # TODO: Find a way to merge them into something... better.
   
-  def authenticated(*args, &block)
+  def authenticated(options={}, &block)
     begin
-      opts = args.last.is_a?(Hash) ? args.last : {}
+      config = config = File.open(options[:config]) { |yf| YAML::load(yf) } if options[:config]
       config = read_gitconfig
-      Api.authenticated = true
-      Api.api = AuthApi.instance
-      Api.api.login = config["github"]["user"]
-      Api.api.token = config["github"]["token"]
-      Api.api.trace_level = opts[:trace]
-    
-      puts "=> Trace on: #{api.trace_level}" if Api.api.trace_level
-
-      yield Api.api
+      options[:login] = config["github"]["user"]
+      options[:token] = config["github"]["token"]
+      
+      authenticated_with(options) do
+        yield 
+      end
     ensure
       # Reset authenticated so if we were to do an anonymous call it would Just Work(tm)
       Api.authenticated = false
@@ -38,31 +37,23 @@ module Octopi
     end
   end
   
-  def authenticated_with(opts, &block)
+  def authenticated_with(options, &block)
     begin
-      if opts[:config]
-        config = File.open(opts[:config]) { |yf| YAML::load(yf) }
-        raise "Missing config #{opts[:config]}" unless config
+
+      Api.api.trace_level = options[:trace] if options[:trace]
       
-        opts[:login] = config["login"]
-        opts[:token] = config["token"]
-        trace = config["trace"]
-      end
-      
-      Api.api.trace_level = trace if trace
-      
-      if opts[:token].nil? && !opts[:password].nil?
-        opts[:token] = grab_token(opts[:login], opts[:password])
+      if options[:token].nil? && !options[:password].nil?
+        options[:token] = grab_token(options[:login], options[:password])
       end
         
     
-      trace("=> Trace on: #{trace}")
+      trace("=> Trace on: #{options[:trace]}")
     
       Api.api = AuthApi.instance
-      Api.api.login = opts[:login]
-      Api.api.token = opts[:token]
+      Api.api.login = options[:login]
+      Api.api.token = options[:token]
     
-      yield Api.api
+      yield
     ensure
       # Reset authenticated so if we were to do an anonymous call it would Just Work(tm)
       Api.authenticated = false

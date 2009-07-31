@@ -9,8 +9,8 @@ class UserTest < Test::Unit::TestCase
   
   context "authenticated" do
     should "return all user information" do
-      authenticated do |g|
-        user = g.user
+      authenticated do
+        user = Api.api.user
         assert_not_nil user
         fields = [:company, :name, :following_count, :blog, :public_repo_count, 
                   :public_gist_count, :id, :login, :followers_count, :created_at,

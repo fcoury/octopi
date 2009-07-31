@@ -51,9 +51,9 @@ module Octopi
       Repository.find({ :user => login }.merge!(options))
     end
     
-    def create_repository(name, opts = {})
+    def create_repository(name, options = {})
       self.class.validate_args(name => :repo)
-      Repository.create(self, name, opts)
+      Repository.create(self, name, options)
     end
 
     # Returns a list of Key objects containing all SSH Public Keys this user

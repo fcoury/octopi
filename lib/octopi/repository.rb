@@ -111,11 +111,11 @@ module Octopi
       property('collaborators', [self.owner,self.name].join('/')).values
     end  
     
-    def self.create(owner, name, opts = {})
+    def self.create(owner, name, options = {})
       api = owner.is_a?(User) ? owner.api : ANONYMOUS_API
       raise APIError, "To create a repository you must be authenticated." if api.read_only?
       self.validate_args(name => :repo)
-      api.post(path_for(:create), opts.merge(:name => name))
+      api.post(path_for(:create), options.merge(:name => name))
       self.find(owner, name, api)
     end
     

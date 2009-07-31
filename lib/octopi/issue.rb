@@ -23,9 +23,9 @@ module Octopi
     #   find_all("octopi", :user => "fcoury") # user must be provided
     #   find_all(:user => "fcoury", :repo => "octopi") # state defaults to open
     #
-    def self.find_all(opts={})
-      user, repo = gather_details(opts)
-      state = (opts[:state] || "open").downcase
+    def self.find_all(options={})
+      user, repo = gather_details(options)
+      state = (options[:state] || "open").downcase
       validate_args(user => :user, repo.name => :repo, state => :state)
 
       issues = super user, repo.name, state
@@ -34,18 +34,18 @@ module Octopi
     end
   
     # TODO: Make find use hashes like find_all
-    def self.find(opts={})
-      user, repo = gather_details(opts)
+    def self.find(options={})
+      user, repo = gather_details(options)
       
       validate_args(user => :user, repo => :repo)
-      issue = super user, repo, opts[:number]
+      issue = super user, repo, options[:number]
       issue.repository = repo
       issue
     end
     
-    def self.open(opts={})
-      user, repo = gather_details(opts)
-      data = Api.api.post("/issues/open/#{user}/#{repo.name}", opts[:params])
+    def self.open(options={})
+      user, repo = gather_details(options)
+      data = Api.api.post("/issues/open/#{user}/#{repo.name}", options[:params])
       issue = new(data['issue'])
       issue.repository = repo
       issue
