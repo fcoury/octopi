@@ -8,8 +8,7 @@ Status: 200 OK
 X-Runtime: 193ms
 ETag: "2aa1cbbe7bb9a0c6c3276478f24abcaa"
 Cache-Control: private, max-age=0, must-revalidate
-Content-Length: 22555
-
+Content-Length: 22518
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -43,7 +42,7 @@ Content-Length: 22555
     
 
     <script type="text/javascript">
-      github_user = 'commitchat'
+      github_user = 'fcoury'
     </script>
   </head>
 
@@ -82,11 +81,11 @@ Content-Length: 22555
 
       <div class="top">
         <div class="name">
-          <a href="/">commitchat</a>
+          <a href="/">fcoury</a>
         </div>
         <div class="links">
           <a href="/account">account</a> |
-          <a href="/commitchat">profile</a> |
+          <a href="/fcoury">profile</a> |
           <a href="/logout">log out</a>
         </div>
       </div>
@@ -141,10 +140,10 @@ Content-Length: 22555
     <div class="info editbox">
       <h1>Your User Information</h1>
       <div class="body">
-        <p class="username">Username: <strong>commitchat</strong> <a class="rename" href="#">(rename)</a></p>
-        <form action="/users/commitchat/rename" id="user_rename" method="post" style="display: none;">
+        <p class="username">Username: <strong>fcoury</strong> <a class="rename" href="#">(rename)</a></p>
+        <form action="/users/fcoury/rename" id="user_rename" method="post" style="display: none;">
           <label for='login'>Username: </label>
-          <input id="login" name="login" style="width:200px" type="text" value="commitchat" />
+          <input id="login" name="login" style="width:200px" type="text" value="fcoury" />
           <input name="commit" type="submit" value="Update Username" /> or <a class="rename" href="#">cancel</a>
         </form>
         
@@ -154,7 +153,7 @@ Content-Length: 22555
           <p>Want to tell GitHub aware apps like <a href="http://github.com/Caged/gitnub">GitNub</a> or <a href="http://github.com/defunkt/gist">Command Line Gist</a> who you are?</p>
           <p>Copy and paste this into your terminal:</p><br />
           <pre class="console">
-git config --global github.user commitchat
+git config --global github.user fcoury
 git config --global github.token 6417354635233fbddf66de798c030f9f
           </pre>
         </div>
@@ -170,14 +169,14 @@ git config --global github.token 6417354635233fbddf66de798c030f9f
           
             <li class="email">
   <img alt="" height="30" src="https://secure.gravatar.com/avatar/31f88863cf86286f0f6f863c53bfa697?s=30&amp;d=http%3A%2F%2Fgithub.com%2Fimages%2Fgravatars%2Fgravatar-30.png" width="30" />
-  <span class="address">test@mocra.com</span> <a href="/users/commitchat/remove_email" class="delete_email action">(delete)</a>
+  <span class="address">test@mocra.com</span> <a href="/users/fcoury/remove_email" class="delete_email action">(delete)</a>
 </li>
 
           
         </ul>
         <div class="add">
           <p id="add_email_action"><a href="#">add another email address</a></p>
-          <form action="/users/commitchat/add_email" id="add_email_form" method="post" style="display:none">
+          <form action="/users/fcoury/add_email" id="add_email_form" method="post" style="display:none">
             <input name="email" type="text" /> <input type="submit" value="add" /> or <a href="#" class="action" id="cancel_add_email">cancel</a>
            </form>
           <!-- cancel hides form and shows link; add insert email and keep form available for rapid fire additions -->
