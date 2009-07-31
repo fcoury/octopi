@@ -13,6 +13,18 @@ class AuthenticatedTest < Test::Unit::TestCase
         assert_not_nil User.find("fcoury")
       end
     end
+    
+    should "be possible with username and token" do
+      auth do
+        assert_not_nil User.find("fcoury")
+      end
+    end
+    
+    should "be possible using the .gitconfig" do
+      authenticated do
+        assert_not_nil User.find("fcoury")
+      end
+    end
   end
   
   
