@@ -61,5 +61,12 @@ class RepositoryTest < Test::Unit::TestCase
         assert_not_nil comment.send(f)
       end
     end
+    
+    should "be able to retrieve the branches" do
+      branches = @repository.branches
+      assert_not_nil branches
+      assert_equal 3, branches.size
+      
+    end
   end
 end

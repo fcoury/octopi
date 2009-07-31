@@ -22,7 +22,7 @@ module Octopi
     #   repo.branches.each { |r| puts r.name }
     #
     def branches
-      BranchSet
+      Branch.all(:user => self.owner, :repo => self)
     end  
 
     # Returns all tags for the Repository
