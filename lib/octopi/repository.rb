@@ -61,11 +61,8 @@ module Octopi
     end
     
     def clone_url
-      if private? || api.login == self.owner
-        "git@github.com:#{self.owner}/#{self.name}.git"  
-      else
-        "git://github.com/#{self.owner}/#{self.name}.git"  
-      end
+      url = private? || api.login == self.owner ? "git@github.com:" : "git://github.com/"
+      url += "#{self.owner}/#{self.name}.git"
     end
     
     def self.find(options={})
