@@ -60,6 +60,7 @@ module Octopi
       @@api = value
     end
     
+    
     {:keys => 'public_keys', :emails => 'emails'}.each_pair do |action, key|
       define_method("#{action}") do
         get("/user/#{action}")[key]
@@ -165,15 +166,12 @@ module Octopi
         raise RetryableAPIError
       end
       
-      if @trace_level
-        case @trace_level
-          when "curl"
-            query_trace = []
-            query.each_pair { |k,v| query_trace << "-F '#{k}=#{v}'" }
-            puts "===== [curl version]"
-            puts "curl #{query_trace.join(" ")} #{self.class.base_uri}/#{format}#{path}"
-            puts "===================="
-        end
+      if @trace_level == "curl"
+        query_trace = []
+        query.each_pair { |k,v| query_trace << "-F '#{k}=#{v}'" }
+        puts "===== [curl version]"
+        puts "curl #{query_trace.join(" ")} #{self.class.base_uri}/#{format}#{path}"
+        puts "===================="
       end
       
       
@@ -197,7 +195,7 @@ module Octopi
     
     def trace(oper, url, params)
       return unless trace_level
-      par_str = " params: " + params.map { |p| "#{p[0]}=#{p[1]}" }.join(", ") if params and !params.empty?
+      par_str = " params: " + params.map { |p| "#{p[0]}=#{p[1]}" }.join(", ") if params && !params.empty?
       puts "#{oper}: #{url}#{par_str}"
     end
     

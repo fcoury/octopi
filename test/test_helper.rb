@@ -27,7 +27,7 @@ def repos(*args)
 end
 
 def auth(&block)
-  authenticated_with("fcoury", "8f700e0d7747826f3e56ee13651414bd") do
+  authenticated_with(:login => "fcoury", :token => "8f700e0d7747826f3e56ee13651414bd") do
     yield
   end
 end
@@ -101,6 +101,11 @@ def fake_everything
   FakeWeb.register_uri("http://#{yaml_api}/issues/show/fcoury/octopi/not-a-number", :status => ["404", "Not Found"])
   # is an invalid hash
   FakeWeb.register_uri("http://#{yaml_api}/tree/show/fcoury/octopi/#{fake_sha}", :status => ["404", "Not Found"])
+  
+  
+  FakeWeb.register_uri("http://github.com/login", :response => stub_file("login"))
+  FakeWeb.register_uri("http://github.com/session", :response => stub_file("dashboard"))
+  FakeWeb.register_uri("http://github.com/account", :response => stub_file("account"))
   
   # Personal & Private stuff
   

@@ -54,7 +54,8 @@ Gem::Specification.new do |s|
      "examples/issues.rb",
      "examples/overall.rb"
   ]
-
+  
+  s.add_dependency(%q<nokogiri>, [">= 1.2.1"])
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3

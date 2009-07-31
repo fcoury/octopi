@@ -1,6 +1,9 @@
 require 'rubygems'
+
 require 'httparty'
+require 'mechanize'
 require 'nokogiri'
+
 require 'yaml'
 require 'pp'
 
@@ -9,6 +12,9 @@ require 'pp'
 Dir[File.join(File.dirname(__FILE__), "octopi/*.rb")].each { |f| require f }
 
 module Octopi
+  
+  # The authenticated methods are all very similar.
+  # TODO: Find a way to merge them into something... better.
   
   def authenticated(*args, &block)
     begin
@@ -30,26 +36,29 @@ module Octopi
     end
   end
   
-  def authenticated_with(*args, &block)
+  def authenticated_with(opts, &block)
     begin
-      opts = args.last.is_a?(Hash) ? args.last : {}
       if opts[:config]
         config = File.open(opts[:config]) { |yf| YAML::load(yf) }
         raise "Missing config #{opts[:config]}" unless config
       
-        login = config["login"]
-        token = config["token"]
+        opts[:login] = config["login"]
+        opts[:token] = config["token"]
         trace = config["trace"]
-      else
-        login, token = *args
       end
+      
+      Api.api.trace_level = trace if trace
+      
+      if opts[:token].nil? && !opts[:password].nil?
+        opts[:token] = grab_token(opts[:login], opts[:password])
+      end
+        
     
-      puts "=> Trace on: #{trace}" if trace
+      trace("=> Trace on: #{trace}")
     
       Api.api = AuthApi.instance
-      Api.api.login = login
-      Api.api.token = token
-      Api.api.trace_level = trace if trace
+      Api.api.login = opts[:login]
+      Api.api.token = opts[:token]
     
       yield Api.api
     ensure
@@ -58,6 +67,48 @@ module Octopi
       Api.api = AnonymousApi.instance
     end
   end
+    
+  private
+  
+  def grab_token(username, password)
+    a = WWW::Mechanize.new { |agent|
+      # Fake out the agent
+      agent.user_agent_alias = 'Mac Safari'
+    }
+    
+    # Login with the provided 
+    a.get('http://github.com/login') do |page|
+      user_page = page.form_with(:action => '/session') do |login|
+        login.login = username
+        login.password = password
+      end.submit
+
+
+      if Api.api.trace_level
+        File.open("got.html", "w+") do |f|
+          f.write user_page.body
+        end   
+        `open got.html`
+      end
+      
+      body = Nokogiri::HTML(user_page.body)
+      error = body.xpath("//div[@class='error_box']").text
+      raise error if error != ""
+      
+      # Should be clear to go if there is no errors.
+      link = user_page.link_with(:text => "account")
+      @account_page = a.click(link)
+      if Api.api.trace_level
+        File.open("account.html", "w+") do |f|
+          f.write @account_page.body
+        end
+        `open account.html`
+      end
+      
+      return Nokogiri::HTML(@account_page.body).xpath("//p").xpath("strong")[1].text
+    end
+  end
+  
   
   def read_gitconfig
     config = {}
@@ -75,5 +126,11 @@ module Octopi
       end
     end
     config
+  end
+  
+  def trace(text)
+    if Api.api.trace_level
+      puts "text"
+    end
   end
 end

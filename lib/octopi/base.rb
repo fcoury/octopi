@@ -28,6 +28,7 @@ module Octopi
     
     def initialize(attributes={})
       # Useful for finding out what attr_accessor needs for classes
+      # puts caller.first.inspect
       # puts "#{self.class.inspect} #{attributes.keys.map { |s| s.to_sym }.inspect}"
       attributes.each do |key, value|
         raise "no attr_accessor set for #{key} on #{self.class}" if !respond_to?("#{key}=")
@@ -84,7 +85,7 @@ module Octopi
       
       user = repo.owner if repo.is_a? Repository
       
-      if repo.is_a?(String) and !user
+      if repo.is_a?(String) && !user
         raise "Need user argument when repository is identified by name"
       end
       ret = extract_names(user, repo)

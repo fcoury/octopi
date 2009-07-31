@@ -5,13 +5,10 @@ module Octopi
 
     resource_path "/repos/show/:id"
     
-    def self.find(user, repo)
-      user = user.login if user.is_a? User
-      repo = repo.name if repo.is_a? Repository
+    def self.all(opts)
+      user, repo = gather_details(opts)
       self.validate_args(user => :user, repo => :repo)
-      find_plural([user,repo,'tags'], :resource){
-        |i| {:name => i.first, :hash => i.last }
-      }
+      find_plural([user, repo, 'tags'], :resource) { |i| {:name => i.first, :hash => i.last } }
     end
   end
 end

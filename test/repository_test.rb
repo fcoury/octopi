@@ -6,7 +6,7 @@ class RepositoryTest < Test::Unit::TestCase
   def setup
     fake_everything
     @user = User.find("fcoury")
-    @private_repos = authenticated_with("fcoury", "8f700e0d7747826f3e56ee13651414bd") do
+    @private_repos = auth do
       @user.repositories
     end
     @repository = @user.repositories.find("octopi")
@@ -27,7 +27,7 @@ class RepositoryTest < Test::Unit::TestCase
     should "be able to look up the repository based on the user and name" do
       assert_not_nil Repository.find(:user => @user, :name => "octopi")
     end
-    
+      
     should "have a User as the owner" do
       assert @repository.owner.is_a?(User)
     end
@@ -49,7 +49,7 @@ class RepositoryTest < Test::Unit::TestCase
     end
     
     should "return a private repository when authed" do
-      authenticated_with("fcoury", "8f700e0d7747826f3e56ee13651414bd") do
+      auth do
         assert_not_nil @user.repository(:name => "rboard")
       end
     end

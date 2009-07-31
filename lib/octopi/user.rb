@@ -9,7 +9,7 @@ module Octopi
     
     find_path "/user/search/:query"
     resource_path "/user/show/:id"
-
+    
     # Finds a single user identified by the given username
     #
     # Example:
