@@ -65,11 +65,12 @@ module Octopi
       @@api = value
     end
     
+    def keys
+      get("/user/keys")['public_keys']
+    end
     
-    {:keys => 'public_keys', :emails => 'emails'}.each_pair do |action, key|
-      define_method("#{action}") do
-        get("/user/#{action}")[key]
-      end
+    def emails
+      get("/user/emails")['emails']
     end
 
     def user
