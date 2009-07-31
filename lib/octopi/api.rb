@@ -5,6 +5,7 @@ module Octopi
     attr_accessor :format, :login, :token, :trace_level, :read_only
   end
   
+  # Used for accessing the Github API anonymously
   class AnonymousApi < Api
     include HTTParty
     include Singleton
@@ -25,7 +26,11 @@ module Octopi
     end
   end
   
-  # This is the real API class
+  # This is the real API class.
+  #
+  # API requests are limited to 60 per minute.
+  #
+  # Sets up basic methods for accessing the API.
   class Api
     @@api = Octopi::AnonymousApi.instance
     @@authenticated = false
@@ -71,22 +76,6 @@ module Octopi
       user_data = get("/user/show/#{login}")
       raise "Unexpected response for user command" unless user_data and user_data['user']
       User.new(user_data['user'])
-    end
-  
-    def open_issue(user, repo, params)
-      Issue.open(user, repo, params, self)
-    end
-  
-    def repository(name)
-      repo = Repository.find(user, name, self)
-      repo.api = self
-      repo
-    end
-    alias_method :repo, :repository
-  
-    def commits(repo,opts={})
-      branch = opts[:branch] || "master"
-      commits = Commit.find_all(repo, branch, self)
     end
   
     def save(resource_path, data)
