@@ -25,10 +25,22 @@ def repos(*args)
   File.join("repos", "fcoury", "octopi", args)
 end
 
+def auth(&block)
+  authenticated_with("fcoury", "8f700e0d7747826f3e56ee13651414bd") do
+    yield
+  end
+end
+
+# Methodized so it can be used in tests, an instance would do also.
+def yaml_api
+  "github.com/api/v2/yaml"
+end
+
 def fake_everything
   # helper variables to make things shorter.
   sha = "f6609209c3ac0badd004512d318bfaa508ea10ae"
-  yaml_api = "github.com/api/v2/yaml"
+  fake_sha = "ea3cd978650417470535f3a4725b6b5042a6ab59"
+
   plain_api = "github.com:80/api/v2/plain"
   # Set this to true or comment out if you want to test against real data
   # Which, in a theoretical world should Just Work (tm)
@@ -69,8 +81,9 @@ def fake_everything
         "repos/show/fcoury/octopi/branches" => repos("branches"),
         
         "tree/show/fcoury/octopi/#{sha}" => File.join("tree", "fcoury", "octopi", sha),
+
+        "user/show/fcoury" => File.join("users", "fcoury"),
         
-        "user/show/fcoury" => File.join("users", "fcoury")
         
           }
   
@@ -85,13 +98,20 @@ def fake_everything
   FakeWeb.register_uri("http://#{yaml_api}/commits/show/fcoury/octopi/nothere", :status => ["404", "Not Found"])
   # not-a-number is obviously not a number
   FakeWeb.register_uri("http://#{yaml_api}/issues/show/fcoury/octopi/not-a-number", :status => ["404", "Not Found"])
+  # is an invalid hash
+  FakeWeb.register_uri("http://#{yaml_api}/tree/show/fcoury/octopi/#{fake_sha}", :status => ["404", "Not Found"])
+  
   # Personal & Private stuff
   
-  secure_fakes = {
-    "user/show/fcoury" => File.join("users", "fcoury-private"),
+  secure_fakes = {        
     "repos/show/fcoury" => File.join("repos", "show", "fcoury-private"),
     "repos/show/fcoury/octopi" => File.join("repos", "fcoury", "octopi", "main"),
-    "repos/show/fcoury/rboard" => File.join("repos", "fcoury", "rboard", "main")
+    "repos/show/fcoury/rboard" => File.join("repos", "fcoury", "rboard", "main"),
+    
+    "user/keys" => File.join("users", "keys"),
+    "user/key/add" => File.join("users", "key-added"),
+    "user/key/remove" => File.join("users", "key-removed"),
+    "user/show/fcoury" => File.join("users", "fcoury-private")
   }
   
   secure_fakes.each do |key, value|

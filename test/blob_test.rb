@@ -9,7 +9,9 @@ class BlobTest < Test::Unit::TestCase
 
   context Blob do
     should "find a blob" do
-      assert_not_nil Blob.find("fcoury", "octopi", "f6609209c3ac0badd004512d318bfaa508ea10ae")
+      blob = Blob.find("fcoury", "octopi", "f6609209c3ac0badd004512d318bfaa508ea10ae")
+      assert_not_nil blob
+      assert blob.is_a?(String)
     end
     
     # Can't grab real data for this yet, Github is throwing a 500 on this request.
