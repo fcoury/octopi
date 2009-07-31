@@ -1,7 +1,7 @@
 module Octopi
   class Repository < Base
     include Resource
-    attr_accessor :description, :url, :forks, :name, :homepage, :watchers, :private, :owner, :fork, :open_issues, :pledgie
+    attr_accessor :description, :url, :forks, :name, :homepage, :watchers, :owner, :private, :fork, :open_issues, :pledgie
     set_resource_name "repository", "repositories"
 
     create_path "/repos/create"
@@ -10,6 +10,10 @@ module Octopi
     delete_path "/repos/delete/:id"
     
     attr_accessor :private
+    
+    def owner=(owner)
+      @owner = User.find(owner)
+    end
     
     # Returns all branches for the Repository
     #

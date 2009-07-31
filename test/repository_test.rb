@@ -28,6 +28,10 @@ class RepositoryTest < Test::Unit::TestCase
       assert_not_nil Repository.find(:user => @user, :name => "octopi")
     end
     
+    should "have a User as the owner" do
+      assert @repository.owner.is_a?(User)
+    end
+    
     should "return repositories" do
       assert_equal 43, @user.repositories.size
     end
