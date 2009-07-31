@@ -11,8 +11,8 @@ module Octopi
       Api.api.get("user/keys")
     end
     
-    def self.add(opts)
-      Api.api.post("/user/key/add", { :title => opts[:title], :key => opts[:key] })
+    def self.add(options)
+      Api.api.post("/user/key/add", { :title => options[:title], :key => options[:key] })
       
     end
     

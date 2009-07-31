@@ -5,6 +5,7 @@ module Octopi
     attr_accessor :format, :login, :token, :trace_level, :read_only
   end
   
+  # Used for accessing the Github API anonymously
   class AnonymousApi < Api
     include HTTParty
     include Singleton
@@ -25,7 +26,11 @@ module Octopi
     end
   end
   
-  # This is the real API class
+  # This is the real API class.
+  #
+  # API requests are limited to 60 per minute.
+  #
+  # Sets up basic methods for accessing the API.
   class Api
     @@api = Octopi::AnonymousApi.instance
     @@authenticated = false
@@ -60,32 +65,18 @@ module Octopi
       @@api = value
     end
     
-    {:keys => 'public_keys', :emails => 'emails'}.each_pair do |action, key|
-      define_method("#{action}") do
-        get("/user/#{action}")[key]
-      end
+    def keys
+      get("/user/keys")['public_keys']
+    end
+    
+    def emails
+      get("/user/emails")['emails']
     end
 
     def user
       user_data = get("/user/show/#{login}")
       raise "Unexpected response for user command" unless user_data and user_data['user']
-      User.new(self, user_data['user'])
-    end
-  
-    def open_issue(user, repo, params)
-      Issue.open(user, repo, params, self)
-    end
-  
-    def repository(name)
-      repo = Repository.find(user, name, self)
-      repo.api = self
-      repo
-    end
-    alias_method :repo, :repository
-  
-    def commits(repo,opts={})
-      branch = opts[:branch] || "master"
-      commits = Commit.find_all(repo, branch, self)
+      User.new(user_data['user'])
     end
   
     def save(resource_path, data)
@@ -165,15 +156,12 @@ module Octopi
         raise RetryableAPIError
       end
       
-      if @trace_level
-        case @trace_level
-          when "curl"
-            query_trace = []
-            query.each_pair { |k,v| query_trace << "-F '#{k}=#{v}'" }
-            puts "===== [curl version]"
-            puts "curl #{query_trace.join(" ")} #{self.class.base_uri}/#{format}#{path}"
-            puts "===================="
-        end
+      if @trace_level == "curl"
+        query_trace = []
+        query.each_pair { |k,v| query_trace << "-F '#{k}=#{v}'" }
+        puts "===== [curl version]"
+        puts "curl #{query_trace.join(" ")} #{self.class.base_uri}/#{format}#{path}"
+        puts "===================="
       end
       
       
@@ -197,7 +185,7 @@ module Octopi
     
     def trace(oper, url, params)
       return unless trace_level
-      par_str = " params: " + params.map { |p| "#{p[0]}=#{p[1]}" }.join(", ") if params and !params.empty?
+      par_str = " params: " + params.map { |p| "#{p[0]}=#{p[1]}" }.join(", ") if params && !params.empty?
       puts "#{oper}: #{url}#{par_str}"
     end
     

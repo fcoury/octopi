@@ -7,7 +7,7 @@ class KeySet < Array
     key
   end
   
-  def add(opts)
-    Key.add(opts)
+  def add(options)
+    Key.add(options)
   end
 end

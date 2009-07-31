@@ -6,8 +6,8 @@ module Octopi
 
     resource_path "/tree/show/:id"
 
-    def self.find(opts={})
-      user, repo, branch, sha = gather_details(opts)
+    def self.find(options={})
+      user, repo, branch, sha = gather_details(options)
       self.validate_args(sha => :sha, user => :user, repo => :repo)
       super [user, repo, sha] 
     end 

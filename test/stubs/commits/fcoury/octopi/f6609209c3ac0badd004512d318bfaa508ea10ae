@@ -16,8 +16,8 @@ commit:
            def self.find_all(*args)
       +      api = (args.length == 4 ? args.pop : nil) || ANONYMOUS_API
              repo = args.first
-             user, repo_name, opts = extract_user_repository(*args)
-             state = opts[:state] || "open"
+             user, repo_name, options = extract_user_repository(*args)
+             state = options[:state] || "open"
              state.downcase! if state
              validate_args(user => :user, repo_name => :repo, state => :state)
        

@@ -1,8 +1,4 @@
-class String
-  def camel_case
-    self.gsub(/(^|_)(.)/) { $2.upcase }
-  end
-end  
+
 module Octopi
   class Base
     VALID = {
@@ -28,6 +24,7 @@ module Octopi
     
     def initialize(attributes={})
       # Useful for finding out what attr_accessor needs for classes
+      # puts caller.first.inspect
       # puts "#{self.class.inspect} #{attributes.keys.map { |s| s.to_sym }.inspect}"
       attributes.each do |key, value|
         raise "no attr_accessor set for #{key} on #{self.class}" if !respond_to?("#{key}=")
@@ -54,41 +51,41 @@ module Octopi
     
     private
     
-    def self.gather_name(opts)
-      opts[:repository] || opts[:repo] || opts[:name]
+    def self.gather_name(options)
+      options[:repository] || options[:repo] || options[:name]
     end
     
-    def self.gather_details(opts)
-      repo = self.gather_name(opts)
-      repo = Repository.find(:user => opts[:user], :name => repo) if !repo.is_a?(Repository)
+    def self.gather_details(options)
+      repo = self.gather_name(options)
+      repo = Repository.find(:user => options[:user], :name => repo) if !repo.is_a?(Repository)
       user = repo.owner.to_s
-      user ||= opts[:user].to_s
-      branch = opts[:branch] || "master"
+      user ||= options[:user].to_s
+      branch = options[:branch] || "master"
       self.validate_args(user => :user, repo.name => :repo)
-      [user, repo, branch, opts[:sha]].compact
+      [user, repo, branch, options[:sha]].compact
     end
     
     def self.extract_user_repository(*args)
-      opts = args.last.is_a?(Hash) ? args.pop : {}
-      if opts.empty?
+      options = args.last.is_a?(Hash) ? args.pop : {}
+      if options.empty?
         if args.length > 1
           repo, user = *args
         else
           repo = args.pop
         end
       else
-        opts[:repo] = opts[:repository] if opts[:repository]
-        repo = args.pop || opts[:repo]
-        user = opts[:user]
+        options[:repo] = options[:repository] if options[:repository]
+        repo = args.pop || options[:repo]
+        user = options[:user]
       end
       
       user = repo.owner if repo.is_a? Repository
       
-      if repo.is_a?(String) and !user
+      if repo.is_a?(String) && !user
         raise "Need user argument when repository is identified by name"
       end
       ret = extract_names(user, repo)
-      ret << opts
+      ret << options
       ret
     end
 

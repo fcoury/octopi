@@ -1,7 +1,7 @@
 module Octopi
   class Repository < Base
     include Resource
-    attr_accessor :description, :url, :forks, :name, :homepage, :watchers, :private, :owner, :fork, :open_issues, :pledgie
+    attr_accessor :description, :url, :forks, :name, :homepage, :watchers, :owner, :private, :fork, :open_issues, :pledgie
     set_resource_name "repository", "repositories"
 
     create_path "/repos/create"
@@ -11,6 +11,10 @@ module Octopi
     
     attr_accessor :private
     
+    def owner=(owner)
+      @owner = User.find(owner)
+    end
+    
     # Returns all branches for the Repository
     #
     # Example:
@@ -18,7 +22,7 @@ module Octopi
     #   repo.branches.each { |r| puts r.name }
     #
     def branches
-      Branch.all(self.owner, self.name)
+      Branch.all(:user => self.owner, :repo => self)
     end  
 
     # Returns all tags for the Repository
@@ -28,7 +32,7 @@ module Octopi
     #   repo.tags.each { |t| puts t.name }
     #
     def tags
-      Tag.find(self.owner, self.name)
+      Tag.all(self.owner, self.name)
     end  
     
     
@@ -57,11 +61,8 @@ module Octopi
     end
     
     def clone_url
-      if private? || api.login == self.owner
-        "git@github.com:#{self.owner}/#{self.name}.git"  
-      else
-        "git://github.com/#{self.owner}/#{self.name}.git"  
-      end
+      url = private? || api.login == self.owner ? "git@github.com:" : "git://github.com/"
+      url += "#{self.owner}/#{self.name}.git"
     end
     
     def self.find(options={})
@@ -110,11 +111,11 @@ module Octopi
       property('collaborators', [self.owner,self.name].join('/')).values
     end  
     
-    def self.create(owner, name, opts = {})
+    def self.create(owner, name, options = {})
       api = owner.is_a?(User) ? owner.api : ANONYMOUS_API
       raise APIError, "To create a repository you must be authenticated." if api.read_only?
       self.validate_args(name => :repo)
-      api.post(path_for(:create), opts.merge(:name => name))
+      api.post(path_for(:create), options.merge(:name => name))
       self.find(owner, name, api)
     end
     

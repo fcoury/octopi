@@ -5,6 +5,7 @@ require 'fakeweb'
 
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
+ENV['HOME'] = File.dirname(__FILE__)
 require 'octopi'
 
 @the_repo = ["fcoury", "octopi"]
@@ -26,7 +27,7 @@ def repos(*args)
 end
 
 def auth(&block)
-  authenticated_with("fcoury", "8f700e0d7747826f3e56ee13651414bd") do
+  authenticated_with(:login => "fcoury", :token => "8f700e0d7747826f3e56ee13651414bd") do
     yield
   end
 end
@@ -101,9 +102,17 @@ def fake_everything
   # is an invalid hash
   FakeWeb.register_uri("http://#{yaml_api}/tree/show/fcoury/octopi/#{fake_sha}", :status => ["404", "Not Found"])
   
+  
+  FakeWeb.register_uri("http://github.com/login", :response => stub_file("login"))
+  FakeWeb.register_uri("http://github.com/session", :response => stub_file("dashboard"))
+  FakeWeb.register_uri("http://github.com/account", :response => stub_file("account"))
+  
   # Personal & Private stuff
   
-  secure_fakes = {        
+  secure_fakes = {
+    
+    "commits/list/fcoury/rboard/master" => File.join("commits", "fcoury", "rboard", "master"),
+     
     "repos/show/fcoury" => File.join("repos", "show", "fcoury-private"),
     "repos/show/fcoury/octopi" => File.join("repos", "fcoury", "octopi", "main"),
     "repos/show/fcoury/rboard" => File.join("repos", "fcoury", "rboard", "main"),

@@ -1,0 +1,1131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../style.css" type="text/css" charset="utf-8" />
+<link rel="stylesheet" href="../custom.css" type="text/css" charset="utf-8" />
+<link rel="stylesheet" href="../syntax_highlight.css" type="text/css" charset="utf-8" />
+
+    <script src="../jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../app.js" type="text/javascript" charset="utf-8"></script>
+    <title>Class: Octopi::Api</title>
+  </head>
+  <body>
+    <div id="content">
+      <div class="section class Octopi_Api">
+  <h1 class="title">Class: Octopi::Api</h1>
+  <div class="section mixins">
+  <h1>Included Modules</h1>
+  <p>Singleton</p>
+</div>
+<div class="section docstring">
+  <p>
+This is the real API class
+</p>
+
+</div><div class="section attributes">
+  <h1>Attributes</h1>
+
+  
+    <div class="instance">
+      <h2>Instance Attributes</h2>
+      <table>
+      
+        
+        <tr class="">
+          <th class='signature'>
+            <span class='name'>format</span>
+          </td>
+          <td class="readwrite">
+            [<span id='format-instance_method'>R</span><span id='format=-instance_method'>W</span>] 
+          </td>
+          <td class="visibility">
+            public
+          </td>
+          <td class="docstring">
+            <p>
+Sets the attribute <tt>format</tt>.
+</p>
+
+            
+          </td>
+        </tr>
+        
+      
+        
+        <tr class="">
+          <th class='signature'>
+            <span class='name'>login</span>
+          </td>
+          <td class="readwrite">
+            [<span id='login-instance_method'>R</span><span id='login=-instance_method'>W</span>] 
+          </td>
+          <td class="visibility">
+            public
+          </td>
+          <td class="docstring">
+            <p>
+Sets the attribute <tt>login</tt>.
+</p>
+
+            
+          </td>
+        </tr>
+        
+      
+        
+        <tr class="">
+          <th class='signature'>
+            <span class='name'>read_only</span>
+          </td>
+          <td class="readwrite">
+            [<span id='read_only-instance_method'>R</span><span id='read_only=-instance_method'>W</span>] 
+          </td>
+          <td class="visibility">
+            public
+          </td>
+          <td class="docstring">
+            <p>
+Sets the attribute <tt>read_only</tt>.
+</p>
+
+            
+          </td>
+        </tr>
+        
+      
+        
+        <tr class="">
+          <th class='signature'>
+            <span class='name'>token</span>
+          </td>
+          <td class="readwrite">
+            [<span id='token-instance_method'>R</span><span id='token=-instance_method'>W</span>] 
+          </td>
+          <td class="visibility">
+            public
+          </td>
+          <td class="docstring">
+            <p>
+Sets the attribute <tt>token</tt>.
+</p>
+
+            
+          </td>
+        </tr>
+        
+      
+        
+        <tr class="">
+          <th class='signature'>
+            <span class='name'>trace_level</span>
+          </td>
+          <td class="readwrite">
+            [<span id='trace_level-instance_method'>R</span><span id='trace_level=-instance_method'>W</span>] 
+          </td>
+          <td class="visibility">
+            public
+          </td>
+          <td class="docstring">
+            <p>
+Sets the attribute <tt>trace_level</tt>.
+</p>
+
+            
+          </td>
+        </tr>
+        
+      
+      </table>
+    </div>
+  
+</div>
+<div class="section constants">
+  <div class="thisclass">
+  <h1>Constants</h1>
+  <dl>
+    
+      <dt id="CONTENT_TYPE-constant">CONTENT_TYPE</dt>
+      <dd>{
+  'yaml' =&gt; 'application/x-yaml',
+  'json' =&gt; 'application/json',
+  'xml'  =&gt; 'application/sml'
+}</dd>
+    
+      <dt id="MAX_RETRIES-constant">MAX_RETRIES</dt>
+      <dd>10</dd>
+    
+      <dt id="RETRYABLE_STATUS-constant">RETRYABLE_STATUS</dt>
+      <dd>[403]</dd>
+    
+  </dl>
+</div>
+
+</div>  <div class="section visibilitygroup public">
+    <h1>Public Visibility</h1>
+      <div class="section methodsummary class public">
+    <h1>Public Class Method Summary</h1>
+<table class="summary">
+  
+    <tr>
+      <th class="signature">
+        
+          <span class='overload'>
+            <span class='name'><a href="#api-class_method" title="api">api</a></span><span class='args'></span>
+            <span class='block'></span>
+          </span>
+        
+        
+      </th>
+      <td class="docstring">
+        <p>
+The API we&#8217;re using.
+</p>
+
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <th class="signature">
+        
+          <span class='overload'>
+            <span class='name'><a href="#api%3D-class_method" title="api=">api=</a></span><span class='args'>(value)</span>
+            <span class='block'></span>
+          </span>
+        
+        
+      </th>
+      <td class="docstring">
+        <p>
+set the API we&#8217;re using.
+</p>
+
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <th class="signature">
+        
+          <span class='overload'>
+            <span class='name'><a href="#authenticated-class_method" title="authenticated">authenticated</a></span><span class='args'></span>
+            <span class='block'></span>
+          </span>
+        
+        
+      </th>
+      <td class="docstring">
+        <p>
+Would be nice if cattr_accessor was available, oh well.
+</p>
+
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <th class="signature">
+        
+          <span class='overload'>
+            <span class='name'><a href="#authenticated%3D-class_method" title="authenticated=">authenticated=</a></span><span class='args'>(value)</span>
+            <span class='block'></span>
+          </span>
+        
+        
+      </th>
+      <td class="docstring">
+        <p>
+We set this to true when the user has auth&#8217;d.
+</p>
+
+        
+      </td>
+    </tr>
+  
+</table>
+
+  </div>
+  <div class="section methodsummary instance public">
+    <h1>Public Instance Method Summary</h1>
+<table class="summary">
+  
+    <tr>
+      <th class="signature">
+        
+          <span class='overload'>
+            <span class='name'><a href="#commits-instance_method" title="#commits">#commits</a></span><span class='args'>(repo, opts = {})</span>
+            <span class='block'></span>
+          </span>
+        
+        
+      </th>
+      <td class="docstring">
+        
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <th class="signature">
+        
+          <span class='overload'>
+            <span class='name'><a href="#find-instance_method" title="#find">#find</a></span><span class='args'>(path, result_key, resource_id, klass = nil)</span>
+            <span class='block'></span>
+          </span>
+        
+        
+      </th>
+      <td class="docstring">
+        
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <th class="signature">
+        
+          <span class='overload'>
+            <span class='name'><a href="#find_all-instance_method" title="#find_all">#find_all</a></span><span class='args'>(path, result_key, query, klass = nil)</span>
+            <span class='block'></span>
+          </span>
+        
+        
+      </th>
+      <td class="docstring">
+        
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <th class="signature">
+        
+          <span class='overload'>
+            <span class='name'><a href="#get-instance_method" title="#get">#get</a></span><span class='args'>(path, params = {}, klass = nil, format = &quot;yaml&quot;)</span>
+            <span class='block'></span>
+          </span>
+        
+        
+      </th>
+      <td class="docstring">
+        
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <th class="signature">
+        
+          <span class='overload'>
+            <span class='name'><a href="#get_raw-instance_method" title="#get_raw">#get_raw</a></span><span class='args'>(path, params, klass = nil)</span>
+            <span class='block'></span>
+          </span>
+        
+        
+      </th>
+      <td class="docstring">
+        
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <th class="signature">
+        
+          <span class='overload'>
+            <span class='name'><a href="#open_issue-instance_method" title="#open_issue">#open_issue</a></span><span class='args'>(user, repo, params)</span>
+            <span class='block'></span>
+          </span>
+        
+        
+      </th>
+      <td class="docstring">
+        
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <th class="signature">
+        
+          <span class='overload'>
+            <span class='name'><a href="#post-instance_method" title="#post">#post</a></span><span class='args'>(path, params = {}, klass = nil, format = &quot;yaml&quot;)</span>
+            <span class='block'></span>
+          </span>
+        
+        
+      </th>
+      <td class="docstring">
+        
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <th class="signature">
+        
+          <span class='overload'>
+            <span class='name'><a href="#repository-instance_method" title="#repository">#repository</a></span><span class='args'>(name)</span>
+            <span class='block'></span>
+          </span>
+        
+        
+          <span class='alias'>#repo</span>
+        
+      </th>
+      <td class="docstring">
+        
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <th class="signature">
+        
+          <span class='overload'>
+            <span class='name'><a href="#save-instance_method" title="#save">#save</a></span><span class='args'>(resource_path, data)</span>
+            <span class='block'></span>
+          </span>
+        
+        
+      </th>
+      <td class="docstring">
+        
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <th class="signature">
+        
+          <span class='overload'>
+            <span class='name'><a href="#user-instance_method" title="#user">#user</a></span><span class='args'></span>
+            <span class='block'></span>
+          </span>
+        
+        
+      </th>
+      <td class="docstring">
+        
+        
+      </td>
+    </tr>
+  
+</table>
+
+  </div>
+<div class="section methoddetails class public">
+  <h1>Public Class Method Details</h1>
+  
+    <div class="method">
+      <div class="method_header">
+  <h3>api</h3>
+</div><div id="api-class_method" class="section method">
+  <div class="details_title">
+    <div class='section methodsignature'>
+    <tt class='def'>
+      <span class='visibility'>public</span>
+      <span class='return_types'></span>
+      <span class='name'>api</span><span class='args'></span>
+      <span class='block'></span>
+    </tt>
+  </div>
+
+</div><div class="section docstring">
+  <p>
+The API we&#8217;re using
+</p>
+
+</div><div class="section source">
+  <span>[<a class="source_link" href="#">View source</a>]</span>
+  <div class="source_code">
+    <table>
+      <tr>
+        <td>
+          <pre class="lines">
+
+
+54
+55
+56</pre>
+        </td>
+        <td>
+          <pre class="code"><span class="info file"># File 'lib/octopi/api.rb', line 54</span>
+
+<span class='def def kw'>def</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='api identifier id'>api</span>
+  <span class='@@api ivar id'>@@api</span>
+<span class='end end kw'>end</span>
+</pre>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+</div>
+    </div>
+  
+    <div class="method">
+      <div class="method_header">
+  <h3>api=</h3>
+</div><div id="api=-class_method" class="section method">
+  <div class="details_title">
+    <div class='section methodsignature'>
+    <tt class='def'>
+      <span class='visibility'>public</span>
+      <span class='return_types'></span>
+      <span class='name'>api=</span><span class='args'>(value)</span>
+      <span class='block'></span>
+    </tt>
+  </div>
+
+</div><div class="section docstring">
+  <p>
+set the API we&#8217;re using
+</p>
+
+</div><div class="section source">
+  <span>[<a class="source_link" href="#">View source</a>]</span>
+  <div class="source_code">
+    <table>
+      <tr>
+        <td>
+          <pre class="lines">
+
+
+59
+60
+61</pre>
+        </td>
+        <td>
+          <pre class="code"><span class="info file"># File 'lib/octopi/api.rb', line 59</span>
+
+<span class='def def kw'>def</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='api identifier id'>api</span><span class='assign token'>=</span><span class='lparen token'>(</span><span class='value identifier id'>value</span><span class='rparen token'>)</span>
+  <span class='@@api ivar id'>@@api</span> <span class='assign token'>=</span> <span class='value identifier id'>value</span>
+<span class='end end kw'>end</span>
+</pre>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+</div>
+    </div>
+  
+    <div class="method">
+      <div class="method_header">
+  <h3>authenticated</h3>
+</div><div id="authenticated-class_method" class="section method">
+  <div class="details_title">
+    <div class='section methodsignature'>
+    <tt class='def'>
+      <span class='visibility'>public</span>
+      <span class='return_types'></span>
+      <span class='name'>authenticated</span><span class='args'></span>
+      <span class='block'></span>
+    </tt>
+  </div>
+
+</div><div class="section docstring">
+  <p>
+Would be nice if cattr_accessor was available, oh well. We use this to
+check if we use the auth or anonymous api
+</p>
+
+</div><div class="section source">
+  <span>[<a class="source_link" href="#">View source</a>]</span>
+  <div class="source_code">
+    <table>
+      <tr>
+        <td>
+          <pre class="lines">
+
+
+44
+45
+46</pre>
+        </td>
+        <td>
+          <pre class="code"><span class="info file"># File 'lib/octopi/api.rb', line 44</span>
+
+<span class='def def kw'>def</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='authenticated identifier id'>authenticated</span>
+  <span class='@@authenticated ivar id'>@@authenticated</span>
+<span class='end end kw'>end</span>
+</pre>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+</div>
+    </div>
+  
+    <div class="method">
+      <div class="method_header">
+  <h3>authenticated=</h3>
+</div><div id="authenticated=-class_method" class="section method">
+  <div class="details_title">
+    <div class='section methodsignature'>
+    <tt class='def'>
+      <span class='visibility'>public</span>
+      <span class='return_types'></span>
+      <span class='name'>authenticated=</span><span class='args'>(value)</span>
+      <span class='block'></span>
+    </tt>
+  </div>
+
+</div><div class="section docstring">
+  <p>
+We set this to true when the user has auth&#8217;d.
+</p>
+
+</div><div class="section source">
+  <span>[<a class="source_link" href="#">View source</a>]</span>
+  <div class="source_code">
+    <table>
+      <tr>
+        <td>
+          <pre class="lines">
+
+
+49
+50
+51</pre>
+        </td>
+        <td>
+          <pre class="code"><span class="info file"># File 'lib/octopi/api.rb', line 49</span>
+
+<span class='def def kw'>def</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='authenticated identifier id'>authenticated</span><span class='assign token'>=</span><span class='lparen token'>(</span><span class='value identifier id'>value</span><span class='rparen token'>)</span>
+  <span class='@@authenticated ivar id'>@@authenticated</span> <span class='assign token'>=</span> <span class='value identifier id'>value</span>
+<span class='end end kw'>end</span>
+</pre>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+</div>
+    </div>
+  
+</div><div class="section methoddetails instance public">
+  <h1>Public Instance Method Details</h1>
+  
+    <div class="method">
+      <div class="method_header">
+  <h3>commits</h3>
+</div><div id="commits-instance_method" class="section method">
+  <div class="details_title">
+    <div class='section methodsignature'>
+    <tt class='def'>
+      <span class='visibility'>public</span>
+      <span class='return_types'></span>
+      <span class='name'>commits</span><span class='args'>(repo, opts = {})</span>
+      <span class='block'></span>
+    </tt>
+  </div>
+
+</div><div class="section source">
+  <span>[<a class="source_link" href="#">View source</a>]</span>
+  <div class="source_code">
+    <table>
+      <tr>
+        <td>
+          <pre class="lines">
+
+
+87
+88
+89
+90</pre>
+        </td>
+        <td>
+          <pre class="code"><span class="info file"># File 'lib/octopi/api.rb', line 87</span>
+
+<span class='def def kw'>def</span> <span class='commits identifier id'>commits</span><span class='lparen token'>(</span><span class='repo identifier id'>repo</span><span class='comma token'>,</span><span class='opts identifier id'>opts</span><span class='assign token'>=</span><span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='rparen token'>)</span>
+  <span class='branch identifier id'>branch</span> <span class='assign token'>=</span> <span class='opts identifier id'>opts</span><span class='lbrack token'>[</span><span class='symbol val'>:branch</span><span class='rbrack token'>]</span> <span class='orop op'>||</span> <span class='string val'>&quot;master&quot;</span>
+  <span class='commits identifier id'>commits</span> <span class='assign token'>=</span> <span class='Commit constant id'>Commit</span><span class='dot token'>.</span><span class='find_all identifier id'>find_all</span><span class='lparen token'>(</span><span class='repo identifier id'>repo</span><span class='comma token'>,</span> <span class='branch identifier id'>branch</span><span class='comma token'>,</span> <span class='self self kw'>self</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+</div>
+    </div>
+  
+    <div class="method">
+      <div class="method_header">
+  <h3>find</h3>
+</div><div id="find-instance_method" class="section method">
+  <div class="details_title">
+    <div class='section methodsignature'>
+    <tt class='def'>
+      <span class='visibility'>public</span>
+      <span class='return_types'></span>
+      <span class='name'>find</span><span class='args'>(path, result_key, resource_id, klass = nil)</span>
+      <span class='block'></span>
+    </tt>
+  </div>
+
+</div><div class="section source">
+  <span>[<a class="source_link" href="#">View source</a>]</span>
+  <div class="source_code">
+    <table>
+      <tr>
+        <td>
+          <pre class="lines">
+
+
+98
+99
+100</pre>
+        </td>
+        <td>
+          <pre class="code"><span class="info file"># File 'lib/octopi/api.rb', line 98</span>
+
+<span class='def def kw'>def</span> <span class='find identifier id'>find</span><span class='lparen token'>(</span><span class='path identifier id'>path</span><span class='comma token'>,</span> <span class='result_key identifier id'>result_key</span><span class='comma token'>,</span> <span class='resource_id identifier id'>resource_id</span><span class='comma token'>,</span> <span class='klass identifier id'>klass</span><span class='assign token'>=</span><span class='nil nil kw'>nil</span><span class='rparen token'>)</span>
+  <span class='get identifier id'>get</span><span class='lparen token'>(</span><span class='path identifier id'>path</span><span class='comma token'>,</span> <span class='lbrace token'>{</span> <span class='symbol val'>:id</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='resource_id identifier id'>resource_id</span> <span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='klass identifier id'>klass</span><span class='rparen token'>)</span> 
+<span class='end end kw'>end</span>
+</pre>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+</div>
+    </div>
+  
+    <div class="method">
+      <div class="method_header">
+  <h3>find_all</h3>
+</div><div id="find_all-instance_method" class="section method">
+  <div class="details_title">
+    <div class='section methodsignature'>
+    <tt class='def'>
+      <span class='visibility'>public</span>
+      <span class='return_types'></span>
+      <span class='name'>find_all</span><span class='args'>(path, result_key, query, klass = nil)</span>
+      <span class='block'></span>
+    </tt>
+  </div>
+
+</div><div class="section source">
+  <span>[<a class="source_link" href="#">View source</a>]</span>
+  <div class="source_code">
+    <table>
+      <tr>
+        <td>
+          <pre class="lines">
+
+
+103
+104
+105</pre>
+        </td>
+        <td>
+          <pre class="code"><span class="info file"># File 'lib/octopi/api.rb', line 103</span>
+
+<span class='def def kw'>def</span> <span class='find_all identifier id'>find_all</span><span class='lparen token'>(</span><span class='path identifier id'>path</span><span class='comma token'>,</span> <span class='result_key identifier id'>result_key</span><span class='comma token'>,</span> <span class='query identifier id'>query</span><span class='comma token'>,</span> <span class='klass identifier id'>klass</span><span class='assign token'>=</span><span class='nil nil kw'>nil</span><span class='rparen token'>)</span>
+  <span class='get identifier id'>get</span><span class='lparen token'>(</span><span class='path identifier id'>path</span><span class='comma token'>,</span> <span class='lbrace token'>{</span> <span class='symbol val'>:query</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='query identifier id'>query</span><span class='comma token'>,</span> <span class='symbol val'>:id</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='query identifier id'>query</span> <span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='klass identifier id'>klass</span><span class='rparen token'>)</span><span class='lbrack token'>[</span><span class='result_key identifier id'>result_key</span><span class='rbrack token'>]</span>
+<span class='end end kw'>end</span>
+</pre>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+</div>
+    </div>
+  
+    <div class="method">
+      <div class="method_header">
+  <h3>get</h3>
+</div><div id="get-instance_method" class="section method">
+  <div class="details_title">
+    <div class='section methodsignature'>
+    <tt class='def'>
+      <span class='visibility'>public</span>
+      <span class='return_types'></span>
+      <span class='name'>get</span><span class='args'>(path, params = {}, klass = nil, format = &quot;yaml&quot;)</span>
+      <span class='block'></span>
+    </tt>
+  </div>
+
+</div><div class="section source">
+  <span>[<a class="source_link" href="#">View source</a>]</span>
+  <div class="source_code">
+    <table>
+      <tr>
+        <td>
+          <pre class="lines">
+
+
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129</pre>
+        </td>
+        <td>
+          <pre class="code"><span class="info file"># File 'lib/octopi/api.rb', line 111</span>
+
+<span class='def def kw'>def</span> <span class='get identifier id'>get</span><span class='lparen token'>(</span><span class='path identifier id'>path</span><span class='comma token'>,</span> <span class='params identifier id'>params</span> <span class='assign token'>=</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='klass identifier id'>klass</span><span class='assign token'>=</span><span class='nil nil kw'>nil</span><span class='comma token'>,</span> <span class='format identifier id'>format</span> <span class='assign token'>=</span> <span class='string val'>&quot;yaml&quot;</span><span class='rparen token'>)</span>
+  <span class='@@retries ivar id'>@@retries</span> <span class='assign token'>=</span> <span class='integer val'>0</span>
+  <span class='begin begin kw'>begin</span>
+    <span class='trace identifier id'>trace</span> <span class='dstring node'>&quot;GET [#{format}]&quot;</span><span class='comma token'>,</span> <span class='dstring node'>&quot;/#{format}#{path}&quot;</span><span class='comma token'>,</span> <span class='params identifier id'>params</span>
+    <span class='submit identifier id'>submit</span><span class='lparen token'>(</span><span class='path identifier id'>path</span><span class='comma token'>,</span> <span class='params identifier id'>params</span><span class='comma token'>,</span> <span class='klass identifier id'>klass</span><span class='comma token'>,</span> <span class='format identifier id'>format</span><span class='rparen token'>)</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='path identifier id'>path</span><span class='comma token'>,</span> <span class='params identifier id'>params</span><span class='comma token'>,</span> <span class='format identifier id'>format</span><span class='bitor op'>|</span>
+      <span class='self self kw'>self</span><span class='dot token'>.</span><span class='class identifier id'>class</span><span class='dot token'>.</span><span class='get identifier id'>get</span> <span class='dstring node'>&quot;/#{format}#{path}&quot;</span>
+    <span class='end end kw'>end</span>
+  <span class='rescue rescue kw'>rescue</span> <span class='RetryableAPIError constant id'>RetryableAPIError</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='e identifier id'>e</span>
+    <span class='if if kw'>if</span> <span class='@@retries ivar id'>@@retries</span> <span class='lt op'>&lt;</span> <span class='MAX_RETRIES constant id'>MAX_RETRIES</span> 
+      <span class='$stderr gvar id'>$stderr</span><span class='dot token'>.</span><span class='puts identifier id'>puts</span> <span class='e identifier id'>e</span><span class='dot token'>.</span><span class='message identifier id'>message</span>
+      <span class='@@retries ivar id'>@@retries</span> <span class='opasgn op'>+=</span> <span class='integer val'>1</span>
+      <span class='sleep identifier id'>sleep</span> <span class='integer val'>6</span>
+      <span class='retry retry kw'>retry</span>
+    <span class='else else kw'>else</span>  
+      <span class='raise identifier id'>raise</span> <span class='APIError constant id'>APIError</span><span class='comma token'>,</span> <span class='dstring node'>&quot;GitHub returned status #{e.code}, despite&quot;</span> <span class='plus op'>+</span>
+       <span class='dstring node'>&quot; repeating the request #{MAX_RETRIES} times. Giving up.&quot;</span>
+    <span class='end end kw'>end</span>  
+  <span class='end end kw'>end</span>  
+<span class='end end kw'>end</span>
+</pre>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+</div>
+    </div>
+  
+    <div class="method">
+      <div class="method_header">
+  <h3>get_raw</h3>
+</div><div id="get_raw-instance_method" class="section method">
+  <div class="details_title">
+    <div class='section methodsignature'>
+    <tt class='def'>
+      <span class='visibility'>public</span>
+      <span class='return_types'></span>
+      <span class='name'>get_raw</span><span class='args'>(path, params, klass = nil)</span>
+      <span class='block'></span>
+    </tt>
+  </div>
+
+</div><div class="section source">
+  <span>[<a class="source_link" href="#">View source</a>]</span>
+  <div class="source_code">
+    <table>
+      <tr>
+        <td>
+          <pre class="lines">
+
+
+107
+108
+109</pre>
+        </td>
+        <td>
+          <pre class="code"><span class="info file"># File 'lib/octopi/api.rb', line 107</span>
+
+<span class='def def kw'>def</span> <span class='get_raw identifier id'>get_raw</span><span class='lparen token'>(</span><span class='path identifier id'>path</span><span class='comma token'>,</span> <span class='params identifier id'>params</span><span class='comma token'>,</span> <span class='klass identifier id'>klass</span><span class='assign token'>=</span><span class='nil nil kw'>nil</span><span class='rparen token'>)</span>
+ <span class='get identifier id'>get</span><span class='lparen token'>(</span><span class='path identifier id'>path</span><span class='comma token'>,</span> <span class='params identifier id'>params</span><span class='comma token'>,</span> <span class='klass identifier id'>klass</span><span class='comma token'>,</span>  <span class='string val'>'plain'</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+</div>
+    </div>
+  
+    <div class="method">
+      <div class="method_header">
+  <h3>open_issue</h3>
+</div><div id="open_issue-instance_method" class="section method">
+  <div class="details_title">
+    <div class='section methodsignature'>
+    <tt class='def'>
+      <span class='visibility'>public</span>
+      <span class='return_types'></span>
+      <span class='name'>open_issue</span><span class='args'>(user, repo, params)</span>
+      <span class='block'></span>
+    </tt>
+  </div>
+
+</div><div class="section source">
+  <span>[<a class="source_link" href="#">View source</a>]</span>
+  <div class="source_code">
+    <table>
+      <tr>
+        <td>
+          <pre class="lines">
+
+
+76
+77
+78</pre>
+        </td>
+        <td>
+          <pre class="code"><span class="info file"># File 'lib/octopi/api.rb', line 76</span>
+
+<span class='def def kw'>def</span> <span class='open_issue identifier id'>open_issue</span><span class='lparen token'>(</span><span class='user identifier id'>user</span><span class='comma token'>,</span> <span class='repo identifier id'>repo</span><span class='comma token'>,</span> <span class='params identifier id'>params</span><span class='rparen token'>)</span>
+  <span class='Issue constant id'>Issue</span><span class='dot token'>.</span><span class='open identifier id'>open</span><span class='lparen token'>(</span><span class='user identifier id'>user</span><span class='comma token'>,</span> <span class='repo identifier id'>repo</span><span class='comma token'>,</span> <span class='params identifier id'>params</span><span class='comma token'>,</span> <span class='self self kw'>self</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+</div>
+    </div>
+  
+    <div class="method">
+      <div class="method_header">
+  <h3>post</h3>
+</div><div id="post-instance_method" class="section method">
+  <div class="details_title">
+    <div class='section methodsignature'>
+    <tt class='def'>
+      <span class='visibility'>public</span>
+      <span class='return_types'></span>
+      <span class='name'>post</span><span class='args'>(path, params = {}, klass = nil, format = &quot;yaml&quot;)</span>
+      <span class='block'></span>
+    </tt>
+  </div>
+
+</div><div class="section source">
+  <span>[<a class="source_link" href="#">View source</a>]</span>
+  <div class="source_code">
+    <table>
+      <tr>
+        <td>
+          <pre class="lines">
+
+
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150</pre>
+        </td>
+        <td>
+          <pre class="code"><span class="info file"># File 'lib/octopi/api.rb', line 131</span>
+
+<span class='def def kw'>def</span> <span class='post identifier id'>post</span><span class='lparen token'>(</span><span class='path identifier id'>path</span><span class='comma token'>,</span> <span class='params identifier id'>params</span> <span class='assign token'>=</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='klass identifier id'>klass</span><span class='assign token'>=</span><span class='nil nil kw'>nil</span><span class='comma token'>,</span> <span class='format identifier id'>format</span> <span class='assign token'>=</span> <span class='string val'>&quot;yaml&quot;</span><span class='rparen token'>)</span>
+  <span class='@@retries ivar id'>@@retries</span> <span class='assign token'>=</span> <span class='integer val'>0</span>
+  <span class='begin begin kw'>begin</span>
+    <span class='trace identifier id'>trace</span> <span class='string val'>&quot;POST&quot;</span><span class='comma token'>,</span> <span class='dstring node'>&quot;/#{format}#{path}&quot;</span><span class='comma token'>,</span> <span class='params identifier id'>params</span>
+    <span class='submit identifier id'>submit</span><span class='lparen token'>(</span><span class='path identifier id'>path</span><span class='comma token'>,</span> <span class='params identifier id'>params</span><span class='comma token'>,</span> <span class='klass identifier id'>klass</span><span class='comma token'>,</span> <span class='format identifier id'>format</span><span class='rparen token'>)</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='path identifier id'>path</span><span class='comma token'>,</span> <span class='params identifier id'>params</span><span class='comma token'>,</span> <span class='format identifier id'>format</span><span class='bitor op'>|</span>
+      <span class='resp identifier id'>resp</span> <span class='assign token'>=</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='class identifier id'>class</span><span class='dot token'>.</span><span class='post identifier id'>post</span> <span class='dstring node'>&quot;/#{format}#{path}&quot;</span><span class='comma token'>,</span> <span class='symbol val'>:body</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='params identifier id'>params</span>
+      <span class='resp identifier id'>resp</span>
+    <span class='end end kw'>end</span>
+  <span class='rescue rescue kw'>rescue</span> <span class='RetryableAPIError constant id'>RetryableAPIError</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='e identifier id'>e</span>
+    <span class='if if kw'>if</span> <span class='@@retries ivar id'>@@retries</span> <span class='lt op'>&lt;</span> <span class='MAX_RETRIES constant id'>MAX_RETRIES</span>
+      <span class='$stderr gvar id'>$stderr</span><span class='dot token'>.</span><span class='puts identifier id'>puts</span> <span class='e identifier id'>e</span><span class='dot token'>.</span><span class='message identifier id'>message</span>
+      <span class='@@retries ivar id'>@@retries</span> <span class='opasgn op'>+=</span> <span class='integer val'>1</span>
+      <span class='sleep identifier id'>sleep</span> <span class='integer val'>6</span>
+      <span class='retry retry kw'>retry</span>
+    <span class='else else kw'>else</span>
+      <span class='raise identifier id'>raise</span> <span class='APIError constant id'>APIError</span><span class='comma token'>,</span> <span class='dstring node'>&quot;GitHub returned status #{e.code}, despite&quot;</span> <span class='plus op'>+</span>
+       <span class='dstring node'>&quot; repeating the request #{MAX_RETRIES} times. Giving up.&quot;</span>
+    <span class='end end kw'>end</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+</pre>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+</div>
+    </div>
+  
+    <div class="method">
+      <div class="method_header">
+  <h3>repository</h3>
+</div><div id="repository-instance_method" class="section method">
+  <div class="details_title">
+    <div class='section methodsignature'>
+    <tt class='def'>
+      <span class='visibility'>public</span>
+      <span class='return_types'></span>
+      <span class='name'>repository</span><span class='args'>(name)</span>
+      <span class='block'></span>
+    </tt>
+  </div>
+<p class="aliases">
+  <span class="aka">Also known as:</span>
+  
+    <tt id="repo-instance_method">repo</tt>
+  
+</p>
+</div><div class="section source">
+  <span>[<a class="source_link" href="#">View source</a>]</span>
+  <div class="source_code">
+    <table>
+      <tr>
+        <td>
+          <pre class="lines">
+
+
+80
+81
+82
+83
+84</pre>
+        </td>
+        <td>
+          <pre class="code"><span class="info file"># File 'lib/octopi/api.rb', line 80</span>
+
+<span class='def def kw'>def</span> <span class='repository identifier id'>repository</span><span class='lparen token'>(</span><span class='name identifier id'>name</span><span class='rparen token'>)</span>
+  <span class='repo identifier id'>repo</span> <span class='assign token'>=</span> <span class='Repository constant id'>Repository</span><span class='dot token'>.</span><span class='find identifier id'>find</span><span class='lparen token'>(</span><span class='user identifier id'>user</span><span class='comma token'>,</span> <span class='name identifier id'>name</span><span class='comma token'>,</span> <span class='self self kw'>self</span><span class='rparen token'>)</span>
+  <span class='repo identifier id'>repo</span><span class='dot token'>.</span><span class='api identifier id'>api</span> <span class='assign token'>=</span> <span class='self self kw'>self</span>
+  <span class='repo identifier id'>repo</span>
+<span class='end end kw'>end</span>
+</pre>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+</div>
+    </div>
+  
+    <div class="method">
+      <div class="method_header">
+  <h3>save</h3>
+</div><div id="save-instance_method" class="section method">
+  <div class="details_title">
+    <div class='section methodsignature'>
+    <tt class='def'>
+      <span class='visibility'>public</span>
+      <span class='return_types'></span>
+      <span class='name'>save</span><span class='args'>(resource_path, data)</span>
+      <span class='block'></span>
+    </tt>
+  </div>
+
+</div><div class="section source">
+  <span>[<a class="source_link" href="#">View source</a>]</span>
+  <div class="source_code">
+    <table>
+      <tr>
+        <td>
+          <pre class="lines">
+
+
+92
+93
+94
+95
+96</pre>
+        </td>
+        <td>
+          <pre class="code"><span class="info file"># File 'lib/octopi/api.rb', line 92</span>
+
+<span class='def def kw'>def</span> <span class='save identifier id'>save</span><span class='lparen token'>(</span><span class='resource_path identifier id'>resource_path</span><span class='comma token'>,</span> <span class='data identifier id'>data</span><span class='rparen token'>)</span>
+  <span class='traslate identifier id'>traslate</span> <span class='resource_path identifier id'>resource_path</span><span class='comma token'>,</span> <span class='data identifier id'>data</span>
+  <span class='comment val'>#still can't figure out on what format values are expected</span>
+  <span class='post identifier id'>post</span><span class='lparen token'>(</span><span class='dstring node'>&quot;#{resource_path}&quot;</span><span class='comma token'>,</span> <span class='lbrace token'>{</span> <span class='symbol val'>:query</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='data identifier id'>data</span> <span class='rbrace token'>}</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+</div>
+    </div>
+  
+    <div class="method">
+      <div class="method_header">
+  <h3>user</h3>
+</div><div id="user-instance_method" class="section method">
+  <div class="details_title">
+    <div class='section methodsignature'>
+    <tt class='def'>
+      <span class='visibility'>public</span>
+      <span class='return_types'></span>
+      <span class='name'>user</span><span class='args'></span>
+      <span class='block'></span>
+    </tt>
+  </div>
+
+</div><div class="section source">
+  <span>[<a class="source_link" href="#">View source</a>]</span>
+  <div class="source_code">
+    <table>
+      <tr>
+        <td>
+          <pre class="lines">
+
+
+70
+71
+72
+73
+74</pre>
+        </td>
+        <td>
+          <pre class="code"><span class="info file"># File 'lib/octopi/api.rb', line 70</span>
+
+<span class='def def kw'>def</span> <span class='user identifier id'>user</span>
+  <span class='user_data identifier id'>user_data</span> <span class='assign token'>=</span> <span class='get identifier id'>get</span><span class='lparen token'>(</span><span class='dstring node'>&quot;/user/show/#{login}&quot;</span><span class='rparen token'>)</span>
+  <span class='raise identifier id'>raise</span> <span class='string val'>&quot;Unexpected response for user command&quot;</span> <span class='unless unless_mod kw'>unless</span> <span class='user_data identifier id'>user_data</span> <span class='and and kw'>and</span> <span class='user_data identifier id'>user_data</span><span class='lbrack token'>[</span><span class='string val'>'user'</span><span class='rbrack token'>]</span>
+  <span class='User constant id'>User</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='user_data identifier id'>user_data</span><span class='lbrack token'>[</span><span class='string val'>'user'</span><span class='rbrack token'>]</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+</div>
+    </div>
+  
+</div>
+  </div>
+
+</div>
+    </div>
+    <div id="yard_info">
+  Generated on Friday, July 31 2009 at 05:01:55 PM by 
+  <abbr class="yard" title="Yay! A Ruby Documentation Tool"><a href="http://yard.soen.ca">YARD</a></abbr> 
+  0.2.3.2 (ruby-1.8.6).
+</div>
+
+  </body>
+</html>

@@ -25,7 +25,12 @@ class FileObjectTest < Test::Unit::TestCase
     context "invalid sha" do
       should "not work" do
         # sha below is "ryan"
-        FileObject.find(:user => @user, :repository => @repo, :sha => "ea3cd978650417470535f3a4725b6b5042a6ab59")
+        exception = assert_raise NotFound do
+          FileObject.find(:user => @user, :repository => @repo, :sha => "ea3cd978650417470535f3a4725b6b5042a6ab59")
+        end
+        
+        assert_equal "The FileObject you were looking for could not be found, or is private.", exception.message
+        
       end
     end
   end
