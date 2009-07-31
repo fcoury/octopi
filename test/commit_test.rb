@@ -29,6 +29,14 @@ class CommitTest < Test::Unit::TestCase
         assert_not_nil commits
         assert_equal 30, commits.size
       end
+      
+      should "be able to find commits in a private repository" do
+        auth do
+          commits = Commit.find_all(:user => "fcoury", :repository => "rboard")
+        end
+        assert_not_nil commits
+        assert_equal 22, commits.size
+      end
     end
     
     context "finding a single commit" do
@@ -46,7 +54,7 @@ class CommitTest < Test::Unit::TestCase
         commit = Commit.find(:name => "octopi", :user => "fcoury", :sha => "f6609209c3ac0badd004512d318bfaa508ea10ae", :branch => "lazy")
         assert_not_nil commit
       end
-      
+    
       should "raise an error if not found" do
         exception = assert_raise Octopi::NotFound do
           Commit.find(:name => "octopi", :user => "fcoury", :sha => "nothere")
