@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../style.css" type="text/css" charset="utf-8" />
+<link rel="stylesheet" href="../custom.css" type="text/css" charset="utf-8" />
+<link rel="stylesheet" href="../syntax_highlight.css" type="text/css" charset="utf-8" />
+
+    <script src="../jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../app.js" type="text/javascript" charset="utf-8"></script>
+    <title>Class: Octopi::Blob</title>
+  </head>
+  <body>
+    <div id="content">
+      <div class="section class Octopi_Blob">
+  <h1 class="title">Class: Octopi::Blob</h1>
+  <div class="section inheritance">
+  <ul>
+  <li><a href="Base.html" title="Octopi::Base">Octopi::Base</a></li><ul><li>Octopi::Blob</li>
+  </ul></ul>
+</div><div class="section mixins">
+  <h1>Included Modules</h1>
+  <p><a href="Blob/Resource.html" title="Octopi::Resource">Octopi::Resource</a></p>
+</div>
+<div class="section attributes">
+  <h1>Attributes</h1>
+
+  
+    <div class="instance">
+      <h2>Instance Attributes</h2>
+      <table>
+      
+        
+        <tr class="">
+          <th class='signature'>
+            <span class='name'>text</span>
+          </td>
+          <td class="readwrite">
+            [<span id='text-instance_method'>R</span><span id='text=-instance_method'>W</span>] 
+          </td>
+          <td class="visibility">
+            public
+          </td>
+          <td class="docstring">
+            <p>
+Sets the attribute <tt>text</tt>.
+</p>
+
+            
+          </td>
+        </tr>
+        
+      
+      </table>
+    </div>
+  
+</div>
+<div class="section constants">
+  <div class="inherited">
+  
+  <div>
+    <h1>Constants Inherited from <a href="Base.html" title="Octopi::Base">Octopi::Base</a></h1>
+    <p><span class='name'><a href="Base.html#VALID-constant" title="VALID">VALID</a></span></p>
+  </div>
+  
+</div>
+<div class="clear"></div>
+</div><div class="section constructor">
+<h1>Constructor Summary</h1>
+  <p class="inherited_msg">
+    This class inherits a constructor from <a href="Base.html#initialize-instance_method" title="Octopi::Base">Octopi::Base</a>.
+  </p>
+</div>  <div class="section visibilitygroup public">
+    <h1>Public Visibility</h1>
+      <div class="section methodsummary class public">
+    <h1>Public Class Method Summary</h1>
+<table class="summary">
+  
+    <tr>
+      <th class="signature">
+        
+          <span class='overload'>
+            <span class='name'><a href="#find-class_method" title="find">find</a></span><span class='args'>(user, repo, sha, path = nil)</span>
+            <span class='block'></span>
+          </span>
+        
+        
+      </th>
+      <td class="docstring">
+        
+        
+      </td>
+    </tr>
+  
+</table>
+
+  </div>
+  <div class="section methodsummary instance public">
+    <div class="inherited">
+  
+  <div>
+    <h1>Public Instance Methods Inherited from <a href="Base.html" title="Octopi::Base">Octopi::Base</a></h1>
+    <p><span class='name'><a href="Base.html#error%3D-instance_method" title="error=">error=</a></span>, <span class='name'><a href="Base.html#property-instance_method" title="property">property</a></span>, <span class='name'><a href="Base.html#save-instance_method" title="save">save</a></span></p>
+  </div>
+  
+</div>
+<div class="clear"></div>
+  </div>
+<div class="section methoddetails class public">
+  <h1>Public Class Method Details</h1>
+  
+    <div class="method">
+      <div class="method_header">
+  <h3>find</h3>
+</div><div id="find-class_method" class="section method">
+  <div class="details_title">
+    <div class='section methodsignature'>
+    <tt class='def'>
+      <span class='visibility'>public</span>
+      <span class='return_types'></span>
+      <span class='name'>find</span><span class='args'>(user, repo, sha, path = nil)</span>
+      <span class='block'></span>
+    </tt>
+  </div>
+
+</div><div class="section source">
+  <span>[<a class="source_link" href="#">View source</a>]</span>
+  <div class="source_code">
+    <table>
+      <tr>
+        <td>
+          <pre class="lines">
+
+
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre>
+        </td>
+        <td>
+          <pre class="code"><span class="info file"># File 'lib/octopi/blob.rb', line 10</span>
+
+<span class='def def kw'>def</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='find identifier id'>find</span><span class='lparen token'>(</span><span class='user identifier id'>user</span><span class='comma token'>,</span> <span class='repo identifier id'>repo</span><span class='comma token'>,</span> <span class='sha identifier id'>sha</span><span class='comma token'>,</span> <span class='path identifier id'>path</span> <span class='assign token'>=</span> <span class='nil nil kw'>nil</span><span class='rparen token'>)</span>
+  <span class='user identifier id'>user</span> <span class='assign token'>=</span> <span class='user identifier id'>user</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span>
+  <span class='repo identifier id'>repo</span> <span class='assign token'>=</span> <span class='repo identifier id'>repo</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span>
+  <span class='self self kw'>self</span><span class='dot token'>.</span><span class='validate_args identifier id'>validate_args</span><span class='lparen token'>(</span><span class='sha identifier id'>sha</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='symbol val'>:sha</span><span class='comma token'>,</span> <span class='user identifier id'>user</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='symbol val'>:user</span><span class='rparen token'>)</span>
+  <span class='if if kw'>if</span> <span class='path identifier id'>path</span>
+    <span class='super super kw'>super</span> <span class='lbrack token'>[</span><span class='user identifier id'>user</span><span class='comma token'>,</span> <span class='repo identifier id'>repo</span><span class='comma token'>,</span> <span class='sha identifier id'>sha</span><span class='comma token'>,</span> <span class='path identifier id'>path</span><span class='rbrack token'>]</span>
+  <span class='else else kw'>else</span>
+    <span class='Api constant id'>Api</span><span class='dot token'>.</span><span class='api identifier id'>api</span><span class='dot token'>.</span><span class='get_raw identifier id'>get_raw</span><span class='lparen token'>(</span><span class='path_for identifier id'>path_for</span><span class='lparen token'>(</span><span class='symbol val'>:resource</span><span class='rparen token'>)</span><span class='comma token'>,</span> <span class='lbrace token'>{</span><span class='symbol val'>:id</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='user identifier id'>user</span><span class='comma token'>,</span> <span class='repo identifier id'>repo</span><span class='comma token'>,</span> <span class='sha identifier id'>sha</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='join identifier id'>join</span><span class='lparen token'>(</span><span class='string val'>'/'</span><span class='rparen token'>)</span><span class='rbrace token'>}</span><span class='rparen token'>)</span>
+  <span class='end end kw'>end</span>  
+<span class='end end kw'>end</span>
+</pre>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+</div>
+    </div>
+  
+</div>
+  </div>
+
+</div>
+    </div>
+    <div id="yard_info">
+  Generated on Friday, July 31 2009 at 05:01:55 PM by 
+  <abbr class="yard" title="Yay! A Ruby Documentation Tool"><a href="http://yard.soen.ca">YARD</a></abbr> 
+  0.2.3.2 (ruby-1.8.6).
+</div>
+
+  </body>
+</html>

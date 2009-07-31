@@ -1,5 +1,5 @@
 require File.join(File.dirname(__FILE__), "branch")
-class BranchSet < Array
+class Octopi::BranchSet < Array
   include Octopi
   attr_accessor :user, :repository
   # Takes a name, returns a branch if it exists

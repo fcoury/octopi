@@ -1,5 +1,5 @@
 require File.join(File.dirname(__FILE__), "issue")
-class IssueSet < Array
+class Octopi::IssueSet < Array
   include Octopi
   attr_accessor :user, :repository
   def find(number)
