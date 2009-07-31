@@ -14,10 +14,10 @@ module Octopi
     begin
       opts = args.last.is_a?(Hash) ? args.last : {}
       config = read_gitconfig
-      login = config["github"]["user"]
-      token = config["github"]["token"]
       Api.authenticated = true
-      Api.api = AuthApi.new(login, token)
+      Api.api = AuthApi.instance
+      Api.api.login = config["github"]["user"]
+      Api.api.token = config["github"]["token"]
       Api.api.trace_level = opts[:trace]
     
       puts "=> Trace on: #{api.trace_level}" if Api.api.trace_level
@@ -64,13 +64,13 @@ module Octopi
     group = nil
     File.foreach("#{ENV['HOME']}/.gitconfig") do |line|
       line.strip!
-      if line[0] != ?# and line =~ /\S/
+      if line[0] != ?# && line =~ /\S/
         if line =~ /^\[(.*)\]$/
           group = $1
+          config[group] ||= {}
         else
-          key, value = line.split("=")
-          value ||= ''
-          (config[group]||={})[key.strip] = value.strip
+          key, value = line.split("=").map { |v| v.strip }
+          config[group][key] = value
         end
       end
     end

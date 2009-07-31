@@ -5,6 +5,7 @@ require 'fakeweb'
 
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
+ENV['HOME'] = File.dirname(__FILE__)
 require 'octopi'
 
 @the_repo = ["fcoury", "octopi"]

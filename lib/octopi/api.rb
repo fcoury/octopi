@@ -69,7 +69,7 @@ module Octopi
     def user
       user_data = get("/user/show/#{login}")
       raise "Unexpected response for user command" unless user_data and user_data['user']
-      User.new(self, user_data['user'])
+      User.new(user_data['user'])
     end
   
     def open_issue(user, repo, params)
