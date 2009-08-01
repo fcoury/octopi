@@ -114,6 +114,8 @@ def fake_everything
   FakeWeb.register_uri(:get, "http://#{yaml_api}/issues/show/fcoury/octopi/not-a-number", :status => ["404", "Not Found"])
   # is an invalid hash
   FakeWeb.register_uri(:get, "http://#{yaml_api}/tree/show/fcoury/octopi/#{fake_sha}", :status => ["404", "Not Found"])
+  # is not a user
+  FakeWeb.register_uri(:get, "http://#{yaml_api}/user/show/i-am-most-probably-a-user-that-does-not-exist", :status => ["404", "Not Found"])
   
   
   FakeWeb.register_uri(:get, "http://github.com/login", :response => stub_file("login"))

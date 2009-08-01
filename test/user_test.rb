@@ -9,6 +9,18 @@ class UserTest < Test::Unit::TestCase
   end
   
   should "be able to find a user" do
+    assert_not_nil User.find("fcoury")
+  end
+  
+  should "not be able to find a user that doesn't exist" do
+    exception = assert_raise NotFound do 
+      User.find("i-am-most-probably-a-user-that-does-not-exist")
+    end
+    
+    assert_equal "The User you were looking for could not be found, or is private.", exception.message
+  end
+  
+  should "be able to find a user" do
     users = User.find_all("radar")
     assert_not_nil users
   end
