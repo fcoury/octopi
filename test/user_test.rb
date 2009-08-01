@@ -8,6 +8,11 @@ class UserTest < Test::Unit::TestCase
     @user = User.find("fcoury")
   end
   
+  should "be able to find a user" do
+    users = User.find_all("radar")
+    assert_not_nil users
+  end
+  
   context "authenticated" do
     should "return all user information" do
       authenticated do
@@ -56,5 +61,6 @@ class UserTest < Test::Unit::TestCase
         assert users.first.is_a?(User)
       end
     end
+    
   end
 end

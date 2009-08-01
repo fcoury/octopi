@@ -75,7 +75,8 @@ def fake_everything
         "user/show/fcoury" => File.join("users", "fcoury"),
         
         "user/show/fcoury/followers" => File.join("users/followers"),
-        "user/show/fcoury/following" => File.join("users/following")
+        "user/show/fcoury/following" => File.join("users/following"),
+        "user/search/radar" => File.join("users/search-radar"),
         
         
           }
