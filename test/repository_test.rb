@@ -33,7 +33,7 @@ class RepositoryTest < Test::Unit::TestCase
     end
     
     should "return repositories" do
-      assert_equal 43, @user.repositories.size
+      assert_equal 45, @user.repositories.size
     end
     
     should "return more repositories if authed" do
@@ -65,8 +65,7 @@ class RepositoryTest < Test::Unit::TestCase
     should "be able to retrieve the branches" do
       branches = @repository.branches
       assert_not_nil branches
-      assert_equal 3, branches.size
-      
+      assert_equal 4, branches.size
     end
   end
 end

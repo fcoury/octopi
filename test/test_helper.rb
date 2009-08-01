@@ -50,62 +50,62 @@ def fake_everything
   
   # Public stuff
   fakes = {
-       
-        "blob/show/fcoury/octopi/#{sha}" => File.join("blob", "fcoury", "octopi", "plain", sha),
-        
+        #        
+        # "blob/show/fcoury/octopi/#{sha}" => File.join("blob", "fcoury", "octopi", "plain", sha),
+        # 
         "commits/list/fcoury/octopi/master" => commits("master"),
         "commits/list/fcoury/octopi/lazy" => commits("lazy"),
         "commits/show/fcoury/octopi/#{sha}" => commits(sha),
-        
-        "issues/close/fcoury/octopi/28" => issues("28-closed"),
-        "issues/edit/fcoury/octopi/28" => issues("28-edited"), 
+        # 
+        # "issues/close/fcoury/octopi/28" => issues("28-closed"),
+        # "issues/edit/fcoury/octopi/28" => issues("28-edited"), 
         "issues/list/fcoury/octopi/open" => issues("open"),
         "issues/list/fcoury/octopi/closed" => issues("closed"),
-        "issues/open/fcoury/octopi" => issues("new"),
-        "issues/reopen/fcoury/octopi/27" => issues("27-reopened"),
-        
-        "issues/comment/fcoury/octopi/28" => issues("comment", "28-comment"),
-        
-        "issues/label/add/fcoury/octopi/one-point-oh/28" => issues("labels", "28-one-point-oh"),
-        "issues/label/add/fcoury/octopi/maybe-two-point-oh/28" => issues("labels", "28-maybe-two-point-oh"),
-        "issues/label/remove/fcoury/octopi/one-point-oh/28" => issues("labels", "28-remove-one-point-oh"),
-        "issues/label/remove/fcoury/octopi/maybe-two-point-oh/28" => issues("labels", "28-remove-maybe-two-point-oh"),
-    
-    
+        # "issues/open/fcoury/octopi" => issues("new"),
+        # "issues/reopen/fcoury/octopi/27" => issues("27-reopened"),
+        # 
+        # "issues/comment/fcoury/octopi/28" => issues("comment", "28-comment"),
+        # 
+        # "issues/label/add/fcoury/octopi/one-point-oh/28" => issues("labels", "28-one-point-oh"),
+        # "issues/label/add/fcoury/octopi/maybe-two-point-oh/28" => issues("labels", "28-maybe-two-point-oh"),
+        # "issues/label/remove/fcoury/octopi/one-point-oh/28" => issues("labels", "28-remove-one-point-oh"),
+        # "issues/label/remove/fcoury/octopi/maybe-two-point-oh/28" => issues("labels", "28-remove-maybe-two-point-oh"),
+        #     
+        #     
         # Closed issue
         "issues/show/fcoury/octopi/27" => issues("27"),
         # Open issue
         "issues/show/fcoury/octopi/28" => issues("28"),
         
         "repos/show/fcoury" => File.join("repos", "show", "fcoury"),
-        "repos/show/fcoury/octopi" => repos("main"),
+        "repos/show/fcoury/octopi" => repos("master"),
         "repos/show/fcoury/octopi/branches" => repos("branches"),
         
         "tree/show/fcoury/octopi/#{sha}" => File.join("tree", "fcoury", "octopi", sha),
-
+        
         "user/show/fcoury" => File.join("users", "fcoury"),
         
         
           }
   
   fakes.each do |key, value|
-    FakeWeb.register_uri("http://#{yaml_api}/" + key, :string => YAML::load_file(stub_file(value)))
+    FakeWeb.register_uri(:get, "http://#{yaml_api}/" + key, :response => stub_file(value))
   end
   
   # rboard is a private repository
-  FakeWeb.register_uri("http://#{yaml_api}/repos/show/fcoury/rboard", :string => YAML::load_file(stub_file("errors", "repository", "not_found")))
+  FakeWeb.register_uri(:get, "http://#{yaml_api}/repos/show/fcoury/rboard", :body => File.read(stub_file("errors", "repository", "not_found")))
   
   # nothere is obviously an invalid sha
-  FakeWeb.register_uri("http://#{yaml_api}/commits/show/fcoury/octopi/nothere", :status => ["404", "Not Found"])
+  FakeWeb.register_uri(:get, "http://#{yaml_api}/commits/show/fcoury/octopi/nothere", :status => ["404", "Not Found"])
   # not-a-number is obviously not a number
-  FakeWeb.register_uri("http://#{yaml_api}/issues/show/fcoury/octopi/not-a-number", :status => ["404", "Not Found"])
+  FakeWeb.register_uri(:get, "http://#{yaml_api}/issues/show/fcoury/octopi/not-a-number", :status => ["404", "Not Found"])
   # is an invalid hash
-  FakeWeb.register_uri("http://#{yaml_api}/tree/show/fcoury/octopi/#{fake_sha}", :status => ["404", "Not Found"])
+  FakeWeb.register_uri(:get, "http://#{yaml_api}/tree/show/fcoury/octopi/#{fake_sha}", :status => ["404", "Not Found"])
   
   
-  FakeWeb.register_uri("http://github.com/login", :response => stub_file("login"))
-  FakeWeb.register_uri("http://github.com/session", :response => stub_file("dashboard"))
-  FakeWeb.register_uri("http://github.com/account", :response => stub_file("account"))
+  FakeWeb.register_uri(:get, "http://github.com/login", :response => stub_file("login"))
+  FakeWeb.register_uri(:post, "http://github.com/session", :response => stub_file("dashboard"))
+  FakeWeb.register_uri(:get, "http://github.com/account", :response => stub_file("account"))
   
   # Personal & Private stuff
   
@@ -114,8 +114,8 @@ def fake_everything
     "commits/list/fcoury/rboard/master" => File.join("commits", "fcoury", "rboard", "master"),
      
     "repos/show/fcoury" => File.join("repos", "show", "fcoury-private"),
-    "repos/show/fcoury/octopi" => File.join("repos", "fcoury", "octopi", "main"),
-    "repos/show/fcoury/rboard" => File.join("repos", "fcoury", "rboard", "main"),
+    "repos/show/fcoury/octopi" => File.join("repos", "fcoury", "octopi", "master"),
+    "repos/show/fcoury/rboard" => File.join("repos", "fcoury", "rboard", "master"),
     
     "user/keys" => File.join("users", "keys"),
     "user/key/add" => File.join("users", "key-added"),
@@ -124,15 +124,15 @@ def fake_everything
   }
   
   secure_fakes.each do |key, value|
-    FakeWeb.register_uri("https://#{yaml_api}/" + key, :string => YAML::load_file(stub_file(value)))
+    FakeWeb.register_uri(:get, "https://#{yaml_api}/" + key, :body => File.read(stub_file(value)))
   end
   
   # And the plain fakes
-  FakeWeb.register_uri("http://#{plain_api}/blob/show/fcoury/octopi/#{sha}", 
-  :string => File.read(stub_file(File.join("blob", "fcoury", "octopi", "plain", sha))))
+  FakeWeb.register_uri(:get, "http://#{plain_api}/blob/show/fcoury/octopi/#{sha}", 
+  :body => File.read(stub_file(File.join("blob", "fcoury", "octopi", "plain", sha))))
   
   
-  FakeWeb.register_uri("http://github.com/fcoury/octopi/comments.atom", :string => File.read(stub_file("comments", "fcoury", "octopi", "comments.atom")))
+  FakeWeb.register_uri(:get, "http://github.com/fcoury/octopi/comments.atom", :body => File.read(stub_file("comments", "fcoury", "octopi", "comments.atom")))
 end
 
 
