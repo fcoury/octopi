@@ -12,12 +12,12 @@ module Octopi
     end
     
     def self.add(options)
-      Api.api.post("/user/key/add", { :title => options[:title], :key => options[:key] })
+      Api.api.post("/user/key/add", { :title => options[:title], :key => options[:key], :cache => false })
       
     end
     
     def remove
-      result = Api.api.post "/user/key/remove", :id => id
+      result = Api.api.post "/user/key/remove", { :id => id, :cache => false }
       keys = result["public_keys"].select { |k| k["title"] == title }
     end
   end

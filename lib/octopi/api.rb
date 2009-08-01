@@ -85,13 +85,13 @@ module Octopi
       post("#{resource_path}", { :query => data })
     end
     
-    def find(path, result_key, resource_id, klass=nil)
-      get(path, { :id => resource_id }, klass) 
+    def find(path, result_key, resource_id, klass=nil, cache=true)
+      get(path, { :id => resource_id, :cache => cache }, klass) 
     end
     
     
-    def find_all(path, result_key, query, klass=nil)
-      get(path, { :query => query, :id => query }, klass)[result_key]
+    def find_all(path, result_key, query, klass=nil, cache=true)
+      get(path, { :query => query, :id => query, :cache => cache }, klass)[result_key]
     end
   
     def get_raw(path, params, klass=nil)
@@ -122,7 +122,7 @@ module Octopi
       @@retries = 0
       begin
         trace "POST", "/#{format}#{path}", params
-        submit(path, params, klass, format, false) do |path, params, format|
+        submit(path, params, klass, format) do |path, params, format|
           resp = self.class.post "/#{format}#{path}", :body => params
           resp
         end
@@ -140,7 +140,10 @@ module Octopi
     end
 
     private
-    def submit(path, params = {}, klass=nil, format = "yaml", cache=true, &block)
+    def submit(path, params = {}, klass=nil, format = "yaml", &block)
+      # Ergh. Ugly way to do this. Find a better one!
+      cache = params.delete(:cache) 
+      cache = true if cache.nil?
       params.each_pair do |k,v|
         if path =~ /:#{k.to_s}/
           params.delete(k)
@@ -152,7 +155,6 @@ module Octopi
       
       begin
         key = "#{Api.api.class.to_s}:#{path}"
-        cache = false
         resp = if cache
           APICache.get(key, :cache => 61) do
             yield(path, query.merge(params), format)

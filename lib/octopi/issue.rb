@@ -35,10 +35,9 @@ module Octopi
   
     # TODO: Make find use hashes like find_all
     def self.find(options={})
+      # Do not cache issues, as they may change via other means.
+      @cache = false
       user, repo = gather_details(options)
-      # This is ugly... magic strings are not good.
-      APICache.store.delete("#{Api.api.class.to_s}:/issues/show/#{user}/#{repo}/#{options[:number]}")
-  
       
       validate_args(user => :user, repo => :repo)
       issue = super user, repo, options[:number]
@@ -75,7 +74,7 @@ module Octopi
     %w(add remove).each do |oper|
       define_method("#{oper}_label") do |*labels|
         labels.each do |label|
-          Api.api.post("#{prefix("label/#{oper}")}/#{label}/#{number}")
+          Api.api.post("#{prefix("label/#{oper}")}/#{label}/#{number}", { :cache => false })
           if oper == "add"
             self.labels << label
           else

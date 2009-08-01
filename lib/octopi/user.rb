@@ -60,8 +60,7 @@ module Octopi
     # currently has. Requires authentication.
     def keys
       raise APIError, "To view keys, you must be authenticated" if Api.api.read_only?
-
-      result = Api.api.get("/user/keys")
+      result = Api.api.get("/user/keys", { :cache => false })
       return unless result and result["public_keys"]
       KeySet.new(result["public_keys"].inject([]) { |result, element| result << Key.new(element) })
     end
