@@ -74,8 +74,21 @@ def fake_everything
         
         "user/show/fcoury" => File.join("users", "fcoury"),
         
+        "user/show/fcoury/followers" => File.join("users/followers"),
+        "user/show/fcoury/following" => File.join("users/following")
+        
         
           }
+        
+  fakes.each do |key, value|
+    FakeWeb.register_uri(:get, "http://#{yaml_api}/" + key, :response => stub_file(value))
+  end
+  
+  ["augustl", "bcalloway", "danlucraft", "dcrec1", "derencius", "dustin", "elliottcable", "gwoliveira", "hashrocket", "jruby", "kchris", "paulorv", "remi", "shanesveller", "superfeedr", "taylorrf", "tgraham", "tmm1", "tpope", "webbynode"].each do |followee|
+    FakeWeb.register_uri(:get, "http://#{yaml_api}/user/show/#{followee}", :response => stub_file("users/#{followee}") )
+  end
+  
+  
   fake_posts = {
     "issues/label/add/fcoury/octopi/one-point-oh/28" => issues("labels", "28-one-point-oh"),
     "issues/label/add/fcoury/octopi/maybe-two-point-oh/28" => issues("labels", "28-maybe-two-point-oh"),
@@ -89,10 +102,6 @@ def fake_everything
     "issues/comment/fcoury/octopi/28" => issues("comment", "28-comment"),
   }.each do |key, value|
     FakeWeb.register_uri(:post, "http://#{yaml_api}/" + key, :response => stub_file(value))
-  end
-  
-  fakes.each do |key, value|
-    FakeWeb.register_uri(:get, "http://#{yaml_api}/" + key, :response => stub_file(value))
   end
   
   # # rboard is a private repository

@@ -1,0 +1,26 @@
+HTTP/1.1 200 OK
+Server: nginx/0.6.26
+Date: Sat, 01 Aug 2009 11:51:23 GMT
+Content-Type: application/x-yaml; charset=utf-8
+Connection: keep-alive
+Set-Cookie: _github_ses=BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--884981fc5aa85daf318eeff084d98e2cff92578f; path=/; expires=Wed, 01 Jan 2020 08:00:00 GMT; HttpOnly
+Status: 200 OK
+X-Runtime: 103ms
+ETag: "93e62c055c5fe23cb7cc91da1d0827a3"
+Cache-Control: private, max-age=0, must-revalidate
+Content-Length: 303
+
+--- 
+user: 
+  name: Dustin Sallings
+  company: 
+  following_count: 15
+  public_gist_count: 27
+  public_repo_count: 94
+  blog: http://bleu.west.spy.net/~dustin/
+  id: 1779
+  followers_count: 104
+  login: dustin
+  location: Santa Clara, CA
+  email: dustin@spy.net
+  created_at: 2008-02-29 09:59:09 -08:00

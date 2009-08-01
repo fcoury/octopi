@@ -1,0 +1,26 @@
+HTTP/1.1 200 OK
+Server: nginx/0.6.31
+Date: Sat, 01 Aug 2009 11:51:41 GMT
+Content-Type: application/x-yaml; charset=utf-8
+Connection: keep-alive
+Set-Cookie: _github_ses=BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--884981fc5aa85daf318eeff084d98e2cff92578f; path=/; expires=Wed, 01 Jan 2020 08:00:00 GMT; HttpOnly
+Status: 200 OK
+X-Runtime: 13ms
+ETag: "7f44c56ec0ffaafbe45f46b543bd9ea9"
+Cache-Control: private, max-age=0, must-revalidate
+Content-Length: 328
+
+--- 
+user: 
+  name: Marcus Derencius
+  company: Surgeworks.com
+  following_count: 65
+  public_gist_count: 4
+  public_repo_count: 4
+  blog: http://derenci.us
+  id: 2839
+  followers_count: 15
+  login: derencius
+  location: "S\xC3\xA3o Paulo & Ubatuba, Brazil"
+  email: derencius@gmail.com
+  created_at: 2008-03-11 10:11:27 -07:00
