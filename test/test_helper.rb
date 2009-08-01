@@ -6,6 +6,12 @@ require 'fakeweb'
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 ENV['HOME'] = File.dirname(__FILE__)
+# Set this to true or comment out if you want to test against real data
+# Which, in a theoretical world should Just Work (tm)
+# This is of course with the exception of the authenticated tests and
+# those tests that require modification of things. Be wary. 
+REAL_WORLD = false
+FakeWeb.allow_net_connect = REAL_WORLD
 require 'octopi'
 
 @the_repo = ["fcoury", "octopi"]
@@ -43,31 +49,18 @@ def fake_everything
   fake_sha = "ea3cd978650417470535f3a4725b6b5042a6ab59"
 
   plain_api = "github.com:80/api/v2/plain"
-  # Set this to true or comment out if you want to test against real data
-  # Which, in a theoretical world should Just Work (tm)
-  # This is of course with the exception of the authenticated tests
-  FakeWeb.allow_net_connect = false
   
   # Public stuff
-  fakes = {
-        #        
-        # "blob/show/fcoury/octopi/#{sha}" => File.join("blob", "fcoury", "octopi", "plain", sha),
-        # 
+  fakes = {       
+        "blob/show/fcoury/octopi/#{sha}" => File.join("blob", "fcoury", "octopi", "plain", sha),
+        
         "commits/list/fcoury/octopi/master" => commits("master"),
         "commits/list/fcoury/octopi/lazy" => commits("lazy"),
         "commits/show/fcoury/octopi/#{sha}" => commits(sha),
         
         "issues/list/fcoury/octopi/open" => issues("open"),
         "issues/list/fcoury/octopi/closed" => issues("closed"),
-        # 
-        # "issues/close/fcoury/octopi/28" => issues("28-closed"),
-        # "issues/edit/fcoury/octopi/28" => issues("28-edited"), 
-        # "issues/reopen/fcoury/octopi/27" => issues("27-reopened"),
-        # 
-        # "issues/comment/fcoury/octopi/28" => issues("comment", "28-comment"),
-        # 
-        #     
-        #     
+        
         # Closed issue
         "issues/show/fcoury/octopi/27" => issues("27"),
         # Open issue
@@ -90,6 +83,10 @@ def fake_everything
     "issues/label/remove/fcoury/octopi/maybe-two-point-oh/28" => issues("labels", "28-remove-maybe-two-point-oh"),
     "issues/reopen/fcoury/octopi/27" => issues("27-reopened"),
     "issues/open/fcoury/octopi" => issues("new"),
+    "issues/close/fcoury/octopi/28" => issues("28-closed"),
+    "issues/edit/fcoury/octopi/28" => issues("28-edited"), 
+    "issues/reopen/fcoury/octopi/27" => issues("27-reopened"),        
+    "issues/comment/fcoury/octopi/28" => issues("comment", "28-comment"),
   }.each do |key, value|
     FakeWeb.register_uri(:post, "http://#{yaml_api}/" + key, :response => stub_file(value))
   end
@@ -98,7 +95,7 @@ def fake_everything
     FakeWeb.register_uri(:get, "http://#{yaml_api}/" + key, :response => stub_file(value))
   end
   
-  # rboard is a private repository
+  # # rboard is a private repository
   FakeWeb.register_uri(:get, "http://#{yaml_api}/repos/show/fcoury/rboard", :response => stub_file("errors", "repository", "not_found"))
   
   # nothere is obviously an invalid sha
@@ -124,14 +121,22 @@ def fake_everything
     "repos/show/fcoury/rboard" => File.join("repos", "fcoury", "rboard", "master"),
     
     "user/keys" => File.join("users", "keys"),
-    "user/key/add" => File.join("users", "key-added"),
-    "user/key/remove" => File.join("users", "key-removed"),
     "user/show/fcoury" => File.join("users", "fcoury-private")
   }
   
   secure_fakes.each do |key, value|
     FakeWeb.register_uri(:get, "https://#{yaml_api}/" + key, :response => stub_file(value))
   end
+  
+  secure_post_fakes = { 
+    "user/key/add" => File.join("users", "key-added"),
+    "user/key/remove" => File.join("users", "key-removed")
+    }
+    
+  secure_post_fakes.each do |key, value|
+    FakeWeb.register_uri(:post, "https://#{yaml_api}/" + key, :response => stub_file(value))
+  end
+    
   
   # And the plain fakes
   FakeWeb.register_uri(:get, "http://#{plain_api}/blob/show/fcoury/octopi/#{sha}", 

@@ -37,9 +37,12 @@ module Octopi
     
     include Singleton
     CONTENT_TYPE = {
-      'yaml' => 'application/x-yaml',
+      'yaml' => ['application/x-yaml', 'text/yaml', 'text/x-yaml', 'application/yaml'],
       'json' => 'application/json',
-      'xml'  => 'application/sml'
+      'xml'  => 'application/xml',
+      # Unexpectedly, Github returns resources such as blobs as text/html!
+      # Thus, plain == text/html.
+      'plain' => ['text/plain', 'text/html']
     }  
     RETRYABLE_STATUS = [403]
     MAX_RETRIES = 10
@@ -76,8 +79,6 @@ module Octopi
     def user
       user_data = get("/user/show/#{login}")
       raise "Unexpected response for user command" unless user_data and user_data['user']
-      # WHYYYYYYYYYYY?!
-      user_data = YAML::load(user_data) if user_data.is_a?(String)
       User.new(user_data['user'])
     end
   
@@ -89,16 +90,12 @@ module Octopi
     
     def find(path, result_key, resource_id, klass=nil, cache=true)
       result = get(path, { :id => resource_id, :cache => cache }, klass) 
-      # Why do I need to do this for tests now?
-      result = YAML::load(result) if result.is_a?(String)
       result
     end
     
     
     def find_all(path, result_key, query, klass=nil, cache=true)
       result = get(path, { :query => query, :id => query, :cache => cache }, klass)
-      # Why do I need to do this for tests now?
-      result = YAML::load(result) if result.is_a?(String)
       result[result_key]
     end
   
@@ -106,7 +103,7 @@ module Octopi
      get(path, params, klass,  'plain')
     end
   
-    def get(path, params = {}, klass=nil, format = "yaml")
+    def get(path, params = {}, klass=nil, format = :yaml)
       @@retries = 0
       begin
         trace "GET [#{format}]", "/#{format}#{path}", params
@@ -126,7 +123,7 @@ module Octopi
       end  
     end
   
-    def post(path, params = {}, klass=nil, format = "yaml")
+    def post(path, params = {}, klass=nil, format = :yaml)
       @@retries = 0
       begin
         trace "POST", "/#{format}#{path}", params
@@ -148,7 +145,7 @@ module Octopi
     end
 
     private
-    def submit(path, params = {}, klass=nil, format = "yaml", &block)
+    def submit(path, params = {}, klass=nil, format = :yaml, &block)
       # Ergh. Ugly way to do this. Find a better one!
       cache = params.delete(:cache) 
       cache = true if cache.nil?
@@ -160,6 +157,8 @@ module Octopi
       end
       query = login ? { :login => login, :token => token } : {}
       query.merge!(params)
+      # Left here for debugging purposes. Handy sometimes.
+      # puts "#{self.class.base_uri}/yaml/#{path}"
       begin
         $requests ||= 0 
         key = "#{Api.api.class.to_s}:#{path}"
@@ -194,13 +193,11 @@ module Octopi
       
       # It happens, in tests.
       return resp if resp.headers.empty?
-      ctype = resp.headers['content-type'].first
-      raise FormatError, [ctype, format] unless 
-        ctype.match(/^#{CONTENT_TYPE[format]};/)
-      # TODO: FIND OUT WHY COMMIT_TEST MAKES THIS FAIL
-      # if format == 'yaml' && resp['error']
-      #   raise APIError, resp['error']
-      # end  
+      ctype = resp.headers['content-type'].first.split(";").first
+      raise FormatError, [ctype, format] unless CONTENT_TYPE[format.to_s].include?(ctype)
+      if format == 'yaml' && resp['error']
+        raise APIError, resp['error']
+      end  
       resp
     end
     
