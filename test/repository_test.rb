@@ -7,6 +7,7 @@ class RepositoryTest < Test::Unit::TestCase
     fake_everything
     @user = User.find("fcoury")
     @private_repos = auth do
+      @private = @user.repositories.find("rboard")
       @user.repositories
     end
     @repository = @user.repositories.find("octopi")
@@ -54,6 +55,18 @@ class RepositoryTest < Test::Unit::TestCase
       end
     end
     
+    should "be able to retrieve the branches" do
+      branches = @repository.branches
+      assert_not_nil branches
+      assert_equal 4, branches.size
+    end
+    
+    should "be able to retrieve the tags" do
+      tags = @repository.tags
+      assert_not_nil tags
+      assert_equal 9, tags.size
+    end
+    
     should "be able to retrieve the comments" do
       assert_not_nil @repository.comments
       comment = @repository.comments.first
@@ -62,10 +75,13 @@ class RepositoryTest < Test::Unit::TestCase
       end
     end
     
-    should "be able to retrieve the branches" do
-      branches = @repository.branches
-      assert_not_nil branches
-      assert_equal 4, branches.size
+    should "return the correct clone URL" do
+      assert_equal "git://github.com/fcoury/octopi.git", @repository.clone_url
+      auth do
+        assert_equal "git@github.com:fcoury/rboard.git", @private.clone_url
+      end
     end
+      
+
   end
 end

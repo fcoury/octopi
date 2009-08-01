@@ -32,7 +32,7 @@ module Octopi
     #   repo.tags.each { |t| puts t.name }
     #
     def tags
-      Tag.all(self.owner, self.name)
+      Tag.all(:user => self.owner, :repo => self)
     end  
     
     
@@ -61,7 +61,7 @@ module Octopi
     end
     
     def clone_url
-      url = private? || api.login == self.owner ? "git@github.com:" : "git://github.com/"
+      url = private || Api.api.login == self.owner.login ? "git@github.com:" : "git://github.com/"
       url += "#{self.owner}/#{self.name}.git"
     end
     
@@ -83,14 +83,6 @@ module Octopi
       super args.join(" ").gsub(/ /,'+')
     end
     
-    def self.open_issue(args)
-      Issue.open(args[:user], args[:repo], args)
-    end
-    
-    def open_issue(args)
-      Issue.open(self.owner, self, args)
-    end
-    
     def commits(branch = "master")
       Commit.find_all(self, {:branch => branch})
     end
@@ -108,14 +100,13 @@ module Octopi
     end
 
     def collaborators
-      property('collaborators', [self.owner,self.name].join('/')).values
+      property('collaborators', [self.owner, self.name].join('/')).values
     end  
     
-    def self.create(owner, name, options = {})
-      api = owner.is_a?(User) ? owner.api : ANONYMOUS_API
-      raise APIError, "To create a repository you must be authenticated." if api.read_only?
+    def self.create(options = {})
+      raise APIError, "To create a repository you must be authenticated." if Api.api.read_only?
       self.validate_args(name => :repo)
-      api.post(path_for(:create), options.merge(:name => name))
+      Api.api.post(path_for(:create), options.merge(:name => name))
       self.find(owner, name, api)
     end
     
