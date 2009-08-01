@@ -36,6 +36,9 @@ module Octopi
     # TODO: Make find use hashes like find_all
     def self.find(options={})
       user, repo = gather_details(options)
+      # This is ugly... magic strings are not good.
+      APICache.store.delete("#{Api.api.class.to_s}:/issues/show/#{user}/#{repo}/#{options[:number]}")
+  
       
       validate_args(user => :user, repo => :repo)
       issue = super user, repo, options[:number]

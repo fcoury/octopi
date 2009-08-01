@@ -122,7 +122,7 @@ module Octopi
       @@retries = 0
       begin
         trace "POST", "/#{format}#{path}", params
-        submit(path, params, klass, format) do |path, params, format|
+        submit(path, params, klass, format, false) do |path, params, format|
           resp = self.class.post "/#{format}#{path}", :body => params
           resp
         end
@@ -140,7 +140,7 @@ module Octopi
     end
 
     private
-    def submit(path, params = {}, klass=nil, format = "yaml", &block)
+    def submit(path, params = {}, klass=nil, format = "yaml", cache=true, &block)
       params.each_pair do |k,v|
         if path =~ /:#{k.to_s}/
           params.delete(k)
@@ -151,7 +151,13 @@ module Octopi
       query.merge!(params)
       
       begin
-        resp = APICache.get("#{Api.api.class.to_s}:#{path}", :cache => 61) do
+        key = "#{Api.api.class.to_s}:#{path}"
+        cache = false
+        resp = if cache
+          APICache.get(key, :cache => 61) do
+            yield(path, query.merge(params), format)
+          end
+        else
           yield(path, query.merge(params), format)
         end
       rescue Net::HTTPBadResponse

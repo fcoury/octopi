@@ -100,9 +100,9 @@ class IssueTest < Test::Unit::TestCase
         assert @issue.labels.empty?
         @issue.add_label("one-point-oh", "maybe-two-point-oh")
         assert !@issue.labels.empty?
-        assert 2, @issue.labels.size
+        assert_equal 2, @issue.labels.size
         @issue.remove_label("one-point-oh", "maybe-two-point-oh")
-        assert 0, @issue.labels.size
+        assert_equal 0, @issue.labels.size
         
       end
       
