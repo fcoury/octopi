@@ -48,6 +48,8 @@ module Octopi
     def self.open(options={})
       user, repo = gather_details(options)
       data = Api.api.post("/issues/open/#{user}/#{repo.name}", options[:params])
+      # WORK OUT WHY WE NEED TO DO THIS. IT IS FRUSTRATING.
+      data = YAML::load(data) if data.is_a?(String)
       issue = new(data['issue'])
       issue.repository = repo
       issue

@@ -76,6 +76,8 @@ module Octopi
     def user
       user_data = get("/user/show/#{login}")
       raise "Unexpected response for user command" unless user_data and user_data['user']
+      # WHYYYYYYYYYYY?!
+      user_data = YAML::load(user_data) if user_data.is_a?(String)
       User.new(user_data['user'])
     end
   
