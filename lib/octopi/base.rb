@@ -40,13 +40,13 @@ module Octopi
     
     def property(p, v)
       path = "#{self.class.path_for(:resource)}/#{p}"
-      @api.find(path, self.class.resource_name(:singular), v)
+      Api.api.find(path, self.class.resource_name(:singular), v)
     end
     
     def save
       hash = {}
       @keys.each { |k| hash[k] = send(k) }
-      @api.save(self.path_for(:resource), hash)
+      Api.api.save(self.path_for(:resource), hash)
     end
     
     private

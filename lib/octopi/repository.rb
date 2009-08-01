@@ -120,8 +120,8 @@ module Octopi
     end
     
     def delete
-      token = @api.post(self.class.path_for(:delete), :id => self.name)['delete_token']
-      @api.post(self.class.path_for(:delete), :id => self.name, :delete_token => token) unless token.nil?
+      token = Api.api.post(self.class.path_for(:delete), :id => self.name)['delete_token']
+      Api.api.post(self.class.path_for(:delete), :id => self.name, :delete_token => token) unless token.nil?
     end
     
     def to_s
