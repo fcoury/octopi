@@ -149,9 +149,11 @@ module Octopi
       end
       query = login ? { :login => login, :token => token } : {}
       query.merge!(params)
-    
+      
       begin
-        resp = yield(path, query.merge(params), format)
+        resp = APICache.get("#{Api.api.class.to_s}:#{path}", :cache => 61) do
+          yield(path, query.merge(params), format)
+        end
       rescue Net::HTTPBadResponse
         raise RetryableAPIError
       end
