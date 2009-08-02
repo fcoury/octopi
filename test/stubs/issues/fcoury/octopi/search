@@ -1,0 +1,139 @@
+HTTP/1.1 200 OK
+Server: nginx/0.6.31
+Date: Sun, 02 Aug 2009 00:24:00 GMT
+Content-Type: application/x-yaml; charset=utf-8
+Connection: keep-alive
+Set-Cookie: _github_ses=BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--884981fc5aa85daf318eeff084d98e2cff92578f; path=/; expires=Wed, 01 Jan 2020 08:00:00 GMT; HttpOnly
+Status: 200 OK
+X-Runtime: 1102ms
+ETag: "36c2b241177893f56b50355ffae28455"
+Cache-Control: private, max-age=0, must-revalidate
+Content-Length: 6239
+
+--- 
+issues: 
+- user: runpaint
+  updated_at: 2009-06-05 21:38:57 -07:00
+  body: A Blob.find(user, repo, sha, path) object is effectively a string; the raw contents of the named file. It should automatically stringify so you can treat it as a String, or return an actual String.
+  title: Raw Blob Objects Should Act as Strings
+  number: 1
+  votes: 0
+  closed_at: 
+  labels: []
+
+  created_at: 2009-04-20 08:10:36 -07:00
+  state: open
+- user: runpaint
+  updated_at: 2009-06-05 21:38:57 -07:00
+  body: All public methods need documenting.
+  title: Add RDoc
+  number: 3
+  votes: 0
+  closed_at: 
+  labels: 
+  - On the works
+  created_at: 2009-04-20 08:21:29 -07:00
+  state: open
+- user: runpaint
+  updated_at: 2009-07-30 19:39:10 -07:00
+  body: |-
+    We should be caching the response from GitHub. The implementation for this depends on:
+    
+    * How we integrate caching into HTTParty, if not there already.
+    * Whether GitHub returns useful caching metadata, and if not will it?
+    
+    The logic would have to realise that the format of the data is irrelevant, i.e. if we already have a resource in YAML and the user has requested XML, we hit the cache and reformat the data locally.
+    
+    In the absence of useful caching metadata, we'd need to hard-code assumptions. For instance the raw blob of a specific commit of a specific file would never change, so a sucessful response could be cached indefinitely.
+  title: Cache API Responses
+  number: 4
+  votes: 0
+  closed_at: 
+  labels: []
+
+  created_at: 2009-04-20 08:30:15 -07:00
+  state: open
+- user: runpaint
+  updated_at: 2009-06-05 21:38:57 -07:00
+  body: |-
+    The API documentation hints that users are limited to a maximum of sixty requests per minute. We need to detect when we are being limited, and if necessary perform exponential backoff until the window has elapsed.
+    
+    Hopefully we'll be able to detect rate limiting by looking at the status code, but if not we may need to use an internal counter.
+  title: Handle Rate Limiting
+  number: 5
+  votes: 0
+  closed_at: 
+  labels: 
+  - Good to have
+  created_at: 2009-04-20 08:33:54 -07:00
+  state: open
+- user: runpaint
+  updated_at: 2009-06-05 21:38:57 -07:00
+  body: |-
+    Many objects that we create have attributes that imply other objects. For example, the .owner attribute of a repository returns a String representation of the owner's name, but it could more usefully return a User object representing the same user. It would be expensive to handle this naively, so we ideally want an architecture that will automatically instantiate such objects on demand. If the caller just wants the owner's name,return a string; if he wants the owner's e-mail address, create a User object and call the .email method.
+    
+    We currently handle one of these cases by accepting a parameter specifying whether the caller wants objects or strings for User objects, but given the prevalence of such cases a general, "do the right thing" approach would be optimal.
+  title: Lazily Evaluate Implicit Objects
+  number: 7
+  votes: 1
+  closed_at: 
+  labels: []
+
+  created_at: 2009-04-20 08:43:39 -07:00
+  state: open
+- user: runpaint
+  updated_at: 2009-06-05 21:38:57 -07:00
+  body: "Am I missing something, or is this a bug?\n\n    authenticated do |g|\n      p g.user\n    end\n\n    #<Octopi::User:0xb781c880 @following_count=1, @public_repo_count=4, @followers_count=0, @location=nil, @name=nil, @company=nil, @id=70802, @keys=[\"company\", \"name\", \"created_at\", \"location\", \"blog\", \"public_repo_count\", \"public_gist_count\", \"following_count\", \"id\", \"followers_count\", \"login\", \"email\"], @public_gist_count=2, @email=\"\", @blog=nil, @login=\"runpaint\", @created_at=Sun Apr 05 22:57:13 +0100 2009, @api=#<Octopi::Api:0xb78219e8 @read_only=false, @format=\"yaml\", @token=\"REDACTED\", @login=\"runpaint\">>\n\n\
+    Attributes such as _disk_usage_ and the _plan_ hash that are returned for authenticated users aren't available. \n\n\
+    Using the `curl` trace mode I see the correct URL generated that, when fetched by `curl`, shows the correct data. This proves that my credentials are getting picked up and are right. Putting in some `puts` statements I see that the call to HTTParty isn't returning the complete data set. However, it doesn't seem to be a HTTParty bug because the following test script works fine:\n\n    class Foo\n      require 'httparty'\n      include HTTParty\n      format :yaml\n      def do\n        p self.class.get('http://localhost/runpaint.yaml')\n      end\n    end\n\n\
+    (`http://localhost/runpaint.yaml` is the YAML downloaded with `curl`).\n\n\
+    Anybody want to tell me that I'm being stupid before I look into this further?\n "
+  title: "Authenticated #user Method Returns Incomplete Data?"
+  number: 26
+  votes: 0
+  closed_at: 
+  labels: 
+  - bug
+  created_at: 2009-04-22 18:21:42 -07:00
+  state: open
+- user: calavera
+  updated_at: 2009-07-02 05:37:31 -07:00
+  body: |
+    This patch solves the error, I didn't include a test because is an obvious error:
+    
+    From af1f41ad0a29f36db10672ff8cfa09045d99a240 Mon Sep 17 00:00:00 2001
+    From: David Calavera <david.calavera@gmail.com>
+    Date: Thu, 2 Jul 2009 14:32:05 +0200
+    Subject: [PATCH] solves Commit.find error
+    
+    ---
+     lib/octopi/commit.rb |    4 ++--
+     1 files changed, 2 insertions(+), 2 deletions(-)
+    
+    diff --git a/lib/octopi/commit.rb b/lib/octopi/commit.rb
+    index 863bd31..ff94256 100644
+    --- a/lib/octopi/commit.rb
+    +++ b/lib/octopi/commit.rb
+    @@ -39,9 +39,9 @@ module Octopi
+             commit = args.pop
+             super "#{commit.repo_identifier}"
+           else
+    -        user, name, sha = *args
+    +        user, repo, sha = *args
+             user = user.login if user.is_a? User
+    -        name = repo.name  if name.is_a? Repository
+    +        name = repo.is_a?(Repository) ? repo.name : repo
+             self.validate_args(user => :user, name => :repo, sha => :sha)
+             super [user, name, sha]
+           end
+    -- 
+    1.6.0.4
+
+  title: Commit.find raises an error because variable "repo" is not defined
+  number: 30
+  votes: 0
+  closed_at: 
+  labels: []
+
+  created_at: 2009-07-02 05:37:07 -07:00
+  state: open

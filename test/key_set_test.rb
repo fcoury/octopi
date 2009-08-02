@@ -25,6 +25,5 @@ class KeySetTest < Test::Unit::TestCase
       
       assert_equal "The Key you were looking for could not be found, or is private.", exception.message
     end
-        
   end
 end

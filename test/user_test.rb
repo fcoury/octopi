@@ -20,11 +20,16 @@ class UserTest < Test::Unit::TestCase
     assert_equal "The User you were looking for could not be found, or is private.", exception.message
   end
   
-  should "be able to find a user" do
+  should "be able to look for a user, using find_all" do
     users = User.find_all("radar")
     assert_not_nil users
   end
 
+  should "be able to search for a user" do
+    users = User.search("radar")
+    assert_not_nil users
+  end
+  
   context "authenticated" do
     should "return all user information" do
       authenticated do

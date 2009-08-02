@@ -33,6 +33,10 @@ module Octopi
       self.validate_args(username => :user)
       super username
     end
+    
+    class << self
+      alias_method :search, :find_all
+    end
 
     # Returns a collection of Repository objects, containing
     # all repositories of the user.
