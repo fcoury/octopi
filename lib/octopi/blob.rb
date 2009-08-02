@@ -7,10 +7,14 @@ module Octopi
 
     resource_path "/blob/show/:id"
 
-    def self.find(user, repo, sha, path = nil)
-      user = user.to_s
-      repo = repo.to_s
+    def self.find(options={})
+      ensure_hash(options)
+      user, repo = gather_details(options)
+      sha = options[:sha]
+      path = options[:path]
+      
       self.validate_args(sha => :sha, user => :user)
+      
       if path
         super [user, repo, sha, path]
       else

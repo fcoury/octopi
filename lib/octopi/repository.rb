@@ -66,7 +66,7 @@ module Octopi
     end
     
     def self.find(options={})
-      self.validate_hash(options)
+      ensure_hash(options)
       # Lots of people call the same thing differently.
       repo = options[:repo] || options[:repository] || options[:name]
       user = options[:user].to_s
@@ -78,6 +78,7 @@ module Octopi
     end
 
     def self.find_all(*args)
+      ensure_hash(options)
       # FIXME: This should be URI escaped, but have to check how the API
       # handles escaped characters first.
       super args.join(" ").gsub(/ /,'+')
@@ -104,6 +105,7 @@ module Octopi
     end  
     
     def self.create(options = {})
+      ensure_hash(options)
       raise APIError, "To create a repository you must be authenticated." if Api.api.read_only?
       self.validate_args(name => :repo)
       Api.api.post(path_for(:create), options.merge(:name => name))

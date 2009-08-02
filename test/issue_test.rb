@@ -48,7 +48,13 @@ class IssueTest < Test::Unit::TestCase
         assert_equal "The Issue you were looking for could not be found, or is private.", exception.message
       end
       
+      should "be able to look for an issue" do
+        results = Issue.search(:user => @user, :repo => @repo, :keyword => "test")
+        assert_not_nil results
+        assert_equal 1, results.size
+      end
     end
+    # Possibly "destructive" actions we don't want run unless we're not allowing net connection.
     unless REAL_WORLD
       context "actions" do
         should "opening an issue" do

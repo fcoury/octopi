@@ -96,7 +96,7 @@ module Octopi
       end
     end
     
-    def self.validate_hash(spec)
+    def self.ensure_hash(spec)
       raise ArgumentMustBeHash, "find takes a hash of options as a solitary argument" if !spec.is_a?(Hash)
     end
     

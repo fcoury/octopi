@@ -49,7 +49,7 @@ module Octopi
     # Searches for user Repository identified by name
     def repository(options={})
       options = { :name => options } if options.is_a?(String)
-      self.class.validate_hash(options)
+      self.class.ensure_hash(options)
       Repository.find({ :user => login }.merge!(options))
     end
     

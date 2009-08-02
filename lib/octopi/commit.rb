@@ -22,6 +22,7 @@ module Octopi
     #   => <Latest 30 commits for lazy branch>
     #
     def self.find_all(options={})
+      ensure_hash(options)
       user, repo, branch = gather_details(options)
       commits = super user, repo.name, branch
       # Repository is not passed in from the data, set it manually.
@@ -45,6 +46,7 @@ module Octopi
     #   => <Commit f6609209c3ac0badd004512d318bfaa508ea10ae for branch lazy>
     #
     def self.find(options={})
+      ensure_hash(options)
       user, repo, branch, sha = gather_details(options)
       super [user, repo, sha]
     end

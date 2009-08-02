@@ -61,6 +61,8 @@ def fake_everything
         "issues/list/fcoury/octopi/open" => issues("open"),
         "issues/list/fcoury/octopi/closed" => issues("closed"),
         
+        "issues/search/fcoury/octopi/open/test" => issues("search"),        
+        
         # Closed issue
         "issues/show/fcoury/octopi/27" => issues("27"),
         # Open issue

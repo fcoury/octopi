@@ -20,6 +20,7 @@ module Octopi
     end
     
     def self.all(options={})
+      ensure_hash(options)
       user, repo = gather_details(options)
       self.validate_args(user => :user, repo => :repo)
       BranchSet.new(find_plural([user, repo, 'branches'], :resource)) do |i|
