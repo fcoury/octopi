@@ -77,7 +77,7 @@ def fake_everything
         
         "user/show/fcoury/followers" => File.join("users/followers"),
         "user/show/fcoury/following" => File.join("users/following"),
-        "user/search/radar" => File.join("users/search-radar"),
+        "user/search/radar" => File.join("users/search-radar")
         
         
           }
@@ -86,7 +86,7 @@ def fake_everything
     FakeWeb.register_uri(:get, "http://#{yaml_api}/" + key, :response => stub_file(value))
   end
   
-  ["augustl", "bcalloway", "danlucraft", "dcrec1", "derencius", "dustin", "elliottcable", "gwoliveira", "hashrocket", "jruby", "kchris", "paulorv", "remi", "shanesveller", "superfeedr", "taylorrf", "tgraham", "tmm1", "tpope", "webbynode"].each do |followee|
+  ["augustl", "bcalloway", "danlucraft", "dcrec1", "derencius", "dustin", "elliottcable", "gwoliveira", "hashrocket", "jruby", "kchris", "paulorv", "radar", "remi", "shanesveller", "superfeedr", "taylorrf", "tgraham", "tmm1", "tpope", "webbynode"].each do |followee|
     FakeWeb.register_uri(:get, "http://#{yaml_api}/user/show/#{followee}", :response => stub_file("users/#{followee}") )
   end
   
@@ -101,7 +101,7 @@ def fake_everything
     "issues/close/fcoury/octopi/28" => issues("28-closed"),
     "issues/edit/fcoury/octopi/28" => issues("28-edited"), 
     "issues/reopen/fcoury/octopi/27" => issues("27-reopened"),        
-    "issues/comment/fcoury/octopi/28" => issues("comment", "28-comment"),
+    "issues/comment/fcoury/octopi/28" => issues("comment", "28-comment")
   }.each do |key, value|
     FakeWeb.register_uri(:post, "http://#{yaml_api}/" + key, :response => stub_file(value))
   end
@@ -143,7 +143,9 @@ def fake_everything
   
   secure_post_fakes = { 
     "user/key/add" => File.join("users", "key-added"),
-    "user/key/remove" => File.join("users", "key-removed")
+    "user/key/remove" => File.join("users", "key-removed"),
+    "user/follow/rails" => File.join("users", "follow-rails"),
+    "user/unfollow/rails" => File.join("users", "unfollow-rails")
     }
     
   secure_post_fakes.each do |key, value|

@@ -57,41 +57,34 @@ module Octopi
       self.class.validate_args(name => :repo)
       Repository.create(self, name, options)
     end
-
-    # Returns a list of Key objects containing all SSH Public Keys this user
-    # currently has. Requires authentication.
-    def keys
-      raise APIError, "To view keys, you must be authenticated" if Api.api.read_only?
-      result = Api.api.get("/user/keys", { :cache => false })
-      return unless result and result["public_keys"]
-      KeySet.new(result["public_keys"].inject([]) { |result, element| result << Key.new(element) })
-    end
     
+
     # Gets a list of followers.
     # Returns an array of logins.
     def followers
       user_property("followers")
     end
-    
+
     # Gets a list of followers.
     # Returns an array of user objects.
     # If user has a large number of followers you may be rate limited by the API.
     def followers!
       user_property("followers", true)
     end
-    
+
     # Gets a list of people this user is following.
     # Returns an array of logins.
     def following
       user_property("following")
     end
-    
+
     # Gets a list of people this user is following.
     # Returns an array of user objectrs.
     # If user has a large number of people whom they follow, you may be rate limited by the API.
     def following!
       user_property("following", true)
     end
+
     
     # If a user object is passed into a method, we can use this.
     # It'll also work if we pass in just the login.

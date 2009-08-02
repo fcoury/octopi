@@ -7,25 +7,11 @@ class KeyTest < Test::Unit::TestCase
     fake_everything
     @user = User.find("fcoury")
     auth do
-      @key = @user.keys.first
+      @key = Api.me.keys.first
     end
   end
-
   
   context Key do
-    should "not be able to see keys if not authenticated" do
-      exception = assert_raise APIError do
-        @user.keys
-      end
-    end
-    
-    should "have some keys" do
-      auth do
-        keys = @user.keys
-        assert keys.is_a?(KeySet)
-        assert_equal 2, keys.size
-      end
-    end
     
     should "be able to add a key" do
       auth do
@@ -35,11 +21,11 @@ class KeyTest < Test::Unit::TestCase
     
     should "be able to remove a key" do
       auth do
-        assert_equal 2, @user.keys.size
+        assert_equal 2, Api.me.keys.size
         @key.remove
         # Just trust me on this one
         FakeWeb.register_uri(:get, "https://#{yaml_api}/user/keys", :response => stub_file(File.join("users", "key-removed")))
-        assert_equal 1, @user.keys.size
+        assert_equal 1, Api.me.keys.size
       end
     end
       

@@ -1,7 +1,9 @@
 require 'singleton'
+require File.join(File.dirname(__FILE__), "self")
 module Octopi
   # Dummy class, so AnonymousApi and AuthApi have somewhere to inherit from
   class Api
+    include Self
     attr_accessor :format, :login, :token, :trace_level, :read_only
   end
   
@@ -63,18 +65,15 @@ module Octopi
       @@api
     end
     
+    class << self
+      alias_method :me, :api
+    end
+    
     # set the API we're using
     def self.api=(value)
       @@api = value
     end
-    
-    def keys
-      get("/user/keys")['public_keys']
-    end
-    
-    def emails
-      get("/user/emails")['emails']
-    end
+
 
     def user
       user_data = get("/user/show/#{login}")

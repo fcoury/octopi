@@ -24,7 +24,7 @@ class UserTest < Test::Unit::TestCase
     users = User.find_all("radar")
     assert_not_nil users
   end
-  
+
   context "authenticated" do
     should "return all user information" do
       authenticated do

@@ -1,4 +1,3 @@
-
 module Octopi
   class Base
     VALID = {
