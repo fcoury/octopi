@@ -1,0 +1,396 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Develop.GitHub - </title>
+	<script type="text/javascript" src="../js/jquery-1.2.6.pack.js"></script>
+	<script type="text/javascript" src="../js/thickbox-compressed.js"></script>
+	<script type="text/javascript" src="../js/jquery.corner.js"></script>
+	
+	<link rel="stylesheet" href="../css/screen.css" type="text/css" media="screen, projection">
+  <link rel="stylesheet" href="../css/print.css" type="text/css" media="print">
+  <!--[if IE]>
+    <link rel="stylesheet" href="../css/ie.css" type="text/css" media="screen, projection">
+  <![endif]-->
+  
+	<link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8"/>
+  <link rel="stylesheet" href="../css/thickbox.css" type="text/css" media="screen"/>
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="span-21" id="header">
+      <div class="span-10">
+        <a href="/"><img src="../images/develop-github.png" alt="github learn logo" /></a>
+      </div>
+
+      <div class="span-11 last">
+        <div id="links">
+          <a href="http://github.com">home</a>
+          <a href="http://github.com/login">login</a>
+          <a href="http://github.com/signup">signup!</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="span-21 last content">
+      <h2 id='repositories_api'>Repositories API</h2>
+
+<h3 id='searching_repositories'>Searching Repositories</h3>
+
+<pre><code>Repository.find_all(query)</code></pre>
+
+<p>To search for repositories that have to do with testing ruby, you could do this:</p>
+
+<pre><code>Repository.find_all(&#39;testing&#39;,ruby&#39;)</code></pre>
+
+<p>You will get back an Array of Repository objects</p>
+
+<pre><code>[#&lt;Octopi::Repository:0xb76a0308
+  @actions=4656,
+  @api=#&lt;Octopi::Api:0xb76c05cc&gt;,
+  @created=&quot;2008-03-11T23:38:04Z&quot;,
+  @description=
+   &quot;Ruby test code analysis tool employing a \&quot;Synthesized Testing\&quot; strategy, aimed to reduce the volume of slower, coupled, complex wired tests.&quot;,
+  @followers=26,
+  @fork=false,
+  @forks=1,
+  @id=&quot;repo-3555&quot;,
+  @keys=
+   [&quot;actions&quot;,
+    &quot;name&quot;,
+    &quot;size&quot;,
+    &quot;followers&quot;,
+    &quot;fork&quot;,
+    &quot;username&quot;,
+    &quot;language&quot;,
+    &quot;id&quot;,
+    &quot;type&quot;,
+    &quot;pushed&quot;,
+    &quot;description&quot;,
+    &quot;forks&quot;,
+    &quot;score&quot;,
+    &quot;created&quot;],
+  @language=&quot;Ruby&quot;,
+  @name=&quot;synthesis&quot;,
+  @pushed=&quot;2009-01-08T13:45:06Z&quot;,
+  @score=0.31965524,
+  @size=2048,
+  @type=&quot;repo&quot;,
+  @username=&quot;gmalamid&quot;&gt;,
+  #...
+]</code></pre>
+
+<h3 id='show_repo_info'>Show Repo Info</h3>
+
+<p>To look at more in-depth information for a repository use this:</p>
+
+<pre><code>Repository.find(user, repository)</code></pre>
+
+<p>For example, to see the information for Grit</p>
+
+<pre><code>Repository.find(&#39;schacon&#39;, &#39;grit&#39;)</code></pre>
+
+<p>This returns the following Repository object:</p>
+
+<pre><code>#&lt;Octopi::Repository:0xb78b204c
+ @api=#&lt;Octopi::Api:0xb7c85494&gt;,
+ @description=
+  &quot;Grit is a Ruby library for extracting information from a git repository in an object oriented manner - this fork tries to intergrate as much pure-ruby functionality as possible&quot;,
+ @fork=true,
+ @forks=4,
+ @homepage=&quot;http://grit.rubyforge.org/&quot;,
+ @keys=
+  [:homepage,
+   :fork,
+   :url,
+   :watchers,
+   :description,
+   :forks,
+   :private,
+   :owner,
+   :name],
+ @name=&quot;grit&quot;,
+ @owner=&quot;schacon&quot;,
+ @private=false,
+ @url=&quot;http://github.com/schacon/grit&quot;,
+ @watchers=68&gt;</code></pre>
+
+<h3 id='list_all_repositories'>List All Repositories</h3>
+
+<p>You can list out all the repositories for a user with</p>
+
+<pre><code>Repository.find_by_user(user)</code></pre>
+
+<p>For example, to see all of <i>schacon</i>&#8217;s public repositories:</p>
+
+<pre><code>Repository.find_by_user(&#39;schacon&#39;)</code></pre>
+
+<p>This returns an Array of Repository objects:</p>
+
+<pre><code>[#&lt;Octopi::Repository:0xb7898ffc
+  @api=#&lt;Octopi::Api:0xb7c7d834&gt;,
+  @description=
+   &quot;Ruby/Git is a Ruby library that can be used to create, read and manipulate Git repositories by w
+rapping system calls to the git binary.&quot;,
+  @fork=false,
+  @forks=31,
+  @homepage=&quot;http://jointheconversation.org/rubygit/&quot;,
+  @keys=
+   [:homepage,
+    :fork,
+    :forks,
+    :watchers,
+    :url,
+    :private,
+    :description,
+    :owner,
+    :name],
+  @name=&quot;ruby-git&quot;,
+  @owner=&quot;schacon&quot;,
+  @private=false,
+  @url=&quot;http://github.com/schacon/ruby-git&quot;,
+  @watchers=136&gt;,
+  #...
+]</code></pre>
+
+<p>If you are authenticated as that user, you can see all the private repositories as well.</p>
+
+<h3 id='watching_repositories'>Watching Repositories</h3>
+
+<p>You have to be authenticated for this, but you can watch and unwatch repositories with calls to</p>
+
+<pre><code>repos/unwatch/:user/:repo
+repos/watch/:user/:repo</code></pre>
+
+<h3 id='forking_repositories'>Forking Repositories</h3>
+
+<p>You can also fork a repository with</p>
+
+<pre><code>repos/fork/:user/:repo</code></pre>
+
+<p>Which will return data about your newly forked repository.</p>
+
+<pre><code>curl -F &#39;login=schacon&#39; -F &#39;token=XXX&#39; http://github.com/api/v2/yaml/repos/fork/dim/retrospectiva
+--- 
+repository: 
+  :description: Retrospectiva is an open source, web-based, project management and bug-tracking tool. It is intended to assist the collaborative aspect of work carried out by software development teams.
+  :forks: 0
+  :name: retrospectiva
+  :watchers: 1
+  :private: false
+  :url: http://github.com/schacon/retrospectiva
+  :fork: true
+  :owner: schacon
+  :homepage: http://www.retrospectiva.org</code></pre>
+
+<h3 id='creating_and_deleting_repositories'>Creating and Deleting Repositories</h3>
+
+<p>To create a new repository, hit this url</p>
+
+<pre><code>repos/create</code></pre>
+
+<p>with at least &#8216;name&#8217; but it will take any of these as POST args</p>
+
+<pre><code>name 		=&gt; name of the repository
+description 	=&gt; repo description
+homepage	=&gt; homepage url
+public		=&gt; 1 for public, 0 for private</code></pre>
+
+<p>You can also delete a repository with a POST to</p>
+
+<pre><code>repos/delete/:repo</code></pre>
+
+<p>which will give you back a token in the &#8216;delete_token&#8217; field of the response, which you then have to post back to the same url again (in the &#8216;delete_token&#8217; POST var) to complete the deletion.</p>
+
+<h3 id='repository_visibility'>Repository Visibility</h3>
+
+<p>To set a public repository private, you can POST while authenticated to</p>
+
+<pre><code>repos/set/private/:repo</code></pre>
+
+<p>To make a private repo public, POST while authenticated to</p>
+
+<pre><code>repos/set/public/:repo</code></pre>
+
+<h3 id='deploy_keys'>Deploy Keys</h3>
+
+<p>You can use the API to list, add and remove your deploy keys. To see which deploy keys you have setup for a specific repository, GET this URL</p>
+
+<pre><code>repos/keys/:repo</code></pre>
+
+<p>It will give you a listing of your public keys, like so</p>
+
+<pre><code>$ curl -F &#39;login=schacon&#39; -F &#39;token=XXX&#39; http://github.com/api/v2/yaml/repos/keys/retrospectiva
+--- 
+public_keys: 
+- title: my deploy key
+  id: 98748
+  key: ssh-rsa AAAAB3NzaC1cy3EAAAABIwAAAQEAqxtaIQhX9ICzxJw2ct+MuEEo8T6w
+6woAwOHGuz9tZVZ1ncIa641O+z9hHJ68g61OK508M4Z6mkVNL68bW7TCPcTEXcCmkGTbB9F
+5wCWD5uYExRgDaywamaREkEzaP0wl3CFvGADfrxUUvEzp4eKsAneCHD07FQiBXDFApqfJEm
+IcsXPaJKfl8NpyIAMLr9ge2ToKH7hDOQG5Q6UcYIfYZH0kIZFfhnf8tBp+6oIHNFkXriTRB
+OxFKoCuyauVCnX12N7GUR29L//MWmbL+bDdEg/HHnmZWkwpaZhC/rsqqylZobpZsUcAKZ7f
+0Daq6H8C1CHf1RB6JriP7CCja8pl+w==</code></pre>
+
+<p>You can also add new keys by POSTing to</p>
+
+<pre><code>repos/key/:repo/add</code></pre>
+
+<p>which takes the following POST variables</p>
+
+<pre><code>title 	=&gt; title of the key
+key	=&gt; public key data</code></pre>
+
+<p>You can also POST to this removal URL to remove a key</p>
+
+<pre><code>repos/key/:repo/remove</code></pre>
+
+<p>You will need to POST an &#8216;id&#8217; variable with the key ID returned from the public listing or key creation.</p>
+
+<h3 id='collaborators'>Collaborators</h3>
+
+<p>To get a list of the collaborators on a repository call the <code>.collaborators</code> method on a Repository object.</p>
+
+<pre><code>repository.collaborators</code></pre>
+
+<p>To add or remove collaborators, POST to one of these URLs</p>
+
+<pre><code>repos/collaborators/:repo/add/:user
+repos/collaborators/:repo/remove/:user</code></pre>
+
+<h3 id='network'>Network</h3>
+
+<p>We can also look at the full network with</p>
+
+<pre><code>repos/show/:user/:repo/network</code></pre>
+
+<p>For example, to see all the forks of the ruby-git project, we can GET</p>
+
+<pre><code>$ curl http://github.com/api/v2/yaml/repos/show/schacon/ruby-git/network
+--- 
+network: 
+- :description: Ruby/Git is a Ruby library that can be used to create,
+ read and manipulate Git repositories by wrapping system calls to the 
+ git binary.
+  :forks: 30
+  :name: ruby-git
+  :watchers: 132
+  :private: false
+  :url: http://github.com/schacon/ruby-git
+  :fork: false
+  :owner: schacon
+  :homepage: http://jointheconversation.org/rubygit/
+- :description: Ruby/Git is a Ruby library that can be used to create,
+ read and manipulate Git repositories.
+  :forks: 0
+  :name: ruby-git
+  :watchers: 2
+  :private: false
+  :url: http://github.com/ericgoodwin/ruby-git
+  :fork: true
+  :owner: ericgoodwin
+  :homepage: http://jointheconversation.org/rubygit/
+...</code></pre>
+
+<h3 id='repository_refs'>Repository Refs</h3>
+
+<p>To get a list of tags for a Repository object call the <code>.tags</code> instance method:</p>
+
+<pre><code>repository.tags</code></pre>
+
+<p>For example, to get the tags attached to <i>fcoury</i>&#8217;s <i>octopi</i> repository:</p>
+
+<pre><code>Repository.find(&#39;fcoury&#39;,&#39;octopi&#39;).tags</code></pre>
+
+<p>This returns an Array of Tag objects:</p>
+
+<pre><code>[#&lt;Octopi::Tag:0xb78f5a90
+  @api=#&lt;Octopi::Api:0xb7ccc3bc&gt;,
+  @hash=&quot;cfe042b889211ba2f878047736fa2bfb5ad60157&quot;,
+  @keys=[:hash, :name],
+  @name=&quot;v0.0.1&quot;&gt;,
+ #&lt;Octopi::Tag:0xb78f5734
+  @api=#&lt;Octopi::Api:0xb7ccc3bc&gt;,
+  @hash=&quot;33b92f7005d7b9a0e8667a3006e57cda9d8a2ea4&quot;,
+  @keys=[:hash, :name],
+  @name=&quot;v0.0.3&quot;&gt;,
+ #&lt;Octopi::Tag:0xb78f53d8
+  @api=#&lt;Octopi::Api:0xb7ccc3bc&gt;,
+  @hash=&quot;a6b6edaa0ce7e2c49ca6156523a33fbad2b2a4e9&quot;,
+  @keys=[:hash, :name],
+  @name=&quot;v0.0.4&quot;&gt;,
+ #&lt;Octopi::Tag:0xb78f507c
+  @api=#&lt;Octopi::Api:0xb7ccc3bc&gt;,
+  @hash=&quot;db1d9c01bfb366ca25a0190a333e69e4a2c6524e&quot;,
+  @keys=[:hash, :name],
+  @name=&quot;v0.0.5&quot;&gt;,
+ #&lt;Octopi::Tag:0xb78f4d20
+  @api=#&lt;Octopi::Api:0xb7ccc3bc&gt;,
+  @hash=&quot;d157b0f71c2671557c97319acd2a20a2dcf68425&quot;,
+  @keys=[:hash, :name],
+  @name=&quot;v0.0.6&quot;&gt;,
+ #&lt;Octopi::Tag:0xb78f49c4
+  @api=#&lt;Octopi::Api:0xb7ccc3bc&gt;,
+  @hash=&quot;3344a5a2bf141089b4cdfba8f9d37e2104f123b6&quot;,
+  @keys=[:hash, :name],
+  @name=&quot;v0.0.7&quot;&gt;]</code></pre>
+
+<p>To get a list of remote branches call the <code>.branches</code> method on a Repository object.</p>
+
+<pre><code>repository.branches</code></pre>
+
+<p>This will return an Array of Branch objects, each of which has <code>.name</code> and <code>.hash</code> methods, corresponding to the branch&#8217;s name and SHA1 hash of its HEAD, respectively.</p>
+
+<p>For example;</p>
+
+<pre><code>Repository.find(&#39;schacon&#39;, &#39;ruby-git&#39;).branches.each do |branch|
+  puts &quot;#{branch.name} is at #{branch.hash}&quot;
+end</code></pre>
+
+<p>This prints something like:</p>
+
+<pre><code>internals is at 6a9db968e8563bc27b8f56f9d413159a2e14cf67
+master is at ee90922f3da3f67ef19853a0759c1d09860fe3b3
+integrate is at 10b880b418879e662feb91ce7af98560adeaa8bb
+test is at 2d749e3aa69d7bfedf814f59618f964fdbc300d5</code></pre><br/><br/><hr/><div class="span-21 last">&nbsp;</div><hr/>
+    </div>
+
+    <div id="footer" class="span-21">
+      <div class="info span-12">
+        <div class="links">
+          <a href="http://github.com/blog/148-github-shirts-now-available">T-Shirts</a> |
+          <a href="http://github.com/blog">Blog</a> |
+          <a href="http://support.github.com/">Support</a> |
+          <a href="http://github.com/training">Git Training</a> |
+          <a href="http://github.com/contact">Contact</a> |
+          <a href="http://groups.google.com/group/github/">Google Group</a> |
+          <a href="http://github.wordpress.com">Status</a>
+        </div>
+        <div class="company">
+          GitHub is <a href="http://logicalawesome.com/">Logical Awesome</a> &copy;2009 | <a href="http://github.com/site/terms">Terms of Service</a> | <a href="http://github.com/site/privacy">Privacy Policy</a>
+        </div>
+      </div>
+      <div class="fork span-7">
+        This website is <a href="http://github.com/develop/develop.github.com">open source</a>.
+        Please help us by forking the project and adding to it.
+      </div>
+    </div>
+
+  </div>
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  var pageTracker = _gat._getTracker("UA-3769691-2");
+  pageTracker._initData();
+  pageTracker._trackPageview();
+  </script>
+
+</body>
+</html>

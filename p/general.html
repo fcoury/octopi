@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Develop.GitHub - </title>
+	<script type="text/javascript" src="../js/jquery-1.2.6.pack.js"></script>
+	<script type="text/javascript" src="../js/thickbox-compressed.js"></script>
+	<script type="text/javascript" src="../js/jquery.corner.js"></script>
+	
+	<link rel="stylesheet" href="../css/screen.css" type="text/css" media="screen, projection">
+  <link rel="stylesheet" href="../css/print.css" type="text/css" media="print">
+  <!--[if IE]>
+    <link rel="stylesheet" href="../css/ie.css" type="text/css" media="screen, projection">
+  <![endif]-->
+  
+	<link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8"/>
+  <link rel="stylesheet" href="../css/thickbox.css" type="text/css" media="screen"/>
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="span-21" id="header">
+      <div class="span-10">
+        <a href="/"><img src="../images/develop-github.png" alt="github learn logo" /></a>
+      </div>
+
+      <div class="span-11 last">
+        <div id="links">
+          <a href="http://github.com">home</a>
+          <a href="http://github.com/login">login</a>
+          <a href="http://github.com/signup">signup!</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="span-21 last content">
+      <h2 id='general_api_information'>General API Information</h2>
+
+<h3 id='schema'>Schema</h3>
+
+<p>All API access is over HTTP and starts with</p>
+
+<pre><code>http://github.com/api/v2/:format</code></pre>
+
+<p>where <code>:format</code> is one of &#8216;yaml&#8217;, &#8216;json&#8217; or &#8216;xml&#8217;, specifying what the response data should be formatted in. For all of the rest of this documentation, we will be leaving off that part, since it is the same for every API call.</p>
+
+<h3 id='authentication'>Authentication</h3>
+
+<p>How to authenticate as a user, simply pass <code>login</code> and <code>token</code> to any URL. Several of the calls will return extra data if you are authenticated as a user that owns the repository or has access to it as a collaborator. For example, a call to get information on one of your private repositories would be:</p>
+
+<pre><code>$ curl -F &#39;login=schacon&#39; -F &#39;token=6ef8395fecf207165f1a82178ae1b984&#39;
+  http://github.com/api/v2/json/user/show/schacon | jsonpretty
+{
+  &quot;user&quot;: {
+    &quot;company&quot;: &quot;Logical Awesome&quot;,
+    &quot;name&quot;: &quot;Scott Chacon&quot;,
+    &quot;following_count&quot;: 11,
+    &quot;blog&quot;: &quot;http:\/\/jointheconversation.org&quot;,
+    &quot;public_repo_count&quot;: 52,
+    &quot;public_gist_count&quot;: 45,
+    &quot;disk_usage&quot;: 294392,
+    &quot;collaborators&quot;: 3,
+    &quot;plan&quot;: {
+      &quot;name&quot;: &quot;small&quot;,
+      &quot;collaborators&quot;: 5,
+      &quot;space&quot;: 1228800,
+      &quot;private_repos&quot;: 10
+    },
+    &quot;id&quot;: 70,
+    &quot;owned_private_repo_count&quot;: 10,
+    &quot;total_private_repo_count&quot;: 14,
+    &quot;private_gist_count&quot;: 11,
+    &quot;login&quot;: &quot;schacon&quot;,
+    &quot;followers_count&quot;: 182,
+    &quot;created_at&quot;: &quot;2008\/01\/27 09:19:28 -0800&quot;,
+    &quot;email&quot;: &quot;schacon@gmail.com&quot;,
+    &quot;location&quot;: &quot;Redwood City, CA&quot;
+  }
+}</code></pre>
+
+<h3 id='secure_access'>Secure Access</h3>
+
+<p>You can access any API call over HTTPS, though public data can also be accessed over HTTP.</p>
+
+<h3 id='json_callbacks'>JSON callbacks</h3>
+
+<p>If you send a &#8216;callback&#8217; variable to any call, it will wrap the result JSON in that function, so you can automatically execute it.</p>
+
+<pre><code>$ curl http://github.com/api/v2/json/issues/list/schacon/simplegit/open?callback=myJsFunction
+myJsFunction({&quot;issues&quot;: [
+{&quot;user&quot;: &quot;schacon&quot;, 
+&quot;updated_at&quot;: &quot;2009/04/17 16:19:02 -0700&quot;, 
+&quot;body&quot;: &quot;something&quot;, 
+&quot;title&quot;: &quot;new&quot;, 
+&quot;number&quot;: 2, 
+&quot;votes&quot;: 0, 
+&quot;position&quot;: 1.0, 
+&quot;created_at&quot;: &quot;2009/04/17 16:18:50 -0700&quot;, 
+&quot;state&quot;: &quot;open&quot;}
+]});</code></pre>
+
+<h3 id='limitations'>Limitations</h3>
+
+<p>Currently we are limiting API calls to 60 per minute. This may change in the future, or possibly per user at some point, but if you try to access the API more than 60 times in a minute, it will start giving you &#8220;access denied&#8221; errors.</p><br/><br/><hr/><div class="span-21 last">&nbsp;</div><hr/>
+    </div>
+
+    <div id="footer" class="span-21">
+      <div class="info span-12">
+        <div class="links">
+          <a href="http://github.com/blog/148-github-shirts-now-available">T-Shirts</a> |
+          <a href="http://github.com/blog">Blog</a> |
+          <a href="http://support.github.com/">Support</a> |
+          <a href="http://github.com/training">Git Training</a> |
+          <a href="http://github.com/contact">Contact</a> |
+          <a href="http://groups.google.com/group/github/">Google Group</a> |
+          <a href="http://github.wordpress.com">Status</a>
+        </div>
+        <div class="company">
+          GitHub is <a href="http://logicalawesome.com/">Logical Awesome</a> &copy;2009 | <a href="http://github.com/site/terms">Terms of Service</a> | <a href="http://github.com/site/privacy">Privacy Policy</a>
+        </div>
+      </div>
+      <div class="fork span-7">
+        This website is <a href="http://github.com/develop/develop.github.com">open source</a>.
+        Please help us by forking the project and adding to it.
+      </div>
+    </div>
+
+  </div>
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  var pageTracker = _gat._getTracker("UA-3769691-2");
+  pageTracker._initData();
+  pageTracker._trackPageview();
+  </script>
+
+</body>
+</html>

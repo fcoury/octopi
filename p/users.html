@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Develop.GitHub - </title>
+	<script type="text/javascript" src="../js/jquery-1.2.6.pack.js"></script>
+	<script type="text/javascript" src="../js/thickbox-compressed.js"></script>
+	<script type="text/javascript" src="../js/jquery.corner.js"></script>
+	
+	<link rel="stylesheet" href="../css/screen.css" type="text/css" media="screen, projection">
+  <link rel="stylesheet" href="../css/print.css" type="text/css" media="print">
+  <!--[if IE]>
+    <link rel="stylesheet" href="../css/ie.css" type="text/css" media="screen, projection">
+  <![endif]-->
+  
+	<link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8"/>
+  <link rel="stylesheet" href="../css/thickbox.css" type="text/css" media="screen"/>
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="span-21" id="header">
+      <div class="span-10">
+        <a href="/"><img src="../images/develop-github.png" alt="github learn logo" /></a>
+      </div>
+
+      <div class="span-11 last">
+        <div id="links">
+          <a href="http://github.com">home</a>
+          <a href="http://github.com/login">login</a>
+          <a href="http://github.com/signup">signup!</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="span-21 last content">
+      <h2 id='users_api'>Users API</h2>
+
+<p>API for accessing and modifying user information.</p>
+
+<h3 id='searching_for_users'>Searching for Users</h3>
+
+<p>The method for user searching is:</p>
+
+<pre><code>User.find_all(query)</code></pre>
+
+<p>For instance, you would search for users with <i>chacon</i> in their name like this:</p>
+
+<pre><code>User.find_all(&#39;chacon&#39;)</code></pre>
+
+<h3 id='getting_user_information'>Getting User Information</h3>
+
+<p>You can then get extended information on users by their username. The method is:</p>
+
+<pre><code>User.find(username)</code></pre>
+
+<p>so the following command</p>
+
+<pre><code>User.find(&#39;runpaint&#39;)</code></pre>
+
+<p>will return something like this:</p>
+
+<pre><code>#&lt;Octopi::User:0xb7812c40
+ @api=#&lt;Octopi::Api:0xb7bb8174&gt;,
+ @blog=nil,
+ @company=nil,
+ @created_at=Sun Apr 05 22:57:13 +0100 2009,
+ @email=&quot;&quot;,
+ @followers_count=0,
+ @following_count=1,
+ @id=70802,
+ @keys=
+  [&quot;company&quot;,
+   &quot;name&quot;,
+   &quot;created_at&quot;,
+   &quot;location&quot;,
+   &quot;blog&quot;,
+   &quot;public_repo_count&quot;,
+   &quot;public_gist_count&quot;,
+   &quot;following_count&quot;,
+   &quot;id&quot;,
+   &quot;followers_count&quot;,
+   &quot;login&quot;,
+   &quot;email&quot;],
+ @location=nil,
+ @login=&quot;runpaint&quot;,
+ @name=nil,
+ @public_gist_count=2,
+ @public_repo_count=4&gt;</code></pre>
+
+<p>You can get additional information if you&#8217;re authenticated as that user.</p>
+
+<pre><code>include Octopi
+
+authenticated do |g|
+  g.user
+end</code></pre>
+
+<p>This will return an object like the following:</p>
+
+<pre><code> #&lt;Octopi::User:0xb7762b88
+ @api=
+  #&lt;Octopi::Api:0xb7765f68
+   @format=&quot;yaml&quot;,
+   @login=&quot;runpaint&quot;,
+   @read_only=false,
+   @token=&quot;555b9a27c1b7bc99cd16c0f812fce307&quot;,
+   @trace_level=nil&gt;,
+ @blog=nil,
+ @collaborators=0,
+ @company=nil,
+ @created_at=Sun Apr 05 22:57:13 +0100 2009,
+ @disk_usage=1636,
+ @email=&quot;&quot;,
+ @followers_count=0,
+ @following_count=1,
+ @id=70802,
+ @keys=
+  [&quot;plan&quot;,
+   &quot;company&quot;,
+   &quot;name&quot;,
+   &quot;created_at&quot;,
+   &quot;location&quot;,
+   &quot;blog&quot;,
+   &quot;public_repo_count&quot;,
+   &quot;public_gist_count&quot;,
+   &quot;disk_usage&quot;,
+   &quot;collaborators&quot;,
+   &quot;following_count&quot;,
+   &quot;id&quot;,
+   &quot;private_gist_count&quot;,
+   &quot;owned_private_repo_count&quot;,
+   &quot;followers_count&quot;,
+   &quot;total_private_repo_count&quot;,
+   &quot;login&quot;,
+   &quot;email&quot;],
+ @location=nil,
+ @login=&quot;runpaint&quot;,
+ @name=nil,
+ @owned_private_repo_count=0,
+ @plan=
+  {&quot;name&quot;=&gt;&quot;free&quot;, &quot;collaborators&quot;=&gt;0, &quot;space&quot;=&gt;307200, &quot;private_repos&quot;=&gt;0},
+ @private_gist_count=0,
+ @public_gist_count=2,
+ @public_repo_count=4,
+ @total_private_repo_count=0&gt;</code></pre>
+
+<h3 id='authenticated_user_management'>Authenticated User Management</h3>
+
+<p>If you are authenticating, you can update your users information in a few different ways.</p>
+
+<pre><code>/user/:username [POST]
+    :values[key] = value</code></pre>
+
+<p>Where the key values are of :</p>
+
+<pre><code>name
+email
+blog
+company
+location</code></pre>
+
+<h3 id='following_network'>Following Network</h3>
+
+<p>If you want to look at the <i>following</i> network on GitHub, you can request the users that a specific user is following with:</p>
+
+<pre><code>User.find(username).followers</code></pre>
+
+<p>or the users following a specific user with:</p>
+
+<pre><code>User.find(username).following</code></pre>
+
+<p>For example, if you want to see which users are following &#8216;defunkt&#8217;, you can use this:</p>
+
+<pre><code>User.find(&#39;defunkt&#39;).followers</code></pre>
+
+<p>If you are authenticated as a user, you can also follow or unfollow users with:</p>
+
+<pre><code>/user/follow/:user [POST]
+
+/user/unfollow/:user [POST]</code></pre>
+
+<h4 id='public_key_management'>Public Key Management</h4>
+
+<p>If you&#8217;re authenticated you can retrieve your public keys with</p>
+
+<pre><code>include Octopi
+
+authenticated do |g|
+  g.keys
+end</code></pre>
+
+<p>This will return something like:</p>
+
+<pre><code>  [{&quot;title&quot;=&gt;&quot;runpaint@github.com&quot;,
+    &quot;id&quot;=&gt;97842,
+    &quot;key&quot;=&gt;
+     &quot;ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAFEAs/lCz6aT4b0wnJQXZZ9JBLLNZcF6POtaE
+     D/bsFWshvVCaUIs7NzdAvzJYus06r0S/Cvr1g1RTSQm35Ub44ZHbfhCfGq5Akh42OnYeF9
+     HjuAehGsjGsqElheoQCHGOdGPcSf3lo/1m8JlD8XRJfu8xvtAhUzwa9EqLoCx8ba31olyV
+     SxRANvVIfeW9Rb1hT44HcnZgJ8NHOxRthlODcFkjstOidpCvswAJtMvUZx08gmeCgornF3
+     pRs4Y4E1dtrsgWn6hOb48bNDNo8lDaN0E6i31K0j4BjVZk8VTrXipBZXwebYwmKYkJrNbJ
+     EdMvlKL4p9MUhckWMA2nPloz9gfr7Me8dEQEpzN2xJ2Q0Zm60vCA5aFKCPMmWU57YSIn9x
+     QWyy5xplLOr0aOPcZLZ38/Qjxz3NOAgbrjnzWKCHDVxmDw8V9iEQQAygPMW3l8sOmlJDHB
+     eWra9OjyhRgSDONE3BFQBMC96r4Wi7wDYurWAvO21YAmbk5j5bDHDd1kr5bW2K51G0GYnI
+     Xgpaif+4uYHfLVWj8QDMFgnsdkXQOTa6oV4HkXdHBvWf+PeKuZgodmvNysorOos73p9eQm
+     3UFTNYbGrO7e+0QhzsKDQwI5oNrIRtke4IH5KiL017xE0RCPVK/55XudRakCvpVcH8LW0V
+     jsyi1aFYjHjRtDxDMcSM=&quot;
+  }]</code></pre>
+
+<p>You can edit your public keys with:</p>
+
+<pre><code>/user/key/add [POST]
+    :name
+    :key
+
+/user/key/remove [POST]
+    :id</code></pre>
+
+<h4 id='email_address_management'>Email Address Management</h4>
+
+<p>If you&#8217;re authenticated you can retrieve your e-mail addresses with</p>
+
+<pre><code>include Octopi
+
+authenticated do |g|
+  g.emails
+end</code></pre>
+
+<p>This will return something like:</p>
+
+<pre><code>[&quot;runpaint@example.org&quot;, &quot;runrun@runpaint.org&quot;]</code></pre>
+
+<p>You can edit your e-mail addresses with:</p>
+
+<pre><code>  /user/email/add [POST]
+
+  /user/email/remove [POST]</code></pre><br/><br/><hr/><div class="span-21 last">&nbsp;</div><hr/>
+    </div>
+
+    <div id="footer" class="span-21">
+      <div class="info span-12">
+        <div class="links">
+          <a href="http://github.com/blog/148-github-shirts-now-available">T-Shirts</a> |
+          <a href="http://github.com/blog">Blog</a> |
+          <a href="http://support.github.com/">Support</a> |
+          <a href="http://github.com/training">Git Training</a> |
+          <a href="http://github.com/contact">Contact</a> |
+          <a href="http://groups.google.com/group/github/">Google Group</a> |
+          <a href="http://github.wordpress.com">Status</a>
+        </div>
+        <div class="company">
+          GitHub is <a href="http://logicalawesome.com/">Logical Awesome</a> &copy;2009 | <a href="http://github.com/site/terms">Terms of Service</a> | <a href="http://github.com/site/privacy">Privacy Policy</a>
+        </div>
+      </div>
+      <div class="fork span-7">
+        This website is <a href="http://github.com/develop/develop.github.com">open source</a>.
+        Please help us by forking the project and adding to it.
+      </div>
+    </div>
+
+  </div>
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  var pageTracker = _gat._getTracker("UA-3769691-2");
+  pageTracker._initData();
+  pageTracker._trackPageview();
+  </script>
+
+</body>
+</html>
