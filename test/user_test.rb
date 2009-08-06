@@ -5,6 +5,29 @@ class UserTest < Test::Unit::TestCase
   
   def setup
     fake_everything
+    @user = User.find("fcoury")
+  end
+  
+  should "be able to find a user" do
+    assert_not_nil User.find("fcoury")
+  end
+  
+  should "not be able to find a user that doesn't exist" do
+    exception = assert_raise NotFound do 
+      User.find("i-am-most-probably-a-user-that-does-not-exist")
+    end
+    
+    assert_equal "The User you were looking for could not be found, or is private.", exception.message
+  end
+  
+  should "be able to look for a user, using find_all" do
+    users = User.find_all("radar")
+    assert_not_nil users
+  end
+
+  should "be able to search for a user" do
+    users = User.search("radar")
+    assert_not_nil users
   end
   
   context "authenticated" do
@@ -26,5 +49,35 @@ class UserTest < Test::Unit::TestCase
         end
       end
     end
+    
+    context "return a list of followers" do
+    
+      should "in string format" do
+        users = @user.followers
+        assert_not_nil users
+        assert users.first.is_a?(String)
+      end
+    
+      should "in object format" do
+        users = @user.followers!
+        assert_not_nil users
+        assert users.first.is_a?(User)
+      end
+    end
+    
+    context "return a list of people who they are following" do
+      should "in string format" do
+        users = @user.following
+        assert_not_nil users
+        assert users.first.is_a?(String)
+      end
+    
+      should "in object format" do
+        users = @user.following!
+        assert_not_nil users
+        assert users.first.is_a?(User)
+      end
+    end
+    
   end
 end

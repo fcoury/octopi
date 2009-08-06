@@ -1,7 +1,9 @@
 require 'singleton'
+require File.join(File.dirname(__FILE__), "self")
 module Octopi
   # Dummy class, so AnonymousApi and AuthApi have somewhere to inherit from
   class Api
+    include Self
     attr_accessor :format, :login, :token, :trace_level, :read_only
   end
   
@@ -37,9 +39,12 @@ module Octopi
     
     include Singleton
     CONTENT_TYPE = {
-      'yaml' => 'application/x-yaml',
+      'yaml' => ['application/x-yaml', 'text/yaml', 'text/x-yaml', 'application/yaml'],
       'json' => 'application/json',
-      'xml'  => 'application/sml'
+      'xml'  => 'application/xml',
+      # Unexpectedly, Github returns resources such as blobs as text/html!
+      # Thus, plain == text/html.
+      'plain' => ['text/plain', 'text/html']
     }  
     RETRYABLE_STATUS = [403]
     MAX_RETRIES = 10
@@ -60,18 +65,15 @@ module Octopi
       @@api
     end
     
+    class << self
+      alias_method :me, :api
+    end
+    
     # set the API we're using
     def self.api=(value)
       @@api = value
     end
-    
-    def keys
-      get("/user/keys")['public_keys']
-    end
-    
-    def emails
-      get("/user/emails")['emails']
-    end
+
 
     def user
       user_data = get("/user/show/#{login}")
@@ -85,25 +87,27 @@ module Octopi
       post("#{resource_path}", { :query => data })
     end
     
-    def find(path, result_key, resource_id, klass=nil)
-      get(path, { :id => resource_id }, klass) 
+    def find(path, result_key, resource_id, klass=nil, cache=true)
+      result = get(path, { :id => resource_id, :cache => cache }, klass) 
+      result
     end
     
     
-    def find_all(path, result_key, query, klass=nil)
-      get(path, { :query => query, :id => query }, klass)[result_key]
+    def find_all(path, result_key, query, klass=nil, cache=true)
+      result = get(path, { :query => query, :id => query, :cache => cache }, klass)
+      result[result_key]
     end
   
     def get_raw(path, params, klass=nil)
      get(path, params, klass,  'plain')
     end
   
-    def get(path, params = {}, klass=nil, format = "yaml")
+    def get(path, params = {}, klass=nil, format = :yaml)
       @@retries = 0
       begin
         trace "GET [#{format}]", "/#{format}#{path}", params
         submit(path, params, klass, format) do |path, params, format|
-          self.class.get "/#{format}#{path}"
+          self.class.get "/#{format}#{path}", :format => format
         end
       rescue RetryableAPIError => e
         if @@retries < MAX_RETRIES 
@@ -118,12 +122,12 @@ module Octopi
       end  
     end
   
-    def post(path, params = {}, klass=nil, format = "yaml")
+    def post(path, params = {}, klass=nil, format = :yaml)
       @@retries = 0
       begin
         trace "POST", "/#{format}#{path}", params
         submit(path, params, klass, format) do |path, params, format|
-          resp = self.class.post "/#{format}#{path}", :body => params
+          resp = self.class.post "/#{format}#{path}", { :body => params, :format => format }
           resp
         end
       rescue RetryableAPIError => e
@@ -140,7 +144,10 @@ module Octopi
     end
 
     private
-    def submit(path, params = {}, klass=nil, format = "yaml", &block)
+    def submit(path, params = {}, klass=nil, format = :yaml, &block)
+      # Ergh. Ugly way to do this. Find a better one!
+      cache = params.delete(:cache) 
+      cache = true if cache.nil?
       params.each_pair do |k,v|
         if path =~ /:#{k.to_s}/
           params.delete(k)
@@ -149,9 +156,20 @@ module Octopi
       end
       query = login ? { :login => login, :token => token } : {}
       query.merge!(params)
-    
+      # Left here for debugging purposes. Handy sometimes.
+      # puts "#{self.class.base_uri}/yaml/#{path}"
       begin
-        resp = yield(path, query.merge(params), format)
+        $requests ||= 0 
+        key = "#{Api.api.class.to_s}:#{path}"
+        resp = if cache
+          APICache.get(key, :cache => 61) do
+            $requests += 1
+            yield(path, query.merge(params), format)
+          end
+        else
+          $requests += 1
+          yield(path, query.merge(params), format)
+        end
       rescue Net::HTTPBadResponse
         raise RetryableAPIError
       end
@@ -174,11 +192,10 @@ module Octopi
       
       # It happens, in tests.
       return resp if resp.headers.empty?
-      ctype = resp.headers['content-type'].first
-      raise FormatError, [ctype, format] unless 
-        ctype.match(/^#{CONTENT_TYPE[format]};/)
+      ctype = resp.headers['content-type'].first.split(";").first
+      raise FormatError, [ctype, format] unless CONTENT_TYPE[format.to_s].include?(ctype)
       if format == 'yaml' && resp['error']
-        raise APIError, resp['error'].first['error']
+        raise APIError, resp['error']
       end  
       resp
     end

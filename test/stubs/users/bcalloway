@@ -1,0 +1,26 @@
+HTTP/1.1 200 OK
+Server: nginx/0.6.26
+Date: Sat, 01 Aug 2009 11:51:39 GMT
+Content-Type: application/x-yaml; charset=utf-8
+Connection: keep-alive
+Set-Cookie: _github_ses=BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--884981fc5aa85daf318eeff084d98e2cff92578f; path=/; expires=Wed, 01 Jan 2020 08:00:00 GMT; HttpOnly
+Status: 200 OK
+X-Runtime: 16ms
+ETag: "3324f5154cd372f9f9143e13d2c2d1ce"
+Cache-Control: private, max-age=0, must-revalidate
+Content-Length: 325
+
+--- 
+user: 
+  name: Brandon Calloway
+  company: The Scully Group
+  following_count: 16
+  public_gist_count: 17
+  public_repo_count: 10
+  blog: http://brandoncalloway.com
+  id: 6002
+  followers_count: 3
+  login: bcalloway
+  location: Asheville, NC
+  email: brandon@brandoncalloway.com
+  created_at: 2008-04-09 06:33:32 -07:00

@@ -1,0 +1,27 @@
+HTTP/1.1 200 OK
+Server: nginx/0.6.31
+Date: Sat, 01 Aug 2009 12:03:50 GMT
+Content-Type: application/x-yaml; charset=utf-8
+Connection: keep-alive
+Set-Cookie: _github_ses=BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--884981fc5aa85daf318eeff084d98e2cff92578f; path=/; expires=Wed, 01 Jan 2020 08:00:00 GMT; HttpOnly
+Status: 200 OK
+X-Runtime: 59ms
+ETag: "6137c29bf3316f0eb21c20d38ca118a3"
+Cache-Control: private, max-age=0, must-revalidate
+Content-Length: 275
+
+--- 
+users: 
+- score: 3.40198
+  name: radar
+  actions: 500
+  language: Ruby
+  followers: 43
+  username: radar
+  type: user
+  fullname: Ryan Bigg
+  repos: 58
+  id: user-2687
+  pushed: "2009-07-29T02:47:14.789Z"
+  created: "2008-03-10T13:28:14Z"
+  location: Milton, Queensland

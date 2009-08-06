@@ -1,7 +1,11 @@
 module Octopi
   class Repository < Base
     include Resource
-    attr_accessor :description, :url, :forks, :name, :homepage, :watchers, :owner, :private, :fork, :open_issues, :pledgie
+    attr_accessor :description, :url, :forks, :name, :homepage, :watchers, 
+                  :owner, :private, :fork, :open_issues, :pledgie, :size,
+                  # And now for the stuff returned by search results
+                  :actions, :score, :language, :followers, :type, :username,
+                  :id, :pushed, :created
     set_resource_name "repository", "repositories"
 
     create_path "/repos/create"
@@ -32,7 +36,7 @@ module Octopi
     #   repo.tags.each { |t| puts t.name }
     #
     def tags
-      Tag.all(self.owner, self.name)
+      Tag.all(:user => self.owner, :repo => self)
     end  
     
     
@@ -61,13 +65,14 @@ module Octopi
     end
     
     def clone_url
-      url = private? || api.login == self.owner ? "git@github.com:" : "git://github.com/"
+      url = private || Api.api.login == self.owner.login ? "git@github.com:" : "git://github.com/"
       url += "#{self.owner}/#{self.name}.git"
     end
     
     def self.find(options={})
-      self.validate_hash(options)
+      ensure_hash(options)
       # Lots of people call the same thing differently.
+      # Can't call gather_details here because this method is used by it internally.
       repo = options[:repo] || options[:repository] || options[:name]
       user = options[:user].to_s
     
@@ -83,16 +88,12 @@ module Octopi
       super args.join(" ").gsub(/ /,'+')
     end
     
-    def self.open_issue(args)
-      Issue.open(args[:user], args[:repo], args)
-    end
-    
-    def open_issue(args)
-      Issue.open(self.owner, self, args)
+    class << self 
+      alias_method :search, :find_all
     end
     
     def commits(branch = "master")
-      Commit.find_all(self, {:branch => branch})
+      Commit.find_all(:user => self.owner, :repo => self, :branch => branch)
     end
     
     def issues(state = "open")
@@ -104,24 +105,23 @@ module Octopi
     end
 
     def issue(number)
-      Issue.find(self.owner, self, number)
+      Issue.find(:user => self.owner, :repo => self, :number => number)
     end
 
     def collaborators
-      property('collaborators', [self.owner,self.name].join('/')).values
+      property('collaborators', [self.owner, self.name].join('/')).values.map { |v| User.find(v) }
     end  
     
-    def self.create(owner, name, options = {})
-      api = owner.is_a?(User) ? owner.api : ANONYMOUS_API
-      raise APIError, "To create a repository you must be authenticated." if api.read_only?
-      self.validate_args(name => :repo)
-      api.post(path_for(:create), options.merge(:name => name))
-      self.find(owner, name, api)
+    def self.create(options={})
+      raise AuthenticationRequired, "To create a repository you must be authenticated." if Api.api.read_only?
+      self.validate_args(options[:name] => :repo)
+      new(Api.api.post(path_for(:create), options)["repository"])
     end
     
-    def delete
-      token = @api.post(self.class.path_for(:delete), :id => self.name)['delete_token']
-      @api.post(self.class.path_for(:delete), :id => self.name, :delete_token => token) unless token.nil?
+    def delete!
+      raise APIError, "You must be authenticated as the owner of this repository to delete it" if Api.api.me.login != owner.login
+      token = Api.api.post(self.class.path_for(:delete), :id => self.name)['delete_token']
+      Api.api.post(self.class.path_for(:delete), :id => self.name, :delete_token => token) unless token.nil?
     end
     
     def to_s

@@ -22,5 +22,12 @@ class IssueSetTest < Test::Unit::TestCase
       
       assert_equal "The Issue you were looking for could not be found, or is private.", exception.message
     end
+    
+    should "be able to look for an issue" do
+      results = @repo.issues.search(:keyword => "test")
+      assert_not_nil results
+      assert_equal 1, results.size
+    end
+    
   end
 end

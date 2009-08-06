@@ -1,4 +1,3 @@
-
 module Octopi
   class Base
     VALID = {
@@ -40,13 +39,13 @@ module Octopi
     
     def property(p, v)
       path = "#{self.class.path_for(:resource)}/#{p}"
-      @api.find(path, self.class.resource_name(:singular), v)
+      Api.api.find(path, self.class.resource_name(:singular), v)
     end
     
     def save
       hash = {}
       @keys.each { |k| hash[k] = send(k) }
-      @api.save(self.path_for(:resource), hash)
+      Api.api.save(self.path_for(:resource), hash)
     end
     
     private
@@ -97,7 +96,7 @@ module Octopi
       end
     end
     
-    def self.validate_hash(spec)
+    def self.ensure_hash(spec)
       raise ArgumentMustBeHash, "find takes a hash of options as a solitary argument" if !spec.is_a?(Hash)
     end
     

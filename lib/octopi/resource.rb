@@ -38,7 +38,7 @@ module Octopi
       
       def find(*args)
         args = args.join('/') if args.is_a? Array
-        result = Api.api.find(path_for(:resource), @resource_name[:singular], args, self)
+        result = Api.api.find(path_for(:resource), @resource_name[:singular], args, self, @cache)
         key = result.keys.first
 
         if result[key].is_a? Array
@@ -54,7 +54,8 @@ module Octopi
       
       def find_plural(s, path)
         s = s.join('/') if s.is_a? Array
-        Api.api.find_all(path_for(path), @resource_name[:plural], s, self).map { |item| self.new(item) }
+        resources = Api.api.find_all(path_for(path), @resource_name[:plural], s, self)
+        resources.map { |item| self.new(item) }
       end
       
       def declassify(s)

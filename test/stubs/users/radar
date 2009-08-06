@@ -1,0 +1,26 @@
+HTTP/1.1 200 OK
+Server: nginx/0.6.26
+Date: Sat, 01 Aug 2009 23:25:04 GMT
+Content-Type: application/x-yaml; charset=utf-8
+Connection: keep-alive
+Set-Cookie: _github_ses=BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--884981fc5aa85daf318eeff084d98e2cff92578f; path=/; expires=Wed, 01 Jan 2020 08:00:00 GMT; HttpOnly
+Status: 200 OK
+X-Runtime: 150ms
+ETag: "b16aa1f729c991d335f4fb840b8efcd1"
+Cache-Control: private, max-age=0, must-revalidate
+Content-Length: 305
+
+--- 
+user: 
+  name: Ryan Bigg
+  company: Mocra
+  following_count: 3
+  public_gist_count: 87
+  public_repo_count: 62
+  blog: http://www.frozenplague.net
+  id: 2687
+  followers_count: 44
+  login: radar
+  location: Milton, Queensland
+  email: radarlistener@gmail.com
+  created_at: 2008-03-10 06:28:14 -07:00

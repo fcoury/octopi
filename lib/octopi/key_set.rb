@@ -7,7 +7,8 @@ class KeySet < Array
     key
   end
   
-  def add(options)
+  def add(options={})
+    ensure_hash(options)
     Key.add(options)
   end
 end

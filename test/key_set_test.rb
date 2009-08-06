@@ -12,19 +12,18 @@ class KeySetTest < Test::Unit::TestCase
   context KeySet do
     should "be able to find a key" do
       auth do
-        assert_not_nil @user.keys.find("macbook")
+        assert_not_nil Api.me.keys.find("macbook")
       end
     end
     
     should "not be able to find a key without a valid title" do
       exception = assert_raise NotFound do
         auth do
-          assert_not_nil @user.keys.find("windows-box")
+          assert_not_nil Api.me.keys.find("windows-box")
         end
       end
       
       assert_equal "The Key you were looking for could not be found, or is private.", exception.message
     end
-        
   end
 end

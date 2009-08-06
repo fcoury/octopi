@@ -9,6 +9,13 @@ module Octopi
     
     attr_accessor :repository, :user, :updated_at, :votes, :number, :title, :body, :closed_at, :labels, :state, :created_at
     
+    def self.search(options={})
+      ensure_hash(options)
+      options[:state] ||= "open"
+      user, repo = gather_details(options)
+      Api.api.get("/issues/search/#{user}/#{repo}/#{options[:state]}/#{options[:keyword]}")
+    end
+    
     # Finds all issues for a given Repository
     #
     # You can provide the user and repo parameters as
@@ -24,6 +31,7 @@ module Octopi
     #   find_all(:user => "fcoury", :repo => "octopi") # state defaults to open
     #
     def self.find_all(options={})
+      ensure_hash(options)
       user, repo = gather_details(options)
       state = (options[:state] || "open").downcase
       validate_args(user => :user, repo.name => :repo, state => :state)
@@ -35,6 +43,9 @@ module Octopi
   
     # TODO: Make find use hashes like find_all
     def self.find(options={})
+      ensure_hash(options)
+      # Do not cache issues, as they may change via other means.
+      @cache = false
       user, repo = gather_details(options)
       
       validate_args(user => :user, repo => :repo)
@@ -44,6 +55,7 @@ module Octopi
     end
     
     def self.open(options={})
+      ensure_hash(options)
       user, repo = gather_details(options)
       data = Api.api.post("/issues/open/#{user}/#{repo.name}", options[:params])
       issue = new(data['issue'])
@@ -72,7 +84,7 @@ module Octopi
     %w(add remove).each do |oper|
       define_method("#{oper}_label") do |*labels|
         labels.each do |label|
-          Api.api.post("#{prefix("label/#{oper}")}/#{label}/#{number}")
+          Api.api.post("#{prefix("label/#{oper}")}/#{label}/#{number}", { :cache => false })
           if oper == "add"
             self.labels << label
           else

@@ -4,7 +4,10 @@ module Octopi
    def initialize(f)
      super("Got unexpected format (got #{f.first} for #{f.last})")
    end
-  end 
+  end
+  
+  class AuthenticationRequired < StandardError
+  end
 
   class APIError < StandardError
   end

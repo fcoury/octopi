@@ -3,6 +3,7 @@ require 'rubygems'
 require 'httparty'
 require 'mechanize'
 require 'nokogiri'
+require 'api_cache'
 
 require 'yaml'
 require 'pp'

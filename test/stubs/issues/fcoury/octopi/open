@@ -1,3 +1,15 @@
+HTTP/1.1 200 OK
+Server: nginx/0.6.26
+Date: Sat, 01 Aug 2009 07:15:13 GMT
+Content-Type: application/x-yaml; charset=utf-8
+Connection: keep-alive
+Set-Cookie: _github_ses=BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--884981fc5aa85daf318eeff084d98e2cff92578f; path=/; expires=Wed, 01 Jan 2020 08:00:00 GMT; HttpOnly
+Status: 200 OK
+X-Runtime: 2710ms
+ETag: "af9e28c8abb3bd93187b687df6d0ae6e"
+Cache-Control: private, max-age=0, must-revalidate
+Content-Length: 14668
+
 --- 
 issues: 
 - user: jamescallmebrent
@@ -44,7 +56,7 @@ issues:
   created_at: 2009-04-22 18:21:42 -07:00
   state: open
 - user: runpaint
-  updated_at: 2009-06-05 21:38:57 -07:00
+  updated_at: 2009-07-30 18:42:54 -07:00
   body: Attributes that have dates as values should be coerced into a date object so objects of the same type can be compared with respect to their date. For instance, Issue objects have .created_at and .updated_at.
   title: Date Attribues Should be Date Objects
   number: 9
@@ -66,7 +78,7 @@ issues:
   created_at: 2009-04-20 08:10:36 -07:00
   state: open
 - user: runpaint
-  updated_at: 2009-06-05 21:38:57 -07:00
+  updated_at: 2009-07-30 19:39:10 -07:00
   body: |-
     We should be caching the response from GitHub. The implementation for this depends on:
     
@@ -113,7 +125,7 @@ issues:
   created_at: 2009-04-20 08:43:39 -07:00
   state: open
 - user: runpaint
-  updated_at: 2009-06-05 21:38:57 -07:00
+  updated_at: 2009-07-30 19:43:50 -07:00
   body: The query for Repository.find_all is an Array of words concatenated with '+' signs. Oddly, separating the words with percent-encoded spaces doesn't work. What does this imply about the suitability of URI-escaping the query? We need to do something with special characters, or they'll mess up the URL we generate. Do we just escape as normal, but replace spaces with '+'?
   title: Investigate How Repository.find_all Treats URI Escapes
   number: 8
