@@ -1,0 +1,24 @@
+HTTP/1.1 200 OK
+Server: nginx/0.6.26
+Date: Sat, 01 Aug 2009 07:03:29 GMT
+Content-Type: application/x-yaml; charset=utf-8
+Connection: keep-alive
+Set-Cookie: _github_ses=BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--884981fc5aa85daf318eeff084d98e2cff92578f; path=/; expires=Wed, 01 Jan 2020 08:00:00 GMT; HttpOnly
+Status: 200 OK
+X-Runtime: 11ms
+ETag: "0380b1913d11230f44fce4c21b98227e"
+Cache-Control: private, max-age=0, must-revalidate
+Content-Length: 293
+
+--- 
+repository: 
+  :description: A Ruby interface to GitHub API v3
+  :name: octopus
+  :owner: fcoury
+  :private: false
+  :url: http://github.com/fcoury/octopus
+  :fork: false
+  :forks: 0
+  :homepage: http://hasmany.info/2009/4/18/ruby-interface-to-github-api
+  :watchers: 1
+  :open_issues: 0

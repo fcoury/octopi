@@ -55,6 +55,7 @@ def fake_everything
         "blob/show/fcoury/octopi/#{sha}" => File.join("blob", "fcoury", "octopi", "plain", sha),
         
         "commits/list/fcoury/octopi/master" => commits("master"),
+        "commits/list/fcoury/octopi/master/lib/octopi.rb" => commits("octopi.rb"),
         "commits/list/fcoury/octopi/lazy" => commits("lazy"),
         "commits/show/fcoury/octopi/#{sha}" => commits(sha),
         
@@ -68,7 +69,9 @@ def fake_everything
         # Open issue
         "issues/show/fcoury/octopi/28" => issues("28"),
         
+        "repos/show/fcoury/octopi/collaborators" => File.join("repos", "fcoury", "octopi", "collaborators"), 
         "repos/show/fcoury" => File.join("repos", "show", "fcoury"),
+        "repos/search/ruby+testing" => File.join("repos", "search"),
         "repos/show/fcoury/octopi" => repos("master"),
         "repos/show/fcoury/octopi/branches" => repos("branches"),
         "repos/show/fcoury/octopi/tags" => repos("tags"),
@@ -77,9 +80,9 @@ def fake_everything
         
         "user/show/fcoury" => File.join("users", "fcoury"),
         
-        "user/show/fcoury/followers" => File.join("users/followers"),
-        "user/show/fcoury/following" => File.join("users/following"),
-        "user/search/radar" => File.join("users/search-radar")
+        "user/show/fcoury/followers" => File.join("users", "followers"),
+        "user/show/fcoury/following" => File.join("users", "following"),
+        "user/search/radar" => File.join("users", "search-radar")
         
         
           }
@@ -88,6 +91,14 @@ def fake_everything
     FakeWeb.register_uri(:get, "http://#{yaml_api}/" + key, :response => stub_file(value))
   end
   
+  gist_fakes = {
+    "159579" => File.join("gists", "159579")
+  }
+    
+    
+  gist_fakes.each do |key, value|
+    FakeWeb.register_uri(:get, "http://gist.github.com/api/v1/yaml/#{key}", :response => stub_file(value))
+  end
   ["augustl", "bcalloway", "danlucraft", "dcrec1", "derencius", "dustin", "elliottcable", "gwoliveira", "hashrocket", "jruby", "kchris", "paulorv", "radar", "remi", "shanesveller", "superfeedr", "taylorrf", "tgraham", "tmm1", "tpope", "webbynode"].each do |followee|
     FakeWeb.register_uri(:get, "http://#{yaml_api}/user/show/#{followee}", :response => stub_file("users/#{followee}") )
   end
@@ -147,7 +158,9 @@ def fake_everything
     "user/key/add" => File.join("users", "key-added"),
     "user/key/remove" => File.join("users", "key-removed"),
     "user/follow/rails" => File.join("users", "follow-rails"),
-    "user/unfollow/rails" => File.join("users", "unfollow-rails")
+    "user/unfollow/rails" => File.join("users", "unfollow-rails"),
+    "repos/create" => File.join("repos", "fcoury", "octopus", "main"),
+    "repos/delete/octopi" => File.join("repos", "fcoury", "octopi", "delete-token")
     }
     
   secure_post_fakes.each do |key, value|

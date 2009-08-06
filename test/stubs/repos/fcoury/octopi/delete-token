@@ -1,0 +1,13 @@
+HTTP/1.1 200 OK
+Server: nginx/0.6.26
+Date: Sat, 01 Aug 2009 06:07:42 GMT
+Content-Type: application/x-yaml; charset=utf-8
+Connection: keep-alive
+Set-Cookie: _github_ses=BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--884981fc5aa85daf318eeff084d98e2cff92578f; path=/; expires=Wed, 01 Jan 2020 08:00:00 GMT; HttpOnly
+Status: 200 OK
+X-Runtime: 44ms
+ETag: "faa4b600dd11e351c6777caba84cd44a"
+Cache-Control: private, max-age=0, must-revalidate
+Content-Length: 52
+
+delete_token: ea3cd978650417470535f3a4725b6b5042a6ab

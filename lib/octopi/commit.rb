@@ -24,7 +24,11 @@ module Octopi
     def self.find_all(options={})
       ensure_hash(options)
       user, repo, branch = gather_details(options)
-      commits = super user, repo.name, branch
+      commits = if options[:path]
+        super user, repo.name, branch, options[:path]
+      else
+        super user, repo.name, branch
+      end
       # Repository is not passed in from the data, set it manually.
       commits.each { |c| c.repository = repo }
       commits

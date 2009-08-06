@@ -17,7 +17,7 @@ module Octopi
       ensure_hash(options)
       user, repo = gather_details(options)
       self.validate_args(user => :user, repo => :repo)
-      find_plural([user, repo, 'tags'], :resource) { |i| {:name => i.first, :hash => i.last } }
+      find_plural([user, repo, 'tags'], :resource) { |i| Tag.new(i) }
     end
   end
 end

@@ -4,7 +4,6 @@ module Octopi
     
     include Resource
     set_resource_name "tree"
-
     resource_path "/tree/show/:id"
 
     def self.find(options={})

@@ -37,6 +37,12 @@ class CommitTest < Test::Unit::TestCase
         assert_not_nil commits
         assert_equal 22, commits.size
       end
+      
+      should "be able to find commits for a particular file" do
+        commits = Commit.find_all(:user => "fcoury", :repository => "octopi", :path => "lib/octopi.rb")
+        assert_not_nil commits
+        assert_equal 44, commits.size
+      end
     end
     
     context "finding a single commit" do
