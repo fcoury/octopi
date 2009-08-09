@@ -119,7 +119,7 @@ module Octopi
     end
     
     def delete!
-      raise APIError, "You must be authenticated as the owner of this repository to delete it" if Api.api.me.login != owner.login
+      raise APIError, "You must be authenticated as the owner of this repository to delete it" if Api.api.login != owner.login
       token = Api.api.post(self.class.path_for(:delete), :id => self.name)['delete_token']
       Api.api.post(self.class.path_for(:delete), :id => self.name, :delete_token => token) unless token.nil?
     end
