@@ -11,6 +11,9 @@ module Octopi
 
   class APIError < StandardError
   end
+  
+  class InvalidLogin < StandardError
+  end
 
   class RetryableAPIError < RuntimeError
     attr_reader :code

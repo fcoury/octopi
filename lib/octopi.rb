@@ -46,7 +46,11 @@ module Octopi
       if options[:token].nil? && !options[:password].nil?
         options[:token] = grab_token(options[:login], options[:password])
       end
-        
+      begin
+        User.find(options[:login])
+      rescue Octopi::NotFound
+        raise Octopi::InvalidLogin
+      end
     
       trace("=> Trace on: #{options[:trace]}")
     
