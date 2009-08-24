@@ -5,14 +5,10 @@ require 'fakeweb'
 
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
-ENV['HOME'] = File.dirname(__FILE__)
-# Set this to true or comment out if you want to test against real data
-# Which, in a theoretical world should Just Work (tm)
-# This is of course with the exception of the authenticated tests and
-# those tests that require modification of things. Be wary. 
-REAL_WORLD = false
-FakeWeb.allow_net_connect = REAL_WORLD
 require 'octopi'
+
+ENV['HOME'] = File.dirname(__FILE__)
+FakeWeb.allow_net_connect = false
 
 @the_repo = ["fcoury", "octopi"]
 
