@@ -154,8 +154,6 @@ module Octopi
 
     private
     def submit(path, params = {}, klass=nil, format = :yaml, &block)
-      # Merge in the parameters required to do authorized stuff.
-      params = params.merge(auth_parameters)
       # Ergh. Ugly way to do this. Find a better one!
       cache = params.delete(:cache) 
       cache = true if cache.nil?
@@ -165,17 +163,14 @@ module Octopi
           path = path.gsub(":#{k.to_s}", v)
         end
       end
-      # Work out query parameters
-      query = []
-      params.each { |k, v| query << "#{k}=#{v}" }
       begin
         key = "#{Api.api.class.to_s}:#{path}"
         resp = if cache
           APICache.get(key, :cache => 61) do
-            yield(path, params, format, query)
+            yield(path, params, format, auth_parameters)
           end
         else
-          yield(path, params, format, query)
+          yield(path, params, format, auth_parameters)
         end
       rescue Net::HTTPBadResponse
         raise RetryableAPIError

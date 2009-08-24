@@ -139,6 +139,12 @@ def fake_everything
   
   # Personal & Private stuff
   
+  # To authenticate with the API
+  # Methodized as it is used also in key_tests
+  def auth_query
+    "?login=fcoury&token=8f700e0d7747826f3e56ee13651414bd"
+  end
+  
   secure_fakes = {
     
     "commits/list/fcoury/rboard/master" => File.join("commits", "fcoury", "rboard", "master"),
@@ -152,7 +158,7 @@ def fake_everything
   }
   
   secure_fakes.each do |key, value|
-    FakeWeb.register_uri(:get, "https://#{yaml_api}/" + key, :response => stub_file(value))
+    FakeWeb.register_uri(:get, "https://#{yaml_api}/" + key + auth_query, :response => stub_file(value))
   end
   
   secure_post_fakes = { 
@@ -165,7 +171,7 @@ def fake_everything
     }
     
   secure_post_fakes.each do |key, value|
-    FakeWeb.register_uri(:post, "https://#{yaml_api}/" + key, :response => stub_file(value))
+    FakeWeb.register_uri(:post, "https://#{yaml_api}/" + key + auth_query, :response => stub_file(value))
   end
     
   

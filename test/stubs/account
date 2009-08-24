@@ -147,7 +147,7 @@ Content-Length: 22518
           <input name="commit" type="submit" value="Update Username" /> or <a class="rename" href="#">cancel</a>
         </form>
         
-        <p>API Token: <strong>6417354635233fbddf66de798c030f9f</strong></p>
+        <p>API Token: <strong>8f700e0d7747826f3e56ee13651414bd</strong></p>
         <p><a href="#git_config" rel="facebox">Global Git Config</a></p>
         <div id="git_config" style="display:none">
           <p>Want to tell GitHub aware apps like <a href="http://github.com/Caged/gitnub">GitNub</a> or <a href="http://github.com/defunkt/gist">Command Line Gist</a> who you are?</p>

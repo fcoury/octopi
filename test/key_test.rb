@@ -24,7 +24,7 @@ class KeyTest < Test::Unit::TestCase
         assert_equal 2, Api.me.keys.size
         @key.remove
         # Just trust me on this one
-        FakeWeb.register_uri(:get, "https://#{yaml_api}/user/keys", :response => stub_file(File.join("users", "key-removed")))
+        FakeWeb.register_uri(:get, "https://#{yaml_api}/user/keys" + auth_query, :response => stub_file(File.join("users", "key-removed")))
         assert_equal 1, Api.me.keys.size
       end
     end
