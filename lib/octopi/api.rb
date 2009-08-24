@@ -16,6 +16,10 @@ module Octopi
     def read_only?
       true
     end
+    
+    def auth_parameters
+      { }
+    end
   end
   
   class AuthApi < Api
@@ -25,6 +29,10 @@ module Octopi
     
     def read_only?
       false
+    end
+    
+    def auth_parameters
+      { :login => Api.me.login, :token => Api.me.token }
     end
   end
   
@@ -86,14 +94,16 @@ module Octopi
       #still can't figure out on what format values are expected
       post("#{resource_path}", { :query => data })
     end
+  
     
-    def find(path, result_key, resource_id, klass=nil, cache=true)
+    def find(path, result_key, resource_id, klass=nil, cache=true)      
       result = get(path, { :id => resource_id, :cache => cache }, klass) 
       result
     end
     
     
     def find_all(path, result_key, query, klass=nil, cache=true)
+      { :query => query, :id => query, :cache => cache }
       result = get(path, { :query => query, :id => query, :cache => cache }, klass)
       result[result_key]
     end
@@ -105,9 +115,8 @@ module Octopi
     def get(path, params = {}, klass=nil, format = :yaml)
       @@retries = 0
       begin
-        trace "GET [#{format}]", "/#{format}#{path}", params
-        submit(path, params, klass, format) do |path, params, format|
-          self.class.get "/#{format}#{path}", :format => format
+        submit(path, params, klass, format) do |path, params, format, query|
+          self.class.get "/#{format}#{path}", { :format => format, :query => query }
         end
       rescue RetryableAPIError => e
         if @@retries < MAX_RETRIES 
@@ -126,8 +135,8 @@ module Octopi
       @@retries = 0
       begin
         trace "POST", "/#{format}#{path}", params
-        submit(path, params, klass, format) do |path, params, format|
-          resp = self.class.post "/#{format}#{path}", { :body => params, :format => format }
+        submit(path, params, klass, format) do |path, params, format, query|
+          resp = self.class.post "/#{format}#{path}", { :body => params, :format => format, :query => query }
           resp
         end
       rescue RetryableAPIError => e
@@ -145,6 +154,8 @@ module Octopi
 
     private
     def submit(path, params = {}, klass=nil, format = :yaml, &block)
+      # Merge in the parameters required to do authorized stuff.
+      params = params.merge(auth_parameters)
       # Ergh. Ugly way to do this. Find a better one!
       cache = params.delete(:cache) 
       cache = true if cache.nil?
@@ -154,36 +165,24 @@ module Octopi
           path = path.gsub(":#{k.to_s}", v)
         end
       end
-      query = login ? { :login => login, :token => token } : {}
-      query.merge!(params)
-      # Left here for debugging purposes. Handy sometimes.
-      # puts "#{self.class.base_uri}/yaml/#{path}"
+      # Work out query parameters
+      query = []
+      params.each { |k, v| query << "#{k}=#{v}" }
       begin
-        $requests ||= 0 
         key = "#{Api.api.class.to_s}:#{path}"
         resp = if cache
           APICache.get(key, :cache => 61) do
-            $requests += 1
-            yield(path, query.merge(params), format)
+            yield(path, params, format, query)
           end
         else
-          $requests += 1
-          yield(path, query.merge(params), format)
+          yield(path, params, format, query)
         end
       rescue Net::HTTPBadResponse
         raise RetryableAPIError
-      end
-      
-      if @trace_level == "curl"
-        query_trace = []
-        query.each_pair { |k,v| query_trace << "-F '#{k}=#{v}'" }
-        puts "===== [curl version]"
-        puts "curl #{query_trace.join(" ")} #{self.class.base_uri}/#{format}#{path}"
-        puts "===================="
-      end
-      
+      end     
       
       raise RetryableAPIError, resp.code.to_i if RETRYABLE_STATUS.include? resp.code.to_i
+      # puts resp.code.inspect
       raise NotFound, klass || self.class if resp.code.to_i == 404
       raise APIError, 
         "GitHub returned status #{resp.code}" unless resp.code.to_i == 200

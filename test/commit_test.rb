@@ -30,6 +30,7 @@ class CommitTest < Test::Unit::TestCase
         assert_equal 30, commits.size
       end
       
+      # Tests issue #28
       should "be able to find commits in a private repository" do
         auth do
           commits = Commit.find_all(:user => "fcoury", :repository => "rboard")

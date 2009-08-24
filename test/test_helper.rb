@@ -44,6 +44,7 @@ def yaml_api
 end
 
 def fake_everything
+  FakeWeb.clean_registry
   # helper variables to make things shorter.
   sha = "f6609209c3ac0badd004512d318bfaa508ea10ae"
   fake_sha = "ea3cd978650417470535f3a4725b6b5042a6ab59"

@@ -48,6 +48,7 @@ module Octopi
       end
       begin
         User.find(options[:login])
+        # If the user cannot see themselves then they are not logged in, tell them so
       rescue Octopi::NotFound
         raise Octopi::InvalidLogin
       end

@@ -39,23 +39,20 @@ class AuthenticatedTest < Test::Unit::TestCase
   end
   
   context "keys" do
-   should "not be able to see keys if not authenticated" do
-     exception = assert_raise AuthenticationRequired do
-       Api.me.keys
-     end
-
-     assert_equal "To view keys, you must be authenticated", exception.message
-   end
-
-   should "have some keys" do
-     auth do
-       keys = Api.me.keys
-       assert keys.is_a?(KeySet)
-       assert_equal 2, keys.size
-     end
-   end
+    should "not be able to see keys if not authenticated" do
+      exception = assert_raise AuthenticationRequired do
+        Api.me.keys
+      end
+   
+      assert_equal "To view keys, you must be authenticated", exception.message
+    end
+   
+    should "have some keys" do
+      auth do
+        keys = Api.me.keys
+        assert keys.is_a?(KeySet)
+        assert_equal 2, keys.size
+      end
+    end
   end
-  
-  
-
 end
