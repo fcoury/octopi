@@ -1,7 +1,7 @@
 require File.join(File.dirname(__FILE__), "resource")
 module Octopi
   class Blob < Base
-    attr_accessor :text
+    attr_accessor :text, :data, :name, :sha, :size, :mode, :mime_type
     include Resource
     set_resource_name "blob"
 
