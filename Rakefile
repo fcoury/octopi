@@ -11,9 +11,17 @@ begin
     gem.homepage = "http://github.com/fcoury/octopi"
     gem.authors = ["Felipe Coury"]
     gem.rubyforge_project = "octopi"
+    gem.add_dependency('nokogiri', '>= 1.3.1')
+    gem.add_dependency('httparty', '>= 0.4.5')
+    gem.files.exclude 'test/**/*'
+    gem.files.exclude 'test*'
+    gem.files.exclude 'doc/**/*'
+    gem.files.exclude 'examples/**/*'
+    
 
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
+  Jeweler::GemcutterTasks.new
 rescue LoadError
   puts "Jeweler not available. Install it with: sudo gem install technicalpickles-jeweler -s http://gems.github.com"
 end
