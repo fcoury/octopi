@@ -72,6 +72,7 @@ def fake_everything
         "repos/show/fcoury/octopi" => repos("master"),
         "repos/show/fcoury/octopi/branches" => repos("branches"),
         "repos/show/fcoury/octopi/tags" => repos("tags"),
+        "repos/watched/fcoury" => File.join("users", "watched-repos"),
         
         "tree/show/fcoury/octopi/#{sha}" => File.join("tree", "fcoury", "octopi", sha),
         

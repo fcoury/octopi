@@ -62,6 +62,14 @@ module Octopi
       Repository.create(self, name, options)
     end
     
+    def watching
+      Api.api.get("/repos/watched/#{login}")["repositories"].inject do |repositories, repo|
+        Repository.new(repo)
+      end
+      
+      p repositories
+    end
+    
 
     # Gets a list of followers.
     # Returns an array of logins.

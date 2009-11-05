@@ -153,6 +153,11 @@ module Octopi
     end
 
     private
+    
+    def method_missing(method, *args)
+      api.send(method, *args)
+    end
+    
     def submit(path, params = {}, klass=nil, format = :yaml, &block)
       # Ergh. Ugly way to do this. Find a better one!
       cache = params.delete(:cache) 

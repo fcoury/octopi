@@ -37,7 +37,7 @@ module Octopi
     #
     def tags
       Tag.all(:user => self.owner, :repo => self)
-    end  
+    end 
     
     
     # Returns all the comments for a Repository
