@@ -28,6 +28,10 @@ def repos(*args)
   File.join("repos", "fcoury", "octopi", args)
 end
 
+def users(*args)
+  File.join("users", args)
+end
+
 def auth(&block)
   authenticated_with(:login => "fcoury", :token => "8f700e0d7747826f3e56ee13651414bd") do
     yield
@@ -72,11 +76,11 @@ def fake_everything
         "repos/show/fcoury/octopi" => repos("master"),
         "repos/show/fcoury/octopi/branches" => repos("branches"),
         "repos/show/fcoury/octopi/tags" => repos("tags"),
-        "repos/watched/fcoury" => File.join("users", "watched-repos"),
+        "repos/watched/radar" => File.join("users", "watched-repos"),
         
         "tree/show/fcoury/octopi/#{sha}" => File.join("tree", "fcoury", "octopi", sha),
         
-        "user/show/fcoury" => File.join("users", "fcoury"),
+        "user/show/fcoury" => users("fcoury"),
         
         "user/show/fcoury/followers" => File.join("users", "followers"),
         "user/show/fcoury/following" => File.join("users", "following"),
@@ -84,6 +88,62 @@ def fake_everything
         
         
           }
+          
+        # I follow the following people:
+        ["Caged",
+          "FooBarWidget",
+          "aslakhellesoy",
+          "augustl",
+          "benaskins",
+          "benhoskings",
+          "bjeanes",
+          "cldwalker",
+          "dchelimsky",
+          "defunkt",
+          "diy",
+          "documentcloud",
+          "drnic",
+          "eladmeidar",
+          "entp",
+          "fcoury",
+          "giraffesoft",
+          "hashrocket",
+          "hcatlin",
+          "jamis",
+          "jnicklas",
+          "jnunemaker",
+          "kballard",
+          "knewter",
+          "lachie",
+          "lachlanhardy",
+          "lenary",
+          "lifo",
+          "maccman",
+          "markgandolfo",
+          "mbleigh",
+          "mhodgson",
+          "mocra",
+          "mojombo",
+          "newbamboo",
+          "notahat",
+          "opscode",
+          "pvande",
+          "rack",
+          "radar",
+          "rails",
+          "railscampau",
+          "redinger",
+          "shuber",
+          "softprops",
+          "svenfuchs",
+          "technoweenie",
+          "thoughtbot",
+          "tobi",
+          "webbynode",
+          "wvanbergen",
+          "wycats"].each do |name|
+          fakes["user/show/#{name}"] = users(name);
+        end
         
   fakes.each do |key, value|
     FakeWeb.register_uri(:get, "http://#{yaml_api}/" + key, :response => stub_file(value))

@@ -1,4978 +1,1668 @@
 HTTP/1.1 200 OK
 Server: nginx/0.7.61
-Date: Thu, 05 Nov 2009 20:51:13 GMT
+Date: Thu, 05 Nov 2009 21:04:36 GMT
 Content-Type: application/x-yaml; charset=utf-8
 Connection: keep-alive
 Status: 200 OK
-ETag: "d80973af149e80dd4ed61e0cd1739072"
-X-Runtime: 2065ms
-Content-Length: 139501
+ETag: "4a7b5b0089e95bcddd2b5cd0e6f84f8f"
+X-Runtime: 453ms
+Content-Length: 44252
 Set-Cookie: _github_ses=BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--884981fc5aa85daf318eeff084d98e2cff92578f; path=/; expires=Wed, 01 Jan 2020 08:00:00 GMT; HttpOnly
 Cache-Control: private, max-age=0, must-revalidate
 
 --- 
 repositories: 
-- :description: Grit gives you object oriented read/write access to Git repositories via Ruby.
-  :forks: 74
-  :url: http://github.com/mojombo/grit
-  :homepage: http://grit.rubyforge.org/
+- :description: "Merb Core: All you need. None you don't."
+  :url: http://github.com/wycats/merb-core
+  :homepage: http://www.merbivore.com
   :fork: false
+  :forks: 58
   :private: false
-  :name: grit
-  :owner: mojombo
-  :open_issues: 6
-  :watchers: 584
-- :description: ""
-  :forks: 32
-  :url: http://github.com/defunkt/exception_logger
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: exception_logger
-  :owner: defunkt
+  :name: merb-core
+  :owner: wycats
   :open_issues: 0
-  :watchers: 218
-- :description: include Enumerable
-  :forks: 3
-  :url: http://github.com/defunkt/ambition
-  :homepage: http://defunkt.github.com/ambition
-  :fork: false
-  :private: false
-  :name: ambition
-  :owner: defunkt
-  :open_issues: 0
-  :watchers: 160
+  :watchers: 604
 - :description: Generates common user authentication code for Rails/Merb, with a full test/unit and rspec suite and optional Acts as State Machine support built-in.
-  :forks: 222
   :url: http://github.com/technoweenie/restful-authentication
   :homepage: http://weblog.techno-weenie.net
   :fork: false
   :pledgie: 731
+  :forks: 222
   :private: false
   :name: restful-authentication
   :owner: technoweenie
   :open_issues: 5
   :watchers: 2153
-- :description: A very fast & simple Ruby web server
-  :forks: 31
-  :url: http://github.com/macournoyer/thin
-  :homepage: http://code.macournoyer.com/thin/
+- :description: Rails RESTful controller abstraction plugin.
+  :url: http://github.com/giraffesoft/resource_controller
+  :homepage: http://jamesgolick.com/resource_controller
   :fork: false
-  :pledgie: 5964
+  :pledgie: 1078
+  :forks: 63
   :private: false
-  :name: thin
-  :owner: macournoyer
-  :open_issues: 4
-  :watchers: 359
-- :description: A quick & dirty git-powered Sinatra wiki
-  :forks: 39
-  :url: http://github.com/sr/git-wiki
-  :homepage: http://atonie.org/2008/02/git-wiki
+  :name: resource_controller
+  :owner: giraffesoft
+  :open_issues: 5
+  :watchers: 496
+- :description: Chronic is a pure Ruby natural language date parser.
+  :url: http://github.com/mojombo/chronic
+  :homepage: http://chronic.rubyforge.org
   :fork: false
-  :private: false
-  :name: git-wiki
-  :owner: sr
-  :open_issues: 0
-  :watchers: 287
-- :description: JSON Web App Framework
-  :forks: 4
-  :url: http://github.com/mtodd/halcyon
-  :homepage: http://halcyon.rubyforge.org/
-  :fork: false
-  :pledgie: 916
-  :private: false
-  :name: halcyon
-  :owner: mtodd
-  :open_issues: 0
-  :watchers: 69
-- :description: Facebook-style lightbox, built in jQuery
-  :forks: 96
-  :url: http://github.com/defunkt/facebox
-  :homepage: http://famspam.com/facebox/
-  :fork: false
-  :pledgie: 786
-  :private: false
-  :name: facebox
-  :owner: defunkt
-  :open_issues: 1
-  :watchers: 555
-- :description: Adds a semblance of performance to Ruby's core Date class ...
-  :forks: 2
-  :url: http://github.com/rtomayko/date-performance
-  :homepage: http://tomayko.com/src/date-performance/
-  :fork: false
-  :private: false
-  :name: date-performance
-  :owner: rtomayko
-  :open_issues: 1
-  :watchers: 51
-- :description: OneBody is free, open-source, web-based social networking and online directory software for churches.
-  :forks: 23
-  :url: http://github.com/seven1m/onebody
-  :homepage: http://beonebody.com
-  :fork: false
-  :private: false
-  :name: onebody
-  :owner: seven1m
-  :open_issues: 4
-  :watchers: 96
-- :description: Most awesome pagination solution for Ruby
-  :forks: 149
-  :url: http://github.com/mislav/will_paginate
-  :homepage: http://github.com/mislav/will_paginate/wikis
-  :fork: false
-  :pledgie: 2974
-  :private: false
-  :name: will_paginate
-  :owner: mislav
-  :open_issues: 11
-  :watchers: 2007
-- :description: Sprinkle is a software provisioning tool you can use to build remote servers with. eg. to install a Rails, or Sinatra stack on a brand new slice directly after its been created
   :forks: 47
-  :url: http://github.com/crafterm/sprinkle
-  :homepage: http://github.com/crafterm/sprinkle
-  :fork: false
-  :pledgie: 3148
   :private: false
-  :name: sprinkle
-  :owner: crafterm
+  :name: chronic
+  :owner: mojombo
+  :open_issues: 2
+  :watchers: 231
+- :description: Ruby on Rails TextMate bundle [Learn it with PeepCode - http://peepcode.com/products/textmate-for-rails-2]
+  :url: http://github.com/drnic/ruby-on-rails-tmbundle
+  :homepage: http://groups.google.com/group/rails-textmate
+  :fork: false
+  :pledgie: 749
+  :forks: 65
+  :private: false
+  :name: ruby-on-rails-tmbundle
+  :owner: drnic
+  :open_issues: 1
+  :watchers: 770
+- :description: "Database backed asynchronous priority queue -- Extracted from Shopify "
+  :url: http://github.com/tobi/delayed_job
+  :homepage: http://tobi.github.com/delayed_job
+  :fork: false
+  :forks: 113
+  :private: false
+  :name: delayed_job
+  :owner: tobi
+  :open_issues: 13
+  :watchers: 1060
+- :description: Ruby TextMate bundle
+  :url: http://github.com/drnic/ruby-tmbundle
+  :homepage: http://drnicwilliams.com
+  :fork: false
+  :forks: 20
+  :private: false
+  :name: ruby-tmbundle
+  :owner: drnic
   :open_issues: 0
-  :watchers: 519
-- :description: Annotate ActiveRecord models as a gem
-  :forks: 32
-  :url: http://github.com/ctran/annotate_models
-  :homepage: http://agilewebdevelopment.com/plugins/annotate_models
+  :watchers: 89
+- :description: Behaviour Driven Development framework for Ruby
+  :url: http://github.com/dchelimsky/rspec
+  :homepage: http://rspec.info
   :fork: false
+  :pledgie: 1093
+  :forks: 128
   :private: false
-  :name: annotate_models
-  :owner: ctran
-  :open_issues: 6
-  :watchers: 277
+  :name: rspec
+  :owner: dchelimsky
+  :open_issues: 0
+  :watchers: 1300
 - :description: A mirror of the mephisto code-base
-  :forks: 38
-  :url: http://github.com/halorgium/mephisto
+  :url: http://github.com/technoweenie/mephisto
   :homepage: http://mephistoblog.com/
-  :fork: false
+  :fork: true
+  :pledgie: 742
+  :forks: 49
   :private: false
   :name: mephisto
-  :owner: halorgium
+  :owner: technoweenie
   :open_issues: 0
-  :watchers: 262
-- :description: Warbler chirpily constructs .war files of your Rails applications.
-  :forks: 16
-  :url: http://github.com/nicksieger/warbler
-  :homepage: http://warbler.kenai.com/pages/Home
-  :fork: false
-  :private: false
-  :name: warbler
-  :owner: nicksieger
-  :open_issues: 0
-  :watchers: 87
-- :description: Kick it!
-  :forks: 26
-  :url: http://github.com/ariejan/baseapp
-  :homepage: http://baseapp.org
-  :fork: false
-  :pledgie: 1029
-  :private: false
-  :name: baseapp
-  :owner: ariejan
-  :open_issues: 1
-  :watchers: 188
-- :description: JavaScript and CSS Asset Compression for Production Rails Apps
-  :forks: 47
-  :url: http://github.com/sbecker/asset_packager
-  :homepage: http://synthesis.sbecker.net/pages/asset_packager
-  :fork: false
-  :private: false
-  :name: asset_packager
-  :owner: sbecker
-  :open_issues: 5
-  :watchers: 404
-- :description: Erlectricity exposes Ruby to Erlang and vice versa.
-  :forks: 10
-  :url: http://github.com/mojombo/erlectricity
+  :watchers: 267
+- :description: ActiveRecord plugin allowing you to hide and restore records without actually deleting them.
+  :url: http://github.com/technoweenie/acts_as_paranoid
   :homepage: ""
   :fork: false
+  :forks: 38
   :private: false
-  :name: erlectricity
-  :owner: mojombo
-  :open_issues: 0
-  :watchers: 182
-- :description: Spree is a complete open source e-commerce solution for Ruby on Rails.
-  :forks: 224
-  :url: http://github.com/railsdog/spree
-  :homepage: http://spreecommerce.com
-  :fork: false
-  :private: false
-  :name: spree
-  :owner: railsdog
-  :open_issues: 0
-  :watchers: 829
+  :name: acts_as_paranoid
+  :owner: technoweenie
+  :open_issues: 5
+  :watchers: 281
 - :description: A fully featured forum system compatible with Rails 2.3
-  :forks: 31
   :url: http://github.com/radar/rboard
   :homepage: http://forum.frozenplague.net
   :fork: false
   :pledgie: 1801
+  :forks: 31
   :private: false
   :name: rboard
   :owner: radar
   :open_issues: 4
   :watchers: 250
-- :description: Gruff graphing library for Ruby
-  :forks: 32
-  :url: http://github.com/topfunky/gruff
-  :homepage: http://gruff.rubyforge.org
+- :description: Natural-looking Finder Queries for ActiveRecord
+  :url: http://github.com/thoughtbot/squirrel
+  :homepage: http://www.thoughtbot.com/projects/squirrel
   :fork: false
+  :forks: 19
   :private: false
-  :name: gruff
-  :owner: topfunky
+  :name: squirrel
+  :owner: thoughtbot
   :open_issues: 2
-  :watchers: 168
-- :description: An awesome Ruby blog engine.
-  :forks: 4
-  :url: http://github.com/rgrove/thoth
-  :homepage: http://thothblog.org/
-  :fork: false
-  :private: false
-  :name: thoth
-  :owner: rgrove
-  :open_issues: 1
-  :watchers: 63
-- :description: An Open Web JSON Appliance
-  :forks: 11
-  :url: http://github.com/jcrosby/cloudkit
-  :homepage: http://getcloudkit.com
-  :fork: false
-  :private: false
-  :name: cloudkit
-  :owner: jcrosby
-  :open_issues: 0
-  :watchers: 265
-- :description: Rails Sitemap Plugin / Site Map Plugin for Rails. A beautiful rails sitemap plugin that talks to Google, Yahoo and MSN when updated. Sitemap features clean handcrafted XHTML, XML with XSLT and custom finder options for your named routes.
-  :forks: 7
-  :url: http://github.com/queso/sitemap
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: sitemap
-  :owner: queso
-  :open_issues: 0
-  :watchers: 95
-- :description: Adds basic social networking capabilities to your existing application, including users, blogs, photos, clippings, favorites, and more.
-  :forks: 102
-  :url: http://github.com/bborn/communityengine
-  :homepage: http://www.communityengine.org
-  :fork: false
-  :private: false
-  :name: communityengine
-  :owner: bborn
-  :open_issues: 0
-  :watchers: 504
-- :description: Johnson wraps JavaScript in a loving Ruby embrace.
-  :forks: 17
-  :url: http://github.com/jbarnette/johnson
-  :homepage: http://github.com/jbarnette/johnson/wikis
-  :fork: false
-  :private: false
-  :name: johnson
-  :owner: jbarnette
-  :open_issues: 5
-  :watchers: 299
-- :description: Advanced seed data handling for Rails, combining the best practices of several methods together.
-  :forks: 12
-  :url: http://github.com/mbleigh/seed-fu
-  :homepage: http://mbleigh.lighthouseapp.com/projects/10223-seed-fu
-  :fork: false
-  :private: false
-  :name: seed-fu
-  :owner: mbleigh
-  :open_issues: 6
-  :watchers: 172
-- :description: Open source dynamo clone written in Erlang.
-  :forks: 17
-  :url: http://github.com/cliffmoon/dynomite
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: dynomite
-  :owner: cliffmoon
-  :open_issues: 0
-  :watchers: 288
-- :description: easily do background work in rails, without commiting to a particular runner. comes with starling, bj and spawn runners.
-  :forks: 56
-  :url: http://github.com/purzelrakete/workling
-  :homepage: http://playtype.net/past/2008/2/6/starling_and_asynchrous_tasks_in_ruby_on_rails/
-  :fork: false
-  :private: false
-  :name: workling
-  :owner: purzelrakete
-  :open_issues: 4
-  :watchers: 449
-- :description: Fast, Nimble PDF Writer for Ruby
-  :forks: 81
-  :url: http://github.com/sandal/prawn
-  :homepage: http://prawn.majesticseacreature.com
-  :fork: false
-  :private: false
-  :name: prawn
-  :owner: sandal
-  :open_issues: 16
-  :watchers: 657
-- :description: A Rails form builder plugin with semantically rich and accessible markup.  It's deliciously close to 1.0!
-  :forks: 86
-  :url: http://github.com/justinfrench/formtastic
-  :homepage: ""
-  :fork: false
-  :pledgie: 2178
-  :private: false
-  :name: formtastic
-  :owner: justinfrench
-  :open_issues: 25
-  :watchers: 1551
-- :description: A programmer's editor for Gnome.
-  :forks: 22
-  :url: http://github.com/danlucraft/redcar
-  :homepage: http://redcareditor.com
-  :fork: false
-  :private: false
-  :name: redcar
-  :owner: danlucraft
-  :open_issues: 0
-  :watchers: 362
-- :description: A plugin for creating psuedo-scheduled jobs in Ruby on Rails.
-  :forks: 13
-  :url: http://github.com/dougal/daemon_generator
-  :homepage: http://douglasfshearer.com/blog/cron-jobs-in-ruby-on-rails
-  :fork: false
-  :private: false
-  :name: daemon_generator
-  :owner: dougal
-  :open_issues: 0
-  :watchers: 78
-- :description: Settings is a plugin that makes managing a table of global key, value pairs easy. Think of it like a global Hash stored in your database, that uses simple ActiveRecord like methods for manipulation. Keep track of any global setting that you don't want to hard code into your rails app. You can store any kind of object. Strings, numbers, arrays, or any serializable object.
-  :forks: 9
-  :url: http://github.com/Squeegy/rails-settings
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: rails-settings
-  :owner: Squeegy
-  :open_issues: 0
-  :watchers: 79
+  :watchers: 214
 - :description: BDD that talks to domain experts first and code second
-  :forks: 215
   :url: http://github.com/aslakhellesoy/cucumber
   :homepage: http://cukes.info/
   :fork: false
+  :forks: 215
   :private: false
   :name: cucumber
   :owner: aslakhellesoy
   :open_issues: 0
   :watchers: 1599
-- :description: "FriendlyId is the \xE2\x80\x9CSwiss Army bulldozer\xE2\x80\x9D of slugging and permalink plugins for ActiveRecord. It allows you to create pretty URL\xE2\x80\x99s and work with human-friendly strings as if they were numeric ids for ActiveRecord models."
-  :forks: 36
-  :url: http://github.com/norman/friendly_id
-  :homepage: http://friendly-id.rubyforge.org
-  :fork: false
-  :private: false
-  :name: friendly_id
-  :owner: norman
-  :open_issues: 5
-  :watchers: 565
-- :description: Choice is a simple little gem for easily defining and parsing command line options with a friendly DSL.
-  :forks: 5
-  :url: http://github.com/defunkt/choice
+- :description: First attempt at a rails plugin. A form captcha with a textual question.
+  :url: http://github.com/softprops/captcha_with_question
   :homepage: ""
   :fork: false
-  :private: false
-  :name: choice
-  :owner: defunkt
-  :open_issues: 2
-  :watchers: 49
-- :description: Ambitious ActiveRecord adapter, for Ambition.
-  :forks: 2
-  :url: http://github.com/defunkt/ambitious_activerecord
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: ambitious_activerecord
-  :owner: defunkt
-  :open_issues: 1
-  :watchers: 17
-- :description: Sexy Charts using Google API & Ruby
-  :forks: 27
-  :url: http://github.com/mattetti/googlecharts
-  :homepage: http://googlecharts.rubyforge.org/
-  :fork: false
-  :private: false
-  :name: googlecharts
-  :owner: mattetti
-  :open_issues: 9
-  :watchers: 278
-- :description: Bringing together the different tableless model implementations into a single gem/plugin
-  :forks: 3
-  :url: http://github.com/kennethkalmer/activerecord-tableless-models
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: activerecord-tableless-models
-  :owner: kennethkalmer
-  :open_issues: 0
-  :watchers: 27
-- :description: More than just a new RDoc template
-  :forks: 16
-  :url: http://github.com/mislav/hanna
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: hanna
-  :owner: mislav
-  :open_issues: 10
-  :watchers: 216
-- :description: Flot graphs on Rails
-  :forks: 5
-  :url: http://github.com/joshuamiller/flotilla
-  :homepage: http://flotilla.rubyforge.org/
-  :fork: false
-  :private: false
-  :name: flotilla
-  :owner: joshuamiller
-  :open_issues: 0
-  :watchers: 31
-- :description: Command-line package manager for textmate
-  :forks: 7
-  :url: http://github.com/wycats/textmate
-  :homepage: http://www.yehudakatz.com
-  :fork: false
-  :private: false
-  :name: textmate
-  :owner: wycats
-  :open_issues: 4
-  :watchers: 132
-- :description: "Rails Plugin: Site-wide notifications -- inspired by Railscasts (work in progress)"
   :forks: 0
-  :url: http://github.com/arya/site_notifications
-  :homepage: ""
-  :fork: false
   :private: false
-  :name: site_notifications
-  :owner: arya
-  :open_issues: 0
-  :watchers: 8
-- :description: railscasts.com in open source goodness!
-  :forks: 18
-  :url: http://github.com/ryanb/railscasts
-  :homepage: http://railscasts.com
-  :fork: false
-  :private: false
-  :name: railscasts
-  :owner: ryanb
-  :open_issues: 4
-  :watchers: 167
-- :description: Various bits and helpers for Prototype and scriptaculous, that might prove useful or not. :)
-  :forks: 6
-  :url: http://github.com/madrobby/prototype_helpers
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: prototype_helpers
-  :owner: madrobby
-  :open_issues: 0
-  :watchers: 96
-- :description: Ruby and Rails core extensions used by GitHub.
-  :forks: 7
-  :url: http://github.com/github/hubahuba
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: hubahuba
-  :owner: github
-  :open_issues: 0
-  :watchers: 41
-- :description: Every Rails page has footnotes that link give request information and link back to your source via TextMate [extracted from Rails TextMate bundle project]
-  :forks: 9
-  :url: http://github.com/drnic/rails-footnotes
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: rails-footnotes
-  :owner: drnic
-  :open_issues: 0
-  :watchers: 219
-- :description: RR (Double Ruby) is a test double framework that features a rich selection of double techniques and a terse syntax.
-  :forks: 18
-  :url: http://github.com/btakita/rr
-  :homepage: http://rubyforge.org/projects/double-ruby
-  :fork: false
-  :private: false
-  :name: rr
-  :owner: btakita
-  :open_issues: 11
-  :watchers: 302
-- :description: A very, very simple hook server for Github.  Supports different methods of notification via simple plugins.  Currently supports Twitter and Campfire.
-  :forks: 2
-  :url: http://github.com/cliffrowley/github_hook_server
-  :homepage: http://eleventyten.com/projects/github_hook_server
-  :fork: false
-  :private: false
-  :name: github_hook_server
-  :owner: cliffrowley
-  :open_issues: 0
-  :watchers: 4
-- :description: Simple tool for creating source-code intensive presentations and courses
-  :forks: 9
-  :url: http://github.com/pragdave/codex
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: codex
-  :owner: pragdave
-  :open_issues: 0
-  :watchers: 70
-- :description: Makes Amazon S3 backups redonkulous. Redonkulously easy, that is.
-  :forks: 20
-  :url: http://github.com/gravelpup/backup_fu
-  :homepage: http://shanti.railsblog.com/backup-fu-makes-amazon-s3-backups-redonkulous
-  :fork: false
-  :private: false
-  :name: backup_fu
-  :owner: gravelpup
-  :open_issues: 2
-  :watchers: 104
-- :description: ""
-  :forks: 110
-  :url: http://github.com/activescaffold/active_scaffold
-  :homepage: http://activescaffold.com
-  :fork: false
-  :private: false
-  :name: active_scaffold
-  :owner: activescaffold
-  :open_issues: 13
-  :watchers: 518
-- :description: My junk drawer.  Various things I've played with in various states.
-  :forks: 1
-  :url: http://github.com/dustin/snippets
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: snippets
-  :owner: dustin
-  :open_issues: 0
-  :watchers: 15
-- :description: Sample applications for the SproutCore JavaScript Framework
-  :forks: 18
-  :url: http://github.com/sproutit/sproutcore-samples
-  :homepage: http://www.sproutcore.com
-  :fork: false
-  :private: false
-  :name: sproutcore-samples
-  :owner: sproutit
-  :open_issues: 0
-  :watchers: 97
-- :description: Plugin for Rails to enhance the deployment process to RailsBoxcar.com instances
-  :forks: 2
-  :url: http://github.com/planetargon/boxcar-conductor
-  :homepage: http://railsboxcar.com/
-  :fork: false
-  :private: false
-  :name: boxcar-conductor
-  :owner: planetargon
-  :open_issues: 0
-  :watchers: 14
-- :description: w2tags is the way to tags, a short cut / macros. when it do it use some patern  define in files (HOT file) to produce tags from minimal code to become full fledge tags
-  :forks: 1
-  :url: http://github.com/wharsojo/w2tags
-  :homepage: http://wharsojo.wordpress.com/
-  :fork: false
-  :pledgie: 4443
-  :private: false
-  :name: w2tags
-  :owner: wharsojo
-  :open_issues: 0
-  :watchers: 5
-- :description: Website for bostonrb.org
-  :forks: 22
-  :url: http://github.com/bostonrb/bostonrb
-  :homepage: http://bostonrb.org
-  :fork: false
-  :private: false
-  :name: bostonrb
-  :owner: bostonrb
-  :open_issues: 28
-  :watchers: 80
-- :description: Create fake attributes which are stored in serialized hash column
-  :forks: 0
-  :url: http://github.com/animoto/activerecord-attribute-fakers
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: activerecord-attribute-fakers
-  :owner: animoto
-  :open_issues: 0
-  :watchers: 15
-- :description: Exception Notifier Plugin for Rails
-  :forks: 66
-  :url: http://github.com/rails/exception_notification
-  :homepage: http://rubyonrails.org
-  :fork: false
-  :private: false
-  :name: exception_notification
-  :owner: rails
-  :open_issues: 0
-  :watchers: 520
-- :description: Token generator plugin
-  :forks: 2
-  :url: http://github.com/rails/token_generator
-  :homepage: http://rubyonrails.org
-  :fork: false
-  :private: false
-  :name: token_generator
-  :owner: rails
-  :open_issues: 0
-  :watchers: 17
-- :description: Discount (For Ruby) Implementation of John Gruber's Markdown
-  :forks: 8
-  :url: http://github.com/rtomayko/rdiscount
-  :homepage: http://github.com/rtomayko/rdiscount/
-  :fork: false
-  :private: false
-  :name: rdiscount
-  :owner: rtomayko
-  :open_issues: 6
-  :watchers: 209
-- :description: Serve is a rapid prototyping framework for Rails applications. It is designed to compliment Rails development and enforce a strict separation of concerns between designer and developer. Using Serve with Rails allows the designer to happily work in his own space creating an HTML prototype of the application, while the developer works on the Rails application and copies over HTML from the prototype as needed. This allows the designer to focus on presentation and flow while the developer can focus on the implementation.
-  :forks: 2
-  :url: http://github.com/jlong/serve
-  :homepage: http://rubyforge.org/projects/serve/
-  :fork: false
-  :private: false
-  :name: serve
-  :owner: jlong
-  :open_issues: 0
-  :watchers: 72
-- :description: A tool to simplify working with remote branches
-  :forks: 8
-  :url: http://github.com/webmat/git_remote_branch
-  :homepage: http://grb.rubyforge.org/
-  :fork: false
-  :pledgie: 2884
-  :private: false
-  :name: git_remote_branch
-  :owner: webmat
-  :open_issues: 0
-  :watchers: 172
-- :description: A capistrano/rails plugin that makes it easy to deploy/manage/scale to EC2
-  :forks: 15
-  :url: http://github.com/wr0ngway/rubber
-  :homepage: http://github.com/wr0ngway/rubber/wikis
-  :fork: false
-  :pledgie: 5164
-  :private: false
-  :name: rubber
-  :owner: wr0ngway
-  :open_issues: 0
-  :watchers: 204
-- :description: "Ruby Reports : Making your reporting life suck less, through Ruby"
-  :forks: 10
-  :url: http://github.com/ruport/ruport
-  :homepage: http://stonecode.svnrepository.com/ruport
-  :fork: false
-  :private: false
-  :name: ruport
-  :owner: ruport
-  :open_issues: 2
-  :watchers: 74
-- :description: Rake tasks to make working with Rails apps a bit easier.
-  :forks: 6
-  :url: http://github.com/napcs/lazy_developer
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: lazy_developer
-  :owner: napcs
-  :open_issues: 0
-  :watchers: 81
-- :description: A framework for creating e-books from Markdown/Textile text markup using Ruby. Using the Prince PDF generator, you'll be able to get high quality PDFs.
-  :forks: 3
-  :url: http://github.com/fnando/kitabu
-  :homepage: http://fnando.github.com/public/kitabu.html
-  :fork: false
-  :pledgie: 6462
-  :private: false
-  :name: kitabu
-  :owner: fnando
-  :open_issues: 2
-  :watchers: 86
-- :description: A simple Ruby wrapper for RRDtool backed databases.
-  :forks: 0
-  :url: http://github.com/JEG2/rrdb
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: rrdb
-  :owner: JEG2
-  :open_issues: 0
-  :watchers: 27
-- :description: SimpleDaemon is a lightweight daemon module for Ruby. Use it to add daemon functionality to your Ruby script.
-  :forks: 7
-  :url: http://github.com/bryanl/simple-daemon
-  :homepage: http://simple-daemon.rubyforge.org/
-  :fork: false
-  :private: false
-  :name: simple-daemon
-  :owner: bryanl
-  :open_issues: 0
-  :watchers: 16
-- :description: cheat sheet repository for chit
-  :forks: 1
-  :url: http://github.com/robin/chitsheet
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: chitsheet
-  :owner: robin
+  :name: captcha_with_question
+  :owner: softprops
   :open_issues: 0
   :watchers: 11
-- :description: Radiant is a no-fluff, open source content management system designed for small teams.
-  :forks: 154
-  :url: http://github.com/radiant/radiant
-  :homepage: http://radiantcms.org/
+- :description: The official Ruby Library for interacting with the Lighthouse API
+  :url: http://github.com/Caged/lighthouse-api
+  :homepage: http://lighthouseapp.com/api
   :fork: false
+  :forks: 13
   :private: false
-  :name: radiant
-  :owner: radiant
-  :open_issues: 44
-  :watchers: 772
-- :description: Adds support for creating state machines for attributes on any Ruby class
-  :forks: 23
-  :url: http://github.com/pluginaweek/state_machine
-  :homepage: http://www.pluginaweek.org
-  :fork: false
-  :private: false
-  :name: state_machine
-  :owner: pluginaweek
-  :open_issues: 2
-  :watchers: 529
-- :description: This rails plugin not only runs "EXPLAIN" before each of your select queries in development, but provides a small DIV in the rendered output of each page with the summary of query warnings that it analyzed.
-  :forks: 12
-  :url: http://github.com/dsboulder/query_reviewer
-  :homepage: http://code.google.com/p/query-reviewer/
-  :fork: false
-  :private: false
-  :name: query_reviewer
-  :owner: dsboulder
+  :name: lighthouse-api
+  :owner: Caged
   :open_issues: 0
-  :watchers: 333
-- :description: Git/Subversion browser and changeset viewer
-  :forks: 27
-  :url: http://github.com/entp/warehouse
-  :homepage: http://warehouseapp.com
+  :watchers: 64
+- :description: Mirror of validation reflection plugin
+  :url: http://github.com/redinger/validation_reflection
+  :homepage: http://rubyforge.org/projects/valirefl/
   :fork: false
+  :forks: 8
   :private: false
-  :name: warehouse
-  :owner: entp
-  :open_issues: 0
-  :watchers: 385
-- :description: General purpose copycat Facebook dialog/overlay
-  :forks: 6
-  :url: http://github.com/jaz303/boxy
-  :homepage: http://onehackoranother.com/projects/jquery/boxy
+  :name: validation_reflection
+  :owner: redinger
+  :open_issues: 1
+  :watchers: 204
+- :description: PLEASE CHECK http://github.com/lifo/docrails/wikis
+  :url: http://github.com/lifo/docrails
+  :homepage: http://weblog.rubyonrails.org/2008/5/2/help-improve-rails-documentation-on-git-branch
   :fork: false
+  :forks: 59
   :private: false
-  :name: boxy
-  :owner: jaz303
+  :name: docrails
+  :owner: lifo
+  :open_issues: 1
+  :watchers: 334
+- :description: String matching extension for Ruby (fork of svn repo)
+  :url: http://github.com/kballard/amatch
+  :homepage: http://amatch.rubyforge.org
+  :fork: false
+  :forks: 1
+  :private: false
+  :name: amatch
+  :owner: kballard
   :open_issues: 0
-  :watchers: 42
+  :watchers: 5
+- :description: ActsAsList plugin
+  :url: http://github.com/rails/acts_as_list
+  :homepage: http://rubyonrails.org
+  :fork: false
+  :forks: 28
+  :private: false
+  :name: acts_as_list
+  :owner: rails
+  :open_issues: 0
+  :watchers: 250
+- :description: This pretentious little plugin aims to make nested_set cool again
+  :url: http://github.com/jnicklas/eb_nested_set
+  :homepage: ""
+  :fork: false
+  :forks: 2
+  :private: false
+  :name: eb_nested_set
+  :owner: jnicklas
+  :open_issues: 0
+  :watchers: 12
+- :description: The Twonk List
+  :url: http://github.com/radar/twonk-list
+  :homepage: http://www.twonklist.com
+  :fork: false
+  :forks: 1
+  :private: false
+  :name: twonk-list
+  :owner: radar
+  :open_issues: 0
+  :watchers: 3
+- :description: Ruby on Rails TextMate bundle [Learn it with PeepCode - http://peepcode.com/products/textmate-for-rails-2]
+  :url: http://github.com/radar/ruby-on-rails-tmbundle
+  :homepage: http://groups.google.com/group/rubyonrails-textmate
+  :fork: true
+  :forks: 0
+  :private: false
+  :name: ruby-on-rails-tmbundle
+  :owner: radar
+  :open_issues: 0
+  :watchers: 1
 - :description: No longer maintained.
-  :forks: 10
   :url: http://github.com/augustl/live-validations
   :homepage: ""
   :fork: false
+  :forks: 10
   :private: false
   :name: live-validations
   :owner: augustl
   :open_issues: 5
   :watchers: 282
-- :description: Simple (Tiny) Pastie Clone Using Sinatra & DataMapper
-  :forks: 1
-  :url: http://github.com/zapnap/toopaste
-  :homepage: ""
+- :description: A command line tool that analyzes request logfiles (e.g. Rails, Merb, Apache) to produce a performance report.
+  :url: http://github.com/wvanbergen/request-log-analyzer
+  :homepage: http://www.railsdoctors.com
   :fork: false
+  :forks: 18
   :private: false
-  :name: toopaste
-  :owner: zapnap
-  :open_issues: 0
-  :watchers: 27
-- :description: A personal journal application written in Django. You need this.
-  :forks: 2
-  :url: http://github.com/trey/chiplog
-  :homepage: http://trey.github.com/chiplog
+  :name: request-log-analyzer
+  :owner: wvanbergen
+  :open_issues: 17
+  :watchers: 462
+- :description: ""
+  :url: http://github.com/entp/seinfeld
+  :homepage: http://oss.techno-weenie.net/discussions/seinfeld-calendar
   :fork: false
-  :pledgie: 2834
-  :private: false
-  :name: chiplog
-  :owner: trey
-  :open_issues: 36
-  :watchers: 42
-- :description: Game written in Ruby for learning Ruby and artificial intelligence.
-  :forks: 43
-  :url: http://github.com/ryanb/ruby-warrior
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: ruby-warrior
-  :owner: ryanb
-  :open_issues: 4
-  :watchers: 302
-- :description: The UberKit is a Rails plugin with a set of UI tools to ease common development.
-  :forks: 10
-  :url: http://github.com/mbleigh/uberkit
-  :homepage: http://www.actsascommunity.com/projects/uberkit
-  :fork: false
-  :private: false
-  :name: uberkit
-  :owner: mbleigh
-  :open_issues: 2
-  :watchers: 102
-- :description: A fairly full featured Pastie clone on Rails.
-  :forks: 5
-  :url: http://github.com/actsasflinn/snippy
-  :homepage: http://actsasflinn.com/articles/2008/09/03/snippy-is-a-freaking-ripoff-of-pastie
-  :fork: false
-  :private: false
-  :name: snippy
-  :owner: actsasflinn
-  :open_issues: 0
-  :watchers: 25
-- :description: "Don't mind this, go to http://github.com/integrity/integrity "
-  :forks: 58
-  :url: http://github.com/foca/integrity
-  :homepage: http://integrityapp.com
-  :fork: false
-  :private: false
-  :name: integrity
-  :owner: foca
-  :open_issues: 0
-  :watchers: 366
-- :description: TDD Examples, Labs, and References
-  :forks: 0
-  :url: http://github.com/relevance/java-tdd
-  :homepage: http://thinkrelevance.com
-  :fork: false
-  :private: false
-  :name: java-tdd
-  :owner: relevance
-  :open_issues: 0
-  :watchers: 14
-- :description: A little rails chat using Juggernaut
-  :forks: 0
-  :url: http://github.com/bcaccinolo/jugger-chat
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: jugger-chat
-  :owner: bcaccinolo
-  :open_issues: 0
-  :watchers: 10
-- :description: Paypal Website Payments Standard Extension for Spree, the open source shopping cart
-  :forks: 5
-  :url: http://github.com/Gregg/spree-pp-website-standard
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: spree-pp-website-standard
-  :owner: Gregg
-  :open_issues: 0
-  :watchers: 41
-- :description: gui version of memcached for development
-  :forks: 4
-  :url: http://github.com/andrewfromcali/mcinsight
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: mcinsight
-  :owner: andrewfromcali
-  :open_issues: 2
-  :watchers: 182
-- :description: AMQP client implementation in Ruby/EventMachine
-  :forks: 41
-  :url: http://github.com/tmm1/amqp
-  :homepage: http://groups.google.com/group/ruby-amqp
-  :fork: false
-  :private: false
-  :name: amqp
-  :owner: tmm1
-  :open_issues: 7
-  :watchers: 402
-- :description: Ruby bindings for libcurl
   :forks: 17
-  :url: http://github.com/taf2/curb
-  :homepage: http://idle-hacking.com/
-  :fork: false
   :private: false
-  :name: curb
-  :owner: taf2
-  :open_issues: 3
-  :watchers: 170
-- :description: Sinatra based irclogger.com
-  :forks: 3
-  :url: http://github.com/cschneid/irclogger
-  :homepage: http://www.irclogger.com
-  :fork: false
-  :private: false
-  :name: irclogger
-  :owner: cschneid
-  :open_issues: 1
-  :watchers: 32
-- :description: A unicode aware PDF writing library that uses the ruby bindings to various c libraries ( like cairo, pango, poppler and rsvg ) to do the heavy lifting.
-  :forks: 0
-  :url: http://github.com/methodmissing/pdf-wrapper
-  :homepage: http://rubyforge.org/projects/pdf-wrapper
-  :fork: true
-  :private: false
-  :name: pdf-wrapper
-  :owner: methodmissing
+  :name: seinfeld
+  :owner: entp
   :open_issues: 0
-  :watchers: 6
-- :description: ActiveSMS Gem fork with more gateways and email option.
-  :forks: 1
-  :url: http://github.com/nofxx/activesms
-  :homepage: http://nofxx.lighthouseapp.com/projects/20713-activesms
-  :fork: false
-  :private: false
-  :name: activesms
-  :owner: nofxx
-  :open_issues: 0
-  :watchers: 21
+  :watchers: 115
 - :description: Makes http fun! Also, makes consuming restful web services dead easy.
-  :forks: 90
   :url: http://github.com/jnunemaker/httparty
   :homepage: ""
   :fork: false
   :pledgie: 1337
+  :forks: 90
   :private: false
   :name: httparty
   :owner: jnunemaker
   :open_issues: 13
   :watchers: 625
-- :description: Framework for  JavaScript Testing (currently a Rails Plugin)
-  :forks: 39
-  :url: http://github.com/relevance/blue-ridge
-  :homepage: http://groups.google.com/group/blueridgejs
-  :fork: true
-  :private: false
-  :name: blue-ridge
-  :owner: relevance
-  :open_issues: 8
-  :watchers: 493
-- :description: Simple library which makes it easy to add caching to all your external API calls.
-  :forks: 0
-  :url: http://github.com/methodmissing/api_cache
-  :homepage: ""
-  :fork: true
-  :private: false
-  :name: api_cache
-  :owner: methodmissing
-  :open_issues: 0
-  :watchers: 6
-- :description: SproutedNote is a wiki like notepad developed with SproutCore
-  :forks: 1
-  :url: http://github.com/maloninc/sproutednote
-  :homepage: http://www.maloninc.com/cgi-bin/fswiki/wiki.cgi?page=SproutedNote
+- :description: Repository for collecting Locale data for Ruby on Rails I18n as well as other interesting, Rails related I18n stuff
+  :url: http://github.com/svenfuchs/rails-i18n
+  :homepage: http://rails-i18n.org
   :fork: false
+  :forks: 99
   :private: false
-  :name: sproutednote
-  :owner: maloninc
-  :open_issues: 0
-  :watchers: 8
-- :description: A customized bash environment suitable for git work.
-  :forks: 7
-  :url: http://github.com/rtomayko/git-sh
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: git-sh
-  :owner: rtomayko
-  :open_issues: 0
-  :watchers: 216
-- :description: Radically RESTful Rails.
-  :forks: 2
-  :url: http://github.com/benhoskings/hammock
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: hammock
-  :owner: benhoskings
-  :open_issues: 24
-  :watchers: 25
-- :description: A collection of sample programs for the Prawn PDF generation library
-  :forks: 3
-  :url: http://github.com/sandal/prawn-gallery
-  :homepage: http://prawn.majesticseacreature.com
-  :fork: false
-  :private: false
-  :name: prawn-gallery
-  :owner: sandal
-  :open_issues: 0
-  :watchers: 34
-- :description: Various open source projects from aprilchild.com.
-  :forks: 3
-  :url: http://github.com/aprilchild/aprilchild
-  :homepage: http://www.aprilchild.com
-  :fork: false
-  :private: false
-  :name: aprilchild
-  :owner: aprilchild
-  :open_issues: 0
-  :watchers: 16
-- :description: "A base rails app featuring: RESTful Authentication, Will Paginate, Rspec &amp; Rspec-rails, Exception Notifier, Asset Packager, Cap Recipe (multi-stage). Put together by Fudge to remove the need for boring project setup."
-  :forks: 132
-  :url: http://github.com/fudgestudios/bort
-  :homepage: http://www.fudgestudios.com
-  :fork: false
-  :private: false
-  :name: bort
-  :owner: fudgestudios
-  :open_issues: 2
-  :watchers: 1054
-- :description: What the Enterprise Can Learn From Your Mom presentation for erubycon 2008. (Aka "What? Threads are Hard?")
-  :forks: 2
-  :url: http://github.com/jimweirich/presentation_enterprise_mom
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: presentation_enterprise_mom
-  :owner: jimweirich
-  :open_issues: 0
-  :watchers: 10
-- :description: A Rails plugin for seeding the database with initial application data.
-  :forks: 0
-  :url: http://github.com/tylerhunt/germinate
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: germinate
-  :owner: tylerhunt
-  :open_issues: 0
-  :watchers: 16
-- :description: Adds CodeRay syntax highlighting to RedCloth, by using a &lt;source> tag
-  :forks: 4
-  :url: http://github.com/augustl/redcloth-with-coderay
-  :homepage: http://redclothcoderay.rubyforge.org/
-  :fork: false
-  :private: false
-  :name: redcloth-with-coderay
-  :owner: augustl
-  :open_issues: 2
-  :watchers: 27
-- :description: Compass is a Stylesheet Authoring Environment that makes your website design simpler to implement and easier to maintain.
-  :forks: 67
-  :url: http://github.com/chriseppstein/compass
-  :homepage: http://compass-style.org
-  :fork: false
-  :private: false
-  :name: compass
-  :owner: chriseppstein
-  :open_issues: 9
-  :watchers: 1268
-- :description: "Apresenta\xC3\xA7\xC3\xB5es para SS"
-  :forks: 2
-  :url: http://github.com/nofxx/screencast_br
-  :homepage: http://forum.rubyonbr.org/forums/5/topics/3525
-  :fork: false
-  :private: false
-  :name: screencast_br
-  :owner: nofxx
-  :open_issues: 0
-  :watchers: 9
-- :description: Searchlogic makes using ActiveRecord named scopes easier and less repetitive.
-  :forks: 55
-  :url: http://github.com/binarylogic/searchlogic
-  :homepage: http://rdoc.info/projects/binarylogic/searchlogic
-  :fork: false
-  :pledgie: 1532
-  :private: false
-  :name: searchlogic
-  :owner: binarylogic
-  :open_issues: 29
-  :watchers: 899
-- :description: A sample Rails OAuth provider that doesn't use oauth_plugin (or acts_as_authenticated)
-  :forks: 0
-  :url: http://github.com/mojodna/sample-oauth-provider
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: sample-oauth-provider
-  :owner: mojodna
-  :open_issues: 0
-  :watchers: 13
-- :description: ""
-  :forks: 3
-  :url: http://github.com/bard/mozrepl
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: mozrepl
-  :owner: bard
-  :open_issues: 0
-  :watchers: 101
-- :description: Rails app using the searchlogic library
-  :forks: 2
-  :url: http://github.com/binarylogic/searchlogic_example
-  :homepage: http://searchlogic_example.binarylogic.com
-  :fork: false
-  :pledgie: 2014
-  :private: false
-  :name: searchlogic_example
-  :owner: binarylogic
-  :open_issues: 0
-  :watchers: 35
-- :description: ruby-xen is a ruby library for managing Xen virtual servers
-  :forks: 4
-  :url: http://github.com/mbailey/ruby-xen
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: ruby-xen
-  :owner: mbailey
-  :open_issues: 0
-  :watchers: 26
-- :description: Generate On A Lot Of Crack is a repl-based generator, intended to speed up the start of the rails dev process
-  :forks: 3
-  :url: http://github.com/mattknox/goaloc
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: goaloc
-  :owner: mattknox
-  :open_issues: 0
-  :watchers: 31
-- :description: A fist full of code metrics
-  :forks: 47
-  :url: http://github.com/jscruggs/metric_fu
-  :homepage: http://metric-fu.rubyforge.org/
-  :fork: false
-  :private: false
-  :name: metric_fu
-  :owner: jscruggs
-  :open_issues: 4
-  :watchers: 285
-- :description: Manage seed data for Rails projects
-  :forks: 1
-  :url: http://github.com/ffmike/db-populate
-  :homepage: ""
-  :fork: true
-  :private: false
-  :name: db-populate
-  :owner: ffmike
-  :open_issues: 0
-  :watchers: 53
-- :description: Various tools for watching beanstalkd.
-  :forks: 1
-  :url: http://github.com/dustin/beanstalk-tools
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: beanstalk-tools
-  :owner: dustin
-  :open_issues: 0
-  :watchers: 33
-- :description: Community Funded Reporting
-  :forks: 20
-  :url: http://github.com/spot-us/spot-us
-  :homepage: http://www.spot.us/
-  :fork: false
-  :private: false
-  :name: spot-us
-  :owner: spot-us
-  :open_issues: 2
-  :watchers: 156
-- :description: TextMate bundle for Cucumber
-  :forks: 30
-  :url: http://github.com/bmabey/cucumber-tmbundle
-  :homepage: http://www.benmabey.com
-  :fork: false
-  :pledgie: 3705
-  :private: false
-  :name: cucumber-tmbundle
-  :owner: bmabey
-  :open_issues: 4
-  :watchers: 272
-- :description: Fire-and-forget data collection and graphing service
-  :forks: 8
-  :url: http://github.com/adamwiggins/rifgraf
-  :homepage: http://rifgraf.heroku.com/
-  :fork: false
-  :private: false
-  :name: rifgraf
-  :owner: adamwiggins
-  :open_issues: 0
-  :watchers: 95
-- :description: Automatically starts and stops the daemons in a Rails application.
-  :forks: 0
-  :url: http://github.com/costan/daemonz
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: daemonz
-  :owner: costan
-  :open_issues: 1
-  :watchers: 22
-- :description: Rails authentication with email & password.
-  :forks: 46
-  :url: http://github.com/thoughtbot/clearance
-  :homepage: http://thoughtbot.com
-  :fork: false
-  :private: false
-  :name: clearance
-  :owner: thoughtbot
-  :open_issues: 15
-  :watchers: 700
-- :description: Use a Bayesian classifier to determine source code language
-  :forks: 2
-  :url: http://github.com/chrislo/sourceclassifier
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: sourceclassifier
-  :owner: chrislo
-  :open_issues: 0
-  :watchers: 46
-- :description: Fork of the simple auto complete rails plugin
-  :forks: 2
-  :url: http://github.com/david/simple_auto_complete
-  :homepage: http://pragmatig.wordpress.com/2008/04/25/unobtrusive-autocomplete-rails-plugin/
-  :fork: false
-  :private: false
-  :name: simple_auto_complete
-  :owner: david
-  :open_issues: 0
-  :watchers: 7
-- :description: Miscellaneous Rake tasks and so on that I use on most projects.
-  :forks: 0
-  :url: http://github.com/airblade/air_blade_tools
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: air_blade_tools
-  :owner: airblade
-  :open_issues: 0
-  :watchers: 2
-- :description: A form builder that generates semantic HTML as advocated by Andy Budd in CSS Mastery.
-  :forks: 2
-  :url: http://github.com/airblade/air_budd_form_builder
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: air_budd_form_builder
-  :owner: airblade
-  :open_issues: 1
-  :watchers: 35
-- :description: Generates a basic, neat look and feel for a Rails app.
-  :forks: 0
-  :url: http://github.com/airblade/base_look_and_feel
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: base_look_and_feel
-  :owner: airblade
-  :open_issues: 0
-  :watchers: 5
-- :description: "Social Group Chat "
-  :forks: 20
-  :url: http://github.com/dmitryame/echowaves
-  :homepage: http://echowaves.com/conversations/1
-  :fork: false
-  :private: false
-  :name: echowaves
-  :owner: dmitryame
-  :open_issues: 2
-  :watchers: 132
-- :description: Project Management, Collaboration and Time Tracking. Some additional features are implemented here compared to the original source.
-  :forks: 23
-  :url: http://github.com/ari/clockingit
-  :homepage: http://ari.github.com/clockingit/
-  :fork: false
-  :pledgie: 3934
-  :private: false
-  :name: clockingit
-  :owner: ari
-  :open_issues: 2
-  :watchers: 88
-- :description: Manage git repositories, provide access to them over SSH, with tight access control and not needing shell accounts.
-  :forks: 15
-  :url: http://github.com/res0nat0r/gitosis
-  :homepage: http://eagain.net
-  :fork: false
-  :private: false
-  :name: gitosis
-  :owner: res0nat0r
-  :open_issues: 0
-  :watchers: 69
-- :description: Facebook-style lightbox, built in jQuery
-  :forks: 0
-  :url: http://github.com/mutle/facebox
-  :homepage: http://famspam.com/facebox/
-  :fork: true
-  :private: false
-  :name: facebox
-  :owner: mutle
-  :open_issues: 0
-  :watchers: 3
-- :description: RSpec-esque matchers for Test::Unit
-  :forks: 10
-  :url: http://github.com/jeremymcanally/matchy
-  :homepage: ""
-  :fork: false
-  :pledgie: 2551
-  :private: false
-  :name: matchy
-  :owner: jeremymcanally
-  :open_issues: 1
-  :watchers: 171
-- :description: "Rails: Simple honeypots"
-  :forks: 0
-  :url: http://github.com/grosser/honeypot
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: honeypot
-  :owner: grosser
-  :open_issues: 1
-  :watchers: 23
-- :description: A collection of useful rake tasks.
-  :forks: 12
-  :url: http://github.com/thoughtbot/limerick_rake
-  :homepage: http://thoughtbot.com
-  :fork: false
-  :private: false
-  :name: limerick_rake
-  :owner: thoughtbot
-  :open_issues: 1
-  :watchers: 224
-- :description: Primer is a Flash-like API built on top of Canvas using jQuery.
-  :forks: 3
-  :url: http://github.com/mojombo/primer
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: primer
-  :owner: mojombo
-  :open_issues: 0
-  :watchers: 179
-- :description: fork of Rails plugin for supporting multiple databases - added patch that allows usage of Models in fixtures
-  :forks: 3
-  :url: http://github.com/remi/use_db
-  :homepage: http://www.elctech.com/blog/using-and-testing-rails-with-multiple-databases/blog/using-and-testing-rails-with-multiple-databases
-  :fork: false
-  :private: false
-  :name: use_db
-  :owner: remi
-  :open_issues: 0
-  :watchers: 12
-- :description: A test helper for faking responses to web requests
-  :forks: 35
-  :url: http://github.com/chrisk/fakeweb
-  :homepage: http://groups.google.com/group/fakeweb-users
-  :fork: false
-  :private: false
-  :name: fakeweb
-  :owner: chrisk
+  :name: rails-i18n
+  :owner: svenfuchs
   :open_issues: 5
-  :watchers: 259
-- :description: TextMate bundle for Cucumber - fork of RSpec Story Runner bundle
-  :forks: 1
-  :url: http://github.com/drnic/cucumber-tmbundle
-  :homepage: http://www.benmabey.com
-  :fork: true
-  :private: false
-  :name: cucumber-tmbundle
-  :owner: drnic
-  :open_issues: 0
-  :watchers: 10
-- :description: Jekyll is a blog-aware, static site generator in Ruby
-  :forks: 211
-  :url: http://github.com/mojombo/jekyll
-  :homepage: http://jekyllrb.com
+  :watchers: 468
+- :description: everyone has one...
+  :url: http://github.com/bjeanes/dot-files
+  :homepage: ""
   :fork: false
-  :private: false
-  :name: jekyll
-  :owner: mojombo
-  :open_issues: 61
-  :watchers: 1124
-- :description: A DB interface written in Rails
   :forks: 4
-  :url: http://github.com/redox/rbdb
-  :homepage: http://www.rbdb.org
-  :fork: false
   :private: false
-  :name: rbdb
-  :owner: redox
-  :open_issues: 0
-  :watchers: 86
-- :description: Rails plugin for localized "country_select" helper with Rake task for downloading locales from Unicode.org's CLDR
-  :forks: 7
-  :url: http://github.com/karmi/localized_country_select
-  :homepage: http://www.restafari.org/localized-country-select.html
-  :fork: false
-  :private: false
-  :name: localized_country_select
-  :owner: karmi
-  :open_issues: 1
-  :watchers: 119
-- :description: A python client library for the beanstalkd queue server.
-  :forks: 7
-  :url: http://github.com/sophacles/pybeanstalk
-  :homepage: http://code.google.com/p/pybeanstalk
-  :fork: false
-  :private: false
-  :name: pybeanstalk
-  :owner: sophacles
-  :open_issues: 0
-  :watchers: 28
-- :description: Generate random short, non-offensive words. Good for human-readable confirmation codes.
-  :forks: 0
-  :url: http://github.com/dancroak/webster
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: webster
-  :owner: dancroak
-  :open_issues: 0
-  :watchers: 30
-- :description: Rainbow is extension to ruby's String class adding support for colorizing text on ANSI terminals
-  :forks: 1
-  :url: http://github.com/sickill/rainbow
-  :homepage: http://sickill.net
-  :fork: false
-  :private: false
-  :name: rainbow
-  :owner: sickill
-  :open_issues: 0
-  :watchers: 15
-- :description: A Rails plugin to help populate your database with data for tests.
-  :forks: 0
-  :url: http://github.com/technoweenie/machinist
-  :homepage: ""
-  :fork: true
-  :private: false
-  :name: machinist
-  :owner: technoweenie
-  :open_issues: 0
-  :watchers: 16
-- :description: Easy Admin Interfaces for Rails
-  :forks: 1
-  :url: http://github.com/commondream/control_center
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: control_center
-  :owner: commondream
-  :open_issues: 5
-  :watchers: 43
-- :description: It's just good form to validate without reloading the page
-  :forks: 1
-  :url: http://github.com/cementhorses/good_form
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: good_form
-  :owner: cementhorses
+  :name: dot-files
+  :owner: bjeanes
   :open_issues: 0
   :watchers: 6
-- :description: A DOM-Inspired Ruby Smart Fuzzer
-  :forks: 1
-  :url: http://github.com/tqbf/ruckus
-  :homepage: ""
+- :description: A gem that allows you to create, list, and modify hostnames with ease...
+  :url: http://github.com/bjeanes/ghost
+  :homepage: http://bjeanes.com
   :fork: false
-  :private: false
-  :name: ruckus
-  :owner: tqbf
-  :open_issues: 0
-  :watchers: 22
-- :description: A simple gitweb replacement built with Django
   :forks: 3
-  :url: http://github.com/sethtrain/django-git
-  :homepage: http://github.com/sethtrain/django-git
-  :fork: false
   :private: false
-  :name: django-git
-  :owner: sethtrain
+  :name: ghost
+  :owner: bjeanes
   :open_issues: 0
-  :watchers: 46
-- :description: Python logging console for Firebug
-  :forks: 12
-  :url: http://github.com/darwin/firepython
-  :homepage: http://firepython.binaryage.com
+  :watchers: 131
+- :description: Open source Rails based content management that works.
+  :url: http://github.com/knewter/ansuz
+  :homepage: http://www.ansuzcms.com
   :fork: false
-  :private: false
-  :name: firepython
-  :owner: darwin
-  :open_issues: 0
-  :watchers: 178
-- :description: The latest and greatest wheel to be invented yet
-  :forks: 2
-  :url: http://github.com/spicycode/micronaut
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: micronaut
-  :owner: spicycode
-  :open_issues: 6
-  :watchers: 54
-- :description: View testing that doesn't suck.
-  :forks: 2
-  :url: http://github.com/nakajima/elementor
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: elementor
-  :owner: nakajima
-  :open_issues: 0
-  :watchers: 38
-- :description: The official `github` command line helper for simplifying your GitHub experience.
-  :forks: 0
-  :url: http://github.com/dustin/github-gem
-  :homepage: http://github.com
-  :fork: true
-  :private: false
-  :name: github-gem
-  :owner: dustin
-  :open_issues: 0
-  :watchers: 3
-- :description: A Really Ruby Mail Library
-  :forks: 4
-  :url: http://github.com/mikel/mail
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: mail
-  :owner: mikel
-  :open_issues: 0
-  :watchers: 192
-- :description: Ruby on Rails CRM platform for Web 2.0 and beyond
-  :forks: 120
-  :url: http://github.com/michaeldv/fat_free_crm
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: fat_free_crm
-  :owner: michaeldv
-  :open_issues: 1
-  :watchers: 670
-- :description: "ruby based curses widgets: fields, buttons, textarea. menus, message boxes, tabbed panes, tables, listboxes. Event based, MVC architecture."
-  :forks: 1
-  :url: http://github.com/rkumar/rbcurse
-  :homepage: http://totalrecall.wordpress.com/
-  :fork: false
-  :private: false
-  :name: rbcurse
-  :owner: rkumar
-  :open_issues: 0
-  :watchers: 32
-- :description: Sproutcore driven MPD client (http://mpd.wikia.com)
-  :forks: 0
-  :url: http://github.com/bpot/scamp
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: scamp
-  :owner: bpot
-  :open_issues: 0
-  :watchers: 2
-- :description: Makes JavaScript development sweeter !
-  :forks: 0
-  :url: http://github.com/sebastien/sugar
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: sugar
-  :owner: sebastien
-  :open_issues: 0
-  :watchers: 11
-- :description: A library of neat Rails application templates.
-  :forks: 92
-  :url: http://github.com/jeremymcanally/rails-templates
-  :homepage: ""
-  :fork: false
-  :pledgie: 2549
-  :private: false
-  :name: rails-templates
-  :owner: jeremymcanally
-  :open_issues: 0
-  :watchers: 534
-- :description: Rails plugin wrapping the jqGrid jQuery plugin - beautiful and feature rich AJAX grid table for your Rails app!
-  :forks: 1
-  :url: http://github.com/scrubber/jquery_grid_for_rails
-  :homepage: http://www.rubyrailways.com
-  :fork: false
-  :private: false
-  :name: jquery_grid_for_rails
-  :owner: scrubber
-  :open_issues: 0
-  :watchers: 40
-- :description: Timer application based on SproutCore
-  :forks: 0
-  :url: http://github.com/ursm/watch-night
-  :homepage: http://watch-night.ursm.jp/
-  :fork: false
-  :private: false
-  :name: watch-night
-  :owner: ursm
-  :open_issues: 0
-  :watchers: 3
-- :description: An easy-to-use Fabric script for deploying Python projects
-  :forks: 3
-  :url: http://github.com/lincolnloop/lincoln-loop-deploy
-  :homepage: http://lincolnloop.com/blog/2008/dec/07/simple-easy-deployment-fabric-and-virtualenv/
-  :fork: false
-  :private: false
-  :name: lincoln-loop-deploy
-  :owner: lincolnloop
-  :open_issues: 0
-  :watchers: 28
-- :description: A Python command-line tool for parsing information from Apache log files.
-  :forks: 3
-  :url: http://github.com/lethain/apache-log-parser
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: apache-log-parser
-  :owner: lethain
-  :open_issues: 0
-  :watchers: 9
-- :description: Server deployment made a cookie
-  :forks: 4
-  :url: http://github.com/mario/webbies-fireplace
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: webbies-fireplace
-  :owner: mario
-  :open_issues: 0
-  :watchers: 10
-- :description: Ruby-on-Rails plugin/gem which helps to create reusable components with ExtJS as GUI
-  :forks: 3
-  :url: http://github.com/skozlov/netzke-core
-  :homepage: http://blog.writelesscode.com
-  :fork: false
-  :private: false
-  :name: netzke-core
-  :owner: skozlov
-  :open_issues: 1
-  :watchers: 14
-- :description: RGhost is a document creation and conversion API. It uses the Ghostscript framework for the format conversion, utilizes EPS templates and is optimized to work with larger documents. Support(PDF,PS,GIF,TIF,PNG,JPG,etc)
-  :forks: 3
-  :url: http://github.com/shairontoledo/rghost
-  :homepage: http://rghost.rubyforge.org
-  :fork: false
-  :pledgie: 2273
-  :private: false
-  :name: rghost
-  :owner: shairontoledo
-  :open_issues: 1
-  :watchers: 40
-- :description: Ruby client library for the Pivotal Tracker API
-  :forks: 6
-  :url: http://github.com/mcommons/ruby-pivotal-tracker
-  :homepage: https://github.com/mcommons/ruby-pivotal-tracker
-  :fork: true
-  :private: false
-  :name: ruby-pivotal-tracker
-  :owner: mcommons
-  :open_issues: 0
-  :watchers: 30
-- :description: "share my private rails plugins: fuzzy-search, datanmapper-session-store, idle-session-timeouts, etc"
-  :forks: 0
-  :url: http://github.com/mkristian/kristians_rails_plugins
-  :homepage: <a href="http://code.google.com/p/kristians-rails-plugins">code.google.com/p/kristians-rails-plugins</a>
-  :fork: false
-  :private: false
-  :name: kristians_rails_plugins
-  :owner: mkristian
-  :open_issues: 0
-  :watchers: 7
-- :description: Nice formatters for RSpec
-  :forks: 0
-  :url: http://github.com/nofxx/rspec_spinner
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: rspec_spinner
-  :owner: nofxx
-  :open_issues: 1
-  :watchers: 6
-- :description: RewriteRails adds syntactic abstractions like Andand and String to Block to Rails projects without monkey-patching
-  :forks: 2
-  :url: http://github.com/raganwald/rewrite_rails
-  :homepage: ""
-  :fork: false
-  :pledgie: 2516
-  :private: false
-  :name: rewrite_rails
-  :owner: raganwald
-  :open_issues: 4
-  :watchers: 46
-- :description: Autumn ORM
-  :forks: 3
-  :url: http://github.com/JaredKuolt/autumn
-  :homepage: http://autumn-orm.org/
-  :fork: false
-  :private: false
-  :name: autumn
-  :owner: JaredKuolt
-  :open_issues: 0
-  :watchers: 37
-- :description: Pre-built Netzke widgets for your RIA
-  :forks: 3
-  :url: http://github.com/skozlov/netzke-basepack
-  :homepage: http://blog.writelesscode.com
-  :fork: false
-  :private: false
-  :name: netzke-basepack
-  :owner: skozlov
-  :open_issues: 0
-  :watchers: 21
-- :description: Sprinkles for Apache, Passenger, Memcached, Git, Mysql or Postgres
-  :forks: 46
-  :url: http://github.com/benschwarz/passenger-stack
-  :homepage: http://benschwarz.github.com/passenger-stack/
-  :fork: false
-  :private: false
-  :name: passenger-stack
-  :owner: benschwarz
-  :open_issues: 1
-  :watchers: 285
-- :description: A plugin for Growl-like functionality for Ruby on Rails applications built on Prototype and Scriptaculous javascript libraries.
-  :forks: 16
-  :url: http://github.com/jfiorato/growl4rails
-  :homepage: http://www.writebetterbits.com/2009/01/update-to-growl4rails.html
-  :fork: false
-  :private: false
-  :name: growl4rails
-  :owner: jfiorato
-  :open_issues: 1
-  :watchers: 149
-- :description: "Rails plugin for transforming urls to appropriate resource (image, link, YouTube, Vimeo video,...) "
-  :forks: 7
-  :url: http://github.com/dejan/auto_html
-  :homepage: http://auto_html.rors.org
-  :fork: false
-  :private: false
-  :name: auto_html
-  :owner: dejan
-  :open_issues: 0
-  :watchers: 101
-- :description: A library for assisting with making an OAuth provider
-  :forks: 3
-  :url: http://github.com/halorgium/oauth_provider
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: oauth_provider
-  :owner: halorgium
-  :open_issues: 0
-  :watchers: 14
-- :description: Reports exceptions to Hoptoad
-  :forks: 0
-  :url: http://github.com/methodmissing/hoptoad_notifier
-  :homepage: http://www.hoptoadapp.com/
-  :fork: true
-  :private: false
-  :name: hoptoad_notifier
-  :owner: methodmissing
-  :open_issues: 0
-  :watchers: 2
-- :description: A collection of Rails templates I use for projects
-  :forks: 13
-  :url: http://github.com/lackac/app_lego
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: app_lego
-  :owner: lackac
-  :open_issues: 1
-  :watchers: 138
-- :description: Python Open Flash Chart Library
-  :forks: 4
-  :url: http://github.com/btbytes/pyofc2
-  :homepage: http://btbytes.github.com/pyofc2/
-  :fork: false
-  :private: false
-  :name: pyofc2
-  :owner: btbytes
-  :open_issues: 0
-  :watchers: 27
-- :description: Access control layer for ActionPack, providing a DSL for writing a firewall to sit in front of Rails controllers
-  :forks: 2
-  :url: http://github.com/jcoglan/consent
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: consent
-  :owner: jcoglan
-  :open_issues: 0
-  :watchers: 58
-- :description: New router for Rails.  Tiny (200 lines fool!), quick (adding routes so fast it hurts and competes with current router otherwise), and agile (OK...it's not more agile.  But it sounds cool.)
-  :forks: 2
-  :url: http://github.com/jeremymcanally/krauter
-  :homepage: ""
-  :fork: false
-  :pledgie: 2550
-  :private: false
-  :name: krauter
-  :owner: jeremymcanally
-  :open_issues: 0
-  :watchers: 87
-- :description: learn git one commit at a time. updates weekly or when great tips are found
-  :forks: 17
-  :url: http://github.com/qrush/gitready
-  :homepage: http://gitready.com
-  :fork: false
-  :private: false
-  :name: gitready
-  :owner: qrush
-  :open_issues: 0
-  :watchers: 64
-- :description: Yet another role-based authorization system for Rails
-  :forks: 26
-  :url: http://github.com/be9/acl9
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: acl9
-  :owner: be9
-  :open_issues: 11
-  :watchers: 472
-- :description: The ~/.vim directory that we share at work
-  :forks: 51
-  :url: http://github.com/akitaonrails/vimfiles
-  :homepage: ""
-  :fork: true
-  :private: false
-  :name: vimfiles
-  :owner: akitaonrails
-  :open_issues: 1
-  :watchers: 165
-- :description: BlogBridge, the cross platform, open source, blog and rss reader with super powers!
-  :forks: 1
-  :url: http://github.com/pitosalas/blogbridge
-  :homepage: http://www.blogbridge.com
-  :fork: false
-  :private: false
-  :name: blogbridge
-  :owner: pitosalas
-  :open_issues: 0
-  :watchers: 10
-- :description: Daemon Kit aims to simplify creating Ruby daemons by providing a sound application skeleton (through a generator), task specific generators (jabber bot, etc) and robust environment management code.
   :forks: 11
-  :url: http://github.com/kennethkalmer/daemon-kit
-  :homepage: http://kennethkalmer.github.com
-  :fork: false
   :private: false
-  :name: daemon-kit
-  :owner: kennethkalmer
+  :name: ansuz
+  :owner: knewter
+  :open_issues: 0
+  :watchers: 98
+- :description: Classier solution for file uploads in Ruby for Rack, Rails, Merb and Sinatra
+  :url: http://github.com/jnicklas/carrierwave
+  :homepage: http://carrierwave.rubyforge.org/
+  :fork: false
+  :forks: 16
+  :private: false
+  :name: carrierwave
+  :owner: jnicklas
   :open_issues: 4
-  :watchers: 283
-- :description: The 3.0 rewrite of our agent software.
-  :forks: 0
-  :url: http://github.com/highgroove/scout_agent
-  :homepage: http://scoutapp.com/
+  :watchers: 152
+- :description: A solver for Sudoku puzzles built in Ruby
+  :url: http://github.com/radar/ruby-sudoku-solver
+  :homepage: ""
   :fork: false
+  :forks: 0
   :private: false
-  :name: scout_agent
-  :owner: highgroove
+  :name: ruby-sudoku-solver
+  :owner: radar
   :open_issues: 0
-  :watchers: 25
-- :description: Your session loves you. Treat her like a lady.
+  :watchers: 2
+- :description: Rails 2.1.1 broke nested-layouts, this is the "fixed" version, Compatible with >2.3.2!
+  :url: http://github.com/radar/nested-layouts
+  :homepage: ""
+  :fork: false
+  :forks: 8
+  :private: false
+  :name: nested-layouts
+  :owner: radar
+  :open_issues: 0
+  :watchers: 44
+- :description: Python Parser for Logga Bot, seperated because it's Python
+  :url: http://github.com/radar/logga-parser
+  :homepage: ""
+  :fork: false
   :forks: 1
-  :url: http://github.com/jbarnette/intercession
-  :homepage: ""
-  :fork: false
   :private: false
-  :name: intercession
-  :owner: jbarnette
+  :name: logga-parser
+  :owner: radar
   :open_issues: 0
-  :watchers: 58
-- :description: "With.object(foo) { a=1; b=2; show;} # sets foo.a=1, foo.b=2, and calls foo.show"
-  :forks: 0
-  :url: http://github.com/codeodor/with
-  :homepage: http://github.com/codeodor/with/tree/master
-  :fork: false
-  :private: false
-  :name: with
-  :owner: codeodor
-  :open_issues: 0
-  :watchers: 5
-- :description: The source code for the live demo of the Netzke framework
-  :forks: 2
-  :url: http://github.com/skozlov/netzke-demo
-  :homepage: http://netzke-demo.writelesscode.com
-  :fork: false
-  :private: false
-  :name: netzke-demo
-  :owner: skozlov
-  :open_issues: 0
-  :watchers: 8
-- :description: IRC bot that simplifies posting to IRC from shell scripts
-  :forks: 10
-  :url: http://github.com/RJ/irccat
-  :homepage: http://www.metabrew.com/article/how-we-use-irc-at-lastfm/
-  :fork: false
-  :private: false
-  :name: irccat
-  :owner: RJ
-  :open_issues: 0
-  :watchers: 92
-- :description: JSON parser that understands cross-references and casts to typed Ruby objects. Implements JSONQuery against JSON trees and Ruby object graphs.
-  :forks: 2
-  :url: http://github.com/jcoglan/siren
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: siren
-  :owner: jcoglan
-  :open_issues: 0
-  :watchers: 91
-- :description: Source for presentation on Groovy Unit Testing
-  :forks: 0
-  :url: http://github.com/fredjean/groovyunittesting
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: groovyunittesting
-  :owner: fredjean
-  :open_issues: 0
-  :watchers: 4
-- :description: My ~/bin
-  :forks: 0
-  :url: http://github.com/dustin/bindir
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: bindir
-  :owner: dustin
-  :open_issues: 0
-  :watchers: 27
-- :description: LaterDude is a small calendar helper with i18n support.
+  :watchers: 2
+- :description: Serve git and advertise with bonjour
+  :url: http://github.com/lachlanhardy/gitjour
+  :homepage: http://rubyforge.org/projects/gitjour
+  :fork: true
   :forks: 3
-  :url: http://github.com/clemens/later_dude
-  :homepage: http://www.railway.at
-  :fork: false
   :private: false
-  :name: later_dude
-  :owner: clemens
-  :open_issues: 0
-  :watchers: 202
-- :description: A project to isolate the possible bug with rendering for attribute for label_tag as opposed to radio_button_tag
-  :forks: 0
-  :url: http://github.com/fcoury/labelbug
-  :homepage: http://labelbug.felipecoury.com
-  :fork: false
-  :private: false
-  :name: labelbug
-  :owner: fcoury
-  :open_issues: 0
-  :watchers: 2
-- :description: A systems integration framework, built to bring the benefits of configuration management to your entire infrastructure.
-  :forks: 91
-  :url: http://github.com/opscode/chef
-  :homepage: http://wiki.opscode.com/display/chef
-  :fork: false
-  :private: false
-  :name: chef
-  :owner: opscode
-  :open_issues: 0
-  :watchers: 448
-- :description: "A feed fetching and parsing library that treats the internet like Godzilla treats Japan: it dominates and eats all."
-  :forks: 50
-  :url: http://github.com/pauldix/feedzirra
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: feedzirra
-  :owner: pauldix
-  :open_issues: 13
-  :watchers: 477
-- :description: Allows you to sort ActiveRecord items in multiple lists with multiple scopes
-  :forks: 1
-  :url: http://github.com/shuber/sortable
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: sortable
-  :owner: shuber
-  :open_issues: 1
-  :watchers: 140
-- :description: A simple theme for web apps
-  :forks: 151
-  :url: http://github.com/pilu/web-app-theme
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: web-app-theme
-  :owner: pilu
-  :open_issues: 3
-  :watchers: 889
-- :description: A simple theme for web apps
-  :forks: 0
-  :url: http://github.com/fcoury/web-app-theme
-  :homepage: ""
-  :fork: true
-  :private: false
-  :name: web-app-theme
-  :owner: fcoury
-  :open_issues: 0
-  :watchers: 2
-- :description: Plugin for Rails to enabled easy embedding of affiliate links in to pages
-  :forks: 1
-  :url: http://github.com/neutron/affiliate_links
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: affiliate_links
-  :owner: neutron
-  :open_issues: 0
-  :watchers: 4
-- :description: irb the way I like it
-  :forks: 1
-  :url: http://github.com/cldwalker/irbfiles
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: irbfiles
-  :owner: cldwalker
-  :open_issues: 0
-  :watchers: 21
-- :description: Autumn ORM
-  :forks: 0
-  :url: http://github.com/fcoury/autumn
-  :homepage: http://autumn-orm.org/
-  :fork: true
-  :private: false
-  :name: autumn
-  :owner: fcoury
-  :open_issues: 0
-  :watchers: 1
-- :description: Dead simple Ruby module that allows your code to be run as a daemon
-  :forks: 1
-  :url: http://github.com/billymeltdown/looper
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: looper
-  :owner: billymeltdown
+  :name: gitjour
+  :owner: lachlanhardy
   :open_issues: 0
   :watchers: 18
-- :description: Kick it!
-  :forks: 0
-  :url: http://github.com/fcoury/baseapp
-  :homepage: http://baseapp.org
-  :fork: true
+- :description: Simple application showing how to do models for user's "favouriting" other users.
+  :url: http://github.com/radar/fans
+  :homepage: ""
+  :fork: false
+  :forks: 1
   :private: false
-  :name: baseapp
-  :owner: fcoury
+  :name: fans
+  :owner: radar
+  :open_issues: 0
+  :watchers: 3
+- :description: Merb version of rboard
+  :url: http://github.com/radar/mboard
+  :homepage: ""
+  :fork: false
+  :forks: 0
+  :private: false
+  :name: mboard
+  :owner: radar
   :open_issues: 0
   :watchers: 1
-- :description: Lookup for Ruby & Rails api in the terminal
+- :description: Gallery for your photos
+  :url: http://github.com/radar/rgallery
+  :homepage: ""
+  :fork: false
   :forks: 1
+  :private: false
+  :name: rgallery
+  :owner: radar
+  :open_issues: 0
+  :watchers: 4
+- :description: Wikimedia's Mobile Site in Merb
+  :url: http://github.com/hcatlin/wikimedia-mobile
+  :homepage: http://m.wikipedia.org
+  :fork: false
+  :forks: 27
+  :private: false
+  :name: wikimedia-mobile
+  :owner: hcatlin
+  :open_issues: 0
+  :watchers: 108
+- :description: Bastardises sentences for you
+  :url: http://github.com/radar/acts_as_foreigner
+  :homepage: ""
+  :fork: false
+  :forks: 0
+  :private: false
+  :name: acts_as_foreigner
+  :owner: radar
+  :open_issues: 0
+  :watchers: 3
+- :description: Generates common user authentication code for Rails/Merb, with a full test/unit and rspec suite and optional Acts as State Machine support built-in.
+  :url: http://github.com/radar/restful-authentication
+  :homepage: http://weblog.techno-weenie.net
+  :fork: true
+  :forks: 0
+  :private: false
+  :name: restful-authentication
+  :owner: radar
+  :open_issues: 0
+  :watchers: 1
+- :description: Lets you find ActiveRecord objects by year, month, fortnight, week and more!
+  :url: http://github.com/radar/by_star
+  :homepage: http://runcoderun.com/radar/by_star
+  :fork: false
+  :forks: 4
+  :private: false
+  :name: by_star
+  :owner: radar
+  :open_issues: 0
+  :watchers: 99
+- :description: A plugin for integrating Amazon Flexible Payment Service with your rails app
+  :url: http://github.com/mhodgson/amazon_fps_foo
+  :homepage: ""
+  :fork: false
+  :forks: 0
+  :private: false
+  :name: amazon_fps_foo
+  :owner: mhodgson
+  :open_issues: 0
+  :watchers: 12
+- :description: ""
+  :url: http://github.com/radar/blog
+  :homepage: ""
+  :fork: false
+  :forks: 0
+  :private: false
+  :name: blog
+  :owner: radar
+  :open_issues: 0
+  :watchers: 2
+- :description: Simple graphs using jQuery and Raphael
+  :url: http://github.com/benaskins/simplegraph
+  :homepage: ""
+  :fork: false
+  :forks: 6
+  :private: false
+  :name: simplegraph
+  :owner: benaskins
+  :open_issues: 0
+  :watchers: 52
+- :description: "\x7FExample app of having a has_and_belongs_to_many assoication and adding removing items from it"
+  :url: http://github.com/radar/courses
+  :homepage: ""
+  :fork: false
+  :forks: 0
+  :private: false
+  :name: courses
+  :owner: radar
+  :open_issues: 0
+  :watchers: 2
+- :description: Rails SaaS and SSO solution
+  :url: http://github.com/maccman/saasy
+  :homepage: http://madebymany.co.uk
+  :fork: false
+  :forks: 18
+  :private: false
+  :name: saasy
+  :owner: maccman
+  :open_issues: 0
+  :watchers: 326
+- :description: rblog
+  :url: http://github.com/radar/rblog
+  :homepage: ""
+  :fork: false
+  :forks: 1
+  :private: false
+  :name: rblog
+  :owner: radar
+  :open_issues: 0
+  :watchers: 3
+- :description: a modular Ruby webserver interface
+  :url: http://github.com/rack/rack
+  :homepage: http://rack.rubyforge.org/
+  :fork: true
+  :forks: 48
+  :private: false
+  :name: rack
+  :owner: rack
+  :open_issues: 5
+  :watchers: 289
+- :description: The helping side of logga
+  :url: http://github.com/radar/helpa
+  :homepage: ""
+  :fork: false
+  :forks: 0
+  :private: false
+  :name: helpa
+  :owner: radar
+  :open_issues: 0
+  :watchers: 2
+- :description: The logga bot!
+  :url: http://github.com/radar/logga-bot
+  :homepage: ""
+  :fork: false
+  :forks: 2
+  :private: false
+  :name: logga-bot
+  :owner: radar
+  :open_issues: 0
+  :watchers: 4
+- :description: Generates attr_accessors that encrypt and decrypt attributes
+  :url: http://github.com/shuber/attr_encrypted
+  :homepage: ""
+  :fork: false
+  :forks: 4
+  :private: false
+  :name: attr_encrypted
+  :owner: shuber
+  :open_issues: 2
+  :watchers: 150
+- :description: A blank Chef repository - useful to bootstrap your own
+  :url: http://github.com/opscode/chef-repo
+  :homepage: http://wiki.opscode.com/browse/chef/Chef+Repository
+  :fork: false
+  :forks: 58
+  :private: false
+  :name: chef-repo
+  :owner: opscode
+  :open_issues: 0
+  :watchers: 82
+- :description: "Build and deploy tools for Cocoa apps using Sparkle for distributions and upgrades; it\xE2\x80\x99s like Hoe but for Cocoa apps. "
+  :url: http://github.com/drnic/choctop
+  :homepage: http://drnic.github.com/choctop
+  :fork: false
+  :forks: 11
+  :private: false
+  :name: choctop
+  :owner: drnic
+  :open_issues: 2
+  :watchers: 96
+- :description: Lookup for Ruby & Rails api in the terminal
   :url: http://github.com/radar/lookup
   :homepage: ""
   :fork: false
+  :forks: 1
   :private: false
   :name: lookup
   :owner: radar
   :open_issues: 0
   :watchers: 13
-- :description: A base Sinatra application template with DataMapper, RSpec, and Haml. Just fork and build.
-  :forks: 44
-  :url: http://github.com/zapnap/sinatra-template
+- :description: everyone has one...
+  :url: http://github.com/radar/dot-files
   :homepage: ""
-  :fork: false
-  :private: false
-  :name: sinatra-template
-  :owner: zapnap
-  :open_issues: 0
-  :watchers: 135
-- :description: An experiment in creating an OAuth provider with Sinatra
-  :forks: 2
-  :url: http://github.com/eddanger/sinatra-oauth-provider
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: sinatra-oauth-provider
-  :owner: eddanger
-  :open_issues: 0
-  :watchers: 26
-- :description: DataObjects
-  :forks: 20
-  :url: http://github.com/datamapper/do
-  :homepage: http://rubyforge.org/projects/dorb
-  :fork: false
-  :private: false
-  :name: do
-  :owner: datamapper
-  :open_issues: 0
-  :watchers: 96
-- :description: A set of Koans to teach the Ruby language
-  :forks: 56
-  :url: http://github.com/edgecase/ruby_koans
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: ruby_koans
-  :owner: edgecase
-  :open_issues: 7
-  :watchers: 205
-- :description: Git/Subversion browser and changeset viewer
-  :forks: 0
-  :url: http://github.com/fcoury/warehouse
-  :homepage: http://warehouseapp.com
   :fork: true
-  :private: false
-  :name: warehouse
-  :owner: fcoury
-  :open_issues: 0
-  :watchers: 1
-- :description: Quick named scopes to make your life a little easier
-  :forks: 2
-  :url: http://github.com/internuity/quick_scopes
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: quick_scopes
-  :owner: internuity
-  :open_issues: 1
-  :watchers: 70
-- :description: Object Oriented CSS Framework
-  :forks: 46
-  :url: http://github.com/stubbornella/oocss
-  :homepage: http://stubbornella.org/
-  :fork: false
-  :private: false
-  :name: oocss
-  :owner: stubbornella
-  :open_issues: 12
-  :watchers: 596
-- :description: Zip and password protected encryption suport for backup_fu.
-  :forks: 0
-  :url: http://github.com/bigcurl/backup_fu
-  :homepage: http://shanti.railsblog.com/backup-fu-makes-amazon-s3-backups-redonkulous
-  :fork: true
-  :private: false
-  :name: backup_fu
-  :owner: bigcurl
-  :open_issues: 0
-  :watchers: 3
-- :description: Collection of UI Icons
-  :forks: 1
-  :url: http://github.com/nofxx/iconx
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: iconx
-  :owner: nofxx
-  :open_issues: 0
-  :watchers: 6
-- :description: A forked and tested version of the basecamp.rb library
-  :forks: 0
-  :url: http://github.com/turingstudio/basecamp-rb
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: basecamp-rb
-  :owner: turingstudio
-  :open_issues: 0
-  :watchers: 14
-- :description: Who's your daddy? Kill Rails fixtures, Don't Repeat Yourself, reduce the complexity of your tests.
-  :forks: 1
-  :url: http://github.com/nofxx/object_daddy
-  :homepage: http://tasks.ogtastic.com/projects/show/object-daddy
-  :fork: true
-  :private: false
-  :name: object_daddy
-  :owner: nofxx
-  :open_issues: 0
-  :watchers: 3
-- :description: Smarter capitalisation of titles
-  :forks: 2
-  :url: http://github.com/harukizaemon/titleizer
-  :homepage: ""
-  :fork: false
-  :pledgie: 2771
-  :private: false
-  :name: titleizer
-  :owner: harukizaemon
-  :open_issues: 0
-  :watchers: 21
-- :description: Code from my series on writing a Ruby compiler in Ruby
   :forks: 3
-  :url: http://github.com/vidarh/writing-a-compiler-in-ruby
-  :homepage: http://www.hokstad.com/compiler
-  :fork: false
   :private: false
-  :name: writing-a-compiler-in-ruby
-  :owner: vidarh
-  :open_issues: 7
-  :watchers: 33
-- :description: rails plugin for easy generation of sparklines based on your models
-  :forks: 2
-  :url: http://github.com/marcoow/reports_as_sparkline
-  :homepage: http://github.com/mk/reports_as_sparkline
-  :fork: true
-  :private: false
-  :name: reports_as_sparkline
-  :owner: marcoow
+  :name: dot-files
+  :owner: radar
   :open_issues: 0
-  :watchers: 41
-- :description: BDD that talks to domain experts first and code second
+  :watchers: 5
+- :description: a modular Ruby webserver interface
+  :url: http://github.com/radar/rack
+  :homepage: http://rack.rubyforge.org/
+  :fork: true
   :forks: 0
-  :url: http://github.com/fcoury/cucumber
-  :homepage: http://github.com/aslakhellesoy/cucumber/wikis
-  :fork: true
   :private: false
-  :name: cucumber
-  :owner: fcoury
-  :open_issues: 0
-  :watchers: 2
-- :description: Bootstrap a Rails 2.3 app with user authentication (Authlogic, Clearance, restful_authentication)
-  :forks: 7
-  :url: http://github.com/pixels-and-bits/strappy
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: strappy
-  :owner: pixels-and-bits
-  :open_issues: 0
-  :watchers: 79
-- :description: A Framework for Watir
-  :forks: 5
-  :url: http://github.com/bret/watircraft
-  :homepage: http://wiki.github.com/bret/watircraft
-  :fork: false
-  :pledgie: 2862
-  :private: false
-  :name: watircraft
-  :owner: bret
-  :open_issues: 0
-  :watchers: 32
-- :description: Smarter capitalisation of titles
-  :forks: 0
-  :url: http://github.com/fcoury/titleizer
-  :homepage: ""
-  :fork: true
-  :private: false
-  :name: titleizer
-  :owner: fcoury
+  :name: rack
+  :owner: radar
   :open_issues: 0
   :watchers: 1
+- :description: Rails SaaS and SSO solution
+  :url: http://github.com/mocra/saasy
+  :homepage: http://madebymany.co.uk
+  :fork: true
+  :forks: 1
+  :private: false
+  :name: saasy
+  :owner: mocra
+  :open_issues: 0
+  :watchers: 9
+- :description: Active Merchant is a simple payment abstraction library used in and sponsored by Shopify. It is written by Tobias Luetke, Cody Fauser, and contributors. The aim of the project is to feel natural to Ruby users and to abstract as many parts as possible away from the user to offer a consistent interface across all supported gateways.
+  :url: http://github.com/mocra/active_merchant
+  :homepage: http://activemerchant.org
+  :fork: true
+  :forks: 0
+  :private: false
+  :name: active_merchant
+  :owner: mocra
+  :open_issues: 0
+  :watchers: 5
 - :description: Standard authentication stack for Rails using Twitter to log in.
-  :forks: 29
   :url: http://github.com/mbleigh/twitter-auth
   :fork: false
   :pledgie: 3489
+  :forks: 29
   :private: false
   :name: twitter-auth
   :owner: mbleigh
   :open_issues: 12
   :watchers: 263
-- :description: simple database import/export app
-  :forks: 12
-  :url: http://github.com/ricardochimal/taps
+- :description: A Rails Engine that adds blogging + twitter + github + flickr to any existing rails site
+  :url: http://github.com/bjeanes/twibblr
   :homepage: ""
   :fork: false
-  :private: false
-  :name: taps
-  :owner: ricardochimal
-  :open_issues: 1
-  :watchers: 167
-- :description: A systems integration framework, built to bring the benefits of configuration management to your entire infrastructure.
   :forks: 0
-  :url: http://github.com/fcoury/chef
-  :homepage: http://wiki.opscode.com/display/chef
-  :fork: true
   :private: false
-  :name: chef
-  :owner: fcoury
+  :name: twibblr
+  :owner: bjeanes
   :open_issues: 0
-  :watchers: 1
-- :description: Provision and deploy to an Ubuntu/God/Apache/Passenger stack using Capistrano and EC2
-  :forks: 3
-  :url: http://github.com/winton/ubistrano
-  :homepage: http://wintoni.us/post/86885559/ubistrano-on-rails-envy
+  :watchers: 12
+- :description: RailsCamp website
+  :url: http://github.com/railscampau/railscampau.github.com
+  :homepage: railscampau.github.com
   :fork: false
-  :private: false
-  :name: ubistrano
-  :owner: winton
-  :open_issues: 0
-  :watchers: 30
-- :description: Fork of the simple auto complete rails plugin
   :forks: 0
-  :url: http://github.com/fcoury/simple_auto_complete
-  :homepage: http://pragmatig.wordpress.com/2008/04/25/unobtrusive-autocomplete-rails-plugin/
-  :fork: true
   :private: false
-  :name: simple_auto_complete
-  :owner: fcoury
+  :name: railscampau.github.com
+  :owner: railscampau
   :open_issues: 0
-  :watchers: 2
-- :description: Code examples from my blog
-  :forks: 4
-  :url: http://github.com/pauldowman/blog_code_examples
-  :homepage: http://pauldowman.com
+  :watchers: 8
+- :description: DIY Maturity Model
+  :url: http://github.com/diy/maturitymodel
+  :homepage: http://diy.github.com/maturitymodel
   :fork: false
-  :private: false
-  :name: blog_code_examples
-  :owner: pauldowman
-  :open_issues: 0
-  :watchers: 26
-- :description: Client for Google Translate API
-  :forks: 4
-  :url: http://github.com/shvets/google_translate
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: google_translate
-  :owner: shvets
-  :open_issues: 0
-  :watchers: 53
-- :description: Create and run functional test plans
   :forks: 1
-  :url: http://github.com/magpie/drfunk
-  :homepage: http://funk.heroku.com
-  :fork: false
   :private: false
-  :name: drfunk
-  :owner: magpie
+  :name: maturitymodel
+  :owner: diy
   :open_issues: 0
-  :watchers: 20
-- :description: "ruby based curses widgets: fields, buttons, textarea. menus, message boxes, tabbed panes, tables, listboxes ..."
-  :forks: 0
-  :url: http://github.com/fcoury/rbcurse
-  :homepage: http://totalrecall.wordpress.com/
+  :watchers: 7
+- :description: DIY Maturity Model
+  :url: http://github.com/mocra/maturitymodel
+  :homepage: http://diy.github.com/maturitymodel
   :fork: true
-  :private: false
-  :name: rbcurse
-  :owner: fcoury
-  :open_issues: 0
-  :watchers: 1
-- :description: ""
-  :forks: 1
-  :url: http://github.com/enormego/flicktabcontrol
-  :homepage: http://developers.enormego.com
-  :fork: false
-  :private: false
-  :name: flicktabcontrol
-  :owner: enormego
-  :open_issues: 0
-  :watchers: 46
-- :description: A Rails plugin for easy (nested) tabbed navigation
-  :forks: 3
-  :url: http://github.com/jordi/tab_tab
-  :homepage: http://jordi.github.com/tab_tab/
-  :fork: false
-  :private: false
-  :name: tab_tab
-  :owner: jordi
-  :open_issues: 0
-  :watchers: 16
-- :description: Ruby/JS GUI and Binding framework for Titanium
-  :forks: 3
-  :url: http://github.com/maccman/bowline
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: bowline
-  :owner: maccman
-  :open_issues: 2
-  :watchers: 321
-- :description: A very simple filesystem sandbox for your tests
-  :forks: 1
-  :url: http://github.com/bdimcheff/sandbox
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: sandbox
-  :owner: bdimcheff
-  :open_issues: 0
-  :watchers: 20
-- :description: a microframework for running and monitoring scheduled workers
   :forks: 0
-  :url: http://github.com/jcapote/theman
-  :homepage: ""
-  :fork: false
   :private: false
-  :name: theman
-  :owner: jcapote
-  :open_issues: 0
-  :watchers: 25
-- :description: "JFileHelpers is a library that automates the tedious task of parsing and creating structured text files. It handles fixed width or delimited files with Java annotations sweetness. "
-  :forks: 0
-  :url: http://github.com/fcoury/jfilehelpers
-  :homepage: http://jfilehelpers.com
-  :fork: false
-  :private: false
-  :name: jfilehelpers
-  :owner: fcoury
-  :open_issues: 0
-  :watchers: 2
-- :description: Implementation of Design Patterns in Ruby
-  :forks: 6
-  :url: http://github.com/shvets/design_patterns_in_ruby
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: design_patterns_in_ruby
-  :owner: shvets
-  :open_issues: 0
-  :watchers: 164
-- :description: semi clone of autojump (http://github.com/joelthelion/autojump) in shell/awk
-  :forks: 11
-  :url: http://github.com/rupa/j
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: j
-  :owner: rupa
-  :open_issues: 0
-  :watchers: 132
-- :description: API Documentation for GitHub
-  :forks: 6
-  :url: http://github.com/develop/develop.github.com
-  :homepage: http://develop.github.com
-  :fork: false
-  :private: false
-  :name: develop.github.com
-  :owner: develop
-  :open_issues: 26
-  :watchers: 58
-- :description: playful experimentation with image processing and ruby
-  :forks: 0
-  :url: http://github.com/bantic/image_labs
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: image_labs
-  :owner: bantic
-  :open_issues: 1
-  :watchers: 27
-- :description: "a ruby eventmachine bot inspired by richard jones' irccat. also logs channels. history and webhooks via sinatra. "
-  :forks: 2
-  :url: http://github.com/purzelrakete/mini
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: mini
-  :owner: purzelrakete
-  :open_issues: 0
-  :watchers: 46
-- :description: Like a modern code version of the mythical beast with 100 serpent heads, Typhoeus runs HTTP requests in parallel while cleanly encapsulating handling logic.
-  :forks: 16
-  :url: http://github.com/pauldix/typhoeus
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: typhoeus
-  :owner: pauldix
-  :open_issues: 2
-  :watchers: 395
-- :description: Three20 is an Objective-C library for iPhone developers
-  :forks: 212
-  :url: http://github.com/joehewitt/three20
-  :homepage: http://groups.google.com/group/three20/
-  :fork: false
-  :private: false
-  :name: three20
-  :owner: joehewitt
-  :open_issues: 54
-  :watchers: 1495
-- :description: John Resig's Simple Javascript Templating turned into a jQuery Plugin
-  :forks: 2
-  :url: http://github.com/atduskgreg/srender
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: srender
-  :owner: atduskgreg
-  :open_issues: 0
-  :watchers: 19
-- :description: OAuth sample consumer & provider
-  :forks: 2
-  :url: http://github.com/nov/oauth_sample
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: oauth_sample
-  :owner: nov
+  :name: maturitymodel
+  :owner: mocra
   :open_issues: 0
   :watchers: 5
-- :description: Forking implementation of rackup -- because reloading always sucks.
-  :forks: 3
-  :url: http://github.com/rtomayko/shotgun
+- :description: The server for caching the GitHub network of maturitymodel forks
+  :url: http://github.com/diy/maturitymodel-app
   :homepage: ""
   :fork: false
+  :forks: 0
   :private: false
-  :name: shotgun
-  :owner: rtomayko
-  :open_issues: 1
-  :watchers: 154
-- :description: Source Code analysis gem for Ruby and Rails
-  :forks: 3
-  :url: http://github.com/simplabs/excellent
-  :homepage: http://simplabs.github.com/excellent
-  :fork: false
-  :private: false
-  :name: excellent
-  :owner: simplabs
-  :open_issues: 10
-  :watchers: 19
-- :description: Foundation for new Rails applications.
-  :forks: 7
-  :url: http://github.com/hectoregm/groundwork
-  :homepage: ""
+  :name: maturitymodel-app
+  :owner: diy
+  :open_issues: 0
+  :watchers: 6
+- :description: Simple library which makes it easy to add caching to all your external API calls.
+  :url: http://github.com/newbamboo/api_cache
+  :homepage: http://blog.new-bamboo.co.uk/2008/6/6/api_cache
   :fork: true
+  :forks: 1
   :private: false
-  :name: groundwork
-  :owner: hectoregm
-  :open_issues: 4
-  :watchers: 110
+  :name: api_cache
+  :owner: newbamboo
+  :open_issues: 0
+  :watchers: 23
 - :description: URL Shortener written in Sinatra
-  :forks: 4
   :url: http://github.com/radar/url
   :homepage: ""
   :fork: false
+  :forks: 4
   :private: false
   :name: url
   :owner: radar
   :open_issues: 0
   :watchers: 30
-- :description: A ruby client library for the redis key value storage engine
-  :forks: 39
-  :url: http://github.com/ezmobius/redis-rb
+- :description: URL Shortener written in Sinatra
+  :url: http://github.com/mocra/url
   :homepage: ""
-  :fork: false
-  :private: false
-  :name: redis-rb
-  :owner: ezmobius
-  :open_issues: 0
-  :watchers: 281
-- :description: Debugging utility for Rails
-  :forks: 0
-  :url: http://github.com/avdi/handcar
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: handcar
-  :owner: avdi
-  :open_issues: 0
-  :watchers: 4
-- :forks: 2
-  :url: http://github.com/drnic/magic_multi_connections
-  :homepage: http://magicmodels.rubyforge.org/magic_multi_connections/
-  :fork: false
-  :private: false
-  :name: magic_multi_connections
-  :owner: drnic
-  :open_issues: 0
-  :watchers: 8
-- :description: An easy way to add links with default filters for HTML tables in your Rails app.
-  :forks: 1
-  :url: http://github.com/flaviogranero/filter_table
-  :homepage: http://flaviogranero.com
-  :fork: false
-  :private: false
-  :name: filter_table
-  :owner: flaviogranero
-  :open_issues: 0
-  :watchers: 6
-- :description: A rails plugin which allows you to edit your database records via the console and your favorite editor.
-  :forks: 1
-  :url: http://github.com/cldwalker/console_update
-  :homepage: http://tagaholic.me/console_update/
-  :fork: false
-  :private: false
-  :name: console_update
-  :owner: cldwalker
-  :open_issues: 0
-  :watchers: 21
-- :description: YAML-based inter-process communication.
-  :forks: 0
-  :url: http://github.com/thbar/petite-lettre
-  :fork: false
-  :pledgie: 3134
-  :private: false
-  :name: petite-lettre
-  :owner: thbar
-  :open_issues: 0
-  :watchers: 8
-- :description: A tool for faking responses to web requests, originally by Blaine Cook
-  :forks: 0
-  :url: http://github.com/fcoury/fakeweb
-  :homepage: http://groups.google.com/group/fakeweb-users
   :fork: true
-  :private: false
-  :name: fakeweb
-  :owner: fcoury
-  :open_issues: 0
-  :watchers: 1
-- :description: simple backup for mysql, posgresql, svn and files to s3 or local filesystem
-  :forks: 20
-  :url: http://github.com/astrails/safe
-  :homepage: http://blog.astrails.com/astrails-safe
-  :fork: false
-  :private: false
-  :name: safe
-  :owner: astrails
-  :open_issues: 3
-  :watchers: 199
-- :description: A Ruby module for accessing the ncurses library
-  :forks: 3
-  :url: http://github.com/eclubb/ncurses-ruby
-  :homepage: http://ncurses-ruby.berlios.de
-  :fork: false
-  :private: false
-  :name: ncurses-ruby
-  :owner: eclubb
-  :open_issues: 0
-  :watchers: 11
-- :description: Secures ActiveRecord attributes with public key encryption
-  :forks: 4
-  :url: http://github.com/spikex/strongbox
-  :homepage: http://stuff-things.net/2009/04/17/introducing-strongbox/
-  :fork: false
-  :private: false
-  :name: strongbox
-  :owner: spikex
-  :open_issues: 0
-  :watchers: 102
-- :description: RFC822 email regex, with patches
   :forks: 0
-  :url: http://github.com/ericworking/rfc822
-  :homepage: ""
-  :fork: false
   :private: false
-  :name: rfc822
-  :owner: ericworking
+  :name: url
+  :owner: mocra
   :open_issues: 0
-  :watchers: 4
-- :description: Not your grandparents' EC2 deployment tool.
-  :forks: 4
-  :url: http://github.com/solutious/rudy
-  :homepage: http://solutious.com/projects/rudy/
+  :watchers: 13
+- :description: Choppy choppies an image into lots and lots of little squares
+  :url: http://github.com/radar/cropsquare
   :fork: false
+  :forks: 1
   :private: false
-  :name: rudy
-  :owner: solutious
-  :open_issues: 14
-  :watchers: 42
+  :name: cropsquare
+  :owner: radar
+  :open_issues: 0
+  :watchers: 5
 - :description: A mini view framework for console/irb that's easy to use, even while under its influence. Console goodies include a no-wrap table, auto-pager, tree and menu.
-  :forks: 8
   :url: http://github.com/cldwalker/hirb
   :homepage: http://tagaholic.me/hirb/
   :fork: false
+  :forks: 8
   :private: false
   :name: hirb
   :owner: cldwalker
   :open_issues: 0
   :watchers: 328
-- :description: A rails plugin to backup Mysql to Amazon S3
-  :forks: 7
-  :url: http://github.com/xaviershay/db2s3
-  :homepage: ""
-  :fork: false
-  :pledgie: 3214
-  :private: false
-  :name: db2s3
-  :owner: xaviershay
-  :open_issues: 0
-  :watchers: 43
 - :description: A web-based personal finance manager with a focus on non-OCD budgeting and avoiding credit card debt
-  :forks: 67
   :url: http://github.com/jamis/bucketwise
   :homepage: http://wiki.github.com/jamis/bucketwise
   :fork: false
   :pledgie: 4019
+  :forks: 67
   :private: false
   :name: bucketwise
   :owner: jamis
   :open_issues: 9
   :watchers: 344
-- :description: Mephisto Theme.  Simple two column layout built with Blueprint CSS
+- :description: Ruby 1.9 compatible version
+  :url: http://github.com/radar/ruby-xslt
+  :homepage: http://ruby-xslt.rubyforge.org
+  :fork: false
   :forks: 1
-  :url: http://github.com/enriquez/chocolate-meat
-  :homepage: http://theezpzway.com/2009/3/8/chocolate-meat-mephisto-theme
-  :fork: false
   :private: false
-  :name: chocolate-meat
-  :owner: enriquez
+  :name: ruby-xslt
+  :owner: radar
   :open_issues: 0
-  :watchers: 4
-- :description: Open-source solution for asynchronous, master-master replication of relational databases
-  :forks: 3
-  :url: http://github.com/rubyrep/rubyrep
-  :homepage: www.rubyrep.org
+  :watchers: 5
+- :description: Ruby 1.9 compatible version
+  :url: http://github.com/radar/json
+  :homepage: http://json.rubyforge.org
   :fork: false
-  :private: false
-  :name: rubyrep
-  :owner: rubyrep
-  :open_issues: 5
-  :watchers: 53
-- :description: a scalable distributed monitoring system
-  :forks: 3
-  :url: http://github.com/auxesis/flapjack
-  :homepage: http://flapjack-project.com/
-  :fork: false
-  :private: false
-  :name: flapjack
-  :owner: auxesis
-  :open_issues: 0
-  :watchers: 15
-- :description: Schemaless data in a traditional rdbms. Inspired by friendfeed
   :forks: 0
-  :url: http://github.com/BrianTheCoder/dm-is-schemaless
-  :homepage: http://brianthecoder.com/datamapper-is-schemaless-or-can-be
-  :fork: false
   :private: false
-  :name: dm-is-schemaless
-  :owner: BrianTheCoder
-  :open_issues: 1
-  :watchers: 21
-- :description: Rails plugin that adds a script/find command for searching your project
-  :forks: 3
-  :url: http://github.com/37signals/project_search
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: project_search
-  :owner: 37signals
+  :name: json
+  :owner: radar
   :open_issues: 0
-  :watchers: 86
-- :description: Generate syntax-highlighted slides from Markdown
-  :forks: 16
-  :url: http://github.com/nakajima/slidedown
-  :homepage: http://nakajima.github.com/slidedown
+  :watchers: 2
+- :description: Ruby 1.9 compatible version
+  :url: http://github.com/radar/mysql
+  :homepage: http://mysql.rubyforge.org
   :fork: false
-  :private: false
-  :name: slidedown
-  :owner: nakajima
-  :open_issues: 3
-  :watchers: 131
-- :description: "Rails plugin which provides a form helper to upload files directly to Amazon's S3 using an HTTP POST "
-  :forks: 5
-  :url: http://github.com/mwilliams/d2s3
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: d2s3
-  :owner: mwilliams
-  :open_issues: 1
-  :watchers: 75
-- :description: Revactor implements the Actor model using Ruby 1.9's Fibers for concurrency and Rev for event monitoring
-  :forks: 1
-  :url: http://github.com/tarcieri/revactor
-  :homepage: http://revactor.org
-  :fork: false
-  :private: false
-  :name: revactor
-  :owner: tarcieri
-  :open_issues: 0
-  :watchers: 32
-- :description: Rails deployment and configuration management done right. ShadowPuppet + Capistrano == crazy delicious
-  :forks: 23
-  :url: http://github.com/railsmachine/moonshine
-  :homepage: http://railsmachine.github.com/moonshine/
-  :fork: false
-  :private: false
-  :name: moonshine
-  :owner: railsmachine
-  :open_issues: 4
-  :watchers: 284
-- :description: Isolated test for HIRB problem
   :forks: 0
-  :url: http://github.com/fcoury/hirb-isolated
-  :homepage: ""
-  :fork: false
   :private: false
-  :name: hirb-isolated
-  :owner: fcoury
+  :name: mysql
+  :owner: radar
+  :open_issues: 0
+  :watchers: 6
+- :description: Ruby 1.9 compatible version
+  :url: http://github.com/radar/pg
+  :homepage: http://pg.rubyforge.org
+  :fork: false
+  :forks: 0
+  :private: false
+  :name: pg
+  :owner: radar
   :open_issues: 0
   :watchers: 1
-- :description: Yaripe - Yet Another RESTful in place edit
-  :forks: 4
-  :url: http://github.com/tchandy/yaripe
-  :homepage: http://github.com/tchandy/yaripe/
-  :fork: false
+- :description: String matching extension for Ruby (fork of svn repo)
+  :url: http://github.com/radar/amatch
+  :homepage: http://amatch.rubyforge.org
+  :fork: true
+  :forks: 1
   :private: false
-  :name: yaripe
-  :owner: tchandy
-  :open_issues: 1
-  :watchers: 47
-- :description: Symbol#to_proc's hot cousin. Simple and elegant alternative to using &amp;:method with enumerables.
-  :forks: 6
-  :url: http://github.com/mynyml/every
-  :homepage: http://mynyml.com/15-enumerableevery/
-  :fork: false
-  :private: false
-  :name: every
-  :owner: mynyml
-  :open_issues: 1
-  :watchers: 97
-- :description: Simple Ruby-based search engine
-  :forks: 8
-  :url: http://github.com/sausheong/saushengine
-  :homepage: http://blog.saush.com
-  :fork: false
-  :private: false
-  :name: saushengine
-  :owner: sausheong
-  :open_issues: 0
-  :watchers: 78
-- :description: A ruby library for reading/writing fixed width files
-  :forks: 0
-  :url: http://github.com/jcapote/fieldy
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: fieldy
-  :owner: jcapote
+  :name: amatch
+  :owner: radar
   :open_issues: 0
   :watchers: 3
-- :description: A Ruby module for accessing the ncurses library
-  :forks: 1
-  :url: http://github.com/elliottcable/ncurses
-  :homepage: http://ncurses-ruby.berlios.de
+- :description: "Build and deploy tools for Cocoa apps using Sparkle for distributions and upgrades; it\xE2\x80\x99s like Hoe but for Cocoa apps. "
+  :url: http://github.com/radar/choctop
+  :homepage: http://drnic.github.com/choctop
   :fork: true
+  :forks: 0
   :private: false
-  :name: ncurses
-  :owner: elliottcable
-  :open_issues: 1
-  :watchers: 5
-- :description: Automatically adds HTML class attributes to partial HTML code
-  :forks: 2
-  :url: http://github.com/adamh/html_namespacing
-  :homepage: http://adamhooper.com
-  :fork: false
-  :private: false
-  :name: html_namespacing
-  :owner: adamh
-  :open_issues: 0
-  :watchers: 11
-- :description: MiyazakiResistance is a library like ActiveRecord to use Tokyo Tyrant.
-  :forks: 2
-  :url: http://github.com/tsukasaoishi/miyazakiresistance
-  :homepage: http://www.kaeruspoon.net/keywords/MiyazakiResistance
-  :fork: false
-  :private: false
-  :name: miyazakiresistance
-  :owner: tsukasaoishi
-  :open_issues: 0
-  :watchers: 50
-- :forks: 0
-  :url: http://github.com/bryanl/osaterm
-  :fork: false
-  :private: false
-  :name: osaterm
-  :owner: bryanl
-  :open_issues: 0
-  :watchers: 4
-- :description: A rails plugin to backup Mysql to Amazon S3
-  :forks: 1
-  :url: http://github.com/fcoury/db2s3
-  :homepage: ""
-  :fork: true
-  :private: false
-  :name: db2s3
-  :owner: fcoury
+  :name: choctop
+  :owner: radar
   :open_issues: 0
   :watchers: 2
-- :description: The ~/.vim directory that we share at work
+- :description: Ruby 1.9 compatible version
+  :url: http://github.com/radar/discount
+  :homepage: http://discount.rubyforge.org
+  :fork: false
   :forks: 0
-  :url: http://github.com/fcoury/vimfiles
-  :homepage: ""
-  :fork: true
   :private: false
-  :name: vimfiles
-  :owner: fcoury
+  :name: discount
+  :owner: radar
   :open_issues: 0
   :watchers: 1
-- :description: Rails / Passenger / Gitorious enviroment installation script
-  :forks: 5
-  :url: http://github.com/marcelomurad/rails-env-install
+- :description: Tutorial that's been on old for too long
+  :url: http://github.com/radar/tutorial
   :homepage: ""
   :fork: false
-  :private: false
-  :name: rails-env-install
-  :owner: marcelomurad
-  :open_issues: 0
-  :watchers: 24
-- :description: A plugin for Sinatra to provide a DSL extension for using Thin for asynchronous responses
-  :forks: 5
-  :url: http://github.com/raggi/async_sinatra
-  :homepage: http://rubyforge.org/libraggi/async_sinatra
-  :fork: false
-  :private: false
-  :name: async_sinatra
-  :owner: raggi
-  :open_issues: 0
-  :watchers: 65
-- :description: A planet-style feed aggregator built in Ruby with Sinatra and DataMapper
-  :forks: 5
-  :url: http://github.com/zapnap/mogo
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: mogo
-  :owner: zapnap
-  :open_issues: 0
-  :watchers: 42
-- :description: "Harsh: Another Rails Syntax Highlighter. Ultraviolet-based syntax highlighting for rails, for ERb or Haml. Better than the rest."
   :forks: 1
-  :url: http://github.com/michaeledgar/harsh
-  :homepage: http://carboni.ca/projects/harsh/
-  :fork: false
   :private: false
-  :name: harsh
-  :owner: michaeledgar
-  :open_issues: 0
-  :watchers: 57
-- :description: jQuery-powered Service Oriented DOM. What?
-  :forks: 0
-  :url: http://github.com/nakajima/jquery-sod
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: jquery-sod
-  :owner: nakajima
-  :open_issues: 1
-  :watchers: 11
-- :description: Wanna build a stack? Give us the blueprint!
-  :forks: 0
-  :url: http://github.com/webbynode/blueprint
-  :homepage: http://blueprint.webbynode.com
-  :fork: false
-  :private: false
-  :name: blueprint
-  :owner: webbynode
-  :open_issues: 0
-  :watchers: 7
-- :description: a BDD testing framework for ruby that's mad at the world and plans to kick it's ass in 78 freakin lines of code
-  :forks: 3
-  :url: http://github.com/ahoward/testy
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: testy
-  :owner: ahoward
-  :open_issues: 0
-  :watchers: 114
-- :description: Your local Gem browser
-  :forks: 4
-  :url: http://github.com/manalang/bdoc
-  :homepage: http://manalang.com/archives/2009/03/29/introducing-bdoc-a-better-gem-doc-browser/
-  :fork: false
-  :private: false
-  :name: bdoc
-  :owner: manalang
-  :open_issues: 1
-  :watchers: 77
-- :description: Wanna build a stack? Give us the blueprint.
-  :forks: 0
-  :url: http://github.com/fcoury/blueprint
-  :fork: false
-  :private: false
-  :name: blueprint
-  :owner: fcoury
-  :open_issues: 0
-  :watchers: 1
-- :description: e text editor
-  :forks: 30
-  :url: http://github.com/etexteditor/e
-  :homepage: http://e-texteditor.com
-  :fork: false
-  :private: false
-  :name: e
-  :owner: etexteditor
-  :open_issues: 35
-  :watchers: 334
-- :description: "Run Ruby 1.8.7 on older Ruby 1.8.x versions. Enables some of the really nice features of ruby 1.9 and rails too.  "
-  :forks: 0
-  :url: http://github.com/marcandre/backports
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: backports
-  :owner: marcandre
-  :open_issues: 0
-  :watchers: 30
-- :description: Add functionality to ActiveRecord Migrations such as foreign keys, unique setting (creates index), etc.
-  :forks: 0
-  :url: http://github.com/woody2shoes/migration_helpers
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: migration_helpers
-  :owner: woody2shoes
-  :open_issues: 0
-  :watchers: 4
-- :description: Easy method_missing proxying
-  :forks: 0
-  :url: http://github.com/nakajima/proxen
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: proxen
-  :owner: nakajima
-  :open_issues: 0
-  :watchers: 39
-- :description: simple database import/export app
-  :forks: 0
-  :url: http://github.com/fcoury/taps
-  :homepage: ""
-  :fork: true
-  :private: false
-  :name: taps
-  :owner: fcoury
-  :open_issues: 0
-  :watchers: 1
-- :description: jQuery JavaScript Library
-  :forks: 23
-  :url: http://github.com/jquery/jquery
-  :homepage: http://jquery.com/
-  :fork: false
-  :private: false
-  :name: jquery
-  :owner: jquery
-  :open_issues: 0
-  :watchers: 811
-- :description: A Git mirror of http://svn.ruby-lang.org/repos/ruby.
-  :forks: 0
-  :url: http://github.com/ice799/matzruby
-  :homepage: ""
-  :fork: true
-  :private: false
-  :name: matzruby
-  :owner: ice799
-  :open_issues: 0
-  :watchers: 14
-- :description: Monitor server CPU/Memory/Disk Usage/URL Loading, so that you can view those statistics on a web page, as well as providing an interface to client prorams to read those statistics.
-  :forks: 0
-  :url: http://github.com/bloopletech/webstats
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: webstats
-  :owner: bloopletech
-  :open_issues: 0
-  :watchers: 60
-- :description: A JSONQuery implementation in JavaScript
-  :forks: 2
-  :url: http://github.com/jcrosby/jsonquery
-  :homepage: ""
-  :fork: true
-  :private: false
-  :name: jsonquery
-  :owner: jcrosby
-  :open_issues: 0
-  :watchers: 29
-- :description: TextMate bundle for Cucumber
-  :forks: 0
-  :url: http://github.com/fcoury/cucumber-tmbundle
-  :homepage: http://www.benmabey.com
-  :fork: true
-  :private: false
-  :name: cucumber-tmbundle
-  :owner: fcoury
-  :open_issues: 0
-  :watchers: 1
-- :description: JRuby, an implementation of Ruby on the JVM
-  :forks: 37
-  :url: http://github.com/jruby/jruby
-  :homepage: http://www.jruby.org
-  :fork: false
-  :private: false
-  :name: jruby
-  :owner: jruby
-  :open_issues: 2
-  :watchers: 216
-- :description: The younger, prettier alternative to `man`.
-  :forks: 0
-  :url: http://github.com/runpaint/girl
-  :homepage: http://getgirl.org/
-  :fork: false
-  :private: false
-  :name: girl
-  :owner: runpaint
+  :name: tutorial
+  :owner: radar
   :open_issues: 0
   :watchers: 2
-- :description: A Rails plugin to generate xls documents by using rxls templates.
-  :forks: 4
-  :url: http://github.com/10to1/spreadsheet_on_rails
+- :description: Rails plugin for fuzzy finding
+  :url: http://github.com/bjeanes/find_by_like
   :homepage: ""
   :fork: false
-  :private: false
-  :name: spreadsheet_on_rails
-  :owner: 10to1
-  :open_issues: 0
-  :watchers: 108
-- :description: A small data wrapper for Google DataStore - intended for use with Google App Engine
-  :forks: 6
-  :url: http://github.com/olabini/bumble
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: bumble
-  :owner: olabini
-  :open_issues: 0
-  :watchers: 66
-- :description: A small wrapper for Google User Service - Intended for use with Google App Engine
-  :forks: 1
-  :url: http://github.com/olabini/beeu
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: beeu
-  :owner: olabini
-  :open_issues: 0
-  :watchers: 34
-- :description: Ruby Enabled GooGle App Engine
   :forks: 0
-  :url: http://github.com/knowtheory/reggae
-  :homepage: ""
-  :fork: false
   :private: false
-  :name: reggae
-  :owner: knowtheory
-  :open_issues: 0
-  :watchers: 66
-- :description: "Sistema de Cota\xC3\xA7\xC3\xB5es de Pre\xC3\xA7os na Ind\xC3\xBAstria Gr\xC3\xA1fica"
-  :forks: 0
-  :url: http://github.com/ams/buscaimpresso
-  :homepage: alvaromateus.wordpress.com
-  :fork: false
-  :pledgie: 3795
-  :private: false
-  :name: buscaimpresso
-  :owner: ams
+  :name: find_by_like
+  :owner: bjeanes
   :open_issues: 0
   :watchers: 5
-- :description: Ruby Imperative Random Data Generator and Quickcheck
-  :forks: 2
-  :url: http://github.com/hayeah/rant
+- :description: Humanizing numbers!
+  :url: http://github.com/radar/humanize
   :homepage: ""
   :fork: false
-  :private: false
-  :name: rant
-  :owner: hayeah
-  :open_issues: 0
-  :watchers: 8
-- :description: Simple URL shortener
   :forks: 1
-  :url: http://github.com/njacobeus/i5.be
-  :homepage: http://i5.be
-  :fork: false
   :private: false
-  :name: i5.be
-  :owner: njacobeus
-  :open_issues: 0
-  :watchers: 16
-- :description: A Rails plugin that delivers a special message to DiggBar users, or runs frame-killer javascript.
-  :forks: 0
-  :url: http://github.com/sandofsky/acts_against_douchebar
-  :homepage: http://twitter.com/sandofsky
-  :fork: false
-  :private: false
-  :name: acts_against_douchebar
-  :owner: sandofsky
-  :open_issues: 0
-  :watchers: 24
-- :description: A simple, pure Ruby reactor library
-  :forks: 2
-  :url: http://github.com/oldmoe/reactor
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: reactor
-  :owner: oldmoe
-  :open_issues: 0
-  :watchers: 52
-- :description: This plugin allows you to add jQuery datagrids very easily to your Rails applications.
-  :forks: 12
-  :url: http://github.com/ahe/2dc_jqgrid
-  :homepage: http://www.2dconcept.com/jquery-grid-rails-plugin
-  :fork: false
-  :private: false
-  :name: 2dc_jqgrid
-  :owner: ahe
-  :open_issues: 6
-  :watchers: 103
-- :description: Form builder for Rails that automatically marks fields as required, has in-line error messages, and more...
-  :forks: 0
-  :url: http://github.com/ncancelliere/field_set_forms
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: field_set_forms
-  :owner: ncancelliere
-  :open_issues: 0
-  :watchers: 7
-- :description: Red writes like Ruby and runs like JavaScript.
-  :forks: 0
-  :url: http://github.com/julius/red
-  :homepage: ""
-  :fork: true
-  :private: false
-  :name: red
-  :owner: julius
-  :open_issues: 0
-  :watchers: 14
-- :description: A clone of the svn repository for the faker gem.
-  :forks: 3
-  :url: http://github.com/westarete/faker
-  :homepage: http://faker.rubyforge.org/
-  :fork: false
-  :private: false
-  :name: faker
-  :owner: westarete
+  :name: humanize
+  :owner: radar
   :open_issues: 0
   :watchers: 9
-- :description: Model web apps easily and access them via nice app-specific Ruby APIs
-  :forks: 0
-  :url: http://github.com/asplake/path-to
-  :homepage: http://positiveincline.com/?p=213
-  :fork: false
-  :private: false
-  :name: path-to
-  :owner: asplake
-  :open_issues: 0
-  :watchers: 11
-- :description: A base Sinatra application template with DataMapper, RSpec, and Haml. Just fork and build.
-  :forks: 0
-  :url: http://github.com/fcoury/sinatra-template
+- :description: A library of neat Rails application templates.
+  :url: http://github.com/drnic/rails-templates
   :homepage: ""
   :fork: true
+  :forks: 5
   :private: false
-  :name: sinatra-template
-  :owner: fcoury
+  :name: rails-templates
+  :owner: drnic
   :open_issues: 0
-  :watchers: 1
-- :description: "Sistema para controle de cursinho pr\xC3\xA9 vestibular"
-  :forks: 0
-  :url: http://github.com/fcoury/cursoprevestibular
+  :watchers: 42
+- :description: Numero language
+  :url: http://github.com/radar/numero
   :homepage: ""
   :fork: false
-  :private: false
-  :name: cursoprevestibular
-  :owner: fcoury
-  :open_issues: 0
-  :watchers: 1
-- :description: Tool to generate complex configuration files from simple syntax, especially with multiple different servers.
-  :forks: 3
-  :url: http://github.com/burke/webconfig
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: webconfig
-  :owner: burke
-  :open_issues: 0
-  :watchers: 45
-- :description: Radiant is a no-fluff, open source content management system designed for small teams.
   :forks: 0
-  :url: http://github.com/webbynode/radiant
-  :homepage: http://radiantcms.org/
-  :fork: true
   :private: false
-  :name: radiant
-  :owner: webbynode
+  :name: numero
+  :owner: radar
   :open_issues: 0
   :watchers: 3
-- :description: Ground-up rewrite of Beast, a Ruby on Rails forum.
-  :forks: 0
-  :url: http://github.com/webbynode/altered_beast
-  :homepage: http://activereload.lighthouseapp.com/projects/7537-altered-beast/
-  :fork: true
+- :description: A simple gem for generating string diffs
+  :url: http://github.com/pvande/differ
+  :homepage: ""
+  :fork: false
+  :forks: 2
   :private: false
-  :name: altered_beast
-  :owner: webbynode
+  :name: differ
+  :owner: pvande
   :open_issues: 0
-  :watchers: 3
+  :watchers: 19
+- :description: Sprinkles for Apache, Passenger, Memcached, Git, Mysql or Postgres
+  :url: http://github.com/mocra/passenger-stack
+  :homepage: http://benschwarz.github.com/passenger-stack/
+  :fork: true
+  :forks: 0
+  :private: false
+  :name: passenger-stack
+  :owner: mocra
+  :open_issues: 0
+  :watchers: 7
 - :description: A Ruby interface to GitHub API v2
-  :forks: 11
   :url: http://github.com/fcoury/octopi
   :homepage: http://hasmany.info/2009/4/18/ruby-interface-to-github-api
   :fork: false
+  :forks: 11
   :private: false
   :name: octopi
   :owner: fcoury
   :open_issues: 12
   :watchers: 107
-- :description: Vim plugin for debugging Ruby applications (using ruby-debug-ide gem)
-  :forks: 5
-  :url: http://github.com/astashov/vim-ruby-debugger
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: vim-ruby-debugger
-  :owner: astashov
-  :open_issues: 5
-  :watchers: 113
-- :description: dtrace pid provider hooks for mri
-  :forks: 0
-  :url: http://github.com/methodmissing/mri_instrumentation
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: mri_instrumentation
-  :owner: methodmissing
-  :open_issues: 0
-  :watchers: 42
-- :description: Instructions on how to get up and running with nginx and passenger on Ubuntu 8.04 server
-  :forks: 10
-  :url: http://github.com/jnstq/rails-nginx-passenger-ubuntu
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: rails-nginx-passenger-ubuntu
-  :owner: jnstq
-  :open_issues: 0
-  :watchers: 121
-- :description: A command-line interface to the GitHub Issues API v2.
-  :forks: 1
-  :url: http://github.com/jsmits/github-cli
-  :homepage: http://jsmits.github.com/github-cli
-  :fork: false
-  :private: false
-  :name: github-cli
-  :owner: jsmits
-  :open_issues: 4
-  :watchers: 50
-- :description: An extremely efficient streaming JSON parsing and encoding library. Ruby C bindings to Yajl
-  :forks: 16
-  :url: http://github.com/brianmario/yajl-ruby
-  :homepage: http://rdoc.info/projects/brianmario/yajl-ruby
-  :fork: false
-  :pledgie: 4041
-  :private: false
-  :name: yajl-ruby
-  :owner: brianmario
-  :open_issues: 2
-  :watchers: 182
-- :description: A web-based personal finance manager with a focus on non-OCD budgeting and avoiding credit card debt
-  :forks: 0
-  :url: http://github.com/fcoury/bucketwise
-  :homepage: ""
+- :description: Standard authentication stack for Rails using Twitter to log in.
+  :url: http://github.com/radar/twitter-auth
   :fork: true
+  :forks: 0
   :private: false
-  :name: bucketwise
-  :owner: fcoury
+  :name: twitter-auth
+  :owner: radar
   :open_issues: 0
   :watchers: 1
-- :description: Ruby Library Documentation Service
-  :forks: 2
-  :url: http://github.com/zapnap/rdocinfo
-  :homepage: http://rdoc.info
+- :description: Creating nested items, all at once
+  :url: http://github.com/radar/projectr
+  :homepage: http://projectr.heroku.com
   :fork: false
-  :pledgie: 4350
-  :private: false
-  :name: rdocinfo
-  :owner: zapnap
-  :open_issues: 10
-  :watchers: 21
-- :description: Lab rat for GitHub API interaction using Octopi
   :forks: 0
-  :url: http://github.com/fcoury/api-labrat
-  :homepage: http://github.com/fcoury/octopi
-  :fork: false
   :private: false
-  :name: api-labrat
-  :owner: fcoury
-  :open_issues: 2
-  :watchers: 1
-- :description: A bug reporting Rails plugin that submits issues to your GitHub project
+  :name: projectr
+  :owner: radar
+  :open_issues: 0
+  :watchers: 7
+- :description: Guides written about how certain things in Rails works
+  :url: http://github.com/radar/how-rails-works
+  :homepage: http://frozenplague.net
+  :fork: false
   :forks: 1
-  :url: http://github.com/bcalloway/git_ticket
-  :homepage: ""
-  :fork: false
   :private: false
-  :name: git_ticket
-  :owner: bcalloway
+  :name: how-rails-works
+  :owner: radar
   :open_issues: 0
-  :watchers: 4
-- :description: Gem for talking to the Google Analytics API
-  :forks: 7
-  :url: http://github.com/activenetwork/gattica
-  :homepage: http://ridingtheclutch.com
-  :fork: false
-  :private: false
-  :name: gattica
-  :owner: activenetwork
-  :open_issues: 1
-  :watchers: 108
-- :description: Dataflow concurrency for Ruby (inspired by the Oz language)
-  :forks: 2
-  :url: http://github.com/larrytheliquid/dataflow
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: dataflow
-  :owner: larrytheliquid
-  :open_issues: 0
-  :watchers: 63
-- :description: "Dynamic, framework-neutral metadata describing path/URI structures, with natural translations to/from JSON, YAML and XML.  Bonus features: easy Rails integration and a plain text report format!"
-  :forks: 0
-  :url: http://github.com/asplake/described_routes
-  :homepage: http://positiveincline.com/?p=213
-  :fork: false
-  :private: false
-  :name: described_routes
-  :owner: asplake
-  :open_issues: 1
-  :watchers: 45
-- :description: Makes Amazon S3 backups redonkulous. Redonkulously easy, that is.
-  :forks: 0
-  :url: http://github.com/fcoury/backup_fu
-  :homepage: http://shanti.railsblog.com/backup-fu-makes-amazon-s3-backups-redonkulous
-  :fork: true
-  :private: false
-  :name: backup_fu
-  :owner: fcoury
-  :open_issues: 0
-  :watchers: 1
-- :description: A tool to simplify working with remote branches
-  :forks: 0
-  :url: http://github.com/fcoury/git_remote_branch
-  :homepage: http://grb.rubyforge.org/
-  :fork: true
-  :private: false
-  :name: git_remote_branch
-  :owner: fcoury
-  :open_issues: 0
-  :watchers: 1
-- :description: Gem Command to easily open a ruby gem with the editor of your choice.
-  :forks: 6
-  :url: http://github.com/adamsanderson/open_gem
-  :homepage: http://endofline.wordpress.com
-  :fork: false
-  :private: false
-  :name: open_gem
-  :owner: adamsanderson
-  :open_issues: 1
-  :watchers: 89
-- :description: A cookbook for the Vim text editor.
-  :forks: 1
-  :url: http://github.com/runpaint/vim-recipes
-  :homepage: http://vim.runpaint.org/
-  :fork: false
-  :private: false
-  :name: vim-recipes
-  :owner: runpaint
-  :open_issues: 2
-  :watchers: 142
-- :description: An open-source Cover Flow implementation
-  :forks: 5
-  :url: http://github.com/mattball/MBCoverFlowView
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: MBCoverFlowView
-  :owner: mattball
-  :open_issues: 0
-  :watchers: 169
-- :description: Quick, simple, fast captcha for Sinatra
-  :forks: 1
-  :url: http://github.com/bmizerany/sinatra-captcha
-  :homepage: http://www.sinatrarb.com
-  :fork: false
-  :private: false
-  :name: sinatra-captcha
-  :owner: bmizerany
-  :open_issues: 0
-  :watchers: 28
+  :watchers: 13
 - :description: A fully featured forum system compatible with Rails 2.3
-  :forks: 0
   :url: http://github.com/webbynode/rboard
   :homepage: http://forum.frozenplague.net
   :fork: true
+  :forks: 0
   :private: false
   :name: rboard
   :owner: webbynode
   :open_issues: 0
   :watchers: 5
-- :description: URL metadata API for scraping titles, descriptions, images, and videos from URL's.
-  :forks: 3
-  :url: http://github.com/teejayvanslyke/earl
-  :fork: false
-  :private: false
-  :name: earl
-  :owner: teejayvanslyke
-  :open_issues: 1
-  :watchers: 15
-- :description: Date/time and number parsing for Rails.
-  :forks: 5
-  :url: http://github.com/clemens/delocalize
-  :homepage: http://www.railway.at
-  :fork: false
-  :private: false
-  :name: delocalize
-  :owner: clemens
-  :open_issues: 0
-  :watchers: 47
-- :description: Rack Middleware to impose a rate limit on a web service (aka API Throttling)
-  :forks: 2
-  :url: http://github.com/dambalah/api-throttling
+- :description: Bigger. Better. Awesome. "Fork" of Gitorious
+  :url: http://github.com/radar/scoot
   :homepage: ""
   :fork: false
+  :forks: 1
   :private: false
-  :name: api-throttling
-  :owner: dambalah
+  :name: scoot
+  :owner: radar
   :open_issues: 0
-  :watchers: 101
-- :description: Autumn ORM
-  :forks: 0
-  :url: http://github.com/bondgeek/autumn
-  :homepage: http://autumn-orm.org/
+  :watchers: 10
+- :description: OAuth for Ruby
+  :url: http://github.com/drnic/oauth
+  :homepage: http://oauth.rubyforge.org/
   :fork: true
-  :private: false
-  :name: autumn
-  :owner: bondgeek
-  :open_issues: 0
-  :watchers: 2
-- :description: A backup tool for MySQL.
   :forks: 0
-  :url: http://github.com/christianhellsten/mysql-backup
-  :homepage: http://aktagon.com/projects/ruby/mysql-backup
-  :fork: false
   :private: false
-  :name: mysql-backup
-  :owner: christianhellsten
+  :name: oauth
+  :owner: drnic
   :open_issues: 0
-  :watchers: 3
-- :description: Eff finds things right from your command line. Also, it's quite extensible!
-  :forks: 2
-  :url: http://github.com/DerGuteMoritz/eff-the-finder
+  :watchers: 8
+- :description: THE railscamp jukebox
+  :url: http://github.com/lachie/duke
   :homepage: ""
   :fork: false
+  :forks: 1
   :private: false
-  :name: eff-the-finder
-  :owner: DerGuteMoritz
-  :open_issues: 0
-  :watchers: 15
-- :description: JavaScript BDD Rails Plugin (using Screw.Unit &amp; env.js)
-  :forks: 0
-  :url: http://github.com/wycats/blue-ridge
-  :homepage: ""
-  :fork: true
-  :private: false
-  :name: blue-ridge
-  :owner: wycats
-  :open_issues: 0
-  :watchers: 29
-- :description: Sample app showing DataMapper working with Rails
-  :forks: 0
-  :url: http://github.com/dkubb/datamapper-on-rails
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: datamapper-on-rails
-  :owner: dkubb
-  :open_issues: 0
-  :watchers: 13
-- :description: Isolated test for Rails Single-Table Inheritance caching problem
-  :forks: 0
-  :url: http://github.com/fcoury/rails-sti-caching
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: rails-sti-caching
-  :owner: fcoury
-  :open_issues: 0
-  :watchers: 1
-- :description: Eff finds things right from your command line. Also, it's quite extensible!
-  :forks: 0
-  :url: http://github.com/fcoury/eff-the-finder
-  :homepage: ""
-  :fork: true
-  :private: false
-  :name: eff-the-finder
-  :owner: fcoury
-  :open_issues: 0
-  :watchers: 2
-- :description: Automaticaly render an appropriate response in rails
-  :forks: 0
-  :url: http://github.com/simonmenke/render_any
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: render_any
-  :owner: simonmenke
-  :open_issues: 0
-  :watchers: 3
-- :description: Adding is_resource setup option to Typhoeus. Don't try to use this for anything yet.
-  :forks: 0
-  :url: http://github.com/twoism/typhoeus-resource
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: typhoeus-resource
-  :owner: twoism
-  :open_issues: 0
-  :watchers: 3
-- :description: Sinatra based IRC web application
-  :forks: 2
-  :url: http://github.com/andyherbert/WebIRC
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: WebIRC
-  :owner: andyherbert
-  :open_issues: 0
-  :watchers: 32
-- :description: Rails helpers that dump data attributes into DOM elements, compatible with jQuery 1.2.3+, Prototype 1.6.1+ & Mootools 1.2+
-  :forks: 0
-  :url: http://github.com/CodeOfficer/js-data-helper
-  :homepage: http://www.codeofficer.com/
-  :fork: false
-  :private: false
-  :name: js-data-helper
-  :owner: CodeOfficer
-  :open_issues: 0
-  :watchers: 44
-- :description: Gem Command to easily open a ruby gem with the editor of your choice.
-  :forks: 0
-  :url: http://github.com/fcoury/open_gem
-  :homepage: http://endofline.wordpress.com
-  :fork: true
-  :private: false
-  :name: open_gem
-  :owner: fcoury
-  :open_issues: 0
-  :watchers: 1
-- :description: Local git repository hosting with a sexy web interface and bonjour discovery. It's like your own little adhoc, network-aware github!
-  :forks: 12
-  :url: http://github.com/toolmantim/bananajour
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: bananajour
-  :owner: toolmantim
-  :open_issues: 4
-  :watchers: 352
-- :description: "Free progress dots for your scripts. Test::Unit-style. "
-  :forks: 0
-  :url: http://github.com/stephencelis/dots
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: dots
-  :owner: stephencelis
-  :open_issues: 0
-  :watchers: 38
-- :description: JavaScript Wrapper for GitHub API
-  :forks: 0
-  :url: http://github.com/DmitryBaranovskiy/githubjs
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: githubjs
-  :owner: DmitryBaranovskiy
+  :name: duke
+  :owner: lachie
   :open_issues: 0
   :watchers: 7
-- :description: Disqussion is a library for using the Disqus API.
+- :description: THE railscamp jukebox
+  :url: http://github.com/radar/duke
+  :homepage: ""
+  :fork: true
   :forks: 0
-  :url: http://github.com/blowmage/disqussion
+  :private: false
+  :name: duke
+  :owner: radar
+  :open_issues: 0
+  :watchers: 1
+- :description: RubyStein 3d SUPER MEGA ULTRA MEGAZORD UBER UBER ENTERPRISE EDITION
+  :url: http://github.com/FooBarWidget/rubystein
   :homepage: ""
   :fork: false
+  :forks: 8
   :private: false
-  :name: disqussion
-  :owner: blowmage
+  :name: rubystein
+  :owner: FooBarWidget
   :open_issues: 0
-  :watchers: 11
-- :description: An ActiveRecord plugin that makes it easier to do reporting.
-  :forks: 2
-  :url: http://github.com/acatighera/statistics
+  :watchers: 162
+- :description: A gitweb clone using Sinatra and Grit
+  :url: http://github.com/lenary/ginatra
+  :homepage: http://lenary.github.com/ginatra
+  :fork: false
+  :forks: 9
+  :private: false
+  :name: ginatra
+  :owner: lenary
+  :open_issues: 0
+  :watchers: 124
+- :description: Exceptional clone, but for a local network
+  :url: http://github.com/radar/guarddog
   :homepage: ""
   :fork: false
-  :private: false
-  :name: statistics
-  :owner: acatighera
-  :open_issues: 0
-  :watchers: 84
-- :description: Simple Asynchronous Processing
-  :forks: 1
-  :url: http://github.com/jnstq/job_fu
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: job_fu
-  :owner: jnstq
-  :open_issues: 0
-  :watchers: 93
-- :description: Rails-based application used to administer and monitor XenServer farm deployments.
   :forks: 0
-  :url: http://github.com/mwspitzer/Xen-Virtual-Machine-Monitor
-  :homepage: ""
-  :fork: false
   :private: false
-  :name: Xen-Virtual-Machine-Monitor
-  :owner: mwspitzer
-  :open_issues: 0
-  :watchers: 4
-- :description: An alternative syntax to Rails content_tag, inspired by the old Ruby CGI library
-  :forks: 1
-  :url: http://github.com/noelrappin/html_tag
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: html_tag
-  :owner: noelrappin
+  :name: guarddog
+  :owner: radar
   :open_issues: 0
   :watchers: 2
-- :description: Easy mode handling of github post receive callbacks
+- :description: Duplicates features of getexceptional.com. For use on a local network in conjunction with GuardDog.
+  :url: http://github.com/radar/kennel
+  :homepage: ""
+  :fork: false
   :forks: 0
-  :url: http://github.com/augustl/pushmaster
-  :homepage: ""
-  :fork: false
   :private: false
-  :name: pushmaster
-  :owner: augustl
-  :open_issues: 0
-  :watchers: 38
-- :description: An alternative syntax to Rails content_tag, inspired by the old Ruby CGI library
-  :forks: 0
-  :url: http://github.com/fcoury/html_tag
-  :homepage: ""
-  :fork: true
-  :private: false
-  :name: html_tag
-  :owner: fcoury
-  :open_issues: 0
-  :watchers: 1
-- :description: Routes library for ruby
-  :forks: 0
-  :url: http://github.com/oscardelben/routes
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: routes
-  :owner: oscardelben
-  :open_issues: 0
-  :watchers: 9
-- :description: A simple task scheduler for rails
-  :forks: 0
-  :url: http://github.com/Swirrl/Taskit
-  :homepage: http://www.ricroberts.com/articles/2009/05/17/taskit-a-rails-scheduler-plugin
-  :fork: false
-  :private: false
-  :name: Taskit
-  :owner: Swirrl
-  :open_issues: 0
-  :watchers: 68
-- :description: Dead simple JavaScript i18n tool for your Rails application
-  :forks: 0
-  :url: http://github.com/qoobaa/javascript_i18n
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: javascript_i18n
-  :owner: qoobaa
-  :open_issues: 0
-  :watchers: 15
-- :description: Little command line REST interface that you can use in pipelines (bash or zsh).
-  :forks: 4
-  :url: http://github.com/micha/resty
-  :homepage: http://thinkminimo.com
-  :fork: false
-  :private: false
-  :name: resty
-  :owner: micha
-  :open_issues: 0
-  :watchers: 186
-- :description: Lightweight, simple, fast, easy blogging engine written in rails and Lipsiadmin
-  :forks: 3
-  :url: http://github.com/Lipsiasoft/lipsiablog
-  :homepage: http://www.lipsiadmin.com
-  :fork: false
-  :private: false
-  :name: lipsiablog
-  :owner: Lipsiasoft
-  :open_issues: 0
-  :watchers: 15
-- :description: Shoebox helps you manage styles and scripts as first-class citizens in Rails.
-  :forks: 1
-  :url: http://github.com/ddollar/shoebox
-  :homepage: ""
-  :fork: false
-  :pledgie: 5931
-  :private: false
-  :name: shoebox
-  :owner: ddollar
-  :open_issues: 1
-  :watchers: 77
-- :description: Simple, yet powerful wrapper for taf2's curb (libcurl) library
-  :forks: 1
-  :url: http://github.com/gdi/curb-fu
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: curb-fu
-  :owner: gdi
-  :open_issues: 1
-  :watchers: 24
-- :description: Packaging system for Mac OS X 10.5 and above; heavy optimisations, no redundant packages and a bonus beer theme
-  :forks: 200
-  :url: http://github.com/mxcl/homebrew
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: homebrew
-  :owner: mxcl
-  :open_issues: 37
-  :watchers: 834
-- :description: A simple gem to send email through gmail
-  :forks: 1
-  :url: http://github.com/dcadenas/gmail_sender
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: gmail_sender
-  :owner: dcadenas
-  :open_issues: 0
-  :watchers: 4
-- :description: Get OpenVPN up and running on Ubuntu, using Chef. Great way to beat geofencing!
-  :forks: 1
-  :url: http://github.com/giraffesoft/openvpn-recipes
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: openvpn-recipes
-  :owner: giraffesoft
-  :open_issues: 0
-  :watchers: 9
-- :description: super lightweight rails plugin that adds hash-style lookups and option lists (for generating dropdowns) to ActiveRecord models
-  :forks: 2
-  :url: http://github.com/rubysolo/hashdown
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: hashdown
-  :owner: rubysolo
-  :open_issues: 0
-  :watchers: 61
-- :description: Awesome gem for modeling your domain and storing it in mongo
-  :forks: 65
-  :url: http://github.com/jnunemaker/mongomapper
-  :homepage: http://mongomapper.com
-  :fork: false
-  :pledgie: 5229
-  :private: false
-  :name: mongomapper
-  :owner: jnunemaker
-  :open_issues: 11
-  :watchers: 298
-- :description: Syntactic sugar for creating Python command line scripts by introspecting a function definition
-  :forks: 10
-  :url: http://github.com/simonw/optfunc
-  :homepage: http://simonwillison.net/2009/May/28/optfunc/
-  :fork: false
-  :private: false
-  :name: optfunc
-  :owner: simonw
-  :open_issues: 0
-  :watchers: 116
-- :description: Plugin to export excel documents from rails
-  :forks: 2
-  :url: http://github.com/xinuc/ekuseru
-  :homepage: http://github.com/xinuc/ekuseru
-  :fork: false
-  :private: false
-  :name: ekuseru
-  :owner: xinuc
-  :open_issues: 0
-  :watchers: 23
-- :description: Postview is a simple blogware written in Ruby using the Sinatra DSL for render files written in Markdown.
-  :forks: 3
-  :url: http://github.com/hallison/postview
-  :homepage: http://postview.rubyforge.org/
-  :fork: false
-  :pledgie: 5600
-  :private: false
-  :name: postview
-  :owner: hallison
-  :open_issues: 3
-  :watchers: 38
-- :description: An experiment in creating an OAuth provider with Sinatra
-  :forks: 0
-  :url: http://github.com/fcoury/sinatra-oauth-provider
-  :homepage: ""
-  :fork: true
-  :private: false
-  :name: sinatra-oauth-provider
-  :owner: fcoury
-  :open_issues: 0
-  :watchers: 1
-- :description: A library for assisting with making an OAuth provider
-  :forks: 0
-  :url: http://github.com/fcoury/oauth_provider
-  :homepage: ""
-  :fork: true
-  :private: false
-  :name: oauth_provider
-  :owner: fcoury
-  :open_issues: 0
-  :watchers: 1
-- :description: OAuth sample consumer & provider
-  :forks: 0
-  :url: http://github.com/fcoury/oauth_sample
-  :homepage: ""
-  :fork: true
-  :private: false
-  :name: oauth_sample
-  :owner: fcoury
-  :open_issues: 0
-  :watchers: 1
-- :description: A forked version of background with Time.now.utc
-  :forks: 1
-  :url: http://github.com/ThiagoLelis/bj-utc
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: bj-utc
-  :owner: ThiagoLelis
+  :name: kennel
+  :owner: radar
   :open_issues: 0
   :watchers: 2
-- :description: Allows a Rails application to run multiple subdomain sites transparently inside of a single Rails instance. This allows for multi-homed or multi-tenant databases very easily.
+- :description: Find List is a ruby on rails plugin to return an array from activerecord in a format that f.select likes
+  :url: http://github.com/markgandolfo/find_list
+  :homepage: http://markgandolfo.com
+  :fork: false
   :forks: 1
-  :url: http://github.com/penguincoder/acts_as_restricted_subdomain
-  :homepage: ""
-  :fork: false
   :private: false
-  :name: acts_as_restricted_subdomain
-  :owner: penguincoder
-  :open_issues: 0
-  :watchers: 29
-- :description: Keep a DRY history of your ActiveRecord models' changes
-  :forks: 15
-  :url: http://github.com/laserlemon/vestal_versions
-  :homepage: ""
-  :fork: false
-  :pledgie: 4606
-  :private: false
-  :name: vestal_versions
-  :owner: laserlemon
-  :open_issues: 6
-  :watchers: 346
-- :description: Something easy without function introspection
-  :forks: 1
-  :url: http://github.com/nakajima/optimus-prime
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: optimus-prime
-  :owner: nakajima
-  :open_issues: 0
-  :watchers: 11
-- :description: Sprinkle is a software provisioning tool you can use to build remote servers with. eg. to install a Rails or Merb stack on a brand new slice directly after its been created
-  :forks: 0
-  :url: http://github.com/fcoury/sprinkle
-  :homepage: http://github.com/crafterm/sprinkle
-  :fork: true
-  :private: false
-  :name: sprinkle
-  :owner: fcoury
-  :open_issues: 0
-  :watchers: 1
-- :description: pubsub via webhooks
-  :forks: 3
-  :url: http://github.com/jcapote/watercoolr
-  :homepage: watercoolr.nuklei.com
-  :fork: false
-  :private: false
-  :name: watercoolr
-  :owner: jcapote
-  :open_issues: 0
-  :watchers: 109
-- :description: An ActiveRecord database adapter that allows you to setup a "master/slave" environment
-  :forks: 3
-  :url: http://github.com/mauricio/master_slave_adapter
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: master_slave_adapter
-  :owner: mauricio
-  :open_issues: 2
-  :watchers: 88
-- :description: Rails Photo Album Plugin
-  :forks: 1
-  :url: http://github.com/pauliephonic/concept_album
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: concept_album
-  :owner: pauliephonic
-  :open_issues: 1
-  :watchers: 21
-- :description: Wraps ActiveRecord and Logger for use in non-Rails environments
-  :forks: 0
-  :url: http://github.com/winton/active_wrapper
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: active_wrapper
-  :owner: winton
+  :name: find_list
+  :owner: markgandolfo
   :open_issues: 0
   :watchers: 2
+- :description: Find List is a ruby on rails plugin to return an array from activerecord in a format that f.select likes
+  :url: http://github.com/radar/find_list
+  :homepage: http://markgandolfo.com
+  :fork: true
+  :forks: 0
+  :private: false
+  :name: find_list
+  :owner: radar
+  :open_issues: 0
+  :watchers: 1
+- :description: BDD that talks to domain experts first and code second
+  :url: http://github.com/radar/cucumber
+  :homepage: http://cukes.info/
+  :fork: true
+  :forks: 0
+  :private: false
+  :name: cucumber
+  :owner: radar
+  :open_issues: 0
+  :watchers: 1
+- :description: Display the SQL of any given query
+  :url: http://github.com/radar/sql_display
+  :homepage: ""
+  :fork: false
+  :forks: 0
+  :private: false
+  :name: sql_display
+  :owner: radar
+  :open_issues: 0
+  :watchers: 8
 - :description: ""
+  :url: http://github.com/benhoskings/babushka
+  :homepage: http://babushka.me
+  :fork: false
+  :forks: 6
+  :private: false
+  :name: babushka
+  :owner: benhoskings
+  :open_issues: 15
+  :watchers: 36
+- :description: Sinatra App for tracking what's been fixed in TextMate 2
+  :url: http://github.com/radar/fixedbytm2
+  :homepage: http://fixedintm2.com
+  :fork: false
   :forks: 0
-  :url: http://github.com/dsturnbull/multiplayer_ruby
-  :homepage: ""
-  :fork: false
   :private: false
-  :name: multiplayer_ruby
-  :owner: dsturnbull
+  :name: fixedbytm2
+  :owner: radar
   :open_issues: 0
-  :watchers: 11
-- :description: Because Ruby's Observable never does quite what I want
-  :forks: 1
-  :url: http://github.com/jcoglan/eventful
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: eventful
-  :owner: jcoglan
-  :open_issues: 0
-  :watchers: 102
+  :watchers: 3
 - :description: Lyndon wraps JavaScript in a loving MacRuby embrace.
-  :forks: 3
   :url: http://github.com/defunkt/lyndon
   :homepage: ""
   :fork: false
+  :forks: 3
   :private: false
   :name: lyndon
   :owner: defunkt
   :open_issues: 0
   :watchers: 156
-- :description: Rack Middleware for OAuth Authorization
-  :forks: 1
-  :url: http://github.com/remi/rack-oauth
-  :homepage: http://code.remi.org/rack-oauth
-  :fork: false
-  :private: false
-  :name: rack-oauth
-  :owner: remi
-  :open_issues: 2
-  :watchers: 18
-- :description: Mockify imitates the Shopify API in a Development Environment.  By pointing ActiveResources site method to a Mockify site a developer can send ActiveResource calls to Mockify with the same parameters and return expectations of Shopify.  Test data is seeded with the use of the populater and faker gems.
-  :forks: 0
-  :url: http://github.com/timcase/mockify
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: mockify
-  :owner: timcase
-  :open_issues: 0
-  :watchers: 11
-- :description: Ruby HTTP client based on libcurl
-  :forks: 8
-  :url: http://github.com/toland/patron
-  :homepage: http://toland.github.com/patron/
-  :fork: false
-  :private: false
-  :name: patron
-  :owner: toland
-  :open_issues: 2
-  :watchers: 264
-- :description: Git-like hashes and history for Ruby objects
-  :forks: 1
-  :url: http://github.com/delano/gibbler
-  :homepage: http://delano.github.com/gibbler
-  :fork: false
-  :private: false
-  :name: gibbler
-  :owner: delano
-  :open_issues: 0
-  :watchers: 134
-- :description: Provides an irb session to an existing ruby process.
-  :forks: 0
-  :url: http://github.com/ileitch/hijack
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: hijack
-  :owner: ileitch
-  :open_issues: 4
-  :watchers: 332
-- :description: My AppleScript collection
-  :forks: 0
-  :url: http://github.com/fcoury/scripts1
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: scripts1
-  :owner: fcoury
-  :open_issues: 0
-  :watchers: 1
-- :description: A PNG compressor app for OS X. (scroll down for download)
-  :forks: 0
-  :url: http://github.com/msanders/PNGSquash
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: PNGSquash
-  :owner: msanders
-  :open_issues: 2
-  :watchers: 66
-- :description: Dynamic Reporting Engine for Ruby && Rails
-  :forks: 2
-  :url: http://github.com/wayneeseguin/dynamic_reports
-  :homepage: http://dynamicreports.rubyforge.org
-  :fork: false
-  :private: false
-  :name: dynamic_reports
-  :owner: wayneeseguin
-  :open_issues: 0
-  :watchers: 163
-- :description: ""
-  :forks: 0
-  :url: http://github.com/fcoury/scripts
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: scripts
-  :owner: fcoury
-  :open_issues: 0
-  :watchers: 1
-- :description: learn git one commit at a time. updates weekly or when great tips are found
-  :forks: 0
-  :url: http://github.com/fcoury/gitready
-  :homepage: http://gitready.com
-  :fork: true
-  :private: false
-  :name: gitready
-  :owner: fcoury
-  :open_issues: 0
-  :watchers: 1
-- :description: Plugin for Rails to enabled easy embedding of affiliate links in to pages
-  :forks: 0
-  :url: http://github.com/fcoury/affiliate_links
+- :description: ActiveRecord plugin allowing you to hide and restore records without actually deleting them.
+  :url: http://github.com/radar/acts_as_paranoid
   :homepage: ""
   :fork: true
-  :private: false
-  :name: affiliate_links
-  :owner: fcoury
-  :open_issues: 0
-  :watchers: 1
-- :description: Asynchronous PubSubHubbub Ruby Client
-  :forks: 2
-  :url: http://github.com/igrigorik/PubSubHubbub
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: PubSubHubbub
-  :owner: igrigorik
-  :open_issues: 0
-  :watchers: 75
-- :description: A database import/export front end
   :forks: 0
-  :url: http://github.com/Adman65/Snapshot
+  :private: false
+  :name: acts_as_paranoid
+  :owner: radar
+  :open_issues: 0
+  :watchers: 2
+- :description: Tickets
+  :url: http://github.com/radar/tickets
   :homepage: ""
   :fork: false
-  :private: false
-  :name: Snapshot
-  :owner: Adman65
-  :open_issues: 0
-  :watchers: 23
-- :description: "This plugin enables 'enterprise-class' Google Sitemaps to be easily generated for a Rails site as a rake task, using a simple 'Rails Routes'-like DSL. It allows you to take care of familiar Sitemap issues like: Gzip of Sitemap files, variable priority links, paging/sorting links (e.g. my_list?page=3), SSL host links (e.g. https:), Rails apps which are installed on a sub-path (e.g. example.com/blog_app/) and hidden AJAX routes. It includes a Sitemap Index file so it supports more than the standard 50,000 individual urls (up to a maximum of 2.5 billion), and pings all major search engines on completion (Google, Yahoo, MSN, Ask, SitemapWriter)."
-  :forks: 7
-  :url: http://github.com/adamsalter/sitemap_generator-plugin
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: sitemap_generator-plugin
-  :owner: adamsalter
-  :open_issues: 0
-  :watchers: 233
-- :description: Rails plugin to allow easy use of tokyo cabinet within rails.
   :forks: 0
-  :url: http://github.com/elisehuard/tokyo_cabinet4r
-  :homepage: ""
-  :fork: false
   :private: false
-  :name: tokyo_cabinet4r
-  :owner: elisehuard
-  :open_issues: 0
-  :watchers: 18
-- :description: TextMate bundle to create private/public gists from the selected text
-  :forks: 0
-  :url: http://github.com/ivanvc/gists-tmbundle
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: gists-tmbundle
-  :owner: ivanvc
-  :open_issues: 0
-  :watchers: 10
-- :description: Ruby on Rails CRM platform for Web 2.0 and beyond
-  :forks: 0
-  :url: http://github.com/webbynode/fat_free_crm
-  :homepage: ""
-  :fork: true
-  :private: false
-  :name: fat_free_crm
-  :owner: webbynode
+  :name: tickets
+  :owner: radar
   :open_issues: 0
   :watchers: 4
-- :description: You don't have to wait until Ruby 2.0 to get (named|keyword) arguments. Has been tested with 1.8.6 and 1.9.1. Plausible alternative to options hash.
-  :forks: 1
-  :url: http://github.com/maca/arguments
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: arguments
-  :owner: maca
-  :open_issues: 1
-  :watchers: 16
-- :description: "A feed fetching and parsing library that treats the internet like Godzilla treats Japan: it dominates and eats all."
-  :forks: 0
-  :url: http://github.com/mwilliams/feedzirra
-  :homepage: ""
+- :description: Behaviour Driven Development framework for Ruby
+  :url: http://github.com/radar/rspec
+  :homepage: http://rspec.info
   :fork: true
-  :private: false
-  :name: feedzirra
-  :owner: mwilliams
-  :open_issues: 0
-  :watchers: 5
-- :description: Simple, Object-Oriented Attribute Overriding for ActiveRecord Models.
   :forks: 0
-  :url: http://github.com/chriseppstein/has_overrides
-  :homepage: ""
-  :fork: false
   :private: false
-  :name: has_overrides
-  :owner: chriseppstein
-  :open_issues: 0
-  :watchers: 8
-- :description: "Ruby Reports : Making your reporting life suck less, through Ruby"
-  :forks: 0
-  :url: http://github.com/fcoury/ruport
-  :homepage: http://stonecode.svnrepository.com/ruport
-  :fork: true
-  :private: false
-  :name: ruport
-  :owner: fcoury
+  :name: rspec
+  :owner: radar
   :open_issues: 0
   :watchers: 1
-- :description: Dead code detection for rails apps
+- :description: Pretty Print -> JSON conversion
+  :url: http://github.com/radar/pp.tmbundle
+  :homepage: ""
+  :fork: false
   :forks: 0
-  :url: http://github.com/schleyfox/old_yeller
-  :homepage: ""
-  :fork: false
   :private: false
-  :name: old_yeller
-  :owner: schleyfox
-  :open_issues: 0
-  :watchers: 27
-- :description: ParseTree meets Markaby
+  :name: pp.tmbundle
+  :owner: radar
+  :open_issues: 1
+  :watchers: 2
+- :description: A web-based personal finance manager with a focus on non-OCD budgeting and avoiding credit card debt
+  :url: http://github.com/radar/bucketwise
+  :homepage: http://wiki.github.com/jamis/bucketwise
+  :fork: true
   :forks: 0
-  :url: http://github.com/judofyr/parkaby
-  :homepage: ""
-  :fork: false
   :private: false
-  :name: parkaby
-  :owner: judofyr
-  :open_issues: 3
-  :watchers: 96
-- :description: RabbitMQ starter kit, example basic client scripts in ruby
-  :forks: 1
-  :url: http://github.com/hungryblank/rabbit_starter
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: rabbit_starter
-  :owner: hungryblank
+  :name: bucketwise
+  :owner: radar
   :open_issues: 0
-  :watchers: 18
+  :watchers: 1
+- :description: A couple of hacks to let Ultraviolet readers copy code without the line numbers
+  :url: http://github.com/radar/syn
+  :homepage: ""
+  :fork: false
+  :forks: 0
+  :private: false
+  :name: syn
+  :owner: radar
+  :open_issues: 0
+  :watchers: 1
 - :description: ""
-  :forks: 27
   :url: http://github.com/wycats/bundler
   :homepage: ""
   :fork: false
+  :forks: 27
   :private: false
   :name: bundler
   :owner: wycats
   :open_issues: 17
   :watchers: 337
-- :description: jquery template engine
-  :forks: 1
-  :url: http://github.com/trix/nano
-  :homepage: http://trix.pl
-  :fork: false
+- :description: A blank Chef repository - useful to bootstrap your own
+  :url: http://github.com/radar/chef-repo
+  :homepage: http://wiki.opscode.com/browse/chef/Chef+Repository
+  :fork: true
+  :forks: 0
   :private: false
-  :name: nano
-  :owner: trix
+  :name: chef-repo
+  :owner: radar
   :open_issues: 0
-  :watchers: 123
-- :description: Ruby wrapper for the WebbyNode API using HTTParty
-  :forks: 1
-  :url: http://github.com/shanesveller/webbynode-api
-  :homepage: http://shanesveler.com/
+  :watchers: 1
+- :description: Permissions system for Rails applications, extracted from rboard
+  :url: http://github.com/radar/can_touch_this
+  :homepage: http://frozenplague.net
   :fork: false
+  :forks: 0
   :private: false
-  :name: webbynode-api
-  :owner: shanesveller
+  :name: can_touch_this
+  :owner: radar
+  :open_issues: 0
+  :watchers: 44
+- :description: Allows sorting of (and pagination of sorted) records!
+  :url: http://github.com/radar/sort_by
+  :homepage: http://frozenplague.net
+  :fork: false
+  :forks: 1
+  :private: false
+  :name: sort_by
+  :owner: radar
+  :open_issues: 0
+  :watchers: 59
+- :description: A Rails powered wiki with a sensible code base. Work in progress, actively maintained.
+  :url: http://github.com/augustl/kii
+  :homepage: http://kiiproject.org/
+  :fork: false
+  :forks: 4
+  :private: false
+  :name: kii
+  :owner: augustl
+  :open_issues: 0
+  :watchers: 28
+- :description: Generates attr_accessors that encrypt and decrypt attributes
+  :url: http://github.com/radar/attr_encrypted
+  :homepage: ""
+  :fork: true
+  :forks: 0
+  :private: false
+  :name: attr_encrypted
+  :owner: radar
+  :open_issues: 0
+  :watchers: 1
+- :description: This pretentious little plugin aims to make nested_set cool again
+  :url: http://github.com/radar/eb_nested_set
+  :homepage: ""
+  :fork: true
+  :forks: 0
+  :private: false
+  :name: eb_nested_set
+  :owner: radar
+  :open_issues: 0
+  :watchers: 1
+- :description: Chronos, Improved Ruby wrapper for Harvest/Coop with a bot built-in
+  :url: http://github.com/mocra/chronos
+  :homepage: http://mocra.com
+  :fork: false
+  :forks: 0
+  :private: false
+  :name: chronos
+  :owner: mocra
   :open_issues: 0
   :watchers: 5
-- :description: Using AMQP as a Queuing Backend for Web Apps Should Be Easy
-  :forks: 2
-  :url: http://github.com/danielsdeleo/qusion
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: qusion
-  :owner: danielsdeleo
-  :open_issues: 0
-  :watchers: 99
-- :description: A tiny module that aims to provide a REST-like interface to any Ruby object
-  :forks: 2
-  :url: http://github.com/madx/rackable
-  :homepage: http://yapok.org/
-  :fork: false
-  :pledgie: 5360
-  :private: false
-  :name: rackable
-  :owner: madx
-  :open_issues: 0
-  :watchers: 117
-- :description: Awesome gem for modeling your domain and storing it in mongo
-  :forks: 0
-  :url: http://github.com/fcoury/mongomapper
-  :homepage: ""
+- :description: A Rails powered wiki with a sensible code base. Work in progress.
+  :url: http://github.com/radar/kii
+  :homepage: http://kii.lilleaas.net/
   :fork: true
+  :forks: 0
   :private: false
-  :name: mongomapper
-  :owner: fcoury
+  :name: kii
+  :owner: radar
   :open_issues: 0
   :watchers: 1
-- :description: Various open source projects from aprilchild.com.
+- :description: A Jabber server (kind of), built with EventMachine
+  :url: http://github.com/radar/talka
+  :homepage: http://frozenplague.net
+  :fork: false
   :forks: 0
-  :url: http://github.com/fcoury/aprilchild
-  :homepage: http://www.aprilchild.com
+  :private: false
+  :name: talka
+  :owner: radar
+  :open_issues: 0
+  :watchers: 2
+- :description: ""
+  :url: http://github.com/radar/seinfeld
+  :homepage: http://oss.techno-weenie.net/discussions/seinfeld-calendar
   :fork: true
-  :private: false
-  :name: aprilchild
-  :owner: fcoury
-  :open_issues: 0
-  :watchers: 1
-- :description: a unified interface into the cloud
-  :forks: 14
-  :url: http://github.com/cloudkick/libcloud
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: libcloud
-  :owner: cloudkick
-  :open_issues: 4
-  :watchers: 112
-- :description: Web interface for real-time log search & tailing. Remotely related to splunk
-  :forks: 2
-  :url: http://github.com/tobi/clarity
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: clarity
-  :owner: tobi
-  :open_issues: 0
-  :watchers: 173
-- :description: "Riot macros and helpers for Rails application testing "
-  :forks: 1
-  :url: http://github.com/thumblemonks/riot_rails
-  :homepage: http://rdoc.info/projects/thumblemonks/riot_rails
-  :fork: false
-  :private: false
-  :name: riot_rails
-  :owner: thumblemonks
-  :open_issues: 0
-  :watchers: 13
-- :description: A swift, liberal HTML parser with a fantastic library
-  :forks: 3
-  :url: http://github.com/olabini/hpricot
-  :homepage: http://code.whytheluckystiff.net/hpricot/
-  :fork: true
-  :private: false
-  :name: hpricot
-  :owner: olabini
-  :open_issues: 0
-  :watchers: 23
-- :description: A forked version of background with Time.now.utc
   :forks: 0
-  :url: http://github.com/fcoury/bj-utc
-  :homepage: ""
-  :fork: true
   :private: false
-  :name: bj-utc
-  :owner: fcoury
+  :name: seinfeld
+  :owner: radar
   :open_issues: 0
   :watchers: 1
 - :description: Tired of your users not knowing their own API tokens? Get them to give you their username and password and you go find it!
-  :forks: 0
   :url: http://github.com/radar/github-token-fetcher
   :homepage: http://frozenplague.net
   :fork: false
+  :forks: 0
   :private: false
   :name: github-token-fetcher
   :owner: radar
   :open_issues: 0
   :watchers: 3
-- :description: A very, very simple hook server for Github.  Supports different methods of notification via simple plugins.  Currently supports Twitter and Campfire.
-  :forks: 0
-  :url: http://github.com/fcoury/github_hook_server
-  :homepage: http://eleventyten.com/projects/github_hook_server
+- :description: A Ruby interface to GitHub API v2
+  :url: http://github.com/radar/octopi
+  :homepage: http://hasmany.info/2009/4/18/ruby-interface-to-github-api
   :fork: true
-  :private: false
-  :name: github_hook_server
-  :owner: fcoury
-  :open_issues: 0
-  :watchers: 1
-- :description: the tiny command-line interface library with lots of style~
-  :forks: 2
-  :url: http://github.com/cloudhead/mutter
-  :homepage: http://gemcutter.org/gems/mutter
-  :fork: false
-  :private: false
-  :name: mutter
-  :owner: cloudhead
-  :open_issues: 0
-  :watchers: 76
-- :description: RabbitMQ starter kit, example basic client scripts in ruby
   :forks: 0
-  :url: http://github.com/fcoury/rabbit_starter
-  :homepage: ""
-  :fork: true
   :private: false
-  :name: rabbit_starter
-  :owner: fcoury
+  :name: octopi
+  :owner: radar
   :open_issues: 0
   :watchers: 2
-- :description: Rails migration extender for default values and adding indexes
+- :description: The official Ruby Library for interacting with the Lighthouse API
+  :url: http://github.com/radar/lighthouse-api
+  :homepage: http://lighthouseapp.com/api
+  :fork: true
   :forks: 0
-  :url: http://github.com/toastyapps/migratory
-  :homepage: toastyapps.com
-  :fork: false
-  :pledgie: 5522
   :private: false
-  :name: migratory
-  :owner: toastyapps
-  :open_issues: 1
-  :watchers: 15
+  :name: lighthouse-api
+  :owner: radar
+  :open_issues: 0
+  :watchers: 1
+- :description: Bug Masher Bot for Railsbridge
+  :url: http://github.com/markgandolfo/railsbridge_bugmash_bot
+  :homepage: http://railsbridge.org
+  :fork: false
+  :forks: 0
+  :private: false
+  :name: railsbridge_bugmash_bot
+  :owner: markgandolfo
+  :open_issues: 0
+  :watchers: 5
+- :description: Makes http fun! Also, makes consuming restful web services dead easy.
+  :url: http://github.com/radar/httparty
+  :homepage: ""
+  :fork: true
+  :forks: 0
+  :private: false
+  :name: httparty
+  :owner: radar
+  :open_issues: 0
+  :watchers: 1
 - :description: Simple library which makes it easy to add caching to all your external API calls.
-  :forks: 1
   :url: http://github.com/radar/api_cache
   :homepage: http://blog.new-bamboo.co.uk/2008/6/6/api_cache
   :fork: true
+  :forks: 1
   :private: false
   :name: api_cache
   :owner: radar
   :open_issues: 0
   :watchers: 2
-- :description: Redmine is a flexible project management web application written using Ruby on Rails framework.  This is the official git mirror of the svn repository
+- :description: Something that's Vicious and Delicious
+  :url: http://github.com/lenary/vicious-delicious
+  :homepage: ""
+  :fork: false
   :forks: 0
-  :url: http://github.com/webbynode/redmine
-  :homepage: http://www.redmine.org
-  :fork: true
   :private: false
-  :name: redmine
-  :owner: webbynode
-  :open_issues: 0
-  :watchers: 4
-- :description: Git/Subversion browser and changeset viewer
-  :forks: 0
-  :url: http://github.com/webbynode/warehouse
-  :homepage: http://warehouseapp.com
-  :fork: true
-  :private: false
-  :name: warehouse
-  :owner: webbynode
-  :open_issues: 0
-  :watchers: 2
-- :description: CI Joe is a simple Continuous Integration server.
-  :forks: 22
-  :url: http://github.com/defunkt/cijoe
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: cijoe
-  :owner: defunkt
-  :open_issues: 0
-  :watchers: 296
-- :description: A simple gitweb replacement built with Django
-  :forks: 0
-  :url: http://github.com/fcoury/django-git
-  :homepage: http://github.com/sethtrain/django-git
-  :fork: true
-  :private: false
-  :name: django-git
-  :owner: fcoury
-  :open_issues: 0
-  :watchers: 1
-- :description: Listens to a twitter stream and routes matching updates to HTTP posts.
-  :forks: 0
-  :url: http://github.com/bhauman/Twroute
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: Twroute
-  :owner: bhauman
-  :open_issues: 0
-  :watchers: 19
-- :description: Simple library which makes it easy to add caching to all your external API calls.
-  :forks: 0
-  :url: http://github.com/fcoury/api_cache
-  :homepage: http://blog.new-bamboo.co.uk/2008/6/6/api_cache
-  :fork: true
-  :private: false
-  :name: api_cache
-  :owner: fcoury
-  :open_issues: 0
-  :watchers: 1
-- :description: Gitorious
-  :forks: 0
-  :url: http://github.com/fcoury/gitorious
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: gitorious
-  :owner: fcoury
-  :open_issues: 0
-  :watchers: 1
-- :description: Turn NGiNX into an adept HTTP push server.
-  :forks: 4
-  :url: http://github.com/slact/nginx_http_push_module
-  :homepage: http://pushmodule.slact.net/
-  :fork: false
-  :pledgie: 6454
-  :private: false
-  :name: nginx_http_push_module
-  :owner: slact
-  :open_issues: 6
-  :watchers: 249
-- :description: A simple Redis-based queue.
-  :forks: 14
-  :url: http://github.com/defunkt/resque
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: resque
-  :owner: defunkt
-  :open_issues: 5
-  :watchers: 438
-- :description: A rails plugin/gem to kill N+1 queries and unused eager loading
-  :forks: 10
-  :url: http://github.com/flyerhzm/bullet
-  :homepage: http://www.huangzhimin.com/projects/4-bullet
-  :fork: false
-  :pledgie: 6725
-  :private: false
-  :name: bullet
-  :owner: flyerhzm
-  :open_issues: 0
-  :watchers: 423
-- :description: A simple gem to send email through gmail
-  :forks: 0
-  :url: http://github.com/fcoury/gmail_sender
-  :homepage: ""
-  :fork: true
-  :private: false
-  :name: gmail_sender
-  :owner: fcoury
-  :open_issues: 0
-  :watchers: 1
-- :description: Simple Sinatra app for one-click Capistrano deployments
-  :forks: 1
-  :url: http://github.com/outoftime/clickistrano
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: clickistrano
-  :owner: outoftime
-  :open_issues: 1
-  :watchers: 107
-- :description: Modern continuous testing (flexible alternative to Autotest)
-  :forks: 7
-  :url: http://github.com/mynyml/watchr
-  :homepage: http://mynyml.com/ruby/flexible-continuous-testing
-  :fork: false
-  :private: false
-  :name: watchr
-  :owner: mynyml
-  :open_issues: 2
-  :watchers: 201
-- :description: A library for persisting your objects into cassandra.
-  :forks: 4
-  :url: http://github.com/NZKoz/cassandra_object
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: cassandra_object
-  :owner: NZKoz
-  :open_issues: 0
-  :watchers: 78
-- :description: Aptana Python IDE
-  :forks: 3
-  :url: http://github.com/aptana/Pydev
-  :homepage: http://www.pydev.org
-  :fork: false
-  :private: false
-  :name: Pydev
-  :owner: aptana
-  :open_issues: 1
-  :watchers: 26
-- :description: Why's Poignant Guide to Ruby
-  :forks: 4
-  :url: http://github.com/whymirror/poignant-guide
-  :homepage: http://mislav.uniqpath.com/poignant-guide/
-  :fork: true
-  :private: false
-  :name: poignant-guide
-  :owner: whymirror
-  :open_issues: 0
-  :watchers: 13
-- :description: Reversible, secure secret storing for your rails model using public/private key encryption and acts_as_lockbox.
-  :forks: 0
-  :url: http://github.com/jamesotron/Lockbox
-  :homepage: http://www.mashd.cc/tag/lockbox
-  :fork: false
-  :private: false
-  :name: Lockbox
-  :owner: jamesotron
-  :open_issues: 0
-  :watchers: 26
-- :description: A community-driven framework for managing your zsh configuration.
-  :forks: 57
-  :url: http://github.com/robbyrussell/oh-my-zsh
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: oh-my-zsh
-  :owner: robbyrussell
-  :open_issues: 20
-  :watchers: 225
-- :description: A port of CouchDB's Futon web interface to MongoDB
-  :forks: 2
-  :url: http://github.com/sbellity/futon4mongo
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: futon4mongo
-  :owner: sbellity
-  :open_issues: 0
-  :watchers: 46
-- :description: A shiny new Ruby Queue
-  :forks: 1
-  :url: http://github.com/mosta/Arabesque
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: Arabesque
-  :owner: mosta
-  :open_issues: 0
-  :watchers: 6
-- :forks: 0
-  :url: http://github.com/mdub/representative
-  :fork: false
-  :private: false
-  :name: representative
-  :owner: mdub
-  :open_issues: 0
-  :watchers: 18
-- :description: A Rails engine that provides OpenID support
-  :forks: 0
-  :url: http://github.com/terrbear/openid_engine
-  :homepage: ""
-  :fork: false
-  :pledgie: 6021
-  :private: false
-  :name: openid_engine
-  :owner: terrbear
-  :open_issues: 0
-  :watchers: 74
-- :description: Bash script to help new users set up their git installation
-  :forks: 5
-  :url: http://github.com/help/setup
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: setup
-  :owner: help
-  :open_issues: 0
-  :watchers: 40
-- :description: Easy SWFUpload integration into Rails application including session support
-  :forks: 0
-  :url: http://github.com/alex3t/swfupload_fu
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: swfupload_fu
-  :owner: alex3t
-  :open_issues: 0
-  :watchers: 145
-- :description: Postview is a simple blog-engine written in Ruby using the Sinatra DSL for render files written in Markdown.
-  :forks: 0
-  :url: http://github.com/fcoury/postview
-  :homepage: http://postview.rubyforge.org/
-  :fork: true
-  :private: false
-  :name: postview
-  :owner: fcoury
-  :open_issues: 0
-  :watchers: 1
-- :description: Flexible authentication solution for Rails with Warden
-  :forks: 7
-  :url: http://github.com/plataformatec/devise
-  :homepage: http://blog.plataformatec.com.br/tag/devise/
-  :fork: false
-  :private: false
-  :name: devise
-  :owner: plataformatec
-  :open_issues: 4
-  :watchers: 389
-- :description: A port of CouchDB's Futon web interface to MongoDB
-  :forks: 0
-  :url: http://github.com/fcoury/futon4mongo
-  :homepage: ""
-  :fork: true
-  :private: false
-  :name: futon4mongo
-  :owner: fcoury
-  :open_issues: 0
-  :watchers: 1
-- :description: Rack middleware to implement Google Chrome Frame
-  :forks: 2
-  :url: http://github.com/sunlightlabs/rack-chromeframe
-  :homepage: http://sunlightlabs.com
-  :fork: false
-  :private: false
-  :name: rack-chromeframe
-  :owner: sunlightlabs
-  :open_issues: 2
-  :watchers: 53
-- :description: Ruby on Rails plugin for RightJS
-  :forks: 1
-  :url: http://github.com/MadRabbit/right-rails
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: right-rails
-  :owner: MadRabbit
-  :open_issues: 0
-  :watchers: 27
-- :description: A Rails engine to help integrate the 37signals WyshiHat rich text editor to your application.
-  :forks: 2
-  :url: http://github.com/80beans/wysihat-engine
-  :homepage: http://www.80beans.com/2009/10/01/wysihat-engine/
-  :fork: false
-  :private: false
-  :name: wysihat-engine
-  :owner: 80beans
-  :open_issues: 1
-  :watchers: 139
-- :description: v is for versioned. It's is currently only a threaded wrapper for the git commands or procedures.
-  :forks: 0
-  :url: http://github.com/boof/v
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: v
-  :owner: boof
-  :open_issues: 0
-  :watchers: 27
-- :description: "\xE2\x80\x9CBackup\xE2\x80\x9D is a RubyGem, written for Ruby on Rails. It's main purpose is to Backup any files to Amazon S3 or any remotely accessible server through SSH (SCP). It supports database and regular file backups. On top of that, it's extremely easy to set up. Backup will provide a generator script that will place all necessary files inside your Rails application. Two of which, are \xE2\x80\x9Cyaml\xE2\x80\x9D configuration files. Using just these two files to configure a backup for database formats such as a MySQL, SQLite3 or any Assets folder. Setting up \xE2\x80\x9CBackup\xE2\x80\x9D takes only about a minute or two!"
-  :forks: 0
-  :url: http://github.com/meskyanichi/backup
-  :homepage: http://gemcutter.org/gems/backup
-  :fork: false
-  :private: false
-  :name: backup
-  :owner: meskyanichi
-  :open_issues: 0
-  :watchers: 20
-- :description: See defunkt/unicorn for the official unofficial Unicorn mirror. Updated semi-regularly.
-  :forks: 0
-  :url: http://github.com/rtomayko/unicorn
-  :homepage: http://unicorn.bogomips.org/
-  :fork: true
-  :private: false
-  :name: unicorn
-  :owner: rtomayko
-  :open_issues: 0
-  :watchers: 39
-- :description: Simple depth first ruby testing
-  :forks: 1
-  :url: http://github.com/geemus/shindo
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: shindo
-  :owner: geemus
-  :open_issues: 0
-  :watchers: 19
-- :description: Ruby views without a templating language
-  :forks: 0
-  :url: http://github.com/jferris/effigy
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: effigy
-  :owner: jferris
-  :open_issues: 0
-  :watchers: 15
-- :description: Rails application generator I use for my projects. Includes Rails freezing, Capistrano recipes, plugins and gems.
-  :forks: 0
-  :url: http://github.com/lucashungaro/eureka
-  :homepage: http://lucashungaro.github.com
-  :fork: false
-  :private: false
-  :name: eureka
-  :owner: lucashungaro
-  :open_issues: 0
-  :watchers: 5
-- :description: "fugitive.vim: a Git wrapper so awesome, it should be illegal"
-  :forks: 2
-  :url: http://github.com/tpope/vim-fugitive
-  :homepage: http://github.com/tpope/vim-fugitive/blob/master/doc/fugitive.txt
-  :fork: false
-  :private: false
-  :name: vim-fugitive
-  :owner: tpope
-  :open_issues: 0
-  :watchers: 141
-- :description: Rails Development Directory
-  :forks: 6
-  :url: http://github.com/engineyard/rails_dev_directory
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: rails_dev_directory
-  :owner: engineyard
-  :open_issues: 0
-  :watchers: 93
-- :description: tired of wasting your time on Facebook/Twitter/whatever? use this Ruby server to stop screwing around and get things done! productivity is at your fingertips
-  :forks: 1
-  :url: http://github.com/eladmeidar/productivity_ftw
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: productivity_ftw
-  :owner: eladmeidar
-  :open_issues: 0
-  :watchers: 9
-- :description: Organise ActiveRecord model into a tree structure
-  :forks: 4
-  :url: http://github.com/stefankroes/ancestry
-  :homepage: ""
-  :fork: false
-  :pledgie: 6792
-  :private: false
-  :name: ancestry
-  :owner: stefankroes
-  :open_issues: 0
-  :watchers: 191
-- :description: simple backup for mysql, posgresql, svn and files to s3 or local filesystem
-  :forks: 0
-  :url: http://github.com/fcoury/safe
-  :homepage: http://blog.astrails.com/astrails-safe
-  :fork: true
-  :private: false
-  :name: safe
-  :owner: fcoury
-  :open_issues: 0
-  :watchers: 1
-- :description: Bash script to help new users set up their git installation
-  :forks: 0
-  :url: http://github.com/fcoury/setup
-  :homepage: ""
-  :fork: true
-  :private: false
-  :name: setup
-  :owner: fcoury
-  :open_issues: 0
-  :watchers: 1
-- :description: Rails plugin for application level rate limiting.
-  :forks: 0
-  :url: http://github.com/ssayles/curbit
-  :homepage: http://github.com/ssayles/curbit
-  :fork: false
-  :private: false
-  :name: curbit
-  :owner: ssayles
-  :open_issues: 0
-  :watchers: 29
-- :description: Zero-effort creation of Location-aware Rails application based on W3C Geolocaton API.
-  :forks: 1
-  :url: http://github.com/parolkar/geo_mere_laal
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: geo_mere_laal
-  :owner: parolkar
-  :open_issues: 0
-  :watchers: 82
-- :description: Cheat Sheet Utility for Bash - similar to 'cheat' but much faster, not dependent on ruby, and better cheats
-  :forks: 1
-  :url: http://github.com/visionmedia/ch
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: ch
-  :owner: visionmedia
-  :open_issues: 3
-  :watchers: 25
-- :description: runtime object introspection for ruby process
-  :forks: 1
-  :url: http://github.com/bmizerany/onis
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: onis
-  :owner: bmizerany
-  :open_issues: 0
-  :watchers: 51
-- :description: runtime object introspection for ruby process
-  :forks: 0
-  :url: http://github.com/fcoury/onis
-  :homepage: ""
-  :fork: true
-  :private: false
-  :name: onis
-  :owner: fcoury
-  :open_issues: 0
-  :watchers: 1
-- :description: gdb hooks for MRI
-  :forks: 1
-  :url: http://github.com/tmm1/gdb.rb
-  :homepage: ""
-  :fork: false
-  :private: false
-  :name: gdb.rb
-  :owner: tmm1
-  :open_issues: 1
-  :watchers: 86
-- :description: A simple Redis-based queue.
-  :forks: 0
-  :url: http://github.com/adamcooke/resque
-  :homepage: ""
-  :fork: true
-  :private: false
-  :name: resque
-  :owner: adamcooke
+  :name: vicious-delicious
+  :owner: lenary
   :open_issues: 0
   :watchers: 3
-- :description: "Riot macros and helpers for Rails application testing "
-  :forks: 0
-  :url: http://github.com/fcoury/riot_rails
-  :homepage: http://rdoc.info/projects/thumblemonks/riot_rails
-  :fork: true
+- :description: Better distance of time in words for Rails
+  :url: http://github.com/radar/dotiw
+  :homepage: http://frozenplague.net
+  :fork: false
+  :forks: 1
   :private: false
-  :name: riot_rails
-  :owner: fcoury
+  :name: dotiw
+  :owner: radar
+  :open_issues: 0
+  :watchers: 40
+- :url: http://github.com/radar/dnssd
+  :fork: false
+  :forks: 0
+  :private: false
+  :name: dnssd
+  :owner: radar
+  :open_issues: 0
+  :watchers: 1
+- :description: A simple Rails wrapper for the PrinceXML PDF generation library.
+  :url: http://github.com/drnic/princely
+  :homepage: http://www.mbleigh.com/plugins/princely-rails-prince-xml-wrapper
+  :fork: true
+  :forks: 0
+  :private: false
+  :name: princely
+  :owner: drnic
+  :open_issues: 0
+  :watchers: 4
+- :description: Awesome gem for modeling your domain and storing it in mongo
+  :url: http://github.com/hashrocket/mongomapper
+  :homepage: ""
+  :fork: true
+  :forks: 0
+  :private: false
+  :name: mongomapper
+  :owner: hashrocket
+  :open_issues: 0
+  :watchers: 34
+- :description: Gem for using .NET time formatters in Ruby
+  :url: http://github.com/radar/ananke
+  :homepage: http://frozenplague.net
+  :fork: false
+  :forks: 0
+  :private: false
+  :name: ananke
+  :owner: radar
+  :open_issues: 0
+  :watchers: 2
+- :description: Parallel Processing for the Rest of Us
+  :url: http://github.com/documentcloud/cloud-crowd
+  :homepage: http://wiki.github.com/documentcloud/cloud-crowd
+  :fork: false
+  :forks: 12
+  :private: false
+  :name: cloud-crowd
+  :owner: documentcloud
+  :open_issues: 3
+  :watchers: 377
+- :description: Example of Rails 2.3 nested form attributes magic
+  :url: http://github.com/notahat/nested_attributes_example
+  :homepage: ""
+  :fork: false
+  :forks: 0
+  :private: false
+  :name: nested_attributes_example
+  :owner: notahat
+  :open_issues: 0
+  :watchers: 2
+- :description: A gem that allows you to create, list, and modify hostnames with ease...
+  :url: http://github.com/radar/ghost
+  :homepage: http://bjeanes.com
+  :fork: true
+  :forks: 0
+  :private: false
+  :name: ghost
+  :owner: radar
+  :open_issues: 0
+  :watchers: 1
+- :description: A driver for your Passengers. Alternative to Passenger Preference Pane. Works on both Mac OS X and Linux
+  :url: http://github.com/radar/driver
+  :homepage: http://frozenplague.net
+  :fork: false
+  :forks: 3
+  :private: false
+  :name: driver
+  :owner: radar
+  :open_issues: 5
+  :watchers: 29
+- :description: Rails engine for providing a calendar for your app
+  :url: http://github.com/radar/calenduh
+  :homepage: http://frozenplague.net
+  :fork: false
+  :forks: 0
+  :private: false
+  :name: calenduh
+  :owner: radar
+  :open_issues: 0
+  :watchers: 4
+- :description: Since you can't (easily) embed features in an engine...
+  :url: http://github.com/radar/calenduh-test
+  :homepage: http://frozenplague.net
+  :fork: false
+  :forks: 0
+  :private: false
+  :name: calenduh-test
+  :owner: radar
+  :open_issues: 0
+  :watchers: 1
+- :description: ActsAsList plugin
+  :url: http://github.com/radar/acts_as_list
+  :homepage: http://rubyonrails.org
+  :fork: true
+  :forks: 0
+  :private: false
+  :name: acts_as_list
+  :owner: radar
+  :open_issues: 0
+  :watchers: 1
+- :description: Rails RESTful controller abstraction plugin.
+  :url: http://github.com/hashrocket/resource_controller
+  :homepage: http://jamesgolick.com/resource_controller
+  :fork: true
+  :forks: 0
+  :private: false
+  :name: resource_controller
+  :owner: hashrocket
+  :open_issues: 0
+  :watchers: 24
+- :description: ""
+  :url: http://github.com/radar/bundler
+  :homepage: ""
+  :fork: true
+  :forks: 0
+  :private: false
+  :name: bundler
+  :owner: radar
+  :open_issues: 0
+  :watchers: 1
+- :description: A rake task to track down missing database indexes. does not assume that all foreign keys end with the convention of _id.
+  :url: http://github.com/eladmeidar/rails_indexes
+  :homepage: http://blog.eizesus.com/2009/9/find-where-to-index-your-tables-on-a-rails-app
+  :fork: false
+  :forks: 3
+  :private: false
+  :name: rails_indexes
+  :owner: eladmeidar
+  :open_issues: 1
+  :watchers: 130
+- :description: A rake task to track down missing database indexes. does not assume that all foreign keys end with the convention of _id.
+  :url: http://github.com/radar/rails_indexes
+  :homepage: http://blog.eizesus.com/2009/9/find-where-to-index-your-tables-on-a-rails-app
+  :fork: true
+  :forks: 0
+  :private: false
+  :name: rails_indexes
+  :owner: radar
+  :open_issues: 0
+  :watchers: 1
+- :description: Rails RESTful controller abstraction plugin.
+  :url: http://github.com/radar/resource_controller
+  :homepage: http://jamesgolick.com/resource_controller
+  :fork: true
+  :forks: 0
+  :private: false
+  :name: resource_controller
+  :owner: radar
+  :open_issues: 0
+  :watchers: 1
+- :description: The RailsIRC Site
+  :url: http://github.com/radar/railsirc
+  :homepage: http://railsirc.com
+  :fork: false
+  :forks: 0
+  :private: false
+  :name: railsirc
+  :owner: radar
+  :open_issues: 0
+  :watchers: 2
+- :description: ""
+  :url: http://github.com/radar/babushka
+  :homepage: ""
+  :fork: true
+  :forks: 0
+  :private: false
+  :name: babushka
+  :owner: radar
+  :open_issues: 0
+  :watchers: 1
+- :description: Parallel Processing for the Rest of Us
+  :url: http://github.com/radar/cloud-crowd
+  :homepage: http://wiki.github.com/documentcloud/cloud-crowd
+  :fork: true
+  :forks: 0
+  :private: false
+  :name: cloud-crowd
+  :owner: radar
+  :open_issues: 0
+  :watchers: 1
+- :description: Continuous Integration Server written in Rails, supporting Github and Codebase payloads
+  :url: http://github.com/radar/construct
+  :homepage: http://gitpilot.com
+  :fork: false
+  :forks: 3
+  :private: false
+  :name: construct
+  :owner: radar
+  :open_issues: 0
+  :watchers: 43
+- :description: Chronic is a pure Ruby natural language date parser.
+  :url: http://github.com/radar/chronic
+  :homepage: http://chronic.rubyforge.org
+  :fork: true
+  :forks: 0
+  :private: false
+  :name: chronic
+  :owner: radar
+  :open_issues: 0
+  :watchers: 1
+- :description: A project that is successful when ran in Construct
+  :url: http://github.com/radar/construct-success
+  :homepage: http://gitpilot.com
+  :fork: false
+  :forks: 0
+  :private: false
+  :name: construct-success
+  :owner: radar
+  :open_issues: 0
+  :watchers: 1
+- :description: A project that is supposed to fail when run on Construct
+  :url: http://github.com/radar/construct-failure
+  :homepage: http://gitpilot.com
+  :fork: false
+  :forks: 0
+  :private: false
+  :name: construct-failure
+  :owner: radar
+  :open_issues: 0
+  :watchers: 1
+- :description: Ruby library for accessing the eFax Developer service
+  :url: http://github.com/drnic/efax
+  :homepage: ""
+  :fork: true
+  :forks: 0
+  :private: false
+  :name: efax
+  :owner: drnic
+  :open_issues: 0
+  :watchers: 18
+- :description: http://stackoverflow.com/questions/1514880/how-can-i-create-new-records-with-hasmany-through-and-honor-conditions
+  :url: http://github.com/radar/course-student-membership-bug
+  :homepage: http://stackoverflow.com/questions/1514880/how-can-i-create-new-records-with-hasmany-through-and-honor-conditions
+  :fork: false
+  :forks: 0
+  :private: false
+  :name: course-student-membership-bug
+  :owner: radar
+  :open_issues: 0
+  :watchers: 1
+- :description: Sample app containing middleware for banning users
+  :url: http://github.com/radar/hammer
+  :homepage: http://frozenplague.net
+  :fork: false
+  :forks: 0
+  :private: false
+  :name: hammer
+  :owner: radar
+  :open_issues: 0
+  :watchers: 2
+- :description: Site for listing all the cool new features of rails 3
+  :url: http://github.com/radar/fixedbyrails3
+  :homepage: http://fixedbyrails3.com
+  :fork: false
+  :forks: 0
+  :private: false
+  :name: fixedbyrails3
+  :owner: radar
+  :open_issues: 0
+  :watchers: 2
+- :description: Logging responses for all Net::HTTP requests
+  :url: http://github.com/mocra/response_logger
+  :homepage: http://mocra.com
+  :fork: false
+  :forks: 0
+  :private: false
+  :name: response_logger
+  :owner: mocra
+  :open_issues: 0
+  :watchers: 5
+- :description: Lets you find ActiveRecord objects by year, month, fortnight, week and more!
+  :url: http://github.com/mocra/by_star
+  :homepage: http://runcoderun.com/radar/by_star
+  :fork: true
+  :forks: 0
+  :private: false
+  :name: by_star
+  :owner: mocra
+  :open_issues: 0
+  :watchers: 7
+- :description: fields_for example app, inspired by acts_as_rubyist
+  :url: http://github.com/radar/anaf_example
+  :homepage: http://frozenplague.net
+  :fork: false
+  :forks: 0
+  :private: false
+  :name: anaf_example
+  :owner: radar
+  :open_issues: 0
+  :watchers: 1
+- :description: "Database backed asynchronous priority queue -- Extracted from Shopify "
+  :url: http://github.com/radar/delayed_job
+  :homepage: http://tobi.github.com/delayed_job
+  :fork: true
+  :forks: 0
+  :private: false
+  :name: delayed_job
+  :owner: radar
+  :open_issues: 0
+  :watchers: 1
+- :description: Ruby on Rails
+  :url: http://github.com/hashrocket/rails
+  :homepage: http://rubyonrails.org
+  :fork: true
+  :forks: 0
+  :private: false
+  :name: rails
+  :owner: hashrocket
+  :open_issues: 0
+  :watchers: 26
+- :description: Javascript Parser for Ruby
+  :url: http://github.com/radar/ham-and-cheese
+  :homepage: http://frozenplague.net
+  :fork: false
+  :forks: 0
+  :private: false
+  :name: ham-and-cheese
+  :owner: radar
+  :open_issues: 0
+  :watchers: 1
+- :description: A command line tool that analyzes request logfiles (e.g. Rails, Merb, Apache) to produce a performance report.
+  :url: http://github.com/radar/request-log-analyzer
+  :homepage: http://www.railsdoctors.com
+  :fork: true
+  :forks: 0
+  :private: false
+  :name: request-log-analyzer
+  :owner: radar
+  :open_issues: 0
+  :watchers: 2
+- :description: Classier solution for file uploads in Ruby for Rack, Rails, Merb and Sinatra
+  :url: http://github.com/radar/carrierwave
+  :homepage: http://carrierwave.rubyforge.org/
+  :fork: true
+  :forks: 0
+  :private: false
+  :name: carrierwave
+  :owner: radar
   :open_issues: 0
   :watchers: 1

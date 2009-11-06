@@ -1,0 +1,26 @@
+HTTP/1.1 200 OK
+Server: nginx/0.7.61
+Date: Thu, 05 Nov 2009 21:06:41 GMT
+Content-Type: application/x-yaml; charset=utf-8
+Connection: keep-alive
+Status: 200 OK
+ETag: "51161a0ce0e6e5f27334175fe1aa9f5c"
+X-Runtime: 19ms
+Content-Length: 317
+Set-Cookie: _github_ses=BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--884981fc5aa85daf318eeff084d98e2cff92578f; path=/; expires=Wed, 01 Jan 2020 08:00:00 GMT; HttpOnly
+Cache-Control: private, max-age=0, must-revalidate
+
+--- 
+user: 
+  name: Tom Preston-Werner
+  company: Logical Awesome, LLC
+  location: San Francisco
+  created_at: 2007-10-29 07:37:16 -07:00
+  public_gist_count: 64
+  public_repo_count: 44
+  blog: http://tom.preston-werner.com
+  following_count: 8
+  id: 1
+  followers_count: 481
+  login: mojombo
+  email: tom@github.com

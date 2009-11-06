@@ -63,11 +63,11 @@ module Octopi
     end
     
     def watching
-      Api.api.get("/repos/watched/#{login}")["repositories"].inject do |repositories, repo|
-        Repository.new(repo)
+      repositories = []
+      Api.api.get("/repos/watched/#{login}")["repositories"].each do |repo|
+        repositories << Repository.new(repo)
       end
-      
-      p repositories
+      repositories
     end
     
 

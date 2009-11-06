@@ -81,6 +81,7 @@ class UserTest < Test::Unit::TestCase
     
     context "return a list of watched repositories" do
        should "in an array" do
+         @user = User.find("radar")
          repos = @user.watching
          assert_not_nil repos
          assert repos.first.is_a?(Repository)

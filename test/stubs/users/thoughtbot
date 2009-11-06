@@ -1,0 +1,26 @@
+HTTP/1.1 200 OK
+Server: nginx/0.7.61
+Date: Thu, 05 Nov 2009 21:06:50 GMT
+Content-Type: application/x-yaml; charset=utf-8
+Connection: keep-alive
+Status: 200 OK
+ETag: "eb14cad2b4bef6b2a1da11461d5bc218"
+X-Runtime: 52ms
+Content-Length: 355
+Set-Cookie: _github_ses=BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--884981fc5aa85daf318eeff084d98e2cff92578f; path=/; expires=Wed, 01 Jan 2020 08:00:00 GMT; HttpOnly
+Cache-Control: private, max-age=0, must-revalidate
+
+--- 
+user: 
+  name: thoughtbot, inc.
+  company: thoughtbot, inc.
+  location: Boston, NYC, Philadelphia, San Francisco
+  created_at: 2008-04-10 11:00:20 -07:00
+  public_gist_count: 785
+  public_repo_count: 29
+  blog: http://giantrobots.thoughtbot.com
+  following_count: 11
+  id: 6183
+  followers_count: 550
+  login: thoughtbot
+  email: info@thoughtbot.com
