@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{octopi}
-  s.version = "0.2.0"
+  s.version = "0.2.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Felipe Coury"]
-  s.date = %q{2009-11-06}
+  s.date = %q{2009-11-10}
   s.email = %q{felipe.coury@gmail.com}
   s.extra_rdoc_files = [
     "LICENSE",
@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
      "Rakefile",
      "VERSION.yml",
      "contrib/backup.rb",
+     "lib/ext/hash_ext.rb",
      "lib/ext/string_ext.rb",
      "lib/octopi.rb",
      "lib/octopi/api.rb",
