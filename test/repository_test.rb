@@ -16,6 +16,16 @@ class RepositoryTest < Test::Unit::TestCase
   
   context Repository do
     
+    should "not retry for a repository you don't have access to" do
+      FakeWeb.register_uri(:get, "#{yaml_api}/repos/show/github/github", :status => 403)
+      
+      exception = assert_raise APIError do
+        Repository.find(:user => "github", :name => "github")
+      end
+      
+      assert_equal exception.message, "Github returned status 403, you may not have access to this resource."
+    end
+    
     should "return a repository for a user" do
       assert_not_nil @user.repository(:name => "octopi")
       assert @user.repository(:name => "octopi").is_a?(Repository)

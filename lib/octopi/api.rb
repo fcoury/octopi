@@ -119,11 +119,15 @@ module Octopi
           self.class.get "/#{format}#{path}", { :format => format, :query => query }
         end
       rescue RetryableAPIError => e
-        if @@retries < MAX_RETRIES 
+        if @@retries < MAX_RETRIES
           $stderr.puts e.message
-          @@retries += 1
-          sleep 6
-          retry
+          if e.code != 403
+            @@retries += 1
+            sleep 6
+            retry
+          else
+            raise APIError, "Github returned status #{e.code}, you may not have access to this resource."
+          end
         else  
           raise APIError, "GitHub returned status #{e.code}, despite" +
            " repeating the request #{MAX_RETRIES} times. Giving up."
