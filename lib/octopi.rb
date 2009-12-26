@@ -12,7 +12,8 @@ require 'pp'
 Dir[File.join(File.dirname(__FILE__), "ext/*.rb")].each { |f| require f }
 
 # Octopi stuff
-Dir[File.join(File.dirname(__FILE__), "octopi/*.rb")].each { |f| require f }
+# By sorting them we ensure that api and base are loaded first on all sane operating systems
+(Dir[File.join(File.dirname(__FILE__), "octopi/*.rb")] - [base]).sort.each { |f| require f }
 
 # Include this into your app so you can access the child classes easier.
 # This is the root of all things Octopi.
