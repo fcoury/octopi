@@ -13,7 +13,8 @@ begin
     gem.rubyforge_project = "octopi"
     gem.add_dependency('nokogiri', '>= 1.3.1')
     gem.add_dependency('httparty', '>= 0.4.5')
-    gem.add_dependency('mechanize', '>= 0.9.8')
+    gem.add_dependency('mechanize', '>= 0.9.3')
+    gem.add_dependency('api_cache', '>= 0')
     gem.files.exclude 'test/**/*'
     gem.files.exclude 'test*'
     gem.files.exclude 'doc/**/*'
