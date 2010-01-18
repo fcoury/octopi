@@ -109,7 +109,7 @@ module Octopi
     end
 
     def collaborators
-      property('collaborators', [self.owner, self.name].join('/')).values.map { |v| User.find(v) }
+      property('collaborators', [self.owner, self.name].join('/')).values.map { |v| User.find(v.join) }
     end  
     
     def self.create(options={})
