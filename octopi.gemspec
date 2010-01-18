@@ -24,7 +24,6 @@ Gem::Specification.new do |s|
      "Rakefile",
      "VERSION.yml",
      "contrib/backup.rb",
-     "lib/ext/hash_ext.rb",
      "lib/ext/string_ext.rb",
      "lib/octopi.rb",
      "lib/octopi/api.rb",
