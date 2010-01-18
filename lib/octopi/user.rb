@@ -1,9 +1,17 @@
 module Octopi
   class User < Base
     include Resource
-    attr_accessor :company, :name, :following_count, :blog, :public_repo_count, :public_gist_count, :id, :login, :followers_count, :created_at, :email, :location, :disk_usage, :private_repo_count, :private_gist_count, :collaborators, :plan, :owned_private_repo_count, :total_private_repo_count, 
-    # These come from search results, which doesn't contain the above information.
-    :actions, :score, :language, :followers, :following, :fullname, :type, :username, :repos, :pushed, :created
+    attr_accessor :company, :name, :following_count, :gravatar_id,
+                  :blog, :public_repo_count, :public_gist_count, 
+                  :id, :login, :followers_count, :created_at, 
+                  :email, :location, :disk_usage, :private_repo_count, 
+                  :private_gist_count, :collaborators, :plan, 
+                  :owned_private_repo_count, :total_private_repo_count, 
+                  
+                  # These come from search results, which doesn't 
+                  # contain the above information.
+                  :actions, :score, :language, :followers, :following,
+                  :fullname, :type, :username, :repos, :pushed, :created
     
     def plan=(attributes={})
       @plan = Plan.new(attributes)
