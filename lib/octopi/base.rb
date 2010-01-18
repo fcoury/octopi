@@ -26,8 +26,8 @@ module Octopi
       # puts caller.first.inspect
       # puts "#{self.class.inspect} #{attributes.keys.map { |s| s.to_sym }.inspect}"
       attributes.each do |key, value|
-        raise "no attr_accessor set for #{key} on #{self.class}" if !respond_to?("#{key}=")
-        self.send("#{key}=", value)
+        method = "#{key}="
+        self.send(method, value) if respond_to? method
       end
     end
     
