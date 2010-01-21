@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{octopi}
-  s.version = "0.2.5"
+  s.version = "0.2.8"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Felipe Coury"]
-  s.date = %q{2009-12-26}
+  s.date = %q{2010-01-18}
   s.email = %q{felipe.coury@gmail.com}
   s.extra_rdoc_files = [
     "LICENSE",
@@ -59,6 +59,7 @@ Gem::Specification.new do |s|
   s.test_files = [
     "test/api_test.rb",
      "test/authenticated_test.rb",
+     "test/base_test.rb",
      "test/blob_test.rb",
      "test/branch_test.rb",
      "test/commit_test.rb",
@@ -87,12 +88,18 @@ Gem::Specification.new do |s|
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<nokogiri>, [">= 1.3.1"])
       s.add_runtime_dependency(%q<httparty>, [">= 0.4.5"])
+      s.add_runtime_dependency(%q<mechanize>, [">= 0.9.3"])
+      s.add_runtime_dependency(%q<api_cache>, [">= 0"])
     else
       s.add_dependency(%q<nokogiri>, [">= 1.3.1"])
       s.add_dependency(%q<httparty>, [">= 0.4.5"])
+      s.add_dependency(%q<mechanize>, [">= 0.9.3"])
+      s.add_dependency(%q<api_cache>, [">= 0"])
     end
   else
     s.add_dependency(%q<nokogiri>, [">= 1.3.1"])
     s.add_dependency(%q<httparty>, [">= 0.4.5"])
+    s.add_dependency(%q<mechanize>, [">= 0.9.3"])
+    s.add_dependency(%q<api_cache>, [">= 0"])
   end
 end
