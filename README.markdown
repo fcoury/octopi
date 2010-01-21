@@ -62,7 +62,7 @@ Use the following format:
   
   And change the way you connect to:
 
-    authenticated_with :config => "github.yml" do |g|
+    authenticated_with :config => "github.yml" do
       (...)
     end
   
