@@ -71,7 +71,7 @@ module Octopi
   private
   
   def grab_token(username, password)
-    a = WWW::Mechanize.new { |agent|
+    a = Mechanize.new { |agent|
       # Fake out the agent
       agent.user_agent_alias = 'Mac Safari'
     }
