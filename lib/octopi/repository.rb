@@ -115,7 +115,7 @@ module Octopi
     def self.create(options={})
       raise AuthenticationRequired, "To create a repository you must be authenticated." if Api.api.read_only?
       self.validate_args(options[:name] => :repo)
-      new(Api.api.post(path_for(:create), options)["repository"])
+      new(Api.api.post(path_for(:create), options.merge( :cache => false ))["repository"])
     end
     
     def delete!
