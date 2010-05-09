@@ -42,8 +42,6 @@ module Octopi
   def authenticated_with(options, &block)
     begin
 
-      Api.api.trace_level = options[:trace] if options[:trace]
-      
       if options[:token].nil? && !options[:password].nil?
         options[:token] = grab_token(options[:login], options[:password])
       end
@@ -53,13 +51,14 @@ module Octopi
       rescue Octopi::NotFound
         raise Octopi::InvalidLogin
       end
-    
-      trace("=> Trace on: #{options[:trace]}")
-    
+
       Api.api = AuthApi.instance
+      Api.api.trace_level = options[:trace] if options[:trace]
       Api.api.login = options[:login]
       Api.api.token = options[:token]
-    
+
+      trace("=> Trace on: #{options[:trace]}")
+
       yield
     ensure
       # Reset authenticated so if we were to do an anonymous call it would Just Work(tm)
@@ -130,7 +129,7 @@ module Octopi
   
   def trace(text)
     if Api.api.trace_level
-      puts "text"
+      puts text
     end
   end
 end
