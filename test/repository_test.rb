@@ -97,8 +97,9 @@ class RepositoryTest < Test::Unit::TestCase
     should "be able to find all collaborators" do
       @collaborators = @repository.collaborators
       assert_not_nil @collaborators
-      assert_equal 1, @collaborators.size
+      assert_equal 2, @collaborators.size
       assert @collaborators.first.is_a?(User)
+      assert @collaborators.last.is_a?(User)
     end
 
     should "be able to find all languages" do
