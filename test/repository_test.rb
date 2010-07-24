@@ -100,6 +100,12 @@ class RepositoryTest < Test::Unit::TestCase
       assert_equal 1, @collaborators.size
       assert @collaborators.first.is_a?(User)
     end
+
+    should "be able to find all languages" do
+      @languages = @repository.languages
+      assert_equal 2, @languages.size
+      assert_equal 111555, @languages["Ruby"]
+    end
     
     should "be able to create a repository" do
       auth do 

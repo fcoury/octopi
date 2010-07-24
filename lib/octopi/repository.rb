@@ -111,6 +111,10 @@ module Octopi
     def collaborators
       property('collaborators', [self.owner, self.name].join('/')).values.map { |v| User.find(v.join) }
     end  
+
+    def languages
+      property('languages', [self.owner, self.name].join('/')).values.inject({}){|sum,map| map.each{|k,v| sum[k] = v}}
+    end  
     
     def self.create(options={})
       raise AuthenticationRequired, "To create a repository you must be authenticated." if Api.api.read_only?

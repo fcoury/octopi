@@ -71,6 +71,7 @@ def fake_everything
         "issues/show/fcoury/octopi/28" => issues("28"),
         
         "repos/show/fcoury/octopi/collaborators" => File.join("repos", "fcoury", "octopi", "collaborators"), 
+        "repos/show/fcoury/octopi/languages" => File.join("repos", "fcoury", "octopi", "languages"), 
         "repos/show/fcoury" => File.join("repos", "show", "fcoury"),
         "repos/search/ruby+testing" => File.join("repos", "search"),
         "repos/show/fcoury/octopi" => repos("master"),
