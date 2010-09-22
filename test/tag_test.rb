@@ -12,7 +12,7 @@ class TagTest < Test::Unit::TestCase
     should "be able to find all tags" do
       tags = Tag.all(:user => "fcoury", :repository => "octopi")
       assert_not_nil tags
-      assert 12, tags.size
+      assert_equal 9, tags.size
       assert tags.first.is_a?(Tag)
     end
   end
