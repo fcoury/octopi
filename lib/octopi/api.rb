@@ -195,7 +195,8 @@ module Octopi
       
       # It happens, in tests.
       return resp if resp.headers.empty?
-      ctype = resp.headers['content-type'].first.split(";").first
+      content_type = Array === resp.headers['content-type'] ? resp.headers['content-type'] : [resp.headers['content-type']]
+      ctype = content_type.first.split(";").first
       raise FormatError, [ctype, format] unless CONTENT_TYPE[format.to_s].include?(ctype)
       if format == 'yaml' && resp['error']
         raise APIError, resp['error']
