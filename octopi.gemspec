@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{octopi}
-  s.version = "0.3.0"
+  s.version = "0.4.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Felipe Coury"]
-  s.date = %q{2010-09-22}
+  s.date = %q{2010-12-05}
   s.email = %q{felipe.coury@gmail.com}
   s.extra_rdoc_files = [
     "LICENSE",
