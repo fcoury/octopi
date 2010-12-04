@@ -8,7 +8,7 @@ Status: 200 OK
 X-Runtime: 44ms
 ETag: "faa4b600dd11e351c6777caba84cd44a"
 Cache-Control: private, max-age=0, must-revalidate
-Content-Length: 294
+Content-Length: 295
 
 --- 
 repository: 
@@ -17,7 +17,7 @@ repository:
   :name: octopi
   :owner: fcoury
   :private: false
-  :url: http://github.com/fcoury/octopi
+  :url: https://github.com/fcoury/octopi
   :watchers: 80
   :fork: false
   :open_issues: 21

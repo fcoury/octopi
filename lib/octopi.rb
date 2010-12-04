@@ -1,5 +1,7 @@
 require 'rubygems'
 
+require 'open-uri'
+
 require 'httparty'
 require 'mechanize'
 require 'nokogiri'
@@ -7,6 +9,7 @@ require 'api_cache'
 
 require 'yaml'
 require 'pp'
+
 
 # Core extension stuff
 Dir[File.join(File.dirname(__FILE__), "ext/*.rb")].each { |f| require f }

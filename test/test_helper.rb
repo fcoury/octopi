@@ -49,7 +49,7 @@ def fake_everything
   sha = "f6609209c3ac0badd004512d318bfaa508ea10ae"
   fake_sha = "ea3cd978650417470535f3a4725b6b5042a6ab59"
 
-  plain_api = "github.com:80/api/v2/plain"
+  plain_api = "github.com/api/v2/plain"
   
   # Public stuff
   fakes = {       

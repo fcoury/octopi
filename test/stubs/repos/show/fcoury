@@ -8,7 +8,7 @@ Status: 200 OK
 X-Runtime: 732ms
 ETag: "49ecb439a63faeb94f8e84228123fcb8"
 Cache-Control: private, max-age=0, must-revalidate
-Content-Length: 12196
+Content-Length: 12241
 
 --- 
 repositories: 
@@ -17,7 +17,7 @@ repositories:
   :name: labelbug
   :owner: fcoury
   :private: false
-  :url: http://github.com/fcoury/labelbug
+  :url: https://github.com/fcoury/labelbug
   :watchers: 2
   :fork: false
   :open_issues: 0
@@ -27,7 +27,7 @@ repositories:
   :name: web-app-theme
   :owner: fcoury
   :private: false
-  :url: http://github.com/fcoury/web-app-theme
+  :url: https://github.com/fcoury/web-app-theme
   :watchers: 2
   :fork: true
   :open_issues: 0
@@ -37,7 +37,7 @@ repositories:
   :name: autumn
   :owner: fcoury
   :private: false
-  :url: http://github.com/fcoury/autumn
+  :url: https://github.com/fcoury/autumn
   :watchers: 1
   :fork: true
   :open_issues: 0
@@ -47,7 +47,7 @@ repositories:
   :name: baseapp
   :owner: fcoury
   :private: false
-  :url: http://github.com/fcoury/baseapp
+  :url: https://github.com/fcoury/baseapp
   :watchers: 1
   :fork: true
   :open_issues: 0
@@ -57,7 +57,7 @@ repositories:
   :name: warehouse
   :owner: fcoury
   :private: false
-  :url: http://github.com/fcoury/warehouse
+  :url: https://github.com/fcoury/warehouse
   :watchers: 1
   :fork: true
   :open_issues: 0
@@ -67,7 +67,7 @@ repositories:
   :name: dotfiles
   :owner: fcoury
   :private: false
-  :url: http://github.com/fcoury/dotfiles
+  :url: https://github.com/fcoury/dotfiles
   :watchers: 2
   :fork: false
   :open_issues: 0
@@ -77,7 +77,7 @@ repositories:
   :name: cucumber
   :owner: fcoury
   :private: false
-  :url: http://github.com/fcoury/cucumber
+  :url: https://github.com/fcoury/cucumber
   :watchers: 2
   :fork: true
   :open_issues: 0
@@ -87,7 +87,7 @@ repositories:
   :name: titleizer
   :owner: fcoury
   :private: false
-  :url: http://github.com/fcoury/titleizer
+  :url: https://github.com/fcoury/titleizer
   :watchers: 1
   :fork: true
   :open_issues: 0
@@ -97,7 +97,7 @@ repositories:
   :name: chef
   :owner: fcoury
   :private: false
-  :url: http://github.com/fcoury/chef
+  :url: https://github.com/fcoury/chef
   :watchers: 1
   :fork: true
   :open_issues: 0
@@ -107,7 +107,7 @@ repositories:
   :name: simple_auto_complete
   :owner: fcoury
   :private: false
-  :url: http://github.com/fcoury/simple_auto_complete
+  :url: https://github.com/fcoury/simple_auto_complete
   :watchers: 2
   :fork: true
   :open_issues: 0
@@ -117,7 +117,7 @@ repositories:
   :name: rbcurse
   :owner: fcoury
   :private: false
-  :url: http://github.com/fcoury/rbcurse
+  :url: https://github.com/fcoury/rbcurse
   :watchers: 1
   :fork: true
   :open_issues: 0
@@ -127,7 +127,7 @@ repositories:
   :name: jfilehelpers
   :owner: fcoury
   :private: false
-  :url: http://github.com/fcoury/jfilehelpers
+  :url: https://github.com/fcoury/jfilehelpers
   :watchers: 2
   :fork: false
   :open_issues: 0
@@ -137,7 +137,7 @@ repositories:
   :name: api_cache
   :owner: fcoury
   :private: false
-  :url: http://github.com/fcoury/api_cache
+  :url: https://github.com/fcoury/api_cache
   :watchers: 1
   :fork: true
   :open_issues: 0
@@ -147,7 +147,7 @@ repositories:
   :name: fakeweb
   :owner: fcoury
   :private: false
-  :url: http://github.com/fcoury/fakeweb
+  :url: https://github.com/fcoury/fakeweb
   :watchers: 1
   :fork: true
   :open_issues: 0
@@ -157,7 +157,7 @@ repositories:
   :name: hirb-isolated
   :owner: fcoury
   :private: false
-  :url: http://github.com/fcoury/hirb-isolated
+  :url: https://github.com/fcoury/hirb-isolated
   :watchers: 1
   :fork: false
   :open_issues: 0
@@ -167,7 +167,7 @@ repositories:
   :name: db2s3
   :owner: fcoury
   :private: false
-  :url: http://github.com/fcoury/db2s3
+  :url: https://github.com/fcoury/db2s3
   :watchers: 2
   :fork: true
   :open_issues: 0
@@ -177,7 +177,7 @@ repositories:
   :name: vimfiles
   :owner: fcoury
   :private: false
-  :url: http://github.com/fcoury/vimfiles
+  :url: https://github.com/fcoury/vimfiles
   :watchers: 1
   :fork: true
   :open_issues: 0
@@ -187,7 +187,7 @@ repositories:
   :name: blueprint
   :owner: fcoury
   :private: false
-  :url: http://github.com/fcoury/blueprint
+  :url: https://github.com/fcoury/blueprint
   :watchers: 1
   :fork: false
   :open_issues: 0
@@ -196,7 +196,7 @@ repositories:
   :name: taps
   :owner: fcoury
   :private: false
-  :url: http://github.com/fcoury/taps
+  :url: https://github.com/fcoury/taps
   :watchers: 1
   :fork: true
   :open_issues: 0
@@ -206,7 +206,7 @@ repositories:
   :name: cucumber-tmbundle
   :owner: fcoury
   :private: false
-  :url: http://github.com/fcoury/cucumber-tmbundle
+  :url: https://github.com/fcoury/cucumber-tmbundle
   :watchers: 1
   :fork: true
   :open_issues: 0
@@ -216,7 +216,7 @@ repositories:
   :name: sinatra-template
   :owner: fcoury
   :private: false
-  :url: http://github.com/fcoury/sinatra-template
+  :url: https://github.com/fcoury/sinatra-template
   :watchers: 1
   :fork: true
   :open_issues: 0
@@ -226,7 +226,7 @@ repositories:
   :name: cursoprevestibular
   :owner: fcoury
   :private: false
-  :url: http://github.com/fcoury/cursoprevestibular
+  :url: https://github.com/fcoury/cursoprevestibular
   :watchers: 1
   :fork: false
   :open_issues: 0
@@ -236,7 +236,7 @@ repositories:
   :name: octopi
   :owner: fcoury
   :private: false
-  :url: http://github.com/fcoury/octopi
+  :url: https://github.com/fcoury/octopi
   :watchers: 80
   :fork: false
   :open_issues: 21
@@ -246,7 +246,7 @@ repositories:
   :name: bucketwise
   :owner: fcoury
   :private: false
-  :url: http://github.com/fcoury/bucketwise
+  :url: https://github.com/fcoury/bucketwise
   :watchers: 1
   :fork: true
   :open_issues: 0
@@ -256,7 +256,7 @@ repositories:
   :name: api-labrat
   :owner: fcoury
   :private: false
-  :url: http://github.com/fcoury/api-labrat
+  :url: https://github.com/fcoury/api-labrat
   :watchers: 1
   :fork: false
   :open_issues: 2
@@ -266,7 +266,7 @@ repositories:
   :name: backup_fu
   :owner: fcoury
   :private: false
-  :url: http://github.com/fcoury/backup_fu
+  :url: https://github.com/fcoury/backup_fu
   :watchers: 1
   :fork: true
   :open_issues: 0
@@ -276,7 +276,7 @@ repositories:
   :name: git_remote_branch
   :owner: fcoury
   :private: false
-  :url: http://github.com/fcoury/git_remote_branch
+  :url: https://github.com/fcoury/git_remote_branch
   :watchers: 1
   :fork: true
   :open_issues: 0
@@ -286,7 +286,7 @@ repositories:
   :name: rails-sti-caching
   :owner: fcoury
   :private: false
-  :url: http://github.com/fcoury/rails-sti-caching
+  :url: https://github.com/fcoury/rails-sti-caching
   :watchers: 1
   :fork: false
   :open_issues: 0
@@ -296,7 +296,7 @@ repositories:
   :name: eff-the-finder
   :owner: fcoury
   :private: false
-  :url: http://github.com/fcoury/eff-the-finder
+  :url: https://github.com/fcoury/eff-the-finder
   :watchers: 2
   :fork: true
   :open_issues: 0
@@ -306,7 +306,7 @@ repositories:
   :name: open_gem
   :owner: fcoury
   :private: false
-  :url: http://github.com/fcoury/open_gem
+  :url: https://github.com/fcoury/open_gem
   :watchers: 1
   :fork: true
   :open_issues: 0
@@ -316,7 +316,7 @@ repositories:
   :name: html_tag
   :owner: fcoury
   :private: false
-  :url: http://github.com/fcoury/html_tag
+  :url: https://github.com/fcoury/html_tag
   :watchers: 1
   :fork: true
   :open_issues: 0
@@ -326,7 +326,7 @@ repositories:
   :name: sinatra-oauth-provider
   :owner: fcoury
   :private: false
-  :url: http://github.com/fcoury/sinatra-oauth-provider
+  :url: https://github.com/fcoury/sinatra-oauth-provider
   :watchers: 1
   :fork: true
   :open_issues: 0
@@ -336,7 +336,7 @@ repositories:
   :name: oauth_provider
   :owner: fcoury
   :private: false
-  :url: http://github.com/fcoury/oauth_provider
+  :url: https://github.com/fcoury/oauth_provider
   :watchers: 1
   :fork: true
   :open_issues: 0
@@ -346,7 +346,7 @@ repositories:
   :name: oauth_sample
   :owner: fcoury
   :private: false
-  :url: http://github.com/fcoury/oauth_sample
+  :url: https://github.com/fcoury/oauth_sample
   :watchers: 1
   :fork: true
   :open_issues: 0
@@ -356,7 +356,7 @@ repositories:
   :name: sprinkle
   :owner: fcoury
   :private: false
-  :url: http://github.com/fcoury/sprinkle
+  :url: https://github.com/fcoury/sprinkle
   :watchers: 1
   :fork: true
   :open_issues: 0
@@ -366,7 +366,7 @@ repositories:
   :name: scripts1
   :owner: fcoury
   :private: false
-  :url: http://github.com/fcoury/scripts1
+  :url: https://github.com/fcoury/scripts1
   :watchers: 1
   :fork: false
   :open_issues: 0
@@ -376,7 +376,7 @@ repositories:
   :name: scripts
   :owner: fcoury
   :private: false
-  :url: http://github.com/fcoury/scripts
+  :url: https://github.com/fcoury/scripts
   :watchers: 1
   :fork: false
   :open_issues: 0
@@ -386,7 +386,7 @@ repositories:
   :name: gitready
   :owner: fcoury
   :private: false
-  :url: http://github.com/fcoury/gitready
+  :url: https://github.com/fcoury/gitready
   :watchers: 1
   :fork: true
   :open_issues: 0
@@ -396,7 +396,7 @@ repositories:
   :name: affiliate_links
   :owner: fcoury
   :private: false
-  :url: http://github.com/fcoury/affiliate_links
+  :url: https://github.com/fcoury/affiliate_links
   :watchers: 1
   :fork: true
   :open_issues: 0
@@ -406,7 +406,7 @@ repositories:
   :name: ruport
   :owner: fcoury
   :private: false
-  :url: http://github.com/fcoury/ruport
+  :url: https://github.com/fcoury/ruport
   :watchers: 1
   :fork: true
   :open_issues: 0
@@ -416,7 +416,7 @@ repositories:
   :name: mongomapper
   :owner: fcoury
   :private: false
-  :url: http://github.com/fcoury/mongomapper
+  :url: https://github.com/fcoury/mongomapper
   :watchers: 1
   :fork: true
   :open_issues: 0
@@ -426,7 +426,7 @@ repositories:
   :name: aprilchild
   :owner: fcoury
   :private: false
-  :url: http://github.com/fcoury/aprilchild
+  :url: https://github.com/fcoury/aprilchild
   :watchers: 1
   :fork: true
   :open_issues: 0
@@ -436,7 +436,7 @@ repositories:
   :name: bj-utc
   :owner: fcoury
   :private: false
-  :url: http://github.com/fcoury/bj-utc
+  :url: https://github.com/fcoury/bj-utc
   :watchers: 1
   :fork: true
   :open_issues: 0
@@ -446,7 +446,7 @@ repositories:
   :name: github_hook_server
   :owner: fcoury
   :private: false
-  :url: http://github.com/fcoury/github_hook_server
+  :url: https://github.com/fcoury/github_hook_server
   :watchers: 1
   :fork: true
   :open_issues: 0
@@ -456,7 +456,7 @@ repositories:
   :name: rabbit_starter
   :owner: fcoury
   :private: false
-  :url: http://github.com/fcoury/rabbit_starter
+  :url: https://github.com/fcoury/rabbit_starter
   :watchers: 2
   :fork: true
   :open_issues: 0

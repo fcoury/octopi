@@ -8,7 +8,7 @@ Status: 200 OK
 X-Runtime: 11ms
 ETag: "0380b1913d11230f44fce4c21b98227e"
 Cache-Control: private, max-age=0, must-revalidate
-Content-Length: 293
+Content-Length: 294
 
 --- 
 repository: 
@@ -16,7 +16,7 @@ repository:
   :name: octopus
   :owner: fcoury
   :private: false
-  :url: http://github.com/fcoury/octopus
+  :url: https://github.com/fcoury/octopus
   :fork: false
   :forks: 0
   :homepage: http://hasmany.info/2009/4/18/ruby-interface-to-github-api

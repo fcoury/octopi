@@ -17,7 +17,7 @@ class RepositoryTest < Test::Unit::TestCase
   context Repository do
     
     should "not retry for a repository you don't have access to" do
-      FakeWeb.register_uri(:get, "#{yaml_api}/repos/show/github/github", :status => 403)
+      FakeWeb.register_uri(:get, "https://#{yaml_api}/repos/show/github/github", :status => 403)
       
       exception = assert_raise APIError do
         Repository.find(:user => "github", :name => "github")

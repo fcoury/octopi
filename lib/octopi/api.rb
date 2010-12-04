@@ -166,6 +166,7 @@ module Octopi
       # Ergh. Ugly way to do this. Find a better one!
       cache = params.delete(:cache) 
       cache = true if cache.nil?
+      cache = false
       params.each_pair do |k,v|
         if path =~ /:#{k.to_s}/
           params.delete(k)

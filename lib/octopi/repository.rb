@@ -45,7 +45,7 @@ module Octopi
       # We have to specify xmlns as a prefix as the document is namespaced.
       # Be wary!
       path = "https://github.com/#{owner}/#{name}/comments.atom"
-      xml = Nokogiri::XML(Net::HTTP.get(URI.parse(path)))
+      xml = Nokogiri::XML(open(URI.parse(path)))
       entries = xml.xpath("//xmlns:entry")
       comments = []
       for entry in entries
