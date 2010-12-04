@@ -10,7 +10,7 @@ module Octopi
     resource_path ":id"
     
     def self.base_uri
-      "http://gist.github.com/api/v1/yaml"
+      "https://gist.github.com/api/v1/yaml"
     end
     
     def self.find(id)

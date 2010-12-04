@@ -76,7 +76,7 @@ module Octopi
     }
     
     # Login with the provided 
-    a.get('http://github.com/login') do |page|
+    a.get('https://github.com/login') do |page|
       user_page = page.form_with(:action => '/session') do |login|
         login.login = username
         login.password = password

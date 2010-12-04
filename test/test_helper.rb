@@ -147,7 +147,7 @@ def fake_everything
         end
         
   fakes.each do |key, value|
-    FakeWeb.register_uri(:get, "http://#{yaml_api}/" + key, :response => stub_file(value))
+    FakeWeb.register_uri(:get, "https://#{yaml_api}/" + key, :response => stub_file(value))
   end
   
   gist_fakes = {
@@ -156,10 +156,10 @@ def fake_everything
     
     
   gist_fakes.each do |key, value|
-    FakeWeb.register_uri(:get, "http://gist.github.com/api/v1/yaml/#{key}", :response => stub_file(value))
+    FakeWeb.register_uri(:get, "https://gist.github.com/api/v1/yaml/#{key}", :response => stub_file(value))
   end
   ["augustl", "bcalloway", "danlucraft", "dcrec1", "derencius", "dustin", "elliottcable", "gwoliveira", "hashrocket", "jruby", "kchris", "paulorv", "radar", "remi", "shanesveller", "superfeedr", "taylorrf", "tgraham", "tmm1", "tpope", "webbynode"].each do |followee|
-    FakeWeb.register_uri(:get, "http://#{yaml_api}/user/show/#{followee}", :response => stub_file("users/#{followee}") )
+    FakeWeb.register_uri(:get, "https://#{yaml_api}/user/show/#{followee}", :response => stub_file("users/#{followee}") )
   end
   
   
@@ -175,25 +175,25 @@ def fake_everything
     "issues/reopen/fcoury/octopi/27" => issues("27-reopened"),        
     "issues/comment/fcoury/octopi/28" => issues("comment", "28-comment")
   }.each do |key, value|
-    FakeWeb.register_uri(:post, "http://#{yaml_api}/" + key, :response => stub_file(value))
+    FakeWeb.register_uri(:post, "https://#{yaml_api}/" + key, :response => stub_file(value))
   end
   
   # # rboard is a private repository
-  FakeWeb.register_uri(:get, "http://#{yaml_api}/repos/show/fcoury/rboard", :response => stub_file("errors", "repository", "not_found"))
+  FakeWeb.register_uri(:get, "https://#{yaml_api}/repos/show/fcoury/rboard", :response => stub_file("errors", "repository", "not_found"))
   
   # nothere is obviously an invalid sha
-  FakeWeb.register_uri(:get, "http://#{yaml_api}/commits/show/fcoury/octopi/nothere", :status => ["404", "Not Found"])
+  FakeWeb.register_uri(:get, "https://#{yaml_api}/commits/show/fcoury/octopi/nothere", :status => ["404", "Not Found"])
   # not-a-number is obviously not a *number*
-  FakeWeb.register_uri(:get, "http://#{yaml_api}/issues/show/fcoury/octopi/not-a-number", :status => ["404", "Not Found"])
+  FakeWeb.register_uri(:get, "https://#{yaml_api}/issues/show/fcoury/octopi/not-a-number", :status => ["404", "Not Found"])
   # is an invalid hash
-  FakeWeb.register_uri(:get, "http://#{yaml_api}/tree/show/fcoury/octopi/#{fake_sha}", :status => ["404", "Not Found"])
+  FakeWeb.register_uri(:get, "https://#{yaml_api}/tree/show/fcoury/octopi/#{fake_sha}", :status => ["404", "Not Found"])
   # is not a user
-  FakeWeb.register_uri(:get, "http://#{yaml_api}/user/show/i-am-most-probably-a-user-that-does-not-exist", :status => ["404", "Not Found"])
+  FakeWeb.register_uri(:get, "https://#{yaml_api}/user/show/i-am-most-probably-a-user-that-does-not-exist", :status => ["404", "Not Found"])
   
   
-  FakeWeb.register_uri(:get, "http://github.com/login", :response => stub_file("login"))
-  FakeWeb.register_uri(:post, "http://github.com/session", :response => stub_file("dashboard"))
-  FakeWeb.register_uri(:get, "http://github.com/account", :response => stub_file("account"))
+  FakeWeb.register_uri(:get, "https://github.com/login", :response => stub_file("login"))
+  FakeWeb.register_uri(:post, "https://github.com/session", :response => stub_file("dashboard"))
+  FakeWeb.register_uri(:get, "https://github.com/account", :response => stub_file("account"))
   
   # Personal & Private stuff
   
@@ -234,11 +234,11 @@ def fake_everything
     
   
   # And the plain fakes
-  FakeWeb.register_uri(:get, "http://#{plain_api}/blob/show/fcoury/octopi/#{sha}", 
+  FakeWeb.register_uri(:get, "https://#{plain_api}/blob/show/fcoury/octopi/#{sha}",
   :response => stub_file(File.join("blob", "fcoury", "octopi", "plain", sha)))
   
   
-  FakeWeb.register_uri(:get, "http://github.com/fcoury/octopi/comments.atom", :response => stub_file("comments", "fcoury", "octopi", "comments.atom"))
+  FakeWeb.register_uri(:get, "https://github.com/fcoury/octopi/comments.atom", :response => stub_file("comments", "fcoury", "octopi", "comments.atom"))
 end
 
 

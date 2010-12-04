@@ -11,7 +11,7 @@ module Octopi
   class AnonymousApi < Api
     include HTTParty
     include Singleton
-    base_uri "http://github.com/api/v2"
+    base_uri "https://github.com/api/v2"
     
     def read_only?
       true
