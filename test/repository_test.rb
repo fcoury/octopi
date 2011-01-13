@@ -113,6 +113,12 @@ class RepositoryTest < Test::Unit::TestCase
       end
     end
     
+    should "be able to create a repository under another user (or organization)" do
+      auth do
+        Repository.create(:name => "octopus", :user => "other-user")
+      end
+    end
+
     should "be able to delete a repository" do
       auth do
         @repository.delete!
