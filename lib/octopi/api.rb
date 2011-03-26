@@ -190,7 +190,7 @@ module Octopi
       # puts resp.code.inspect
       raise NotFound, klass || self.class if resp.code.to_i == 404
       raise APIError, 
-        "GitHub returned status #{resp.code}" unless resp.code.to_i == 200
+        "GitHub returned status #{resp.code}" unless resp.code.to_i == 200 || resp.code.to_i == 201
       # FIXME: This fails for showing raw Git data because that call returns
       # text/html as the content type. This issue has been reported.
       
