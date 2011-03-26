@@ -97,7 +97,7 @@ module Octopi
     end
     
     def issues(state = "open")
-      IssueSet.new(Octopi::Issue.find_all(:user => owner, :repository => self))
+      IssueSet.new(Octopi::Issue.find_all(:user => owner, :repository => self, :state => state))
     end
    
     def all_issues

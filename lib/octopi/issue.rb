@@ -33,12 +33,14 @@ module Octopi
     def self.find_all(options={})
       ensure_hash(options)
       user, repo = gather_details(options)
-      state = (options[:state] || "open").downcase
-      validate_args(user => :user, repo.name => :repo, state => :state)
-
-      issues = super user, repo.name, state
-      issues.each { |i| i.repository = repo }
-      issues
+      states = [options[:state]] if options[:state]
+      states ||= ["open", "closed"]
+      issues = []
+      states.each do |state|
+        validate_args(user => :user, repo.name => :repo, state => :state)
+        issues << super(user, repo.name, state)
+      end
+      issues.flatten.each { |i| i.repository = repo }
     end
   
     # TODO: Make find use hashes like find_all

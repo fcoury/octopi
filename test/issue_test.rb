@@ -17,19 +17,25 @@ class IssueTest < Test::Unit::TestCase
       should "using objects" do
         issues = Issue.find_all(:user => @user, :repo => @repo)
         assert_not_nil issues
-        assert_equal 21, issues.size
+        assert_equal 30, issues.size
       end
-      
+
       should "using strings" do
         issues = Issue.find_all(:user => "fcoury", :repo => "octopi")
         assert_not_nil issues
-        assert_equal 21, issues.size
+        assert_equal 30, issues.size
       end
-      
-      should "specifying a state" do
+
+      should "all closed issues" do
         issues = Issue.find_all(:user => @user, :repo => @repo, :state => "closed")
         assert_not_nil issues
         assert_equal 9, issues.size
+      end
+
+      should "all open issues" do
+        issues = Issue.find_all(:user => @user, :repo => @repo, :state => "open")
+        assert_not_nil issues
+        assert_equal 21, issues.size
       end
     end
     
