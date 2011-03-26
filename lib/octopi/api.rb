@@ -103,7 +103,6 @@ module Octopi
     
     
     def find_all(path, result_key, query, klass=nil, cache=true)
-      { :query => query, :id => query, :cache => cache }
       result = get(path, { :query => query, :id => query, :cache => cache }, klass)
       result[result_key]
     end
