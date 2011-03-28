@@ -6,6 +6,10 @@ To install it as a Gem, just run:
 
     $ sudo gem install octopi
 
+To include it in your modules or in irb use:
+
+    include Octopi
+
 Get notifications via Twitter, following @octopi_gem:
 http://twitter.com/octopi_gem
   
