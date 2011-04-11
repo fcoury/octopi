@@ -15,6 +15,8 @@ begin
     gem.add_dependency('httparty', '>= 0.4.5')
     gem.add_dependency('mechanize', '>= 0.9.3')
     gem.add_dependency('api_cache', '>= 0')
+    gem.add_development_dependency 'shoulda'
+    gem.add_development_dependency 'fakeweb' 
     gem.files.exclude 'test/**/*'
     gem.files.exclude 'test*'
     gem.files.exclude 'doc/**/*'
