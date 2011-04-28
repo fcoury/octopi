@@ -24,6 +24,13 @@ class CommitTest < Test::Unit::TestCase
         assert_equal 30, commits.size
       end
       
+      should "second page of commits" do
+        commits = Commit.find_all(:user => "fcoury", :repository => "octopi", :page => 2)
+        assert_not_nil commits
+        assert_equal 30, commits.size
+        assert_not_nil commits.first.repository
+      end
+      
       should "be able to specify a branch" do
         commits = Commit.find_all(:user => "fcoury", :repository => "octopi", :branch => "lazy")
         assert_not_nil commits

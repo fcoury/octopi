@@ -121,6 +121,13 @@ class IssueTest < Test::Unit::TestCase
         comment = @issue.comment("Yes, it is broken.")
         assert comment.is_a?(IssueComment)
       end
+      
+      should "be able to get all comments" do
+        first_comment = @issue.comments.first
+        assert first_comment.is_a?(IssueComment)
+        assert_equal "This is fixed in recent release.", first_comment.body
+        assert_equal "radar", first_comment.user
+      end
     end
   end
 end

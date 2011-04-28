@@ -101,6 +101,11 @@ module Octopi
       IssueComment.new(data['comment'])
     end
     
+    def comments
+      data = Api.api.get(command_path("comments"))
+      data["comments"].map { |c| IssueComment.new(c) }
+    end
+    
     private
     def prefix(command)
       "/issues/#{command}/#{repository.owner}/#{repository.name}"

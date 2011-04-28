@@ -1,7 +1,6 @@
 module Octopi
   class IssueComment < Base
     include Resource
-    attr_accessor :comment, :status
-    
+    attr_accessor :body, :user
   end
 end

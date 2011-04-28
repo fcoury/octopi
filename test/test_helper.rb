@@ -63,7 +63,10 @@ def fake_everything
         "issues/list/fcoury/octopi/open" => issues("open"),
         "issues/list/fcoury/octopi/closed" => issues("closed"),
         
-        "issues/search/fcoury/octopi/open/test" => issues("search"),        
+        "issues/search/fcoury/octopi/open/test" => issues("search"),      
+        
+        #comments for an issue
+        "issues/comments/fcoury/octopi/28" => File.join("comments", "fcoury", "octopi", "comments"),
         
         # Closed issue
         "issues/show/fcoury/octopi/27" => issues("27"),
