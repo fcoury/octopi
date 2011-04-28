@@ -127,6 +127,9 @@ class IssueTest < Test::Unit::TestCase
         assert first_comment.is_a?(IssueComment)
         assert_equal "This is fixed in recent release.", first_comment.body
         assert_equal "radar", first_comment.user
+        assert !first_comment.created_at.blank?
+        assert !first_comment.updated_at.blank?
+        assert !first_comment.gravatar_id.blank?
       end
     end
   end
