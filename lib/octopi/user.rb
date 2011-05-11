@@ -31,6 +31,17 @@ module Octopi
       super username
     end
 
+    # Finds the user with this email.
+    #
+    # Example:
+    #
+    #   user = User.find_by_email("test@example.com")
+    #   puts user.email # should return 'test@example.com'
+    def self.find_by_email(email)
+      response = Api.api.get("/user/email/:email", {:email => email})
+      User.new(response["user"])
+    end
+
     # Finds all users whose username matches a given string
     # 
     # Example:

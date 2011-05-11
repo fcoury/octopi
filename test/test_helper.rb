@@ -88,9 +88,10 @@ def fake_everything
         
         "user/show/fcoury/followers" => File.join("users", "followers"),
         "user/show/fcoury/following" => File.join("users", "following"),
-        "user/search/radar" => File.join("users", "search-radar")
-        
-        
+        "user/search/radar" => File.join("users", "search-radar"),
+        "user/email/test@example.com" => users("fcoury")
+
+
           }
           
         # I follow the following people:

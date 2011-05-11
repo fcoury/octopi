@@ -30,6 +30,11 @@ class UserTest < Test::Unit::TestCase
     assert_not_nil users
   end
   
+  should "be able to find a user by email" do
+    user = User.find_by_email("test@example.com")
+    assert_not_nil user
+  end
+
   context "authenticated" do
     should "return all user information" do
       authenticated do
