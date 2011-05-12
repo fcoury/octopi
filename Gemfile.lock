@@ -1,0 +1,36 @@
+PATH
+  remote: .
+  specs:
+    octopi (0.4.2)
+      api_cache
+      httparty (>= 0.4.5)
+      mechanize (>= 0.9.3)
+      nokogiri (>= 1.3.1)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    api_cache (0.2.3)
+    crack (0.1.8)
+    fakeweb (1.3.0)
+    git (1.2.5)
+    httparty (0.7.7)
+      crack (= 0.1.8)
+    jeweler (1.6.0)
+      bundler (~> 1.0.0)
+      git (>= 1.2.5)
+      rake
+    mechanize (1.0.0)
+      nokogiri (>= 1.2.1)
+    nokogiri (1.4.4)
+    rake (0.8.7)
+    shoulda (2.11.3)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  fakeweb
+  jeweler
+  octopi!
+  shoulda
