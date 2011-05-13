@@ -1,60 +1,8 @@
 require 'rubygems'
 require 'rake'
-require 'yaml'
+require 'bundler'
 
-begin
-  require 'jeweler'
-  Jeweler::Tasks.new do |gem|
-    gem.name = "octopi"
-    gem.summary = %Q{A Ruby interface to GitHub API v2}
-    gem.email = "felipe.coury@gmail.com"
-    gem.homepage = "http://github.com/fcoury/octopi"
-    gem.authors = ["Felipe Coury"]
-    gem.rubyforge_project = "octopi"
-    gem.add_dependency('nokogiri', '>= 1.3.1')
-    gem.add_dependency('httparty', '>= 0.4.5')
-    gem.add_dependency('mechanize', '>= 0.9.3')
-    gem.add_dependency('api_cache', '>= 0')
-    gem.add_development_dependency 'shoulda'
-    gem.add_development_dependency 'fakeweb' 
-    gem.files.exclude 'test/**/*'
-    gem.files.exclude 'test*'
-    gem.files.exclude 'doc/**/*'
-    gem.files.exclude 'examples/**/*'
-    
-
-    # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
-  end
-  Jeweler::GemcutterTasks.new
-rescue LoadError
-  puts "Jeweler not available. Install it with: sudo gem install technicalpickles-jeweler -s http://gems.github.com"
-end
-
-begin
-  require 'rake/contrib/sshpublisher'
-  namespace :rubyforge do
-
-    desc "Release gem and RDoc documentation to RubyForge"
-    task :release => ["rubyforge:release:gem", "rubyforge:release:docs"]
-
-    namespace :release do
-      desc "Publish RDoc to RubyForge."
-      task :docs => [:rdoc] do
-        config = YAML.load(
-            File.read(File.expand_path('~/.rubyforge/user-config.yml'))
-        )
-
-        host = "#{config['username']}@rubyforge.org"
-        remote_dir = "/var/www/gforge-projects/octopi/"
-        local_dir = 'rdoc'
-
-        Rake::SshDirPublisher.new(host, remote_dir, local_dir).upload
-      end
-    end
-  end
-rescue LoadError
-  puts "Rake SshDirPublisher is unavailable or your rubyforge environment is not configured."
-end
+Bundler::GemHelper.install_tasks
 
 require 'rake/testtask'
 Rake::TestTask.new(:test) do |test|
@@ -64,34 +12,4 @@ Rake::TestTask.new(:test) do |test|
   test.verbose = false
 end
 
-begin
-  require 'rcov/rcovtask'
-  Rcov::RcovTask.new do |test|
-    test.libs << 'test'
-    test.pattern = 'test/**/*_test.rb'
-    test.verbose = true
-  end
-rescue LoadError
-  task :rcov do
-    abort "RCov is not available. In order to run rcov, you must: sudo gem install spicycode-rcov"
-  end
-end
-
-
 task :default => :test
-
-require 'rake/rdoctask'
-Rake::RDocTask.new do |rdoc|
-  if File.exist?('VERSION.yml')
-    config = YAML.load(File.read('VERSION.yml'))
-    version = "#{config[:major]}.#{config[:minor]}.#{config[:patch]}"
-  else
-    version = ""
-  end
-
-  rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "octopi #{version}"
-  rdoc.rdoc_files.include('README*')
-  rdoc.rdoc_files.include('lib/**/*.rb')
-end
-
