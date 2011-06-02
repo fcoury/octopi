@@ -54,8 +54,9 @@ Use the following format:
     #
 
     # GitHub user login and token
-    login: github-username
-    token: github-token
+    github:
+      user: github-username
+      token: github-token
 
     # Trace level
     # Possible values:
@@ -66,7 +67,7 @@ Use the following format:
   
   And change the way you connect to:
 
-    authenticated_with :config => "github.yml" do
+    authenticated_with :config => File.join(Rails.root, "config/github.yml") do
       (...)
     end
   

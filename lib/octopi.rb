@@ -27,8 +27,12 @@ module Octopi
   
   def authenticated(options={}, &block)
     begin
-      config = config = File.open(options[:config]) { |yf| YAML::load(yf) } if options[:config]
-      config = read_gitconfig
+      if options[:config]
+        config = config = File.open(options[:config]) { |yf| YAML::load(yf) } 
+      else
+        config = read_gitconfig
+      end
+
       options[:login] = config["github"]["user"]
       options[:token] = config["github"]["token"]
       
