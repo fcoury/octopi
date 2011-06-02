@@ -8,8 +8,7 @@ class AuthenticatedTest < Test::Unit::TestCase
   
   context "Authenticating" do
     should "be able to login with github.yml" do
-      ENV['HOME'] = File.join(File.dirname(__FILE__), "stubs")
-      authenticated :config => File.join(File.dirname(__FILE__), "stubs/github.yml") do
+      authenticated :config => File.join(File.dirname(__FILE__), "github.yml") do
         assert_equal "8f700e0d7747826f3e56ee13651414bd", Api.api.token
         assert_not_nil User.find("fcoury")
       end

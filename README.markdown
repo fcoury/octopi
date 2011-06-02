@@ -67,7 +67,7 @@ Use the following format:
   
   And change the way you connect to:
 
-    authenticated :config => File.join(Rails.root, "config/github.yml") do
+    authenticated :config => "github.yml") do
       (...)
     end
   

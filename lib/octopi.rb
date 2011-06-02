@@ -28,7 +28,7 @@ module Octopi
   def authenticated(options={}, &block)
     begin
       if options[:config]
-        config = config = File.open(options[:config]) { |yf| YAML::load(yf) } 
+        config = YAML.load_file(options[:config])
       else
         config = read_gitconfig
       end
