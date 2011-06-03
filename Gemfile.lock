@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    octopi (0.4.2)
+    octopi (0.4.4)
       api_cache
       httparty (>= 0.4.5)
       mechanize (>= 0.9.3)
