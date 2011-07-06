@@ -138,7 +138,7 @@ Single commit information:
 
 In alphabetical order:
 
-* Ryan Bigg - http://ryanbigg.net
+* Ryan Bigg - http://ryanbigg.com
 * Brandon Calloway - http://github.com/bcalloway
 * runpaint - http://github.com/runpaint
 
