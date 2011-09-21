@@ -40,8 +40,8 @@ Sometimes, you may not want to get authentication data from _~/.gitconfig_. You 
 
     authenticated_with :login => "mylogin", :password => "password" do 
       repo = Repository.find(:name => "api-labrat", :user => "fcoury")
-      issue = repo.open_issue :title => "Sample issue", 
-        :body => "This issue was opened using GitHub API and Octopi"
+      issue = Issue.open :repo => repo, :params => { 
+        :title => "Sample issue", :body => "This issue was opened using GitHub API and Octopi" }
       puts issue.number
     end
 
