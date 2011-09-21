@@ -9,8 +9,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Felipe Coury", "Ryan Bigg"]
   s.email       = ["felipe.coury@gmail.com", "radarlistener@gmail.com"]
   s.homepage    = ""
-  s.summary     = %q{A Ruby interface to GitHub API v2}
-  s.description = %q{A Ruby interface to GitHub API v2}
+  s.summary     = %q{A Ruby interface to GitHub API v3}
+  s.description = %q{A Ruby interface to GitHub API v3}
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
