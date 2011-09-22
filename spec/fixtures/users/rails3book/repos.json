@@ -1,0 +1,128 @@
+HTTP/1.1 200 OK
+Server: nginx/1.0.4
+Date: Thu, 22 Sep 2011 00:21:48 GMT
+Content-Type: application/json
+Connection: keep-alive
+Status: 200 OK
+X-RateLimit-Limit: 5000
+X-RateLimit-Remaining: 4999
+Content-Length: 4545
+
+[
+  {
+    "pushed_at": "2011-04-15T05:22:07Z",
+    "created_at": "2010-05-10T06:40:40Z",
+    "forks": 10,
+    "description": "The app for Rails 3 in Action, back when it covered Rails 3.0 (prerelease of the book)",
+    "clone_url": "https://github.com/rails3book/ticketee-old.git",
+    "ssh_url": "git@github.com:rails3book/ticketee-old.git",
+    "master_branch": null,
+    "language": "Ruby",
+    "fork": false,
+    "svn_url": "https://svn.github.com/rails3book/ticketee-old",
+    "html_url": "https://github.com/rails3book/ticketee-old",
+    "homepage": "",
+    "open_issues": 4,
+    "private": false,
+    "size": 3324,
+    "owner": {
+      "login": "rails3book",
+      "avatar_url": "https://secure.gravatar.com/avatar/be66f1ccc28a6a3dfb248454b8513b17?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 252283,
+      "url": "https://api.github.com/users/rails3book"
+    },
+    "name": "ticketee-old",
+    "updated_at": "2011-08-28T19:14:37Z",
+    "watchers": 44,
+    "git_url": "git://github.com/rails3book/ticketee-old.git",
+    "id": 658599,
+    "url": "https://api.github.com/repos/rails3book/ticketee-old"
+  },
+  {
+    "pushed_at": "2010-11-09T05:13:48Z",
+    "created_at": "2010-11-09T05:11:14Z",
+    "forks": 1,
+    "description": "RSpec + \"Bacon\" example from Rails 3 in Action",
+    "clone_url": "https://github.com/rails3book/bacon.git",
+    "ssh_url": "git@github.com:rails3book/bacon.git",
+    "master_branch": null,
+    "language": null,
+    "fork": false,
+    "svn_url": "https://svn.github.com/rails3book/bacon",
+    "html_url": "https://github.com/rails3book/bacon",
+    "homepage": "http://manning.com/katz",
+    "open_issues": 0,
+    "private": false,
+    "size": 128,
+    "owner": {
+      "login": "rails3book",
+      "avatar_url": "https://secure.gravatar.com/avatar/be66f1ccc28a6a3dfb248454b8513b17?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 252283,
+      "url": "https://api.github.com/users/rails3book"
+    },
+    "name": "bacon",
+    "updated_at": "2010-11-09T05:13:48Z",
+    "watchers": 2,
+    "git_url": "git://github.com/rails3book/bacon.git",
+    "id": 1064149,
+    "url": "https://api.github.com/repos/rails3book/bacon"
+  },
+  {
+    "pushed_at": "2011-08-15T08:17:01Z",
+    "created_at": "2011-04-29T11:48:55Z",
+    "forks": 8,
+    "description": "The Rails 3 in Action project, on Rails 3.1",
+    "clone_url": "https://github.com/rails3book/ticketee.git",
+    "ssh_url": "git@github.com:rails3book/ticketee.git",
+    "master_branch": null,
+    "language": "Ruby",
+    "fork": false,
+    "svn_url": "https://svn.github.com/rails3book/ticketee",
+    "html_url": "https://github.com/rails3book/ticketee",
+    "homepage": "http://manning.com/katz",
+    "open_issues": 0,
+    "private": false,
+    "size": 180,
+    "owner": {
+      "login": "rails3book",
+      "avatar_url": "https://secure.gravatar.com/avatar/be66f1ccc28a6a3dfb248454b8513b17?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 252283,
+      "url": "https://api.github.com/users/rails3book"
+    },
+    "name": "ticketee",
+    "updated_at": "2011-09-19T00:04:18Z",
+    "watchers": 28,
+    "git_url": "git://github.com/rails3book/ticketee.git",
+    "id": 1680412,
+    "url": "https://api.github.com/repos/rails3book/ticketee"
+  },
+  {
+    "pushed_at": "2011-06-09T05:58:57Z",
+    "created_at": "2011-06-08T05:10:45Z",
+    "forks": 1,
+    "description": "The engine from Rails 3 in Action. Based on the best Rails 3.1 forum engine ever (http://github.com/radar/forem).",
+    "clone_url": "https://github.com/rails3book/forem.git",
+    "ssh_url": "git@github.com:rails3book/forem.git",
+    "master_branch": null,
+    "language": "Ruby",
+    "fork": false,
+    "svn_url": "https://svn.github.com/rails3book/forem",
+    "html_url": "https://github.com/rails3book/forem",
+    "homepage": "http://manning.com/katz",
+    "open_issues": 0,
+    "private": false,
+    "size": 304,
+    "owner": {
+      "login": "rails3book",
+      "avatar_url": "https://secure.gravatar.com/avatar/be66f1ccc28a6a3dfb248454b8513b17?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 252283,
+      "url": "https://api.github.com/users/rails3book"
+    },
+    "name": "forem",
+    "updated_at": "2011-06-09T05:58:57Z",
+    "watchers": 1,
+    "git_url": "git://github.com/rails3book/forem.git",
+    "id": 1863680,
+    "url": "https://api.github.com/repos/rails3book/forem"
+  }
+]
