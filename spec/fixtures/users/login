@@ -1,0 +1,10 @@
+HTTP/1.1 302 Found
+Server: nginx/1.0.4
+Date: Thu, 22 Sep 2011 16:14:37 GMT
+Content-Type: text/html;charset=utf-8
+Connection: keep-alive
+Status: 302 Found
+X-RateLimit-Limit: 5000
+Location: http://developer.github.com
+X-RateLimit-Remaining: 4999
+Content-Length: 0

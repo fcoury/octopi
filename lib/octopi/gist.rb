@@ -3,10 +3,17 @@ module Octopi
     autoload :Comment, "octopi/gist/comment"
     autoload :GistFile, "octopi/gist/gist_file"
     autoload :History, "octopi/gist/history"
+    
+    def initialize(attributes)
+      super
+      @attributes["public"] ||= true
+    end
 
     def user
-      User.new(@attributes["user"])
+      @user ||= User.new(@attributes["user"]) if @attributes["user"]
     end
+    
+    alias_method :owner, :user
 
     def history
       @history ||= @attributes["history"].map do |history|

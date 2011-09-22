@@ -1,10 +1,3 @@
-#stdlib
-require 'pathname'
-
-#gems
-require 'httparty'
-require 'json'
-
 module Octopi
   class Base
     include HTTParty
@@ -15,8 +8,12 @@ module Octopi
       build(get(singular_url(name)))
     end
     
+    def self.create(attributes)
+      new(attributes).create
+    end
+    
     def self.collection(url)
-      from_collection(get(base_url + url))
+      from_collection(get(Octopi.base_url + url))
     end
     
     def initialize(attributes)
@@ -27,14 +24,20 @@ module Octopi
           @attributes[k]
         end unless respond_to?(k)
       end
-
-      setup if respond_to?(:setup)
+    end
+    
+    def create
+      self.class.new(self.class.post(self.class.plural_url, :body => attributes))
     end
     
     private
     
     def self.singular_url(name)
-      base_url + "/#{self.name.split("::").last.downcase}s/#{name}"
+      plural_url + "/#{name}"
+    end
+    
+    def self.plural_url
+      Octopi.base_url + "/#{self.name.split("::").last.downcase}s"
     end
 
     # Builds objects from a collection
@@ -48,10 +51,6 @@ module Octopi
 
     def self.parse(response)
       JSON.parse(response.body)
-    end
-    
-    def self.base_url
-      "https://api.github.com"
     end
   end
 end
