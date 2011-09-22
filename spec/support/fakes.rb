@@ -34,7 +34,6 @@ RSpec.configure do |config|
   config.include Fakes
   config.before(:each) do
     api_stub("gists/1115247")
-    stub_request(:post, base_uri + "gists").to_return(fake("/gists/create"))
     api_stub("orgs/carlhuda/repos")
 
     api_stub("users/fcoury")

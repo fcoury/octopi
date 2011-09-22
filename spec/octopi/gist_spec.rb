@@ -8,6 +8,7 @@ describe Octopi::Gist do
     end
     
     it "can create an anonymous gist" do
+      stub_request(:post, base_uri + "gists").to_return(fake("/gists/create"))
       gist = Octopi::Gist.create(:files => { "file.rb" => { :content => "puts 'hello world'" }})
       gist.owner.should be_nil
       # Check ensuring that public=true is sent through.
