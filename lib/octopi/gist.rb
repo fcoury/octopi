@@ -10,7 +10,7 @@ module Octopi
 
     def initialize(attributes)
       super
-      @attributes["public"] ||= true
+      @attributes[:public] = true unless @attributes[:public] == false
     end
 
     def user
