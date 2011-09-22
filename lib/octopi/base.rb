@@ -2,6 +2,10 @@ module Octopi
   class Base
     
     attr_accessor :attributes
+
+    def self.all
+      from_collection(get(plural_url))
+    end
     
     def self.find(name)
       build(get(singular_url(name)))

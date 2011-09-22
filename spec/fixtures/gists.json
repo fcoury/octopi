@@ -1,0 +1,162 @@
+HTTP/1.1 200 OK
+Server: nginx/1.0.4
+Date: Thu, 22 Sep 2011 20:22:15 GMT
+Content-Type: application/json
+Connection: keep-alive
+Status: 200 OK
+X-RateLimit-Limit: 5000
+X-RateLimit-Remaining: 4997
+Content-Length: 5589
+
+[
+  {
+    "updated_at": "2011-09-22T20:22:04Z",
+    "git_push_url": "git@gist.github.com:738621396c7f17817c66.git",
+    "public": false,
+    "description": "",
+    "created_at": "2011-09-22T20:22:04Z",
+    "comments": 0,
+    "html_url": "https://gist.github.com/738621396c7f17817c66",
+    "user": {
+      "login": "rails3book",
+      "avatar_url": "https://secure.gravatar.com/avatar/be66f1ccc28a6a3dfb248454b8513b17?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 252283,
+      "url": "https://api.github.com/users/rails3book"
+    },
+    "files": {
+      "gistfile1.txt": {
+        "raw_url": "https://gist.github.com/raw/738621396c7f17817c66/e2bfbf08bfdaaadd655bfb3bab0e1dc997ef00c2/gistfile1.txt",
+        "size": 56,
+        "filename": "gistfile1.txt"
+      }
+    },
+    "git_pull_url": "git://gist.github.com/738621396c7f17817c66.git",
+    "id": "738621396c7f17817c66",
+    "url": "https://api.github.com/gists/738621396c7f17817c66"
+  },
+  {
+    "updated_at": "2011-04-26T06:48:22Z",
+    "git_push_url": "git@gist.github.com:941908.git",
+    "public": true,
+    "description": "",
+    "created_at": "2011-04-26T06:48:13Z",
+    "comments": 0,
+    "html_url": "https://gist.github.com/941908",
+    "user": {
+      "login": "rails3book",
+      "avatar_url": "https://secure.gravatar.com/avatar/be66f1ccc28a6a3dfb248454b8513b17?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 252283,
+      "url": "https://api.github.com/users/rails3book"
+    },
+    "files": {
+      "gistfile1.txt": {
+        "raw_url": "https://gist.github.com/raw/941908/7907dbe737cee08fd8c02f11488282385a6002cf/gistfile1.txt",
+        "size": 93,
+        "filename": "gistfile1.txt"
+      }
+    },
+    "git_pull_url": "git://gist.github.com/941908.git",
+    "id": "941908",
+    "url": "https://api.github.com/gists/941908"
+  },
+  {
+    "updated_at": "2011-03-10T00:58:35Z",
+    "git_push_url": "git@gist.github.com:863365.git",
+    "public": true,
+    "description": "",
+    "created_at": "2011-03-10T00:58:34Z",
+    "comments": 0,
+    "html_url": "https://gist.github.com/863365",
+    "user": {
+      "login": "rails3book",
+      "avatar_url": "https://secure.gravatar.com/avatar/be66f1ccc28a6a3dfb248454b8513b17?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 252283,
+      "url": "https://api.github.com/users/rails3book"
+    },
+    "files": {
+      "gistfile1.txt": {
+        "raw_url": "https://gist.github.com/raw/863365/7cd5fac199e444c41b8e4d40a26e77fcd8a4363d/gistfile1.txt",
+        "size": 212,
+        "filename": "gistfile1.txt"
+      }
+    },
+    "git_pull_url": "git://gist.github.com/863365.git",
+    "id": "863365",
+    "url": "https://api.github.com/gists/863365"
+  },
+  {
+    "updated_at": "2011-03-10T00:41:15Z",
+    "git_push_url": "git@gist.github.com:863331.git",
+    "public": true,
+    "description": "This file goes in your engine, in the config directory",
+    "created_at": "2011-03-10T00:41:15Z",
+    "comments": 0,
+    "html_url": "https://gist.github.com/863331",
+    "user": {
+      "login": "rails3book",
+      "avatar_url": "https://secure.gravatar.com/avatar/be66f1ccc28a6a3dfb248454b8513b17?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 252283,
+      "url": "https://api.github.com/users/rails3book"
+    },
+    "files": {
+      "routes.rb": {
+        "raw_url": "https://gist.github.com/raw/863331/bdb6aa3d0083b61ff30c5a2b647584263ed7d655/routes.rb",
+        "size": 81,
+        "filename": "routes.rb"
+      }
+    },
+    "git_pull_url": "git://gist.github.com/863331.git",
+    "id": "863331",
+    "url": "https://api.github.com/gists/863331"
+  },
+  {
+    "updated_at": "2011-02-16T20:15:25Z",
+    "git_push_url": "git@gist.github.com:830086.git",
+    "public": true,
+    "description": "",
+    "created_at": "2011-02-16T20:15:24Z",
+    "comments": 0,
+    "html_url": "https://gist.github.com/830086",
+    "user": {
+      "login": "rails3book",
+      "avatar_url": "https://secure.gravatar.com/avatar/be66f1ccc28a6a3dfb248454b8513b17?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 252283,
+      "url": "https://api.github.com/users/rails3book"
+    },
+    "files": {
+      "gistfile1.txt": {
+        "raw_url": "https://gist.github.com/raw/830086/91acca54bba57564a5827da2f481b5bacdf285e2/gistfile1.txt",
+        "size": 210,
+        "filename": "gistfile1.txt"
+      }
+    },
+    "git_pull_url": "git://gist.github.com/830086.git",
+    "id": "830086",
+    "url": "https://api.github.com/gists/830086"
+  },
+  {
+    "updated_at": "2010-05-09T06:27:38Z",
+    "git_push_url": "git@gist.github.com:394981.git",
+    "public": true,
+    "description": null,
+    "created_at": "2010-05-09T06:27:37Z",
+    "comments": 0,
+    "html_url": "https://gist.github.com/394981",
+    "user": {
+      "login": "rails3book",
+      "avatar_url": "https://secure.gravatar.com/avatar/be66f1ccc28a6a3dfb248454b8513b17?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 252283,
+      "url": "https://api.github.com/users/rails3book"
+    },
+    "files": {
+      "gistfile1.txt": {
+        "raw_url": "https://gist.github.com/raw/394981/ee426c173705757ae9cc56bc98ba975106327550/gistfile1.txt",
+        "size": 144,
+        "filename": "gistfile1.txt"
+      }
+    },
+    "git_pull_url": "git://gist.github.com/394981.git",
+    "id": "394981",
+    "url": "https://api.github.com/gists/394981"
+  }
+]

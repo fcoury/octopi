@@ -7,6 +7,18 @@ module Octopi
     def self.for_user(user)
       collection("/users/#{user}/gists")
     end
+    
+    # Will retreive all gists for a user if authenticated.
+    # Otherwise, all gists, ordered in reverse order by creation time
+    def self.mine
+      all
+    end
+    
+    def self.starred
+      Octopi.requires_authentication! do
+        collection("/gists/starred")
+      end
+    end
 
     def initialize(attributes)
       super
