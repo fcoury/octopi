@@ -1,6 +1,5 @@
 module Octopi
   class Base
-    include HTTParty
     
     attr_accessor :attributes
     
@@ -31,6 +30,14 @@ module Octopi
     end
     
     private
+    
+    def self.get(*args)
+      Octopi.get(*args)
+    end
+    
+    def self.post(*args)
+      Octopi.post(*args)
+    end
     
     def self.singular_url(name)
       plural_url + "/#{name}"

@@ -2,13 +2,17 @@ require 'webmock/rspec'
 
 module Fakes
   def api_stub(route)
-    stub_request(:get, base_uri + route).to_return(fake(route))
+    stub_request(:get, base_url + route).to_return(fake(route))
   end
 
   private
   
-  def base_uri
+  def base_url
     "https://api.github.com/"
+  end
+  
+  def authenticated_base_url
+    "https://radar:password@api.github.com/"
   end
 
   def fake(route)
@@ -26,14 +30,17 @@ module Fakes
   end
   
   def stub_successful_login!
-    stub_request(:get, "https://username:password@api.github.com").to_return(:status => 302, :body => "")
+    stub_request(:get, "https://radar:password@api.github.com").to_return(:status => 302, :body => "")
   end
 end
 
 RSpec.configure do |config|
   config.include Fakes
   config.before(:each) do
+    Octopi.basic_auth(nil, nil)
     api_stub("gists/1115247")
+    stub_request(:post, base_url + "gists").to_return(fake("/gists/create_anonymously"))
+    stub_request(:post, authenticated_base_url + "gists").to_return(fake("/gists/create"))
     api_stub("orgs/carlhuda/repos")
 
     api_stub("users/fcoury")

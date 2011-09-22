@@ -8,33 +8,31 @@ describe Octopi::Gist do
     end
     
     it "can create an anonymous gist" do
-      stub_request(:post, base_uri + "gists").to_return(fake("/gists/create_anonymously"))
       gist = Octopi::Gist.create(:files => { "file.rb" => { :content => "puts 'hello world'" }})
       gist.owner.should be_nil
       # Check ensuring that public=true is sent through.
-      WebMock.should have_requested(:post, base_uri + "gists").with(:body => "files[file.rb][content]=puts%20'hello%20world'&public=true")
+      WebMock.should have_requested(:post, base_url + "gists").with(:body => "files[file.rb][content]=puts%20'hello%20world'&public=true")
     end
   end
   
   context "authenticated" do
     before do
-      stub_successful_login!()
-      Octopi.authenticate! :username => "username", :password => "password"
+      stub_successful_login!
+      Octopi.authenticate! :username => "radar", :password => "password"
     end
     
     it "can create a public gist" do
-      pending("Not implemented.")
       gist = Octopi::Gist.create(:files => { "file.rb" => { :content => "puts 'hello world'" }})
-      gist.owner.should_not be_nil
+      # Check ensuring that public=true is sent through and request is authenticated
+      WebMock.should have_requested(:post, authenticated_base_url + "gists").with(:body => "files[file.rb][content]=puts%20'hello%20world'&public=true")
 
-      # Check ensuring that public=true is sent through.
-      WebMock.should have_requested(:post, base_uri + "gists").with(:body => "files[file.rb][content]=puts%20'hello%20world'&public=true")
+      gist.owner.login.should == "radar"
     end
     
     it "can create a private gist" do
       pending("Not implemented.")
       Octopi::Gist.create(:public => false, :files => { "file.rb" => { :content => "puts 'hello world'" }})
-      WebMock.should have_requested(:post, base_uri + "gists").with(:body => "files[file.rb][content]=puts%20'hello%20world'&public=false")
+      WebMock.should have_requested(:post, authenticated_base_url + "gists").with(:body => "files[file.rb][content]=puts%20'hello%20world'&public=false")
     end
     
     it "can retreive own public gists" do
