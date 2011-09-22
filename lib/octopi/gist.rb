@@ -4,6 +4,10 @@ module Octopi
     autoload :GistFile, "octopi/gist/gist_file"
     autoload :History, "octopi/gist/history"
     
+    def self.for_user(user)
+      collection("/users/#{user}/gists")
+    end
+
     def initialize(attributes)
       super
       @attributes["public"] ||= true
@@ -31,10 +35,6 @@ module Octopi
       @comments ||= @attributes["comments"].map do |comment|
         Octopi::Gist::Comment.new(comment)
       end
-    end
-
-    def self.for_user(user)
-      collection("/users/#{user}/gists")
     end
   end
 end
