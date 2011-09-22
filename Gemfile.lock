@@ -1,36 +1,45 @@
 PATH
   remote: .
   specs:
-    octopi (0.4.4)
-      api_cache
-      httparty (>= 0.4.5)
-      mechanize (>= 0.9.3)
-      nokogiri (>= 1.3.1)
+    octopi (1.0.0)
+      httparty (~> 0.4)
+      json
 
 GEM
   remote: http://rubygems.org/
   specs:
-    api_cache (0.2.3)
-    crack (0.1.8)
-    fakeweb (1.3.0)
+    addressable (2.2.6)
+    crack (0.3.0)
+    diff-lcs (1.1.3)
     git (1.2.5)
-    httparty (0.7.7)
-      crack (= 0.1.8)
+    httparty (0.8.0)
+      multi_json
+      multi_xml
     jeweler (1.6.0)
       bundler (~> 1.0.0)
       git (>= 1.2.5)
       rake
-    mechanize (1.0.0)
-      nokogiri (>= 1.2.1)
-    nokogiri (1.4.4)
+    json (1.5.3)
+    multi_json (1.0.3)
+    multi_xml (0.4.0)
     rake (0.8.7)
-    shoulda (2.11.3)
+    rspec (2.6.0)
+      rspec-core (~> 2.6.0)
+      rspec-expectations (~> 2.6.0)
+      rspec-mocks (~> 2.6.0)
+    rspec-core (2.6.4)
+    rspec-expectations (2.6.0)
+      diff-lcs (~> 1.1.2)
+    rspec-mocks (2.6.0)
+    webmock (1.7.6)
+      addressable (> 2.2.5, ~> 2.2)
+      crack (>= 0.1.7)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  fakeweb
   jeweler
   octopi!
-  shoulda
+  rspec (~> 2.6)
+  webmock
