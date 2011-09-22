@@ -29,8 +29,8 @@ module Fakes
     raise("Could not find fake file: #{file}")
   end
   
-  def stub_successful_login!
-    stub_request(:get, "https://radar:password@api.github.com").to_return(:status => 302, :body => "")
+  def stub_successful_login!(username="radar")
+    stub_request(:get, "https://#{username}:password@api.github.com").to_return(:status => 302, :body => "")
   end
 end
 
