@@ -1,0 +1,780 @@
+HTTP/1.1 200 OK
+Server: nginx/1.0.4
+Date: Thu, 22 Sep 2011 03:48:31 GMT
+Content-Type: application/json
+Connection: keep-alive
+Status: 200 OK
+X-RateLimit-Limit: 5000
+X-RateLimit-Remaining: 4996
+Link: <https://api.github.com/users/fcoury/gists?page=2>; rel="next", <https://api.github.com/users/fcoury/gists?page=3>; rel="last"
+Content-Length: 28182
+
+[
+  {
+    "updated_at": "2011-07-30T05:53:43Z",
+    "public": true,
+    "description": "",
+    "created_at": "2011-07-30T05:53:43Z",
+    "comments": 0,
+    "html_url": "https://gist.github.com/1115247",
+    "git_pull_url": "git://gist.github.com/1115247.git",
+    "user": {
+      "avatar_url": "https://secure.gravatar.com/avatar/c4ceadae4f61dac8ff3ababc3faa6c42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "fcoury",
+      "id": 1371,
+      "url": "https://api.github.com/users/fcoury"
+    },
+    "files": {
+      "upgrade_ruby.sh": {
+        "raw_url": "https://gist.github.com/raw/1115247/fe15368a8bba342aca497b4a5b2b72dbf564900e/upgrade_ruby.sh",
+        "size": 888,
+        "filename": "upgrade_ruby.sh"
+      }
+    },
+    "git_push_url": "git@gist.github.com:1115247.git",
+    "id": "1115247",
+    "url": "https://api.github.com/gists/1115247"
+  },
+  {
+    "updated_at": "2011-07-30T05:39:54Z",
+    "public": true,
+    "description": "i can has ruby-1.9.2 package with fpm",
+    "created_at": "2011-07-30T05:39:54Z",
+    "comments": 0,
+    "html_url": "https://gist.github.com/1115237",
+    "git_pull_url": "git://gist.github.com/1115237.git",
+    "user": {
+      "avatar_url": "https://secure.gravatar.com/avatar/c4ceadae4f61dac8ff3ababc3faa6c42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "fcoury",
+      "id": 1371,
+      "url": "https://api.github.com/users/fcoury"
+    },
+    "files": {
+      "gistfile1.eclass": {
+        "raw_url": "https://gist.github.com/raw/1115237/381eb35a780f30528a62d470ab8e715d9c3b30c8/gistfile1.eclass",
+        "size": 606,
+        "filename": "gistfile1.eclass"
+      }
+    },
+    "git_push_url": "git@gist.github.com:1115237.git",
+    "id": "1115237",
+    "url": "https://api.github.com/gists/1115237"
+  },
+  {
+    "updated_at": "2011-07-10T07:17:15Z",
+    "public": true,
+    "description": "Python/Twisted/Redis backed DNS server.",
+    "created_at": "2011-07-10T07:17:15Z",
+    "comments": 0,
+    "html_url": "https://gist.github.com/1074348",
+    "git_pull_url": "git://gist.github.com/1074348.git",
+    "user": {
+      "avatar_url": "https://secure.gravatar.com/avatar/c4ceadae4f61dac8ff3ababc3faa6c42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "fcoury",
+      "id": 1371,
+      "url": "https://api.github.com/users/fcoury"
+    },
+    "files": {
+      "txredns.py": {
+        "raw_url": "https://gist.github.com/raw/1074348/9bec1355f9d2d92cb1ad71920ba9aca5739e3ee3/txredns.py",
+        "size": 1800,
+        "filename": "txredns.py"
+      }
+    },
+    "git_push_url": "git@gist.github.com:1074348.git",
+    "id": "1074348",
+    "url": "https://api.github.com/gists/1074348"
+  },
+  {
+    "updated_at": "2011-07-06T19:36:50Z",
+    "public": true,
+    "description": "i can has ruby-1.9.2 package with fpm",
+    "created_at": "2011-07-06T19:36:50Z",
+    "comments": 0,
+    "html_url": "https://gist.github.com/1068141",
+    "git_pull_url": "git://gist.github.com/1068141.git",
+    "user": {
+      "avatar_url": "https://secure.gravatar.com/avatar/c4ceadae4f61dac8ff3ababc3faa6c42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "fcoury",
+      "id": 1371,
+      "url": "https://api.github.com/users/fcoury"
+    },
+    "files": {
+      "gistfile1.eclass": {
+        "raw_url": "https://gist.github.com/raw/1068141/381eb35a780f30528a62d470ab8e715d9c3b30c8/gistfile1.eclass",
+        "size": 606,
+        "filename": "gistfile1.eclass"
+      }
+    },
+    "git_push_url": "git@gist.github.com:1068141.git",
+    "id": "1068141",
+    "url": "https://api.github.com/gists/1068141"
+  },
+  {
+    "updated_at": "2011-06-02T18:42:36Z",
+    "public": true,
+    "description": "Django on Heroku with Celery and Sentry",
+    "created_at": "2011-06-02T18:42:15Z",
+    "comments": 0,
+    "html_url": "https://gist.github.com/1004997",
+    "git_pull_url": "git://gist.github.com/1004997.git",
+    "user": {
+      "avatar_url": "https://secure.gravatar.com/avatar/c4ceadae4f61dac8ff3ababc3faa6c42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "fcoury",
+      "id": 1371,
+      "url": "https://api.github.com/users/fcoury"
+    },
+    "files": {
+      "bootstrap.sh": {
+        "raw_url": "https://gist.github.com/raw/1004997/05497567f5d8579cc6f563e44be1e7ce238d7d13/bootstrap.sh",
+        "size": 1106,
+        "filename": "bootstrap.sh"
+      }
+    },
+    "git_push_url": "git@gist.github.com:1004997.git",
+    "id": "1004997",
+    "url": "https://api.github.com/gists/1004997"
+  },
+  {
+    "updated_at": "2011-03-12T06:29:34Z",
+    "public": true,
+    "description": "Uploading photos to Tumblr",
+    "created_at": "2011-03-12T06:29:34Z",
+    "comments": 0,
+    "html_url": "https://gist.github.com/867090",
+    "git_pull_url": "git://gist.github.com/867090.git",
+    "user": {
+      "avatar_url": "https://secure.gravatar.com/avatar/c4ceadae4f61dac8ff3ababc3faa6c42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "fcoury",
+      "id": 1371,
+      "url": "https://api.github.com/users/fcoury"
+    },
+    "files": {
+      "thumblr_photo.rb": {
+        "raw_url": "https://gist.github.com/raw/867090/0e646a7af66198185f2a22e5e0810138805c02d4/thumblr_photo.rb",
+        "size": 444,
+        "filename": "thumblr_photo.rb"
+      }
+    },
+    "git_push_url": "git@gist.github.com:867090.git",
+    "id": "867090",
+    "url": "https://api.github.com/gists/867090"
+  },
+  {
+    "updated_at": "2011-03-10T04:33:20Z",
+    "public": true,
+    "description": "",
+    "created_at": "2011-03-10T04:33:20Z",
+    "comments": 0,
+    "html_url": "https://gist.github.com/863577",
+    "git_pull_url": "git://gist.github.com/863577.git",
+    "user": {
+      "avatar_url": "https://secure.gravatar.com/avatar/c4ceadae4f61dac8ff3ababc3faa6c42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "fcoury",
+      "id": 1371,
+      "url": "https://api.github.com/users/fcoury"
+    },
+    "files": {
+      "gistfile1.rb": {
+        "raw_url": "https://gist.github.com/raw/863577/3a7e3b48e64169fec949d6802c9767d03369eafe/gistfile1.rb",
+        "size": 157,
+        "filename": "gistfile1.rb"
+      }
+    },
+    "git_push_url": "git@gist.github.com:863577.git",
+    "id": "863577",
+    "url": "https://api.github.com/gists/863577"
+  },
+  {
+    "updated_at": "2011-03-02T03:35:11Z",
+    "public": true,
+    "description": "Sample of commands for fixing webbynode gem",
+    "created_at": "2011-03-02T03:35:09Z",
+    "comments": 0,
+    "html_url": "https://gist.github.com/850427",
+    "git_pull_url": "git://gist.github.com/850427.git",
+    "user": {
+      "avatar_url": "https://secure.gravatar.com/avatar/c4ceadae4f61dac8ff3ababc3faa6c42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "fcoury",
+      "id": 1371,
+      "url": "https://api.github.com/users/fcoury"
+    },
+    "files": {
+      "gistfile1.eclass": {
+        "raw_url": "https://gist.github.com/raw/850427/54ebd693dc290181904264ad194184d92cc34633/gistfile1.eclass",
+        "size": 1355,
+        "filename": "gistfile1.eclass"
+      }
+    },
+    "git_push_url": "git@gist.github.com:850427.git",
+    "id": "850427",
+    "url": "https://api.github.com/gists/850427"
+  },
+  {
+    "updated_at": "2010-11-08T16:45:33Z",
+    "public": true,
+    "description": null,
+    "created_at": "2010-11-08T16:45:17Z",
+    "comments": 0,
+    "html_url": "https://gist.github.com/667914",
+    "git_pull_url": "git://gist.github.com/667914.git",
+    "user": {
+      "avatar_url": "https://secure.gravatar.com/avatar/c4ceadae4f61dac8ff3ababc3faa6c42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "fcoury",
+      "id": 1371,
+      "url": "https://api.github.com/users/fcoury"
+    },
+    "files": {
+      "deploy.rb": {
+        "raw_url": "https://gist.github.com/raw/667914/02efd52c8b70eec264dfd231e6c4e514ca943121/deploy.rb",
+        "size": 1835,
+        "filename": "deploy.rb"
+      }
+    },
+    "git_push_url": "git@gist.github.com:667914.git",
+    "id": "667914",
+    "url": "https://api.github.com/gists/667914"
+  },
+  {
+    "updated_at": "2010-11-08T16:45:34Z",
+    "public": true,
+    "description": null,
+    "created_at": "2010-11-08T16:45:13Z",
+    "comments": 0,
+    "html_url": "https://gist.github.com/667913",
+    "git_pull_url": "git://gist.github.com/667913.git",
+    "user": {
+      "avatar_url": "https://secure.gravatar.com/avatar/c4ceadae4f61dac8ff3ababc3faa6c42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "fcoury",
+      "id": 1371,
+      "url": "https://api.github.com/users/fcoury"
+    },
+    "files": {
+      "deploy.rb": {
+        "raw_url": "https://gist.github.com/raw/667913/02efd52c8b70eec264dfd231e6c4e514ca943121/deploy.rb",
+        "size": 1835,
+        "filename": "deploy.rb"
+      }
+    },
+    "git_push_url": "git@gist.github.com:667913.git",
+    "id": "667913",
+    "url": "https://api.github.com/gists/667913"
+  },
+  {
+    "updated_at": "2010-10-23T00:33:25Z",
+    "public": true,
+    "description": null,
+    "created_at": "2010-10-23T00:32:35Z",
+    "comments": 0,
+    "html_url": "https://gist.github.com/641601",
+    "git_pull_url": "git://gist.github.com/641601.git",
+    "user": {
+      "avatar_url": "https://secure.gravatar.com/avatar/c4ceadae4f61dac8ff3ababc3faa6c42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "fcoury",
+      "id": 1371,
+      "url": "https://api.github.com/users/fcoury"
+    },
+    "files": {
+      "Monitoring-DJ-with-GOD.god": {
+        "raw_url": "https://gist.github.com/raw/641601/75fa1cc8a00c57ade104949fa0641c42d0fbd953/Monitoring-DJ-with-GOD.god",
+        "size": 1086,
+        "filename": "Monitoring-DJ-with-GOD.god"
+      }
+    },
+    "git_push_url": "git@gist.github.com:641601.git",
+    "id": "641601",
+    "url": "https://api.github.com/gists/641601"
+  },
+  {
+    "updated_at": "2010-10-18T14:17:58Z",
+    "public": true,
+    "description": "Upgrades Phusion Passenger to 3.0.0 (or later)",
+    "created_at": "2010-10-18T14:12:55Z",
+    "comments": 0,
+    "html_url": "https://gist.github.com/632273",
+    "git_pull_url": "git://gist.github.com/632273.git",
+    "user": {
+      "avatar_url": "https://secure.gravatar.com/avatar/c4ceadae4f61dac8ff3ababc3faa6c42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "fcoury",
+      "id": 1371,
+      "url": "https://api.github.com/users/fcoury"
+    },
+    "files": {
+      "upgrade_passenger.sh": {
+        "raw_url": "https://gist.github.com/raw/632273/3c147bdcf7a8f9a9a181092d1363a07ed2e43370/upgrade_passenger.sh",
+        "size": 543,
+        "filename": "upgrade_passenger.sh"
+      }
+    },
+    "git_push_url": "git@gist.github.com:632273.git",
+    "id": "632273",
+    "url": "https://api.github.com/gists/632273"
+  },
+  {
+    "updated_at": "2010-10-15T20:05:01Z",
+    "public": true,
+    "description": null,
+    "created_at": "2010-10-15T20:04:50Z",
+    "comments": 0,
+    "html_url": "https://gist.github.com/628846",
+    "git_pull_url": "git://gist.github.com/628846.git",
+    "user": {
+      "avatar_url": "https://secure.gravatar.com/avatar/c4ceadae4f61dac8ff3ababc3faa6c42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "fcoury",
+      "id": 1371,
+      "url": "https://api.github.com/users/fcoury"
+    },
+    "files": {
+      "bundle_helper.rb": {
+        "raw_url": "https://gist.github.com/raw/628846/5ec24770cbb96d84c8902cd828aa732ad0b25d9f/bundle_helper.rb",
+        "size": 2261,
+        "filename": "bundle_helper.rb"
+      },
+      "deploy.rb": {
+        "raw_url": "https://gist.github.com/raw/628846/a09c72ec2f3f935b39a4d1f25325a697426a3929/deploy.rb",
+        "size": 256,
+        "filename": "deploy.rb"
+      },
+      "bundle.rake": {
+        "raw_url": "https://gist.github.com/raw/628846/76fe3ee58f2765f43045b0a944188b890e0935fb/bundle.rake",
+        "size": 2517,
+        "filename": "bundle.rake"
+      },
+      "_README.md": {
+        "raw_url": "https://gist.github.com/raw/628846/d961a3a9279c0f73ceb55d2f495e0f4ccb9ddbea/_README.md",
+        "size": 2181,
+        "filename": "_README.md"
+      },
+      "production.rb": {
+        "raw_url": "https://gist.github.com/raw/628846/0838727f1cb4208fc3d4702564b47120ec4cda4a/production.rb",
+        "size": 642,
+        "filename": "production.rb"
+      }
+    },
+    "git_push_url": "git@gist.github.com:628846.git",
+    "id": "628846",
+    "url": "https://api.github.com/gists/628846"
+  },
+  {
+    "updated_at": "2010-10-02T23:26:05Z",
+    "public": true,
+    "description": null,
+    "created_at": "2010-10-02T23:03:11Z",
+    "comments": 0,
+    "html_url": "https://gist.github.com/608081",
+    "git_pull_url": "git://gist.github.com/608081.git",
+    "user": {
+      "avatar_url": "https://secure.gravatar.com/avatar/c4ceadae4f61dac8ff3ababc3faa6c42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "fcoury",
+      "id": 1371,
+      "url": "https://api.github.com/users/fcoury"
+    },
+    "files": {
+      "nginx_ssl.sh": {
+        "raw_url": "https://gist.github.com/raw/608081/4b7f9f71977a17bb2f6a7b0e07a154de3f09d095/nginx_ssl.sh",
+        "size": 293,
+        "filename": "nginx_ssl.sh"
+      }
+    },
+    "git_push_url": "git@gist.github.com:608081.git",
+    "id": "608081",
+    "url": "https://api.github.com/gists/608081"
+  },
+  {
+    "updated_at": "2010-10-02T18:42:55Z",
+    "public": true,
+    "description": null,
+    "created_at": "2010-10-02T18:42:55Z",
+    "comments": 0,
+    "html_url": "https://gist.github.com/607882",
+    "git_pull_url": "git://gist.github.com/607882.git",
+    "user": {
+      "avatar_url": "https://secure.gravatar.com/avatar/c4ceadae4f61dac8ff3ababc3faa6c42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "fcoury",
+      "id": 1371,
+      "url": "https://api.github.com/users/fcoury"
+    },
+    "files": {
+      "gistfile1.txt": {
+        "raw_url": "https://gist.github.com/raw/607882/a138f65f6871550ae11a7551187207929809aa4d/gistfile1.txt",
+        "size": 331,
+        "filename": "gistfile1.txt"
+      }
+    },
+    "git_push_url": "git@gist.github.com:607882.git",
+    "id": "607882",
+    "url": "https://api.github.com/gists/607882"
+  },
+  {
+    "updated_at": "2010-09-23T01:11:37Z",
+    "public": true,
+    "description": null,
+    "created_at": "2010-09-23T00:23:09Z",
+    "comments": 0,
+    "html_url": "https://gist.github.com/592843",
+    "git_pull_url": "git://gist.github.com/592843.git",
+    "user": {
+      "avatar_url": "https://secure.gravatar.com/avatar/c4ceadae4f61dac8ff3ababc3faa6c42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "fcoury",
+      "id": 1371,
+      "url": "https://api.github.com/users/fcoury"
+    },
+    "files": {
+      "ghkey.rb": {
+        "raw_url": "https://gist.github.com/raw/592843/56467802b66f855e2390c7372753ec10f1057e06/ghkey.rb",
+        "size": 1560,
+        "filename": "ghkey.rb"
+      }
+    },
+    "git_push_url": "git@gist.github.com:592843.git",
+    "id": "592843",
+    "url": "https://api.github.com/gists/592843"
+  },
+  {
+    "updated_at": "2010-09-20T18:09:29Z",
+    "public": true,
+    "description": null,
+    "created_at": "2010-09-20T18:09:26Z",
+    "comments": 0,
+    "html_url": "https://gist.github.com/588336",
+    "git_pull_url": "git://gist.github.com/588336.git",
+    "user": {
+      "avatar_url": "https://secure.gravatar.com/avatar/c4ceadae4f61dac8ff3ababc3faa6c42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "fcoury",
+      "id": 1371,
+      "url": "https://api.github.com/users/fcoury"
+    },
+    "files": {
+      "core_helper.rb": {
+        "raw_url": "https://gist.github.com/raw/588336/74a65ebe5c7d1b2870a202dd0d9e99027dbd5d88/core_helper.rb",
+        "size": 1553,
+        "filename": "core_helper.rb"
+      }
+    },
+    "git_push_url": "git@gist.github.com:588336.git",
+    "id": "588336",
+    "url": "https://api.github.com/gists/588336"
+  },
+  {
+    "updated_at": "2010-08-24T16:37:32Z",
+    "public": true,
+    "description": "Memcache contents",
+    "created_at": "2010-08-24T16:36:48Z",
+    "comments": 0,
+    "html_url": "https://gist.github.com/547851",
+    "git_pull_url": "git://gist.github.com/547851.git",
+    "user": {
+      "avatar_url": "https://secure.gravatar.com/avatar/c4ceadae4f61dac8ff3ababc3faa6c42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "fcoury",
+      "id": 1371,
+      "url": "https://api.github.com/users/fcoury"
+    },
+    "files": {
+      "gistfile1.rb": {
+        "raw_url": "https://gist.github.com/raw/547851/c66bdff5e9d55456a0aadb6a387d69bd189579e4/gistfile1.rb",
+        "size": 677,
+        "filename": "gistfile1.rb"
+      }
+    },
+    "git_push_url": "git@gist.github.com:547851.git",
+    "id": "547851",
+    "url": "https://api.github.com/gists/547851"
+  },
+  {
+    "updated_at": "2010-07-27T17:49:53Z",
+    "public": true,
+    "description": null,
+    "created_at": "2010-07-27T17:49:21Z",
+    "comments": 0,
+    "html_url": "https://gist.github.com/492576",
+    "git_pull_url": "git://gist.github.com/492576.git",
+    "user": {
+      "avatar_url": "https://secure.gravatar.com/avatar/c4ceadae4f61dac8ff3ababc3faa6c42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "fcoury",
+      "id": 1371,
+      "url": "https://api.github.com/users/fcoury"
+    },
+    "files": {
+      "Liberal URL-matching Regex, Take Two": {
+        "raw_url": "https://gist.github.com/raw/492576/edeb7ccc7ac744a49556e071a0056262bd35b43b/Liberal URL-matching Regex, Take Two",
+        "size": 1128,
+        "filename": "Liberal URL-matching Regex, Take Two"
+      }
+    },
+    "git_push_url": "git@gist.github.com:492576.git",
+    "id": "492576",
+    "url": "https://api.github.com/gists/492576"
+  },
+  {
+    "updated_at": "2010-07-26T04:27:15Z",
+    "public": true,
+    "description": null,
+    "created_at": "2010-07-26T04:27:14Z",
+    "comments": 0,
+    "html_url": "https://gist.github.com/490176",
+    "git_pull_url": "git://gist.github.com/490176.git",
+    "user": {
+      "avatar_url": "https://secure.gravatar.com/avatar/c4ceadae4f61dac8ff3ababc3faa6c42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "fcoury",
+      "id": 1371,
+      "url": "https://api.github.com/users/fcoury"
+    },
+    "files": {
+      "gistfile1.txt": {
+        "raw_url": "https://gist.github.com/raw/490176/f9502af0ea0833ce8bbeddd9818bad8e42723f52/gistfile1.txt",
+        "size": 263,
+        "filename": "gistfile1.txt"
+      }
+    },
+    "git_push_url": "git@gist.github.com:490176.git",
+    "id": "490176",
+    "url": "https://api.github.com/gists/490176"
+  },
+  {
+    "updated_at": "2010-06-16T00:22:05Z",
+    "public": true,
+    "description": null,
+    "created_at": "2010-06-16T00:21:47Z",
+    "comments": 0,
+    "html_url": "https://gist.github.com/439939",
+    "git_pull_url": "git://gist.github.com/439939.git",
+    "user": {
+      "avatar_url": "https://secure.gravatar.com/avatar/c4ceadae4f61dac8ff3ababc3faa6c42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "fcoury",
+      "id": 1371,
+      "url": "https://api.github.com/users/fcoury"
+    },
+    "files": {
+      "Gemfile-rails-2.3.8.rb": {
+        "raw_url": "https://gist.github.com/raw/439939/0e344f5f4f9907193717bf7728b8daae2012fb14/Gemfile-rails-2.3.8.rb",
+        "size": 3014,
+        "filename": "Gemfile-rails-2.3.8.rb"
+      },
+      "Gemfile-rails-3.0.0.beta4.rb": {
+        "raw_url": "https://gist.github.com/raw/439939/37f6c5f9f9824a8048178bbc93d02fa5ee149563/Gemfile-rails-3.0.0.beta4.rb",
+        "size": 3391,
+        "filename": "Gemfile-rails-3.0.0.beta4.rb"
+      }
+    },
+    "git_push_url": "git@gist.github.com:439939.git",
+    "id": "439939",
+    "url": "https://api.github.com/gists/439939"
+  },
+  {
+    "updated_at": "2010-05-20T01:19:32Z",
+    "public": true,
+    "description": null,
+    "created_at": "2010-05-20T01:19:32Z",
+    "comments": 0,
+    "html_url": "https://gist.github.com/407073",
+    "git_pull_url": "git://gist.github.com/407073.git",
+    "user": {
+      "avatar_url": "https://secure.gravatar.com/avatar/c4ceadae4f61dac8ff3ababc3faa6c42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "fcoury",
+      "id": 1371,
+      "url": "https://api.github.com/users/fcoury"
+    },
+    "files": {
+      "mongodb": {
+        "raw_url": "https://gist.github.com/raw/407073/3ff612d340ddc479c0793b71deab71d5e31e1436/mongodb",
+        "size": 9036,
+        "filename": "mongodb"
+      }
+    },
+    "git_push_url": "git@gist.github.com:407073.git",
+    "id": "407073",
+    "url": "https://api.github.com/gists/407073"
+  },
+  {
+    "updated_at": "2010-05-20T01:18:54Z",
+    "public": true,
+    "description": null,
+    "created_at": "2010-05-20T01:18:45Z",
+    "comments": 0,
+    "html_url": "https://gist.github.com/407072",
+    "git_pull_url": "git://gist.github.com/407072.git",
+    "user": {
+      "avatar_url": "https://secure.gravatar.com/avatar/c4ceadae4f61dac8ff3ababc3faa6c42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "fcoury",
+      "id": 1371,
+      "url": "https://api.github.com/users/fcoury"
+    },
+    "files": {
+
+    },
+    "git_push_url": "git@gist.github.com:407072.git",
+    "id": "407072",
+    "url": "https://api.github.com/gists/407072"
+  },
+  {
+    "updated_at": "2010-05-20T01:16:19Z",
+    "public": true,
+    "description": null,
+    "created_at": "2010-05-20T01:15:17Z",
+    "comments": 0,
+    "html_url": "https://gist.github.com/407071",
+    "git_pull_url": "git://gist.github.com/407071.git",
+    "user": {
+      "avatar_url": "https://secure.gravatar.com/avatar/c4ceadae4f61dac8ff3ababc3faa6c42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "fcoury",
+      "id": 1371,
+      "url": "https://api.github.com/users/fcoury"
+    },
+    "files": {
+
+    },
+    "git_push_url": "git@gist.github.com:407071.git",
+    "id": "407071",
+    "url": "https://api.github.com/gists/407071"
+  },
+  {
+    "updated_at": "2010-05-20T14:11:09Z",
+    "public": true,
+    "description": "rails3 mongoid template",
+    "created_at": "2010-05-19T18:16:11Z",
+    "comments": 0,
+    "html_url": "https://gist.github.com/406631",
+    "git_pull_url": "git://gist.github.com/406631.git",
+    "user": {
+      "avatar_url": "https://secure.gravatar.com/avatar/c4ceadae4f61dac8ff3ababc3faa6c42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "fcoury",
+      "id": 1371,
+      "url": "https://api.github.com/users/fcoury"
+    },
+    "files": {
+      "mongoid.rb": {
+        "raw_url": "https://gist.github.com/raw/406631/c04e06e51910c69e763f6c47d583c68653ec45e5/mongoid.rb",
+        "size": 4936,
+        "filename": "mongoid.rb"
+      }
+    },
+    "git_push_url": "git@gist.github.com:406631.git",
+    "id": "406631",
+    "url": "https://api.github.com/gists/406631"
+  },
+  {
+    "updated_at": "2010-05-19T02:15:37Z",
+    "public": true,
+    "description": "Rails 3 and RVM",
+    "created_at": "2010-05-19T02:15:16Z",
+    "comments": 0,
+    "html_url": "https://gist.github.com/405870",
+    "git_pull_url": "git://gist.github.com/405870.git",
+    "user": {
+      "avatar_url": "https://secure.gravatar.com/avatar/c4ceadae4f61dac8ff3ababc3faa6c42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "fcoury",
+      "id": 1371,
+      "url": "https://api.github.com/users/fcoury"
+    },
+    "files": {
+      "gistfile1.sh": {
+        "raw_url": "https://gist.github.com/raw/405870/9cdf82f52046535858d071d4b6e49fbd0c27f67d/gistfile1.sh",
+        "size": 700,
+        "filename": "gistfile1.sh"
+      }
+    },
+    "git_push_url": "git@gist.github.com:405870.git",
+    "id": "405870",
+    "url": "https://api.github.com/gists/405870"
+  },
+  {
+    "updated_at": "2010-03-31T18:26:52Z",
+    "public": true,
+    "description": null,
+    "created_at": "2010-03-31T18:26:16Z",
+    "comments": 0,
+    "html_url": "https://gist.github.com/350685",
+    "git_pull_url": "git://gist.github.com/350685.git",
+    "user": {
+      "avatar_url": "https://secure.gravatar.com/avatar/c4ceadae4f61dac8ff3ababc3faa6c42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "fcoury",
+      "id": 1371,
+      "url": "https://api.github.com/users/fcoury"
+    },
+    "files": {
+      "gistfile1.txt": {
+        "raw_url": "https://gist.github.com/raw/350685/69aef432b6dca259acef55ef0f8ab39a1a1d388f/gistfile1.txt",
+        "size": 1924,
+        "filename": "gistfile1.txt"
+      }
+    },
+    "git_push_url": "git@gist.github.com:350685.git",
+    "id": "350685",
+    "url": "https://api.github.com/gists/350685"
+  },
+  {
+    "updated_at": "2010-03-22T00:10:31Z",
+    "public": true,
+    "description": null,
+    "created_at": "2010-03-22T00:10:31Z",
+    "comments": 0,
+    "html_url": "https://gist.github.com/339672",
+    "git_pull_url": "git://gist.github.com/339672.git",
+    "user": {
+      "avatar_url": "https://secure.gravatar.com/avatar/c4ceadae4f61dac8ff3ababc3faa6c42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "fcoury",
+      "id": 1371,
+      "url": "https://api.github.com/users/fcoury"
+    },
+    "files": {
+      "webproxy with netcat": {
+        "raw_url": "https://gist.github.com/raw/339672/a330dbdba7ad70d025493c9423fe55bbdfc5fe4b/webproxy with netcat",
+        "size": 5504,
+        "filename": "webproxy with netcat"
+      }
+    },
+    "git_push_url": "git@gist.github.com:339672.git",
+    "id": "339672",
+    "url": "https://api.github.com/gists/339672"
+  },
+  {
+    "updated_at": "2010-03-15T22:13:42Z",
+    "public": true,
+    "description": "Removes a line from ~/.ssh/known_hosts",
+    "created_at": "2010-03-15T22:12:56Z",
+    "comments": 0,
+    "html_url": "https://gist.github.com/333397",
+    "git_pull_url": "git://gist.github.com/333397.git",
+    "user": {
+      "avatar_url": "https://secure.gravatar.com/avatar/c4ceadae4f61dac8ff3ababc3faa6c42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "fcoury",
+      "id": 1371,
+      "url": "https://api.github.com/users/fcoury"
+    },
+    "files": {
+      "rl.rb": {
+        "raw_url": "https://gist.github.com/raw/333397/5ed990be09c56227142d4e9396684724f1f95ea6/rl.rb",
+        "size": 1682,
+        "filename": "rl.rb"
+      }
+    },
+    "git_push_url": "git@gist.github.com:333397.git",
+    "id": "333397",
+    "url": "https://api.github.com/gists/333397"
+  },
+  {
+    "updated_at": "2010-03-15T19:07:31Z",
+    "public": true,
+    "description": null,
+    "created_at": "2010-03-15T18:41:01Z",
+    "comments": 0,
+    "html_url": "https://gist.github.com/333163",
+    "git_pull_url": "git://gist.github.com/333163.git",
+    "user": {
+      "avatar_url": "https://secure.gravatar.com/avatar/c4ceadae4f61dac8ff3ababc3faa6c42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "fcoury",
+      "id": 1371,
+      "url": "https://api.github.com/users/fcoury"
+    },
+    "files": {
+      "git-track": {
+        "raw_url": "https://gist.github.com/raw/333163/47074014facd6f0b821fc2c537666a6a3515c52b/git-track",
+        "size": 919,
+        "filename": "git-track"
+      }
+    },
+    "git_push_url": "git@gist.github.com:333163.git",
+    "id": "333163",
+    "url": "https://api.github.com/gists/333163"
+  }
+]

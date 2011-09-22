@@ -1,0 +1,185 @@
+HTTP/1.1 200 OK
+Server: nginx/1.0.4
+Date: Thu, 22 Sep 2011 03:55:01 GMT
+Content-Type: application/json
+Connection: keep-alive
+Status: 200 OK
+X-RateLimit-Limit: 5000
+X-RateLimit-Remaining: 4995
+Content-Length: 7406
+
+{
+  "updated_at": "2011-07-30T05:53:43Z",
+  "git_pull_url": "git://gist.github.com/1115247.git",
+  "forks": [
+
+  ],
+  "git_push_url": "git@gist.github.com:1115247.git",
+  "public": true,
+  "description": "",
+  "created_at": "2011-07-30T05:53:43Z",
+  "comments": 0,
+  "html_url": "https://gist.github.com/1115247",
+  "user": {
+    "login": "fcoury",
+    "avatar_url": "https://secure.gravatar.com/avatar/c4ceadae4f61dac8ff3ababc3faa6c42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+    "id": 1371,
+    "url": "https://api.github.com/users/fcoury"
+  },
+  "files": {
+    "upgrade_ruby.sh": {
+      "content": "#!/bin/bash\n\napt-get update\napt-get install -y build-essential libssl-dev libncurses5-dev libreadline5-dev zlib1g-dev linux-headers-generic libsqlite3-dev\n\ncd /tmp\nwget http://repo.webbynode.com/ruby-1.9.2-p290_i386.deb\ndpkg -i ruby-1.9.2-p290_i386.deb\nrm ruby-1.9.2-p290_i386.deb\n\ntest -f /usr/local/bin/ruby && rm /usr/local/bin/ruby\ntest -f /usr/local/bin/rake && rm /usr/local/bin/rake\ntest -f /usr/local/bin/gem && rm /usr/local/bin/gem\ntest -f /usr/local/bin/irb && rm /usr/local/bin/irb\n\nln -s /usr/bin/ruby /usr/local/bin/ruby\nln -s /usr/bin/rake /usr/local/bin/rake\nln -s /usr/bin/gem /usr/local/bin/gem\nln -s /usr/bin/irb /usr/local/bin/irb\n\ngem update --system\n\nhash -r\n\nnew_version=`ruby -v`\necho \"\"\nif (echo $new_version | grep -q \"p290\"); then\n  echo Upgrade successful. New ruby version: $new_version\nelse\n  echo There was a problem upgrading ruby version to 1.9.2-p290.\nfi",
+      "size": 888,
+      "filename": "upgrade_ruby.sh",
+      "raw_url": "https://gist.github.com/raw/1115247/fe15368a8bba342aca497b4a5b2b72dbf564900e/upgrade_ruby.sh"
+    }
+  },
+  "history": [
+    {
+      "change_status": {
+        "total": 1,
+        "deletions": 0,
+        "additions": 1
+      },
+      "version": "984294d8e9db99a717fd746be2e2a9a3b96116d6",
+      "user": {
+        "login": "fcoury",
+        "avatar_url": "https://secure.gravatar.com/avatar/c4ceadae4f61dac8ff3ababc3faa6c42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+        "id": 1371,
+        "url": "https://api.github.com/users/fcoury"
+      },
+      "committed_at": "2011-08-01T00:14:49Z",
+      "url": "https://api.github.com/gists/1115247/984294d8e9db99a717fd746be2e2a9a3b96116d6"
+    },
+    {
+      "change_status": {
+        "total": 2,
+        "deletions": 1,
+        "additions": 1
+      },
+      "version": "fad0e65724135abe17760c6d6b66c201540e1470",
+      "user": {
+        "login": "fcoury",
+        "avatar_url": "https://secure.gravatar.com/avatar/c4ceadae4f61dac8ff3ababc3faa6c42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+        "id": 1371,
+        "url": "https://api.github.com/users/fcoury"
+      },
+      "committed_at": "2011-08-01T00:01:34Z",
+      "url": "https://api.github.com/gists/1115247/fad0e65724135abe17760c6d6b66c201540e1470"
+    },
+    {
+      "change_status": {
+        "total": 3,
+        "deletions": 0,
+        "additions": 3
+      },
+      "version": "7db6db4d8e48a3a255fd315b97db7143519094e3",
+      "user": {
+        "login": "fcoury",
+        "avatar_url": "https://secure.gravatar.com/avatar/c4ceadae4f61dac8ff3ababc3faa6c42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+        "id": 1371,
+        "url": "https://api.github.com/users/fcoury"
+      },
+      "committed_at": "2011-07-31T23:53:27Z",
+      "url": "https://api.github.com/gists/1115247/7db6db4d8e48a3a255fd315b97db7143519094e3"
+    },
+    {
+      "change_status": {
+        "total": 5,
+        "deletions": 0,
+        "additions": 5
+      },
+      "version": "0d01efed762dcad14c1e28d3ad98db6810746877",
+      "user": {
+        "login": "fcoury",
+        "avatar_url": "https://secure.gravatar.com/avatar/c4ceadae4f61dac8ff3ababc3faa6c42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+        "id": 1371,
+        "url": "https://api.github.com/users/fcoury"
+      },
+      "committed_at": "2011-07-31T18:09:49Z",
+      "url": "https://api.github.com/gists/1115247/0d01efed762dcad14c1e28d3ad98db6810746877"
+    },
+    {
+      "change_status": {
+        "total": 2,
+        "deletions": 1,
+        "additions": 1
+      },
+      "version": "eff3e572024b1e1b6036bd6757a3b8d083e43b30",
+      "user": {
+        "login": "fcoury",
+        "avatar_url": "https://secure.gravatar.com/avatar/c4ceadae4f61dac8ff3ababc3faa6c42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+        "id": 1371,
+        "url": "https://api.github.com/users/fcoury"
+      },
+      "committed_at": "2011-07-30T06:14:16Z",
+      "url": "https://api.github.com/gists/1115247/eff3e572024b1e1b6036bd6757a3b8d083e43b30"
+    },
+    {
+      "change_status": {
+        "total": 2,
+        "deletions": 0,
+        "additions": 2
+      },
+      "version": "8c8a8b0dfb022cc48579060765cb212a0addd96a",
+      "user": {
+        "login": "fcoury",
+        "avatar_url": "https://secure.gravatar.com/avatar/c4ceadae4f61dac8ff3ababc3faa6c42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+        "id": 1371,
+        "url": "https://api.github.com/users/fcoury"
+      },
+      "committed_at": "2011-07-30T06:04:10Z",
+      "url": "https://api.github.com/gists/1115247/8c8a8b0dfb022cc48579060765cb212a0addd96a"
+    },
+    {
+      "change_status": {
+        "total": 1,
+        "deletions": 0,
+        "additions": 1
+      },
+      "version": "58266c26550944cd43083189f339bccb8f927a42",
+      "user": {
+        "login": "fcoury",
+        "avatar_url": "https://secure.gravatar.com/avatar/c4ceadae4f61dac8ff3ababc3faa6c42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+        "id": 1371,
+        "url": "https://api.github.com/users/fcoury"
+      },
+      "committed_at": "2011-07-30T05:58:38Z",
+      "url": "https://api.github.com/gists/1115247/58266c26550944cd43083189f339bccb8f927a42"
+    },
+    {
+      "change_status": {
+        "total": 9,
+        "deletions": 1,
+        "additions": 8
+      },
+      "version": "20d0a8e561feff059170808caae153bb06de15fe",
+      "user": {
+        "login": "fcoury",
+        "avatar_url": "https://secure.gravatar.com/avatar/c4ceadae4f61dac8ff3ababc3faa6c42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+        "id": 1371,
+        "url": "https://api.github.com/users/fcoury"
+      },
+      "committed_at": "2011-07-30T05:57:46Z",
+      "url": "https://api.github.com/gists/1115247/20d0a8e561feff059170808caae153bb06de15fe"
+    },
+    {
+      "change_status": {
+        "total": 12,
+        "deletions": 0,
+        "additions": 12
+      },
+      "version": "1694b2f9a3e30a4ef7148420d20d3579ac56a0e7",
+      "user": {
+        "login": "fcoury",
+        "avatar_url": "https://secure.gravatar.com/avatar/c4ceadae4f61dac8ff3ababc3faa6c42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+        "id": 1371,
+        "url": "https://api.github.com/users/fcoury"
+      },
+      "committed_at": "2011-07-30T05:53:43Z",
+      "url": "https://api.github.com/gists/1115247/1694b2f9a3e30a4ef7148420d20d3579ac56a0e7"
+    }
+  ],
+  "id": "1115247",
+  "url": "https://api.github.com/gists/1115247"
+}
