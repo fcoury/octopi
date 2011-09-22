@@ -11,8 +11,8 @@ module Fakes
     "https://api.github.com/"
   end
   
-  def authenticated_base_url
-    "https://radar:password@api.github.com/"
+  def authenticated_base_url(username="radar")
+    "https://#{username}:password@api.github.com/"
   end
 
   def fake(route)
