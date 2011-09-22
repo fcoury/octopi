@@ -15,7 +15,9 @@ end
 RSpec.configure do |config|
   config.include Fakes
   config.before(:each) do
-    api_stub("users/rails3book/repos")
     api_stub("orgs/carlhuda/repos")
+
+    api_stub("users/fcoury")
+    api_stub("users/rails3book/repos")
   end
 end

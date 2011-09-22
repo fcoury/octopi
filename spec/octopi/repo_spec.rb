@@ -22,8 +22,7 @@ describe Octopi::Repository do
       repo.open_issues.should == 4
       repo.private.should be_false
       repo.size.should == 3324
-      # TODO: Set as a user object.
-      repo.owner["login"].should == "rails3book"
+      repo.owner.should be_is_a(Octopi::User)
       repo.name.should == "ticketee-old"
       repo.updated_at.should == "2011-08-28T19:14:37Z"
       repo.watchers.should == 44
