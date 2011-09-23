@@ -15,8 +15,8 @@ module Octopi
       new(attributes).create
     end
     
-    def self.collection(url)
-      from_collection(get(Octopi.base_url + url))
+    def self.collection(url, klass=self)
+      from_collection(get(url), klass)
     end
     
     def initialize(attributes)
@@ -48,12 +48,12 @@ module Octopi
     end
     
     def self.plural_url
-      Octopi.base_url + "/#{self.name.split("::").last.downcase}s"
+      "/#{self.name.split("::").last.downcase}s"
     end
 
     # Builds objects from a collection
-    def self.from_collection(response)
-      parse(response).map { |e| new(e) }
+    def self.from_collection(response, klass=self)
+      parse(response).map { |e| klass.new(e) }
     end
 
     def self.build(response)

@@ -85,6 +85,10 @@ describe Octopi::Gist do
       gist.history.first.is_a?(Octopi::Gist::History).should be_true
     end
     
+    it "retreiving comments" do
+      gist.comments.first.is_a?(Octopi::Gist::Comment).should be_true
+    end
+    
     it "has attributes" do
       gist.updated_at.should == "2011-07-30T05:53:43Z"
       gist.git_pull_url.should == "git://gist.github.com/1115247.git"
@@ -94,6 +98,31 @@ describe Octopi::Gist do
       gist.created_at.should == "2011-07-30T05:53:43Z"
       gist.html_url.should == "https://gist.github.com/1115247"
       gist.id.should == "1115247"
+    end
+
+    it "links files to gist" do
+      gist.files.first.gist.should == gist
+    end
+
+    it "links histories to gist" do
+      gist.history.first.gist.should == gist
+    end
+
+    it "links comments to gist" do
+      gist.comments.first.gist.should == gist
+    end
+
+    it "updates description" do
+      gist = Octopi::Gist.find(1236602)
+      url = "https://api.github.com/gists/1236602"
+      attributes = { :description => "New Description" }
+      stub_request(:post, url).
+         with(:body => attributes.to_json).to_return(fake("gists/update"))
+
+      gist = gist.update_attributes(attributes)
+      gist.description.should == "New Description"
+
+      WebMock.should have_requested(:post, url)
     end
   end
 end

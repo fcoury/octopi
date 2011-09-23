@@ -23,13 +23,12 @@ module Octopi
 
   def self.authenticate!(opts={})
     self.basic_auth(opts[:username], opts[:password])
-    if get(base_url).response.code == "302"
+    if get("/").response.code == "302"
       @username = opts[:username]
       @password = opts[:password]
       return true
     else
       raise "Authentication failed."
-      return false
     end
   end
 

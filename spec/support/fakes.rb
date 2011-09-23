@@ -4,6 +4,10 @@ module Fakes
   def api_stub(route)
     stub_request(:get, base_url + route).to_return(fake(route))
   end
+  
+  def authenticated_api_stub(route)
+    stub_request(:get, authenticated_base_url + route).to_return(fake(route))
+  end
 
   private
   
@@ -41,6 +45,9 @@ RSpec.configure do |config|
 
     api_stub("gists")
     api_stub("gists/1115247")
+    api_stub("gists/1115247/comments")
+    api_stub("gists/1236602")
+    authenticated_api_stub("gists/1236602")
     stub_request(:post, base_url + "gists").to_return(fake("/gists/create_anonymously"))
     stub_request(:post, authenticated_base_url + "gists").to_return(fake("/gists/create"))
     api_stub("orgs/carlhuda/repos")
