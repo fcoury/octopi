@@ -124,5 +124,11 @@ describe Octopi::Gist do
 
       WebMock.should have_requested(:post, url)
     end
+    
+    it "stars a gist"
+    it "unstars a gist"
+    it "checks if a gist is starred"
+    it "forks a gist"
+    it "deletes a gist"
   end
 end
