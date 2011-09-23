@@ -23,6 +23,10 @@ describe Octopi::Gist do
     it "cannot star a gist" do
       lambda { gist.star! }.should raise_error(Octopi::NotAuthenticated)
     end
+    
+    it "cannot unstar a gist" do
+      lambda { gist.unstar! }.should raise_error(Octopi::NotAuthenticated)
+    end
   end
   
   context "authenticated" do
@@ -57,6 +61,9 @@ describe Octopi::Gist do
         # Geez.
         stub_successful_login!("rails3book")
         Octopi.authenticate! :username => "rails3book", :password => "password"
+
+        authenticated_api_stub("gists/1115247", "rails3book")
+        authenticated_api_stub("gists/1115247/comments", "rails3book")
       end
 
       it "can retreive own gists" do
@@ -77,8 +84,6 @@ describe Octopi::Gist do
       context "starring" do
         let(:url) { "https://rails3book:password@api.github.com/gists/1115247/star" }
         before do
-          authenticated_api_stub("gists/1115247", "rails3book")
-          authenticated_api_stub("gists/1115247/comments", "rails3book")
           authenticated_api_stub("gists/1115247/star", "rails3book")
         end
 
@@ -86,6 +91,12 @@ describe Octopi::Gist do
           stub_request(:put, url).to_return(:status => 204)
           gist.star!
           WebMock.should have_requested(:put, url)
+        end
+        
+        it "setting unstarred status for a gist" do
+          stub_request(:delete, url).to_return(:status => 204)
+          gist.unstar!
+          WebMock.should have_requested(:delete, url)          
         end
 
         it "gist is starred" do
@@ -96,6 +107,12 @@ describe Octopi::Gist do
         it "gist is not starred" do
           stub_request(:get, url).to_return(:status => 404)
         end
+      end
+      
+      it "forks a gist" do
+        stub_request(:post, authenticated_base_url("rails3book") + "gists/1115247/fork").to_return(:body => fake("gists/fork"))
+        new_gist = gist.fork!
+        new_gist.id.should_not == gist.id
       end
     end
   end
@@ -153,8 +170,6 @@ describe Octopi::Gist do
 
       WebMock.should have_requested(:post, url)
     end
-
-    it "unstars a gist"
     it "forks a gist"
     it "deletes a gist"
   end

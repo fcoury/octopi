@@ -48,9 +48,21 @@ module Octopi
       end
     end
     
+    def unstar!
+      Octopi.requires_authentication! do
+        self.class.delete("/gists/#{id}/star")
+      end
+    end
+    
     def starred?
       Octopi.requires_authentication! do
         self.class.get("/gists/#{id}/star")
+      end
+    end
+    
+    def fork!
+      Octopi.requires_authentication! do
+        self.class.new(self.class.post("/gists/#{id}/fork"))
       end
     end
     
