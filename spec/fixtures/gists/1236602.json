@@ -1,0 +1,57 @@
+HTTP/1.1 200 OK
+Server: nginx/1.0.4
+Date: Fri, 23 Sep 2011 02:43:16 GMT
+Content-Type: application/json
+Connection: keep-alive
+Status: 200 OK
+X-RateLimit-Limit: 5000
+X-RateLimit-Remaining: 4998
+Content-Length: 1533
+
+{
+  "updated_at": "2011-09-23T02:32:53Z",
+  "forks": [
+
+  ],
+  "public": true,
+  "description": "omg",
+  "created_at": "2011-09-23T02:12:47Z",
+  "comments": 0,
+  "html_url": "https://gist.github.com/1236602",
+  "git_pull_url": "git://gist.github.com/1236602.git",
+  "user": {
+    "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+    "login": "radar",
+    "id": 2687,
+    "url": "https://api.github.com/users/radar"
+  },
+  "files": {
+    "hello.rb": {
+      "content": "puts 'hello world'",
+      "raw_url": "https://gist.github.com/raw/1236602/f7ef064fd142d8bc34778e9062d141691df312e1/hello.rb",
+      "size": 18,
+      "filename": "hello.rb"
+    }
+  },
+  "git_push_url": "git@gist.github.com:1236602.git",
+  "history": [
+    {
+      "committed_at": "2011-09-23T02:12:48Z",
+      "change_status": {
+        "total": 1,
+        "deletions": 0,
+        "additions": 1
+      },
+      "version": "fd9d91376a73a9c74f3f5b56f50e674bed87f33f",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+        "login": "radar",
+        "id": 2687,
+        "url": "https://api.github.com/users/radar"
+      },
+      "url": "https://api.github.com/gists/1236602/fd9d91376a73a9c74f3f5b56f50e674bed87f33f"
+    }
+  ],
+  "id": "1236602",
+  "url": "https://api.github.com/gists/1236602"
+}
