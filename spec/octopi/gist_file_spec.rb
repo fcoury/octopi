@@ -2,6 +2,10 @@ require 'spec_helper'
 
 describe Octopi::Gist::GistFile do
   let(:gist) { Octopi::Gist.find(1236602) }
+  let(:gist_url) { authenticated_base_url + "gists/1236602" }
+  before do
+    stub_request(:get, gist_url).to_return(fake("/gists/1236602"))
+  end
 
   context "unauthenticated" do
     it "cannot remove a file" do
@@ -19,7 +23,7 @@ describe Octopi::Gist::GistFile do
     it "modifies a file"
 
     it "removes a file" do
-      stub_request(:post, authenticated_base_url + "gists/#{gist.id}").to_return(fake("/gists/deleted_a_file"))
+      stub_request(:post, gist_url).to_return(fake("/gists/deleted_a_file"))
       gist.files.count.should == 1
       gist.files.first.delete!
       gist.files.count.should == 0

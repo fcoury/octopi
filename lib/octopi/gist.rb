@@ -39,6 +39,22 @@ module Octopi
       url = self.class.singular_url(@attributes["id"])
       self.class.new(self.class.post(url, :body => attributes.to_json))
     end
+    
+    # Action methods
+
+    def star!
+      Octopi.requires_authentication! do
+        self.class.put("/gists/#{id}/star")
+      end
+    end
+    
+    def starred?
+      Octopi.requires_authentication! do
+        self.class.get("/gists/#{id}/star")
+      end
+    end
+    
+    # Association methods
 
     def user
       @user ||= User.new(@attributes["user"]) if @attributes["user"]

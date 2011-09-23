@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe Octopi::Gist do
+  let(:gist) { Octopi::Gist.find(1115247) }
+
   context "unauthenticated" do
     it "can find all a user's gists" do
       gists = Octopi::Gist.for_user("fcoury")
@@ -16,6 +18,10 @@ describe Octopi::Gist do
     
     it "cannot retreive starred gists" do
       lambda { Octopi::Gist.starred }.should raise_error(Octopi::NotAuthenticated)
+    end
+    
+    it "cannot star a gist" do
+      lambda { gist.star! }.should raise_error(Octopi::NotAuthenticated)
     end
   end
   
@@ -67,11 +73,34 @@ describe Octopi::Gist do
         Octopi::Gist.starred
         WebMock.should have_requested(:get, gists_url + "/starred")
       end
+      
+      context "starring" do
+        let(:url) { "https://rails3book:password@api.github.com/gists/1115247/star" }
+        before do
+          authenticated_api_stub("gists/1115247", "rails3book")
+          authenticated_api_stub("gists/1115247/comments", "rails3book")
+          authenticated_api_stub("gists/1115247/star", "rails3book")
+        end
+
+        it "setting starred status for a gist" do
+          stub_request(:put, url).to_return(:status => 204)
+          gist.star!
+          WebMock.should have_requested(:put, url)
+        end
+
+        it "gist is starred" do
+          stub_request(:get, url).to_return(:status => 204)
+          gist.should be_starred
+        end
+
+        it "gist is not starred" do
+          stub_request(:get, url).to_return(:status => 404)
+        end
+      end
     end
   end
   
   context "for a gist" do
-    let(:gist) { Octopi::Gist.find(1115247) }
 
     it "retreiving user" do
       gist.user.is_a?(Octopi::User).should be_true
@@ -124,10 +153,8 @@ describe Octopi::Gist do
 
       WebMock.should have_requested(:post, url)
     end
-    
-    it "stars a gist"
+
     it "unstars a gist"
-    it "checks if a gist is starred"
     it "forks a gist"
     it "deletes a gist"
   end

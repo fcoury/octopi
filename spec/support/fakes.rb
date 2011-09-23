@@ -5,8 +5,8 @@ module Fakes
     stub_request(:get, base_url + route).to_return(fake(route))
   end
   
-  def authenticated_api_stub(route)
-    stub_request(:get, authenticated_base_url + route).to_return(fake(route))
+  def authenticated_api_stub(route, username=nil)
+    stub_request(:get, authenticated_base_url(username) + route).to_return(fake(route))
   end
 
   private
