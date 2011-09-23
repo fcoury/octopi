@@ -4,6 +4,7 @@ module Octopi
     # It's duplicating the names.
     # Can't name it File though as it clashes with Ruby's.
     class GistFile < Octopi::Base
+      attr_accessor :gist
       
     end
   end
