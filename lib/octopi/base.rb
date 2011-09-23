@@ -42,6 +42,10 @@ module Octopi
     def self.post(*args)
       Octopi.post(*args)
     end
+
+    def self.put(*args)
+      Octopi.put(*args)
+    end
     
     def self.singular_url(name)
       plural_url + "/#{name}"
