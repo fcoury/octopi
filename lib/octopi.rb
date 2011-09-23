@@ -19,6 +19,7 @@ module Octopi
   end
   
   include HTTParty
+  base_uri "https://api.github.com"
 
   def self.authenticate!(opts={})
     self.basic_auth(opts[:username], opts[:password])
@@ -30,10 +31,6 @@ module Octopi
       raise "Authentication failed."
       return false
     end
-  end
-  
-  def self.base_url
-    "https://api.github.com"
   end
 
   # Used to stop API calls in their tracks when they require authentication
