@@ -135,7 +135,7 @@ describe Octopi::Gist do
         end
       
         it "forks a gist" do
-          stub_request(:post, authenticated_base_url("rails3book") + "gists/1236602/fork").to_return(:body => fake("gists/fork"))
+          stub_request(:post, authenticated_base_url("rails3book") + "gists/1236602/fork").to_return(fake("gists/fork"))
           new_gist = gist.fork!
           new_gist.id.should_not == gist.id
         end
