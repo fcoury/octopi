@@ -44,6 +44,12 @@ module Octopi
       self.class.new(self.class.post(url, :body => attributes.to_json))
     end
     
+    def destroy
+      self.class.delete("/gists/#{self.id}")
+    end
+    
+    alias_method :delete, :destroy
+    
     # Action methods
 
     def star!

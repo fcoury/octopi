@@ -52,6 +52,15 @@ describe Octopi::Gist do
       gist.owner.login.should == "radar"
     end
     
+    it "can delete a gist" do
+      gist_url = authenticated_base_url + "gists/1115247"
+      stub_request(:get, gist_url).to_return(fake("gists/1115247"))
+      stub_request(:get, gist_url + "/comments").to_return(fake("gists/1115247/comments"))
+      stub_request(:delete, gist_url).to_return(:status => "204")
+      gist.delete
+      WebMock.should have_requested(:delete, gist_url)
+    end
+    
     context "as rails3book" do
       let(:gists_url) { authenticated_base_url("rails3book") + "gists" }
       before do
@@ -170,6 +179,5 @@ describe Octopi::Gist do
 
       WebMock.should have_requested(:post, url)
     end
-    it "deletes a gist"
   end
 end
