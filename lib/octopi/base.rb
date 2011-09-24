@@ -56,8 +56,8 @@ module Octopi
       Octopi.delete(*args)
     end
     
-    def self.singular_url(name)
-      plural_url + "/#{name}"
+    def self.singular_url(id)
+      plural_url + "/#{id}"
     end
     
     def self.plural_url
