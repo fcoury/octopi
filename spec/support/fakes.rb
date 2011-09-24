@@ -42,5 +42,6 @@ RSpec.configure do |config|
   config.include Fakes
   config.before(:each) do
     Octopi.logout!
+    stub_successful_login!
   end
 end

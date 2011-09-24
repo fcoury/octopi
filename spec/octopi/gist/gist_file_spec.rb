@@ -17,9 +17,7 @@ describe Octopi::Gist::GistFile do
   context "authenticated" do
     let(:gist_url) { authenticated_base_url + "gists/1236602" }
     before do
-      stub_successful_login!
       Octopi.authenticate!(:username => "radar", :password => "password")
-      
     end
     
     it "adds a file" do

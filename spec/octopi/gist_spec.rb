@@ -40,7 +40,6 @@ describe Octopi::Gist do
   
   context "authenticated" do
     before do
-      stub_successful_login!
       Octopi.authenticate! :username => "radar", :password => "password"
     end
     
