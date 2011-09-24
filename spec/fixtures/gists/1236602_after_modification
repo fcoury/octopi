@@ -1,0 +1,79 @@
+HTTP/1.1 200 OK
+Server: nginx/1.0.4
+Date: Sat, 24 Sep 2011 04:27:39 GMT
+Content-Type: application/json
+Connection: keep-alive
+Status: 200 OK
+X-RateLimit-Limit: 5000
+X-RateLimit-Remaining: 4999
+Content-Length: 2367
+
+{
+  "updated_at": "2011-09-24T04:08:24Z",
+  "forks": [
+
+  ],
+  "public": true,
+  "description": null,
+  "created_at": "2011-09-23T02:12:47Z",
+  "html_url": "https://gist.github.com/1236602",
+  "comments": 0,
+  "git_pull_url": "git://gist.github.com/1236602.git",
+  "user": {
+    "login": "radar",
+    "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+    "id": 2687,
+    "url": "https://api.github.com/users/radar"
+  },
+  "files": {
+    "hello.rb": {
+      "content": "puts 'hello world'",
+      "raw_url": "https://gist.github.com/raw/1236602/f7ef064fd142d8bc34778e9062d141691df312e1/hello.rb",
+      "size": 18,
+      "filename": "hello.rb"
+    },
+    "file.rb": {
+      "content": "puts 'hello earthlings'",
+      "raw_url": "https://gist.github.com/raw/1236602/bdb666a90a8d001ab409786b782ab3b71648b5b4/file.rb",
+      "size": 23,
+      "filename": "file.rb"
+    }
+  },
+  "git_push_url": "git@gist.github.com:1236602.git",
+  "history": [
+    {
+      "change_status": {
+        "total": 2,
+        "deletions": 1,
+        "additions": 1
+      },
+      "committed_at": "2011-09-24T04:22:18Z",
+      "version": "9b26c823dd3207171f604fa009bf414d365364ab",
+      "user": {
+        "login": "radar",
+        "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+        "id": 2687,
+        "url": "https://api.github.com/users/radar"
+      },
+      "url": "https://api.github.com/gists/1236602/9b26c823dd3207171f604fa009bf414d365364ab"
+    },
+    {
+      "change_status": {
+        "total": 1,
+        "deletions": 1,
+        "additions": 0
+      },
+      "committed_at": "2011-09-23T04:15:57Z",
+      "version": "23dac36a24b5c42bde2e4069a209aaa1249cf369",
+      "user": {
+        "login": "radar",
+        "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+        "id": 2687,
+        "url": "https://api.github.com/users/radar"
+      },
+      "url": "https://api.github.com/gists/1236602/23dac36a24b5c42bde2e4069a209aaa1249cf369"
+    }
+  ],
+  "id": "1236602",
+  "url": "https://api.github.com/gists/1236602"
+}
