@@ -170,7 +170,6 @@ describe Octopi::Gist do
 
       WebMock.should have_requested(:post, url)
     end
-    it "forks a gist"
     it "deletes a gist"
   end
 end
