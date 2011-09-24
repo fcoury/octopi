@@ -5,7 +5,7 @@ module Fakes
     stub_request(:get, base_url + route).to_return(fake(route))
   end
   
-  def authenticated_api_stub(route, username=nil)
+  def authenticated_api_stub(route, username="radar")
     stub_request(:get, authenticated_base_url(username) + route).to_return(fake(route))
   end
 

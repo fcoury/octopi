@@ -1,5 +1,8 @@
 module Octopi
   module Collections
-    autoload :GistFiles, "octopi/collections/gist_files"
+    module Gist
+      autoload :Comments, "octopi/collections/gist/comments"
+      autoload :Files, "octopi/collections/gist/files"
+    end
   end
 end
