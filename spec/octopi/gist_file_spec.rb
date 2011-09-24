@@ -19,7 +19,13 @@ describe Octopi::Gist::GistFile do
       Octopi.authenticate!(:username => "radar", :password => "password")
     end
     
-    it "adds a file"
+    it "adds a file" do
+      gist.files.count.should == 1
+      stub_request(:post, gist_url).to_return(fake("gists/added_a_file"))
+      stub_request(:get, gist_url).to_return(fake("gists/added_a_file"))
+      gist.add_file!("file.rb", "puts 'hello earth'")
+      gist.files.count.should == 2
+    end
     it "modifies a file"
 
     it "removes a file" do

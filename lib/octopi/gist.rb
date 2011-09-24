@@ -21,6 +21,10 @@ module Octopi
     end
 
     def initialize(attributes)
+      # Clear files and history on initialization, in case we are reloading this object
+      # Consider it the same as clearing the cache.
+      @files = nil
+      @history = nil
       super
       @attributes[:public] = true unless @attributes[:public] == false
       # Link files, history and comments to this gist.
@@ -66,6 +70,13 @@ module Octopi
       end
     end
     
+    def add_file!(filename, content)
+      Octopi.requires_authentication! do
+        self.class.post("/gists/#{id}", :body => { "files" => { filename => content }}.to_json)
+        self.reload
+      end
+    end
+
     # Association methods
 
     def user

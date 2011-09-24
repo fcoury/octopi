@@ -33,6 +33,10 @@ module Octopi
       self.class.new(self.class.post(self.class.plural_url, :body => attributes))
     end
     
+    def reload
+      initialize(self.class.get(self.class.singular_url(self.id)))
+    end
+
     private
     
     def self.get(*args)
