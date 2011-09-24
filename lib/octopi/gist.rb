@@ -92,8 +92,8 @@ module Octopi
     end
 
     def files
-      @files ||= [*@attributes["files"]].map do |name, attributes| 
-        Octopi::Gist::GistFile.new(attributes.merge(:name => name))
+      @files ||= [*@attributes["files"]].map do |filename, attributes| 
+        Octopi::Gist::GistFile.new(attributes)
       end
     end
 
