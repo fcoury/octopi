@@ -33,6 +33,10 @@ module Octopi
     def create
       self.class.build(self.class.post(self.class.plural_url, :body => attributes))
     end
+
+    def update(json)
+      self.class.post(self.class.singular_url(self.id), :body => json)
+    end
     
     def reload
       initialize(self.class.get(self.class.singular_url(self.id)))

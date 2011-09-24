@@ -75,13 +75,6 @@ module Octopi
         self.class.new(self.class.post("/gists/#{id}/fork"))
       end
     end
-    
-    def add_file!(filename, content)
-      Octopi.requires_authentication! do
-        self.class.post("/gists/#{id}", :body => { "files" => { filename => content }}.to_json)
-        self.reload
-      end
-    end
 
     # Association methods
 
@@ -100,9 +93,7 @@ module Octopi
     end
 
     def files
-      @files ||= [*@attributes[:files]].map do |filename, attributes| 
-        Octopi::Gist::GistFile.new(attributes)
-      end
+      @files ||= Octopi::Collections::GistFiles.new(@attributes[:files])
     end
 
     def comments

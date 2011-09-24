@@ -26,7 +26,7 @@ describe Octopi::Gist::GistFile do
       gist.files.count.should == 1
       stub_request(:post, gist_url).to_return(fake("gists/added_a_file"))
       stub_request(:get, gist_url).to_return(fake("gists/added_a_file"))
-      gist.add_file!("file.rb", "puts 'hello earth'")
+      gist.files.add!("file.rb", "puts 'hello earth'")
       gist.files.count.should == 2
       WebMock.should have_requested(:post, gist_url).with(:body => '{"files":{"file.rb":"puts \'hello earth\'"}}')
     end
