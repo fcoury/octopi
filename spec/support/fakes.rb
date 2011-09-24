@@ -42,18 +42,5 @@ RSpec.configure do |config|
   config.include Fakes
   config.before(:each) do
     Octopi.logout!
-
-    api_stub("gists")
-    api_stub("gists/1115247")
-    api_stub("gists/1115247/comments")
-    api_stub("gists/1236602")
-    authenticated_api_stub("gists/1236602")
-    stub_request(:post, base_url + "gists").to_return(fake("/gists/create_anonymously"))
-    stub_request(:post, authenticated_base_url + "gists").to_return(fake("/gists/create"))
-    api_stub("orgs/carlhuda/repos")
-
-    api_stub("users/fcoury")
-    api_stub("users/fcoury/gists")
-    api_stub("users/rails3book/repos")
   end
 end

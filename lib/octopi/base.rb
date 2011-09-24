@@ -24,13 +24,14 @@ module Octopi
       attributes.each do |k, v|
         @attributes[k] = v 
         self.class.send(:define_method, k) do
-          @attributes[k]
+          @attributes[k.to_sym]
         end unless respond_to?(k)
       end
+      @attributes.symbolize_keys!
     end
     
     def create
-      self.class.new(self.class.post(self.class.plural_url, :body => attributes))
+      self.class.build(self.class.post(self.class.plural_url, :body => attributes))
     end
     
     def reload

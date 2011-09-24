@@ -1,7 +1,7 @@
 module Octopi
   class Repository < Base
     def owner
-      User.new(attributes["owner"])
+      User.new(attributes[:owner])
     end
 
     def self.by_user(user)

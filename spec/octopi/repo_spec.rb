@@ -3,7 +3,9 @@ require 'spec_helper'
 describe Octopi::Repository do
   it("is aliased") { Octopi::Repo.should == Octopi::Repository }
   context "getting lists of repositories" do
+
     it "by user" do
+      api_stub("users/rails3book/repos")
       repos = Octopi::Repo.by_user("rails3book")
       repo = repos.first
       repo.pushed_at.should == "2011-04-15T05:22:07Z"
@@ -31,6 +33,7 @@ describe Octopi::Repository do
     end
     
     it "by organisation" do
+      api_stub("orgs/carlhuda/repos")
       repos = Octopi::Repo.by_organization("carlhuda")
       repo = repos.first
       repo.name.should == "thor"

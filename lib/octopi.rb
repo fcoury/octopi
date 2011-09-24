@@ -4,6 +4,7 @@ require 'pathname'
 #gems
 require 'httparty'
 require 'json'
+require 'active_support/core_ext/hash/keys'
 
 module Octopi
   autoload :Base, "octopi/base"

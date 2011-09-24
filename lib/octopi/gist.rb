@@ -33,14 +33,14 @@ module Octopi
       # Also, when a Gist is created there are no comments sent back (duh)
       # Therefore we need to convert the attribute to an integer,
       # as it may be nil when returned.
-      things << [comments] if @attributes["comments"].to_i > 0
+      things << [comments] if @attributes[:comments].to_i > 0
       things.flatten.each do |thing|
         thing.gist = self
       end
     end
     
     def update_attributes(attributes={})
-      url = self.class.singular_url(@attributes["id"])
+      url = self.class.singular_url(@attributes[:id])
       self.class.new(self.class.post(url, :body => attributes.to_json))
     end
     
@@ -86,19 +86,21 @@ module Octopi
     # Association methods
 
     def user
-      @user ||= User.new(@attributes["user"]) if @attributes["user"]
+      if @attributes[:user]
+        @user ||= User.new(@attributes[:user])
+      end
     end
     
     alias_method :owner, :user
 
     def history
-      @history ||= [*@attributes["history"]].map do |history|
+      @history ||= [*@attributes[:history]].map do |history|
         Octopi::Gist::History.new(history)
       end
     end
 
     def files
-      @files ||= [*@attributes["files"]].map do |filename, attributes| 
+      @files ||= [*@attributes[:files]].map do |filename, attributes| 
         Octopi::Gist::GistFile.new(attributes)
       end
     end
