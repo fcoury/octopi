@@ -3,9 +3,7 @@ module Octopi
     class Commits < DelegateClass(Array)
       def initialize(repo, collection)
         super(collection)
-        each do |commit|
-          commit.repo = repo
-        end
+        each { |commit| commit.repo = repo }
       end
 
       def find(sha)
