@@ -55,4 +55,14 @@ describe Octopi::Commit do
     commit.message.should == "Merge pull request #68 from nithinbekal/patch-1\n\nFix the incorrect example 2 for explicit authentication. Refs #59"
     commit.sha.should == "38b679a92a49bb49a72e57d99639e26830b7792b"
   end
+  
+  it "finds comments for a commit" do
+    api_stub("repos/fcoury/octopi/commits")
+    api_stub("repos/fcoury/octopi/commits/a25074f259704821c3193764705a6ad14bede628")
+    api_stub("repos/fcoury/octopi/commits/a25074f259704821c3193764705a6ad14bede628/comments")
+    commit = repo.commits.find("a25074f259704821c3193764705a6ad14bede628")
+    commit.comments.count.should == 1
+    commit.comments.first.is_a?(Octopi::Comment).should be_true
+  end
+    
 end

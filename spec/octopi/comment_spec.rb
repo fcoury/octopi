@@ -13,6 +13,7 @@ describe Octopi::Comment do
     comment.created_at.should == "2009-12-15T09:31:19Z"
     comment.position.should be_nil
     comment.user.is_a?(Octopi::User).should be_true
+    comment.repo.is_a?(Octopi::Repo).should be_true
     comment.id.should == 38684
     comment.url.should == "https://api.github.com/repos/fcoury/octopi/comments/38684"
   end

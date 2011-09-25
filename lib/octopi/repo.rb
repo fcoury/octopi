@@ -28,7 +28,7 @@ module Octopi
     end
     
     def comments
-      Octopi::Collections::Comments.new(self.class.collection("#{path}/comments", Octopi::Comment))
+      Octopi::Collections::Comments.new(self, self.class.collection("#{path}/comments", Octopi::Comment))
     end
     
     def path
