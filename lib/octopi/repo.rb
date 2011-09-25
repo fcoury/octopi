@@ -1,5 +1,5 @@
 module Octopi
-  class Repository < Base
+  class Repo < Base
     def owner
       User.new(attributes[:owner])
     end
@@ -11,7 +11,11 @@ module Octopi
     def self.by_organization(organization)
       collection("/orgs/#{organization}/repos")
     end
+
+    private
+
+    def self.plural_url
+      "/repos"
+    end
   end
-  # Allow for access as Repo
-  Repo = Repository
 end

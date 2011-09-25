@@ -1,0 +1,45 @@
+HTTP/1.1 200 OK
+Server: nginx/1.0.4
+Date: Sun, 25 Sep 2011 00:24:07 GMT
+Content-Type: application/json
+Connection: keep-alive
+Status: 200 OK
+X-RateLimit-Limit: 5000
+X-RateLimit-Remaining: 4998
+Link: <issues{?milestone,assignee,mentioned}>; rel="issues"
+Content-Length: 1153
+
+{
+  "updated_at": "2011-09-25T00:02:51Z",
+  "has_downloads": true,
+  "forks": 52,
+  "pushed_at": "2011-09-25T00:02:51Z",
+  "clone_url": "https://github.com/fcoury/octopi.git",
+  "created_at": "2009-04-18T04:26:58Z",
+  "description": "A Ruby interface to GitHub API v2",
+  "svn_url": "https://svn.github.com/fcoury/octopi",
+  "git_url": "git://github.com/fcoury/octopi.git",
+  "html_url": "https://github.com/fcoury/octopi",
+  "has_wiki": true,
+  "master_branch": null,
+  "fork": false,
+  "ssh_url": "git@github.com:fcoury/octopi.git",
+  "mirror_url": null,
+  "open_issues": 18,
+  "language": "Ruby",
+  "private": false,
+  "size": 180,
+  "has_issues": true,
+  "owner": {
+    "login": "fcoury",
+    "avatar_url": "https://secure.gravatar.com/avatar/c4ceadae4f61dac8ff3ababc3faa6c42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+    "id": 1371,
+    "url": "https://api.github.com/users/fcoury"
+  },
+  "homepage": "http://hasmany.info/2009/4/18/ruby-interface-to-github-api",
+  "name": "octopi",
+  "integrate_branch": null,
+  "watchers": 240,
+  "id": 179067,
+  "url": "https://api.github.com/repos/fcoury/octopi"
+}
