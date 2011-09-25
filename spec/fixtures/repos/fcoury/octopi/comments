@@ -1,0 +1,29 @@
+HTTP/1.1 200 OK
+Server: nginx/1.0.4
+Date: Sun, 25 Sep 2011 21:09:18 GMT
+Content-Type: application/json
+Connection: keep-alive
+Status: 200 OK
+X-RateLimit-Limit: 5000
+X-RateLimit-Remaining: 4996
+Content-Length: 1050
+
+[
+  {
+    "updated_at": "2009-12-15T09:31:19Z",
+    "line": null,
+    "body": "This should definitely be done in de Rakefile, since jeweler generates the .gemspec file using the Rakefile when running `rake gemspec`.\r\n\r\nI've pushed a fix, which includes mechanize, api_cache, fakeweb and shoulda as (development) dependencies to the Rakefile and a regenerated .gemspec file ([jeffkreeftmeijer/octopi](http://github.com/jeffkreeftmeijer/octopi/commit/8d7cc088b0ca0d159f0e42c2275f5659d8f839ee)). :)",
+    "commit_id": "a25074f259704821c3193764705a6ad14bede628",
+    "created_at": "2009-12-15T09:31:19Z",
+    "position": null,
+    "user": {
+      "login": "jeffkreeftmeijer",
+      "avatar_url": "https://secure.gravatar.com/avatar/f03f4ce7b507aede386263d218228b6a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 43621,
+      "url": "https://api.github.com/users/jeffkreeftmeijer"
+    },
+    "path": "",
+    "id": 38684,
+    "url": "https://api.github.com/repos/fcoury/octopi/comments/38684"
+  }
+]

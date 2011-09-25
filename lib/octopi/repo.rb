@@ -26,6 +26,10 @@ module Octopi
       params[:sha] ||= params.delete(:branch) if params[:branch]
       Octopi::Collections::Commits.new(self.class.collection("#{path}/commits", Octopi::Commit, params))
     end
+    
+    def comments
+      Octopi::Collections::Comments.new(self.class.collection("#{path}/comments", Octopi::Comment))
+    end
 
     private
 
