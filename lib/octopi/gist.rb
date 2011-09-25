@@ -87,13 +87,13 @@ module Octopi
     alias_method :owner, :user
 
     def history
-      [*@attributes[:history]].map do |history|
+      @history ||= [*@attributes[:history]].map do |history|
         Octopi::Gist::History.new(history)
       end
     end
 
     def files
-      Octopi::Collections::Gist::Files.new(@attributes[:files])
+      @files ||= Octopi::Collections::Gist::Files.new(@attributes[:files])
     end
 
     def comments
