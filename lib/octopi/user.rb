@@ -13,7 +13,7 @@ module Octopi
     # 2) Gathering a list of gists.
     #
     # It's probably better to call Gist.for_user and pass the login manually,
-    # but only if you have the login readily available already.
+    # but only if you have the login readily available.
     def gists
       Gist.for_user(self.login)
     end
