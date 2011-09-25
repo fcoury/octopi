@@ -8,6 +8,7 @@ require 'active_support/core_ext/hash/keys'
 
 module Octopi
   autoload :Base, "octopi/base"
+  autoload :Branch, "octopi/branch"
   autoload :Collections, "octopi/collections"
   autoload :Gist, "octopi/gist"
   autoload :Organization, "octopi/organization"
