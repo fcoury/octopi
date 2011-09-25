@@ -1,0 +1,72 @@
+HTTP/1.1 200 OK
+Server: nginx/1.0.4
+Date: Sun, 25 Sep 2011 20:58:35 GMT
+Content-Type: application/json
+Connection: keep-alive
+Status: 200 OK
+X-RateLimit-Limit: 5000
+X-RateLimit-Remaining: 4997
+Content-Length: 2987
+
+{
+  "parents": [
+    {
+      "sha": "16c9c20e57ec85089275908061893a704a9eb6c9",
+      "url": "https://api.github.com/repos/fcoury/octopi/commits/16c9c20e57ec85089275908061893a704a9eb6c9"
+    },
+    {
+      "sha": "da8d7e33965c5034c948357d176da2e6b3ac2365",
+      "url": "https://api.github.com/repos/fcoury/octopi/commits/da8d7e33965c5034c948357d176da2e6b3ac2365"
+    }
+  ],
+  "sha": "38b679a92a49bb49a72e57d99639e26830b7792b",
+  "commit": {
+    "message": "Merge pull request #68 from nithinbekal/patch-1\n\nFix the incorrect example 2 for explicit authentication. Refs #59",
+    "tree": {
+      "sha": "6fa1786719b2d1cf1ed38ad397cd7feb8160d6b0",
+      "url": "https://api.github.com/repos/fcoury/octopi/git/trees/6fa1786719b2d1cf1ed38ad397cd7feb8160d6b0"
+    },
+    "committer": {
+      "email": "radarlistener@gmail.com",
+      "date": "2011-09-21T12:56:05-07:00",
+      "name": "Ryan Bigg"
+    },
+    "author": {
+      "email": "radarlistener@gmail.com",
+      "date": "2011-09-21T12:56:05-07:00",
+      "name": "Ryan Bigg"
+    },
+    "url": "https://api.github.com/repos/fcoury/octopi/git/commits/38b679a92a49bb49a72e57d99639e26830b7792b"
+  },
+  "committer": {
+    "login": "radar",
+    "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+    "id": 2687,
+    "url": "https://api.github.com/users/radar"
+  },
+  "author": {
+    "login": "radar",
+    "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+    "id": 2687,
+    "url": "https://api.github.com/users/radar"
+  },
+  "files": [
+    {
+      "changes": 4,
+      "status": "modified",
+      "sha": "38b679a92a49bb49a72e57d99639e26830b7792b",
+      "patch": "--- a/README.markdown\n+++ b/README.markdown\n@@ -40,8 +40,8 @@ Sometimes, you may not want to get authentication data from _~/.gitconfig_. You\n \n     authenticated_with :login => \"mylogin\", :password => \"password\" do \n       repo = Repository.find(:name => \"api-labrat\", :user => \"fcoury\")\n-      issue = repo.open_issue :title => \"Sample issue\", \n-        :body => \"This issue was opened using GitHub API and Octopi\"\n+      issue = Issue.open :repo => repo, :params => { \n+        :title => \"Sample issue\", :body => \"This issue was opened using GitHub API and Octopi\" }\n       puts issue.number\n     end\n ",
+      "filename": "README.markdown",
+      "raw_url": "https://github.com/fcoury/octopi/raw/38b679a92a49bb49a72e57d99639e26830b7792b/README.markdown",
+      "blob_url": "https://github.com/fcoury/octopi/blob/38b679a92a49bb49a72e57d99639e26830b7792b/README.markdown",
+      "deletions": 2,
+      "additions": 2
+    }
+  ],
+  "stats": {
+    "total": 0,
+    "deletions": 0,
+    "additions": 0
+  },
+  "url": "https://api.github.com/repos/fcoury/octopi/commits/38b679a92a49bb49a72e57d99639e26830b7792b"
+}
