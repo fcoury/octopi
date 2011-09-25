@@ -24,21 +24,21 @@ module Octopi
     
     def commits(params={})
       params[:sha] ||= params.delete(:branch) if params[:branch]
-      Octopi::Collections::Commits.new(self.class.collection("#{path}/commits", Octopi::Commit, params))
+      Octopi::Collections::Commits.new(self, self.class.collection("#{path}/commits", Octopi::Commit, params))
     end
     
     def comments
       Octopi::Collections::Comments.new(self.class.collection("#{path}/comments", Octopi::Comment))
+    end
+    
+    def path
+      "/repos/#{user.login}/#{self.name}"
     end
 
     private
 
     def self.not_found_error
       "The #{self} you were looking for could not be found or it could be private."
-    end
-    
-    def path
-      "/repos/#{user.login}/#{self.name}"
     end
   end
 end

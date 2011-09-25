@@ -43,6 +43,7 @@ describe Octopi::Commit do
     api_stub("repos/fcoury/octopi/commits")
     api_stub("repos/fcoury/octopi/commits/38b679a92a49bb49a72e57d99639e26830b7792b")
     commit = repo.commits.find("38b679a92a49bb49a72e57d99639e26830b7792b")
+    commit.repo.is_a?(Octopi::Repo).should be_true
     commit.message.should == "Merge pull request #68 from nithinbekal/patch-1\n\nFix the incorrect example 2 for explicit authentication. Refs #59"
   end
   
@@ -50,6 +51,7 @@ describe Octopi::Commit do
     api_stub("repos/fcoury/octopi/commits")
     api_stub("repos/fcoury/octopi/commits/38b679")
     commit = repo.commits.find("38b679")
+    commit.repo.is_a?(Octopi::Repo).should be_true
     commit.message.should == "Merge pull request #68 from nithinbekal/patch-1\n\nFix the incorrect example 2 for explicit authentication. Refs #59"
     commit.sha.should == "38b679a92a49bb49a72e57d99639e26830b7792b"
   end
