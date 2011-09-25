@@ -1,0 +1,1213 @@
+HTTP/1.1 200 OK
+Server: nginx/1.0.4
+Date: Sun, 25 Sep 2011 19:45:19 GMT
+Content-Type: application/json
+Connection: keep-alive
+Status: 200 OK
+X-RateLimit-Limit: 5000
+X-RateLimit-Remaining: 4998
+Link: <https://api.github.com/repos/fcoury/octopi/commits?last_sha=0a212b093c03854cedcf83996ed51c4cb6d9c016&sha=v3&top=v3>; rel="next", <https://api.github.com/repos/fcoury/octopi/commits?sha=v3>; rel="first"
+Content-Length: 49461
+
+[
+  {
+    "parents": [
+      {
+        "sha": "252a4de71e3fc3b0d102fd717ec15831b48ef41f",
+        "url": "https://api.github.com/repos/fcoury/octopi/commits/252a4de71e3fc3b0d102fd717ec15831b48ef41f"
+      }
+    ],
+    "sha": "22bce60d2e357da548be95c8a353e4187ddc7e40",
+    "commit": {
+      "message": "Add ability to get commits for a repository",
+      "tree": {
+        "sha": "c6a3d796eb74f36479ec9a729baaa96abba93240",
+        "url": "https://api.github.com/repos/fcoury/octopi/git/trees/c6a3d796eb74f36479ec9a729baaa96abba93240"
+      },
+      "committer": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-25T10:44:45-07:00",
+        "name": "Ryan Bigg"
+      },
+      "author": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-25T10:44:45-07:00",
+        "name": "Ryan Bigg"
+      },
+      "url": "https://api.github.com/repos/fcoury/octopi/git/commits/22bce60d2e357da548be95c8a353e4187ddc7e40"
+    },
+    "committer": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "author": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "url": "https://api.github.com/repos/fcoury/octopi/commits/22bce60d2e357da548be95c8a353e4187ddc7e40"
+  },
+  {
+    "parents": [
+      {
+        "sha": "0063d90dae7e9bad1eac6e2bc9c2aeb18c8bd64e",
+        "url": "https://api.github.com/repos/fcoury/octopi/commits/0063d90dae7e9bad1eac6e2bc9c2aeb18c8bd64e"
+      }
+    ],
+    "sha": "252a4de71e3fc3b0d102fd717ec15831b48ef41f",
+    "commit": {
+      "message": "Add Travis config",
+      "tree": {
+        "sha": "95acbafe388bbe5d995373b800c92322ca796fae",
+        "url": "https://api.github.com/repos/fcoury/octopi/git/trees/95acbafe388bbe5d995373b800c92322ca796fae"
+      },
+      "committer": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-25T10:39:41-07:00",
+        "name": "Ryan Bigg"
+      },
+      "author": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-25T10:39:41-07:00",
+        "name": "Ryan Bigg"
+      },
+      "url": "https://api.github.com/repos/fcoury/octopi/git/commits/252a4de71e3fc3b0d102fd717ec15831b48ef41f"
+    },
+    "committer": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "author": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "url": "https://api.github.com/repos/fcoury/octopi/commits/252a4de71e3fc3b0d102fd717ec15831b48ef41f"
+  },
+  {
+    "parents": [
+      {
+        "sha": "b5cbc08e8290065821f6f50d517026e0ec9a00e7",
+        "url": "https://api.github.com/repos/fcoury/octopi/commits/b5cbc08e8290065821f6f50d517026e0ec9a00e7"
+      }
+    ],
+    "sha": "0063d90dae7e9bad1eac6e2bc9c2aeb18c8bd64e",
+    "commit": {
+      "message": "Add users/updated fixture",
+      "tree": {
+        "sha": "20ade3d92fea1d9b8cf41109ff827e799672f294",
+        "url": "https://api.github.com/repos/fcoury/octopi/git/trees/20ade3d92fea1d9b8cf41109ff827e799672f294"
+      },
+      "committer": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-25T10:10:02-07:00",
+        "name": "Ryan Bigg"
+      },
+      "author": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-25T10:10:02-07:00",
+        "name": "Ryan Bigg"
+      },
+      "url": "https://api.github.com/repos/fcoury/octopi/git/commits/0063d90dae7e9bad1eac6e2bc9c2aeb18c8bd64e"
+    },
+    "committer": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "author": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "url": "https://api.github.com/repos/fcoury/octopi/commits/0063d90dae7e9bad1eac6e2bc9c2aeb18c8bd64e"
+  },
+  {
+    "parents": [
+      {
+        "sha": "07bc1fa95c79ad55db08c4de172c98bc57c1adc4",
+        "url": "https://api.github.com/repos/fcoury/octopi/commits/07bc1fa95c79ad55db08c4de172c98bc57c1adc4"
+      }
+    ],
+    "sha": "b5cbc08e8290065821f6f50d517026e0ec9a00e7",
+    "commit": {
+      "message": "Add catch for attempting to access a private repository",
+      "tree": {
+        "sha": "fcb2830dec487fd08556f2b54e72d710a5f1c030",
+        "url": "https://api.github.com/repos/fcoury/octopi/git/trees/fcb2830dec487fd08556f2b54e72d710a5f1c030"
+      },
+      "committer": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-25T10:09:51-07:00",
+        "name": "Ryan Bigg"
+      },
+      "author": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-25T10:09:51-07:00",
+        "name": "Ryan Bigg"
+      },
+      "url": "https://api.github.com/repos/fcoury/octopi/git/commits/b5cbc08e8290065821f6f50d517026e0ec9a00e7"
+    },
+    "committer": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "author": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "url": "https://api.github.com/repos/fcoury/octopi/commits/b5cbc08e8290065821f6f50d517026e0ec9a00e7"
+  },
+  {
+    "parents": [
+      {
+        "sha": "f0c8bb579f915218c17f8ceddcc0005cdccfb119",
+        "url": "https://api.github.com/repos/fcoury/octopi/commits/f0c8bb579f915218c17f8ceddcc0005cdccfb119"
+      }
+    ],
+    "sha": "07bc1fa95c79ad55db08c4de172c98bc57c1adc4",
+    "commit": {
+      "message": "Check that correct params are passed to PATCH /user request",
+      "tree": {
+        "sha": "a290863ff73d590e5f67e8fd324f804772033c70",
+        "url": "https://api.github.com/repos/fcoury/octopi/git/trees/a290863ff73d590e5f67e8fd324f804772033c70"
+      },
+      "committer": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-24T20:36:50-07:00",
+        "name": "Ryan Bigg"
+      },
+      "author": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-24T20:36:46-07:00",
+        "name": "Ryan Bigg"
+      },
+      "url": "https://api.github.com/repos/fcoury/octopi/git/commits/07bc1fa95c79ad55db08c4de172c98bc57c1adc4"
+    },
+    "committer": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "author": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "url": "https://api.github.com/repos/fcoury/octopi/commits/07bc1fa95c79ad55db08c4de172c98bc57c1adc4"
+  },
+  {
+    "parents": [
+      {
+        "sha": "83089ed2eac07de124a457dba99cca74734de552",
+        "url": "https://api.github.com/repos/fcoury/octopi/commits/83089ed2eac07de124a457dba99cca74734de552"
+      }
+    ],
+    "sha": "f0c8bb579f915218c17f8ceddcc0005cdccfb119",
+    "commit": {
+      "message": "Add the ability for a user to update their own details",
+      "tree": {
+        "sha": "07589ce9436d11bac85528bcf808f70b8c9e8832",
+        "url": "https://api.github.com/repos/fcoury/octopi/git/trees/07589ce9436d11bac85528bcf808f70b8c9e8832"
+      },
+      "committer": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-24T20:36:07-07:00",
+        "name": "Ryan Bigg"
+      },
+      "author": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-24T20:36:07-07:00",
+        "name": "Ryan Bigg"
+      },
+      "url": "https://api.github.com/repos/fcoury/octopi/git/commits/f0c8bb579f915218c17f8ceddcc0005cdccfb119"
+    },
+    "committer": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "author": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "url": "https://api.github.com/repos/fcoury/octopi/commits/f0c8bb579f915218c17f8ceddcc0005cdccfb119"
+  },
+  {
+    "parents": [
+      {
+        "sha": "6310666c636cd290172f9346907c508beba3a0de",
+        "url": "https://api.github.com/repos/fcoury/octopi/commits/6310666c636cd290172f9346907c508beba3a0de"
+      }
+    ],
+    "sha": "83089ed2eac07de124a457dba99cca74734de552",
+    "commit": {
+      "message": "Remove 'already' from User#gists doc, as its redundant",
+      "tree": {
+        "sha": "6e0f09ff1de1b9c0b105721c3fed0a2a9abf4658",
+        "url": "https://api.github.com/repos/fcoury/octopi/git/trees/6e0f09ff1de1b9c0b105721c3fed0a2a9abf4658"
+      },
+      "committer": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-24T20:25:47-07:00",
+        "name": "Ryan Bigg"
+      },
+      "author": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-24T20:25:47-07:00",
+        "name": "Ryan Bigg"
+      },
+      "url": "https://api.github.com/repos/fcoury/octopi/git/commits/83089ed2eac07de124a457dba99cca74734de552"
+    },
+    "committer": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "author": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "url": "https://api.github.com/repos/fcoury/octopi/commits/83089ed2eac07de124a457dba99cca74734de552"
+  },
+  {
+    "parents": [
+      {
+        "sha": "ebf2d3f2d63e794e047d3aae6cd4533f4b8a2b90",
+        "url": "https://api.github.com/repos/fcoury/octopi/commits/ebf2d3f2d63e794e047d3aae6cd4533f4b8a2b90"
+      }
+    ],
+    "sha": "6310666c636cd290172f9346907c508beba3a0de",
+    "commit": {
+      "message": "Set history and files in Gist to cache values once again",
+      "tree": {
+        "sha": "2bca7e9f35285a05eec1bf900aac226d4e49344b",
+        "url": "https://api.github.com/repos/fcoury/octopi/git/trees/2bca7e9f35285a05eec1bf900aac226d4e49344b"
+      },
+      "committer": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-24T20:23:40-07:00",
+        "name": "Ryan Bigg"
+      },
+      "author": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-24T20:23:40-07:00",
+        "name": "Ryan Bigg"
+      },
+      "url": "https://api.github.com/repos/fcoury/octopi/git/commits/6310666c636cd290172f9346907c508beba3a0de"
+    },
+    "committer": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "author": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "url": "https://api.github.com/repos/fcoury/octopi/commits/6310666c636cd290172f9346907c508beba3a0de"
+  },
+  {
+    "parents": [
+      {
+        "sha": "7593a8041a46e94e4865ca11759bfb9008667110",
+        "url": "https://api.github.com/repos/fcoury/octopi/commits/7593a8041a46e94e4865ca11759bfb9008667110"
+      }
+    ],
+    "sha": "ebf2d3f2d63e794e047d3aae6cd4533f4b8a2b90",
+    "commit": {
+      "message": "Remove gist/history spec, since it doesn't do anything now",
+      "tree": {
+        "sha": "6c235a82b51dbc2c7895a09bc87f6c3c66b5ab96",
+        "url": "https://api.github.com/repos/fcoury/octopi/git/trees/6c235a82b51dbc2c7895a09bc87f6c3c66b5ab96"
+      },
+      "committer": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-24T20:21:50-07:00",
+        "name": "Ryan Bigg"
+      },
+      "author": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-24T20:21:50-07:00",
+        "name": "Ryan Bigg"
+      },
+      "url": "https://api.github.com/repos/fcoury/octopi/git/commits/ebf2d3f2d63e794e047d3aae6cd4533f4b8a2b90"
+    },
+    "committer": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "author": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "url": "https://api.github.com/repos/fcoury/octopi/commits/ebf2d3f2d63e794e047d3aae6cd4533f4b8a2b90"
+  },
+  {
+    "parents": [
+      {
+        "sha": "030e529ba16739a9e1f274b10b6c6d17c88c6e54",
+        "url": "https://api.github.com/repos/fcoury/octopi/commits/030e529ba16739a9e1f274b10b6c6d17c88c6e54"
+      }
+    ],
+    "sha": "7593a8041a46e94e4865ca11759bfb9008667110",
+    "commit": {
+      "message": "Further Repo changes and added User.me",
+      "tree": {
+        "sha": "3b8fe13b589d0e696715d05d4451fb35058bbd86",
+        "url": "https://api.github.com/repos/fcoury/octopi/git/trees/3b8fe13b589d0e696715d05d4451fb35058bbd86"
+      },
+      "committer": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-24T19:08:18-07:00",
+        "name": "Ryan Bigg"
+      },
+      "author": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-24T19:08:18-07:00",
+        "name": "Ryan Bigg"
+      },
+      "url": "https://api.github.com/repos/fcoury/octopi/git/commits/7593a8041a46e94e4865ca11759bfb9008667110"
+    },
+    "committer": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "author": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "url": "https://api.github.com/repos/fcoury/octopi/commits/7593a8041a46e94e4865ca11759bfb9008667110"
+  },
+  {
+    "parents": [
+      {
+        "sha": "1f671e2906734a138984f0c630babd549de2c799",
+        "url": "https://api.github.com/repos/fcoury/octopi/commits/1f671e2906734a138984f0c630babd549de2c799"
+      }
+    ],
+    "sha": "030e529ba16739a9e1f274b10b6c6d17c88c6e54",
+    "commit": {
+      "message": "autoload branch",
+      "tree": {
+        "sha": "05f595b20e70c70977002fcb3fbd50dc35f4e710",
+        "url": "https://api.github.com/repos/fcoury/octopi/git/trees/05f595b20e70c70977002fcb3fbd50dc35f4e710"
+      },
+      "committer": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-24T19:03:01-07:00",
+        "name": "Ryan Bigg"
+      },
+      "author": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-24T19:03:01-07:00",
+        "name": "Ryan Bigg"
+      },
+      "url": "https://api.github.com/repos/fcoury/octopi/git/commits/030e529ba16739a9e1f274b10b6c6d17c88c6e54"
+    },
+    "committer": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "author": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "url": "https://api.github.com/repos/fcoury/octopi/commits/030e529ba16739a9e1f274b10b6c6d17c88c6e54"
+  },
+  {
+    "parents": [
+      {
+        "sha": "881f1729942e3287221be7de03ad9a62881c0d0c",
+        "url": "https://api.github.com/repos/fcoury/octopi/commits/881f1729942e3287221be7de03ad9a62881c0d0c"
+      }
+    ],
+    "sha": "1f671e2906734a138984f0c630babd549de2c799",
+    "commit": {
+      "message": "Add ability to get branches for a repository",
+      "tree": {
+        "sha": "3e01a09590988b2ac22106f085129e65f4984250",
+        "url": "https://api.github.com/repos/fcoury/octopi/git/trees/3e01a09590988b2ac22106f085129e65f4984250"
+      },
+      "committer": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-24T18:57:30-07:00",
+        "name": "Ryan Bigg"
+      },
+      "author": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-24T18:57:30-07:00",
+        "name": "Ryan Bigg"
+      },
+      "url": "https://api.github.com/repos/fcoury/octopi/git/commits/1f671e2906734a138984f0c630babd549de2c799"
+    },
+    "committer": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "author": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "url": "https://api.github.com/repos/fcoury/octopi/commits/1f671e2906734a138984f0c630babd549de2c799"
+  },
+  {
+    "parents": [
+      {
+        "sha": "b2a9672a11f3598abb28d5d0c1bc4347c6a33e7e",
+        "url": "https://api.github.com/repos/fcoury/octopi/commits/b2a9672a11f3598abb28d5d0c1bc4347c6a33e7e"
+      }
+    ],
+    "sha": "881f1729942e3287221be7de03ad9a62881c0d0c",
+    "commit": {
+      "message": "Use fcoury/octopi as the repo in repo_spec + add test for repo's organization",
+      "tree": {
+        "sha": "0abed0b50bc1ed544153e950c4695cf5bd891e55",
+        "url": "https://api.github.com/repos/fcoury/octopi/git/trees/0abed0b50bc1ed544153e950c4695cf5bd891e55"
+      },
+      "committer": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-24T18:04:34-07:00",
+        "name": "Ryan Bigg"
+      },
+      "author": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-24T18:04:34-07:00",
+        "name": "Ryan Bigg"
+      },
+      "url": "https://api.github.com/repos/fcoury/octopi/git/commits/881f1729942e3287221be7de03ad9a62881c0d0c"
+    },
+    "committer": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "author": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "url": "https://api.github.com/repos/fcoury/octopi/commits/881f1729942e3287221be7de03ad9a62881c0d0c"
+  },
+  {
+    "parents": [
+      {
+        "sha": "4b1077a9bce58771a982e37abc5a3f3c2634abe6",
+        "url": "https://api.github.com/repos/fcoury/octopi/commits/4b1077a9bce58771a982e37abc5a3f3c2634abe6"
+      }
+    ],
+    "sha": "b2a9672a11f3598abb28d5d0c1bc4347c6a33e7e",
+    "commit": {
+      "message": "Add support for finding a repo",
+      "tree": {
+        "sha": "11407e9dd88a55bdba0ba9e6ab3b2a5d13a50369",
+        "url": "https://api.github.com/repos/fcoury/octopi/git/trees/11407e9dd88a55bdba0ba9e6ab3b2a5d13a50369"
+      },
+      "committer": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-24T17:32:41-07:00",
+        "name": "Ryan Bigg"
+      },
+      "author": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-24T17:32:41-07:00",
+        "name": "Ryan Bigg"
+      },
+      "url": "https://api.github.com/repos/fcoury/octopi/git/commits/b2a9672a11f3598abb28d5d0c1bc4347c6a33e7e"
+    },
+    "committer": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "author": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "url": "https://api.github.com/repos/fcoury/octopi/commits/b2a9672a11f3598abb28d5d0c1bc4347c6a33e7e"
+  },
+  {
+    "parents": [
+      {
+        "sha": "d7234f3fc22719be26f3f7104719f21a655fb208",
+        "url": "https://api.github.com/repos/fcoury/octopi/commits/d7234f3fc22719be26f3f7104719f21a655fb208"
+      }
+    ],
+    "sha": "4b1077a9bce58771a982e37abc5a3f3c2634abe6",
+    "commit": {
+      "message": "Add ability to delete a gist comment",
+      "tree": {
+        "sha": "d69a889a3c63c6012c75cf94cfd9d831567333e3",
+        "url": "https://api.github.com/repos/fcoury/octopi/git/trees/d69a889a3c63c6012c75cf94cfd9d831567333e3"
+      },
+      "committer": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-24T17:02:17-07:00",
+        "name": "Ryan Bigg"
+      },
+      "author": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-24T17:02:17-07:00",
+        "name": "Ryan Bigg"
+      },
+      "url": "https://api.github.com/repos/fcoury/octopi/git/commits/4b1077a9bce58771a982e37abc5a3f3c2634abe6"
+    },
+    "committer": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "author": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "url": "https://api.github.com/repos/fcoury/octopi/commits/4b1077a9bce58771a982e37abc5a3f3c2634abe6"
+  },
+  {
+    "parents": [
+      {
+        "sha": "ee33b53d3188a99ef01fe7b012e9b9bbf26e3b5e",
+        "url": "https://api.github.com/repos/fcoury/octopi/commits/ee33b53d3188a99ef01fe7b012e9b9bbf26e3b5e"
+      }
+    ],
+    "sha": "d7234f3fc22719be26f3f7104719f21a655fb208",
+    "commit": {
+      "message": "Add ability to update a comment",
+      "tree": {
+        "sha": "b7e3ae751d8d305191c050149af74eb019e3218d",
+        "url": "https://api.github.com/repos/fcoury/octopi/git/trees/b7e3ae751d8d305191c050149af74eb019e3218d"
+      },
+      "committer": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-24T16:12:04-07:00",
+        "name": "Ryan Bigg"
+      },
+      "author": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-24T16:12:04-07:00",
+        "name": "Ryan Bigg"
+      },
+      "url": "https://api.github.com/repos/fcoury/octopi/git/commits/d7234f3fc22719be26f3f7104719f21a655fb208"
+    },
+    "committer": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "author": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "url": "https://api.github.com/repos/fcoury/octopi/commits/d7234f3fc22719be26f3f7104719f21a655fb208"
+  },
+  {
+    "parents": [
+      {
+        "sha": "9a97935d2a8142aab46aeb7fa76625b24252b7e3",
+        "url": "https://api.github.com/repos/fcoury/octopi/commits/9a97935d2a8142aab46aeb7fa76625b24252b7e3"
+      }
+    ],
+    "sha": "ee33b53d3188a99ef01fe7b012e9b9bbf26e3b5e",
+    "commit": {
+      "message": "Add ability to create a Gist comment + tidy up Gist Collections classes",
+      "tree": {
+        "sha": "a2290977396176b6f0a53823a91eb14359f5aa4f",
+        "url": "https://api.github.com/repos/fcoury/octopi/git/trees/a2290977396176b6f0a53823a91eb14359f5aa4f"
+      },
+      "committer": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-24T16:05:47-07:00",
+        "name": "Ryan Bigg"
+      },
+      "author": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-24T16:05:47-07:00",
+        "name": "Ryan Bigg"
+      },
+      "url": "https://api.github.com/repos/fcoury/octopi/git/commits/ee33b53d3188a99ef01fe7b012e9b9bbf26e3b5e"
+    },
+    "committer": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "author": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "url": "https://api.github.com/repos/fcoury/octopi/commits/ee33b53d3188a99ef01fe7b012e9b9bbf26e3b5e"
+  },
+  {
+    "parents": [
+      {
+        "sha": "22f3372b748f1ee5cf793048ed692a9f5ea4058f",
+        "url": "https://api.github.com/repos/fcoury/octopi/commits/22f3372b748f1ee5cf793048ed692a9f5ea4058f"
+      }
+    ],
+    "sha": "9a97935d2a8142aab46aeb7fa76625b24252b7e3",
+    "commit": {
+      "message": "Correct fork request stubbing",
+      "tree": {
+        "sha": "2a5c33b71d5237a8f863b315615031560173e899",
+        "url": "https://api.github.com/repos/fcoury/octopi/git/trees/2a5c33b71d5237a8f863b315615031560173e899"
+      },
+      "committer": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-24T15:13:40-07:00",
+        "name": "Ryan Bigg"
+      },
+      "author": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-24T15:13:40-07:00",
+        "name": "Ryan Bigg"
+      },
+      "url": "https://api.github.com/repos/fcoury/octopi/git/commits/9a97935d2a8142aab46aeb7fa76625b24252b7e3"
+    },
+    "committer": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "author": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "url": "https://api.github.com/repos/fcoury/octopi/commits/9a97935d2a8142aab46aeb7fa76625b24252b7e3"
+  },
+  {
+    "parents": [
+      {
+        "sha": "b931a8478051200a1188cda125ed629b27601064",
+        "url": "https://api.github.com/repos/fcoury/octopi/commits/b931a8478051200a1188cda125ed629b27601064"
+      }
+    ],
+    "sha": "22f3372b748f1ee5cf793048ed692a9f5ea4058f",
+    "commit": {
+      "message": "Move stub_successful_login to run before every test, saves repeating",
+      "tree": {
+        "sha": "b9b11e9f9f1745576cfd2230de2fb007b07739ec",
+        "url": "https://api.github.com/repos/fcoury/octopi/git/trees/b9b11e9f9f1745576cfd2230de2fb007b07739ec"
+      },
+      "committer": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-24T15:13:23-07:00",
+        "name": "Ryan Bigg"
+      },
+      "author": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-24T15:13:23-07:00",
+        "name": "Ryan Bigg"
+      },
+      "url": "https://api.github.com/repos/fcoury/octopi/git/commits/22f3372b748f1ee5cf793048ed692a9f5ea4058f"
+    },
+    "committer": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "author": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "url": "https://api.github.com/repos/fcoury/octopi/commits/22f3372b748f1ee5cf793048ed692a9f5ea4058f"
+  },
+  {
+    "parents": [
+      {
+        "sha": "9c599dceddfaddeb36d7e3ca2b6e1c0d178d7832",
+        "url": "https://api.github.com/repos/fcoury/octopi/commits/9c599dceddfaddeb36d7e3ca2b6e1c0d178d7832"
+      }
+    ],
+    "sha": "b931a8478051200a1188cda125ed629b27601064",
+    "commit": {
+      "message": "Remove unused gist fixture",
+      "tree": {
+        "sha": "e25f9f416b27f35a08d5b1de818e775c9f3b6f84",
+        "url": "https://api.github.com/repos/fcoury/octopi/git/trees/e25f9f416b27f35a08d5b1de818e775c9f3b6f84"
+      },
+      "committer": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-24T15:11:30-07:00",
+        "name": "Ryan Bigg"
+      },
+      "author": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-24T15:11:22-07:00",
+        "name": "Ryan Bigg"
+      },
+      "url": "https://api.github.com/repos/fcoury/octopi/git/commits/b931a8478051200a1188cda125ed629b27601064"
+    },
+    "committer": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "author": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "url": "https://api.github.com/repos/fcoury/octopi/commits/b931a8478051200a1188cda125ed629b27601064"
+  },
+  {
+    "parents": [
+      {
+        "sha": "f6c97c4d8d870646ec0bc709fb5dbf6a6e1b642b",
+        "url": "https://api.github.com/repos/fcoury/octopi/commits/f6c97c4d8d870646ec0bc709fb5dbf6a6e1b642b"
+      }
+    ],
+    "sha": "9c599dceddfaddeb36d7e3ca2b6e1c0d178d7832",
+    "commit": {
+      "message": "Add collections for GistFiles",
+      "tree": {
+        "sha": "2a65774af1bcba7777c209270b81d38236d945a9",
+        "url": "https://api.github.com/repos/fcoury/octopi/git/trees/2a65774af1bcba7777c209270b81d38236d945a9"
+      },
+      "committer": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-24T15:10:52-07:00",
+        "name": "Ryan Bigg"
+      },
+      "author": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-24T15:10:29-07:00",
+        "name": "Ryan Bigg"
+      },
+      "url": "https://api.github.com/repos/fcoury/octopi/git/commits/9c599dceddfaddeb36d7e3ca2b6e1c0d178d7832"
+    },
+    "committer": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "author": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "url": "https://api.github.com/repos/fcoury/octopi/commits/9c599dceddfaddeb36d7e3ca2b6e1c0d178d7832"
+  },
+  {
+    "parents": [
+      {
+        "sha": "1d73c02cfa235146438d2f7a93010f67c98db251",
+        "url": "https://api.github.com/repos/fcoury/octopi/commits/1d73c02cfa235146438d2f7a93010f67c98db251"
+      }
+    ],
+    "sha": "f6c97c4d8d870646ec0bc709fb5dbf6a6e1b642b",
+    "commit": {
+      "message": "Rename name argument for singular_url to be id + move gist specs into spec/octopi/gists",
+      "tree": {
+        "sha": "0ca2532c2475800d7c113ad2a156ba04c8beca5d",
+        "url": "https://api.github.com/repos/fcoury/octopi/git/trees/0ca2532c2475800d7c113ad2a156ba04c8beca5d"
+      },
+      "committer": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-24T14:29:12-07:00",
+        "name": "Ryan Bigg"
+      },
+      "author": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-24T14:28:56-07:00",
+        "name": "Ryan Bigg"
+      },
+      "url": "https://api.github.com/repos/fcoury/octopi/git/commits/f6c97c4d8d870646ec0bc709fb5dbf6a6e1b642b"
+    },
+    "committer": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "author": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "url": "https://api.github.com/repos/fcoury/octopi/commits/f6c97c4d8d870646ec0bc709fb5dbf6a6e1b642b"
+  },
+  {
+    "parents": [
+      {
+        "sha": "32a7ecb02624284183099ef01c61c3ab4b2e631b",
+        "url": "https://api.github.com/repos/fcoury/octopi/commits/32a7ecb02624284183099ef01c61c3ab4b2e631b"
+      }
+    ],
+    "sha": "1d73c02cfa235146438d2f7a93010f67c98db251",
+    "commit": {
+      "message": "Refactor fake calls to be used for only relevant tests + symbolize attribute names",
+      "tree": {
+        "sha": "21a80a1733661484f568549eae8f72a2e1403d74",
+        "url": "https://api.github.com/repos/fcoury/octopi/git/trees/21a80a1733661484f568549eae8f72a2e1403d74"
+      },
+      "committer": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-24T09:38:21-07:00",
+        "name": "Ryan Bigg"
+      },
+      "author": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-24T09:38:21-07:00",
+        "name": "Ryan Bigg"
+      },
+      "url": "https://api.github.com/repos/fcoury/octopi/git/commits/1d73c02cfa235146438d2f7a93010f67c98db251"
+    },
+    "committer": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "author": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "url": "https://api.github.com/repos/fcoury/octopi/commits/1d73c02cfa235146438d2f7a93010f67c98db251"
+  },
+  {
+    "parents": [
+      {
+        "sha": "02265c950efc82323a081634971f90f7298c8cd5",
+        "url": "https://api.github.com/repos/fcoury/octopi/commits/02265c950efc82323a081634971f90f7298c8cd5"
+      }
+    ],
+    "sha": "32a7ecb02624284183099ef01c61c3ab4b2e631b",
+    "commit": {
+      "message": "Add fixtures for adding + modifying gist files",
+      "tree": {
+        "sha": "5d8d6814321804326ee52d16e5b1bde438820cd1",
+        "url": "https://api.github.com/repos/fcoury/octopi/git/trees/5d8d6814321804326ee52d16e5b1bde438820cd1"
+      },
+      "committer": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-23T21:44:56-07:00",
+        "name": "Ryan Bigg"
+      },
+      "author": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-23T21:44:56-07:00",
+        "name": "Ryan Bigg"
+      },
+      "url": "https://api.github.com/repos/fcoury/octopi/git/commits/32a7ecb02624284183099ef01c61c3ab4b2e631b"
+    },
+    "committer": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "author": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "url": "https://api.github.com/repos/fcoury/octopi/commits/32a7ecb02624284183099ef01c61c3ab4b2e631b"
+  },
+  {
+    "parents": [
+      {
+        "sha": "3ecaa974a602b29145cafed23165502fa2e36380",
+        "url": "https://api.github.com/repos/fcoury/octopi/commits/3ecaa974a602b29145cafed23165502fa2e36380"
+      }
+    ],
+    "sha": "02265c950efc82323a081634971f90f7298c8cd5",
+    "commit": {
+      "message": "Add ability to delete a gist",
+      "tree": {
+        "sha": "2b15d3879cc4629ee7e8c493c4fd85faebefab94",
+        "url": "https://api.github.com/repos/fcoury/octopi/git/trees/2b15d3879cc4629ee7e8c493c4fd85faebefab94"
+      },
+      "committer": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-23T21:44:43-07:00",
+        "name": "Ryan Bigg"
+      },
+      "author": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-23T21:44:43-07:00",
+        "name": "Ryan Bigg"
+      },
+      "url": "https://api.github.com/repos/fcoury/octopi/git/commits/02265c950efc82323a081634971f90f7298c8cd5"
+    },
+    "committer": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "author": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "url": "https://api.github.com/repos/fcoury/octopi/commits/02265c950efc82323a081634971f90f7298c8cd5"
+  },
+  {
+    "parents": [
+      {
+        "sha": "b3b0d60b7275bc0f2bd658816398e881cc64900a",
+        "url": "https://api.github.com/repos/fcoury/octopi/commits/b3b0d60b7275bc0f2bd658816398e881cc64900a"
+      }
+    ],
+    "sha": "3ecaa974a602b29145cafed23165502fa2e36380",
+    "commit": {
+      "message": "Add ability to modify a file inside a gist",
+      "tree": {
+        "sha": "18dc47d63d79ffa16b43499cccbc764228fa4a07",
+        "url": "https://api.github.com/repos/fcoury/octopi/git/trees/18dc47d63d79ffa16b43499cccbc764228fa4a07"
+      },
+      "committer": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-23T21:39:29-07:00",
+        "name": "Ryan Bigg"
+      },
+      "author": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-23T21:39:29-07:00",
+        "name": "Ryan Bigg"
+      },
+      "url": "https://api.github.com/repos/fcoury/octopi/git/commits/3ecaa974a602b29145cafed23165502fa2e36380"
+    },
+    "committer": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "author": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "url": "https://api.github.com/repos/fcoury/octopi/commits/3ecaa974a602b29145cafed23165502fa2e36380"
+  },
+  {
+    "parents": [
+      {
+        "sha": "dbd9d63f9a4dc68efe76171c3c6536864315cd51",
+        "url": "https://api.github.com/repos/fcoury/octopi/commits/dbd9d63f9a4dc68efe76171c3c6536864315cd51"
+      }
+    ],
+    "sha": "b3b0d60b7275bc0f2bd658816398e881cc64900a",
+    "commit": {
+      "message": "Add the ability to add a file to a gist",
+      "tree": {
+        "sha": "23ca4888459f1475a77b979bb0a9c4053c7eafe1",
+        "url": "https://api.github.com/repos/fcoury/octopi/git/trees/23ca4888459f1475a77b979bb0a9c4053c7eafe1"
+      },
+      "committer": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-23T21:21:02-07:00",
+        "name": "Ryan Bigg"
+      },
+      "author": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-23T21:20:56-07:00",
+        "name": "Ryan Bigg"
+      },
+      "url": "https://api.github.com/repos/fcoury/octopi/git/commits/b3b0d60b7275bc0f2bd658816398e881cc64900a"
+    },
+    "committer": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "author": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "url": "https://api.github.com/repos/fcoury/octopi/commits/b3b0d60b7275bc0f2bd658816398e881cc64900a"
+  },
+  {
+    "parents": [
+      {
+        "sha": "9b310ce7b3626623719a2e439e09891f89fe09c3",
+        "url": "https://api.github.com/repos/fcoury/octopi/commits/9b310ce7b3626623719a2e439e09891f89fe09c3"
+      }
+    ],
+    "sha": "dbd9d63f9a4dc68efe76171c3c6536864315cd51",
+    "commit": {
+      "message": "Remove forks a gist pending tesT",
+      "tree": {
+        "sha": "d383e4b234069e3bd53894b70cbe37bd02f26387",
+        "url": "https://api.github.com/repos/fcoury/octopi/git/trees/d383e4b234069e3bd53894b70cbe37bd02f26387"
+      },
+      "committer": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-23T20:58:00-07:00",
+        "name": "Ryan Bigg"
+      },
+      "author": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-23T20:58:00-07:00",
+        "name": "Ryan Bigg"
+      },
+      "url": "https://api.github.com/repos/fcoury/octopi/git/commits/dbd9d63f9a4dc68efe76171c3c6536864315cd51"
+    },
+    "committer": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "author": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "url": "https://api.github.com/repos/fcoury/octopi/commits/dbd9d63f9a4dc68efe76171c3c6536864315cd51"
+  },
+  {
+    "parents": [
+      {
+        "sha": "0a212b093c03854cedcf83996ed51c4cb6d9c016",
+        "url": "https://api.github.com/repos/fcoury/octopi/commits/0a212b093c03854cedcf83996ed51c4cb6d9c016"
+      }
+    ],
+    "sha": "9b310ce7b3626623719a2e439e09891f89fe09c3",
+    "commit": {
+      "message": "Add fork fixture",
+      "tree": {
+        "sha": "6c7d1f9e8bdf58449baec9ca08bcd6e97bff64f0",
+        "url": "https://api.github.com/repos/fcoury/octopi/git/trees/6c7d1f9e8bdf58449baec9ca08bcd6e97bff64f0"
+      },
+      "committer": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-23T17:11:30-07:00",
+        "name": "Ryan Bigg"
+      },
+      "author": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-23T17:11:30-07:00",
+        "name": "Ryan Bigg"
+      },
+      "url": "https://api.github.com/repos/fcoury/octopi/git/commits/9b310ce7b3626623719a2e439e09891f89fe09c3"
+    },
+    "committer": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "author": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "url": "https://api.github.com/repos/fcoury/octopi/commits/9b310ce7b3626623719a2e439e09891f89fe09c3"
+  },
+  {
+    "parents": [
+      {
+        "sha": "55fd49883234f67a18fa0adefdc2a143631688f6",
+        "url": "https://api.github.com/repos/fcoury/octopi/commits/55fd49883234f67a18fa0adefdc2a143631688f6"
+      }
+    ],
+    "sha": "0a212b093c03854cedcf83996ed51c4cb6d9c016",
+    "commit": {
+      "message": "Add forking for gists",
+      "tree": {
+        "sha": "781c8a9a46823e20ac254ff4ca0a91a690dd448a",
+        "url": "https://api.github.com/repos/fcoury/octopi/git/trees/781c8a9a46823e20ac254ff4ca0a91a690dd448a"
+      },
+      "committer": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-23T13:20:04-07:00",
+        "name": "Ryan Bigg"
+      },
+      "author": {
+        "email": "radarlistener@gmail.com",
+        "date": "2011-09-23T13:20:04-07:00",
+        "name": "Ryan Bigg"
+      },
+      "url": "https://api.github.com/repos/fcoury/octopi/git/commits/0a212b093c03854cedcf83996ed51c4cb6d9c016"
+    },
+    "committer": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "author": {
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "login": "radar",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "url": "https://api.github.com/repos/fcoury/octopi/commits/0a212b093c03854cedcf83996ed51c4cb6d9c016"
+  }
+]

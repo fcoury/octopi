@@ -20,8 +20,14 @@ module Octopi
       new(attributes).create
     end
     
-    def self.collection(url, klass=self)
-      from_collection(get(url), klass)
+    def self.collection(url, klass=self, params={})
+      response = if params.empty?
+        get(url)
+      else
+        get(url, :query => params)
+      end
+      
+      from_collection(response, klass)
     end
     
     def initialize(attributes)

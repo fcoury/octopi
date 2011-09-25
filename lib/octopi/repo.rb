@@ -22,8 +22,9 @@ module Octopi
       self.class.collection("#{path}/branches", Octopi::Branch)
     end
     
-    def commits
-      self.class.collection("#{path}/commits", Octopi::Commit)
+    def commits(params={})
+      params[:sha] ||= params.delete(:branch) if params[:branch]
+      self.class.collection("#{path}/commits", Octopi::Commit, params)
     end
 
     private
