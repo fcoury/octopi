@@ -61,6 +61,12 @@ describe Octopi::Repo do
           branches = repo.branches
           branches.first.is_a?(Octopi::Branch).should be_true
         end
+        
+        it "commits" do
+          api_stub("repos/fcoury/octopi/commits")
+          commits = repo.commits
+          commits.first.is_a?(Octopi::Commit).should be_true
+        end
       end
     end
     
