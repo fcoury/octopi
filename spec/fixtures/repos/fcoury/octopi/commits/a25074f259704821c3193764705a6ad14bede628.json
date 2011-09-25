@@ -1,0 +1,68 @@
+HTTP/1.1 200 OK
+Server: nginx/1.0.4
+Date: Sun, 25 Sep 2011 21:21:16 GMT
+Content-Type: application/json
+Connection: keep-alive
+Status: 200 OK
+X-RateLimit-Limit: 5000
+X-RateLimit-Remaining: 4995
+Content-Length: 3021
+
+{
+  "parents": [
+    {
+      "sha": "f66d8fe987a03581bf5c0b684790dc3680744724",
+      "url": "https://api.github.com/repos/fcoury/octopi/commits/f66d8fe987a03581bf5c0b684790dc3680744724"
+    }
+  ],
+  "sha": "a25074f259704821c3193764705a6ad14bede628",
+  "commit": {
+    "message": "Added missing dependencies",
+    "tree": {
+      "sha": "20c44e08f22b60c5ed4ed329a75960e3a95204d3",
+      "url": "https://api.github.com/repos/fcoury/octopi/git/trees/20c44e08f22b60c5ed4ed329a75960e3a95204d3"
+    },
+    "committer": {
+      "email": "felipe.coury@gmail.com",
+      "date": "2009-12-02T10:59:01-08:00",
+      "name": "Felipe Coury"
+    },
+    "author": {
+      "email": "egunderson@obtiva.com",
+      "date": "2009-12-02T08:28:13-08:00",
+      "name": "Ethan Gunderson"
+    },
+    "url": "https://api.github.com/repos/fcoury/octopi/git/commits/a25074f259704821c3193764705a6ad14bede628"
+  },
+  "committer": {
+    "login": "fcoury",
+    "avatar_url": "https://secure.gravatar.com/avatar/c4ceadae4f61dac8ff3ababc3faa6c42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+    "id": 1371,
+    "url": "https://api.github.com/users/fcoury"
+  },
+  "author": {
+    "login": "ethangunderson",
+    "avatar_url": "https://secure.gravatar.com/avatar/dfb050b61e79d1caf60d0dd0693eec50?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+    "id": 101555,
+    "url": "https://api.github.com/users/ethangunderson"
+  },
+  "files": [
+    {
+      "changes": 6,
+      "status": "modified",
+      "sha": "a25074f259704821c3193764705a6ad14bede628",
+      "raw_url": "https://github.com/fcoury/octopi/raw/a25074f259704821c3193764705a6ad14bede628/octopi.gemspec",
+      "patch": "--- a/octopi.gemspec\n+++ b/octopi.gemspec\n@@ -87,12 +87,18 @@ Gem::Specification.new do |s|\n     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then\n       s.add_runtime_dependency(%q<nokogiri>, [\">= 1.3.1\"])\n       s.add_runtime_dependency(%q<httparty>, [\">= 0.4.5\"])\n+      s.add_runtime_dependency(%q<mechanize>, [\">= 0.9.3\"])\n+      s.add_runtime_dependency(%q<api_cache>, [\">= 0.2.0\"])\n     else\n       s.add_dependency(%q<nokogiri>, [\">= 1.3.1\"])\n       s.add_dependency(%q<httparty>, [\">= 0.4.5\"])\n+      s.add_dependency(%q<mechanize>, [\">= 0.9.3\"])\n+      s.add_dependency(%q<api_cache>, [\">= 0.2.0\"])\n     end\n   else\n     s.add_dependency(%q<nokogiri>, [\">= 1.3.1\"])\n     s.add_dependency(%q<httparty>, [\">= 0.4.5\"])\n+    s.add_dependency(%q<mechanize>, [\">= 0.9.3\"])\n+    s.add_dependency(%q<api_cache>, [\">= 0.2.0\"])\n   end\n end",
+      "filename": "octopi.gemspec",
+      "blob_url": "https://github.com/fcoury/octopi/blob/a25074f259704821c3193764705a6ad14bede628/octopi.gemspec",
+      "deletions": 0,
+      "additions": 6
+    }
+  ],
+  "stats": {
+    "total": 6,
+    "deletions": 0,
+    "additions": 6
+  },
+  "url": "https://api.github.com/repos/fcoury/octopi/commits/a25074f259704821c3193764705a6ad14bede628"
+}

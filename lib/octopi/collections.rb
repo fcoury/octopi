@@ -2,6 +2,7 @@ require 'delegate'
 
 module Octopi
   module Collections
+    autoload :Collaborators, "octopi/collections/collaborators"
     autoload :Comments, "octopi/collections/comments"
     autoload :Commits, "octopi/collections/commits"
     module Gist

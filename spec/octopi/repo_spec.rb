@@ -67,6 +67,12 @@ describe Octopi::Repo do
           comments = repo.comments
           comments.first.is_a?(Octopi::Comment).should be_true
         end
+        
+        it "collaborators" do
+          api_stub("repos/fcoury/octopi/collaborators")
+          collaborators = repo.collaborators
+          collaborators.first.is_a?(Octopi::User).should be_true
+        end
       end
     end
     

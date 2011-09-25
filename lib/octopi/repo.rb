@@ -31,6 +31,10 @@ module Octopi
       Octopi::Collections::Comments.new(self, self.class.collection("#{path}/comments", Octopi::Comment))
     end
     
+    def collaborators
+      Octopi::Collections::Collaborators.new(self.class.collection("#{path}/collaborators", Octopi::User))
+    end
+    
     def path
       "/repos/#{user.login}/#{self.name}"
     end

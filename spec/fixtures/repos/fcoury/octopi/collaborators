@@ -1,0 +1,24 @@
+HTTP/1.1 200 OK
+Server: nginx/1.0.4
+Date: Sun, 25 Sep 2011 22:01:49 GMT
+Content-Type: application/json
+Connection: keep-alive
+Status: 200 OK
+X-RateLimit-Limit: 5000
+X-RateLimit-Remaining: 4996
+Content-Length: 545
+
+[
+  {
+    "login": "fcoury",
+    "avatar_url": "https://secure.gravatar.com/avatar/c4ceadae4f61dac8ff3ababc3faa6c42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+    "id": 1371,
+    "url": "https://api.github.com/users/fcoury"
+  },
+  {
+    "login": "radar",
+    "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+    "id": 2687,
+    "url": "https://api.github.com/users/radar"
+  }
+]
