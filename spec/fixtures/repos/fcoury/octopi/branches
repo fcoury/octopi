@@ -1,0 +1,47 @@
+HTTP/1.1 200 OK
+Server: nginx/1.0.4
+Date: Sun, 25 Sep 2011 01:25:26 GMT
+Content-Type: application/json
+Connection: keep-alive
+Status: 200 OK
+X-RateLimit-Limit: 5000
+X-RateLimit-Remaining: 4999
+Content-Length: 1083
+
+[
+  {
+    "commit": {
+      "sha": "39d636632531bf7d349d856dfc484b150e03ade0",
+      "url": "https://api.github.com/repos/fcoury/octopi/commits/39d636632531bf7d349d856dfc484b150e03ade0"
+    },
+    "name": "gh-pages"
+  },
+  {
+    "commit": {
+      "sha": "2a25a1aba60ebb210f545d2c62b7d12f492e3dee",
+      "url": "https://api.github.com/repos/fcoury/octopi/commits/2a25a1aba60ebb210f545d2c62b7d12f492e3dee"
+    },
+    "name": "lazy"
+  },
+  {
+    "commit": {
+      "sha": "38b679a92a49bb49a72e57d99639e26830b7792b",
+      "url": "https://api.github.com/repos/fcoury/octopi/commits/38b679a92a49bb49a72e57d99639e26830b7792b"
+    },
+    "name": "master"
+  },
+  {
+    "commit": {
+      "sha": "552e40dc8e8fec141fcf6f0de3610531e0324643",
+      "url": "https://api.github.com/repos/fcoury/octopi/commits/552e40dc8e8fec141fcf6f0de3610531e0324643"
+    },
+    "name": "radar"
+  },
+  {
+    "commit": {
+      "sha": "b2a9672a11f3598abb28d5d0c1bc4347c6a33e7e",
+      "url": "https://api.github.com/repos/fcoury/octopi/commits/b2a9672a11f3598abb28d5d0c1bc4347c6a33e7e"
+    },
+    "name": "v3"
+  }
+]
