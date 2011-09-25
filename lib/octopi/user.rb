@@ -6,6 +6,9 @@ module Octopi
       end
     end
 
+    def self.update(attributes)
+      self.new(put("/user", :body => attributes.to_json))
+    end
 
     # This method is really a "proxy" to Gist.for_user
     # The disadvantage is that using it will take two API calls.
