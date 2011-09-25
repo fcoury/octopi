@@ -34,7 +34,7 @@ describe Octopi::User do
       stub_request(:put, url).to_return(fake("users/updated"))
       user = Octopi::User.update(:name => "Super Ryan")
 
-      WebMock.should have_requested(:put, url)
+      WebMock.should have_requested(:put, url).with(:body => { :name => "Super Ryan"}.to_json)
       user.name.should == "Super Ryan"
     end
   end
