@@ -1,12 +1,12 @@
 module Octopi
   module Collections
     module Gist
-      class Files < Array
+      class Files < DelegateClass(Array)
         def initialize(collection)
-          super()
-          collection.map do |filename, attributes| 
-            self << Octopi::Gist::GistFile.new(attributes)
+          collection = collection.map do |filename, attributes| 
+            Octopi::Gist::GistFile.new(attributes)
           end
+          super(collection)
         end
 
         def add!(filename, content)
