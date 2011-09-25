@@ -4,6 +4,10 @@ module Octopi
       User.new(attributes[:owner])
     end
 
+    def organization
+      Organization.new(attributes[:organization])
+    end
+
     def self.by_user(user)
       collection("/users/#{user}/repos")
     end

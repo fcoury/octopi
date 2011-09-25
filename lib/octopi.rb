@@ -10,8 +10,8 @@ module Octopi
   autoload :Base, "octopi/base"
   autoload :Collections, "octopi/collections"
   autoload :Gist, "octopi/gist"
-  autoload :Repository, "octopi/repository"
-  autoload :Repo, "octopi/repository"
+  autoload :Organization, "octopi/organization"
+  autoload :Repo, "octopi/repo"
   autoload :User, "octopi/user"
   
   class NotAuthenticated < StandardError
