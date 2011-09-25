@@ -1,13 +1,5 @@
 module Octopi
   class Repo < Base
-    def owner
-      User.new(attributes[:owner])
-    end
-
-    def organization
-      Organization.new(attributes[:organization])
-    end
-
     def self.by_user(user)
       collection("/users/#{user}/repos")
     end
@@ -16,10 +8,18 @@ module Octopi
       collection("/orgs/#{organization}/repos")
     end
 
-    private
+    def owner
+      User.new(attributes[:owner])
+    end
+    
+    alias_method :user, :owner
 
-    def self.plural_url
-      "/repos"
+    def organization
+      Organization.new(attributes[:organization])
+    end
+    
+    def branches
+      self.class.collection("/repos/#{user.login}/#{self.name}/branches", Octopi::Branch)
     end
   end
 end

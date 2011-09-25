@@ -4,7 +4,7 @@ module Octopi
     attr_accessor :attributes
 
     def self.all
-      from_collection(get(plural_url))
+      from_collection(get(collection_url))
     end
     
     def self.find(name)
@@ -31,7 +31,7 @@ module Octopi
     end
     
     def create
-      self.class.build(self.class.post(self.class.plural_url, :body => attributes))
+      self.class.build(self.class.post(self.class.collection_url, :body => attributes))
     end
 
     def update(json)
@@ -65,10 +65,10 @@ module Octopi
     end
     
     def self.singular_url(id)
-      plural_url + "/#{id}"
+      collection_url + "/#{id}"
     end
     
-    def self.plural_url
+    def self.collection_url
       "/#{self.name.split("::").last.downcase}s"
     end
 

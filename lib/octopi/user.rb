@@ -1,5 +1,12 @@
 module Octopi
   class User < Base
+    def self.me
+      Octopi.requires_authentication! do
+        self.new(self.get("/user"))
+      end
+    end
+
+
     # This method is really a "proxy" to Gist.for_user
     # The disadvantage is that using it will take two API calls.
     # 1) the initial find for the user (already done by this point)

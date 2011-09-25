@@ -11,6 +11,13 @@ describe Octopi::User do
     user.login.should == "fcoury"
   end
   
+  it "can find the authenticated user" do
+    Octopi.authenticate!(:username => "radar", :password => "password")
+    stub_request(:get, authenticated_base_url + "user").to_return(fake("users/me"))
+    user = Octopi::User.me
+    user.login.should == "radar"
+  end
+  
   it "can find a user's gist" do
     Octopi::User.find("fcoury").gists
   end
