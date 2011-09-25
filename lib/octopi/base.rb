@@ -35,7 +35,11 @@ module Octopi
     end
 
     def update(json)
-      self.class.post(self.class.singular_url(self.id), :body => json)
+      self.class.post(url, :body => json)
+    end
+
+    def delete
+      self.class.delete(url)
     end
     
     def reload
@@ -79,6 +83,10 @@ module Octopi
 
     def self.parse(response)
       JSON.parse(response.body)
+    end
+
+    def url
+      self.class.singular_url(self.id)
     end
   end
 end

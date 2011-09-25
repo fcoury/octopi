@@ -6,10 +6,10 @@ describe Octopi::Gist::Comment do
   before do
     authenticated_api_stub("gists/1236602")
     authenticated_api_stub("gists/1236602/comments")
+    stub_request(:get, comment_url).to_return(fake("gists/comments/52291"))
   end
 
   it "gets a single comment" do
-    stub_request(:get, comment_url).to_return(fake("gists/comments/52291"))
     Octopi::Gist::Comment.find(52291)
     WebMock.should have_requested(:get, comment_url)
   end
@@ -33,6 +33,13 @@ describe Octopi::Gist::Comment do
       comment = Octopi::Gist::Comment.find(52291)
       comment.update(:body => "This is new content")
       WebMock.should have_requested(:post, comment_url)
+    end
+    
+    it "deletes a comment" do
+      stub_request(:delete, comment_url).to_return(:status => 204)
+      comment = Octopi::Gist::Comment.find(52291)
+      comment.delete
+      WebMock.should have_requested(:delete, comment_url)
     end
   end
 end
