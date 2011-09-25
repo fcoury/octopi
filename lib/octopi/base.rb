@@ -8,7 +8,12 @@ module Octopi
     end
     
     def self.find(name)
-      build(get(singular_url(name)))
+      response = get(singular_url(name))
+      if response.code.to_i == 404
+        raise NotFound, not_found_error
+      else
+        build(response)
+      end
     end
     
     def self.create(attributes)
@@ -83,6 +88,10 @@ module Octopi
 
     def self.parse(response)
       JSON.parse(response.body)
+    end
+    
+    def self.not_found_error
+      "The #{self} you were looking for could not be found."
     end
 
     def url

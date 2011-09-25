@@ -21,6 +21,9 @@ module Octopi
     end
   end
   
+  class NotFound < StandardError
+  end
+  
   include HTTParty
   base_uri "https://api.github.com"
 

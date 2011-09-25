@@ -21,5 +21,11 @@ module Octopi
     def branches
       self.class.collection("/repos/#{user.login}/#{self.name}/branches", Octopi::Branch)
     end
+
+    private
+
+    def self.not_found_error
+      "The #{self} you were looking for could not be found or it could be private."
+    end
   end
 end
