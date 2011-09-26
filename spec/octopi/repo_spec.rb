@@ -85,6 +85,10 @@ describe Octopi::Repo do
           tags.first.name.should == "v0.1.0"
         end
         
+        it "teams" do
+          pending("always returns a 404? Need repo with teams")
+        end
+        
         it "cannot update this repository" do
           lambda { repo.update(:description => "omg") }.should raise_error(Octopi::NotAuthenticated)
         end
@@ -95,6 +99,8 @@ describe Octopi::Repo do
         before do
           Octopi.authenticate! :username => "radar", :password => "password"
         end
+        
+        it "can create a repository"
         
         it "can update a repository's detail" do
           authenticated_api_stub("repos/radar/octopi")
