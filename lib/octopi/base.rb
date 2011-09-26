@@ -46,7 +46,11 @@ module Octopi
     end
 
     def update(json)
-      self.class.post(url, :body => json)
+      self.class.put(url, :body => json)
+    end
+
+    def update_attributes(attributes={})
+      self.class.new(self.class.put(url, :body => attributes.to_json))
     end
 
     def delete

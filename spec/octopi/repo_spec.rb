@@ -25,12 +25,11 @@ describe Octopi::Repo do
     end
     
     context "for a public repo" do
-      let(:repo) { Octopi::Repo.find("fcoury/octopi") }
-      before do
-        api_stub("repos/fcoury/octopi")
-      end
-      
       context "unauthenticated" do
+        let(:repo) { Octopi::Repo.find("fcoury/octopi") }
+        before do
+          api_stub("repos/fcoury/octopi")
+        end
         it "finding" do
           repo.pushed_at.should == "2011-09-25T00:02:51Z"
           repo.created_at.should == "2009-04-18T04:26:58Z"
@@ -72,6 +71,20 @@ describe Octopi::Repo do
           api_stub("repos/fcoury/octopi/collaborators")
           collaborators = repo.collaborators
           collaborators.first.is_a?(Octopi::User).should be_true
+        end
+      end
+      
+      context "authenticated" do
+        let(:repo) { Octopi::Repo.find("radar/octopi") }
+        before do
+          Octopi.authenticate! :username => "radar", :password => "password"
+        end
+        
+        it "can update a repository's detail" do
+          authenticated_api_stub("repos/radar/octopi")
+          stub_request(:put, "https://radar:password@api.github.com/repos/radar/octopi")
+          repo.update_attributes(:description => "omg")
+          WebMock.should have_requested(:put, "https://radar:password@api.github.com/repos/radar/octopi").with(:body => '{"description":"omg"}')
         end
       end
     end

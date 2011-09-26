@@ -35,7 +35,7 @@ module Octopi
       Octopi::Collections::Collaborators.new(self.class.collection("#{path}/collaborators", Octopi::User))
     end
     
-    def path
+    def url
       "/repos/#{user.login}/#{self.name}"
     end
 

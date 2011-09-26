@@ -39,11 +39,6 @@ module Octopi
       end
     end
     
-    def update_attributes(attributes={})
-      url = self.class.singular_url(@attributes[:id])
-      self.class.new(self.class.post(url, :body => attributes.to_json))
-    end
-    
     def destroy
       self.class.delete("/gists/#{self.id}")
     end
