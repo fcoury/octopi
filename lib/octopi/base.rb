@@ -45,12 +45,10 @@ module Octopi
       self.class.build(self.class.post(self.class.collection_url, :body => attributes))
     end
 
-    def update(json)
-      self.class.put(url, :body => json)
-    end
-
-    def update_attributes(attributes={})
-      self.class.new(self.class.put(url, :body => attributes.to_json))
+    def update(attributes)
+      Octopi.requires_authentication! do
+        self.class.put(url, :body => attributes.to_json)
+      end
     end
 
     def delete

@@ -72,6 +72,10 @@ describe Octopi::Repo do
           collaborators = repo.collaborators
           collaborators.first.is_a?(Octopi::User).should be_true
         end
+        
+        it "cannot update this repository" do
+          lambda { repo.update(:description => "omg") }.should raise_error(Octopi::NotAuthenticated)
+        end
       end
       
       context "authenticated" do
@@ -83,7 +87,7 @@ describe Octopi::Repo do
         it "can update a repository's detail" do
           authenticated_api_stub("repos/radar/octopi")
           stub_request(:put, "https://radar:password@api.github.com/repos/radar/octopi")
-          repo.update_attributes(:description => "omg")
+          repo.update(:description => "omg")
           WebMock.should have_requested(:put, "https://radar:password@api.github.com/repos/radar/octopi").with(:body => '{"description":"omg"}')
         end
       end

@@ -197,7 +197,7 @@ describe Octopi::Gist do
       stub_request(:post, url).
          with(:body => attributes.to_json).to_return(fake("gists/update"))
 
-      gist = gist.update_attributes(attributes)
+      gist = gist.update(attributes)
       gist.description.should == "New Description"
 
       WebMock.should have_requested(:post, url)
