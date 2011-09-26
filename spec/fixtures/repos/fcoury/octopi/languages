@@ -1,0 +1,14 @@
+HTTP/1.1 200 OK
+Server: nginx/1.0.4
+Date: Mon, 26 Sep 2011 05:06:23 GMT
+Content-Type: application/json
+Connection: keep-alive
+Status: 200 OK
+X-RateLimit-Limit: 5000
+X-RateLimit-Remaining: 4995
+Content-Length: 42
+
+{
+  "Ruby": 113961,
+  "JavaScript": 522
+}

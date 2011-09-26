@@ -73,6 +73,12 @@ describe Octopi::Repo do
           collaborators.first.is_a?(Octopi::User).should be_true
         end
         
+        it "languages" do
+          api_stub("repos/fcoury/octopi/languages")
+          languages = repo.languages
+          languages.first.name.should == "Ruby"
+        end
+        
         it "cannot update this repository" do
           lambda { repo.update(:description => "omg") }.should raise_error(Octopi::NotAuthenticated)
         end

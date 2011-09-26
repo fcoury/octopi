@@ -35,6 +35,10 @@ module Octopi
       Octopi::Collections::Collaborators.new(self.class.collection("#{url}/collaborators", Octopi::User))
     end
     
+    def languages
+      self.class.collection("#{url}/languages", Octopi::Language)
+    end
+    
     def url
       Octopi.base_uri + "/repos/#{user.login}/#{self.name}"
     end
