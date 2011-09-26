@@ -22,23 +22,23 @@ describe Octopi::Gist::GistFile do
     
     it "adds a file" do
       gist.files.count.should == 1
-      stub_request(:post, gist_url).to_return(fake("gists/added_a_file"))
+      stub_request(:put, gist_url).to_return(fake("gists/added_a_file"))
       stub_request(:get, gist_url).to_return(fake("gists/added_a_file"))
       gist.files.add!("file.rb", "puts 'hello earth'")
       gist.files.count.should == 2
-      WebMock.should have_requested(:post, gist_url).with(:body => '{"files":{"file.rb":"puts \'hello earth\'"}}')
+      WebMock.should have_requested(:put, gist_url).with(:body => '{"files":{"file.rb":"puts \'hello earth\'"}}')
     end
 
     it "modifies a file" do
-      stub_request(:post, gist_url).to_return(fake("gists/modified_a_file"))
+      stub_request(:put, gist_url).to_return(fake("gists/modified_a_file"))
       stub_request(:get, gist_url).to_return(fake("gists/1236602"))
       gist.files.first.content = "print 'print rocks!'"
       gist.files.first.save
-      WebMock.should have_requested(:post, gist_url).with(:body => '{"files":{"hello.rb":"print \'print rocks!\'"}}')
+      WebMock.should have_requested(:put, gist_url).with(:body => '{"files":{"hello.rb":"print \'print rocks!\'"}}')
     end
 
     it "removes a file" do
-      stub_request(:post, gist_url).to_return(fake("/gists/deleted_a_file"))
+      stub_request(:put, gist_url).to_return(fake("/gists/deleted_a_file"))
       gist.files.count.should == 1
       gist.files.first.delete!
       gist.files.count.should == 0

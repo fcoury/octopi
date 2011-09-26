@@ -9,14 +9,14 @@ module Octopi
       
       def delete!
         Octopi.requires_authentication! do
-          self.class.post("/gists/#{gist.id}", :body => { "files" => { self.filename => nil }}.to_json)
+          self.class.put("/gists/#{gist.id}", :body => { "files" => { self.filename => nil }}.to_json)
           # Remove the file from the gist on our side.
           self.gist.files.delete_if { |file| file.filename == self.filename } 
         end
       end
       
       def save
-        self.class.post("/gists/#{gist.id}", :body => { "files" => { self.filename => self.content }}.to_json)
+        self.class.put("/gists/#{gist.id}", :body => { "files" => { self.filename => self.content }}.to_json)
       end
       
     end

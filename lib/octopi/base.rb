@@ -47,7 +47,7 @@ module Octopi
 
     def update(attributes)
       Octopi.requires_authentication! do
-        self.class.put(url, :body => attributes.to_json)
+        self.class.new(self.class.put(url, :body => attributes.to_json))
       end
     end
 

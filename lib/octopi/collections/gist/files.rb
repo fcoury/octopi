@@ -11,7 +11,7 @@ module Octopi
 
         def add!(filename, content)
           Octopi.requires_authentication! do
-            gist.update({ "files" => { filename => content }}.to_json)
+            gist.update(:files => { filename => content })
             gist.reload
           end
         end

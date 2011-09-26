@@ -190,17 +190,19 @@ describe Octopi::Gist do
     end
 
     it "updates description" do
-      api_stub("gists/1236602")
+      Octopi.authenticate! :username => "radar", :password => "password"
+      authenticated_api_stub("gists/1236602")
+      authenticated_api_stub("gists/1236602/comments")
       gist = Octopi::Gist.find(1236602)
-      url = "https://api.github.com/gists/1236602"
+      url = authenticated_base_url + "gists/1236602"
       attributes = { :description => "New Description" }
-      stub_request(:post, url).
+      stub_request(:put, url).
          with(:body => attributes.to_json).to_return(fake("gists/update"))
 
       gist = gist.update(attributes)
       gist.description.should == "New Description"
 
-      WebMock.should have_requested(:post, url)
+      WebMock.should have_requested(:put, url)
     end
   end
 end

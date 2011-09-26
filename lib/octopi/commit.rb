@@ -12,7 +12,7 @@ module Octopi
     end
     
     def comments
-      collection = self.class.collection("#{self.repo.path}/commits/#{self.sha}/comments", Octopi::Comment)
+      collection = self.class.collection("#{self.repo.url}/commits/#{self.sha}/comments", Octopi::Comment)
       Octopi::Collections::Comments.new(self.repo, collection)
     end
   end

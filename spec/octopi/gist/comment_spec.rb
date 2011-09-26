@@ -29,10 +29,10 @@ describe Octopi::Gist::Comment do
     end
     
     it "updates a comment" do
-      stub_request(:post, comment_url).to_return(fake("gists/comments/update"))
+      stub_request(:put, comment_url).to_return(fake("gists/comments/update"))
       comment = Octopi::Gist::Comment.find(52291)
       comment.update(:body => "This is new content")
-      WebMock.should have_requested(:post, comment_url)
+      WebMock.should have_requested(:put, comment_url)
     end
     
     it "deletes a comment" do

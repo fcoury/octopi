@@ -7,7 +7,7 @@ module Octopi
       end
 
       def find(sha)
-        Octopi::Commit.new(Octopi.get("#{first.repo.path}/commits/#{sha}").merge(:repo => first.repo))
+        Octopi::Commit.new(Octopi.get("#{first.repo.url}/commits/#{sha}").merge(:repo => first.repo))
       end
     end
   end
