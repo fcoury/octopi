@@ -16,6 +16,7 @@ module Octopi
   autoload :Language, "octopi/language"
   autoload :Organization, "octopi/organization"
   autoload :Repo, "octopi/repo"
+  autoload :Tag, "octopi/tag"
   autoload :User, "octopi/user"
   
   class NotAuthenticated < StandardError

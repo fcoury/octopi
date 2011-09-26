@@ -79,6 +79,12 @@ describe Octopi::Repo do
           languages.first.name.should == "Ruby"
         end
         
+        it "tags" do
+          api_stub("repos/fcoury/octopi/tags")
+          tags = repo.tags
+          tags.first.name.should == "v0.1.0"
+        end
+        
         it "cannot update this repository" do
           lambda { repo.update(:description => "omg") }.should raise_error(Octopi::NotAuthenticated)
         end

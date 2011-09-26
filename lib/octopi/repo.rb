@@ -39,6 +39,10 @@ module Octopi
       self.class.collection("#{url}/languages", Octopi::Language)
     end
     
+    def tags
+      self.class.collection("#{url}/tags", Octopi::Tag)
+    end
+    
     def url
       Octopi.base_uri + "/repos/#{user.login}/#{self.name}"
     end
