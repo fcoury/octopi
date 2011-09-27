@@ -72,7 +72,23 @@ describe Octopi::Repo do
           collaborators = repo.collaborators
           collaborators.first.is_a?(Octopi::User).should be_true
         end
-        
+
+        it "detects if a user is a collaborator" do
+          api_stub("users/fcoury")
+          api_stub("repos/fcoury/octopi/collaborators/fcoury")
+          repo.is_collaborator?(Octopi::User.find("fcoury")).should be_true
+        end
+
+        it "detects if a user is a collaborator by login" do
+          api_stub("repos/fcoury/octopi/collaborators/fcoury")
+          repo.is_collaborator?("fcoury").should be_true
+        end
+
+        it "user is not a collaborator" do
+          api_stub("repos/fcoury/octopi/collaborators/dhh")
+          repo.is_collaborator?("dhh").should be_false
+        end
+
         it "languages" do
           api_stub("repos/fcoury/octopi/languages")
           languages = repo.languages

@@ -34,6 +34,12 @@ module Octopi
     def collaborators
       Octopi::Collections::Collaborators.new(self.class.collection("#{url}/collaborators", Octopi::User))
     end
+
+    def is_collaborator?(user)
+      login = user.is_a?(Octopi::User) ? user.login : user
+      # 204 request == yes, this person is a collaborator
+      self.class.get("#{url}/collaborators/#{login}").response.code.to_i == 204
+    end
     
     def languages
       self.class.collection("#{url}/languages", Octopi::Language)
