@@ -67,7 +67,7 @@ describe Octopi::Repo do
           comments.first.is_a?(Octopi::Comment).should be_true
         end
         
-        context "collaborators"        
+        context "collaborators" do
           it "listing" do
             api_stub("repos/fcoury/octopi/collaborators")
             collaborators = repo.collaborators

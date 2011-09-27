@@ -12,6 +12,7 @@ module Octopi
   autoload :Comment, "octopi/comment"
   autoload :Commit, "octopi/commit"
   autoload :Collections, "octopi/collections"
+  autoload :Download, "octopi/download"
   autoload :Gist, "octopi/gist"
   autoload :Language, "octopi/language"
   autoload :Organization, "octopi/organization"
