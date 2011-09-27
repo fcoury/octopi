@@ -11,9 +11,11 @@ describe Octopi::User do
     user.login.should == "fcoury"
   end
 
-  it "can find a user's gist" do
+  it "can find a user's gists" do
     Octopi::User.find("fcoury").gists
   end
+  
+  it "watched repositories"
 
   context "authenticated" do
     before do
@@ -37,5 +39,10 @@ describe Octopi::User do
       WebMock.should have_requested(:put, url).with(:body => { :name => "Super Ryan"}.to_json)
       user.name.should == "Super Ryan"
     end
+    
+    it "watched repositories"
+    it "watching a repo?"
+    it "watch a repo"
+    it "stop watching a repo"
   end
 end

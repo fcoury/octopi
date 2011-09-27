@@ -17,4 +17,9 @@ describe Octopi::Comment do
     comment.id.should == 38684
     comment.url.should == "https://api.github.com/repos/fcoury/octopi/comments/38684"
   end
+  
+  it "creates a comment"
+  it "retreives a comment"
+  it "updates a comment"
+  it "deletes a comment"
 end

@@ -67,10 +67,15 @@ describe Octopi::Repo do
           comments.first.is_a?(Octopi::Comment).should be_true
         end
         
-        it "collaborators" do
-          api_stub("repos/fcoury/octopi/collaborators")
-          collaborators = repo.collaborators
-          collaborators.first.is_a?(Octopi::User).should be_true
+        context "collaborators"        
+          it "listing" do
+            api_stub("repos/fcoury/octopi/collaborators")
+            collaborators = repo.collaborators
+            collaborators.first.is_a?(Octopi::User).should be_true
+          end
+        
+          it "adding"
+          it "deleting"
         end
 
         it "detects if a user is a collaborator" do
@@ -107,6 +112,31 @@ describe Octopi::Repo do
         
         it "cannot update this repository" do
           lambda { repo.update(:description => "omg") }.should raise_error(Octopi::NotAuthenticated)
+        end
+        
+        context "forks" do
+          it "listing"
+          it "creates"
+        end
+        
+        context "keys" do
+          it "listing"
+          it "singular"
+          it "creates"
+          it "edits"
+          it "deletes"
+        end
+        
+        it "watchers"
+        
+        context "hooks" do
+          it "listing"
+          it "singular"
+          it "creates"
+          it "edits"
+          it "tests"
+          it "deletes"
+          it "pubsubhubbub"
         end
       end
       

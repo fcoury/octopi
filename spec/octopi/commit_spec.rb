@@ -64,5 +64,7 @@ describe Octopi::Commit do
     commit.comments.count.should == 1
     commit.comments.first.is_a?(Octopi::Comment).should be_true
   end
+  
+  it "compares two commits"
     
 end
