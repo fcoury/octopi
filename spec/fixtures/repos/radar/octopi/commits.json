@@ -1,0 +1,1229 @@
+HTTP/1.1 200 OK
+Server: nginx/1.0.4
+Date: Wed, 28 Sep 2011 03:21:06 GMT
+Content-Type: application/json
+Connection: keep-alive
+Status: 200 OK
+X-RateLimit-Limit: 5000
+X-RateLimit-Remaining: 4998
+Link: <https://api.github.com/repos/radar/octopi/commits?last_sha=4dbfe0ce85ed7bc14d63d7bc4d8deed5ae0026e2&top=master>; rel="next", <https://api.github.com/repos/radar/octopi/commits?sha=master>; rel="first"
+Content-Length: 50569
+
+[
+  {
+    "author": {
+      "login": "radar",
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "committer": {
+      "login": "radar",
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "parents": [
+      {
+        "sha": "16c9c20e57ec85089275908061893a704a9eb6c9",
+        "url": "https://api.github.com/repos/radar/octopi/commits/16c9c20e57ec85089275908061893a704a9eb6c9"
+      },
+      {
+        "sha": "da8d7e33965c5034c948357d176da2e6b3ac2365",
+        "url": "https://api.github.com/repos/radar/octopi/commits/da8d7e33965c5034c948357d176da2e6b3ac2365"
+      }
+    ],
+    "commit": {
+      "tree": {
+        "sha": "6fa1786719b2d1cf1ed38ad397cd7feb8160d6b0",
+        "url": "https://api.github.com/repos/radar/octopi/git/trees/6fa1786719b2d1cf1ed38ad397cd7feb8160d6b0"
+      },
+      "message": "Merge pull request #68 from nithinbekal/patch-1\n\nFix the incorrect example 2 for explicit authentication. Refs #59",
+      "author": {
+        "date": "2011-09-21T12:56:05-07:00",
+        "name": "Ryan Bigg",
+        "email": "radarlistener@gmail.com"
+      },
+      "committer": {
+        "date": "2011-09-21T12:56:05-07:00",
+        "name": "Ryan Bigg",
+        "email": "radarlistener@gmail.com"
+      },
+      "url": "https://api.github.com/repos/radar/octopi/git/commits/38b679a92a49bb49a72e57d99639e26830b7792b"
+    },
+    "sha": "38b679a92a49bb49a72e57d99639e26830b7792b",
+    "url": "https://api.github.com/repos/radar/octopi/commits/38b679a92a49bb49a72e57d99639e26830b7792b"
+  },
+  {
+    "author": {
+      "login": "nithinbekal",
+      "avatar_url": "https://secure.gravatar.com/avatar/04fd01b158b5ca07858d023533b01b24?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 121782,
+      "url": "https://api.github.com/users/nithinbekal"
+    },
+    "committer": {
+      "login": "nithinbekal",
+      "avatar_url": "https://secure.gravatar.com/avatar/04fd01b158b5ca07858d023533b01b24?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 121782,
+      "url": "https://api.github.com/users/nithinbekal"
+    },
+    "parents": [
+      {
+        "sha": "16553142cf92ec6b60eac962901c4e1b238e8af6",
+        "url": "https://api.github.com/repos/radar/octopi/commits/16553142cf92ec6b60eac962901c4e1b238e8af6"
+      }
+    ],
+    "commit": {
+      "tree": {
+        "sha": "6fa1786719b2d1cf1ed38ad397cd7feb8160d6b0",
+        "url": "https://api.github.com/repos/radar/octopi/git/trees/6fa1786719b2d1cf1ed38ad397cd7feb8160d6b0"
+      },
+      "message": "Fix the incorrect example 2 for explicit authentication.",
+      "author": {
+        "date": "2011-09-21T12:50:13-07:00",
+        "name": "Nithin Bekal",
+        "email": "nithinbekal@gmail.com"
+      },
+      "committer": {
+        "date": "2011-09-21T12:50:13-07:00",
+        "name": "Nithin Bekal",
+        "email": "nithinbekal@gmail.com"
+      },
+      "url": "https://api.github.com/repos/radar/octopi/git/commits/da8d7e33965c5034c948357d176da2e6b3ac2365"
+    },
+    "sha": "da8d7e33965c5034c948357d176da2e6b3ac2365",
+    "url": "https://api.github.com/repos/radar/octopi/commits/da8d7e33965c5034c948357d176da2e6b3ac2365"
+  },
+  {
+    "author": {
+      "login": "radar",
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "committer": {
+      "login": "radar",
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "parents": [
+      {
+        "sha": "e9ee1e1897704626844e000c88778215533631ef",
+        "url": "https://api.github.com/repos/radar/octopi/commits/e9ee1e1897704626844e000c88778215533631ef"
+      },
+      {
+        "sha": "16553142cf92ec6b60eac962901c4e1b238e8af6",
+        "url": "https://api.github.com/repos/radar/octopi/commits/16553142cf92ec6b60eac962901c4e1b238e8af6"
+      }
+    ],
+    "commit": {
+      "tree": {
+        "sha": "3a5d96eaca9ce0684cae41ca9b48bef497b86483",
+        "url": "https://api.github.com/repos/radar/octopi/git/trees/3a5d96eaca9ce0684cae41ca9b48bef497b86483"
+      },
+      "message": "Merge pull request #67 from nithinbekal/patch-1\n\nFixed incorrect example 1 for explicit authentication in README. Refs #59",
+      "author": {
+        "date": "2011-09-21T11:35:04-07:00",
+        "name": "Ryan Bigg",
+        "email": "radarlistener@gmail.com"
+      },
+      "committer": {
+        "date": "2011-09-21T11:35:04-07:00",
+        "name": "Ryan Bigg",
+        "email": "radarlistener@gmail.com"
+      },
+      "url": "https://api.github.com/repos/radar/octopi/git/commits/16c9c20e57ec85089275908061893a704a9eb6c9"
+    },
+    "sha": "16c9c20e57ec85089275908061893a704a9eb6c9",
+    "url": "https://api.github.com/repos/radar/octopi/commits/16c9c20e57ec85089275908061893a704a9eb6c9"
+  },
+  {
+    "author": {
+      "login": "nithinbekal",
+      "avatar_url": "https://secure.gravatar.com/avatar/04fd01b158b5ca07858d023533b01b24?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 121782,
+      "url": "https://api.github.com/users/nithinbekal"
+    },
+    "committer": {
+      "login": "nithinbekal",
+      "avatar_url": "https://secure.gravatar.com/avatar/04fd01b158b5ca07858d023533b01b24?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 121782,
+      "url": "https://api.github.com/users/nithinbekal"
+    },
+    "parents": [
+      {
+        "sha": "e9ee1e1897704626844e000c88778215533631ef",
+        "url": "https://api.github.com/repos/radar/octopi/commits/e9ee1e1897704626844e000c88778215533631ef"
+      }
+    ],
+    "commit": {
+      "tree": {
+        "sha": "3a5d96eaca9ce0684cae41ca9b48bef497b86483",
+        "url": "https://api.github.com/repos/radar/octopi/git/trees/3a5d96eaca9ce0684cae41ca9b48bef497b86483"
+      },
+      "message": "Fixed incorrect example 1 for explicit authentication in README. Refs #59.",
+      "author": {
+        "date": "2011-09-21T11:31:32-07:00",
+        "name": "Nithin Bekal",
+        "email": "nithinbekal@gmail.com"
+      },
+      "committer": {
+        "date": "2011-09-21T11:31:32-07:00",
+        "name": "Nithin Bekal",
+        "email": "nithinbekal@gmail.com"
+      },
+      "url": "https://api.github.com/repos/radar/octopi/git/commits/16553142cf92ec6b60eac962901c4e1b238e8af6"
+    },
+    "sha": "16553142cf92ec6b60eac962901c4e1b238e8af6",
+    "url": "https://api.github.com/repos/radar/octopi/commits/16553142cf92ec6b60eac962901c4e1b238e8af6"
+  },
+  {
+    "author": {
+      "login": "radar",
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "committer": {
+      "login": "radar",
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "parents": [
+      {
+        "sha": "be482d98e49733b16fb22a7e7f0ee3b183ee454f",
+        "url": "https://api.github.com/repos/radar/octopi/commits/be482d98e49733b16fb22a7e7f0ee3b183ee454f"
+      }
+    ],
+    "commit": {
+      "tree": {
+        "sha": "ebb408ed7f6790da900f1bd55468d113ff5f35a1",
+        "url": "https://api.github.com/repos/radar/octopi/git/trees/ebb408ed7f6790da900f1bd55468d113ff5f35a1"
+      },
+      "message": "Ignore .rbc files",
+      "author": {
+        "date": "2011-07-06T14:40:53-07:00",
+        "name": "Ryan Bigg",
+        "email": "radarlistener@gmail.com"
+      },
+      "committer": {
+        "date": "2011-07-06T14:41:14-07:00",
+        "name": "Ryan Bigg",
+        "email": "radarlistener@gmail.com"
+      },
+      "url": "https://api.github.com/repos/radar/octopi/git/commits/e9ee1e1897704626844e000c88778215533631ef"
+    },
+    "sha": "e9ee1e1897704626844e000c88778215533631ef",
+    "url": "https://api.github.com/repos/radar/octopi/commits/e9ee1e1897704626844e000c88778215533631ef"
+  },
+  {
+    "author": {
+      "login": "radar",
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "committer": {
+      "login": "radar",
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "parents": [
+      {
+        "sha": "03bc23c3c3ba8e2cdaeecd74da20f1ae6b83c29e",
+        "url": "https://api.github.com/repos/radar/octopi/commits/03bc23c3c3ba8e2cdaeecd74da20f1ae6b83c29e"
+      }
+    ],
+    "commit": {
+      "tree": {
+        "sha": "2ab2b5b40fc993dcfa84710118d742647ae39b11",
+        "url": "https://api.github.com/repos/radar/octopi/git/trees/2ab2b5b40fc993dcfa84710118d742647ae39b11"
+      },
+      "message": "Bump to 0.4.5",
+      "author": {
+        "date": "2011-07-06T14:40:28-07:00",
+        "name": "Ryan Bigg",
+        "email": "radarlistener@gmail.com"
+      },
+      "committer": {
+        "date": "2011-07-06T14:41:14-07:00",
+        "name": "Ryan Bigg",
+        "email": "radarlistener@gmail.com"
+      },
+      "url": "https://api.github.com/repos/radar/octopi/git/commits/be482d98e49733b16fb22a7e7f0ee3b183ee454f"
+    },
+    "sha": "be482d98e49733b16fb22a7e7f0ee3b183ee454f",
+    "url": "https://api.github.com/repos/radar/octopi/commits/be482d98e49733b16fb22a7e7f0ee3b183ee454f"
+  },
+  {
+    "author": {
+      "login": "radar",
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "committer": {
+      "login": "radar",
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "parents": [
+      {
+        "sha": "413f15b29ecdfe90e864a8ac2b2c3dce32920dc7",
+        "url": "https://api.github.com/repos/radar/octopi/commits/413f15b29ecdfe90e864a8ac2b2c3dce32920dc7"
+      }
+    ],
+    "commit": {
+      "tree": {
+        "sha": "a4fcd391d676def887c4faccc03d685d05e6928c",
+        "url": "https://api.github.com/repos/radar/octopi/git/trees/a4fcd391d676def887c4faccc03d685d05e6928c"
+      },
+      "message": "Add tree support, for finding lists of files at a specific revision",
+      "author": {
+        "date": "2011-07-06T14:38:17-07:00",
+        "name": "Ryan Bigg",
+        "email": "radarlistener@gmail.com"
+      },
+      "committer": {
+        "date": "2011-07-06T14:41:14-07:00",
+        "name": "Ryan Bigg",
+        "email": "radarlistener@gmail.com"
+      },
+      "url": "https://api.github.com/repos/radar/octopi/git/commits/03bc23c3c3ba8e2cdaeecd74da20f1ae6b83c29e"
+    },
+    "sha": "03bc23c3c3ba8e2cdaeecd74da20f1ae6b83c29e",
+    "url": "https://api.github.com/repos/radar/octopi/commits/03bc23c3c3ba8e2cdaeecd74da20f1ae6b83c29e"
+  },
+  {
+    "author": {
+      "login": "radar",
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "committer": {
+      "login": "radar",
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "parents": [
+      {
+        "sha": "90b6152d7eb40bbdf746945d9fb2700c5f601166",
+        "url": "https://api.github.com/repos/radar/octopi/commits/90b6152d7eb40bbdf746945d9fb2700c5f601166"
+      }
+    ],
+    "commit": {
+      "tree": {
+        "sha": "05df49f633dc220da41b9bf0f458177eee16e5fd",
+        "url": "https://api.github.com/repos/radar/octopi/git/trees/05df49f633dc220da41b9bf0f458177eee16e5fd"
+      },
+      "message": "Fix my attribution link in README",
+      "author": {
+        "date": "2011-07-06T14:35:25-07:00",
+        "name": "Ryan Bigg",
+        "email": "radarlistener@gmail.com"
+      },
+      "committer": {
+        "date": "2011-07-06T14:41:14-07:00",
+        "name": "Ryan Bigg",
+        "email": "radarlistener@gmail.com"
+      },
+      "url": "https://api.github.com/repos/radar/octopi/git/commits/413f15b29ecdfe90e864a8ac2b2c3dce32920dc7"
+    },
+    "sha": "413f15b29ecdfe90e864a8ac2b2c3dce32920dc7",
+    "url": "https://api.github.com/repos/radar/octopi/commits/413f15b29ecdfe90e864a8ac2b2c3dce32920dc7"
+  },
+  {
+    "author": {
+      "login": "radar",
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "committer": {
+      "login": "radar",
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "parents": [
+      {
+        "sha": "f5a666673ef618ea3420b0c49508ff053faa3e5f",
+        "url": "https://api.github.com/repos/radar/octopi/commits/f5a666673ef618ea3420b0c49508ff053faa3e5f"
+      },
+      {
+        "sha": "16dc1e134e7cb990a0ea5e4cd6e88e3274159a66",
+        "url": "https://api.github.com/repos/radar/octopi/commits/16dc1e134e7cb990a0ea5e4cd6e88e3274159a66"
+      }
+    ],
+    "commit": {
+      "tree": {
+        "sha": "dbee03278b13d6cf437252b98110fd27697bf076",
+        "url": "https://api.github.com/repos/radar/octopi/git/trees/dbee03278b13d6cf437252b98110fd27697bf076"
+      },
+      "message": "Merge pull request #65 from robustdj/master\n\nFixing authentication with yml file",
+      "author": {
+        "date": "2011-06-06T21:57:29-07:00",
+        "name": "Ryan Bigg",
+        "email": "radarlistener@gmail.com"
+      },
+      "committer": {
+        "date": "2011-06-06T21:57:29-07:00",
+        "name": "Ryan Bigg",
+        "email": "radarlistener@gmail.com"
+      },
+      "url": "https://api.github.com/repos/radar/octopi/git/commits/90b6152d7eb40bbdf746945d9fb2700c5f601166"
+    },
+    "sha": "90b6152d7eb40bbdf746945d9fb2700c5f601166",
+    "url": "https://api.github.com/repos/radar/octopi/commits/90b6152d7eb40bbdf746945d9fb2700c5f601166"
+  },
+  {
+    "author": {
+      "login": "robustdj",
+      "avatar_url": "https://secure.gravatar.com/avatar/61466cd10801a854799bea36bd19e51f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 118005,
+      "url": "https://api.github.com/users/robustdj"
+    },
+    "committer": {
+      "login": "robustdj",
+      "avatar_url": "https://secure.gravatar.com/avatar/61466cd10801a854799bea36bd19e51f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 118005,
+      "url": "https://api.github.com/users/robustdj"
+    },
+    "parents": [
+      {
+        "sha": "a9f5aca2a493e197ed47b2018d85a07313a597f6",
+        "url": "https://api.github.com/repos/radar/octopi/commits/a9f5aca2a493e197ed47b2018d85a07313a597f6"
+      }
+    ],
+    "commit": {
+      "tree": {
+        "sha": "dbee03278b13d6cf437252b98110fd27697bf076",
+        "url": "https://api.github.com/repos/radar/octopi/git/trees/dbee03278b13d6cf437252b98110fd27697bf076"
+      },
+      "message": "slight refactor for fixing authentication through yml file",
+      "author": {
+        "date": "2011-06-02T11:38:35-07:00",
+        "name": "Derrick Camerino",
+        "email": "robustdj@gmail.com"
+      },
+      "committer": {
+        "date": "2011-06-02T11:38:35-07:00",
+        "name": "Derrick Camerino",
+        "email": "robustdj@gmail.com"
+      },
+      "url": "https://api.github.com/repos/radar/octopi/git/commits/16dc1e134e7cb990a0ea5e4cd6e88e3274159a66"
+    },
+    "sha": "16dc1e134e7cb990a0ea5e4cd6e88e3274159a66",
+    "url": "https://api.github.com/repos/radar/octopi/commits/16dc1e134e7cb990a0ea5e4cd6e88e3274159a66"
+  },
+  {
+    "author": {
+      "login": "robustdj",
+      "avatar_url": "https://secure.gravatar.com/avatar/61466cd10801a854799bea36bd19e51f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 118005,
+      "url": "https://api.github.com/users/robustdj"
+    },
+    "committer": {
+      "login": "robustdj",
+      "avatar_url": "https://secure.gravatar.com/avatar/61466cd10801a854799bea36bd19e51f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 118005,
+      "url": "https://api.github.com/users/robustdj"
+    },
+    "parents": [
+      {
+        "sha": "c836996faf5bafcc3488a5297c062a9134ff7437",
+        "url": "https://api.github.com/repos/radar/octopi/commits/c836996faf5bafcc3488a5297c062a9134ff7437"
+      }
+    ],
+    "commit": {
+      "tree": {
+        "sha": "b6b78039a3458a749b284e53b1e0b6dbfc54f99d",
+        "url": "https://api.github.com/repos/radar/octopi/git/trees/b6b78039a3458a749b284e53b1e0b6dbfc54f99d"
+      },
+      "message": "fixing readme",
+      "author": {
+        "date": "2011-06-01T22:02:35-07:00",
+        "name": "Derrick Camerino",
+        "email": "robustdj@gmail.com"
+      },
+      "committer": {
+        "date": "2011-06-01T22:02:35-07:00",
+        "name": "Derrick Camerino",
+        "email": "robustdj@gmail.com"
+      },
+      "url": "https://api.github.com/repos/radar/octopi/git/commits/a9f5aca2a493e197ed47b2018d85a07313a597f6"
+    },
+    "sha": "a9f5aca2a493e197ed47b2018d85a07313a597f6",
+    "url": "https://api.github.com/repos/radar/octopi/commits/a9f5aca2a493e197ed47b2018d85a07313a597f6"
+  },
+  {
+    "author": {
+      "login": "robustdj",
+      "avatar_url": "https://secure.gravatar.com/avatar/61466cd10801a854799bea36bd19e51f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 118005,
+      "url": "https://api.github.com/users/robustdj"
+    },
+    "committer": {
+      "login": "robustdj",
+      "avatar_url": "https://secure.gravatar.com/avatar/61466cd10801a854799bea36bd19e51f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 118005,
+      "url": "https://api.github.com/users/robustdj"
+    },
+    "parents": [
+      {
+        "sha": "f5a666673ef618ea3420b0c49508ff053faa3e5f",
+        "url": "https://api.github.com/repos/radar/octopi/commits/f5a666673ef618ea3420b0c49508ff053faa3e5f"
+      }
+    ],
+    "commit": {
+      "tree": {
+        "sha": "35cab17968a9a8156158d7526c5b270ec2e2fb5c",
+        "url": "https://api.github.com/repos/radar/octopi/git/trees/35cab17968a9a8156158d7526c5b270ec2e2fb5c"
+      },
+      "message": "fixing authentication with yml file",
+      "author": {
+        "date": "2011-06-01T21:59:29-07:00",
+        "name": "Derrick Camerino",
+        "email": "robustdj@gmail.com"
+      },
+      "committer": {
+        "date": "2011-06-01T21:59:29-07:00",
+        "name": "Derrick Camerino",
+        "email": "robustdj@gmail.com"
+      },
+      "url": "https://api.github.com/repos/radar/octopi/git/commits/c836996faf5bafcc3488a5297c062a9134ff7437"
+    },
+    "sha": "c836996faf5bafcc3488a5297c062a9134ff7437",
+    "url": "https://api.github.com/repos/radar/octopi/commits/c836996faf5bafcc3488a5297c062a9134ff7437"
+  },
+  {
+    "author": {
+      "login": "radar",
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "committer": {
+      "login": "radar",
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "parents": [
+      {
+        "sha": "99478dd1bf3166c634a5b7ca2881f9a928037999",
+        "url": "https://api.github.com/repos/radar/octopi/commits/99478dd1bf3166c634a5b7ca2881f9a928037999"
+      }
+    ],
+    "commit": {
+      "tree": {
+        "sha": "693bda62f71faf2c9e4fbfe59d2d188730904b1b",
+        "url": "https://api.github.com/repos/radar/octopi/git/trees/693bda62f71faf2c9e4fbfe59d2d188730904b1b"
+      },
+      "message": "Bump to 0.4.4",
+      "author": {
+        "date": "2011-05-12T21:37:02-07:00",
+        "name": "Ryan Bigg",
+        "email": "radarlistener@gmail.com"
+      },
+      "committer": {
+        "date": "2011-05-12T21:37:02-07:00",
+        "name": "Ryan Bigg",
+        "email": "radarlistener@gmail.com"
+      },
+      "url": "https://api.github.com/repos/radar/octopi/git/commits/f5a666673ef618ea3420b0c49508ff053faa3e5f"
+    },
+    "sha": "f5a666673ef618ea3420b0c49508ff053faa3e5f",
+    "url": "https://api.github.com/repos/radar/octopi/commits/f5a666673ef618ea3420b0c49508ff053faa3e5f"
+  },
+  {
+    "author": {
+      "login": "radar",
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "committer": {
+      "login": "radar",
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "parents": [
+      {
+        "sha": "f58c47da9092e4093c56f4c03c37282037b257b4",
+        "url": "https://api.github.com/repos/radar/octopi/commits/f58c47da9092e4093c56f4c03c37282037b257b4"
+      }
+    ],
+    "commit": {
+      "tree": {
+        "sha": "f566c84c6f51844ffed181a475a6309c3699bebb",
+        "url": "https://api.github.com/repos/radar/octopi/git/trees/f566c84c6f51844ffed181a475a6309c3699bebb"
+      },
+      "message": "Switch to using Bundler for total gem management",
+      "author": {
+        "date": "2011-05-12T21:36:36-07:00",
+        "name": "Ryan Bigg",
+        "email": "radarlistener@gmail.com"
+      },
+      "committer": {
+        "date": "2011-05-12T21:36:36-07:00",
+        "name": "Ryan Bigg",
+        "email": "radarlistener@gmail.com"
+      },
+      "url": "https://api.github.com/repos/radar/octopi/git/commits/99478dd1bf3166c634a5b7ca2881f9a928037999"
+    },
+    "sha": "99478dd1bf3166c634a5b7ca2881f9a928037999",
+    "url": "https://api.github.com/repos/radar/octopi/commits/99478dd1bf3166c634a5b7ca2881f9a928037999"
+  },
+  {
+    "author": {
+      "login": "radar",
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "committer": {
+      "login": "radar",
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "parents": [
+      {
+        "sha": "df7b7478436164cad3c300961793bb9acad073ea",
+        "url": "https://api.github.com/repos/radar/octopi/commits/df7b7478436164cad3c300961793bb9acad073ea"
+      }
+    ],
+    "commit": {
+      "tree": {
+        "sha": "1110ad8612604a3cd8cba53eb0b1472d8cd0db89",
+        "url": "https://api.github.com/repos/radar/octopi/git/trees/1110ad8612604a3cd8cba53eb0b1472d8cd0db89"
+      },
+      "message": "Regenerate gemspec for version 0.4.3",
+      "author": {
+        "date": "2011-05-12T04:31:19-07:00",
+        "name": "Ryan Bigg",
+        "email": "radarlistener@gmail.com"
+      },
+      "committer": {
+        "date": "2011-05-12T04:31:19-07:00",
+        "name": "Ryan Bigg",
+        "email": "radarlistener@gmail.com"
+      },
+      "url": "https://api.github.com/repos/radar/octopi/git/commits/f58c47da9092e4093c56f4c03c37282037b257b4"
+    },
+    "sha": "f58c47da9092e4093c56f4c03c37282037b257b4",
+    "url": "https://api.github.com/repos/radar/octopi/commits/f58c47da9092e4093c56f4c03c37282037b257b4"
+  },
+  {
+    "author": {
+      "login": "radar",
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "committer": {
+      "login": "radar",
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "parents": [
+      {
+        "sha": "392416962f28a415aecf0a84ca1682b5ca39e419",
+        "url": "https://api.github.com/repos/radar/octopi/commits/392416962f28a415aecf0a84ca1682b5ca39e419"
+      }
+    ],
+    "commit": {
+      "tree": {
+        "sha": "fc724f020d342e172844c1beb789faf803910f43",
+        "url": "https://api.github.com/repos/radar/octopi/git/trees/fc724f020d342e172844c1beb789faf803910f43"
+      },
+      "message": "Add Gemfile for easier development",
+      "author": {
+        "date": "2011-05-12T04:31:10-07:00",
+        "name": "Ryan Bigg",
+        "email": "radarlistener@gmail.com"
+      },
+      "committer": {
+        "date": "2011-05-12T04:31:10-07:00",
+        "name": "Ryan Bigg",
+        "email": "radarlistener@gmail.com"
+      },
+      "url": "https://api.github.com/repos/radar/octopi/git/commits/df7b7478436164cad3c300961793bb9acad073ea"
+    },
+    "sha": "df7b7478436164cad3c300961793bb9acad073ea",
+    "url": "https://api.github.com/repos/radar/octopi/commits/df7b7478436164cad3c300961793bb9acad073ea"
+  },
+  {
+    "author": {
+      "login": "radar",
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "committer": {
+      "login": "radar",
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "parents": [
+      {
+        "sha": "8787a757349c6408809ee145a6c715e60badcb20",
+        "url": "https://api.github.com/repos/radar/octopi/commits/8787a757349c6408809ee145a6c715e60badcb20"
+      }
+    ],
+    "commit": {
+      "tree": {
+        "sha": "af2fd843376cf1e635af89b11cc66b853cebc13a",
+        "url": "https://api.github.com/repos/radar/octopi/git/trees/af2fd843376cf1e635af89b11cc66b853cebc13a"
+      },
+      "message": "Version bump to 0.4.3",
+      "author": {
+        "date": "2011-05-12T04:30:47-07:00",
+        "name": "Ryan Bigg",
+        "email": "radarlistener@gmail.com"
+      },
+      "committer": {
+        "date": "2011-05-12T04:30:47-07:00",
+        "name": "Ryan Bigg",
+        "email": "radarlistener@gmail.com"
+      },
+      "url": "https://api.github.com/repos/radar/octopi/git/commits/392416962f28a415aecf0a84ca1682b5ca39e419"
+    },
+    "sha": "392416962f28a415aecf0a84ca1682b5ca39e419",
+    "url": "https://api.github.com/repos/radar/octopi/commits/392416962f28a415aecf0a84ca1682b5ca39e419"
+  },
+  {
+    "author": {
+      "login": "lenary",
+      "avatar_url": "https://secure.gravatar.com/avatar/334a587ef1901e2d48dfd15f90522496?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 14548,
+      "url": "https://api.github.com/users/lenary"
+    },
+    "committer": {
+      "login": "lenary",
+      "avatar_url": "https://secure.gravatar.com/avatar/334a587ef1901e2d48dfd15f90522496?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 14548,
+      "url": "https://api.github.com/users/lenary"
+    },
+    "parents": [
+      {
+        "sha": "e81e3fc9b36f560afc869a935c4e402b38186661",
+        "url": "https://api.github.com/repos/radar/octopi/commits/e81e3fc9b36f560afc869a935c4e402b38186661"
+      }
+    ],
+    "commit": {
+      "tree": {
+        "sha": "ee2a6059387a82a4cda0d84dc931799aa04473dd",
+        "url": "https://api.github.com/repos/radar/octopi/git/trees/ee2a6059387a82a4cda0d84dc931799aa04473dd"
+      },
+      "message": "Find users by email!\n\nAce, because sometimes that's what you need to do!",
+      "author": {
+        "date": "2011-05-11T15:48:27-07:00",
+        "name": "Sam Elliott",
+        "email": "sam@lenary.co.uk"
+      },
+      "committer": {
+        "date": "2011-05-11T15:48:27-07:00",
+        "name": "Sam Elliott",
+        "email": "sam@lenary.co.uk"
+      },
+      "url": "https://api.github.com/repos/radar/octopi/git/commits/8787a757349c6408809ee145a6c715e60badcb20"
+    },
+    "sha": "8787a757349c6408809ee145a6c715e60badcb20",
+    "url": "https://api.github.com/repos/radar/octopi/commits/8787a757349c6408809ee145a6c715e60badcb20"
+  },
+  {
+    "author": {
+      "login": "radar",
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "committer": {
+      "login": "radar",
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "parents": [
+      {
+        "sha": "8cdbec4827917e174eadcbc9a85ba1e9fd3bfa8d",
+        "url": "https://api.github.com/repos/radar/octopi/commits/8cdbec4827917e174eadcbc9a85ba1e9fd3bfa8d"
+      }
+    ],
+    "commit": {
+      "tree": {
+        "sha": "b4bf23d6a286e153aa1f859fbd65f45e7c9651db",
+        "url": "https://api.github.com/repos/radar/octopi/git/trees/b4bf23d6a286e153aa1f859fbd65f45e7c9651db"
+      },
+      "message": "Regenerate gemspec for version 0.4.2",
+      "author": {
+        "date": "2011-04-27T23:31:51-07:00",
+        "name": "Ryan Bigg",
+        "email": "radarlistener@gmail.com"
+      },
+      "committer": {
+        "date": "2011-04-27T23:31:51-07:00",
+        "name": "Ryan Bigg",
+        "email": "radarlistener@gmail.com"
+      },
+      "url": "https://api.github.com/repos/radar/octopi/git/commits/e81e3fc9b36f560afc869a935c4e402b38186661"
+    },
+    "sha": "e81e3fc9b36f560afc869a935c4e402b38186661",
+    "url": "https://api.github.com/repos/radar/octopi/commits/e81e3fc9b36f560afc869a935c4e402b38186661"
+  },
+  {
+    "author": {
+      "login": "radar",
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "committer": {
+      "login": "radar",
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "parents": [
+      {
+        "sha": "ee3730e8b7f7ab630c82c4996bb1931efbc42052",
+        "url": "https://api.github.com/repos/radar/octopi/commits/ee3730e8b7f7ab630c82c4996bb1931efbc42052"
+      }
+    ],
+    "commit": {
+      "tree": {
+        "sha": "44cca5dd297d10eeea7a36c2f041d33710498e05",
+        "url": "https://api.github.com/repos/radar/octopi/git/trees/44cca5dd297d10eeea7a36c2f041d33710498e05"
+      },
+      "message": "Version bump to 0.4.2",
+      "author": {
+        "date": "2011-04-27T23:31:18-07:00",
+        "name": "Ryan Bigg",
+        "email": "radarlistener@gmail.com"
+      },
+      "committer": {
+        "date": "2011-04-27T23:31:18-07:00",
+        "name": "Ryan Bigg",
+        "email": "radarlistener@gmail.com"
+      },
+      "url": "https://api.github.com/repos/radar/octopi/git/commits/8cdbec4827917e174eadcbc9a85ba1e9fd3bfa8d"
+    },
+    "sha": "8cdbec4827917e174eadcbc9a85ba1e9fd3bfa8d",
+    "url": "https://api.github.com/repos/radar/octopi/commits/8cdbec4827917e174eadcbc9a85ba1e9fd3bfa8d"
+  },
+  {
+    "author": {
+      "login": "radar",
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "committer": {
+      "login": "radar",
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "parents": [
+      {
+        "sha": "c3640ab7ab8e494b002f479443cf6a91d40ab93f",
+        "url": "https://api.github.com/repos/radar/octopi/commits/c3640ab7ab8e494b002f479443cf6a91d40ab93f"
+      }
+    ],
+    "commit": {
+      "tree": {
+        "sha": "603f00758a1fb176f1e4451748b58623df3c5142",
+        "url": "https://api.github.com/repos/radar/octopi/git/trees/603f00758a1fb176f1e4451748b58623df3c5142"
+      },
+      "message": "Add other issue comment fields that were missed in the earlier update",
+      "author": {
+        "date": "2011-04-27T23:31:09-07:00",
+        "name": "Ryan Bigg",
+        "email": "radarlistener@gmail.com"
+      },
+      "committer": {
+        "date": "2011-04-27T23:31:09-07:00",
+        "name": "Ryan Bigg",
+        "email": "radarlistener@gmail.com"
+      },
+      "url": "https://api.github.com/repos/radar/octopi/git/commits/ee3730e8b7f7ab630c82c4996bb1931efbc42052"
+    },
+    "sha": "ee3730e8b7f7ab630c82c4996bb1931efbc42052",
+    "url": "https://api.github.com/repos/radar/octopi/commits/ee3730e8b7f7ab630c82c4996bb1931efbc42052"
+  },
+  {
+    "author": {
+      "login": "radar",
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "committer": {
+      "login": "radar",
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "parents": [
+      {
+        "sha": "2eb20cd361bb084a683b725c326e812da98ac761",
+        "url": "https://api.github.com/repos/radar/octopi/commits/2eb20cd361bb084a683b725c326e812da98ac761"
+      }
+    ],
+    "commit": {
+      "tree": {
+        "sha": "10d3146813214e9be29810e1481b6989a7e760e2",
+        "url": "https://api.github.com/repos/radar/octopi/git/trees/10d3146813214e9be29810e1481b6989a7e760e2"
+      },
+      "message": "Regenerate gemspec for version 0.4.1",
+      "author": {
+        "date": "2011-04-27T21:28:29-07:00",
+        "name": "Ryan Bigg",
+        "email": "radarlistener@gmail.com"
+      },
+      "committer": {
+        "date": "2011-04-27T21:28:29-07:00",
+        "name": "Ryan Bigg",
+        "email": "radarlistener@gmail.com"
+      },
+      "url": "https://api.github.com/repos/radar/octopi/git/commits/c3640ab7ab8e494b002f479443cf6a91d40ab93f"
+    },
+    "sha": "c3640ab7ab8e494b002f479443cf6a91d40ab93f",
+    "url": "https://api.github.com/repos/radar/octopi/commits/c3640ab7ab8e494b002f479443cf6a91d40ab93f"
+  },
+  {
+    "author": {
+      "login": "radar",
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "committer": {
+      "login": "radar",
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "parents": [
+      {
+        "sha": "740e135d8d731668c5ebd7d4eb03930ce8910ce8",
+        "url": "https://api.github.com/repos/radar/octopi/commits/740e135d8d731668c5ebd7d4eb03930ce8910ce8"
+      }
+    ],
+    "commit": {
+      "tree": {
+        "sha": "1ccf6c4dd6b71c10135e5427dbb2e0c6232cc974",
+        "url": "https://api.github.com/repos/radar/octopi/git/trees/1ccf6c4dd6b71c10135e5427dbb2e0c6232cc974"
+      },
+      "message": "Add missing stub for issues comments feature",
+      "author": {
+        "date": "2011-04-27T21:27:59-07:00",
+        "name": "Ryan Bigg",
+        "email": "radarlistener@gmail.com"
+      },
+      "committer": {
+        "date": "2011-04-27T21:28:04-07:00",
+        "name": "Ryan Bigg",
+        "email": "radarlistener@gmail.com"
+      },
+      "url": "https://api.github.com/repos/radar/octopi/git/commits/2eb20cd361bb084a683b725c326e812da98ac761"
+    },
+    "sha": "2eb20cd361bb084a683b725c326e812da98ac761",
+    "url": "https://api.github.com/repos/radar/octopi/commits/2eb20cd361bb084a683b725c326e812da98ac761"
+  },
+  {
+    "author": {
+      "login": "radar",
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "committer": {
+      "login": "radar",
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "parents": [
+      {
+        "sha": "91c0a02ab5de12ab4379ca423762ff19c812f392",
+        "url": "https://api.github.com/repos/radar/octopi/commits/91c0a02ab5de12ab4379ca423762ff19c812f392"
+      }
+    ],
+    "commit": {
+      "tree": {
+        "sha": "e21f331cc59b2cf0d22ff435f37ac9792cf60a29",
+        "url": "https://api.github.com/repos/radar/octopi/git/trees/e21f331cc59b2cf0d22ff435f37ac9792cf60a29"
+      },
+      "message": "Version bump to 0.4.1",
+      "author": {
+        "date": "2011-04-27T21:27:37-07:00",
+        "name": "Ryan Bigg",
+        "email": "radarlistener@gmail.com"
+      },
+      "committer": {
+        "date": "2011-04-27T21:27:37-07:00",
+        "name": "Ryan Bigg",
+        "email": "radarlistener@gmail.com"
+      },
+      "url": "https://api.github.com/repos/radar/octopi/git/commits/740e135d8d731668c5ebd7d4eb03930ce8910ce8"
+    },
+    "sha": "740e135d8d731668c5ebd7d4eb03930ce8910ce8",
+    "url": "https://api.github.com/repos/radar/octopi/commits/740e135d8d731668c5ebd7d4eb03930ce8910ce8"
+  },
+  {
+    "author": {
+      "login": "radar",
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "committer": {
+      "login": "radar",
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "parents": [
+      {
+        "sha": "4ef8303fca4b0bb13cca02e41a0dc51ae4b31e26",
+        "url": "https://api.github.com/repos/radar/octopi/commits/4ef8303fca4b0bb13cca02e41a0dc51ae4b31e26"
+      }
+    ],
+    "commit": {
+      "tree": {
+        "sha": "aaab565d19466456fcfa7f17cc1c4cfb7924d4df",
+        "url": "https://api.github.com/repos/radar/octopi/git/trees/aaab565d19466456fcfa7f17cc1c4cfb7924d4df"
+      },
+      "message": "Add ability to grab comments for issues. Fixes #60",
+      "author": {
+        "date": "2011-04-27T21:26:36-07:00",
+        "name": "Ryan Bigg",
+        "email": "radarlistener@gmail.com"
+      },
+      "committer": {
+        "date": "2011-04-27T21:26:36-07:00",
+        "name": "Ryan Bigg",
+        "email": "radarlistener@gmail.com"
+      },
+      "url": "https://api.github.com/repos/radar/octopi/git/commits/91c0a02ab5de12ab4379ca423762ff19c812f392"
+    },
+    "sha": "91c0a02ab5de12ab4379ca423762ff19c812f392",
+    "url": "https://api.github.com/repos/radar/octopi/commits/91c0a02ab5de12ab4379ca423762ff19c812f392"
+  },
+  {
+    "author": {
+      "login": "jamtur01",
+      "avatar_url": "https://secure.gravatar.com/avatar/31cc2100279326dd6148a7e163692097?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 4365,
+      "url": "https://api.github.com/users/jamtur01"
+    },
+    "committer": {
+      "login": "jamtur01",
+      "avatar_url": "https://secure.gravatar.com/avatar/31cc2100279326dd6148a7e163692097?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 4365,
+      "url": "https://api.github.com/users/jamtur01"
+    },
+    "parents": [
+      {
+        "sha": "6541a1ee07ee6b29b4662b50428686ba91793a55",
+        "url": "https://api.github.com/repos/radar/octopi/commits/6541a1ee07ee6b29b4662b50428686ba91793a55"
+      }
+    ],
+    "commit": {
+      "tree": {
+        "sha": "f51c167da76bea5bc08a21c1bec46d54aa2a8fc4",
+        "url": "https://api.github.com/repos/radar/octopi/git/trees/f51c167da76bea5bc08a21c1bec46d54aa2a8fc4"
+      },
+      "message": "Added gem dependencies for dev to spec",
+      "author": {
+        "date": "2011-04-10T17:25:33-07:00",
+        "name": "James Turnbull",
+        "email": "james@lovedthanlost.net"
+      },
+      "committer": {
+        "date": "2011-04-10T17:25:33-07:00",
+        "name": "James Turnbull",
+        "email": "james@lovedthanlost.net"
+      },
+      "url": "https://api.github.com/repos/radar/octopi/git/commits/4ef8303fca4b0bb13cca02e41a0dc51ae4b31e26"
+    },
+    "sha": "4ef8303fca4b0bb13cca02e41a0dc51ae4b31e26",
+    "url": "https://api.github.com/repos/radar/octopi/commits/4ef8303fca4b0bb13cca02e41a0dc51ae4b31e26"
+  },
+  {
+    "author": {
+      "login": "radar",
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "committer": {
+      "login": "radar",
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "parents": [
+      {
+        "sha": "61253f7560acb36678a1f5ec9208e510132c3549",
+        "url": "https://api.github.com/repos/radar/octopi/commits/61253f7560acb36678a1f5ec9208e510132c3549"
+      },
+      {
+        "sha": "807a0a512d958b39dd1751ea0347a2405fc0de2e",
+        "url": "https://api.github.com/repos/radar/octopi/commits/807a0a512d958b39dd1751ea0347a2405fc0de2e"
+      }
+    ],
+    "commit": {
+      "tree": {
+        "sha": "f26c0402e27889d4ff08f702b269dc64c59604bd",
+        "url": "https://api.github.com/repos/radar/octopi/git/trees/f26c0402e27889d4ff08f702b269dc64c59604bd"
+      },
+      "message": "Merge branch 'master' of git://github.com/parndt/octopi\n\n* 'master' of git://github.com/parndt/octopi:\n  I didn't have any functionality without 'include Octopi' so I'm documenting it in the README.",
+      "author": {
+        "date": "2011-03-27T19:49:29-07:00",
+        "name": "Ryan Bigg",
+        "email": "radarlistener@gmail.com"
+      },
+      "committer": {
+        "date": "2011-03-27T19:49:29-07:00",
+        "name": "Ryan Bigg",
+        "email": "radarlistener@gmail.com"
+      },
+      "url": "https://api.github.com/repos/radar/octopi/git/commits/6541a1ee07ee6b29b4662b50428686ba91793a55"
+    },
+    "sha": "6541a1ee07ee6b29b4662b50428686ba91793a55",
+    "url": "https://api.github.com/repos/radar/octopi/commits/6541a1ee07ee6b29b4662b50428686ba91793a55"
+  },
+  {
+    "author": {
+      "login": "parndt",
+      "avatar_url": "https://secure.gravatar.com/avatar/1d676127a3e4c0531e2d37dabef0a12d?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 10128,
+      "url": "https://api.github.com/users/parndt"
+    },
+    "committer": {
+      "login": "parndt",
+      "avatar_url": "https://secure.gravatar.com/avatar/1d676127a3e4c0531e2d37dabef0a12d?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 10128,
+      "url": "https://api.github.com/users/parndt"
+    },
+    "parents": [
+      {
+        "sha": "4dbfe0ce85ed7bc14d63d7bc4d8deed5ae0026e2",
+        "url": "https://api.github.com/repos/radar/octopi/commits/4dbfe0ce85ed7bc14d63d7bc4d8deed5ae0026e2"
+      }
+    ],
+    "commit": {
+      "tree": {
+        "sha": "46ed4e45679f531978dec01e45433a70e6518b07",
+        "url": "https://api.github.com/repos/radar/octopi/git/trees/46ed4e45679f531978dec01e45433a70e6518b07"
+      },
+      "message": "I didn't have any functionality without 'include Octopi' so I'm documenting it in the README.",
+      "author": {
+        "date": "2011-03-27T19:48:17-07:00",
+        "name": "Philip Arndt",
+        "email": "parndt@gmail.com"
+      },
+      "committer": {
+        "date": "2011-03-27T19:48:17-07:00",
+        "name": "Philip Arndt",
+        "email": "parndt@gmail.com"
+      },
+      "url": "https://api.github.com/repos/radar/octopi/git/commits/807a0a512d958b39dd1751ea0347a2405fc0de2e"
+    },
+    "sha": "807a0a512d958b39dd1751ea0347a2405fc0de2e",
+    "url": "https://api.github.com/repos/radar/octopi/commits/807a0a512d958b39dd1751ea0347a2405fc0de2e"
+  },
+  {
+    "author": {
+      "login": "radar",
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "committer": {
+      "login": "radar",
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "parents": [
+      {
+        "sha": "4dbfe0ce85ed7bc14d63d7bc4d8deed5ae0026e2",
+        "url": "https://api.github.com/repos/radar/octopi/commits/4dbfe0ce85ed7bc14d63d7bc4d8deed5ae0026e2"
+      }
+    ],
+    "commit": {
+      "tree": {
+        "sha": "e85f025640dc39b72805a5a571a38d3890817e71",
+        "url": "https://api.github.com/repos/radar/octopi/git/trees/e85f025640dc39b72805a5a571a38d3890817e71"
+      },
+      "message": "Remove hash that did nothing",
+      "author": {
+        "date": "2011-03-26T14:52:32-07:00",
+        "name": "Ryan Bigg",
+        "email": "radarlistener@gmail.com"
+      },
+      "committer": {
+        "date": "2011-03-26T14:52:32-07:00",
+        "name": "Ryan Bigg",
+        "email": "radarlistener@gmail.com"
+      },
+      "url": "https://api.github.com/repos/radar/octopi/git/commits/61253f7560acb36678a1f5ec9208e510132c3549"
+    },
+    "sha": "61253f7560acb36678a1f5ec9208e510132c3549",
+    "url": "https://api.github.com/repos/radar/octopi/commits/61253f7560acb36678a1f5ec9208e510132c3549"
+  },
+  {
+    "author": {
+      "login": "radar",
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "committer": {
+      "login": "radar",
+      "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 2687,
+      "url": "https://api.github.com/users/radar"
+    },
+    "parents": [
+      {
+        "sha": "b37b47e0d26c1ae3f9cc5d17bd559ca72ad241a1",
+        "url": "https://api.github.com/repos/radar/octopi/commits/b37b47e0d26c1ae3f9cc5d17bd559ca72ad241a1"
+      }
+    ],
+    "commit": {
+      "tree": {
+        "sha": "7496d27fce180bea4724f29fa0568bfbd9382a6d",
+        "url": "https://api.github.com/repos/radar/octopi/git/trees/7496d27fce180bea4724f29fa0568bfbd9382a6d"
+      },
+      "message": "Issue.find_all with no state option passed returns all issues for repo (open and closed), as does repo.all_issues",
+      "author": {
+        "date": "2011-03-26T14:37:44-07:00",
+        "name": "Ryan Bigg",
+        "email": "radarlistener@gmail.com"
+      },
+      "committer": {
+        "date": "2011-03-26T14:37:44-07:00",
+        "name": "Ryan Bigg",
+        "email": "radarlistener@gmail.com"
+      },
+      "url": "https://api.github.com/repos/radar/octopi/git/commits/4dbfe0ce85ed7bc14d63d7bc4d8deed5ae0026e2"
+    },
+    "sha": "4dbfe0ce85ed7bc14d63d7bc4d8deed5ae0026e2",
+    "url": "https://api.github.com/repos/radar/octopi/commits/4dbfe0ce85ed7bc14d63d7bc4d8deed5ae0026e2"
+  }
+]
