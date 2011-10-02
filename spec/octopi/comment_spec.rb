@@ -60,7 +60,6 @@ describe Octopi::Comment do
     end
 
     it "retreives a comment" do
-      path =
       comment = repo.comments.find(624863)
       comment.is_a?(Octopi::Comment).should be_true
       WebMock.should have_requested(:get, path)
