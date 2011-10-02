@@ -9,6 +9,7 @@ describe Octopi::Comment do
   let(:repo) { Octopi::Repo.find("fcoury/octopi") }
   it "has attributes" do
     comment = repo.comments.first
+    comment.is_a?(Octopi::Comment).should be_true
     comment.updated_at.should == "2009-12-15T09:31:19Z"
     comment.line.should be_nil
     comment.body.should_not == ""
@@ -39,7 +40,14 @@ describe Octopi::Comment do
     it "attempts to create an invalid comment"
   end
 
-  it "retreives a comment"
+  it "retreives a comment" do
+    path = base_url + "repos/fcoury/octopi/comments/624863"
+    api_stub("repos/fcoury/octopi/comments/624863")
+    comment = repo.comments.find(624863)
+    comment.is_a?(Octopi::Comment).should be_true
+    WebMock.should have_requested(:get, path)
+  end
+
   it "updates a comment"
   it "deletes a comment"
 end
