@@ -62,7 +62,7 @@ describe Octopi::Comment do
     it "retreives a comment" do
       comment = repo.comments.find(624863)
       comment.is_a?(Octopi::Comment).should be_true
-      WebMock.should have_requested(:get, path)
+      WebMock.should have_requested(:get, base_url + "repos/fcoury/octopi/comments/624863")
     end
   end
 end
