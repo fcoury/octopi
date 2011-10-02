@@ -150,7 +150,7 @@ describe Octopi::Repo do
         
         it "can update a repository's detail" do
           authenticated_api_stub("repos/radar/octopi")
-          stub_request(:put, "https://radar:password@api.github.com/repos/radar/octopi")
+          stub_request(:put, "https://radar:password@api.github.com/repos/radar/octopi").to_return(fake("repos/radar/octopi/update"))
           repo.update(:description => "omg")
           WebMock.should have_requested(:put, "https://radar:password@api.github.com/repos/radar/octopi").with(:body => '{"description":"omg"}')
         end

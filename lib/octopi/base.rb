@@ -1,7 +1,7 @@
 module Octopi
   class Base
     
-    attr_accessor :attributes
+    attr_accessor :attributes, :errors
 
     def self.all
       from_collection(get(collection_url))
@@ -31,14 +31,7 @@ module Octopi
     end
     
     def initialize(attributes)
-      @attributes = {}
-      attributes.each do |k, v|
-        @attributes[k] = v 
-        self.class.send(:define_method, k) do
-          @attributes[k.to_sym]
-        end unless respond_to?(k)
-      end
-      @attributes.symbolize_keys!
+      self.attributes = attributes
     end
     
     def create
@@ -47,7 +40,16 @@ module Octopi
 
     def update(attributes)
       Octopi.requires_authentication! do
-        self.class.new(self.class.put(url, :body => attributes.to_json))
+        response = self.class.put(url, :body => attributes.to_json)
+        parsed_response = self.class.parse(response)
+        if response.code.to_i == 422
+          self.errors = parsed_response
+          return false
+        else
+          self.attributes = parsed_response
+          self.errors = {}
+          return true
+        end
       end
     end
 
@@ -100,6 +102,21 @@ module Octopi
     
     def self.not_found_error
       "The #{self} you were looking for could not be found."
+    end
+    
+    def attributes=(attributes)
+      @attributes = {}
+      attributes.each do |k, v|
+        @attributes[k] = v 
+        self.class.send(:define_method, k) do
+          @attributes[k.to_sym]
+        end unless respond_to?(k)
+      end
+      @attributes.symbolize_keys!
+    end
+    
+    def errors=(errors)
+      @errors = errors["errors"]
     end
 
     def url

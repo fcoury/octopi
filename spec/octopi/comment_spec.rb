@@ -39,18 +39,26 @@ describe Octopi::Comment do
     end
     
     it "attempts to create an invalid comment"
+    
+    context "a single comment" do
+      let(:path) { authenticated_base_url + "repos/fcoury/octopi/comments/624863" }
+      let(:comment) { repo.comments.find(624863) }
 
-    it "updates a comment" do
-      path = authenticated_base_url + "repos/fcoury/octopi/comments/624863" 
-      stub_request(:put, path).to_return(fake("repos/fcoury/octopi/comments/update"))
-      comment = repo.comments.find(624863)
-      comment.update(:body => "This is an update.")
-      WebMock.should have_requested(:put, path).with(:body => '{"body":"This is an update."}')
-    end
+      it "is updated" do
+        stub_request(:put, path).to_return(fake("repos/fcoury/octopi/comments/update"))
+        comment.update(:body => "This is an update.").should be_true
+        WebMock.should have_requested(:put, path).with(:body => '{"body":"This is an update."}')
+      end
+    
+      it "cannot be updated to have blank text" do
+        errors = { "errors" => [{ "field" => "body", "code" => "missing_field", "resource" => "CommitComment" }]}.to_json
+        stub_request(:put, path).to_return(:body => errors, :status => 422)
+        comment.update(:body => "").should be_false
+        comment.errors.should == [{"field"=>"body", "code"=>"missing_field", "resource"=>"CommitComment"}]
+        WebMock.should have_requested(:put, path).with(:body => '{"body":""}')
+      end
 
-    it "deletes a comment" do
-      path = authenticated_base_url + "repos/fcoury/octopi/comments/624863" 
-          
+      it "is deleted"
     end
   end
   
