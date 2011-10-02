@@ -29,6 +29,20 @@ module Octopi
   class NotFound < StandardError
   end
   
+  class InvalidResource < StandardError
+    def initialize(errors)
+      resource = errors.first["resource"]
+      errors.map! do |error|
+        case error["code"]
+          
+        when "missing_field"
+          "#{error["field"]} cannot be blank"
+        end
+      end
+      super("#{resource} is invalid: #{errors.join(",")}")
+    end
+  end
+  
   include HTTParty
   base_uri "https://api.github.com"
 

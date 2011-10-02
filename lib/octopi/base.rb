@@ -43,12 +43,10 @@ module Octopi
         response = self.class.put(url, :body => attributes.to_json)
         parsed_response = self.class.parse(response)
         if response.code.to_i == 422
-          self.errors = parsed_response
-          return false
+          raise Octopi::InvalidResource, parsed_response["errors"]
         else
           self.attributes = parsed_response
-          self.errors = {}
-          return true
+          self
         end
       end
     end
@@ -113,10 +111,6 @@ module Octopi
         end unless respond_to?(k)
       end
       @attributes.symbolize_keys!
-    end
-    
-    def errors=(errors)
-      @errors = errors["errors"]
     end
 
     def url

@@ -38,7 +38,14 @@ describe Octopi::Comment do
       WebMock.should have_requested(:post, authenticated_base_url + "repos/fcoury/octopi/comments").with(:body => '{"body":"This is a brand new comment!","commit_id":"38b679a92a49bb49a72e57d99639e26830b7792b"}')
     end
     
-    it "attempts to create an invalid comment"
+    it "attempts to create an invalid comment" do
+      errors = { "errors" => [{ "field" => "body", "code" => "missing_field", "resource" => "CommitComment" }]}.to_json
+      stub_request(:post, authenticated_base_url + "repos/fcoury/octopi/comments").to_return(:status => 422, :body => errors)
+      creation_attempt = lambda { repo.comments.create(:body => "", :commit_id => "38b679a92a49bb49a72e57d99639e26830b7792b") }
+      creation_attempt.should raise_error(Octopi::InvalidResource, "CommitComment is invalid: body cannot be blank")
+      WebMock.should have_requested(:post, authenticated_base_url + "repos/fcoury/octopi/comments").with(:body => '{"body":"","commit_id":"38b679a92a49bb49a72e57d99639e26830b7792b"}')
+      
+    end
     
     context "a single comment" do
       let(:path) { authenticated_base_url + "repos/fcoury/octopi/comments/624863" }
@@ -46,15 +53,14 @@ describe Octopi::Comment do
 
       it "is updated" do
         stub_request(:put, path).to_return(fake("repos/fcoury/octopi/comments/update"))
-        comment.update(:body => "This is an update.").should be_true
+        comment.update(:body => "This is an update.")
         WebMock.should have_requested(:put, path).with(:body => '{"body":"This is an update."}')
       end
     
       it "cannot be updated to have blank text" do
         errors = { "errors" => [{ "field" => "body", "code" => "missing_field", "resource" => "CommitComment" }]}.to_json
         stub_request(:put, path).to_return(:body => errors, :status => 422)
-        comment.update(:body => "").should be_false
-        comment.errors.should == [{"field"=>"body", "code"=>"missing_field", "resource"=>"CommitComment"}]
+        lambda { comment.update(:body => "") }.should raise_error(Octopi::InvalidResource, "CommitComment is invalid: body cannot be blank")
         WebMock.should have_requested(:put, path).with(:body => '{"body":""}')
       end
 

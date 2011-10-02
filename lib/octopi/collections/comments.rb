@@ -7,7 +7,13 @@ module Octopi
       end
       
       def create(attributes)
-        Octopi::Comment.new(Octopi.post("#{first.repo.url}/comments", :body => attributes.to_json).merge(:repo => first.repo))
+        response = Octopi.post("#{first.repo.url}/comments", :body => attributes.to_json)
+        parsed_response = Octopi::Base.parse(response)
+        if response.code.to_i == 422
+          raise Octopi::InvalidResource, parsed_response["errors"]
+        else
+          Octopi::Comment.new(parsed_response.merge(:repo => first.repo))
+        end
       end
 
       def find(id)
