@@ -28,6 +28,7 @@ describe Octopi::Comment do
       authenticated_api_stub("repos/fcoury/octopi")
       authenticated_api_stub("repos/fcoury/octopi/commits")
       authenticated_api_stub("repos/fcoury/octopi/comments")
+      authenticated_api_stub("repos/fcoury/octopi/comments/624863")
     end
 
     it "creates a comment" do
@@ -38,16 +39,31 @@ describe Octopi::Comment do
     end
     
     it "attempts to create an invalid comment"
-  end
 
-  it "retreives a comment" do
-    path = base_url + "repos/fcoury/octopi/comments/624863"
-    api_stub("repos/fcoury/octopi/comments/624863")
-    comment = repo.comments.find(624863)
-    comment.is_a?(Octopi::Comment).should be_true
-    WebMock.should have_requested(:get, path)
-  end
+    it "updates a comment" do
+      path = authenticated_base_url + "repos/fcoury/octopi/comments/624863" 
+      stub_request(:put, path).to_return(fake("repos/fcoury/octopi/comments/update"))
+      comment = repo.comments.find(624863)
+      comment.update(:body => "This is an update.")
+      WebMock.should have_requested(:put, path).with(:body => '{"body":"This is an update."}')
+    end
 
-  it "updates a comment"
-  it "deletes a comment"
+    it "deletes a comment" do
+      path = authenticated_base_url + "repos/fcoury/octopi/comments/624863" 
+          
+    end
+  end
+  
+  context "working with a comment" do
+    before do
+      api_stub("repos/fcoury/octopi/comments/624863")
+    end
+
+    it "retreives a comment" do
+      path =
+      comment = repo.comments.find(624863)
+      comment.is_a?(Octopi::Comment).should be_true
+      WebMock.should have_requested(:get, path)
+    end
+  end
 end
