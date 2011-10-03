@@ -64,7 +64,11 @@ describe Octopi::Comment do
         WebMock.should have_requested(:put, path).with(:body => '{"body":""}')
       end
 
-      it "is deleted"
+      it "is deleted" do
+        stub_request(:delete, path).to_return(:status => 204)
+        comment.delete
+        WebMock.should have_requested(:delete, path)
+      end
     end
   end
   
