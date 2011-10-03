@@ -16,6 +16,7 @@ module Octopi
   autoload :Download, "octopi/download"
   autoload :Gist, "octopi/gist"
   autoload :Language, "octopi/language"
+  autoload :Me, "octopi/me"
   autoload :Organization, "octopi/organization"
   autoload :Repo, "octopi/repo"
   autoload :Tag, "octopi/tag"

@@ -2,7 +2,7 @@ module Octopi
   class User < Base
     def self.me
       Octopi.requires_authentication! do
-        self.new(self.get("/user"))
+        Octopi::Me.new(self.get("/user"))
       end
     end
 

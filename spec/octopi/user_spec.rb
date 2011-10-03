@@ -31,6 +31,7 @@ describe Octopi::User do
 
     it "can find the authenticated user" do
       user = Octopi::User.me
+      user.is_a?(Octopi::Me).should be_true
       user.login.should == "radar"
     end
   
