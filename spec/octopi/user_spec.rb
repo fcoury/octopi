@@ -46,7 +46,14 @@ describe Octopi::User do
     end
     
     it "watched repositories" do
-      pending("May require changes to how Octopi::User.me works. Maybe it should return a proxy Octopi::Me object that inherits from User and acts *slightly* different?")
+      # I'm not going to show you *my* watched repositories.
+      # With very good reason.
+      stub_successful_login!("rails3book")
+      Octopi.authenticate!(:username => "rails3book", :password => "password")
+      stub_request(:get, authenticated_base_url("rails3book") + "user").to_return(fake("users/rails3book"))
+      stub_request(:get, authenticated_base_url("rails3book") + "user/watched").to_return(fake("users/rails3book/watched"))
+      watched = Octopi::User.me.watched
+      watched.first.is_a?(Octopi::Repo).should be_true
     end
 
     it "watching a repo?"

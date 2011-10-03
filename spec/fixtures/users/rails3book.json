@@ -1,0 +1,32 @@
+HTTP/1.1 200 OK
+Server: nginx/1.0.4
+Date: Mon, 03 Oct 2011 07:23:30 GMT
+Content-Type: application/json
+Connection: keep-alive
+Status: 200 OK
+X-RateLimit-Limit: 5000
+X-RateLimit-Remaining: 4998
+Link: <repos>; rel="repos", <watched>; rel="watching", <followers>; rel="followers", <following>; rel="following"
+Content-Length: 653
+
+{
+  "following": 1,
+  "type": "User",
+  "hireable": false,
+  "html_url": "https://github.com/rails3book",
+  "gravatar_id": "be66f1ccc28a6a3dfb248454b8513b17",
+  "email": "me+rails3book@ryanbigg.com",
+  "url": "https://api.github.com/users/rails3book",
+  "avatar_url": "https://secure.gravatar.com/avatar/be66f1ccc28a6a3dfb248454b8513b17?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+  "public_repos": 4,
+  "bio": null,
+  "blog": null,
+  "login": "rails3book",
+  "created_at": "2010-04-26T01:28:40Z",
+  "name": null,
+  "company": null,
+  "public_gists": 5,
+  "followers": 9,
+  "location": null,
+  "id": 252283
+}
