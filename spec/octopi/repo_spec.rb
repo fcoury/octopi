@@ -103,6 +103,7 @@ describe Octopi::Repo do
         it "tags" do
           api_stub("repos/fcoury/octopi/tags")
           tags = repo.tags
+          tags.first.is_a?(Octopi::Tag).should be_true
           tags.first.name.should == "v0.1.0"
         end
         
