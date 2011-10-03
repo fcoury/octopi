@@ -38,6 +38,18 @@ module Octopi
     def watchers_count
       attributes[:watchers]
     end
+    
+    def watchers
+      self.class.collection("#{url}/watchers", Octopi::User)
+    end
+    
+    def forks_count
+      attributes[:forks]
+    end
+    
+    def forks
+      self.class.collection("#{url}/forks", Octopi::Repo)
+    end
 
     def is_collaborator?(user)
       login = user.is_a?(Octopi::User) ? user.login : user

@@ -33,7 +33,7 @@ describe Octopi::Repo do
         it "finding" do
           repo.pushed_at.should == "2011-09-25T00:02:51Z"
           repo.created_at.should == "2009-04-18T04:26:58Z"
-          repo.forks.should == 52
+          repo.forks_count.should == 52
           repo.description.should == "A Ruby interface to GitHub API v2"
           repo.clone_url.should == "https://github.com/fcoury/octopi.git"
           repo.ssh_url.should == "git@github.com:fcoury/octopi.git"
@@ -111,24 +111,30 @@ describe Octopi::Repo do
           pending("always returns a 404? Need repo with teams")
         end
         
-        it "cannot update this repository" do
-          lambda { repo.update(:description => "omg") }.should raise_error(Octopi::NotAuthenticated)
+        it "watchers" do
+          api_stub("repos/fcoury/octopi/watchers")
+          watchers = repo.watchers
+          watchers.first.is_a?(Octopi::User).should be_true
+          WebMock.should have_requested(:get, base_url + "repos/fcoury/octopi/watchers")
         end
         
         context "forks" do
-          it "listing"
+          it "listing" do
+            api_stub("repos/fcoury/octopi/forks")
+            forks = repo.forks
+            forks.first.is_a?(Octopi::Repo).should be_true
+          end
+
           it "creates"
+          it "fails to create due to one already existing"
         end
         
         context "keys" do
-          it "listing"
           it "singular"
           it "creates"
           it "edits"
           it "deletes"
         end
-        
-        it "watchers"
         
         context "hooks" do
           it "listing"
@@ -138,6 +144,10 @@ describe Octopi::Repo do
           it "tests"
           it "deletes"
           it "pubsubhubbub"
+        end
+
+        it "cannot update this repository" do
+          lambda { repo.update(:description => "omg") }.should raise_error(Octopi::NotAuthenticated)
         end
       end
       
