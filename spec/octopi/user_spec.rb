@@ -16,10 +16,10 @@ describe Octopi::User do
   end
   
   it "can find a user's watched repositories" do
-    api_stub("user/fcoury/watched")
+    api_stub("users/fcoury/watched")
     watched = Octopi::User.find("fcoury").watched
     watched.first.is_a?(Octopi::Repo).should be_true
-    WebMock.should have_requested(:get, base_url + "user/fcoury/watched")
+    WebMock.should have_requested(:get, base_url + "users/fcoury/watched")
   end
 
   context "authenticated" do

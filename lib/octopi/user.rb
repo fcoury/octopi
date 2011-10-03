@@ -22,7 +22,7 @@ module Octopi
     end
     
     def watched
-      self.class.collection("/user/#{login}/watched", Octopi::Repo)
+      self.class.collection("/users/#{login}/watched", Octopi::Repo)
     end
   end
 end
