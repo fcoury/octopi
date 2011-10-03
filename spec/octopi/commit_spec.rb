@@ -65,6 +65,15 @@ describe Octopi::Commit do
     commit.comments.first.is_a?(Octopi::Comment).should be_true
   end
   
-  it "compares two commits"
+  it "compares two commits" do
+    api_stub("repos/fcoury/octopi/commits")
+    api_stub("repos/fcoury/octopi/compare/e9ee1e1897704626844e000c88778215533631ef...38b679a92a49bb49a72e57d99639e26830b7792b")
+    comparison = repo.commits.compare("e9ee1e1897704626844e000c88778215533631ef", "38b679a92a49bb49a72e57d99639e26830b7792b")
+    comparison.is_a?(Octopi::Comparison)
+    base_commit = comparison.base_commit
+    base_commit.is_a?(Octopi::Commit).should be_true
+    comparison.commits.count.should == 4
+    comparison.commits.first.is_a?(Octopi::Commit).should be_true
+  end
     
 end

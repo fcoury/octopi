@@ -9,9 +9,10 @@ require 'active_support/core_ext/hash/keys'
 module Octopi
   autoload :Base, "octopi/base"
   autoload :Branch, "octopi/branch"
+  autoload :Collections, "octopi/collections"
   autoload :Comment, "octopi/comment"
   autoload :Commit, "octopi/commit"
-  autoload :Collections, "octopi/collections"
+  autoload :Comparison, "octopi/comparison"
   autoload :Download, "octopi/download"
   autoload :Gist, "octopi/gist"
   autoload :Language, "octopi/language"
