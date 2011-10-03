@@ -1,0 +1,102 @@
+HTTP/1.1 200 OK
+Server: nginx/1.0.4
+Date: Sun, 02 Oct 2011 20:58:57 GMT
+Content-Type: application/json
+Connection: keep-alive
+Status: 200 OK
+X-RateLimit-Limit: 5000
+X-RateLimit-Remaining: 4998
+Content-Length: 3327
+
+{
+  "has_wiki": true,
+  "updated_at": "2011-10-02T20:58:57Z",
+  "open_issues": 0,
+  "html_url": "https://github.com/radar/octopi",
+  "url": "https://api.github.com/repos/radar/octopi",
+  "source": {
+    "updated_at": "2011-10-02T18:38:28Z",
+    "open_issues": 18,
+    "html_url": "https://github.com/fcoury/octopi",
+    "url": "https://api.github.com/repos/fcoury/octopi",
+    "git_url": "git://github.com/fcoury/octopi.git",
+    "description": "A Ruby interface to GitHub API v2",
+    "created_at": "2009-04-18T04:26:58Z",
+    "fork": false,
+    "clone_url": "https://github.com/fcoury/octopi.git",
+    "ssh_url": "git@github.com:fcoury/octopi.git",
+    "pushed_at": "2011-10-02T07:12:46Z",
+    "private": false,
+    "size": 188,
+    "homepage": "http://hasmany.info/2009/4/18/ruby-interface-to-github-api",
+    "language": "Ruby",
+    "owner": {
+      "url": "https://api.github.com/users/fcoury",
+      "login": "fcoury",
+      "avatar_url": "https://secure.gravatar.com/avatar/c4ceadae4f61dac8ff3ababc3faa6c42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 1371
+    },
+    "name": "octopi",
+    "forks": 53,
+    "watchers": 237,
+    "id": 179067,
+    "master_branch": null,
+    "svn_url": "https://svn.github.com/fcoury/octopi"
+  },
+  "git_url": "git://github.com/radar/octopi.git",
+  "has_issues": false,
+  "description": "#winning",
+  "mirror_url": null,
+  "integrate_branch": null,
+  "parent": {
+    "updated_at": "2011-10-02T18:38:28Z",
+    "open_issues": 18,
+    "html_url": "https://github.com/fcoury/octopi",
+    "url": "https://api.github.com/repos/fcoury/octopi",
+    "git_url": "git://github.com/fcoury/octopi.git",
+    "description": "A Ruby interface to GitHub API v2",
+    "created_at": "2009-04-18T04:26:58Z",
+    "fork": false,
+    "clone_url": "https://github.com/fcoury/octopi.git",
+    "ssh_url": "git@github.com:fcoury/octopi.git",
+    "pushed_at": "2011-10-02T07:12:46Z",
+    "private": false,
+    "size": 188,
+    "homepage": "http://hasmany.info/2009/4/18/ruby-interface-to-github-api",
+    "language": "Ruby",
+    "owner": {
+      "url": "https://api.github.com/users/fcoury",
+      "login": "fcoury",
+      "avatar_url": "https://secure.gravatar.com/avatar/c4ceadae4f61dac8ff3ababc3faa6c42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+      "id": 1371
+    },
+    "name": "octopi",
+    "forks": 53,
+    "watchers": 237,
+    "id": 179067,
+    "master_branch": null,
+    "svn_url": "https://svn.github.com/fcoury/octopi"
+  },
+  "created_at": "2011-09-25T17:12:26Z",
+  "fork": true,
+  "clone_url": "https://github.com/radar/octopi.git",
+  "ssh_url": "git@github.com:radar/octopi.git",
+  "has_downloads": true,
+  "pushed_at": "2011-09-25T03:36:54Z",
+  "private": false,
+  "size": 180,
+  "homepage": "http://hasmany.info/2009/4/18/ruby-interface-to-github-api",
+  "language": "Ruby",
+  "owner": {
+    "url": "https://api.github.com/users/radar",
+    "login": "radar",
+    "avatar_url": "https://secure.gravatar.com/avatar/9a2a53db8e9b4476038c94a64b32833f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+    "id": 2687
+  },
+  "name": "octopi",
+  "forks": 0,
+  "watchers": 1,
+  "id": 2455586,
+  "master_branch": null,
+  "svn_url": "https://svn.github.com/radar/octopi"
+}
