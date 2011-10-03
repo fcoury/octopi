@@ -155,6 +155,8 @@ describe Octopi::Repo do
           repo.update(:description => "omg")
           WebMock.should have_requested(:put, "https://radar:password@api.github.com/repos/radar/octopi").with(:body => '{"description":"omg"}')
         end
+
+        it "deletes a repository"
       end
     end
     
