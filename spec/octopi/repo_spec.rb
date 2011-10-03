@@ -50,7 +50,7 @@ describe Octopi::Repo do
           repo.owner.should be_is_a(Octopi::User)
           repo.name.should == "octopi"
           repo.updated_at.should == "2011-09-25T00:02:51Z"
-          repo.watchers.should == 240
+          repo.watchers_count.should == 240
           repo.id.should == 179067
           repo.url.should == "https://api.github.com/repos/fcoury/octopi"
         end

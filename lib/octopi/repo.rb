@@ -34,6 +34,10 @@ module Octopi
     def collaborators
       Octopi::Collections::Collaborators.new(self.class.collection("#{url}/collaborators", Octopi::User))
     end
+    
+    def watchers_count
+      attributes[:watchers]
+    end
 
     def is_collaborator?(user)
       login = user.is_a?(Octopi::User) ? user.login : user
