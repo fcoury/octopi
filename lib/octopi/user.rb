@@ -20,5 +20,9 @@ module Octopi
     def gists
       Gist.for_user(self.login)
     end
+    
+    def watched
+      self.class.collection("/user/#{login}/watched", Octopi::Repo)
+    end
   end
 end

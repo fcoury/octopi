@@ -15,9 +15,15 @@ describe Octopi::User do
     Octopi::User.find("fcoury").gists
   end
   
-  it "watched repositories"
+  it "can find a user's watched repositories" do
+    api_stub("user/fcoury/watched")
+    watched = Octopi::User.find("fcoury").watched
+    watched.first.is_a?(Octopi::Repo).should be_true
+    WebMock.should have_requested(:get, base_url + "user/fcoury/watched")
+  end
 
   context "authenticated" do
+    let(:url) { authenticated_base_url + "user" }
     before do
       Octopi.authenticate!(:username => "radar", :password => "password")
       stub_request(:get, authenticated_base_url + "user").to_return(fake("users/me"))
@@ -29,8 +35,6 @@ describe Octopi::User do
     end
   
     it "can update the authenticated user's details" do
-      url =  authenticated_base_url + "user"
-
       user = Octopi::User.me
       user.name.should == "Ryan Bigg"
       stub_request(:put, url).to_return(fake("users/updated"))
@@ -40,7 +44,10 @@ describe Octopi::User do
       user.name.should == "Super Ryan"
     end
     
-    it "watched repositories"
+    it "watched repositories" do
+      pending("May require changes to how Octopi::User.me works. Maybe it should return a proxy Octopi::Me object that inherits from User and acts *slightly* different?")
+    end
+
     it "watching a repo?"
     it "watch a repo"
     it "stop watching a repo"
