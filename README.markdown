@@ -121,7 +121,7 @@ Single issue information:
 
 Commits API information from a Repository object:
 
-    first_commit = repo.commits.first
+    first_commit = Commit.find(:user => repo.user, :repo => repo.name, :sha => repo.commits.first.id)
     puts "First commit: #{first_commit.id} - #{first_commit.message} - by #{first_commit.author['name']}"
   
 Single commit information:
