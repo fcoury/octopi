@@ -17,7 +17,7 @@ http://twitter.com/octopi_gem
 
 ### Seamless authentication using .gitconfig defaults
 
-If you have your <tt>~/.gitconfig</tt> file in place, and you have a [github] section (if you don't, take a look at this [GitHub Guides entry][http://github.com/guides/tell-git-your-user-name-and-email-address], you can use seamless authentication using this method:
+If you have your <tt>~/.gitconfig</tt> file in place, and you have a [github] section (if you don't, take a look at this [GitHub Guides entry](http://github.com/guides/tell-git-your-user-name-and-email-address), you can use seamless authentication using this method:
 
     authenticated do 
       repo = Repository.find(:name => "api-labrat", :user => "fcoury")
