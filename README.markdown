@@ -4,73 +4,87 @@ Octopi is a Ruby interface to GitHub API v2 (http://develop.github.com).
 
 To install it as a Gem, just run:
 
-    $ sudo gem install octopi
+```shell
+gem install octopi
+```
 
 To include it in your modules or in irb use:
 
-    include Octopi
+```ruby
+include Octopi
+```
 
 Get notifications via Twitter, following @octopi_gem:
 http://twitter.com/octopi_gem
-  
+
 ## Authenticated Usage
 
 ### Seamless authentication using .gitconfig defaults
 
 If you have your <tt>~/.gitconfig</tt> file in place, and you have a [github] section (if you don't, take a look at this [GitHub Guides entry](http://github.com/guides/tell-git-your-user-name-and-email-address), you can use seamless authentication using this method:
 
-    authenticated do 
-      repo = Repository.find(:name => "api-labrat", :user => "fcoury")
-    end
-  
+```ruby
+authenticated do
+  repo = Repository.find(:name => "api-labrat", :user => "fcoury")
+end
+```
+
 ### Explicit authentication
 
 Sometimes, you may not want to get authentication data from _~/.gitconfig_. You want to use GitHub API authenticated as a third party. For this use case, you have a couple of options too.
 
 **1. Providing login and token inline:**
 
-    authenticated_with :login => "mylogin", :token => "mytoken" do 
-      repo = Repository.find(:name => "api-labrat", :user => "fcoury")
-      issue = Issue.open :repo => repo, :params => { 
-        :title => "Sample issue", :body => "This issue was opened using GitHub API and Octopi" }
-      puts issue.number
-    end
+```ruby
+authenticated_with :login => "mylogin", :token => "mytoken" do
+  repo = Repository.find(:name => "api-labrat", :user => "fcoury")
+  issue = Issue.open :repo => repo, :params => {
+    :title => "Sample issue", :body => "This issue was opened using GitHub API and Octopi" }
+  puts issue.number
+end
+```
 
 **2. Providing login and password inline:**
 
-    authenticated_with :login => "mylogin", :password => "password" do 
-      repo = Repository.find(:name => "api-labrat", :user => "fcoury")
-      issue = Issue.open :repo => repo, :params => { 
-        :title => "Sample issue", :body => "This issue was opened using GitHub API and Octopi" }
-      puts issue.number
-    end
+```ruby
+authenticated_with :login => "mylogin", :password => "password" do
+  repo = Repository.find(:name => "api-labrat", :user => "fcoury")
+  issue = Issue.open :repo => repo, :params => {
+    :title => "Sample issue", :body => "This issue was opened using GitHub API and Octopi" }
+  puts issue.number
+end
+```
 
 **3. Providing a YAML file with authentication information:**
 
 Use the following format:
 
-    #
-    # Octopi GitHub API configuration file
-    #
+```yaml
+#
+# Octopi GitHub API configuration file
+#
 
-    # GitHub user login and token
-    github:
-      user: github-username
-      token: github-token
+# GitHub user login and token
+github:
+  user: github-username
+  token: github-token
 
-    # Trace level
-    # Possible values:
-    #   false - no tracing, same as if the param is ommited
-    #   true  - will output each POST or GET operation to the stdout
-    #   curl  - same as true, but in addition will output the curl equivalent of each command (for debugging)
-    trace: curl
-  
-  And change the way you connect to:
+# Trace level
+# Possible values:
+#   false - no tracing, same as if the param is ommited
+#   true  - will output each POST or GET operation to the stdout
+#   curl  - same as true, but in addition will output the curl equivalent of each command (for debugging)
+trace: curl
+```
 
-    authenticated :config => "github.yml") do
-      (...)
-    end
-  
+And change the way you connect to:
+
+```ruby
+authenticated :config => "github.yml") do
+  (...)
+end
+```
+
 ## Anonymous Usage
 
 This reflects the usage of the API to retrieve information on a read-only fashion, where the user doesn't have to be authenticated.
@@ -79,55 +93,73 @@ This reflects the usage of the API to retrieve information on a read-only fashio
 
 Getting user information
 
-    user = User.find("fcoury")
-    puts "#{user.name} is being followed by #{user.followers.join(", ")} and following #{user.following.join(", ")}"
+```ruby
+user = User.find("fcoury")
+puts "#{user.name} is being followed by #{user.followers.join(", ")} and following #{user.following.join(", ")}"
+```
 
 The bang methods `followers!` and `following!` retrieves a full User object for each user login returned, so it has to be used carefully.
 
-    user.followers!.each do |u|
-      puts "  - #{u.name} (#{u.login}) has #{u.public_repo_count} repo(s)"
-    end
-  
+```ruby
+user.followers!.each do |u|
+  puts "  - #{u.name} (#{u.login}) has #{u.public_repo_count} repo(s)"
+end
+```
+
 Searching for user
 
-    users = User.find_all("silva")
-    puts "#{users.size} users found for 'silva':"
-    users.each do |u|
-      puts "  - #{u.name}"
-    end
+```ruby
+users = User.find_all("silva")
+puts "#{users.size} users found for 'silva':"
+users.each do |u|
+  puts "  - #{u.name}"
+end
+```
 
 ### Repositories API
 
-    repo = user.repository("octopi") # same as: Repository.find("fcoury", "octopi")
-    puts "Repository: #{repo.name} - #{repo.description} (by #{repo.owner}) - #{repo.url}"
-    puts "      Tags: #{repo.tags and repo.tags.map {|t| t.name}.join(", ")}"
-  
+```ruby
+repo = user.repository("octopi") # same as: Repository.find("fcoury", "octopi")
+puts "Repository: #{repo.name} - #{repo.description} (by #{repo.owner}) - #{repo.url}"
+puts "      Tags: #{repo.tags and repo.tags.map {|t| t.name}.join(", ")}"
+```
+
 Search:
 
-    repos = Repository.find_all("ruby", "git")
-    puts "#{repos.size} repository(ies) with 'ruby' and 'git':"
-    repos.each do |r|
-      puts "  - #{r.name}"
-    end
-  
+```ruby
+repos = Repository.find_all("ruby", "git")
+puts "#{repos.size} repository(ies) with 'ruby' and 'git':"
+repos.each do |r|
+  puts "  - #{r.name}"
+end
+```
+
 Issues API integrated into the Repository object:
 
-    issue = repo.issues.first
-    puts "First open issue: #{issue.number} - #{issue.title} - Created at: #{issue.created_at}"
+```ruby
+issue = repo.issues.first
+puts "First open issue: #{issue.number} - #{issue.title} - Created at: #{issue.created_at}"
+```
 
 Single issue information:
 
-    issue = repo.issue(11)
+```ruby
+issue = repo.issue(11)
+```
 
 Commits API information from a Repository object:
 
-    first_commit = Commit.find(:user => repo.user, :repo => repo.name, :sha => repo.commits.first.id)
-    puts "First commit: #{first_commit.id} - #{first_commit.message} - by #{first_commit.author['name']}"
-  
+```ruby
+first_commit = Commit.find(:user => repo.user, :repo => repo.name, :sha => repo.commits.first.id)
+puts "First commit: #{first_commit.id} - #{first_commit.message} - by #{first_commit.author['name']}"
+```
+
 Single commit information:
 
-    puts "Diff:"
-    first_commit.details.modified.each {|m| puts "#{m['filename']} DIFF: #{m['diff']}" }
+```ruby
+puts "Diff:"
+first_commit.details.modified.each {|m| puts "#{m['filename']} DIFF: #{m['diff']}" }
+```
 
 ## Author
 
