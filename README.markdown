@@ -179,3 +179,7 @@ Thanks guys!
 ## Copyright
 
 Copyright (c) 2009 Felipe Coury. See LICENSE for details.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/fcoury/octopi/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
