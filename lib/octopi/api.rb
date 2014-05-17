@@ -4,7 +4,7 @@ module Octopi
   # Dummy class, so AnonymousApi and AuthApi have somewhere to inherit from
   class Api
     include Self
-    attr_accessor :format, :login, :token, :trace_level, :read_only
+    attr_accessor :format, :login, :token, :trace_level, :read_only, :conn_remaining
   end
   
   # Used for accessing the Github API anonymously
@@ -173,6 +173,10 @@ module Octopi
         end
       end
       begin
+        ## Holy hack, wait 1 min before doing the next request
+        if self.conn_remaining == 0
+          sleep 60
+        end
         key = "#{Api.api.class.to_s}:#{path}"
         resp = if cache
           APICache.get(key, :cache => 61) do
@@ -200,7 +204,8 @@ module Octopi
       raise FormatError, [ctype, format] unless CONTENT_TYPE[format.to_s].include?(ctype)
       if format == 'yaml' && resp['error']
         raise APIError, resp['error']
-      end  
+      end
+      self.conn_remaining = resp.headers['x-ratelimit-remaining'].to_i
       resp
     end
     
